@@ -1,0 +1,73 @@
+=== Manduca ===
+Készítette:  Edelényi Zsolt - edelenyi.zsolt@akadalymentes-honlap.hu
+Szerző honlapja: http://www.akadálymentes-honlap.hu
+A sablon nyelve: magyar
+Legutolsó tesztelt és stabilváltozat: 2.0.4
+Szellemi jogok: GPLv2 or later
+Szellemi jogok WIKI: https://hu.wikipedia.org/wiki/GNU_General_Public_License
+A megfelelőségi logó szellemi termék: http://www.w3.org/WAI/WCAG2-Conformance
+A legutolsó változat részletes bemutatása: http://www.akadalymentes-webdesign.hu/
+
+== Leírás ==
+A Manduca sablon leglényegesebb jellemzője: megfelel a nemzetközi WEB akadálymentesítési irányelveknek (WCAG 2.0), és sok mindenben ezen felül is támogatja a fogyatékosságal élő felhasználókat.
+Az akadálymentes weboldal ergonómikus honlap. Egyszerű, nem zsúfolt, gyors, átlátható, érthető. A lényeg, hogy gyorsan és könnyen megtaláld benne a téged érintő tartalmat, és könnyen tudd használni.
+A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.
+
+== Telepítés  ==
+
+1. Admin panel ->Megjelenés>Sablonok.
+2. Feltöltés és a fájl kiválasztása.
+3. Sablon aktiválása.
+4. Admin panelen megjelenés>testreszabás.
+
+== A legfontosabb jellemzők ==
+    A weboldal területeinek jelzése WAI-ARIA elemekkel;
+    Akadálymentes, szabályos címsorszintrendszer;
+    Egyedi magyar fordítás. Nem voltam elégedett a beépített sablonok fordításaival. Szerettem volna személyesebb, más szövegeket. A sablonom magyar, nincs előkészítve fordításra.
+    A fókusz-kígyó. Aki a billentyűzetről használja, az oldalon tab billentyűvel megy a következő vezérlőelemre. Néha nagyon nehéz ezt követni, például a fő tartalom végéről az oldalsáv elejére. A fókusz-kígyó (focus-snail nevű JavaScript) vizuálisan megjeleníti a fókusz haladását egy kék színű kígyózó sávval.
+    Fejlécben elhelyezett keresési lehetőség.
+    Alaposan tesztelve több tucat böngészőn, képernyőfelbontással, képernyőolvasóval, nagykontrasztú üzemmódban, JavaScript nélkül is.
+    A címsorszintrendszer és a tipográfia egységesítése és jobb összehangolása. A weboldal címe többé nem első címsorszint, hanem egyszerű szöveg. A cím ugyanis a fejlécben szerepel minden oldalon, és a fő tartalom csak a második címsorszintben szerepel. Mostantól a fő tartalom címsorszintje lesz az első.
+
+== Telepítés  ==
+
+1. Admin panel ->Megjelenés>Sablonok 
+2. Feltöltés és a fájl kiválasztása
+3. Sablon aktiválása
+
+== Licence ==
+
+   A sablon és benne minden általános nyilvános licence-el rendelkezik.(GNU GPL).
+   Lásd: https://hu.wikisource.org/wiki/GNU_General_Public_License_%28magyar%29Egy sor mely megadja a program nevét, és leírja, hogy mit csinál.
+
+   Manduca WordPress Sablon, Copyright 2015 Edelényi Zsolt
+
+1. Font Awesome
+	- MIT licence
+	- A betűtípusok SIL OFL 1.1 
+	- http://fortawesome.github.io/Font-Awesome/
+
+2. Focus Snake
+    - MIT Licence
+    - https://github.com/NV/focus-snail
+
+== GYIK ==
+- Miért készítettél újabb sablon, hiszen annyi van az interneten?
+- Alig van olyan sablon, amely az általános hozzáférést, akadálymentességet tartja legfőbb erényének. Ráadásul, e sablonhoz magyar fordítás és olvassel.txt is tartozik.
+
+- Miért oly fontos neked, hogy a sablonodat mindenki tudja használni?
+- Tim Barners-Lee mondta: "Az internet ereje az univerzalitás. Minden ember képes használni, képességeitől függetlenül. (https://en.wikiquote.org/wiki/Tim_Berners-Lee)
+
+
+== Változatok ==
+
+ = 1.0 =
+ Elkészült: 2015. április 24.
+ Teszteléshez, főképp magán használatra. 
+ 
+ = 2.0 =
+ 2015. december 3.
+ A sablon alapos ellenőrzése után. 
+ 
+
+
