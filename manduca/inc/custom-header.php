@@ -1,5 +1,8 @@
 <?php
-//Manduca 1.4
+/*manduca
+ *
+ *@since 1.0
+ **/
 function manduca_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
