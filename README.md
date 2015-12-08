@@ -63,15 +63,15 @@ Tim Berners-Lee said:
 
 ## Change log
  
- ### 1.0
+### 1.0
  Released April 24, 2015.
  Only for testing and private usage
  
- ### 2.0
+### 2.0
  Released November 26, 2015. Tested by WordPress Theme Standards
  
  
- ## Special Acknowledgement
+## Special Acknowledgement
 
 I wish to convey special thanks to my wife: Nóra and friends: János and Áron who tested my themes many times. They gave me so many feedback on my work and helped me to improve Manduca. 
 I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times,  and contributed to form a messy theme to a professional one.
