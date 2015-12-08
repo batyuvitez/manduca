@@ -91,10 +91,6 @@ function manduca_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'manduca_page_menu_args' );
 
-/*
- * Register sidebars
- */
- 
 function manduca_widgets_init() {
 	register_sidebar( array(
 		'name' =>__( 'Sidebar', 'manduca' ),
@@ -602,7 +598,7 @@ add_filter( 'get_avatar', 'manduca_add_alt_to_avatar' );
 
 function manduca_more_tag( $more ) {
        global $post;
-	return '&nbsp;&nbsp;<a id="moretag" class="kvazi-button" href="'. get_permalink( $post->ID ) . '" rel="nofollow" >'. __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;<span class="screen-reader-text">  '.get_the_title() .'</span></a>';
+	return '&nbsp;&nbsp;<a id="moretag" class="kvazi-button" href="'. get_permalink( $post->ID ) .'" rel="nofollow" >' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;<span class="screen-reader-text"> '.get_the_title() .'</span></a>';
 }
 add_filter( 'excerpt_more', 'manduca_more_tag' );
 
