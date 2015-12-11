@@ -90,7 +90,7 @@ function manduca_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'manduca_page_menu_args' );
-
+		
 function manduca_widgets_init() {
 	register_sidebar( array(
 		'name' =>__( 'Sidebar', 'manduca' ),
