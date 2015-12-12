@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2015-11-20 10:00:00+01:00\n"
-"PO-Revision-Date: 2015-12-11 04:57+0100\n"
+"PO-Revision-Date: 2015-12-12 09:17+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,14 +129,6 @@ msgstr "Bejegyzés kelte"
 msgid "Author"
 msgstr "Szerző"
 
-#: functions.php:524 functions.php:532
-msgid "Manduca options"
-msgstr "Manduca beállítások"
-
-#: functions.php:556
-msgid "Footer settings"
-msgstr "Lábrész beállításai"
-
 #: functions.php:556
 msgid "Copyright text"
 msgstr "Copyright szöveg"
@@ -149,10 +141,6 @@ msgstr "Bővebben&nbsp;&rarr;"
 msgid "Last revision:"
 msgstr "Utolsó módosítás: "
 
-#: functions.php:305 dd.15.12.11
-msgid "Thank you for using WordPress and my theme"
-msgstr "Köszönjük, hogy a WordPresst akadálymentes sablonnal használja: "
-
 #: header.php:53
 msgid "Skip to content"
 msgstr "Tovább a tartalomhoz"
@@ -161,9 +149,13 @@ msgstr "Tovább a tartalomhoz"
 msgid "Menu"
 msgstr "Menü"
 
-#: function.php:55
+#: function.php:30
 msgid "Main navigation"
 msgstr "Főmenü"
+
+#: function.php:31
+msgid "Footer navigation"
+msgstr "Lábrész menü"
 
 #: single.php:14
 msgid "Paging"

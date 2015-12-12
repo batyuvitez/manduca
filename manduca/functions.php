@@ -26,8 +26,9 @@ function manduca_setup() {
 	//Allows themes to add document title tag
 	add_theme_support( 'title-tag' );
 	
-	//Register main navigation menu
+	//Register navigation menus
 	register_nav_menu( 'primary', __( 'Main navigation', 'manduca' ) );
+	register_nav_menu( 'footer', __( 'Footer navigation', 'manduca' ) );
 	
 	//Makes translation-ready
 	load_theme_textdomain( 'manduca', get_template_directory() . '/lang' );
@@ -42,8 +43,6 @@ function manduca_setup() {
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'manduca_setup' );
-
-add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 require( get_template_directory() . '/inc/custom-header.php' );
 
@@ -61,21 +60,21 @@ function manduca_scripts_styles() {
 	// Loads mobile menu scripts
 	wp_enqueue_script( 'manduca-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20140711', true );
 
-			
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'manduca-style', get_stylesheet_uri() );
 	
 	//Loads Font Awesome
-	wp_enqueue_style( 'store-fontawesome-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/css/ie.css', array( 'manduca-style' ), '20121010' );
 	$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
 	
 	//focus-snail (https://github.com/NV/focus-snail)
-	wp_enqueue_script( 'focus_snail', get_template_directory_uri() ."/js/focus-snail.js", array(), '1.0', true );
+	wp_enqueue_script( 'focus-snail', get_template_directory_uri() ."/js/focus-snail.js", array(), '1.0', true );
 	
 }
+
 add_action( 'wp_enqueue_scripts', 'manduca_scripts_styles' );
 
 
@@ -89,6 +88,7 @@ function manduca_page_menu_args( $args ) {
 	}
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'manduca_page_menu_args' );
 		
 function manduca_widgets_init() {
@@ -106,12 +106,11 @@ function manduca_widgets_init() {
 }
 add_action( 'widgets_init', 'manduca_widgets_init' );
 
-
-if ( ! function_exists( 'manduca_comment' ) ) :
-
 //-------------------------------------------------------------------------------------------
 // Template for comments and pingbacks.
 //-------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'manduca_comment' ) ) :
  
 function manduca_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -164,11 +163,11 @@ function manduca_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'manduca_entry_meta' ) ) :
-
 //-------------------------------------------------------------------------------------------
 // Set up Manduca post meta.
 //-------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'manduca_entry_meta' ) ) :
 
 function manduca_entry_meta( $only_date=false )
 {	
@@ -201,7 +200,8 @@ function manduca_entry_meta( $only_date=false )
 	$utility_text .= "<ul>";
 	
 	$utility_text .= '<li><i class="fa fa-clock-o" aria-hidden="true"></i><span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
-	if( get_the_date() !== get_the_modified_date() ){
+	
+	if( get_the_date() !== get_the_modified_date() ) {
 		$utility_text .='<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span> ' . __( 'Last revision:', 'manduca' ) .':</span> ' .$modified_date .'</li>';
 	}
 	
@@ -226,12 +226,29 @@ function manduca_entry_meta( $only_date=false )
 endif;
 
 //-------------------------------------------------------------------------------------------
-// Register postMessage support.
+// Customizer setup
 //-------------------------------------------------------------------------------------------
+
+function manduca_sanitize_text_input( $input ) {
+    $output = strip_tags( stripslashes( $input ) );  
+    return $output;
+} 
+
 function manduca_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+// Move theme option to the customizer
+	$wp_customize->add_setting( 'manduca_copyright_text', array(
+		'default' => get_bloginfo(),
+		'sanitize_callback' => 'manduca_sanitize_text_input'
+		) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'manduca_options', array(
+		'label'        =>  __( 'Copyright text', 'manduca' ),
+		'section'    => 'title_tagline',
+		'settings'   => 'manduca_copyright_text',
+	) ) );
 }
 add_action( 'customize_register', 'manduca_customize_register' );
 
@@ -295,17 +312,6 @@ function manduca_page_navigation() {
 	endif;
 }
 endif;
-
-//-------------------------------------------------------------------------------------------
-// Admin panel footer
-//-------------------------------------------------------------------------------------------
-
-function manduca_admin_footer() {
-$my_theme = wp_get_theme();
-echo '<p>' ._e( 'Thank you for using WordPress and my theme' , 'manduca' ) .': ' .esc_html( $my_theme->get( 'Name' ) ) .' ( ' .esc_html( $my_theme->get( 'Version' ) ) .' )';
-}
-
-add_filter ( 'admin_footer_text', 'manduca_admin_footer' );
 
 
 //-------------------------------------------------------------------------------------------
@@ -419,66 +425,6 @@ function manduca_get_header_image_alt() {
     return $alt;
 }
   
-//-------------------------------------------------------------------------------------------
-//I. 19. Manduca theme options
-//-------------------------------------------------------------------------------------------
-
-add_action( 'admin_head', 'my_custom_fonts' );
-
-function my_custom_fonts() {
-  echo '<style>
-    #copyright_text
-{
-
-	width: 900px;
-	height: 30px;
-	float: left;
-	margin: 0 15px;
-}
-	
-	
-  </style>';
-}
-function mandcua_add_theme_options() {
-	add_theme_page( __( 'Manduca options', 'manduca' ), __( 'Manduca options', 'manduca' ), "manage_options", "theme-panel", "manduca_theme_options_page" );
-}
-
-add_action( "admin_menu", "mandcua_add_theme_options" );
-
-function manduca_theme_options_page() {
-    ?>
-	    <div class="wrap">
-	    <h1><?php _e( 'Manduca options', 'manduca' ) ?></h1>
-	    <form method="post" action="options.php">
-	        <?php
-	            settings_fields( "section" );
-	            do_settings_sections( "manduca-options" );      
-	            submit_button(); 
-	        ?>          
-	    </form>
-		</div>
-	<?php
-}
-
-function mandcua_display_theme_options() {
-	?>
-    	<input type="text" name="copyright_text" id="copyright_text" value="<?php echo esc_html( get_option( 'Copyright_text', 'manduca' ) ); ?>" />
-    <?php
-}
-function manduca_validate_theme_options_input( $input ) {
-    $output = strip_tags( stripslashes( $input ) );  
-    return $output;
-} 
-
-function manduca_display_theme_options_fields() {
-	add_settings_section( "section", __( 'Footer settings', 'manduca' ) , null, "manduca-options" );
-	add_settings_field("copyright_text", __( 'Copyright text', 'manduca' ), "mandcua_display_theme_options", "manduca-options", "section" );
-    register_setting( "section", "copyright_text", 'manduca_validate_theme_options_input' );
-}
-
-add_action( "admin_init", "manduca_display_theme_options_fields" );
-
-
 //-------------------------------------------------------------------------------------------
 // Login redirect to homepage except admin
 //-------------------------------------------------------------------------------------------
@@ -602,7 +548,7 @@ function manduca_more_tag( $more ) {
 }
 add_filter( 'excerpt_more', 'manduca_more_tag' );
 
-function manduca_content_more_link(){
+function manduca_content_more_link() {
 	global $post;
 	return '<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;<span class="screen-reader-text">  '.get_the_title() .'</span></a>';
 }
@@ -620,7 +566,7 @@ function manduca_get_domain_name_from_uri( $uri ) {
 }
 
 
-function mandcua_parse_external_links( $matches ){
+function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' class="ext-link">' . $matches[5] . '</a>';	 
 	} else {

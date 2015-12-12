@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 2.0.5
+Version: 2.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -213,13 +213,24 @@ img {
 	display: table;
 	content: "";
 }
-.vonalzo
-{
+.vonalzo{
 	content: "";
 	display: table;
 	clear: both;	
 }
 
+.clearfix:after,
+.clearfix:before{
+	content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+.clearfix:after{
+	clear: both;
+}
 
 /* 2. Repeatable patterns
 -------------------------------------------------------------- */
@@ -567,8 +578,7 @@ article a:visited
 .entry-content figcaption a.ext-link:after{
     content: "\F08E";
     font-family: FontAwesome;
-	color: #20399d !important;
-	text-decoration: underline;
+	color: #20399d;
 }
 
 .post .entry-content p a:hover,
@@ -831,58 +841,48 @@ section[role="banner"] {
 
 
 /* Footer */
-footer[role="contentinfo"] {
+.footer-wrapper{
+	background-color: #2c82b5;
+	width:100%;
 	clear: both;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	max-width: 960px;
-	max-width: 68.571428571rem;
 	margin-left: auto;
 	margin-right: auto;
-	position: relative;
-	color: #fff;
-}
-footer[role="contentinfo"] a {
 	color: #fff;
 }
 
-
-.site-info
-{
-	position: relative;
-}
-footer .wcag-logo{
-	position: absolute;
-	right: -2px;;
-	bottom: -4px;
-	width: 100px;
-}
-
-
-.footer-wrapper
-{
-	background-color: #2c82b5;
-	
-}
-.footer-wrapper aside
-{
-	display: inline-block;
-	width: 44%;
-	padding: 14px;
-	margin: 0 14px;
-	vertical-align: top;
-
-}
-
-.footer-wrapper aside a
-{
-	color: white;
-	
-}
 .footer-wrapper p {	
 	padding-left: 14px;
 	padding-left: 1rem;
+	float: left;
+}
+.footer-navigation{
+	padding-right: 14px;
+	padding-right: 1rem;
+	float: right;
+	max-width: 50%;
+}
+.footer-navigation ul{
+	text-align: right;
+}
+.footer-navigation ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 0 3px;
+	padding: 0 0.2142857142857143rem;
+}
+.footer-navigation ul li ul{
+	display: none;
+}
+.footer-navigation ul li a{
+	color: #fff;
+	text-align: center;
+}
+.footer-navigation ul li a:hover,
+.footer-navigation ul li a:focus{
+	color: #000;
 }
 
 /* 4. Main content and comment content
@@ -1871,8 +1871,6 @@ img#wpstats {
 		background-color: #21759B;
 	}
 	body .site {
-		padding: 0 24px;
-		padding: 0 1.714285714rem;
 		border: solid 6px #2C82B5;
 	}
 		
@@ -1900,9 +1898,13 @@ img#wpstats {
 		padding: 10px;
 		padding: 0.7142857142857143rem;
 	}
+	.header-bar{
+		padding: 0 24px;
+		padding: 0 1.714285714rem;
+
+	}
 	.widget .searchform{
-		float: none;
-		
+		float: none;	
 	}
 	.site-header .search-form label{
 		position: absolute;

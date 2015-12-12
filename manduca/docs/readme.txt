@@ -46,6 +46,11 @@ This theme is 100% GPL. And any external resources used and bundled with the the
     - Code under MIT Licence
     - https://github.com/NV/focus-snail
 
+2. HTML5 Shiv 3.7.3
+    - Code under MIT Licence
+    - https://github.com/afarkas/html5shiv
+	
+
 Manduca WordPress Theme, Copyright 2015 Zsolt Edelényi 
 Manduca is Distributed under the terms of the GNU GPL
 

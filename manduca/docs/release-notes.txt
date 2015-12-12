@@ -14,7 +14,7 @@
     - Approved by the theme reviewer
 
 2.0.5
-    -dd: December 4, 2015
+    dd: December 4, 2015
     -image folder deleted (not used since 2.0.1)
     -add "continue reading" ling to the more-tag case (function.php)
 
@@ -22,3 +22,11 @@
     dd: December 5, 2015
     -toggled menu text has a wrapping <span>tag
     -skip link located to the very beginning of the page
+
+2.0.7
+    dd: December 10, 2015
+    - add optional footer navigation to the right (function.php, footer.php)
+    
+2.0.8 and 2.0.9
+    dd: December 12, 2015
+    - fixing based on wp-theme admin review (https://themes.trac.wordpress.org/ticket/28960)
