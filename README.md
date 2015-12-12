@@ -15,6 +15,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Image licence: http://www.w3.org/WAI/WCAG2-Conformance
 
+Originated from  Hungarian. Hungarian description and po file included.
+Further reading in Hungarian: http://www.akadalymentes-webdesign.hu/teljesen-akadalymentes-wordpress-sablon-manduca/
+
 
 ## Description
     This theme is focusing on accessibility by the wildest range of users. This is called defined as universal access as well. It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.). In addition, there are features to support even more the impaired users of the web. 
