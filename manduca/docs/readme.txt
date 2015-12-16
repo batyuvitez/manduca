@@ -1,9 +1,9 @@
 === Manduca ===
-Contributor: Zsolt Edelényi - edelenyi.zsolt@akadalymentes-honlap.hu
-Webpage: www.akadálymentes-honlap.hu
+Main contributor: Zsolt Edelényi - edelenyi.zsolt@akadalymentes-honlap.hu
+Webpage: https://github.com/batyuvitez/manduca
 Requires at least: WordPress 3.5
 Tested up to: WordPress 4.3.3
-Stable tag: 2.0.4
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Image licence: http://www.w3.org/WAI/WCAG2-Conformance
@@ -15,14 +15,14 @@ Image licence: http://www.w3.org/WAI/WCAG2-Conformance
 	In addition, there are features to support even more the impaired users of the web. 
 
 == Main features ==
-    Responsive of course,
-    WAI ARIA used for screen-reader users.
-    Classic ergonomy (simplicity, readiblity, usability, etc.)
-    Tested with older browsers and without JavaScript.
-    Microfomats
-    Focus snail to improve focus changes for visualy impairment people,
-    Tested with all kind of screen-readers used in Hungary
-    HTML and CSS code is shortened in order peoplw with slower internet bandwith can use effectively. 
+    - Responsive of course,
+    - WAI ARIA used for screen-reader users.
+    - Classic ergonomy (simplicity, readiblity, usability, etc.)
+    - Tested with older browsers and without JavaScript.
+    - Microfomats
+    - Focus snail to improve focus changes for visualy impairment people,
+    - Tested with all kind of screen-readers used in Hungary
+    - HTML and CSS code is shortened in order peoplw with slower internet bandwith can use effectively. 
 
 
 == Installation ==
@@ -69,10 +69,10 @@ Manduca is Distributed under the terms of the GNU GPL
  Only for testing and private usage
  
  = 2.0 =
- Released November 26, 2015. Tested by WordPress Theme Standards
+ Released November 26, 2015. Tested against WordPress Theme Standards
  
  
- ==Special Acknowledgement ==
+== Special Acknowledgement ==
 
 I wish to convey special thanks to my wife: Nóra and friends: János and Áron who tested my themes many times. They gave me so many feedback on my work and helped me to improve Manduca. 
 I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times,  and contributed to form a messy theme to a professional one.
