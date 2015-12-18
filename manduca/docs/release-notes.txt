@@ -30,3 +30,8 @@
 2.0.8 and 2.0.9
     dd: December 12, 2015
     - fixing based on wp-theme admin review (https://themes.trac.wordpress.org/ticket/28960)
+    
+2.0.10
+    dd: December 18, 2015
+    - style.css: set equal margin for sidebar and primary + border to primary
+    - sitemap css error: sidebar was below the primary. Fixed 
