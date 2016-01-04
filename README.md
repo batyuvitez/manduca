@@ -5,9 +5,7 @@ Contributors:
 
 Requires at least: WordPress 3.5
 
-Tested up to: WordPress 4.3.3
-
-Stable tag: 2.0.4
+Tested up to: WordPress 4.4
 
 License: GPLv2 or later
 
