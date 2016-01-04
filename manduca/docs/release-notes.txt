@@ -34,4 +34,8 @@
 2.0.10
     dd: December 18, 2015
     - style.css: set equal margin for sidebar and primary + border to primary
-    - sitemap css error: sidebar was below the primary. Fixed 
+    - sitemap css error: sidebar was below the primary. Fixed
+    
+2.1.0
+    dd: January 4, 2016
+    - accessiblilty review fixings. See: https://themes.trac.wordpress.org/ticket/28960#comment:14

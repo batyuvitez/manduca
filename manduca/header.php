@@ -33,6 +33,7 @@
 	
 	<div id="header-bar" class="header-bar">
 		<header id="masthead" class="site-header" role="banner"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				<?php get_search_form(); ?>
 		</header>
@@ -46,12 +47,11 @@
 	
 	<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 		<button id="menu-toggle" class="menu-toggle"><i class="fa fa-bars" aria-hidden="true">&nbsp;</i><?php _e( 'Menu', 'manduca' ) ?></button>
-		<a class="assistive-text" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav><!-- #site-navigation -->
 
 
-	<div class="breadrcumb "id="breadcrumb">	
+	<div class="breadrcumb" id="breadcrumb" role="navigation" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca') ?>">	
 				<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
 					yoast_breadcrumb( '<p>','</p>' );
 				} ?>
