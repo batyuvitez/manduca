@@ -161,6 +161,10 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: header.php:54
+msgid "Breadcrumb navigation"
+msgstr ""
+
 #: function.php:55
 msgid "Main navigation"
 msgstr ""
