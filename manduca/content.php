@@ -7,28 +7,23 @@
 ?>		
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
 		<header class="entry-header">
-			<div class="date-header">
 				<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 					<div class="featured-post"><?php _e( 'Featured', 'manduca' ) ?></div>
-				<?php else : ?>
-					<?php manduca_entry_meta( true ); ?>
 				<?php endif; ?>
-			<p id="content-border" class="content-border">&nbsp;</p>
-			</div>
 
 			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
-			<?php else : ?>
-			<h2 class="entry-title"  itemprop="headline">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h2>
-			
+				<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
+				<?php else : ?>
+				<h2 class="entry-title"  itemprop="headline">
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+				</h2>
 			<?php endif; // is_single() ?>
 			
-			<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>	
-				
-
+			<?php manduca_entry_meta( true ); ?>					
 		</header><!-- .entry-header -->
+		
+		<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>
+		
 		<?php if ( ! post_password_required() && ! is_attachment() ) :
 				the_post_thumbnail(); endif; ?>
 			

@@ -180,9 +180,10 @@ function manduca_entry_meta( $only_date=false )
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-	$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time>%2$s</p>',
+	$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'j M' ) )
+		esc_html( get_the_date( 'j' ) ),
+		esc_html( get_the_date( 'M' ) )
 	);
 
 	$author = sprintf( '<span class="author vcard" itemprop="name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',

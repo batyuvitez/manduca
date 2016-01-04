@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 2.1.0
+Version: 2.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -114,14 +114,6 @@ th{
 		border-bottom: 4px #444 double;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
 html {
 	overflow-y: scroll;
 	font-size: 100%;
@@ -296,7 +288,7 @@ article.post-password-required input[type=submit],
 .kvazi-button,
 .more-link{
 	color: white;
-	background-color: #d90f0f;
+	background-color: #D74316;
 	border-radius: 3px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -337,8 +329,8 @@ article.post-password-required input[type=submit]:hover,
 .kvazi-button:hover,
 .more-link:hover{
 	background-color: #fff;
-	outline: dotted 3px #D90F0F;
-	color: #D90F0F !important;	
+	outline: dotted 3px #D74316;
+	color: #D74316 !important;	
 }
 .menu-toggle:active,
 .menu-toggle.toggled-on,
@@ -796,7 +788,7 @@ section[role="banner"] {
 	padding: 0 0.5rem;
 	border-radius: 5px;
 	background-color: #fff;
-	border: 3px solid #2c82b5;
+	border: 2px solid #2c82b5;
 }
 .widget-area .widget h2 {
 	margin: 0 0 24px;
@@ -906,7 +898,7 @@ section[role="banner"] {
 	color: #000;
 }
 .highlight-1{
-	background: #d90f0f;
+	background: #D74316;
 	color: white;
 	width:  98%;
 	font-size: 18px;
@@ -930,30 +922,8 @@ section[role="banner"] {
 	line-height: 1.5;
 	border-radius: 5px;
 }
-.entry-header .date-header
-{
-	display:table;
-	width:100%;
-}
 
-
-.entry-header .content-date
-{
-	display:table-cell;
-	padding-right: 8px;
-	font-size: 14px;
-	width: 200px;
-}
-
-
-.entry-header .content-date{
-	text-decoration: none;
-	font-weight: 300;
-		margin-bottom: 10px;
-}
-
-.entry-header .featured-post
-{
+.entry-header .featured-post {
 	display:table-cell;
 	padding-right: 8px;
 	width: 400px;
@@ -961,7 +931,6 @@ section[role="banner"] {
 	white-space: nowrap;
 	font-weight: bolder;
 }
-
 
 footer.entry-meta {
 	clear: both;
@@ -1026,7 +995,7 @@ h1.entry-title,
 	font-size: 1.5rem;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: #D90F0F;
+	color: #D74316;
 	font-weight: 500;
 	text-align: center;
 }
@@ -1254,7 +1223,7 @@ img.aligncenter,
 
 .site-content article {
 	border-radius: 5px;
-	border: 3px solid #2c82b5;
+	border: 2px solid #2c82b5;
 	background-color: #fff;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
@@ -1722,24 +1691,52 @@ img#wpstats {
 	.widget-area .searchform input[type="text"]{
 		max-width: 122px;
 	}
-	.entry-header .content-border
-	{
-		display:table-cell;
-		width: 78%;
-		background-color: #DAF2FF;
+	
+	.entry-header {
+		position: relative;
+		height: 50px;
+		margin: 0 0 24px 0;
+		margin: 0 0 1.714285714285714rem 0;
+		
 	}
+	
 	.entry-header .entry-title {
 		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 		font-size: 14px;
 		font-size: 1.714285714285714rem;
 		color: #080B10;
-		margin: 24px 0;
-		margin: 1.714285714285714rem 0;
+		text-align: left;
+		position: absolute;
+		left: 50px;
 	}
 	.entry-content h2 {
 		font-size: 20px;
 		font-size: 1.428571428571429rem;
+		
 	}
+	.entry-header .content-date {
+		padding-right: 8px;
+		font-size: 14px;
+		width: 40px;
+		text-decoration: none;
+		font-weight: 300;
+		margin-bottom: 10px;
+		position: absolute;
+		left: 0;
+		text-align: center;
+		background-color: #D74316;
+		color: #fff;
+		padding: 2px;
+		border-radius: 4px;
+	}
+	.content-date span {
+		display: block;
+	}
+	.content-date .entry-date-month {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+	
 	#respond form input[type="text"] {
 		width: 46.333333333%;
 	}
