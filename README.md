@@ -18,7 +18,9 @@ Further reading in Hungarian: http://www.akadalymentes-webdesign.hu/teljesen-aka
 
 
 ## Description
-    This theme is focusing on accessibility by the wildest range of users. This is called defined as universal access as well. It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.). In addition, there are features to support even more the impaired users of the web. 
+    This theme is focusing on accessibility (or universal access) by the wildest range of users. 
+    It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.). 
+    In addition, there are features to support even more the impaired users of the web. 
 
 ## Main features
 
