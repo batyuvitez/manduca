@@ -51,10 +51,11 @@
 	</nav><!-- #site-navigation -->
 
 
-	<div class="breadrcumb" id="breadcrumb" role="navigation" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca') ?>">	
-				<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
-					yoast_breadcrumb( '<p>','</p>' );
+				<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //ifJoastSeo is installed
+					?>
+						<div class="breadrcumb" id="breadcrumb" role="navigation" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca') ?>">	
+					<?php yoast_breadcrumb( '<p>','</p>' );
+								echo "</div>";
 				} ?>
-			</div>
 
 	<div id="wrapper" class="wrapper" tabindex="-1">
