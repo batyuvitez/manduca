@@ -39,3 +39,8 @@
 2.1.0
     dd: January 4, 2016
     - accessiblilty review fixings. See: https://themes.trac.wordpress.org/ticket/28960#comment:14
+
+2.1.1
+    dd: January 4, 2016
+    -Entry title preceed the date.
+    -css: date of entry is in box on the left side of entry title
