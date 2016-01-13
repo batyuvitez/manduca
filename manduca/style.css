@@ -566,9 +566,8 @@ article a:visited
 	color: #20399d;
 	
 }
-.entry-content p a.ext-link:after,
-.entry-content figcaption a.ext-link:after{
-    content: "\F08E";
+.entry-content a.ext-link:after{
+    content: " \F08E";
     font-family: FontAwesome;
 	color: #20399d;
 }
