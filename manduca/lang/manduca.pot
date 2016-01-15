@@ -269,6 +269,6 @@ msgstr ""
 msgid "Sitemap Page Template"
 msgstr ""
 
-#: function.php:309
-msgid "Thank you for using WordPress and my theme"
-mstsgr "Köszönjük, hogy a WordPress-t és a sablonomat használja. A sablon neve"
+#: functions.php:583,572
+msgid "external-link"
+msgstr "kimenő link"

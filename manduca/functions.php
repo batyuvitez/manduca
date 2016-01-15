@@ -569,7 +569,7 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' class="ext-link">' . $matches[5] . '</a>';	 
+		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' aria-label="' . __( 'external link', 'manduca' ) .'" class="ext-link">' . $matches[5] . '</a>';	 
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}
@@ -580,7 +580,7 @@ function manduca_external_links( $text ) {
 	$pattern = '/<a (.*?)href="(.*?)\/\/(.*?)"(.*?)>(.*?)<\/a>/i';
 	$text = preg_replace_callback( $pattern, 'mandcua_parse_external_links', $text );
 
-	$pattern2 = '/<a (.*?) class="extlink"(.*?)>(.*?)<img (.*?)<\/a>/i';
+	$pattern2 = '/<a (.*?) aria-label="' .__( 'external link', 'manduca' ) . '" class="extlink"(.*?)>(.*?)<img (.*?)<\/a>/i';
 	return $text;
 }
 

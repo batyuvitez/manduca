@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2015-11-20 10:00:00+01:00\n"
-"PO-Revision-Date: 2016-01-04 10:07+0100\n"
+"PO-Revision-Date: 2016-01-15 08:46+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -262,10 +262,14 @@ msgstr "Eredeti méret"
 msgid "page %s"
 msgstr "/%. oldal"
 
-#. Template Name of the plugin/theme
+#: Template Name of the plugin/theme
 msgid "Full-width Page Template"
 msgstr "Teljes szélességű sablonminta"
 
-#. Template Name of the plugin/theme
+#: Template Name of the plugin/theme
 msgid "Sitemap Page Template"
 msgstr "Oldaltérkép sablonminta"
+
+#: functions.php:583,572
+msgid "external-link"
+msgstr "kimenő link"
