@@ -1,14 +1,15 @@
 === Manduca ===
 Készítette:  Edelényi Zsolt - edelenyi.zsolt@akadalymentes-honlap.hu
+A sablon részletes bemutatása: http://www.akadalymentes-webdesign.hu/manduca-wordpress-sablon-magyar-es-akadalymentes/
 Szerző honlapja: http://www.akadálymentes-honlap.hu
-A sablon nyelve: magyar
-Legutolsó tesztelt és stabilváltozat: 2.0.4
+Elérhető a Githubon: https://github.com/batyuvitez/manduca
+Legutolsó tesztelt és stabilváltozat: 2.1.2
 Szellemi jogok: GPLv2 or later
 Szellemi jogok WIKI: https://hu.wikipedia.org/wiki/GNU_General_Public_License
-A megfelelőségi logó szellemi termék: http://www.w3.org/WAI/WCAG2-Conformance
-A legutolsó változat részletes bemutatása: http://www.akadalymentes-webdesign.hu/
+
 
 == Leírás ==
+A manduca sablon alapja minden idők legnépszerűbb WordPress sablonja: a twenty twelve
 A Manduca sablon leglényegesebb jellemzője: megfelel a nemzetközi WEB akadálymentesítési irányelveknek (WCAG 2.0), és sok mindenben ezen felül is támogatja a fogyatékosságal élő felhasználókat.
 Az akadálymentes weboldal ergonómikus honlap. Egyszerű, nem zsúfolt, gyors, átlátható, érthető. A lényeg, hogy gyorsan és könnyen megtaláld benne a téged érintő tartalmat, és könnyen tudd használni.
 A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.

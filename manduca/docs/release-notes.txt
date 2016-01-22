@@ -47,6 +47,8 @@
     -css: date of entry is in box on the left side of entry title
     
 2.1.2
-    dd_ January 13, 2016
+    dd: January 22, 2016
     - breadcrumb is hidden if YOAST seo not installed.
-    - outer link is visible in content (so far it was displayed only when wrapped by <p>)
+    - outgoing link is visible in content (so far it was displayed only when wrapped by <p>)
+    - outgoing link has aria-label attribute po and pot modified also)
+    - entry date in content-header is positioned better. 

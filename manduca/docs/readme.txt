@@ -2,15 +2,16 @@
 Main contributor: Zsolt Edelényi - edelenyi.zsolt@akadalymentes-honlap.hu
 Webpage: https://github.com/batyuvitez/manduca
 Requires at least: WordPress 3.5
-Tested up to: WordPress 4.3.3
-Stable tag: 2.0.8
+Tested up to: WordPress 4.4.1
+Stable tag: 2.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Image licence: http://www.w3.org/WAI/WCAG2-Conformance
 
 
 == Description==
-    This theme is focusing on accessibility by the wildest range of users.
+    Manduca is based on most popular WordPress theme: twenty twelve 
+	This theme is focusing on accessibility by the wildest range of users.
 	This is called defined as universal access as well. It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.).
 	In addition, there are features to support even more the impaired users of the web. 
 
