@@ -18,10 +18,7 @@ get_header(); ?>
 			<?php manduca_page_navigation(); ?>
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
-
+			<?php manduca_display_in_two_columns() ?>
 			<?php manduca_page_navigation(); ?>
 
 		<?php else : ?>

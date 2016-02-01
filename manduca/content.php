@@ -19,7 +19,8 @@
 				</h2>
 			<?php endif; // is_single() ?>
 			
-			<?php manduca_entry_meta( true ); ?>					
+			<?php manduca_entry_meta( true ); ?>
+			<div class="clearfix"></div>
 		</header><!-- .entry-header -->
 		
 		<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>

@@ -270,5 +270,5 @@ msgid "Sitemap Page Template"
 msgstr ""
 
 #: functions.php:583,572
-msgid "external-link"
-msgstr "kimenő link"
+msgid "external link"
+msgstr ""

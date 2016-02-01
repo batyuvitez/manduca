@@ -540,20 +540,36 @@ function manduca_add_alt_to_avatar( $text )
 add_filter( 'get_avatar', 'manduca_add_alt_to_avatar' );
 
 //-------------------------------------------------------------------------------------------
-// Change "more" to "continue reading" and make it acccessible.
+// Make different  "continue reading" tags acccessible.
 //-------------------------------------------------------------------------------------------
-
-function manduca_more_tag( $more ) {
-       global $post;
-	return '&nbsp;&nbsp;<a id="moretag" class="kvazi-button" href="'. get_permalink( $post->ID ) .'" rel="nofollow" >' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;<span class="screen-reader-text"> '.get_the_title() .'</span></a>';
+function manduca_more_unique_id () {
+	$title = get_the_title();
+	if ( str_word_count( $title ) >5 ) {
+		preg_match ( '/(?:\w+(?:\W+|$)){0,4}/' , $title, $firstwords);
+		return $firstwords[0] . '&hellip;';
+	} else {
+		return $title;
+	}
 }
-add_filter( 'excerpt_more', 'manduca_more_tag' );
 
 function manduca_content_more_link() {
-	global $post;
-	return '<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;<span class="screen-reader-text">  '.get_the_title() .'</span></a>';
+	return '<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+<span class="screen-reader-text">' .__( 'titled as follows:', 'manduca' ) .' ' .manduca_more_unique_id() .'</span></a>';
 }
 add_filter( 'the_content_more_link', 'manduca_content_more_link' );
+add_filter( 'excerpt_more', 'manduca_content_more_link' );
+
+// add read-more link to manual excerpt
+function manduca_manual_excerpt ( $param ) {
+	global $post;
+	if( $post->post_excerpt ) {
+    return $param .'<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+<span class="screen-reader-text">  ' .__( 'titled as follows:', 'manduca' ) .manduca_more_unique_id() .'</span></a>';
+	} else {
+		return $param;
+	}
+}
+add_filter('get_the_excerpt', 'manduca_manual_excerpt');
 
 //-------------------------------------------------------------------------------------------
 // Add "ext-link" class to external links 
@@ -569,7 +585,7 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' aria-label="' . __( 'external link', 'manduca' ) .'" class="ext-link">' . $matches[5] . '</a>';	 
+		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' class="ext-link">' . $matches[5] . '</a>';	 
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}
@@ -580,7 +596,7 @@ function manduca_external_links( $text ) {
 	$pattern = '/<a (.*?)href="(.*?)\/\/(.*?)"(.*?)>(.*?)<\/a>/i';
 	$text = preg_replace_callback( $pattern, 'mandcua_parse_external_links', $text );
 
-	$pattern2 = '/<a (.*?) aria-label="' .__( 'external link', 'manduca' ) . '" class="extlink"(.*?)>(.*?)<img (.*?)<\/a>/i';
+	$pattern2 = '/<a (.*?) class="extlink"(.*?)>(.*?)<img (.*?)<\/a>/i';
 	return $text;
 }
 
@@ -591,5 +607,21 @@ add_filter( 'the_excerpt', 'manduca_external_links', 999 );
 // delete this one if you don't want it run on comments
 add_filter( 'comment_text', 'manduca_external_links', 999 );
 
+//-------------------------------------------------------------------------------------------
+// Change HTML headings to have 
+//-------------------------------------------------------------------------------------------
+function manduca_heading_correction ( $content ) {
+	if ( is_archive() ) {
+		$content = "archive " .$content;
+		$content = str_replace( '<h4>', '<h5>', $content );
+		$content = str_replace( '</h4>', '</h5>', $content );
+		$content = str_replace( '<h3>', '<h4>', $content );
+		$content = str_replace( '</h3>', '</h4>', $content );
+		$content = str_replace( '<h2>', '<h3>', $content );
+		$content = str_replace( '</h2>', '</h3>', $content );
+	}
+	return $content;
+}
 
+add_filter( 'the_content', 'manduca_heading_correction' )
 ?>

@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 2.1.2
+Version: 2.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -110,10 +110,6 @@ td {
 	font-weight: normal;
 	text-align: left;
 }
-th{
-		border-bottom: 4px #444 double;
-}
-
 html {
 	overflow-y: scroll;
 	font-size: 100%;
@@ -288,7 +284,7 @@ article.post-password-required input[type=submit],
 .kvazi-button,
 .more-link{
 	color: white;
-	background-color: #D74316;
+	background-color: #9e430e;
 	border-radius: 3px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -329,8 +325,8 @@ article.post-password-required input[type=submit]:hover,
 .kvazi-button:hover,
 .more-link:hover{
 	background-color: #fff;
-	outline: dotted 3px #D74316;
-	color: #D74316 !important;	
+	outline: dotted 3px #9e430e;
+	color: #9e430e !important;	
 }
 .menu-toggle:active,
 .menu-toggle.toggled-on,
@@ -492,6 +488,16 @@ img.wp-smiley,
 .paged #nav-above {
 	display: block;
 }
+.nav-previous span,
+.nav-next span {
+	position: relative;
+}
+.nav-previous span {
+		left: 4px;
+}
+.nav-next span {
+		right: 4px;
+}
 .nav-previous,
 .previous-image {
 	float: left;
@@ -500,7 +506,6 @@ img.wp-smiley,
 .next-image {
 	float: right;
 	text-align: right;
-
 }
 .nav-single + .comments-area,
 #comment-nav-above {
@@ -787,7 +792,7 @@ section[role="banner"] {
 	padding: 0 0.5rem;
 	border-radius: 5px;
 	background-color: #fff;
-	border: 2px solid #2c82b5;
+	border: 2px solid #DAF2FF;
 }
 .widget-area .widget h2 {
 	margin: 0 0 24px;
@@ -897,7 +902,7 @@ section[role="banner"] {
 	color: #000;
 }
 .highlight-1{
-	background: #D74316;
+	background: #9e430e;
 	color: white;
 	width:  98%;
 	font-size: 18px;
@@ -994,7 +999,7 @@ h1.entry-title,
 	font-size: 1.5rem;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: #D74316;
+	color: #9e430e;
 	font-weight: 500;
 	text-align: center;
 }
@@ -1003,13 +1008,12 @@ h2.entry-title,
 .comment-content h2,
 .mu_register h2,
 h2.widget-title{
-	margin: 24px 0;
-	margin: 1.714285714rem 0;
-	line-height: 1.714285714;
-	font-size: 20px;
+	line-height: 17px;
+	line-height: 1.214285714285714remfont-size: 20px;
 	font-size: 1.428571428571429rem;
 	font-weight: 400;
-	text-transform: uppercase;
+	margin: 0 0 14px;
+	margin: 0 0 1rem;
 }
 .entry-content h3,
 .comment-content h3,
@@ -1222,12 +1226,11 @@ img.aligncenter,
 
 .site-content article {
 	border-radius: 5px;
-	border: 2px solid #2c82b5;
 	background-color: #fff;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
-	padding: 0 7px 24px;
-	padding: 0 0.5rem 1.714285714rem;
+	padding: 24px;
+	padding: 1.714285714rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -1661,8 +1664,6 @@ img#wpstats {
 		margin: 23px 0 0 12px;
 		margin: 1.642857142857143rem 0 0 0.8571428571428571rem;
 	}
-	
-	
 	.site-content:before,
 	.site-content:after,
 	.widget-area:after,
@@ -1701,13 +1702,23 @@ img#wpstats {
 	
 	.entry-header .entry-title {
 		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-		font-size: 14px;
+		font-size: 24px;
 		font-size: 1.714285714285714rem;
+		line-height: 24px;
+		line-height: 1.714285714285714rem;
 		color: #080B10;
 		text-align: left;
-		position: absolute;
-		left: 50px;
+		float: right;
+		width: 467px;
 	}
+	h1.entry-title,
+	.entry-content h1,
+	.comment-content h1,
+	.archive-title,
+	.page-title {
+		font-size: 1.4vw;
+	}
+
 	.entry-content h2 {
 		font-size: 20px;
 		font-size: 1.428571428571429rem;
@@ -1716,18 +1727,20 @@ img#wpstats {
 	.entry-header .content-date {
 		padding-right: 8px;
 		font-size: 14px;
+		font-size: 1rem;
 		width: 40px;
 		text-decoration: none;
 		font-weight: 300;
 		margin-bottom: 10px;
-		position: absolute;
-		left: 0;
-		top: 5px;
 		text-align: center;
-		background-color: #D74316;
+		background-color: #9e430e;
 		color: #fff;
 		padding: 2px;
 		border-radius: 4px;
+		float:left;
+		line-height: 24px;
+		line-height: 1.714285714285714rem;
+		
 	}
 	.content-date span {
 		display: block;
@@ -1735,6 +1748,7 @@ img#wpstats {
 	.content-date .entry-date-month {
 		font-size: 12px;
 		text-transform: uppercase;
+		background-color: #0E509E;
 	}
 	
 	#respond form input[type="text"] {
@@ -1791,7 +1805,7 @@ img#wpstats {
 	{
 		width: 48%;
 		float: left;
-		background-color: #f8f8f8;
+		background-color: #ffffff;
 		margin: 0 5px 11px;
 	}
 	.excerpt-wrapper h2 a{
@@ -1883,7 +1897,7 @@ img#wpstats {
 		background-color: #21759B;
 	}
 	body .site {
-		border: solid 6px #2C82B5;
+		border: solid 6px #DAF2FF;
 	}
 		
 	body.custom-background-empty {
@@ -1942,9 +1956,30 @@ img#wpstats {
 	{
 		margin: 0 5px 11px;
 	}
+	.nav-next,
+	.nav-previous {
+		max-width: 48%;
+	}
 
 }
 
+/* min width: 1360px */
+@media screen and (min-width: 1360px) {
+	body .site {
+		max-width: 1290px;
+		max-width: 92.14285714285714rem;
+	}
+	.site-content {
+		width: 59%;
+	}
+	.widget-area {
+		margin-left: 80px;
+		margin-left: 5.714285714285714rem;
+	}
+	.entry-header .entry-title {
+		width: 581px;
+	}
+}
 
 
 /* 13. c) Print
