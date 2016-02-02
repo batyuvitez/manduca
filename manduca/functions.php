@@ -544,17 +544,29 @@ add_filter( 'get_avatar', 'manduca_add_alt_to_avatar' );
 //-------------------------------------------------------------------------------------------
 function manduca_more_unique_id () {
 	$title = get_the_title();
-	if ( str_word_count( $title ) >5 ) {
-		preg_match ( '/(?:\w+(?:\W+|$)){0,4}/' , $title, $firstwords);
-		return $firstwords[0] . '&hellip;';
-	} else {
-		return $title;
+	$firstwords = '';
+	$space_count = 0;
+	if ( get_locale() ==='hu_HU' ) {
+		$firstwords ='a ';
+		$hungarian_regex = '/^[aáéiíoóöőüű]/i';
+		if (preg_match ( $hungarian_regex, $title ) ) {
+			$firstwords = 'az ';	
+		}
 	}
+	for ( $char_count = 0 ; $char_count < strlen( $title ) ; $char_count++ ) {
+		if ( $title{ $char_count } === ' ' ) {
+			$space_count++;	
+		}
+		if( $space_count < 5 ) {
+			$firstwords .= $title{ $char_count };
+		}
+	}
+	return  sprintf( __( 'Titled as follows: %s', 'manduca' ), $firstwords );
 }
 
 function manduca_content_more_link() {
 	return '<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
-<span class="screen-reader-text">' .__( 'titled as follows:', 'manduca' ) .' ' .manduca_more_unique_id() .'</span></a>';
+<span class="screen-reader-text">' .manduca_more_unique_id() .'</span></a>';
 }
 add_filter( 'the_content_more_link', 'manduca_content_more_link' );
 add_filter( 'excerpt_more', 'manduca_content_more_link' );
@@ -564,7 +576,7 @@ function manduca_manual_excerpt ( $param ) {
 	global $post;
 	if( $post->post_excerpt ) {
     return $param .'<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
-<span class="screen-reader-text">  ' .__( 'titled as follows:', 'manduca' ) .manduca_more_unique_id() .'</span></a>';
+<span class="screen-reader-text">  ' .manduca_more_unique_id() .'</span></a>';
 	} else {
 		return $param;
 	}
@@ -585,7 +597,7 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' class="ext-link">' . $matches[5] . '</a>';	 
+		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'" class="ext-link">' . $matches[5] . '</a>';	 
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}

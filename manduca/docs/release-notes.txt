@@ -57,8 +57,10 @@
     For testing
     - readmore link has only the first 4 words of the title
     - readmore links get aria-labbeledby instead of aria label (in this case the title of the link is read)
+    - readmore links has correct a or az for Hungarians
     - design enhancement (content header, delete primary border)
     - placeholder for search
     - replace rarr with icon
-    - Hungarian translation correct. 
+    - Hungarian translation file corrections
+
     
