@@ -548,7 +548,7 @@ function manduca_more_unique_id () {
 	$space_count = 0;
 	if ( get_locale() ==='hu_HU' ) {
 		$firstwords ='a ';
-		$hungarian_regex = '/^[aáéiíoóöőüű]/i';
+		$hungarian_regex = '/^[aáeéiíoóöőüű]/i';
 		if (preg_match ( $hungarian_regex, $title ) ) {
 			$firstwords = 'az ';	
 		}
@@ -560,6 +560,9 @@ function manduca_more_unique_id () {
 		if( $space_count < 5 ) {
 			$firstwords .= $title{ $char_count };
 		}
+	}
+	if ( $space_count > 4) {
+		$firstwords .= '&hellip;'; 
 	}
 	return  sprintf( __( 'Titled as follows: %s', 'manduca' ), $firstwords );
 }
