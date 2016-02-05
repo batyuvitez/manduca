@@ -169,61 +169,60 @@ endif;
 
 if ( ! function_exists( 'manduca_entry_meta' ) ) :
 
-function manduca_entry_meta( $only_date=false )
-{	
-	$categories_list = get_the_category_list( ', ' );
-	$tag_list = get_the_tag_list( '', ', ' );
-
-	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><abbr class="published" title="%3$s"><time class="entry-date" datetime="%3$s">%4$s</time itemprop="datePublished"></abbr></a>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
-	$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'j' ) ),
-		esc_html( get_the_date( 'M' ) )
-	);
-
-	$author = sprintf( '<span class="author vcard" itemprop="name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'All posts by %s', ' manduca' ), get_the_author() ) ),
-		get_the_author()
-	);
-
-	$modified_date = sprintf( '<time class="updated" datetime="%1$s">%2$s</time></a>',
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date( 'Y. F j.' ) )
-	);
-
-	$utility_text ='<p class="screen-reader-text">'. __( 'Post meta', 'manduca' ) .'</p>';
-	$utility_text .= "<ul>";
+	function manduca_entry_meta( $only_date=false )
+	{	
+		$categories_list = get_the_category_list( ', ' );
+		$tag_list = get_the_tag_list( '', ', ' );	
+		$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><abbr class="published" title="%3$s"><time class="entry-date" datetime="%3$s">%4$s</time itemprop="datePublished"></abbr></a>',
+			esc_url( get_permalink() ),
+			esc_attr( get_the_time() ),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+		$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( 'j' ) ),
+			esc_html( get_the_date( 'M' ) )
+		);
 	
-	$utility_text .= '<li><i class="fa fa-clock-o" aria-hidden="true"></i><span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
+		$author = sprintf( '<span class="author vcard" itemprop="name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( 'All posts by %s', ' manduca' ), get_the_author() ) ),
+			get_the_author()
+		);
 	
-	if( get_the_date() !== get_the_modified_date() ) {
-		$utility_text .='<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span> ' . __( 'Last revision:', 'manduca' ) .':</span> ' .$modified_date .'</li>';
+		$modified_date = sprintf( '<time class="updated" datetime="%1$s">%2$s</time></a>',
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date( 'Y. F j.' ) )
+		);
+	
+		$utility_text ='<p class="screen-reader-text">'. __( 'Post meta', 'manduca' ) .'</p>';
+		$utility_text .= "<ul>";
+		
+		$utility_text .= '<li><i class="fa fa-clock-o" aria-hidden="true"></i><span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
+		
+		if( get_the_date() !== get_the_modified_date() ) {
+			$utility_text .='<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span> ' . __( 'Last revision:', 'manduca' ) .':</span> ' .$modified_date .'</li>';
+		}
+		
+		$utility_text .= '<li><i class="fa fa-user" aria-hidden="true"></i><span> ' .__( 'Author', 'manduca' ) .':</span> ' . $author .'</li>';
+	
+		if ( $categories_list ) {
+			$utility_text .='<li><i class="fa fa-folder-open-o" aria-hidden="true"></i><span> ' .__( 'Category', 'manduca' ) .':</span> ' .$categories_list .'</li>';
+		}
+		
+		if ( $tag_list ) {
+			$utility_text .= '<li><i class="fa fa-tags" aria-hidden="true"></i><span> '. __( 'Tags', 'manduca' ) .':</span> ' .$tag_list .'</li>';
+		}
+		
+		
+		$utility_text .="</ul>";
+		
+		if ( $only_date ) {
+			$utility_text = $date_wo_link;
+		}
+		echo $utility_text;
 	}
-	
-	$utility_text .= '<li><i class="fa fa-user" aria-hidden="true"></i><span> ' .__( 'Author', 'manduca' ) .':</span> ' . $author .'</li>';
-
-	if ( $categories_list ) {
-		$utility_text .='<li><i class="fa fa-folder-open-o" aria-hidden="true"></i><span> ' .__( 'Category', 'manduca' ) .':</span> ' .$categories_list .'</li>';
-	}
-	
-	if ( $tag_list ) {
-		$utility_text .= '<li><i class="fa fa-tags" aria-hidden="true"></i><span> '. __( 'Tags', 'manduca' ) .':</span> ' .$tag_list .'</li>';
-	}
-	
-	
-	$utility_text .="</ul>";
-	
-	if ( $only_date ) {
-		$utility_text = $date_wo_link;
-	}
-	echo $utility_text;
-}
 endif;
 
 //-------------------------------------------------------------------------------------------
@@ -318,30 +317,33 @@ endif;
 //-------------------------------------------------------------------------------------------
 // Change default text for comments
 //-------------------------------------------------------------------------------------------
-
-add_filter( 'comment_form_defaults', 'set_comment_form_text' );
-function set_comment_form_text( $defaults ) {
-	$defaults['comment_notes_after'] 	= '';
-	$defaults['title_reply']		= __( 'Please give your comments!', 'manduca' );
-$commenter = wp_get_current_commenter();
-	$fields =  array(
-
-  'author' =>
-    '<p class="comment-form-author"><label for="author">' . __( 'Your name', 'manduca' )  .'</label> <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-    '" size="30" /></p>',
-
-  'email' =>
-    '<p class="comment-form-email"><label for="email">' .__( 'Email', 'manduca' ) .'</label> <input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-    '" size="30" /></p>',
-
-);
-	$defaults['fields'] =$fields;
-	$defaults['comment_field'] ='<p class="comment-form-comment"><label for="comment">' .__( 'Your comment', 'manduca' ) .'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
-	$defaults['comment_notes_before'] = '<p class="comment-notes">' .__( 'Your email address is confidential.', 'manduca' ) .'</p>';
-	return $defaults;
-
-}
-
+if( !function_exists( 'manduca_comment_form_text' ) ) :
+	
+	add_filter( 'comment_form_defaults', 'manduca_comment_form_text' );
+	
+	function manduca_comment_form_text( $defaults ) {
+		$defaults['comment_notes_after'] 	= '';
+		$defaults['title_reply']		= __( 'Please give your comments!', 'manduca' );
+	$commenter = wp_get_current_commenter();
+		$fields =  array(
+	
+	  'author' =>
+		'<p class="comment-form-author"><label for="author">' . __( 'Your name', 'manduca' )  .'</label> <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+		'" size="30" /></p>',
+	
+	  'email' =>
+		'<p class="comment-form-email"><label for="email">' .__( 'Email', 'manduca' ) .'</label> <input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		'" size="30" /></p>',
+	
+	);
+		$defaults['fields'] =$fields;
+		$defaults['comment_field'] ='<p class="comment-form-comment"><label for="comment">' .__( 'Your comment', 'manduca' ) .'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+		$defaults['comment_notes_before'] = '<p class="comment-notes">' .__( 'Your email address is confidential.', 'manduca' ) .'</p>';
+		return $defaults;
+	
+	}
+endif;
+	
 //-------------------------------------------------------------------------------------------
 //  additional form button to MCE 
 //-------------------------------------------------------------------------------------------
@@ -486,46 +488,47 @@ add_filter( 'body_class', 'manduca_body_class' );
  //-------------------------------------------------------------------------------------------
  // Display posts in two columns
  //-------------------------------------------------------------------------------------------
+ if( !function_exists( 'manduca_display_in_two_columns' ) ) :
  
-function manduca_display_in_two_columns() {
-?>				<div class="excerpt-wrapper">
-
-			<?php
-			/* Start the Loop */
-			$post_counter = 1;
-			while ( have_posts() ) : the_post(); ?>
-				
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
-				<?php if ( has_post_thumbnail() ) :?>
-					<div class="crop-height">
-						<?php the_post_thumbnail(); ?>
-					</div>
-				<?php endif; ?>
-		
-				<h2 class="entry-title"  itemprop="headline">
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-				</h2>
+	function manduca_display_in_two_columns() {
+	?>				<div class="excerpt-wrapper">
+	
 				<?php
-					if( strpos( get_the_content(), 'more-link' ) === false ) {
-						the_excerpt();
-					}
-					else {
-						the_content();
-					}
+				/* Start the Loop */
+				$post_counter = 1;
+				while ( have_posts() ) : the_post(); ?>
+					
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
+					<?php if ( has_post_thumbnail() ) :?>
+						<div class="crop-height">
+							<?php the_post_thumbnail(); ?>
+						</div>
+					<?php endif; ?>
+			
+					<h2 class="entry-title"  itemprop="headline">
+						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+					</h2>
+					<?php
+						if( strpos( get_the_content(), 'more-link' ) === false ) {
+							the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					?>
+					
+					</article>
+					<?php if ( $post_counter %2 ==0 ) {
+						echo '<div class="vonalzo"></div>';
+						} ?>
+	
+				<?php $post_counter++; endwhile;
+				manduca_page_navigation();
 				?>
-				
-				</article>
-				<?php if ( $post_counter %2 ==0 ) {
-					echo '<div class="vonalzo"></div>';
-					} ?>
-
-			<?php $post_counter++; endwhile;
-			manduca_page_navigation();
-			?>
-			</div>
-<?php
-}
-
+				</div>
+	<?php
+	}
+endif;
 //-------------------------------------------------------------------------------------------
 // Avatar need alt tag
 //-------------------------------------------------------------------------------------------
@@ -548,7 +551,7 @@ function manduca_more_unique_id () {
 	$space_count = 0;
 	if ( get_locale() ==='hu_HU' ) {
 		$firstwords ='a ';
-		$hungarian_regex = '/^[aáeéiíoóöőüű]/i';
+		$hungarian_regex = '/^[aáeéiíoóöőuúüű]/i';
 		if (preg_match ( $hungarian_regex, $title ) ) {
 			$firstwords = 'az ';	
 		}
@@ -625,18 +628,23 @@ add_filter( 'comment_text', 'manduca_external_links', 999 );
 //-------------------------------------------------------------------------------------------
 // Change HTML headings to have 
 //-------------------------------------------------------------------------------------------
-function manduca_heading_correction ( $content ) {
-	if ( is_archive() ) {
-		$content = "archive " .$content;
-		$content = str_replace( '<h4>', '<h5>', $content );
-		$content = str_replace( '</h4>', '</h5>', $content );
-		$content = str_replace( '<h3>', '<h4>', $content );
-		$content = str_replace( '</h3>', '</h4>', $content );
-		$content = str_replace( '<h2>', '<h3>', $content );
-		$content = str_replace( '</h2>', '</h3>', $content );
-	}
-	return $content;
-}
+if( !function_exists( 'manduca_heading_correction' ) ) :
 
-add_filter( 'the_content', 'manduca_heading_correction' )
+	function manduca_heading_correction ( $content ) {
+		if ( is_archive() ) {
+			$content = "archive " .$content;
+			$content = str_replace( '<h4>', '<h5>', $content );
+			$content = str_replace( '</h4>', '</h5>', $content );
+			$content = str_replace( '<h3>', '<h4>', $content );
+			$content = str_replace( '</h3>', '</h4>', $content );
+			$content = str_replace( '<h2>', '<h3>', $content );
+			$content = str_replace( '</h2>', '</h3>', $content );
+		}
+		return $content;
+	}
+
+	add_filter( 'the_content', 'manduca_heading_correction' );
+
+endif;
+
 ?>

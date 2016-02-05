@@ -62,5 +62,12 @@
     - placeholder for search
     - replace rarr with icon
     - Hungarian translation file corrections
+2.1.4
+    dd February 2, 2016
+    - same as 2.1.3
+    - tested
+    - uploaded to repository
+    - Hungarian translation change (ver 2.1.4.1)
+    - make some functions pluggable (ver 2.1.4.2)
 
     
