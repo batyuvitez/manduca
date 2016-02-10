@@ -9,7 +9,6 @@
 		<div id="footer-wrapper" class="footer-wrapper">
 			<footer id="colophon" role="contentinfo" itemtype="https://schema.org/WPFooter" itemscope="itemscope" >
 				<div class="site-info">
-					<p>&copy; <?php echo date( 'Y' ) ."., " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>
 					<?php
 						$menu = wp_nav_menu(array (
 								'echo' => false,
@@ -23,6 +22,7 @@
 							echo '<nav id="footer-navigation" class="footer-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">' .$menu .'</nav>';
 						}
 					?>
+					<p>&copy; <?php echo date( 'Y' ) ."., " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 			<div class="clearfix"></div>

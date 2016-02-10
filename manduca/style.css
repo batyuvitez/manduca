@@ -248,9 +248,7 @@ textarea {
 	padding: 0.428571429rem;
 	max-width: 100%;
 	margin: 6px;
-	margin: 0.428571429rem;
-	
-	
+	margin: 0.428571429rem;	
 }
 button,
 input {
@@ -260,6 +258,7 @@ textarea {
 	font-size: 100%;
 	overflow: auto;
 	vertical-align: top;
+	width: 84%;
 }
 
 /* Reset non-text input types */
@@ -326,7 +325,7 @@ article.post-password-required input[type=submit]:hover,
 .more-link:hover{
 	background-color: #fff;
 	outline: dotted 3px #9e430e;
-	color: #9e430e !important;	
+	color: #9e430e;	
 }
 .menu-toggle:active,
 .menu-toggle.toggled-on,
@@ -571,7 +570,7 @@ article a:visited
 	color: #20399d;
 	
 }
-.entry-content a.ext-link:after{
+.site-content a.ext-link:after{
     content: " \F08E";
     font-family: FontAwesome;
 	color: #20399d;
@@ -1695,12 +1694,9 @@ img#wpstats {
 	
 	.entry-header {
 		position: relative;
-		height: 50px;
 		margin: 0 0 24px 0;
-		margin: 0 0 1.714285714285714rem 0;
-		
+		margin: 0 0 1.714285714285714rem 0;	
 	}
-	
 	.entry-header .entry-title {
 		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 		font-size: 24px;
@@ -1710,7 +1706,6 @@ img#wpstats {
 		color: #080B10;
 		text-align: left;
 		float: right;
-		width: 467px;
 	}
 	h1.entry-title,
 	.entry-content h1,

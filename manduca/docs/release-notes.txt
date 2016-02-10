@@ -67,7 +67,13 @@
     - same as 2.1.3
     - tested
     - uploaded to repository
+2.1.5
+    dd: February 11, 2016
     - Hungarian translation change (ver 2.1.4.1)
     - make some functions pluggable (ver 2.1.4.2)
+    -CSS corrections
+    -footer: first menu, then copyright.
+    
+
 
     
