@@ -646,4 +646,23 @@ if( !function_exists( 'manduca_heading_correction' ) ) :
 
 endif;
 
+//-------------------------------------------------------------------------------------------
+// Move Javascripts to footer in order to speed up above-folder loads. 
+//-------------------------------------------------------------------------------------------
+/**
+ * Load Enqueued Scripts in the Footer
+ *
+ * Automatically move JavaScript code to page footer, speeding up page loading time.
+ */
+function manduca_footer_enqueue_scripts() {
+   remove_action('wp_head', 'wp_print_scripts');
+    remove_action('wp_head', 'wp_print_head_scripts', 9);
+    remove_action('wp_head', 'wp_enqueue_scripts', 1);
+    add_action('wp_footer', 'wp_print_scripts', 5);
+    add_action('wp_footer', 'wp_enqueue_scripts', 5);
+    add_action('wp_footer', 'wp_print_head_scripts', 5);
+}
+add_action('after_setup_theme', 'manduca_footer_enqueue_scripts');
+
+
 ?>
