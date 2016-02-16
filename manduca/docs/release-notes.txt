@@ -74,6 +74,11 @@
     -CSS corrections
     -footer: first menu, then copyright.
     
+2.1.6
+    dd: February 16, 2016
+    css: some fixings
+    thumbnails: optimize thumbnail size to  boost page loading speed
+    
 
 
     

@@ -26,7 +26,7 @@
 		<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>
 		
 		<?php if ( ! post_password_required() && ! is_attachment() ) :
-				the_post_thumbnail(); endif; ?>
+				the_post_thumbnail( 'large' ); endif; ?>
 			
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
