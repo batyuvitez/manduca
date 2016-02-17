@@ -73,11 +73,10 @@
     - make some functions pluggable (ver 2.1.4.2)
     -CSS corrections
     -footer: first menu, then copyright.
-    
 2.1.6
-    dd: February 16, 2016
-    css: some fixings
-    thumbnails: optimize thumbnail size to  boost page loading speed
+    dd: February 17:
+    - hover has no border (because hover moved the layout)
+    - add style.min.css to the libary. 
     
 
 

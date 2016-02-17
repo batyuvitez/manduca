@@ -124,11 +124,8 @@ a:hover,
 a:active
 {
 	background-color: #ffffcc;
-    border-bottom: 1px solid #ccc;
-    border-radius: 5px;
-    border-top: 1px solid #ddd;
     color: #bf1722;
-    outline: medium none;
+    outline: 1px solid #ccc;
 }
 
 article,
@@ -942,7 +939,6 @@ footer.entry-meta {
 .entry-header {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
-	line-height: 1.2;
 }
 .entry-header img.wp-post-image {
 	margin-bottom: 24px;
