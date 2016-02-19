@@ -76,7 +76,8 @@
 2.1.6
     dd: February 17:
     - hover has no border (because hover moved the layout)
-    - add style.min.css to the libary. 
+    - add style.min.css to the libary.
+    - add action hooks to footer.php (2.1.6.2)
     
 
 
