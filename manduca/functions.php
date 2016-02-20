@@ -64,7 +64,7 @@ function manduca_scripts_styles() {
 	wp_enqueue_style( 'manduca-style', get_stylesheet_uri() );
 	
 	//Loads Font Awesome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/css/ie.css', array( 'manduca-style' ), '20121010' );
@@ -75,7 +75,7 @@ function manduca_scripts_styles() {
 	
 }
 
-add_action( 'wp_enqueue_scripts', 'manduca_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'manduca_scripts_styles', true );
 
 
 //-------------------------------------------------------------------------------------------
@@ -625,9 +625,11 @@ add_filter( 'the_excerpt', 'manduca_external_links', 999 );
 // delete this one if you don't want it run on comments
 add_filter( 'comment_text', 'manduca_external_links', 999 );
 
-//-------------------------------------------------------------------------------------------
-// Change HTML headings to have 
-//-------------------------------------------------------------------------------------------
+/**
+ * Change HTML headings
+ * 
+ * */
+
 if( !function_exists( 'manduca_heading_correction' ) ) :
 
 	function manduca_heading_correction ( $content ) {
@@ -646,9 +648,6 @@ if( !function_exists( 'manduca_heading_correction' ) ) :
 
 endif;
 
-//-------------------------------------------------------------------------------------------
-// Move Javascripts to footer in order to speed up above-folder loads. 
-//-------------------------------------------------------------------------------------------
 /**
  * Load Enqueued Scripts in the Footer
  *
