@@ -54,7 +54,7 @@
 
 				<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //ifJoastSeo is installed
 					?>
-						<div class="breadrcumb" id="breadcrumb" role="navigation" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca') ?>">	
+						<div class="breadrcumb" id="breadcrumb" role="navigation">	
 					<?php yoast_breadcrumb( '<p>','</p>' );
 								echo "</div>";
 				} ?>

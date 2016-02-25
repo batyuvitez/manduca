@@ -41,6 +41,7 @@ function manduca_setup() {
 	// Uses a custom image size for featured images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size ('large', 770, 512 );
+	add_image_size ('excerpt-size', 268, 178 );
 }
 add_action( 'after_setup_theme', 'manduca_setup' );
 
@@ -501,7 +502,7 @@ add_filter( 'body_class', 'manduca_body_class' );
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
 					<?php if ( has_post_thumbnail() ) :?>
 						<div class="crop-height">
-							<?php the_post_thumbnail( 'medium' ); ?>
+							<?php the_post_thumbnail( 'excerpt-size' ); ?>
 						</div>
 					<?php endif; ?>
 			
