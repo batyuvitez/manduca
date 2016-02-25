@@ -86,6 +86,7 @@
     ==screen-reader usability project == add role=region to widgets and change headings to h4 (2.1.7.0)
     ==breadcrumb project== breadcrumb not need aria-label (2.1.7.1)
     ==css optimize project== remove !important from link rules (2.1.7.1)
+    !reverse: scripts to footer (2.1.6.3) is removed, should be used in child-theme (2.1.7.3)
     
 
 
