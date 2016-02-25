@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 2.1.6.2
+Version: 2.1.7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -1003,7 +1003,7 @@ h2.entry-title,
  .entry-content h2,
 .comment-content h2,
 .mu_register h2,
-h2.widget-title{
+.widget-title{
 	line-height: 21px;
 	line-height: 1.5rem;
 	remfont-size: 20px;

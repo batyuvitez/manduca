@@ -35,6 +35,7 @@
 		<header id="masthead" class="site-header" role="banner"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
 			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<?php echo apply_filters( 'manduca_blog_description', '' ); ?> 
 				<?php get_search_form(); ?>
 		</header>
 	</div>

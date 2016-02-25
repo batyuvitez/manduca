@@ -78,6 +78,12 @@
     - hover has no border (because hover moved the layout)
     - add style.min.css to the libary.
     - add action hooks to footer.php (2.1.6.2)
+    - ==speed buster project == scripts to footer, load font awesome from cdn repository (2.1.6.3)
+
+2.1.7
+    dd: February 23,2016
+    -add filter to header in order to enable bloginfo or other after title (2.1.7.0)
+    -add role=region to widgets and change headings to h4 (2.1.7.0)
     
 
 
