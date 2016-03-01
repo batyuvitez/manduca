@@ -80,13 +80,15 @@
     ==felxibility project== add action hooks to footer.php (2.1.6.2)
     ==speed buster project == scripts to footer, load font awesome from cdn repository (2.1.6.3)
 
-2.1.7
-    dd: February 23,2016
+16.2
+    NEW NUMBERING OF VERSIONS: year.month. Ver 16.2 = February, 2016
+    (16.2.1) = commit number on GitHub. 
     ==felxibility project== add filter to header in order to enable bloginfo or other after title (2.1.7.0)
     ==screen-reader usability project == add role=region to widgets and change headings to h4 (2.1.7.0)
     ==breadcrumb project== breadcrumb not need aria-label (2.1.7.1)
     ==css optimize project== remove !important from link rules (2.1.7.1)
     !reverse: scripts to footer (2.1.6.3) is removed, should be used in child-theme (2.1.7.3)
+    -new primary navigation menu (commit #16.2.1)
     
 
 
