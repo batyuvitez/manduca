@@ -30,33 +30,45 @@
 <body id="total" <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	
+	<div id="masthead" class="site-header" role="banner"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+		<div id="header-bar" class="header-bar">
+			<header>
+				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
+				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<?php echo apply_filters( 'manduca_blog_description', '' ); ?> 
+					<?php get_search_form(); ?>
+			</header>
+		</div>
+			
+		<div class="vonalzo"></div>
 	
-	<div id="header-bar" class="header-bar">
-		<header id="masthead" class="site-header" role="banner"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
-			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
-			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<?php echo apply_filters( 'manduca_blog_description', '' ); ?> 
-				<?php get_search_form(); ?>
-		</header>
-	</div>
+			<?php if( ( is_home() || is_front_page() ) && get_header_image() ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( manduca_get_header_image_alt() ); ?>" /></a>
+			<?php endif; ?>
 		
-	<div class="vonalzo"></div>
-
-		<?php if( ( is_home() || is_front_page() ) && get_header_image() ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( manduca_get_header_image_alt() ); ?>" /></a>
-		<?php endif; ?>
-	
-	<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-		<button id="menu-toggle" class="menu-toggle"><i class="fa fa-bars" aria-hidden="true">&nbsp;</i><?php _e( 'Menu', 'manduca' ) ?></button>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-	</nav><!-- #site-navigation -->
-
-
-				<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //ifJoastSeo is installed
+		<button id="menu-toggle" class="menu-toggle"><i class="fa fa-bars" aria-hidden="true">&nbsp;</i><?php _e( 'Menu', 'manduca' ) ?></button>	
+		
+		<div id="site-header-menu" class="site-header-menu">
+			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_class'     => 'primary-menu',
+						 ) );
 					?>
-						<div class="breadrcumb" id="breadcrumb" role="navigation">	
-					<?php yoast_breadcrumb( '<p>','</p>' );
-								echo "</div>";
-				} ?>
+				</nav><!-- .main-navigation -->
+			<?php endif; ?>
+		</div>
+	
+	
+	
+			<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //if YoastSeo is installed
+				?>
+					<div class="breadrcumb" id="breadcrumb" role="navigation">	
+					<?php yoast_breadcrumb( '<p>','</p>' ); ?>
+					</div>
+			<?php } ?>
+	</div>
 
 	<div id="wrapper" class="wrapper" tabindex="-1">

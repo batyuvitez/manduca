@@ -58,10 +58,7 @@ function manduca_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Loads mobile menu scripts
-	wp_enqueue_script( 'manduca-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20140711', true );
-
-	// Loads our main stylesheet.
+		// Loads our main stylesheet.
 	wp_enqueue_style( 'manduca-style', get_stylesheet_uri() );
 	
 	//Loads Font Awesome
@@ -73,6 +70,15 @@ function manduca_scripts_styles() {
 	
 	//focus-snail (https://github.com/NV/focus-snail)
 	wp_enqueue_script( 'focus-snail', get_template_directory_uri() ."/js/focus-snail.js", array(), '1.0', true );
+	
+	wp_enqueue_script( 'manduca-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150825', true );
+	
+	wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/js/manduca-scripts.js', array( 'jquery' ), '160226', true );
+	
+	wp_localize_script( 'manduca-scripts', 'screenReaderText', array(
+		'expand'   => __( 'expand child menu', 'manduca' ),
+		'collapse' => __( 'collapse child menu', 'manduca' ),
+	) );
 	
 }
 
@@ -97,7 +103,7 @@ function manduca_widgets_init() {
 		'name' =>__( 'Sidebar', 'manduca' ),
 		'id' => 'main_sidebar',
 		'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s" role="region">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s" role="complementary">',
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
