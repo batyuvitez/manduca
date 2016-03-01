@@ -363,7 +363,7 @@ function manduca_form_MCE( $buttons ) {
 add_filter( 'mce_buttons_3', 'manduca_form_MCE' );
 
 
-function my_mce_before_init_insert_formats( $init_array ) {  
+function manduca_before_init_insert_formats( $init_array ) {  
 	// Define the style_formats array
 	$style_formats = array(  
 		// Each array child is a format with it's own settings
@@ -389,7 +389,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
   
 } 
 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+add_filter( 'tiny_mce_before_init', 'manduca_before_init_insert_formats' );
 
 
 function editor_css() {

@@ -89,6 +89,7 @@
     ==css optimize project== remove !important from link rules (2.1.7.1)
     !reverse: scripts to footer (2.1.6.3) is removed, should be used in child-theme (2.1.7.3)
     -new primary navigation menu (commit #16.2.1)
+    -functions.php function's name was wrong: not included 'manduca' (commit # 16.2.2)
     
 
 
