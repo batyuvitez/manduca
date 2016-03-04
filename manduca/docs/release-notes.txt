@@ -92,6 +92,7 @@
     -functions.php function's name was wrong: not included 'manduca' (commit # 16.2.2)
     -translation added (navigation menu)
     - single entry-header positioning correctly (commit#16.2.3)
+    -header.txt - clearfix unnecessary (commit#16.2.4)
     
 
 
