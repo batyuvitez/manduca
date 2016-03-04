@@ -1814,14 +1814,13 @@ img#wpstats {
 		margin: 0 0 1.714285714285714rem 0;	
 	}
 	.entry-header .entry-title {
-		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 		font-size: 24px;
 		font-size: 1.714285714285714rem;
 		line-height: 24px;
 		line-height: 1.714285714285714rem;
 		color: #080B10;
 		text-align: left;
-		float: right;
+		margin-left: 75px;
 	}
 	h1.entry-title,
 	.entry-content h1,
@@ -1843,13 +1842,14 @@ img#wpstats {
 		width: 40px;
 		text-decoration: none;
 		font-weight: 300;
-		margin-bottom: 10px;
+		margin-bottom: -51px;
 		text-align: center;
 		background-color: #9e430e;
 		color: #fff;
 		padding: 2px;
 		border-radius: 4px;
-		float:left;
+		position: relative;
+		top: -41px;
 		line-height: 24px;
 		line-height: 1.714285714285714rem;
 		
