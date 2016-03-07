@@ -3,13 +3,13 @@
 function manduca_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => '515151',
+		'default-text-color'     => '222222',
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 200,
-		'width'                  => 1097,
-		'max-width'              => 2000,
+		'width'                  => 1176,
+		'max-width'              => 1176,
 
 		// Support flexible height and width.
 		'flex-height'            => true,
