@@ -34,9 +34,11 @@
 		<div id="header-bar" class="header-bar">
 			<header>
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
-				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				<?php echo apply_filters( 'manduca_blog_description', '' ); ?> 
-					<?php get_search_form(); ?>
+				<?php
+					$default_site_title = '<a class="site-title" href="' .esc_url( home_url( '/' ) ) .'" rel="home">' .get_bloginfo( 'name' ) .'</a>'; 
+				echo apply_filters( 'manduca_site_title', $default_site_title );
+				echo apply_filters( 'manduca_blog_description', '' ); 
+				get_search_form(); ?>
 			</header>
 		</div>
 	
