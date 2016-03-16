@@ -96,6 +96,7 @@
     -css: styling searchform more flexible (commit # 16.2.5)
     -header image: not link to homepage, since it is only in homepage, small styling +custom header width change (commit# 16.2.6)
     -header apply filters for site title (commit # 16.2.7)
+    - h1, h2 etc. selectors removed from css (commit #16.2.8)
     
     
 

@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.2
+Version: 16.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -1094,9 +1094,7 @@ comments-link a:hover,
 	
 }
 
-h1.entry-title,
-.entry-content h1,
-.comment-content h1,
+.entry-title,
 .archive-title,
 .page-title
 {
@@ -1422,15 +1420,15 @@ footer.entry-meta {
 /* 8. Aside post format
 -------------------------------------------------------------- */
 
-article.format-aside h1 {
+article.format-aside  {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
-article.format-aside h1 a {
+article.format-aside a {
 	text-decoration: none;
 	color: #4d525a;
 }
-article.format-aside h1 a:hover {
+article.format-aside a:hover {
 	color: #2e3542;
 }
 article.format-aside .aside {
@@ -1812,9 +1810,7 @@ img#wpstats {
 		text-align: left;
 		margin-left: 75px;
 	}
-	h1.entry-title,
-	.entry-content h1,
-	.comment-content h1,
+	.entry-title,
 	.archive-title,
 	.page-title {
 		font-size: 1.4vw;
