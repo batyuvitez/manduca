@@ -81,6 +81,7 @@
     ==speed buster project == scripts to footer, load font awesome from cdn repository (2.1.6.3)
 
 16.3
+    Uploaded: March 16, 2016
     NEW NUMBERING OF VERSIONS: year.month. Ver 16.3 = March, 2016
     (16.2.1) = commit number on GitHub. 
     ==felxibility project== add filter to header in order to enable bloginfo or other after title (2.1.7.0)
@@ -96,9 +97,11 @@
     -css: styling searchform more flexible (commit # 16.2.5)
     -header image: not link to homepage, since it is only in homepage, small styling +custom header width change (commit# 16.2.6)
     -header apply filters for site title (commit # 16.2.7)
-    - h1, h2 etc. selectors removed from css (commit #16.2.8)
     
-    
+16.4
+    ==image optimazation == new image size  This commit was accidentaly included in ver 16.3
+    -new translation file (po+mo). Both commit #16.4.1
+
 
 
     

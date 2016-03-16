@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2015-11-20 10:00:00+01:00\n"
-"PO-Revision-Date: 2016-03-02 09:57+0100\n"
+"PO-Revision-Date: 2016-03-16 15:16+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,13 +27,8 @@ msgid "&larr; Previous"
 msgstr "&larr; Előző"
 
 #: 404.php:22
-msgid ""
-"The requested page could not be located on this blog. We highly recommend to "
-"choose from the HTML sitemap below."
-msgstr ""
-"Kedves olvasó sajnos valami hiba csúszott a keresésbe, emiatt találkozott "
-"ezzel az oldallal. Alább közöljük a honlapunk teljes oldaltérképét, reméljük "
-"segítségére lesz:"
+msgid "The requested page could not be located on this blog. We highly recommend to choose from the HTML sitemap below."
+msgstr "Kedves olvasó sajnos valami hiba csúszott a keresésbe, emiatt találkozott ezzel az oldallal. Alább közöljük a honlapunk teljes oldaltérképét, reméljük segítségére lesz:"
 
 #: 404.php:17
 msgid "Error 404 &#45; Page Not Found!"
@@ -97,9 +92,7 @@ msgstr "Oldalsáv"
 
 #: function.php:148
 msgid "Appears all pages except when using full page template"
-msgstr ""
-"Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát "
-"használunk."
+msgstr "Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát használunk."
 
 # function.php:202
 # content.php:26
@@ -185,8 +178,8 @@ msgid "Continue reading"
 msgstr "Tovább"
 
 # function.php: 567
-msgid "titled as follows:"
-msgstr "az alábbi cikkhez:"
+msgid "Titled as follows:"
+msgstr "Címe:"
 
 #: content.php:59
 msgid "Author: %s"
@@ -250,9 +243,7 @@ msgstr "Oldaltérkép"
 
 #: content-none:11
 msgid "No results were found. Perhaps to choose from the HTML sitemap below."
-msgstr ""
-"Nincs ilyen bejegyzés. Az alábbi honlaptérkép talán segít megtalálni, amit "
-"keres."
+msgstr "Nincs ilyen bejegyzés. Az alábbi honlaptérkép talán segít megtalálni, amit keres."
 
 #: image.php:18
 msgid "Date:"
@@ -292,3 +283,6 @@ msgstr "almenü bezárása"
 
 msgid "Primary Menu"
 msgstr "Főmenü"
+
+msgid "image in post"
+msgstr "Kép a bejegyzésben"

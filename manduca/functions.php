@@ -40,13 +40,41 @@ function manduca_setup() {
 
 	// Uses a custom image size for featured images
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size ('large', 770, 512 );
+	add_image_size ('post-size', 770, 417 );
 	add_image_size ('excerpt-size', 268, 178 );
 }
 add_action( 'after_setup_theme', 'manduca_setup' );
 
 require( get_template_directory() . '/inc/custom-header.php' );
 
+
+/**
+ *Image optimazation
+ *delete WordPress default image sizes
+ *
+ **/
+function manduca_filter_image_sizes( $sizes) {
+	unset( $sizes[ 'medium' ] );
+	unset( $sizes[ 'large' ] );
+ 
+	return $sizes;
+}
+
+add_filter('intermediate_image_sizes_advanced', 'manduca_filter_image_sizes');
+ 
+function manduca_custom_image_sizes($sizes) {
+	$add_sizes = array(
+		'thumbnail-size' 	=> __( 'Thumbnail', 'manduca' ),
+		'post-size' 		=> __( 'Image in Post', 'manduca' ),
+		'full' 				=> __( 'Original size', 'manduca' )
+	);
+	$new_sizes = array_merge($sizes, $add_sizes);
+	return $new_sizes;
+}
+add_filter('image_size_names_choose', 'manduca_custom_image_sizes');
+
+ 
+ 
 //-------------------------------------------------------------------------------------------
 // Manduca Scripts
 //-------------------------------------------------------------------------------------------
@@ -529,7 +557,11 @@ add_filter( 'body_class', 'manduca_body_class' );
 						echo '<div class="vonalzo"></div>';
 						} ?>
 	
-				<?php $post_counter++; endwhile;
+				<?php
+				$post_counter++;
+				
+				endwhile;
+				
 				manduca_page_navigation();
 				?>
 				</div>
@@ -654,5 +686,8 @@ if( !function_exists( 'manduca_heading_correction' ) ) :
 	add_filter( 'the_content', 'manduca_heading_correction' );
 
 endif;
+
+
+
 
 ?>
