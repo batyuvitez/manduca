@@ -330,8 +330,9 @@ function manduca_page_navigation() {
 		'current'  => $paged,
 		'mid_size' => 1,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '&larr; Previous', 'manduca' ),
-		'next_text' => __( 'Next &rarr;', 'manduca' ),
+		'prev_text' =>  '<i class="fa fa-angle-left"></i>' .__( 'Previous', 'manduca' ),
+		'next_text' => __( 'Next', 'manduca' )  .'<i class="fa fa-angle-right"></i>',
+		'show_all'	=> true
 	) );
 
 	if ( $links ) :

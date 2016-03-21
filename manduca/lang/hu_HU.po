@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2015-11-20 10:00:00+01:00\n"
-"PO-Revision-Date: 2016-03-16 15:16+0100\n"
+"PO-Revision-Date: 2016-03-21 05:39+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +19,12 @@ msgid "Posts navigation"
 msgstr "Bejegyzés navigáció"
 
 #: functions.php:288 comments.php:26 image.php:33
-msgid "Next &rarr;"
-msgstr "Következő &rarr;"
+msgid "Next"
+msgstr "Következő"
 
 #: comments.php:27 image.php:34
-msgid "&larr; Previous"
-msgstr "&larr; Előző"
+msgid "Previous"
+msgstr "Előző"
 
 #: 404.php:22
 msgid "The requested page could not be located on this blog. We highly recommend to choose from the HTML sitemap below."

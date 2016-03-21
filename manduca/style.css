@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://www.akadalymentes-webdesign.hu/manduca-akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.3
+Version: 16.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -501,6 +501,33 @@ img.wp-smiley,
 	margin: 10px 0;
 	margin: 0.7142857142857143rem 0;
 }
+.pagination span,
+.pagination a {
+	border: 2px solid #D1CFE4;
+	font-size: 16px;
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	min-width: 44px;
+	height: 44px;
+	text-align: center;
+}
+.pagination .next,
+.pagination .prev {
+	padding: 0 3px;
+}
+.pagination .prev i {
+	padding-right:  6px;
+}
+.pagination .next i {
+	padding-left: 6px;
+}
+.pagination .current {
+	font-size: 110%;
+	border: 2px dotted black;
+	position: relative;
+	top: -2px;
+}
 .nav-previous span,
 .nav-next span {
 	position: relative;
@@ -714,8 +741,6 @@ article a:visited
 
 
 /* Navigation Menu */
-/* main navigation - ver 2.2*/
-
 
 .site-header-menu {
 	display: none;
@@ -811,70 +836,6 @@ article a:visited
 }
 
 
-/*
-.main-navigation {
-	text-align: center;
-	background-color: #daf2ff;
-	padding: 0 12px;
-	padding: 0 0.857142857rem;	
-}
-.main-navigation li {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	line-height: 1.42857143;
-	border-right: dotted 1px #21759B;
-}
-.main-navigation li:last-child{
-	border:none;
-}
-.main-navigation a {
-	font-weight: 500;
-	font-size: 16px;
-	font-size: 1.142857143rem;
-	
-}
-.main-navigation a:hover,
-.main-navigation a:focus {
-	color: white;
-	background-color: #2c82b5;
-	
-}
-.main-navigation ul.nav-menu,
-.main-navigation div.nav-menu > ul {
-	display: none;
-}
-.menu-toggle {
-	display: inline-block;
-}
-
-.main-navigation ul.nav-menu.toggled-on {
-	display: inline-block;
-	background-color: #fff;
-}
-
-.main-navigation ul.nav-menu.toggled-on li
-{
-	text-align: left;
-	border-right: none;
-	margin-top: 0;
-	margin-left: 14px;
-	margin-left: 1rem;
-}
-.main-navigation ul.nav-menu.toggled-on li a
-{
-	text-decoration: none;
-	border-bottom: 1px solid white;
-	text-align: left;
-	line-height: 2.181818182;
-	padding: 8px 10px;
-	padding: 0.571428571rem 0.714285714rem;
-	width: 100%;
-	white-space: normal;
-}
-.main-navigation ul.nav-menu.toggled-on li ul li a{
-	font-size: 13px;
-	font-size: 0.9285714285714286rem;
-}
 
 /* Banner */
 section[role="banner"] {
@@ -1218,23 +1179,13 @@ h2.entry-title,
 .comment-content blockquote p:last-child {
 	margin-bottom: 0;
 }
+
+.entry-content pre,
+.comment-content pre,
 .entry-content code,
 .comment-content code {
 	font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
-	font-size: 85%;
-	line-height: 2;
-	padding: 0.2em 0;
-	background-color: rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-	margin: 0;
-}
-.entry-content pre,
-.comment-content pre {
-	border: 1px solid #ededed;
-	color: #666;
-	font-family: "Lucida Console", Monaco, "Courier New", monospace;
-	font-size: 12px;
-	font-size: 0.857142857rem;
+	font-size: 90%;
 	line-height: 1.714285714;
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
@@ -1242,10 +1193,11 @@ h2.entry-title,
 	padding: 24px;
 	padding: 1.714285714rem;
 }
-.entry-content pre code,
-.comment-content pre code {
-	display: block;
+.entry-content code,
+.comment-content code {
+	border: 1px solid #ededed;
 }
+
 .entry-content abbr,
 .comment-content abbr,
 .entry-content dfn,
