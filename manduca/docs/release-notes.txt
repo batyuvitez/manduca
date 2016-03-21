@@ -101,7 +101,10 @@
 16.4
     ==image optimazation == new image size  This commit was accidentaly included in ver 16.3
     -new translation file (po+mo). Both commit #16.4.1
-    ==reposnsiblity enhancement== increase pagination nav to 44px and more perceivable. + html arrows replaced with FontAwesome + pre and code design change (Commit# 16.4.2)
+    ==reposnsiblity enhancezent== increase pagination nav to 44px and more perceivable. + html arrows replaced with FontAwesome + pre and code design change (Commit# 16.4.2)
+    - search.php: pagenav was duplicated &
+    ==speed boost project ==add async to eliminat js block rendering(commit# 16.4.3)
+    
 
 
 

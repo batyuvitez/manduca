@@ -19,7 +19,6 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php manduca_display_in_two_columns() ?>
-			<?php manduca_page_navigation(); ?>
 
 		<?php else : ?>
 

@@ -688,6 +688,17 @@ if( !function_exists( 'manduca_heading_correction' ) ) :
 
 endif;
 
+/*
+ * Speed up page
+ * Function to add async to all scripts
+ * 
+ */
+ 
+function manduca_js_async($tag){
+    return str_replace( ' src', ' async src', $tag );
+}
+
+add_filter( 'script_loader_tag', 'manduca_js_async', 10 );
 
 
 
