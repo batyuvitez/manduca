@@ -86,8 +86,9 @@ function manduca_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-		// Loads our main stylesheet.
-	wp_enqueue_style( 'manduca-style', get_stylesheet_uri() );
+		// Loads stylesheets.
+	wp_enqueue_style( 'manduca-main-style', get_stylesheet_directory_uri() .'/css/style.min.css', false, false, 'all' );
+	wp_enqueue_style( 'manduca-print-style', get_stylesheet_directory_uri() .'/css/print.min.css', false, false, 'print'  );
 	
 	//Loads Font Awesome
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' );
@@ -693,13 +694,59 @@ endif;
  * Function to add async to all scripts
  * 
  */
+
+if( !function_exists( 'manduca_js_async' ) ) :
+
+	function manduca_js_async( $tag, $handle ) {
+		return str_replace( ' src', ' async src', $tag );
+	}
+	
+	
+endif;
+
+add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
+
+
+
+/**
+ * Plugin Name: Improve Enqueued Asset URLs
+ *
+ *     Copyright 2013 Imagine Simplicity (tim@imaginesimplicity.com)
+ *     License: GNU General Public License v3.0
+ *     License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+	 * @author codearachnid
+ *
+ */
  
-function manduca_js_async($tag){
-    return str_replace( ' src', ' async src', $tag );
+function manduca_improve_enqueued_asset_urls( $src ){
+	
+	$filtered_url = $src;
+	$param_keys_to_remove = apply_filters( 'manduca_improve_enqueued_asset_urls_keys', array( 'ver' ) );
+
+	// remove supplied param keys from URL
+	if( count( $param_keys_to_remove ) > 0 ){
+		$pattern = apply_filters( 'manduca_improve_enqueued_asset_urls_pattern', '/\?%1$s(=[^&]*)?|&%1$s(\=[^&]*)?(?=&|$)|^%1$s(\=[^&]*)?(&|$)/' );
+		$patterns = array();
+
+		foreach( $param_keys_to_remove as $key ){
+			$patterns[] = sprintf( $pattern, $key );
+		}
+
+		$filtered_url = apply_filters( 'manduca_improve_enqueued_asset_urls', preg_replace($patterns, '', $src), $src, $param_keys_to_remove, $pattern );
+	}
+
+	// transforms URL to use protocol relative path
+	$filtered_url = apply_filters( 'manduca_improve_enqueued_asset_urls_relative_protocal', '__return_true' ) ?
+		preg_replace( '(https?://)', '//', $filtered_url ) :
+		$filtered_url;
+
+	return $filtered_url;
 }
 
-add_filter( 'script_loader_tag', 'manduca_js_async', 10 );
-
-
+add_filter( 'script_loader_src', 'manduca_improve_enqueued_asset_urls', 100, 1 );
+add_filter( 'style_loader_src', 'manduca_improve_enqueued_asset_urls', 100, 1 );
+add_filter( 'template_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
+add_filter( 'stylesheet_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
 
 ?>

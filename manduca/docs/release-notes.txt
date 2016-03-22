@@ -99,11 +99,23 @@
     -header apply filters for site title (commit # 16.2.7)
     
 16.4
-    ==image optimazation == new image size  This commit was accidentaly included in ver 16.3
-    -new translation file (po+mo). Both commit #16.4.1
-    ==reposnsiblity enhancezent== increase pagination nav to 44px and more perceivable. + html arrows replaced with FontAwesome + pre and code design change (Commit# 16.4.2)
-    - search.php: pagenav was duplicated &
-    ==speed boost project ==add async to eliminat js block rendering(commit# 16.4.3)
+    commit #16.4.1
+        ==image optimazation == new image size  This commit was accidentaly included in ver 16.3
+        -new translation file (po+mo). 
+    Commit# 16.4.2
+        ==reposnsiblity enhancezent== increase pagination nav to 44px and more perceivable.
+        - html arrows replaced with FontAwesome + pre and code design change 
+    commit# 16.4.3
+        - search.php: pagenav was duplicated &
+        ==speed boost project ==add async to eliminat js block rendering
+    commit# 16.4.4
+        ==speed boost project==
+            - insert improve enqueued assets urls plugin to theme
+            - enqueue min.css file
+            - separate media=print css file and minimize
+            - add async attribute to loaded scripts
+            
+    
     
 
 
