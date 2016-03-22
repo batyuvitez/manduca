@@ -30,7 +30,7 @@
 <body id="total" <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	
-	<div id="masthead" class="site-header"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+	<div id="masthead" class="site-header" role="banner"  itemtype="https://schema.org/WPHeader" itemscope="itemscope">
 		<div id="header-bar" class="header-bar">
 			<header>
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
@@ -64,7 +64,7 @@
 	
 			<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //if YoastSeo is installed
 				?>
-					<div class="breadrcumb" id="breadcrumb" role="navigation">	
+					<div class="breadrcumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
 					<?php yoast_breadcrumb( '<p>','</p>' ); ?>
 					</div>
 			<?php } ?>
