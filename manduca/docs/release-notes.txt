@@ -109,11 +109,16 @@
         - search.php: pagenav was duplicated &
         ==speed boost project ==add async to eliminat js block rendering
     commit# 16.4.4
+        dd: March 22, 2016
         ==speed boost project==
             - insert improve enqueued assets urls plugin to theme
             - enqueue min.css file
             - separate media=print css file and minimize
             - add async attribute to loaded scripts
+    commit# 16.4.5
+        dd March 22, 2016
+        -breadcrumb navigation aria-label was deleted accidentaly. Correction now.
+        - banner landmark was duplicate screen reader announced twice (Oaron)
             
     
     
