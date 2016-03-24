@@ -749,4 +749,49 @@ add_filter( 'style_loader_src', 'manduca_improve_enqueued_asset_urls', 100, 1 );
 add_filter( 'template_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
 add_filter( 'stylesheet_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
 
+function manduca_breadcrumb() {
+	if (is_home()) {
+		?>
+		<div class="manduca_breadcrumb">
+
+<a title="<?php bloginfo('name'); ?>" rel="bookmark" href="<?php get_option('home'); ?>"><?php bloginfo('name'); ?></a>->Blog bejegyzések
+</div>
+<?php
+		
+	}
+		if (!is_home()) {
+?>
+<div class="manduca_breadcrumb">
+
+<a title="<?php bloginfo('name'); ?>" rel="bookmark" href="<?php get_option('home'); ?>"><?php bloginfo('name'); ?></a>->
+<?php
+if ( is_single()) { //Csak bejegyzeseknel
+?>
+<a rel="bookmark" title="Blog bejegyzések" href="http://o-soft.hu/blog...">Blog</a>->
+<?php
+}
+
+if (is_category() || is_single()) { //Kategoria neveit teszi ki es linkeli meg.
+
+echo the_category(', ')."->"; //Kategoriakat elvaszto jel, ha egy bejegyzes tobb kategoriban is szerepel.
+
+if (is_single()) { //Bejegyzesnel a breadcumb legvegere kiirja a bejegyzes cimet. Ez nem feltetlenul kell, torolhetjuk az if ... } -ig.
+
+echo the_title();
+
+}
+
+} elseif (is_page()) { //Oldalak eseten az oldalak nevet irja ki.
+
+echo the_title();
+
+}
+if (is_404()) {
+	echo "Oldal nem található!";
+}
+echo '</div>';
+
+}
+}
+
 ?>

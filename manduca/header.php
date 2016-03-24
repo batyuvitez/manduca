@@ -62,12 +62,15 @@
 	
 	
 	
+						<div class="breadrcumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
 			<?php if ( function_exists( 'yoast_breadcrumb' ) ) { //if YoastSeo is installed
-				?>
-					<div class="breadrcumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
-					<?php yoast_breadcrumb( '<p>','</p>' ); ?>
-					</div>
-			<?php } ?>
+									yoast_breadcrumb( '<p>','</p>' ); ?>
+					
+			} else {
+				manduca_breadcrumb();
+			}
+			?>
+			</div>
 	</div>
 
 	<div id="wrapper" class="wrapper" tabindex="-1">
