@@ -119,6 +119,12 @@
         dd March 22, 2016
         -breadcrumb navigation aria-label was deleted accidentaly. Correction now.
         - banner landmark was duplicate screen reader announced twice (Oaron)
+    commit#16.4.6
+        - Hungarian short name of month (function.php) and related style.
+        - header css: replace relative positioning with xbrowser-compatible solution
+        - css: some !immportant removed
+        -footer: delet dots from copyright text (this is correct: "2016,")
+        -add defer attribute to scripts (older browser do not recognize async)
             
     
     

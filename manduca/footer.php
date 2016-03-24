@@ -23,7 +23,7 @@
 							echo '<nav id="footer-navigation" class="footer-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">' .$menu .'</nav>';
 						}
 					?>
-					<p>&copy; <?php echo date( 'Y' ) ."., " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>
+					<p>&copy; <?php echo date( 'Y' ) .", " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>
 				</div><!-- .site-info -->
 				<?php do_action( 'manduca_after_footer' ); ?>
 			</footer><!-- #colophon -->

@@ -87,7 +87,7 @@ function manduca_scripts_styles() {
 	}
 
 		// Loads stylesheets.
-	wp_enqueue_style( 'manduca-main-style', get_stylesheet_directory_uri() .'/css/style.min.css', false, false, 'all' );
+	wp_enqueue_style( 'manduca-main-style', get_stylesheet_uri(), false, false, 'all' );
 	wp_enqueue_style( 'manduca-print-style', get_stylesheet_directory_uri() .'/css/print.min.css', false, false, 'print'  );
 	
 	//Loads Font Awesome
@@ -215,10 +215,17 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
+		
+		$month = esc_html( get_the_date( 'M' ) );
+		if ( get_locale() ==='hu_HU' ) {
+			setlocale(LC_ALL,'hungarian');
+			$month = utf8_encode( strftime( '%b', get_post_time('U', true) ) );
+		}
+		
 		$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date( 'j' ) ),
-			esc_html( get_the_date( 'M' ) )
+			$month
 		);
 	
 		$author = sprintf( '<span class="author vcard" itemprop="name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
@@ -698,7 +705,7 @@ endif;
 if( !function_exists( 'manduca_js_async' ) ) :
 
 	function manduca_js_async( $tag, $handle ) {
-		return str_replace( ' src', ' async src', $tag );
+		return str_replace( ' src', ' async defer src', $tag );
 	}
 	
 	

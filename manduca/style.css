@@ -768,9 +768,9 @@ article a:visited
 	text-decoration: none;
 }
 
-.main-navigation a:hover,
-.main-navigation a:focus {
-	color: white !important;
+.main-navigation .menu-item a:hover,
+.main-navigation .menu-item a:focus {
+	color: white;
 	background-color: #2c82b5
 }
 
@@ -944,8 +944,8 @@ section[role="banner"] {
 .footer-navigation ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 0 3px;
-	padding: 0 0.2142857142857143rem;
+	padding: 7px 3px;
+	padding: 0.5rem 0.2142857142857143rem;
 }
 .footer-navigation ul li ul{
 	display: none;
@@ -1777,7 +1777,7 @@ img#wpstats {
 		padding-right: 8px;
 		font-size: 14px;
 		font-size: 1rem;
-		width: 40px;
+		width: 48px;
 		text-decoration: none;
 		font-weight: 300;
 		margin-bottom: -51px;
