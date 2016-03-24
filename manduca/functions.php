@@ -752,22 +752,17 @@ add_filter( 'stylesheet_directory_uri', 'manduca_improve_enqueued_asset_urls', 1
 function manduca_breadcrumb() {
 	if (is_home()) {
 		?>
-		<div class="manduca_breadcrumb">
-
-<a title="<?php bloginfo('name'); ?>" rel="bookmark" href="<?php get_option('home'); ?>"><?php bloginfo('name'); ?></a>->Blog bejegyzések
-</div>
+		<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->Blog bejegyzések
 <?php
 		
 	}
 		if (!is_home()) {
 ?>
-<div class="manduca_breadcrumb">
-
-<a title="<?php bloginfo('name'); ?>" rel="bookmark" href="<?php get_option('home'); ?>"><?php bloginfo('name'); ?></a>->
+<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
 <?php
 if ( is_single()) { //Csak bejegyzeseknel
 ?>
-<a rel="bookmark" title="Blog bejegyzések" href="http://o-soft.hu/blog...">Blog</a>->
+<a rel="bookmark" href="<?php get_permalink( get_option( 'page_for_posts' ) ); ?>">Blog</a>->
 <?php
 }
 
@@ -789,8 +784,9 @@ echo the_title();
 if (is_404()) {
 	echo "Oldal nem található!";
 }
-echo '</div>';
-
+if (is_search()) {
+	echo "Keresés";
+}
 }
 }
 
