@@ -82,7 +82,7 @@ blockquote
 	border-left: 10px solid #ccc;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
-	font-family: 'Comic Sans MS', cursive, sans-serif; 
+	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
 }
 blockquote:before
 {
@@ -198,7 +198,8 @@ img {
 	display: table;
 	content: "";
 }
-.vonalzo {
+.vonalzo,
+.clearfix-content {
 	content: "";
 	display: table;
 	clear: both;	
@@ -588,7 +589,7 @@ html {
 body .site{
 	font-size: 14px;
 	font-size: 1rem;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: Verdana, Geneva, 'Helvetica Neue', sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #222;
 	background-color: #F3F3F5;
@@ -1887,8 +1888,8 @@ open the toggle boxes*/
 		border:none;
 	}
 
-	.main-navigation .primary-menu,
-	.main-navigation .primary-menu > li {
+	.main-navigation>div,
+	.main-navigation div ul li {
 		display: inline-block;
 	}
 	.main-navigation > div {

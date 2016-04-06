@@ -88,7 +88,7 @@ function manduca_scripts_styles() {
 
 		// Loads stylesheets.
 	wp_enqueue_style( 'manduca-main-style', get_stylesheet_uri(), false, false, 'all' );
-	wp_enqueue_style( 'manduca-print-style', get_stylesheet_directory_uri() .'/css/print.min.css', false, false, 'print'  );
+	wp_enqueue_style( 'manduca-print-style', get_template_directory_uri() .'/css/print.min.css', false, false, 'print'  );
 	
 	//Loads Font Awesome
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' );

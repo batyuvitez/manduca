@@ -38,6 +38,7 @@
 		<div class="entry-content" itemprop="text">
 			<?php the_content( __( 'Continue reading', 'manduca' ) .'<span class="screen-reader-text">  ' .get_the_title() .'</span><span class="meta-nav" aria-hidden="true">&rarr;</span>' ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Paging', 'manduca' ), 'after' => '</div>' ) ); ?>
+		<div class="clearfix-content"></div>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 
