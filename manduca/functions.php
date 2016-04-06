@@ -97,12 +97,7 @@ function manduca_scripts_styles() {
 	wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/css/ie.css', array( 'manduca-style' ), '20121010' );
 	$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
 	
-	//focus-snail (https://github.com/NV/focus-snail)
-	wp_enqueue_script( 'focus-snail', get_template_directory_uri() ."/js/focus-snail.js", array(), '1.0', true );
-	
-	wp_enqueue_script( 'manduca-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150825', true );
-	
-	wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/js/manduca-scripts.js', array( 'jquery' ), '160226', true );
+	wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/js/manduca-scripts.min.js', array( 'jquery' ), '160226', true );
 	
 	wp_localize_script( 'manduca-scripts', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'manduca' ),
@@ -637,9 +632,11 @@ function manduca_manual_excerpt ( $param ) {
 }
 add_filter('get_the_excerpt', 'manduca_manual_excerpt');
 
-//-------------------------------------------------------------------------------------------
-// Add "ext-link" class to external links 
-//-------------------------------------------------------------------------------------------
+/*
+* Add "ext-link" class aan d aria-label to external links
+*
+* */
+
 
 function manduca_get_domain_name_from_uri( $uri ) {
 	preg_match( '/^(http:\/\/)?([^\/]+)/i', $uri, $matches );
@@ -651,7 +648,7 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'" class="ext-link">' . $matches[5] . '</a>';	 
+		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' aria-label="' ._x( 'external', 'manduca' ) .'" class="ext-link">' . $matches[5] . '</a>';	 
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}
@@ -662,7 +659,6 @@ function manduca_external_links( $text ) {
 	$pattern = '/<a (.*?)href="(.*?)\/\/(.*?)"(.*?)>(.*?)<\/a>/i';
 	$text = preg_replace_callback( $pattern, 'mandcua_parse_external_links', $text );
 
-	$pattern2 = '/<a (.*?) class="extlink"(.*?)>(.*?)<img (.*?)<\/a>/i';
 	return $text;
 }
 

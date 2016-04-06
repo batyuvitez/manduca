@@ -126,10 +126,16 @@
         -footer: delet dots from copyright text (this is correct: "2016,")
         -add defer attribute to scripts (older browser do not recognize async)
     commit# 16.4.7
-        -delete class: primary menu from css (main navigation menu can be named with different names)
+        dd.16.4.6
+        ==css optimize project == delete class: primary menu from css (main navigation menu can be named with different names)
         -add clearfix after articles.
-        -open print.css from correct library (it was a bug)
-        -corrected font-family based on iPhone test (add iPhone families as fallback)
+        ==bug==open print.css from correct library
+        ==css optimize project == corrected font-family based on iPhone test (add iPhone families as fallback)
+    commit# 16.4.8
+        dd 16.4.
+        ==bug== remove insufficient quotation mark from ext link (function.php)
+        == screen-reader-usability == add wai aria to ext link. 
+        == speed buster == merge all js and minimize. 
             
     
     
