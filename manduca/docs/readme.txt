@@ -1,6 +1,6 @@
 === Manduca ===
 Main contributor: Zsolt Edelényi - edelenyi.zsolt@akadalymentes-honlap.hu
-Webpage: https://github.com/batyuvitez/manduca
+Webpage: https://github.com/batyuvitez/manduca/
 Requires at least: WordPress 3.5
 Tested up to: WordPress 4.4.1
 Stable tag: 2.1.2

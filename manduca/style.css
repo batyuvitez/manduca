@@ -719,7 +719,6 @@ article a:visited
 .breadrcumb {
 	font-size: 12px;
 	font-size: 0.8571428571428571rem;
-	font-style: italic;
 	padding: 7px;
 	padding: 0.5rem;
 }
@@ -963,6 +962,35 @@ section[role="banner"] {
 /* 4. Main content and comment content
 -------------------------------------------------------------- */
 
+.entry-header .content-date {
+		padding-right: 8px;
+		width: 36px;
+		text-decoration: none;
+		font-weight: 300;
+		margin-bottom: -51px;
+		text-align: center;
+		background-color: #9e430e;
+		color: #fff;
+		padding: 2px;
+		border-radius: 4px;
+		position: relative;
+		top: -41px;
+		line-height: 24px;
+		line-height: 1.714285714285714rem;
+		
+}
+.content-date span {
+	display: block;
+}
+.content-date .entry-date-month {
+	font-size: 10px;
+	text-transform: uppercase;
+	background-color: #0E509E;
+}
+.content-date .entry-date-day {
+	font-size: 12px;
+}
+
 .excerpt-wrapper .sticky {
 	border: 3px #531FFF groove;
 	background-color: #DAF2FF;
@@ -1067,8 +1095,9 @@ comments-link a:hover,
 	color: #9e430e;
 	font-weight: 500;
 	text-align: center;
+	margin-left: 48px;	
 }
-h2.entry-title,
+
  .entry-content h2,
 .comment-content h2,
 .mu_register h2,
@@ -1763,44 +1792,25 @@ img#wpstats {
 		text-align: left;
 		margin-left: 75px;
 	}
-	.entry-title,
-	.archive-title,
-	.page-title {
-		font-size: 1.4vw;
+	.entry-header .content-date {
+		padding-right: 0;
+		width: 48px;
 	}
+
+	.content-date .entry-date-month {
+		font-size: 12px;
+	}
+	.content-date .entry-date-day {
+		font-size: 14px;
+	}
+
 
 	.entry-content h2 {
 		font-size: 20px;
 		font-size: 1.428571428571429rem;
 		
 	}
-	.entry-header .content-date {
-		padding-right: 8px;
-		font-size: 14px;
-		font-size: 1rem;
-		width: 48px;
-		text-decoration: none;
-		font-weight: 300;
-		margin-bottom: -51px;
-		text-align: center;
-		background-color: #9e430e;
-		color: #fff;
-		padding: 2px;
-		border-radius: 4px;
-		position: relative;
-		top: -41px;
-		line-height: 24px;
-		line-height: 1.714285714285714rem;
-		
-	}
-	.content-date span {
-		display: block;
-	}
-	.content-date .entry-date-month {
-		font-size: 12px;
-		text-transform: uppercase;
-		background-color: #0E509E;
-	}
+	
 	
 	#respond form input[type="text"] {
 		width: 46.333333333%;
