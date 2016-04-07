@@ -103,7 +103,7 @@
         ==image optimazation == new image size  This commit was accidentaly included in ver 16.3
         -new translation file (po+mo). 
     Commit# 16.4.2
-        ==reposnsiblity enhancezent== increase pagination nav to 44px and more perceivable.
+        ==responsive design== increase pagination nav to 44px and more perceivable.
         - html arrows replaced with FontAwesome + pre and code design change 
     commit# 16.4.3
         - search.php: pagenav was duplicated &
@@ -123,20 +123,24 @@
         - Hungarian short name of month (function.php) and related style.
         - header css: replace relative positioning with xbrowser-compatible solution
         - css: some !immportant removed
-        -footer: delet dots from copyright text (this is correct: "2016,")
+        -footer: delete dots from copyright text (this is correct: "2016,")
         -add defer attribute to scripts (older browser do not recognize async)
     commit# 16.4.7
-        dd.16.4.6
         ==css optimize project == delete class: primary menu from css (main navigation menu can be named with different names)
         -add clearfix after articles.
         ==bug==open print.css from correct library
         ==css optimize project == corrected font-family based on iPhone test (add iPhone families as fallback)
     commit# 16.4.8
-        dd 16.4.
         ==bug== remove insufficient quotation mark from ext link (function.php)
         == screen-reader-usability == add wai aria to ext link. 
         == speed buster == merge all js and minimize. 
-            
+    commit# 16.4.9
+        Date: 7 April. 
+        ==screen-reader-usability== add screen reader text instead of aria (corr. of previous commit)
+        -Breadcrumb integration (contribution from Áron)
+        ==responsive design== content-date formating on small screens.
+        
+        
     
     
 

@@ -304,51 +304,51 @@ add_action( 'customize_preview_init', 'manduca_customize_preview_js' );
 //-------------------------------------------------------------------------------------------
 if ( ! function_exists( 'manduca_page_navigation' ) ) :
  
-function manduca_page_navigation() {
-	global $wp_query, $wp_rewrite;
-
-	if ( $wp_query->max_num_pages < 2 ) {
-		return;
-	}
-
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
-
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
-
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-	$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%';
-
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $wp_query->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' =>  '<i class="fa fa-angle-left"></i>' .__( 'Previous', 'manduca' ),
-		'next_text' => __( 'Next', 'manduca' )  .'<i class="fa fa-angle-right"></i>',
-		'show_all'	=> true
-	) );
-
-	if ( $links ) :
-
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h3 class="screen-reader-text"><?php _e( 'Posts navigation', 'manduca' ); ?></h3>
-		<div class="pagination loop-pagination">
-			<?php echo $links; ?>
-		</div><!-- .pagination -->
-	</nav><!-- .navigation -->
-	<?php
-	endif;
+	function manduca_page_navigation() {
+		global $wp_query, $wp_rewrite;
+	
+		if ( $wp_query->max_num_pages < 2 ) {
+			return;
+		}
+	
+		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+		$pagenum_link = html_entity_decode( get_pagenum_link() );
+		$query_args   = array();
+		$url_parts    = explode( '?', $pagenum_link );
+	
+		if ( isset( $url_parts[1] ) ) {
+			wp_parse_str( $url_parts[1], $query_args );
+		}
+	
+		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+	
+		$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+		$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%';
+	
+		$links = paginate_links( array(
+			'base'     => $pagenum_link,
+			'format'   => $format,
+			'total'    => $wp_query->max_num_pages,
+			'current'  => $paged,
+			'mid_size' => 1,
+			'add_args' => array_map( 'urlencode', $query_args ),
+			'prev_text' =>  '<i class="fa fa-angle-left"></i>' .__( 'Previous', 'manduca' ),
+			'next_text' => __( 'Next', 'manduca' )  .'<i class="fa fa-angle-right"></i>',
+			'show_all'	=> true
+		) );
+	
+		if ( $links ) :
+	
+		?>
+		<nav class="navigation paging-navigation" role="navigation">
+			<h3 class="screen-reader-text"><?php _e( 'Posts navigation', 'manduca' ); ?></h3>
+			<div class="pagination loop-pagination">
+				<?php echo $links; ?>
+			</div><!-- .pagination -->
+		</nav><!-- .navigation -->
+		<?php
+		endif;
 }
 endif;
 
@@ -648,7 +648,9 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' aria-label="' ._x( 'external', 'manduca' ) .'" class="ext-link">' . $matches[5] . '</a>';	 
+		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' class="ext-link">' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 
+		apply_filters( 'manduca_external_links', $pattern ) ;
+		return $pattern;
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}
@@ -709,47 +711,55 @@ endif;
 
 add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
 
-
-
-/**
- * Plugin Name: Improve Enqueued Asset URLs
+/*
+ *Built ind breadcrumb function. 
  *
- *     Copyright 2013 Imagine Simplicity (tim@imaginesimplicity.com)
- *     License: GNU General Public License v3.0
- *     License URI: http://www.gnu.org/licenses/gpl-3.0.html
- *
-	 * @author codearachnid
- *
+ *If Yoast Seo is installed, that is used instead of this
  */
- 
-function manduca_improve_enqueued_asset_urls( $src ){
-	
-	$filtered_url = $src;
-	$param_keys_to_remove = apply_filters( 'manduca_improve_enqueued_asset_urls_keys', array( 'ver' ) );
 
-	// remove supplied param keys from URL
-	if( count( $param_keys_to_remove ) > 0 ){
-		$pattern = apply_filters( 'manduca_improve_enqueued_asset_urls_pattern', '/\?%1$s(=[^&]*)?|&%1$s(\=[^&]*)?(?=&|$)|^%1$s(\=[^&]*)?(&|$)/' );
-		$patterns = array();
+if( !function_exists( 'manduca_breadcrumb') ) :
 
-		foreach( $param_keys_to_remove as $key ){
-			$patterns[] = sprintf( $pattern, $key );
-		}
-
-		$filtered_url = apply_filters( 'manduca_improve_enqueued_asset_urls', preg_replace($patterns, '', $src), $src, $param_keys_to_remove, $pattern );
+function manduca_breadcrumb() {
+	if (is_home()) {
+		?>
+			<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->Blog bejegyzések
+		<?php
+		
 	}
-
-	// transforms URL to use protocol relative path
-	$filtered_url = apply_filters( 'manduca_improve_enqueued_asset_urls_relative_protocal', '__return_true' ) ?
-		preg_replace( '(https?://)', '//', $filtered_url ) :
-		$filtered_url;
-
-	return $filtered_url;
+		if (!is_home()) {
+		?>
+			<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
+		<?php
+			if ( is_single()) { //Posts
+		?>
+			<a rel="bookmark" href="<?php get_permalink( get_option( 'page_for_posts' ) ); ?>">Blog</a>->
+		<?php
+		}
+		
+			if (is_category() || is_single()) { //Categories 
+			
+			echo the_category(', ')."->"; //Category separator
+			
+			if (is_single()) { //Title of post in category
+	
+			echo the_title();
+		
+		}
+		
+		} elseif (is_page()) { //Title of page
+		
+		echo the_title();
+		
+		}
+		if (is_404()) {
+			_e( 'Page not found', 'manduca' );
+		}
+		if (is_search()) {
+			_e( 'Search', 'manduca' );
+		}
+	}
 }
 
-add_filter( 'script_loader_src', 'manduca_improve_enqueued_asset_urls', 100, 1 );
-add_filter( 'style_loader_src', 'manduca_improve_enqueued_asset_urls', 100, 1 );
-add_filter( 'template_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
-add_filter( 'stylesheet_directory_uri', 'manduca_improve_enqueued_asset_urls', 100, 1 );
+endif;
 
 ?>
