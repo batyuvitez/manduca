@@ -722,17 +722,17 @@ if( !function_exists( 'manduca_breadcrumb') ) :
 function manduca_breadcrumb() {
 	if (is_home()) {
 		?>
-			<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->Blog bejegyzések
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>-><?php _e('Blog posts', 'manduca'); ?></a>
 		<?php
 		
 	}
 		if (!is_home()) {
 		?>
-			<a rel="bookmark" href="<?php get_option('home'); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
 		<?php
 			if ( is_single()) { //Posts
 		?>
-			<a rel="bookmark" href="<?php get_permalink( get_option( 'page_for_posts' ) ); ?>">Blog</a>->
+			<a rel="bookmark" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Blog', 'manduca' ); ?></a>->
 		<?php
 		}
 		

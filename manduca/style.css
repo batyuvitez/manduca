@@ -9,6 +9,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
 Tags: one-column, two-columns, light, blue, right-sidebar, custom-header, custom-menu, full-width-template, responsive-layout, featured-images, microformats, theme-options, accessibility-ready, theme-options, microformats, sticky-post
 Text Domain: manduca
+Changelog: see release notes.
+GitHub: https://github.com/batyuvitez/manduca
 */
 
 /*                 Tartalom:
@@ -79,7 +81,7 @@ blockquote
 {
 	quotes: none;
 	background: #f9f9f9;
-	border-left: 10px solid #ccc;
+	border-left: 10px solid #DAF2FF;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
 	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
@@ -117,15 +119,21 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 body a:link{
-	color:#531fff;
+	color:#164e68;
+}
+body a:visited {
+	color: #104E51;
+	text-decoration: underline;
+}
+
 }
 a:focus,
 a:hover,
 a:active
 {
-	background-color: #ffffcc;
-    color: #bf1722;
-    outline: 1px solid #ccc;
+	background-color: #DAF2FF;
+    color: black;
+    outline: 1px solid #336699;
 }
 
 article,
@@ -152,11 +160,11 @@ del {
 	color: #333;
 }
 ins {
-	background: #fff9c0;
+	background: #DAF2FF;
 	text-decoration: none;
 }
 hr {
-	background-color: #ccc;
+	background-color: #DAF2FF;
 	border: 0;
 	height: 1px;
 	margin: 24px;
@@ -594,20 +602,9 @@ body .site{
 	color: #222;
 	background-color: #F3F3F5;
 }
-article a:link
-article a:visited
-{
-	outline: none;
-	color: #20399d;
-	text-decoration: underline;
-}
 
 
-.post .entry-content p a 
-{
-	color: #20399d;
-	
-}
+
 .site-content a.ext-link:after{
     content: " \F08E";
     font-family: FontAwesome;
@@ -1154,10 +1151,6 @@ comments-link a:hover,
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
 	line-height: 1.714285714;
-}
-.entry-content a:visited,
-.comment-content a:visited {
-	color: #9f9f9f;
 }
 
 .entry-content ol,
@@ -2026,9 +2019,7 @@ open the toggle boxes*/
 
 /* 13. b) Minimum width of 976 pixels. */
 @media screen and (min-width: 976px) {
-	body {
-		background-color: #21759B;
-	}
+
 	body .site {
 		border: solid 6px #DAF2FF;
 	}
@@ -2044,7 +2035,7 @@ open the toggle boxes*/
 		box-shadow: none;
 	}
 	.site-title{
-		float: left;
+		text-align: left;	
 		font-size: 24px;
 		font-size: 1.714285714285714rem;
 	}
