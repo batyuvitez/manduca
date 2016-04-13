@@ -762,4 +762,20 @@ function manduca_breadcrumb() {
 
 endif;
 
+/*
+ * Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
+ *
+ *Thanks to Joe dolson 
+ * */
+
+	function manduca_tinymce_init( $init ) {
+    
+		$init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6';
+    
+    return $init;
+}
+
+add_filter( 'tiny_mce_before_init', 'manducy_tinymce_init' );
+
+
 ?>

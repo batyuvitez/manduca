@@ -157,6 +157,19 @@ April, 2016
             -new screenshot
         ==bug==Breadcrumb links were not echoed.
         Font awesome deleted from libary. Not needed since loaded from cdn.
+        Language files updated from Breadcrumb
+        
+    commit# 16.4.11
+    Date 13 April
+        ==css optimize projet ==
+            -replace px and rem basis in font-size and repalce with percentage
+            -use relative and absolute font-size (small, smaller etc)
+        ==design enhancement ==
+            - pagination design
+            - widget design
+            - entry-header transform: none (better readability)
+        -Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
+            
         
         
         
