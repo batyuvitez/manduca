@@ -160,8 +160,8 @@ April, 2016
         Language files updated from Breadcrumb
         
     commit# 16.4.11
-    Date 13 April
-        ==css optimize projet ==
+        Date 13 April
+        ==css optimize project ==
             -replace px and rem basis in font-size and repalce with percentage
             -use relative and absolute font-size (small, smaller etc)
         ==design enhancement ==
@@ -170,7 +170,12 @@ April, 2016
             - entry-header transform: none (better readability)
         -Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
             
-        
+    commit# 16.4.12
+        Date 15 April
+        ==bug== tinyMCE editor HTML and graphic tabs not worked: scripts loaded not async deffered when admin See #16.4.4
+        ==accessibility== redefine tinyMCEblockformats. Support followings: p, h2, h3, pre and blockquote.
+        ==accessiblilty== add correct translation to headings (instead of kiemelés)
+        ==upload css.min
         
         
     

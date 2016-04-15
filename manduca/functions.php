@@ -703,13 +703,18 @@ endif;
 if( !function_exists( 'manduca_js_async' ) ) :
 
 	function manduca_js_async( $tag, $handle ) {
-		return str_replace( ' src', ' async defer src', $tag );
+		if( !is_admin() ) {
+			$tag = str_replace( ' src', ' async defer src', $tag );
+		}
+		
+		return $tag;
 	}
-	
+
+add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
 	
 endif;
 
-add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
+
 
 /*
  *Built ind breadcrumb function. 
@@ -767,15 +772,21 @@ endif;
  *
  *Thanks to Joe dolson 
  * */
-
-	function manduca_tinymce_init( $init ) {
+if( !function_exists( 'manduca_tinymce_init') ) :
+ 
+function manduca_tinymce_init( $init ) {
     
-		$init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6';
+		$block_formats 	= 'Paragraph=p; ' .__( 'Heading 2', 'manduca' ) .'=h2; ';
+		$block_formats 		.= __( 'Heading 3', 'manduca' ) .'=h3; ';
+		$block_formats 		.= __( 'Preformatted', 'manduca' ) .'=pre; ';
+		$block_formats		.= __( 'Blockquote', 'manduca') .'=blockquote';
+		$init['block_formats'] = $block_formats;
     
     return $init;
 }
 
-add_filter( 'tiny_mce_before_init', 'manducy_tinymce_init' );
+add_filter( 'tiny_mce_before_init', 'manduca_tinymce_init' );
 
+endif;
 
 ?>
