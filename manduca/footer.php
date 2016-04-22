@@ -7,7 +7,7 @@
 ?>
 		</div><!-- #main .wrapper -->
 		<div id="footer-wrapper" class="footer-wrapper">
-			<footer id="colophon" role="contentinfo" itemtype="https://schema.org/WPFooter" itemscope="itemscope" >
+			<footer id="colophon" itemtype="https://schema.org/WPFooter" itemscope="itemscope" >
 				<?php do_action( 'manduca_before_footer' ); ?>
 				<div class="site-info">
 					<?php

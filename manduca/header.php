@@ -36,8 +36,17 @@
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
 				<?php
 				echo apply_filters( 'manduca_site_title', sprintf ( '<a class="site-title" href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ) , get_bloginfo( 'name' ) ) );
-				echo apply_filters( 'manduca_blog_description', '' ); 
-				get_search_form(); ?>
+				echo apply_filters( 'manduca_blog_description', '' );
+				?>
+				
+				<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<div>
+					<label class="screen-reader-text" for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
+					<input type="text" placeholder="<?php _e( 'Search', 'manduca' ) ?>" value="<?php echo get_search_query(); ?>" name="s"  id="s" />
+					<input type="submit" id="searchsubmit" value="&#xf002;" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" />
+				</div>
+			</form>
+				
 			</header>
 		</div>
 	
@@ -49,7 +58,7 @@
 		
 		<div id="site-header-menu" class="site-header-menu">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
+				<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
 					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'primary',

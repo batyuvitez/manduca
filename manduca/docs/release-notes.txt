@@ -176,7 +176,16 @@ April, 2016
         ==accessibility== redefine tinyMCEblockformats. Support followings: p, h2, h3, pre and blockquote.
         ==accessiblilty== add correct translation to headings (instead of kiemelés)
         ==upload css.min
-        
+    
+    commit #16.4.13
+        Date: 22 April
+        ==test before upload to repository ==
+            - correct content-date position fixings (still not good enough)
+            -create minify css. This is set as default, and the unminified is the style.original.css
+            -screenshot update (a new has Hungarian content)
+        ==code validation process==
+            -remove unnecessary role attributes
+            -delete searchform.php, which can be called many times in one page. Now header has its own form, widget will use WP standard searchform. 
         
     
     
