@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Image licence: http://www.w3.org/WAI/WCAG2-Conformance
 
 Originated from  Hungarian. Hungarian description and po file included.
-Further reading in Hungarian: http://www.akadalymentes-webdesign.hu/teljesen-akadalymentes-wordpress-sablon-manduca/
+Further reading in Hungarian: http://www.xn--akadlymentes-wordpress-sablon-jnc.hu/
 
 
 ## Description
