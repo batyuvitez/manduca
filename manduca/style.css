@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.4
+Version: 16.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -616,7 +616,7 @@ body .site{
 
 /* Assistive text */
 .assistive-text,
-.site .screen-reader-text {
+.screen-reader-text {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 	overflow: hidden;
@@ -625,9 +625,9 @@ body .site{
 	word-wrap: normal !important;
 }
 .main-navigation .assistive-text:focus,
-.site .screen-reader-text:hover,
-.site .screen-reader-text:active,
-.site .screen-reader-text:focus {
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
 	border: 2px solid #333;
 	border-radius: 3px;
 	clip: auto !important;
@@ -643,7 +643,7 @@ body .site{
 	z-index: 100000; /* Above WP toolbar */
 }
 
-.site .skip-link {
+.skip-link {
 	background-color: #f1f1f1;
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 	color: #21759B;
@@ -1637,13 +1637,17 @@ a.comment-edit-link:hover {
 }
 
 
-/* 12. Plugins
+/* 12. Sitemaps
 ----------------------------------------------- */
 
-img#wpstats {
-	display: block;
-	margin: 0 auto 24px;
-	margin: 0 auto 1.714285714rem;
+.sitemap-images {
+	width: 33%;
+	min-width: 200px;
+	float: left;
+	padding: 2%;
+}
+.sitemap-images h3 {
+	word-break: break-all;
 }
 
 

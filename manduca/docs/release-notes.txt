@@ -187,9 +187,15 @@ April, 2016
             -remove unnecessary role attributes
             -delete searchform.php, which can be called many times in one page. Now header has its own form, widget will use WP standard searchform. 
         
+version 16.5
     
-    
-
-
-
-    
+    Oaron dd. 24 April (w/o number)
+        - removed duplicate complementary, added region role to the widgets
+     commit #16.5.2
+        ==speed booster == delete gmpg and pingback direct html from header.php
+    Oaron dd. 24 Apr.
+        ==coding standard == use home() instead of get_site_url()
+    commit # 16.5.4
+        - add image list to sitepmap
+        - change font awesome to verion 4.6.0 (included new accessiblilty icons)
+        -header: delete gmpg and pingback links.
