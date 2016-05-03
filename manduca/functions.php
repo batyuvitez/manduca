@@ -727,13 +727,13 @@ if( !function_exists( 'manduca_breadcrumb') ) :
 function manduca_breadcrumb() {
 	if (is_home()) {
 		?>
-			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>-><?php _e('Blog posts', 'manduca'); ?></a>
+			<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>-><?php _e('Blog posts', 'manduca'); ?></a>
 		<?php
 		
 	}
 		if (!is_home()) {
 		?>
-			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
+			<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
 		<?php
 			if ( is_single()) { //Posts
 		?>
