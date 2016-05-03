@@ -1,6 +1,6 @@
 === Manduca ===
 Készítette:  Edelényi Zsolt - edelenyi.zsolt@akadalymentes-honlap.hu
-A sablon részletes bemutatása: http://www.akadalymentes-webdesign.hu/manduca-wordpress-sablon-magyar-es-akadalymentes/
+A sablon részletes bemutatása: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Szerző honlapja: http://www.akadálymentes-honlap.hu
 Elérhető a Githubon: https://github.com/batyuvitez/manduca
 Legutolsó tesztelt és stabilváltozat: 2.1.2
