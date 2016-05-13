@@ -129,7 +129,7 @@ function manduca_widgets_init() {
 		'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s" aria-labelledby="widget-title" role="region">',
 		'after_widget' => '</section>',
-		'before_title' => '<h4 class="widget-title" id ="widget-title">',
+		'before_title' => '<h4 class="widget-title">',
 		'after_title' =>'</h4>',
 	) );
 
@@ -467,25 +467,6 @@ function manduca_get_header_image_alt() {
     return $alt;
 }
   
-//-------------------------------------------------------------------------------------------
-// Login redirect to homepage except admin
-//-------------------------------------------------------------------------------------------
- 
-function manduca_login_redirect( $redirect_to, $request, $user ) {
-	global $user;
-	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-		if ( in_array( 'administrator', $user->roles ) ) {
-			return esc_url( $redirect_to );
-		} else {
-			return esc_url( home_url() );
-		}
-	}
-	else {
-		return $redirect_to;
-	}
-}
-
-add_filter( 'login_redirect', 'manduca_login_redirect', 10, 3 );
 
 //---------------------------------------------------------------------------------------------------------------------------
 // Manduca body class
@@ -524,9 +505,13 @@ function manduca_body_class( $classes ) {
 add_filter( 'body_class', 'manduca_body_class' );
 
 
- //-------------------------------------------------------------------------------------------
- // Display posts in two columns
- //-------------------------------------------------------------------------------------------
+ /*
+  *
+  * Display posts in two columns
+  *
+  * used in front-page and archive pages
+ /**/
+ 
  if( !function_exists( 'manduca_display_in_two_columns' ) ) :
  
 	function manduca_display_in_two_columns() {
@@ -733,27 +718,29 @@ function manduca_breadcrumb() {
 	}
 		if (!is_home()) {
 		?>
-			<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>->
+					<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
+<?php _e('Blog posts', 'manduca'); ?></a>
 		<?php
 			if ( is_single()) { //Posts
 		?>
-			<a rel="bookmark" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Blog', 'manduca' ); ?></a>->
+			<a rel="bookmark" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Blog', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
+
 		<?php
 		}
 		
 			if (is_category() || is_single()) { //Categories 
 			
-			echo the_category(', ')."->"; //Category separator
+			echo the_category(', '). '<i class="fa fa-angle-right" aria-hidden="true"></i>'; //Category separator
 			
 			if (is_single()) { //Title of post in category
 	
-			echo the_title();
+			the_title();
 		
 		}
 		
 		} elseif (is_page()) { //Title of page
 		
-		echo the_title();
+		the_title();
 		
 		}
 		if (is_404()) {

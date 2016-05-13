@@ -411,9 +411,6 @@ object,
 video {
 	max-width: 100%;
 }
-.entry-content .twitter-tweet-rendered {
-	max-width: 100% !important; /* Override the Twitter embed fixed width */
-}
 
 /* Images */
 .alignleft {
@@ -809,7 +806,7 @@ body .site{
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	color: white !important;
+	color: white;
 	background-color: #2c82b5
 	}
 
@@ -844,7 +841,6 @@ section[role="banner"] {
 	padding: 0 0.5rem;
 	border-radius: 5px;
 	background-color: #fff;
-	border: 2px solid #DAF2FF;
 }
 .widget-area .widget h2 {
 	margin: 0 0 24px;
@@ -862,14 +858,6 @@ section[role="banner"] {
 .widget_rss li,
 .widget_categories li{
 	border-bottom: 1px #DAF2FF solid;
-}
-.widget_recent_comments a,
-.widget_recent_entries a ,
-.widget_archive a,
-.widget_pages a,
-.widget_rss a,
-.widget_categories a{
-	text-decoration: none;
 }
 
 .widget-area .widget p {
@@ -1186,6 +1174,7 @@ comments-link a:hover,
 	overflow: auto;
 	padding: 24px;
 	padding: 1.714285714rem;
+	background-color: #e3e6e8.
 }
 .entry-content code,
 .comment-content code {
