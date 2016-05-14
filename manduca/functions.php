@@ -516,6 +516,7 @@ add_filter( 'body_class', 'manduca_body_class' );
   * used in front-page and archive pages
  /**/
  
+ if( !function_exists( 'manduca_display_in_two_columns' )  || !function_exists( 'manduca_display_excerpt' ) ) :
  
 	function manduca_display_excerpt() {
 	?>				<div class="excerpt-wrapper">
