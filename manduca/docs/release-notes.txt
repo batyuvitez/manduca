@@ -200,10 +200,16 @@ version 16.5
         - change font awesome to verion 4.6.0 (included new accessiblilty icons)
         -header: delete gmpg and pingback links.
     commit #16.5.6
+        13 May, 2016
         -css: delete comment border (empty comment shows horizontal line), remove an !important, where not necessary
         -header.php delete yoast breadcrumb. Change manduca_breadcrumb function, if necessary.
         ==accessibility== add underline to widget links.
         -remove login redirect after signup
         ==accessibility==add icons instead of ascii.
-        
-        
+    commit #16.5.7
+        14 May, 2016
+        ==better typography==
+            -remove display two column.
+            - Check line-height,
+            - add rem base to font-size,
+            - remove undeline in links, instead use border

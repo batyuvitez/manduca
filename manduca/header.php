@@ -70,7 +70,7 @@
 	
 		<div class="breadrcumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
 	
-			<?php manduca_breadcrumb(); } ?>
+			<?php manduca_breadcrumb(); ?>
 		
 		</div>
 	

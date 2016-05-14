@@ -16,7 +16,7 @@ get_header(); ?>
 				<h1 class="page-title" itemprop="headline"><?php bloginfo( 'description' ); ?></h1>
 			</header>
 
-			<?php manduca_display_in_two_columns() ?>
+			<?php manduca_display_excerpt() ?>
 			
 
 		<?php else : ?>

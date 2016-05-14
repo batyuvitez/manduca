@@ -507,48 +507,53 @@ add_filter( 'body_class', 'manduca_body_class' );
 
  /*
   *
+  * original:
   * Display posts in two columns
+  * but this was a bad typography and changed.
+  *
+  *Name has been remained for compatibility of child themes
   *
   * used in front-page and archive pages
  /**/
  
- if( !function_exists( 'manduca_display_in_two_columns' ) ) :
  
-	function manduca_display_in_two_columns() {
+	function manduca_display_excerpt() {
 	?>				<div class="excerpt-wrapper">
 	
 				<?php
 				/* Start the Loop */
-				$post_counter = 1;
 				while ( have_posts() ) : the_post(); ?>
 					
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
-					<?php if ( has_post_thumbnail() ) :?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  >
+						
+			
+						<h2 class="entry-title">
+							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+						</h2>
+						<?php if ( has_post_thumbnail() ) :?>
 						<div class="crop-height">
 							<?php the_post_thumbnail( 'excerpt-size' ); ?>
 						</div>
+						
+						<div class="excerpt-entry has-thumbnail">
+					
+					<?php else : ?>
+						<div class="excerpt-entry no-thumbnail">
 					<?php endif; ?>
 			
-					<h2 class="entry-title"  itemprop="headline">
-						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-					</h2>
-					<?php
-						if( strpos( get_the_content(), 'more-link' ) === false ) {
-							the_excerpt();
-						}
-						else {
-							the_content();
-						}
-					?>
 					
-					</article>
-					<?php if ( $post_counter %2 ==0 ) {
-						echo '<div class="vonalzo"></div>';
-						} ?>
-	
+						<?php
+							if( strpos( get_the_content(), 'more-link' ) === false ) {
+								the_excerpt();
+							}
+							else {
+								the_content();
+							}
+						?>
+						</div>
+						<div class='clearfix-content'></div>
+					</article>				
 				<?php
-				$post_counter++;
-				
 				endwhile;
 				
 				manduca_page_navigation();
