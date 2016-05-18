@@ -213,3 +213,10 @@ version 16.5
             - Check line-height,
             - add rem base to font-size,
             - remove undeline in links, instead use border
+    commit #16.5.8
+        18 may, 2016
+        - fixing errors show up while testing
+        - add list style to widget
+        - add q, tt elements
+        - redesign code element
+        

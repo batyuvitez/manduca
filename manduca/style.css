@@ -78,8 +78,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	line-height: 1.5;
 	font-size: 14px;
-	font-size 1rem;
+	font-size: 1rem;
 }
+
 ol,
 ul {
 	list-style: none;
@@ -170,6 +171,12 @@ del {
 ins {
 	background: #DAF2FF;
 	text-decoration: none;
+}
+q:before {
+	content: "„";
+}
+q:after {
+	content: "”";
 }
 hr {
 	background-color: #DAF2FF;
@@ -601,7 +608,7 @@ html {
 	font-size: 80%;
 }
 body .site{
-	font-family: Verdana, Geneva, 'Helvetica Neue', sans-serif;
+	font-family: Verdana, Geneva, 'Ubuntu', 'Helvetica Neue', sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #222;
 	background-color: #F3F3F5;
@@ -713,12 +720,17 @@ body .site{
 	line-height: 2;
 	font-size: 148%;
 	text-align: center;
-	border-bottom: double 1px #21759B;
 }
-.breadrcumb {
+.header-bar > header > a.site-title {
+	border-bottom: none;
+}
+.breadcumb {
 	padding: 0.5rem;
 }
-
+.breadcrumb .fa {
+	padding: 0 3px;
+	padding: 0 0.214rem;
+}
 .searchform{
 	float: none;
 	margin: 0 auto;
@@ -854,9 +866,18 @@ section[role="banner"] {
 	border-radius: 5px;
 	background-color: #fff;
 }
+
+
+.widget-area a {
+	font-size: 16px;
+	font-size: 1.14rem;
+}
 .widget-area .widget h2 {
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
+}
+.widget-area ul {
+	list-style: disc inside;
 }
 .widget-area .widget p,
 .widget-area .widget li,
@@ -966,10 +987,7 @@ section[role="banner"] {
 .content-date .entry-date-day {
 	font-size: 85%;
 }
-.excerpt-wrapper .entry-title {
-	text-align: center;
-	margin: 0;
-}
+
 
 .excerpt-wrapper .sticky {
 	border: 3px #531FFF groove;
@@ -1063,14 +1081,20 @@ comments-link a:hover,
 
 
 .entry-title,
-.archive-title,
 .page-title
 {
-	font-size: 150%;
-	line-height: 1.1;
+	font-size: 20px;
+	font-size: 1.428rem;
+	line-height: 1.2;
 	font-weight: 500;
 	margin: 5% 0 5% 48px;
 	color: #080B10;
+}
+.archive-title {
+	font-size: 22px;
+	font-size: 1.571rem;
+	text-align: center;
+	margin: 0 0 15px;
 }
 
  .entry-content h2,
@@ -1178,16 +1202,17 @@ comments-link a:hover,
 .entry-content pre,
 .comment-content pre,
 .entry-content code,
-.comment-content code {
+.comment-content code,
+.entry-content tt,
+.comment-content tt {
 	font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
-	font-size: 90%;
 	line-height: 1.714285714;
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 	overflow: auto;
-	padding: 24px;
-	padding: 1.714285714rem;
-	background-color: #e3e6e8.
+	padding: 3px 6px;
+	padding: 0.214rem 0.428rem;
+	background-color: #e3e6e8;
 }
 .entry-content code,
 .comment-content code {
@@ -1691,7 +1716,10 @@ a.comment-edit-link:hover {
 		padding: 17px 0;
 		padding: 1.214285714285714rem 0;
 	}
-
+	.excerpt-wrapper .entry-title {
+		text-align: center;
+		margin: 0;	
+	}
 	.site-content,
 	.widget-area
 	{
@@ -1844,10 +1872,11 @@ open the toggle boxes*/
 		text-align: center;
 	}
 	
-	.main-navigation a {
+	.main-navigation ul li a {
 		padding: 0.65625em 0.875em;
 		white-space: nowrap;
 		text-decoration: none;
+		border: none;
 		font-size: 124%;
 		font-weight: 500;
 	}
@@ -1935,8 +1964,8 @@ open the toggle boxes*/
 		position: absolute;
 		right: 14px;
 		right: 1rem;
-		top: 8px;
-		top: 0.5714rem;
+		top: 11px;
+		top: 0.7857rem;
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a {
