@@ -7,9 +7,14 @@
 get_header(); ?>
 	<div id="primary" class="site-content" >
 		<nav class="nav-single">
-					<p class="assistive-text"><?php _e( 'Paging', 'manduca' ) ?></p>
-					<div class="nav-previous"><?php previous_post_link( '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' ); ?></div>
+					<div class="nav-previous">
+						<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
+						<?php previous_post_link( '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' ); ?>
+					</div>
+					<div class="nav-next">
+						<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
+						<?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' ); ?>
+					</div>
 			</nav><!-- .nav-single -->
 		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 

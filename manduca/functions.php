@@ -516,7 +516,7 @@ add_filter( 'body_class', 'manduca_body_class' );
   * used in front-page and archive pages
  /**/
  
- if( !function_exists( 'manduca_display_in_two_columns' )  || !function_exists( 'manduca_display_excerpt' ) ) :
+ if( !function_exists(  'manduca_display_excerpt' ) ) :
  
 	function manduca_display_excerpt() {
 	?>				<div class="excerpt-wrapper">
@@ -527,31 +527,38 @@ add_filter( 'body_class', 'manduca_body_class' );
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  >
 						
-			
-						<h2 class="entry-title">
-							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-						</h2>
-						<?php if ( has_post_thumbnail() ) :?>
-						<div class="crop-height">
-							<?php the_post_thumbnail( 'excerpt-size' ); ?>
-						</div>
+						<header class="excerpt-header">
+							<h2 class="entry-title">
+								<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+							</h2>
+							
+							<?php manduca_entry_meta( true ); ?>
+							<div class="clearfix"></div>
 						
-						<div class="excerpt-entry has-thumbnail">
-					
-					<?php else : ?>
-						<div class="excerpt-entry no-thumbnail">
-					<?php endif; ?>
-			
-					
-						<?php
-							if( strpos( get_the_content(), 'more-link' ) === false ) {
-								the_excerpt();
-							}
-							else {
-								the_content();
-							}
-						?>
-						</div>
+						</header>
+						
+						
+							<?php if ( has_post_thumbnail() ) :?>
+							<div class="crop-height">
+								<?php the_post_thumbnail( 'excerpt-size' ); ?>
+							</div>
+							
+							<div class="excerpt-entry has-thumbnail">
+						
+						<?php else : ?>
+							<div class="excerpt-entry no-thumbnail">
+						<?php endif; ?>
+				
+						
+							<?php
+								if( strpos( get_the_content(), 'more-link' ) === false ) {
+									the_excerpt();
+								}
+								else {
+									the_content();
+								}
+							?>
+							</div>
 						<div class='clearfix-content'></div>
 					</article>				
 				<?php
@@ -716,44 +723,28 @@ endif;
 if( !function_exists( 'manduca_breadcrumb') ) :
 
 function manduca_breadcrumb() {
-	if (is_home()) {
-		?>
-			<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a>-><?php _e('Blog posts', 'manduca'); ?></a>
-		<?php
+	
+	if (is_home() || is_front_page() ) {
+		_e( 'Home', 'manduca' ); 
 		
 	}
-		if (!is_home()) {
+	else  {
 		?>
 					<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
-<?php _e('Blog posts', 'manduca'); ?></a>
 		<?php
-			if ( is_single()) { //Posts
-		?>
-			<a rel="bookmark" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Blog', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
-
-		<?php
+			if ( is_single() || is_page()) {
+				the_title();
+			}
+		
+			if (is_archive() ) { 
+				the_archive_title();
 		}
 		
-			if (is_category() || is_single()) { //Categories 
-			
-			echo the_category(', '). '<i class="fa fa-angle-right" aria-hidden="true"></i>'; //Category separator
-			
-			if (is_single()) { //Title of post in category
-	
-			the_title();
-		
-		}
-		
-		} elseif (is_page()) { //Title of page
-		
-		the_title();
-		
-		}
-		if (is_404()) {
+		if (is_404() ) {
 			_e( 'Page not found', 'manduca' );
 		}
-		if (is_search()) {
-			_e( 'Search', 'manduca' );
+		if (is_search() ) {
+			echo sprintf( __( 'Search of the following: %1$s', 'manduca' ),  get_search_query() );
 		}
 	}
 }

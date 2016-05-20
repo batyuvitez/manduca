@@ -12,7 +12,16 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title" itemprop="headline"><?php echo '<span>' . get_search_query() . '</span>'; ?></h1>
+				<h1 class="page-title">
+				<?php
+				 global $wp_query;
+                    /* translators: %1$s is the number of results found, %2$s is the search term */
+                    printf( __( 'Found %1$s search result for keyword: %2$s', 'manduca' ), 
+                            number_format_i18n( $wp_query->found_posts ), 
+                            '<span>' . get_search_query() . '</span>' 
+                    );
+				?>
+				</h1>
 			</header>
 
 			<?php manduca_page_navigation(); ?>

@@ -206,6 +206,7 @@ version 16.5
         ==accessibility== add underline to widget links.
         -remove login redirect after signup
         ==accessibility==add icons instead of ascii.
+    
     commit #16.5.7
         14 May, 2016
         ==better typography==
@@ -213,10 +214,29 @@ version 16.5
             - Check line-height,
             - add rem base to font-size,
             - remove undeline in links, instead use border
+    
     commit #16.5.8
-        18 may, 2016
-        - fixing errors show up while testing
+        18 May, 2016
+        fixing errors show up while testing
         - add list style to widget
         - add q, tt elements
         - redesign code element
+    
+    commit #16.5.9
+    20 May, 2016
+        - fixing errors show up while testing
+        =accessiblilty==
+            -change assistive text on single post
+            -add Ubuntu font family as fallback
+            -clean up breadcrumb
+            -add more understandable title to search page
+        ==typography==
+            (inspiration: https://www.smashingmagazine.com/2009/04/8-simple-ways-to-improve-typography-in-your-designs/)
+            -font size and line height calibration
+            -heading size calibration
+            -invert archive titles
+        ==design==
+            -adopt colours to color palette
+        -add translations to new texts. 
+        
         
