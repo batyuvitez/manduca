@@ -725,7 +725,9 @@ if( !function_exists( 'manduca_breadcrumb') ) :
 function manduca_breadcrumb() {
 	
 	if (is_home() || is_front_page() ) {
-		_e( 'Home', 'manduca' ); 
+		echo '<strong>';
+		_e( 'Home', 'manduca' );
+		echo '</strong>'; 
 		
 	}
 	else  {
@@ -733,7 +735,9 @@ function manduca_breadcrumb() {
 					<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
 		<?php
 			if ( is_single() || is_page()) {
+				echo '<strong>';
 				the_title();
+				echo '</strong>';
 			}
 		
 			if (is_archive() ) { 
@@ -744,7 +748,7 @@ function manduca_breadcrumb() {
 			_e( 'Page not found', 'manduca' );
 		}
 		if (is_search() ) {
-			echo sprintf( __( 'Search of the following: %1$s', 'manduca' ),  get_search_query() );
+			echo sprintf( __( 'Search of the following: %1$s', 'manduca' ),  '<strong>' .get_search_query() .'</strong>' );
 		}
 	}
 }

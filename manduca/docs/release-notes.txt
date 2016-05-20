@@ -237,6 +237,13 @@ version 16.5
             -invert archive titles
         ==design==
             -adopt colours to color palette
-        -add translations to new texts. 
+        -add translations to new texts.
+        
+        commit #16.5.10
+        20 May, 2016
+            ==bug==
+                -submenu wasnot displayed properly if width < 960px
+            ==typography==
+                -breadcrumb last item strong
         
         

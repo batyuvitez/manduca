@@ -1908,6 +1908,9 @@ open the toggle boxes*/
 
 	.main-navigation div ul li {
 		display: inline-block;
+		margin: 0 3px 0 0;
+		margin: 0 0.2142857142857143rem 0 0;
+		position: relative;
 	}
 	.main-navigation > div {
 		text-align: center;
@@ -2055,7 +2058,7 @@ open the toggle boxes*/
 	.site-title{
 		text-align: left;	
 	}
-	.site-header .searchform{
+	.site-header .searchform {
 		float:right;
 		position: absolute;
 		top: 0;
@@ -2091,11 +2094,7 @@ open the toggle boxes*/
 		border: red 3px groove;
 		border-radius: 5px;
 	}
-	.main-navigation li {
-		margin: 0 3px 0 0;
-		margin: 0 0.2142857142857143rem 0 0;
-		position: relative;
-	}
+	
 	.main-navigation li a {
 		padding: 7px;
 		padding:  0.5rem;
