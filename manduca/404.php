@@ -9,11 +9,11 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main" >
 
-			<article id="post-0" class="post error404 no-results not-found"  itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
+			<article id="post-0" class="post error404 no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title" itemprop="headline">
+					<h1 class="entry-title">
 						<?php _e( 'Error 404 &#45; Page Not Found!', 'manduca' ); ?>
 					</h1>
 					

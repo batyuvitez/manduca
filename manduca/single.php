@@ -16,7 +16,7 @@ get_header(); ?>
 						<?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' ); ?>
 					</div>
 			</nav><!-- .nav-single -->
-		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

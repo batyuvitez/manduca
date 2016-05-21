@@ -7,7 +7,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-		<div id="content" role="main"itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -29,7 +29,7 @@ get_header(); ?>
 			<?php
 			$author_description = get_the_author_meta( 'description' );
 			if ( ! empty ( $author_description ) ) : ?>
-			<div class="author-info" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
+			<div class="author-info">
 				<div class="author-avatar">
 					<?php
 					$author_bio_avatar_size = apply_filters( 'manduca_author_bio_avatar_size', 68 );

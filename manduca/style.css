@@ -732,8 +732,7 @@ body .site{
 	padding: 0 0.214rem;
 }
 .searchform{
-	float: none;
-	margin: 0 auto;
+	text-align: center;
 }
 
 .search-form label{
@@ -746,7 +745,9 @@ body .site{
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);	
 }
-
+.breadcrumb {
+	margin-left: 24px;
+}
 
 /* Navigation Menu */
 
@@ -755,6 +756,11 @@ body .site{
 	text-align: left;
 	padding: 5%;
 	background-color: #daf2ff;
+}
+
+.menu-toggle {
+	display: block;
+	margin: 5px auto;
 }
 
 .site-header-menu.toggled-on,
@@ -985,7 +991,8 @@ section[role="banner"] {
 }
 
 .excerpt-header .content-date {
-	top: -73px;
+	top: -78px;
+	top: -5.571rem;
 }
 
 .content-date span {
@@ -1099,16 +1106,17 @@ comments-link a:hover,
 .entry-content h1 { 
 	font-size: 24px;
 	font-size: 1.714rem;
-	line-height: 1.2;
-	font-weight: 500;
 	margin: 24px 0;
 	margin: 1.714rem 0;
 	color: #080B10;
 }
 
-.single .entry-title {
+.single .entry-title,
+.excerpt-header .entry-title {
 	text-align: left;
-	
+	font-size: 21px;
+	font-size: 1.5rem;
+	margin-left: 50px;
 }
 .page-header .page-title,
 .archive-title,
@@ -1815,7 +1823,7 @@ a.comment-edit-link:hover {
 	.entry-title {
 		font-size: 21px;
 		font-size: 1.5rem;
-		margin-left: 75px;
+		margin-left: 50px;
 	}
 	.entry-header .content-date {
 		padding-right: 0;
@@ -2064,6 +2072,9 @@ open the toggle boxes*/
 		top: 0;
 		right: 0;
 	}
+	.breadcrumb {
+		margin-left: 0;
+	}
 	/*wrapper*/
 	.wrapper
 	{
@@ -2110,6 +2121,12 @@ open the toggle boxes*/
 		font-size: 24px;
 		font-size: 1.714rem;
 	}
+    .single .entry-title,
+    .excerpt-header .entry-title {
+        margin-left: 72px;
+        margin-left: 5.142rem;
+    }
+
 	.entry-header .content-date {
 		padding-right: 0;
 		width: 48px;

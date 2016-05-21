@@ -6,7 +6,7 @@
 
 get_header(); ?>
 	<section id="primary" class="site-content">
-		<main id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<main id="content" role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -18,12 +18,12 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<article id="post-0" class="post no-results not-found" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+			<article id="post-0" class="post no-results not-found">
 
 			<?php if ( current_user_can( 'edit_posts' ) ) :
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title" itemprop="headline" ><?php _e( 'No post', 'manduca' ) ?></h1>
+					<h1 class="entry-title"><?php _e( 'No post', 'manduca' ) ?></h1>
 				</header>
 
 				<div class="entry-content">
@@ -34,7 +34,7 @@ get_header(); ?>
 				
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title" itemprop="headline"><?php _e( 'Nothing found', 'manduca' ) ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing found', 'manduca' ) ?></h1>
 				</header>
 
 				<div class="entry-content">

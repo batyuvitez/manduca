@@ -127,7 +127,7 @@ function manduca_widgets_init() {
 		'name' =>__( 'Sidebar', 'manduca' ),
 		'id' => 'main_sidebar',
 		'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s" aria-labelledby="widget-title" role="region">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s" aria-labelledby="secondary">',
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' =>'</h4>',
@@ -204,7 +204,7 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 	{	
 		$categories_list = get_the_category_list( ', ' );
 		$tag_list = get_the_tag_list( '', ', ' );	
-		$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><abbr class="published" title="%3$s"><time class="entry-date" datetime="%3$s">%4$s</time itemprop="datePublished"></abbr></a>',
+		$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><abbr class="published" title="%3$s"><time class="entry-date" datetime="%3$s">%4$s</time></abbr></a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
@@ -217,13 +217,13 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 			$month = utf8_encode( strftime( '%b', get_post_time('U', true) ) );
 		}
 		
-		$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" itemprop="datePublished" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
+		$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date( 'j' ) ),
 			$month
 		);
 	
-		$author = sprintf( '<span class="author vcard" itemprop="name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+		$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'All posts by %s', ' manduca' ), get_the_author() ) ),
 			get_the_author()

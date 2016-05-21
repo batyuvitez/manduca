@@ -245,5 +245,19 @@ version 16.5
                 -submenu wasnot displayed properly if width < 960px
             ==typography==
                 -breadcrumb last item strong
+                
+        commit #16.5.11
+        21 May, 2016
+            ==validation==
+                -check with validator checker
+                -delete itemprop values
+                -delete unnecessary WAI-ARIA
+            ==responsivie design==
+                -correct margins
+            ==prepare to upload to WordPress repository
+            -refresh screenshot,
+            -new: screenshot for moblie
+            -minify css
+            
         
         

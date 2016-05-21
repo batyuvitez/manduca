@@ -7,13 +7,13 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 					<header class="entry-header">
-						<h1 class="entry-title"  itemprop="headline" ><?php the_title(); ?></h1>
+						<h1 class="entry-title" ><?php the_title(); ?></h1>
 
 						<footer class="entry-meta">
 							<?php

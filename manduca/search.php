@@ -7,7 +7,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -31,9 +31,9 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<article id="post-0" class="post no-results not-found"  itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
+			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
-					<h2 class="entry-title" itemprop="headline" ><?php _e( 'No matching result found.', 'manduca' ) ?></h2>
+					<h2 class="entry-title"><?php _e( 'No matching result found.', 'manduca' ) ?></h2>
 				</header>
 
 				<div class="entry-content">
