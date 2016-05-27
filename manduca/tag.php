@@ -23,7 +23,7 @@ get_header(); ?>
 				?>
 			</header><!-- .archive-header -->
 
-			<?php manduca_display_in_two_columns() ?>
+			<?php manduca_display_excerpt() ?>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>

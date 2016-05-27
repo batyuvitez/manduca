@@ -248,6 +248,7 @@ version 16.5
                 
         commit #16.5.11
         21 May, 2016
+        Upladed to repository as 16.5
             ==validation==
                 -check with validator checker
                 -delete itemprop values
@@ -259,5 +260,16 @@ version 16.5
             -new: screenshot for moblie
             -minify css
             
+
+    commit #16.5.13
+    27 May, 2016
+    This was uploaded to repository as 16.5.2
+        == bugs ==
+            -menu dropdown was not displayed in mobile
+            -tag.php runds into fatal error
+            -I made header #s individual (the same in widget) also corrected in css
         
+        
+Version 16.6    
+    
         
