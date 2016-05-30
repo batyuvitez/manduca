@@ -268,6 +268,14 @@ version 16.5
             -menu dropdown was not displayed in mobile
             -tag.php runds into fatal error
             -I made header #s individual (the same in widget) also corrected in css
+    
+    commit #16.5.14
+    This was uploaded to repository as 16.5.3
+            ==bug==
+            search did not work. Because individual header. Reverse the changes in last commit, and fix css accordingly.
+            -delete some depreciated tags from css
+            -footer design: set equal padding each side
+            -two column change the width a little bit (sidebar from 23 to 28%;)
         
         
 Version 16.6    

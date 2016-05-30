@@ -3,11 +3,11 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.5.2
+Version: 16.5.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
-Tags: one-column, two-columns, light, blue, right-sidebar, custom-header, custom-menu, full-width-template, responsive-layout, featured-images, microformats, theme-options, accessibility-ready, theme-options, microformats, sticky-post
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, microformats, theme-options, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
 Changelog: see release notes.
 GitHub: https://github.com/batyuvitez/manduca
@@ -740,11 +740,7 @@ body .site{
 	border-radius: 5px;
 	padding: 3px;
 }
-.search-form input.search-submit
-{
-	position: absolute !important;
-	clip: rect(1px, 1px, 1px, 1px);	
-}
+
 .breadcrumb {
 	margin-left: 24px;
 }
@@ -930,11 +926,12 @@ section[role="banner"] {
 	margin-left: auto;
 	margin-right: auto;
 	color: #fff;
+	padding: 14px;
+	padding: 1rem;
+	
 }
 
 .footer-wrapper p {	
-	padding-left: 14px;
-	padding-left: 1rem;
 	float: left;
 }
 .footer-navigation{
@@ -949,8 +946,8 @@ section[role="banner"] {
 .footer-navigation ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 7px 3px;
-	padding: 0.5rem 0.2142857142857143rem;
+	padding: 0 3px;
+	padding: 0 0.2142857142857143rem;
 }
 .footer-navigation ul li ul{
 	display: none;
@@ -981,8 +978,7 @@ section[role="banner"] {
 		color: #fff;
 		padding: 2px;
 		border-radius: 4px;
-		position: relative;
-	
+		position: relative;	
 		line-height: 24px;
 		line-height: 1.714285714285714rem;
 		
@@ -1703,16 +1699,9 @@ a.comment-edit-link:hover {
 	text-align: right;
 }
 .widget_search label {
-	display: block;
+	display: inline;
 	font-size: smaller;
 	line-height: 1.846153846;
-}
-.widget_twitter li {
-	list-style-type: none;
-}
-.widget_twitter .timesince {
-	display: block;
-	text-align: right;
 }
 
 
@@ -1806,7 +1795,7 @@ a.comment-edit-link:hover {
 	body.full-width .site-content {
 		width: 100%;
 	}
-	.site-header.search-form
+	.site-header .search-form
 	{
 		float:right;
 		margin-bottom: 80px;
@@ -2017,8 +2006,8 @@ open the toggle boxes*/
 		position: absolute;
 		right: 14px;
 		right: 1rem;
-		top: 11px;
-		top: 0.7857rem;
+		top: 13px;
+		top: 0.9rem;
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a {
@@ -2068,10 +2057,9 @@ open the toggle boxes*/
 		text-align: left;	
 	}
 	.site-header .searchform {
-		float:right;
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 9px;
 	}
 	.breadcrumb {
 		margin-left: 0;
@@ -2100,13 +2088,7 @@ open the toggle boxes*/
 	.widget .searchform{
 		float: none;	
 	}
-	.site-header .search-form label{
-		position: absolute;
-		top:43%;
-		border: red 3px groove;
-		border-radius: 5px;
-	}
-	
+		
 	.main-navigation li a {
 		padding: 7px;
 		padding:  0.5rem;
@@ -2157,10 +2139,10 @@ open the toggle boxes*/
 		max-width: 91.428rem;
 	}
 	.site-content {
-		width: 75%;	
+		width: 70%;	
 	}
 	.widget-area {
-		width: 23%;
+		width: 28.6%;
 		
 	}
 	
