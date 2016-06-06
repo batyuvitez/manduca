@@ -26,54 +26,55 @@
 </head>
 
 <body id="total" <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	
-	<div id="masthead" class="site-header" itemtype="https://schema.org/WPHeader" itemscope="itemscope">
-		<div id="header-bar" class="header-bar">
-			<header>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
-				<?php
-				echo apply_filters( 'manduca_site_title', sprintf ( '<a class="site-title" href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ) , get_bloginfo( 'name' ) ) );
-				echo apply_filters( 'manduca_blog_description', '' );
-				?>
-				
-				<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<div>
-					<label class="screen-reader-text" for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
-					<input type="text" placeholder="<?php _e( 'Search', 'manduca' ) ?>" value="<?php echo get_search_query(); ?>" name="s"  id="s" />
-					<input type="submit" class="search-submit" id="search-submit" value="&#xf002;" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" />
-				</div>
-			</form>
-				
-			</header>
-		</div>
-	
-			<?php if( ( is_home() || is_front_page() ) && get_header_image() ) : ?>
-				<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( manduca_get_header_image_alt() ); ?>" />
-			<?php endif; ?>
+	<?php echo apply_filters( 'manduca_background_images', '' ); ?>
+	<div id="page" class="hfeed site">
 		
-		<button id="menu-toggle" class="menu-toggle"><i class="fa fa-bars" aria-hidden="true">&nbsp;</i><?php _e( 'Menu', 'manduca' ) ?></button>	
-		
-		<div id="site-header-menu" class="site-header-menu">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
+		<div id="masthead" class="site-header" >
+			<div id="header-bar" class="header-bar">
+				<header>
+					<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
 					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
+					echo apply_filters( 'manduca_site_title', sprintf ( '<a class="site-title" href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ) , get_bloginfo( 'name' ) ) );
+					echo apply_filters( 'manduca_blog_description', '' );
 					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
-		</div>
-	
-	
-		<div class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
+					
+					<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<div>
+						<label class="screen-reader-text" for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
+						<input type="text" placeholder="<?php _e( 'Search', 'manduca' ) ?>" value="<?php echo get_search_query(); ?>" name="s"  id="s" />
+						<input type="submit" class="search-submit" id="search-submit" value="&#xf002;" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" />
+					</div>
+				</form>
+					
+				</header>
+			</div>
+		
+				<?php if( ( is_home() || is_front_page() ) && get_header_image() ) : ?>
+					<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( manduca_get_header_image_alt() ); ?>" />
+				<?php endif; ?>
+			
+			<button id="menu-toggle" class="menu-toggle"><i class="fa fa-bars" aria-hidden="true">&nbsp;</i><?php _e( 'Menu', 'manduca' ) ?></button>	
+			
+			<div id="site-header-menu" class="site-header-menu">
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'primary-menu',
+							 ) );
+						?>
+					</nav><!-- .main-navigation -->
+				<?php endif; ?>
+			</div>
+		
+		
+			<div class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
 	
 			<?php manduca_breadcrumb(); ?>
 		
 		</div>
 	
-</div>
+		</div><!-- .masthead -->
 
-	<div id="wrapper" class="wrapper" tabindex="-1">
+		<div id="wrapper" class="wrapper" tabindex="-1">

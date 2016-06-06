@@ -278,6 +278,16 @@ version 16.5
             -two column change the width a little bit (sidebar from 23 to 28%;)
         
         
-Version 16.6    
+Version 16.6
+    
+    commit #16.6.1
+    6 June, 2016
+        - remove all background property (make more simplier) Using always background-color.
+        - add archive.php
+        - add new texts to po and mo (originated from archive.php)
+        - add manduca_background_images filter to header.php
+        - coding format: add tabs to header.php to make it clearer.
+        
+        
     
         

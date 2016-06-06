@@ -3,58 +3,15 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.5.3
+Version: 16.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
-Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, microformats, theme-options, accessibility-ready, theme-options, sticky-post
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, theme-options, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
 Changelog: see release notes.
 GitHub: https://github.com/batyuvitez/manduca
 */
-
-/*                 Tartalom:
--------------------------------------------------------------
-Notes
-1. Reset
-2. repetable patterns
-	Small headers
-	Shared Post Format styling
-	Form fields, general styles first
-	Reset non-text input types
-	Buttons
-	Responsive images
-	Make sure videos and embeds fit their containers
-	Images
-	Navigation
-	Author profiles
-3. Basic structure
-	Body, links, basics
-	Accessibility tools
-	Assistive text
-	Page structure
-	Header
-	Navigation Menu
-	Banner
-	Wrapper
-	Sidebar
-	Footer
-4. Main content and comment content
-5. Archives
-6. Single audio/video attachment view
-7. Single image attachment view
-8. Aside post format
-9. Comments
-10.Front page template
-11. Widgets
-12. Plugins
-13. Media queries
-	13.a) Minimum width of 600 pixels.
-	13. b) Minimum width of 960 pixels.
-	13. c) Print
-14. Focus snail css
-15. Egyedi
-
 
 
 /* 1. Reset
@@ -83,7 +40,7 @@ ul {
 blockquote
 {
 	quotes: none;
-	background: #f9f9f9;
+	background-color: #f9f9f9;
 	border-left: 10px solid #DAF2FF;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
@@ -163,7 +120,7 @@ del {
 	color: #333;
 }
 ins {
-	background: #DAF2FF;
+	background-color: #DAF2FF;
 	text-decoration: none;
 }
 q:before {
@@ -378,8 +335,6 @@ input[type="reset"]:active,
 .kvazi-button:active{
 	color: #757575;
 	background-color: #e1e1e1;
-	background-repeat: repeat-x;
-	background-image: -moz-linear-gradient(top, #ebebeb, #e1e1e1);
 	box-shadow: inset 0 0 8px 2px #c6c6c6, 0 1px 0 0 #f4f4f4;
 	border-color: transparent;
 }
@@ -514,8 +469,8 @@ img.wp-smiley,
 	clear: both;
 	line-height: 2;
 	overflow: hidden;
-	margin: 10px 0;
-	margin: 0.7142857142857143rem 0;
+	margin: 10px 5px;
+	margin: 0.7142857142857143 0.357rem;;
 }
 .pagination span,
 .pagination a {
@@ -742,7 +697,8 @@ body .site{
 }
 
 .breadcrumb {
-	margin-left: 24px;
+	margin-left: 5px;
+	margin-left: 0.357rem;
 }
 
 /* Navigation Menu */
@@ -919,7 +875,6 @@ section[role="banner"] {
 /* Footer */
 .footer-wrapper{
 	background: #164e68; 
-	background: linear-gradient(to right, #164e68 0%,#0E509E 100%);
 	width:100%;
 	clear: both;
 	line-height: 2;
@@ -959,7 +914,7 @@ section[role="banner"] {
 .footer-navigation ul li a:hover,
 .footer-navigation ul li a:focus{
 	color: black;
-	background: rgba(0, 0, 0, 0) -moz-linear-gradient(left top , #fff, #daf2ff);
+	background-color: #daf2ff;
 }
 
 /* 4. Main content and comment content
@@ -998,9 +953,7 @@ section[role="banner"] {
 .content-date .entry-date-month {
 	font-size: 70%;
 	text-transform: uppercase;
-	background-color: #0E509E;
-	background: #164e68; 
-	background: linear-gradient(to right, #164e68 0%,#0E509E 100%);
+	background-color: #164e68; 
 }
 .content-date .entry-date-day {
 	font-size: 85%;
@@ -1013,7 +966,7 @@ section[role="banner"] {
 	color: #000;
 }
 .highlight-1{
-	background: #9e430e;
+	background-color: #9e430e;
 	color: white;
 	width:  98%;
 	font-size: 130%;
@@ -1111,8 +1064,8 @@ comments-link a:hover,
 .single .entry-title,
 .excerpt-header .entry-title {
 	text-align: left;
-	font-size: 21px;
-	font-size: 1.5rem;
+	font-size: 16px;
+	font-size: 1.142rem;
 	margin-left: 50px;
 }
 .page-header .page-title,
@@ -1122,8 +1075,7 @@ comments-link a:hover,
 	border-bottom: 1px #2880c3 solid;
 	border-top:  1px #2880c3 solid;
 	margin-left: 0;
-	background: #164e68; 
-	background: linear-gradient(to right, #164e68 0%,#0E509E 100%);
+	background-color: #164e68; 
 	color: white;
 	padding: 7px;
 	padding: 0.5rem;
@@ -1223,7 +1175,7 @@ comments-link a:hover,
 	padding: 1.5rem;
 	border-left: 7px #DAF2FF solid;	
 	quotes: none;
-	background: #f9f9f9;
+	background-color: #f9f9f9;
 	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
 }
 blockquote:before
@@ -1369,6 +1321,7 @@ footer.entry-meta {
 	margin-top: 1.714285714rem;
 	line-height: 1.846153846;
 	color: #757575;
+	font-size: 95%;
 }
 .single-author .entry-meta .by-author {
 	display: none;
@@ -1450,7 +1403,7 @@ article.format-aside a:hover {
 article.format-aside .aside {
 	padding: 24px 24px 0;
 	padding: 1.714285714rem;
-	background: #d2e0f9;
+	background-color: #d2e0f9;
 	border-left: 22px solid #a8bfe8;
 }
 article.format-aside p {
@@ -2073,6 +2026,11 @@ open the toggle boxes*/
 	.site-header {
 		position: relative;
 	}
+	.single .entry-title,
+	.excerpt-header .entry-title {
+		font-size: 21px;
+		font-size: 1.5rem;
+	}
 	.header-bar,
 	.breadcrumb {
 		padding: 0 24px;
@@ -2156,8 +2114,8 @@ open the toggle boxes*/
 	.excerpt-entry {
 		width: 562px;
 		width: 40.14rem;
-		margin-left: 39px;
-		margin-left: 2.786rem;
+		margin-left: 12px;
+		margin-left: 0.857rem;
 	}
 	.excerpt-wrapper {
 		margin-bottom: 20px;

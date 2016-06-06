@@ -24,8 +24,8 @@ get_header(); ?>
 
 				<nav class="nav-single">
 					<p class="assistive-text"><?php _e( 'Paging', 'manduca' ) ?></p>
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&larr;</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">&rarr;</span>' ); ?></div>
+					<div class="nav-previous"><?php previous_post_link( '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' ); ?></div>
+					<div class="nav-next"><?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' ); ?></div>
 				</nav><!-- .nav-single -->
 
 				<?php comments_template(); ?>
