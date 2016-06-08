@@ -646,9 +646,27 @@ function manduca_get_domain_name_from_uri( $uri ) {
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
-		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' class="ext-link">' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 
-		apply_filters( 'manduca_external_links', $pattern ) ;
+		
+		//echo 'parse_external_links külső link á ág : <pre>' .print_r($matches);echo '</pre></br>';
+		$flag = FALSE ;
+		foreach( $matches as $key => $match ) {
+			
+			if( !empty ($match) ) {
+	
+				if ( strpos( $match, 'class=') !== FALSE  ) {
+					$matches[$key] = str_replace ( 'class="', 'class="ext-link ', $match);
+					$flag = TRUE;
+				}
+			}
+		}
+		if ( $flag ) {
+		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'>' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 	
+		}
+		else {
+			$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' class="ext-link">' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 
+		}
 		return $pattern;
+	
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
 	}
@@ -658,7 +676,6 @@ function mandcua_parse_external_links( $matches ) {
 function manduca_external_links( $text ) {
 	$pattern = '/<a (.*?)href="(.*?)\/\/(.*?)"(.*?)>(.*?)<\/a>/i';
 	$text = preg_replace_callback( $pattern, 'mandcua_parse_external_links', $text );
-
 	return $text;
 }
 

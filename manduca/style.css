@@ -205,8 +205,6 @@ img {
 .pagination .nav-links:before,
 .pagination .nav-links:after,
 .search-submit:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	font-family: "fontAwesome";
 	font-size: larger;
@@ -214,7 +212,6 @@ img {
 	font-variant: normal;
 	font-weight: normal;
 	line-height: 1;
-	speak: none;
 	text-align: center;
 	text-decoration: inherit;
 	text-transform: none;
@@ -392,7 +389,8 @@ video {
 }
 
 .crop-height{
-	max-height: 200px;
+	max-height: 196px;
+	max-height: 14rem;
 	overflow: hidden;
 	margin: 15px auto;
 }
@@ -400,7 +398,7 @@ video {
 	display: block;
 	max-width: 100%;
 	height: auto!important;
-	width: auto/9;
+	width: auto;
 	-ms-interpolation-mode: bicubic;
 	margin: 0 auto;
 }
@@ -470,7 +468,7 @@ img.wp-smiley,
 	line-height: 2;
 	overflow: hidden;
 	margin: 10px 5px;
-	margin: 0.7142857142857143 0.357rem;;
+	margin: 0.7142857142857143rem 0.357rem;;
 }
 .pagination span,
 .pagination a {
@@ -816,6 +814,7 @@ section[role="banner"] {
 .comments-area{
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
+	-ms-hyphens: auto;
 	hyphens: auto;
 	margin-bottom: 48px;
 	margin-bottom: 3.428571429rem;
@@ -874,7 +873,7 @@ section[role="banner"] {
 
 /* Footer */
 .footer-wrapper{
-	background: #164e68; 
+	background-color: #164e68; 
 	width:100%;
 	clear: both;
 	line-height: 2;
@@ -2112,8 +2111,8 @@ open the toggle boxes*/
 		margin: 0;
 	}
 	.excerpt-entry {
-		width: 562px;
-		width: 40.14rem;
+		width: 520px;
+		width: 37rem;
 		margin-left: 12px;
 		margin-left: 0.857rem;
 	}

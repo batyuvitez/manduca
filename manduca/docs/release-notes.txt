@@ -287,7 +287,12 @@ Version 16.6
         - add new texts to po and mo (originated from archive.php)
         - add manduca_background_images filter to header.php
         - coding format: add tabs to header.php to make it clearer.
+        -single.php: add FontAwesome to footer page navigation 
         
+    commit #16.6.2
+        == make robouster ==
+            -manduca_external_link function fixed (if there is existing class, ext-link class writtn inside the attributume. So far two class attributume was presented)
+            -css errors was corrected
         
     
         
