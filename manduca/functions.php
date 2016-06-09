@@ -794,4 +794,47 @@ add_filter( 'tiny_mce_before_init', 'manduca_tinymce_init' );
 
 endif;
 
+
+/*
+ * Post navigation
+ *
+ * called from single post 
+ *
+ * */
+
+ if( !function_exists( 'manduca_post_navigation' ) ) :
+ 
+ function manduca_post_navigation() {
+	$previous_post 	= get_previous_post_link(  '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' );
+	$next_post 		= get_next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' );
+	?>
+	
+	<nav class="nav-single">
+		
+			<?php
+				if( !empty( $previous_post ) ) : ?>
+				<div class="nav-previous">
+					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
+					<?php echo $previous_post; ?>
+				</div>
+				
+				<?php endif;
+				
+				
+				if( !empty( $next_post ) ) : ?>
+				<div class="nav-next">
+					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
+					<?php echo $next_post; ?>
+				</div>
+				<?php endif;
+			?>
+		
+	</nav><!-- .nav-single -->
+ 
+ <?php 
+ }
+ 
+ endif;
+
+
 ?>

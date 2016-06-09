@@ -290,9 +290,14 @@ Version 16.6
         -single.php: add FontAwesome to footer page navigation 
         
     commit #16.6.2
-        == make robouster ==
-            -manduca_external_link function fixed (if there is existing class, ext-link class writtn inside the attributume. So far two class attributume was presented)
+        == make it roboust ==
+            -manduca_external_link function fixed (if there is existing class, ext-link class written inside the attributume. So far two class attributume was presented)
             -css errors was corrected
-        
+        ==design problem==
+            -excerpt with thumbnail was incorrectly positioned. 
     
+    commit #16.6.3
+        == make it roboust ==
+        - page navigation : div echoed only if there is link in it. Function put into function.php from single.php
+        
         
