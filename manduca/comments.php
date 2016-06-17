@@ -9,7 +9,7 @@ if ( post_password_required() )
 	return;
 ?>
 
-<aside role="complementary" id="comments" class="comments-area">
+<aside id="comments" class="comments-area">
 
 	
 

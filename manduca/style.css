@@ -508,15 +508,22 @@ img.wp-smiley,
 .nav-next span {
 		right: 4px;
 }
-.nav-previous,
-.previous-image {
+.nav-previous{
 	float: left;
 }
-.nav-next,
-.next-image {
+.nav-next {
 	float: right;
 	text-align: right;
 }
+.nav-next:after {
+	content: " \f101";
+	font-family: fontAwesome;
+}
+.nav-previous:before {
+	content: "\f100 ";
+	font-family: fontAwesome;
+}
+
 .nav-single + .comments-area,
 
 /* Author profiles */
@@ -1321,7 +1328,7 @@ footer.entry-meta {
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #565656;
 	font-size: 95%;
 }
 .single-author .entry-meta .by-author {
@@ -1670,6 +1677,14 @@ a.comment-edit-link:hover {
 }
 .sitemap-images h3 {
 	word-break: break-all;
+	font-size: 14px;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.sitemap-images p {
+	font-size: 12px;
+	font-size: 0.857rem;
 }
 
 

@@ -12,58 +12,50 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
+					
+					<nav id="image-navigation" class="nav-single">
+							<div class="nav-previous">
+								<span><?php previous_image_link( false, __( 'Previous', 'manduca' ) ); ?></span>
+							</div>
+							
+							<div class="nav-next">
+								<span><?php next_image_link( false, __( 'Next', 'manduca' ) ); ?>  </span>
+							</div>					
+						</nav><!-- .nav-single -->
+					
 					<header class="entry-header">
 						<h1 class="entry-title" ><?php the_title(); ?></h1>
-
-						<footer class="entry-meta">
-							<?php
-								$metadata = wp_get_attachment_metadata();
-								printf( '<span class="meta-prep meta-prep-entry-date">' .__( 'Date', 'manduca' ) .'</span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>, '. __( 'Original size', 'manduca' ) . ': <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a>',
-									esc_attr( get_the_date( 'c' ) ),
-									esc_html( get_the_date() ),
-									esc_url( wp_get_attachment_url() ),
-									$metadata['width'],
-									$metadata['height'],
-									esc_url( get_permalink( $post->post_parent ) ),
-									esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
-									get_the_title( $post->post_parent )
-								);
-							?>
-							<?php edit_post_link( '<i class=\"fa fa-pencil\" aria-hidden="true"></i>' .__( 'Edit', 'manduca' ) , '<span class="edit-link">', '</span>' ); ?>
-						</footer><!-- .entry-meta -->
-
-						<nav id="image-navigation" class="navigation" role="navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'manduca' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'manduca' ) ); ?></span>
-						</nav><!-- #image-navigation -->
+						
+						
+						
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 
 						<div class="entry-attachment">
 							<div class="attachment">
-<?php
-
-$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
-foreach ( $attachments as $k => $attachment ) :
-	if ( $attachment->ID == $post->ID )
-		break;
-endforeach;
-
-if ( count( $attachments ) > 1 ) :
-	$k++;
-	if ( isset( $attachments[ $k ] ) ) :
-		// get the URL of the next image attachment
-		$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
-	else :
-		// or get the URL of the first image attachment
-		$next_attachment_url = get_attachment_link( $attachments[0]->ID );
-	endif;
-else :
-	// or, if there's only 1 image, get the URL of the image
-	$next_attachment_url = wp_get_attachment_url();
-endif;
-?>
+								<?php
+								
+								$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+								foreach ( $attachments as $k => $attachment ) :
+									if ( $attachment->ID == $post->ID )
+										break;
+								endforeach;
+								
+								if ( count( $attachments ) > 1 ) :
+									$k++;
+									if ( isset( $attachments[ $k ] ) ) :
+										// get the URL of the next image attachment
+										$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
+									else :
+										// or get the URL of the first image attachment
+										$next_attachment_url = get_attachment_link( $attachments[0]->ID );
+									endif;
+								else :
+									// or, if there's only 1 image, get the URL of the image
+									$next_attachment_url = wp_get_attachment_url();
+								endif;
+								?>
 								<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 								/**
  								 * Filter the image attachment size to use.
@@ -79,21 +71,90 @@ endif;
 								echo wp_get_attachment_image( $post->ID, $attachment_size );
 								?></a>
 
-								<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-								<div class="entry-caption">
-									<?php the_excerpt(); ?>
-								</div>
-								<?php endif; ?>
-							</div><!-- .attachment -->
+								
 
 						</div><!-- .entry-attachment -->
 
 						<div class="entry-description">
-							<?php the_content(); ?>
 							<?php wp_link_pages( array( 'before' => '<div class="page-links">'. __( 'Pages', 'manduca' ), 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-description -->
+						
+						
+						<footer class="entry-meta">
+							<?php
+								$metadata = wp_get_attachment_metadata();
+								sprintf( '<span class="meta-prep meta-prep-entry-date">' .__( 'Date:', 'manduca' ) .'</span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>, '. __( 'Original size', 'manduca' ) . ': <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> ',
+									esc_attr( get_the_date( 'c' ) ),
+									esc_html( get_the_date() ),
+									esc_url( wp_get_attachment_url() ),
+									$metadata['width'],
+									$metadata['height'],
+									esc_url( get_permalink( $post->post_parent ) ),
+									esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
+									get_the_title( $post->post_parent )
+								);
+								
+							
+						    $image_alt 			= get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
+							$image_caption  	= $post->post_excerpt;
+							$image_description 	= $post->post_content;
+							
+							?>
+						<ul>
+							<li class="meta-prep meta-prep-entry-date">
+								<span>
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
+									<?php echo __( 'Date:', 'manduca' ) .': ' ?>
+								</span>
+									<time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
+							</li>
+							<li>
+								<span>
+									<i class="fa fa-cube" aria-hidden="true"></i>
+									<?php echo __( 'Original size', 'manduca' ) .': </span>' .$metadata['width'] .'*' .$metadata['height'] ?>
+							</li>
+							
+							<?php if( !empty( $image_alt ) ) : ?>
+							<li>
+								<span>
+									<i class="fa fa-braille" aria-hidden="true"></i>
+									<?php echo __( 'Alternative Text' ) .': </span>' .$image_alt ?>
+							</li>
+							<?php endif; ?>	
+						
+							<?php if( !empty( $image_caption ) ) : ?>
+							<li>
+								<span>
+									<i class="fa fa-film" aria-hidden="true"></i>
+									<?php echo __( 'Captions/Subtitles' ) .': </span>' . $image_caption ?>
+							</li>
+							<?php endif; ?>
+							
+							<?php if( !empty( $image_description ) ) : ?>
+							<li>
+								<span>
+									<i class="fa fa-commenting" aria-hidden="true"></i>
+									<?php echo __( 'Image description'  ) .': </span>' .$image_description ?>
+							</li>
+							<?php endif; ?>
+							
+						</ul>
+						
+							<?php edit_post_link( '<i class=\"fa fa-pencil\" aria-hidden="true"></i>' .__( 'Edit', 'manduca' ) , '<span class="edit-link">', '</span>' ); ?>
+						</footer><!-- .entry-meta -->
+
 
 					</div><!-- .entry-content -->
+					
+					<nav id="image-navigation" class="nav-single">
+							<div class="nav-previous">
+								<span><?php previous_image_link( false, __( 'Previous', 'manduca' ) ); ?></span>
+							</div>
+							
+							<div class="nav-next">
+								<span><?php next_image_link( false, __( 'Next', 'manduca' ) ); ?>  </span>
+							</div>					
+					</nav><!-- .nav-single -->
 
 				</article><!-- #post -->
 

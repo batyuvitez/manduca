@@ -290,6 +290,7 @@ Version 16.6
         -single.php: add FontAwesome to footer page navigation 
         
     commit #16.6.2
+    8 June, 2016
         == make it roboust ==
             -manduca_external_link function fixed (if there is existing class, ext-link class written inside the attributume. So far two class attributume was presented)
             -css errors was corrected
@@ -297,10 +298,12 @@ Version 16.6
             -excerpt with thumbnail was incorrectly positioned. 
     
     commit #16.6.3
+    9 June, 2016
         == make it roboust ==
         - page navigation : div echoed only if there is link in it. Function put into function.php from single.php
         
     commit #16.6.4
+        17 June,2017  
         ==bug==
             - content.php added post-image 'large', but this size had been unset. Correct size name: 'post-size'
         ==make it roboust==
@@ -309,3 +312,17 @@ Version 16.6
             -footer.php: nav element do not need role.
         - addstyling to html <b> element (mdn: represents a span of text stylistically different from normal text, without conveying any special importance or relevance.)
         
+    commit #16.6.5
+    17 June, 2017
+        ==Accessibility ==
+            -article footer contrast ration increased to meet wcag 'AAA'
+            -attachment post type (iamge.php) to include alt text
+            -attachment post type to display meta in footer in unordered list.
+            -page and image navigation icons set in css
+        ==typography==
+            -sitemap font size reduced
+            -attachement post type get better. 
+        ==make it roboust ==
+            -comments: itemprop deleted
+            
+            
