@@ -300,4 +300,12 @@ Version 16.6
         == make it roboust ==
         - page navigation : div echoed only if there is link in it. Function put into function.php from single.php
         
+    commit #16.6.4
+        ==bug==
+            - content.php added post-image 'large', but this size had been unset. Correct size name: 'post-size'
+        ==make it roboust==
+            -itemtype deleted from sidebar.php
+            -footer.php: itemprop deleted
+            -footer.php: nav element do not need role.
+        - addstyling to html <b> element (mdn: represents a span of text stylistically different from normal text, without conveying any special importance or relevance.)
         

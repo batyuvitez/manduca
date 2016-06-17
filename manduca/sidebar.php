@@ -7,7 +7,7 @@
 ?>
 
 	<?php if ( is_active_sidebar( 'main_sidebar' ) ) : ?>
-		<aside id="secondary" class="widget-area" itemtype="http://schema.org/WPSideBar">
+		<aside id="secondary" class="widget-area" >
 			<?php dynamic_sidebar( 'main_sidebar' ); ?>
 		</aside><!-- #secondary -->
 	<?php endif; ?>

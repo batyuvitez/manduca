@@ -7,7 +7,7 @@
 ?>
 		</div><!-- #main .wrapper -->
 		<div id="footer-wrapper" class="footer-wrapper">
-			<footer id="colophon" itemtype="https://schema.org/WPFooter" itemscope="itemscope" >
+			<footer id="colophon" >
 				<?php do_action( 'manduca_before_footer' ); ?>
 				<div class="site-info">
 					<?php
@@ -20,7 +20,7 @@
 							) );
 						
 						if ( ! empty ( $menu ) ) {
-							echo '<nav id="footer-navigation" class="footer-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">' .$menu .'</nav>';
+							echo '<nav id="footer-navigation" class="footer-navigation">' .$menu .'</nav>';
 						}
 					?>
 					<p>&copy; <?php echo date( 'Y' ) .", " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>

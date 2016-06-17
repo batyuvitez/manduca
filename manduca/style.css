@@ -1203,7 +1203,9 @@ blockquote p{
 .entry-content code,
 .comment-content code,
 .entry-content tt,
-.comment-content tt {
+.comment-content tt,
+.entry-content b,
+.comment-content b {
 	font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
 	line-height: 1.714285714;
 	margin: 24px 0;
