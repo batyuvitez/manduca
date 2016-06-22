@@ -925,6 +925,42 @@ section[role="banner"] {
 
 /* 4. Main content and comment content
 -------------------------------------------------------------- */
+.columns-mask {
+	position:relative;		
+	clear:both;
+	float:left;
+    width:100%;			
+	overflow:hidden;
+	margin-bottom: 36px;
+	margin-bottom: 2.571rem;
+}
+.columns-wrapper {
+	float:left;
+	width:200%;
+	position:relative;
+	left:60px;
+}
+.column-right-wrapper {
+	float:right;
+	width:50%;
+	position:relative;
+	right:60px;
+	padding-bottom:1em;
+}
+.column-right {
+	margin:0 15px 0 60px;
+	position:relative;
+	right:100%;
+	overflow:hidden;
+	top: -4px;
+}
+.column-left {
+	float:left;
+	width:60px;
+	position:relative;
+	right:60px;
+}
+
 
 .entry-header .content-date,
 .excerpt-header .content-date {
@@ -933,25 +969,16 @@ section[role="banner"] {
 		width: 3.1rem;
 		text-decoration: none;
 		font-weight: 300;
-		margin-bottom: -51px;
 		text-align: center;
 		background-color: #9e430e;
 		color: #fff;
 		padding: 2px;
 		border-radius: 4px;
-		position: relative;	
 		line-height: 24px;
 		line-height: 1.714285714285714rem;
-		
-}
-.entry-header .content-date {
-		top: -62px;
 }
 
-.excerpt-header .content-date {
-	top: -78px;
-	top: -5.571rem;
-}
+
 
 .content-date span {
 	display: block;
@@ -1062,9 +1089,10 @@ comments-link a:hover,
 .entry-content h1 { 
 	font-size: 24px;
 	font-size: 1.714rem;
-	margin: 24px 0;
-	margin: 1.714rem 0;
 	color: #080B10;
+}
+.archive-title span.vcard a {
+	color: #DAF2FF;
 }
 
 .single .entry-title,
@@ -1072,7 +1100,7 @@ comments-link a:hover,
 	text-align: left;
 	font-size: 16px;
 	font-size: 1.142rem;
-	margin-left: 50px;
+	font-weight: 300;
 }
 .page-header .page-title,
 .archive-title,
@@ -1782,12 +1810,10 @@ a.comment-edit-link:hover {
 	.entry-title {
 		font-size: 21px;
 		font-size: 1.5rem;
-		margin-left: 50px;
 	}
 	.entry-header .content-date {
 		padding-right: 0;
 		width: 48px;
-		top: -69px;
 	}
 
 	.content-date .entry-date-month {
@@ -2078,17 +2104,7 @@ open the toggle boxes*/
 		font-size: 24px;
 		font-size: 1.714rem;
 	}
-    .single .entry-title,
-    .excerpt-header .entry-title {
-        margin-left: 72px;
-        margin-left: 5.142rem;
-    }
-
-	.entry-header .content-date {
-		padding-right: 0;
-		width: 48px;
-		top: -74px;
-	}
+	
 	.excerpt-wrapper article{
 		margin: 0 5px 11px;
 	}

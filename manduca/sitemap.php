@@ -8,7 +8,7 @@
 
 <h2 id="authors"><?php _e( 'Authors:', 'manduca' ) ?></h2>
 <ul>
-  <?php wp_list_authors( array( 'exclude_admin' => false, ) ); ?>
+  <?php wp_list_authors( array( 'exclude_admin' => true, ) ); ?>
 </ul>
 
 <h2 id="pages"><?php _e( 'Pages:' , 'manduca' ) ?></h2>
@@ -54,15 +54,8 @@
           
           <h3><?php echo $image->post_title; ?> </h3>
 
-          <?php
-            the_attachment_link($image->ID, false);
-             $image_alt = get_post_meta( $image->ID, '_wp_attachment_image_alt', true);
-            if ( empty( $image_alt )) {
-               $image_alt = $image->post_excerpt; 
-            } ?>
-          
-          <p> <?php echo $image_alt; ?> </p>
-        
+          <?php the_attachment_link($image->ID, false); ?>
+                  
         </div>
         
         <?php

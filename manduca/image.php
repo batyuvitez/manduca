@@ -102,39 +102,33 @@ get_header(); ?>
 							?>
 						<ul>
 							<li class="meta-prep meta-prep-entry-date">
-								<span>
 									<i class="fa fa-clock-o" aria-hidden="true"></i>
 									<?php echo __( 'Date:', 'manduca' ) .': ' ?>
-								</span>
-									<time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
+									<b><time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></b>
 							</li>
 							<li>
-								<span>
 									<i class="fa fa-cube" aria-hidden="true"></i>
-									<?php echo __( 'Original size', 'manduca' ) .': </span>' .$metadata['width'] .'*' .$metadata['height'] ?>
+									<?php echo __( 'Original size', 'manduca' ) .': <b>' .$metadata['width'] .'*' .$metadata['height'] .'</b>'; ?>
 							</li>
 							
 							<?php if( !empty( $image_alt ) ) : ?>
 							<li>
-								<span>
 									<i class="fa fa-braille" aria-hidden="true"></i>
-									<?php echo __( 'Alternative Text' ) .': </span>' .$image_alt ?>
+									<?php echo __( 'Alternative Text' ) .': <b>' .$image_alt. '</b>'; ?>
 							</li>
 							<?php endif; ?>	
 						
 							<?php if( !empty( $image_caption ) ) : ?>
 							<li>
-								<span>
 									<i class="fa fa-film" aria-hidden="true"></i>
-									<?php echo __( 'Captions/Subtitles' ) .': </span>' . $image_caption ?>
+									<?php echo __( 'Captions/Subtitles' ) .': <b>' . $image_caption .'</b>'; ?>
 							</li>
 							<?php endif; ?>
 							
 							<?php if( !empty( $image_description ) ) : ?>
 							<li>
-								<span>
 									<i class="fa fa-commenting" aria-hidden="true"></i>
-									<?php echo __( 'Image description'  ) .': </span>' .$image_description ?>
+									<?php echo __( 'Image description'  ) .': <b id="long-description">' .$image_description .'</b>' ?>
 							</li>
 							<?php endif; ?>
 							

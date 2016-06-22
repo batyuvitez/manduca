@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-		<div id="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">

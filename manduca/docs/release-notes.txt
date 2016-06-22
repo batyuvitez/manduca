@@ -324,5 +324,17 @@ Version 16.6
             -attachement post type get better. 
         ==make it roboust ==
             -comments: itemprop deleted
+    
+    commit #16.6.6
+        ==make it roboust ==
+            -function manduca_display_entry_header
+            -make the header responsive and same in all devices
+            -this eliminates the disadvantages of relative positioning of content-date.
+            
+        ==accessibility==
+            -image.php (attachment page): add id to descriptipn
+            - sitemap: delet alternative text from image list
+        ==bug==
+            -delete itemprop from all files.
             
             

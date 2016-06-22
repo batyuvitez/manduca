@@ -200,7 +200,7 @@ endif;
 
 if ( ! function_exists( 'manduca_entry_meta' ) ) :
 
-	function manduca_entry_meta( $only_date=false )
+	function manduca_entry_meta()
 	{	
 		$categories_list = get_the_category_list( ', ' );
 		$tag_list = get_the_tag_list( '', ', ' );	
@@ -211,17 +211,6 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 			esc_html( get_the_date() )
 		);
 		
-		$month = esc_html( get_the_date( 'M' ) );
-		if ( get_locale() ==='hu_HU' ) {
-			setlocale(LC_ALL,'hungarian');
-			$month = utf8_encode( strftime( '%b', get_post_time('U', true) ) );
-		}
-		
-		$date_wo_link = sprintf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date( 'j' ) ),
-			$month
-		);
 	
 		$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -256,9 +245,7 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 		
 		$utility_text .="</ul>";
 		
-		if ( $only_date ) {
-			$utility_text = $date_wo_link;
-		}
+		
 		echo $utility_text;
 	}
 endif;
@@ -528,13 +515,7 @@ add_filter( 'body_class', 'manduca_body_class' );
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  >
 						
 						<header class="excerpt-header">
-							<h2 class="entry-title">
-								<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-							</h2>
-							
-							<?php manduca_entry_meta( true ); ?>
-							<div class="clearfix"></div>
-						
+							<?php manduca_display_entry_header(); ?>
 						</header>
 						
 						
@@ -835,6 +816,54 @@ endif;
  }
  
  endif;
-
+ 
+ if( !function_exists( 'manduca_display_entry_header' ) ) :
+ 
+ function manduca_display_entry_header() {
+	?>
+	
+	<div class="columns-mask">
+		<div class="columns-wrapper">
+			<div class="column-right-wrapper">
+				<div class="column-right">
+						<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
+							<div class="featured-post"><?php _e( 'Featured', 'manduca' ) ?></div>
+						<?php endif; ?>
+		
+					<?php if ( is_single() ) : ?>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php else : ?>
+						<h2 class="entry-title">
+							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+						</h2>
+					<?php endif; // is_single() ?>
+				</div>
+			</div>
+			
+			<div class="column-left">
+			
+					<?php
+					$month = esc_html( get_the_date( 'M' ) );
+					if ( get_locale() ==='hu_HU' ) {
+							setlocale(LC_ALL,'hungarian');
+							$month = utf8_encode( strftime( '%b', get_post_time('U', true) ) );
+					}
+					
+					 printf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
+						esc_attr( get_the_date( 'c' ) ),
+						esc_html( get_the_date( 'j' ) ),
+						$month
+					); ?>
+			
+			</div>
+		</div>	
+	</div>		
+		
+	
+<?php	
+ }
+ 
+ endif;
+ 
 
 ?>
