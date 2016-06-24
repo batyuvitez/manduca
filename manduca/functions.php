@@ -127,7 +127,7 @@ function manduca_widgets_init() {
 		'name' =>__( 'Sidebar', 'manduca' ),
 		'id' => 'main_sidebar',
 		'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s" aria-labelledby="secondary">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' =>'</h4>',
