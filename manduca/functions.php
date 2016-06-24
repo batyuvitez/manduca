@@ -123,13 +123,13 @@ function manduca_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', 'manduca_page_menu_args' );
 		
 function manduca_widgets_init() {
-	register_sidebar( array(
+		register_sidebar( array(
 		'name' =>__( 'Sidebar', 'manduca' ),
 		'id' => 'main_sidebar',
 		'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s" aria-labelledby ="w-%1$s"><h4 id="w-%1$s" class="widget-title"> ',
 		'after_widget' => '</section>',
-		'before_title' => '<h4 class="widget-title">',
+		'before_title' => '',
 		'after_title' =>'</h4>',
 	) );
 
