@@ -628,7 +628,6 @@ function manduca_get_domain_name_from_uri( $uri ) {
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
 		
-		//echo 'parse_external_links külső link á ág : <pre>' .print_r($matches);echo '</pre></br>';
 		$flag = FALSE ;
 		foreach( $matches as $key => $match ) {
 			

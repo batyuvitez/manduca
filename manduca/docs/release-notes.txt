@@ -336,5 +336,13 @@ Version 16.6
             - sitemap: delet alternative text from image list
         ==bug==
             -delete itemprop from all files.
+    
+    commit #16.6.7
+        Uploaded to repository as v 16.6
+        27 June, 2016
+        ==bug==
+            - #secondary aria-labelledby crashed the JAWS and NVDA.
+            - Oaron fixed it on previous two commits w/o number.
+        
             
             
