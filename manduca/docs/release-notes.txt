@@ -345,4 +345,16 @@ Version 16.6
             - Oaron fixed it on previous two commits w/o number.
         
             
-            
+ver 16.7
+    commit #16.7.1
+        19 July, 2017
+        -add manduca_before_header action hook
+        -change dotted outline to ridge
+        -sitemap rewritten:
+            -alphabetic order,
+            -no breakdown by categories,
+            -media: only list
+            -list of pdf files.
+        -add edit link to excerpts too.
+        -remove breadcroumb in case of attachment
+        

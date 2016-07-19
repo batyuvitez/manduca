@@ -518,6 +518,7 @@ add_filter( 'body_class', 'manduca_body_class' );
 							<?php manduca_display_entry_header(); ?>
 						</header>
 						
+						<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>
 						
 							<?php if ( has_post_thumbnail() ) :?>
 							<div class="crop-height">
@@ -856,7 +857,8 @@ endif;
 			
 			</div>
 		</div>	
-	</div>		
+	</div>
+	
 		
 	
 <?php	
@@ -864,5 +866,14 @@ endif;
  
  endif;
  
+/*
+ *Stop reserving slug for media items. 
+ *
+ **/
+
+add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
+
+
+
 
 ?>

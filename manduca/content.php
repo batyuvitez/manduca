@@ -9,6 +9,9 @@
 		
 		<header class="entry-header">
 			<?php manduca_display_entry_header(); ?>
+		
+			<?php do_action('manduca_after_title'); ?>
+		
 		</header><!-- .entry-header -->
 		
 		

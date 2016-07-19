@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.6
+Version: 16.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -91,7 +91,7 @@ body a:visited {
 .site a:focus,
 .site a:hover,
 .site a:active {
-    outline: 1px solid #336699;
+    outline: 1px ridge #336699;
 	color: white;
 	background-color: #2c82b5;
 }
@@ -320,7 +320,7 @@ article.post-password-required input[type=submit]:hover,
 a.kvazi-button:hover,
 a.more-link:hover{
 	background-color: #fff;
-	outline: dotted 3px #9e430e;
+	outline: ridge 3px #9e430e;
 	color: #9e430e;	
 }
 .menu-toggle:active,
@@ -587,7 +587,7 @@ body .site{
 .post .entry-content p a:active
 {
 	background-color: #ffffcc;
-	outline: 2px dotted #3486B8;
+	outline: 2px ridge #3486B8;
 }
 
 /* Assistive text */
@@ -1232,6 +1232,10 @@ blockquote p{
 .comment-content blockquote p:last-child {
 	margin-bottom: 0;
 }
+.entry-content strong,
+.comment-content strong{
+	font-weight: 700;
+}
 
 .entry-content pre,
 .comment-content pre,
@@ -1694,27 +1698,6 @@ a.comment-edit-link:hover {
 }
 
 
-/* 12. Sitemaps
------------------------------------------------ */
-
-.sitemap-images {
-	width: 33%;
-	min-width: 200px;
-	float: left;
-	padding: 2%;
-}
-.sitemap-images h3 {
-	word-break: break-all;
-	font-size: 14px;
-	font-size: 1rem;
-	font-weight: 700;
-}
-
-.sitemap-images p {
-	font-size: 12px;
-	font-size: 0.857rem;
-}
-
 
 /* 13. Media queries
 -------------------------------------------------------------- */
@@ -1895,7 +1878,7 @@ open the toggle boxes*/
 		line-height: 1.42857143;
 		border-right: dotted 1px #21759B;
 	}
-	.main-navigation li:last-child{
+	.main-navigation > li:last-child{
 		border:none;
 	}
 
@@ -1924,12 +1907,14 @@ open the toggle boxes*/
 	}
 
 	.main-navigation ul ul {
-		border-bottom: 1px solid #d1d1d1;
 		display: block;
 		left: -999em;
 		margin: 0;
 		position: absolute;
 		z-index: 99999;
+	}
+	.main-navigation ul ul>li:last-child {
+		border-bottom: 1px solid #d1d1d1;
 	}
 
 	.main-navigation ul ul ul {
