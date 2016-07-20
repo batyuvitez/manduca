@@ -348,7 +348,7 @@ Version 16.6
 ver 16.7
     commit #16.7.1
         19 July, 2017
-        -add manduca_before_header action hook
+        -add manduca_after_title action hook to content.php
         -change dotted outline to ridge
         -sitemap rewritten:
             -alphabetic order,
@@ -357,4 +357,13 @@ ver 16.7
             -list of pdf files.
         -add edit link to excerpts too.
         -remove breadcroumb in case of attachment
-        
+    
+    commit#16.7.2
+    20 July, 2016
+        == breadcrumb ==
+            - shows category prefix if single
+            - shows hierarchy of pages.
+            - add an action hook for custom taxonomy or post type
+        ==attachment page ==
+            -always show image navigation (so far navigation was possible only with common parents);
+            -center heading of the page. 

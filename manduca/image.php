@@ -14,13 +14,10 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 					
 					<nav id="image-navigation" class="nav-single">
-							<div class="nav-previous">
-								<span><?php previous_image_link( false, __( 'Previous', 'manduca' ) ); ?></span>
-							</div>
 							
-							<div class="nav-next">
-								<span><?php next_image_link( false, __( 'Next', 'manduca' ) ); ?>  </span>
-							</div>					
+							<?php manduca_adjacent_image_link( true ); ?>
+							<?php manduca_adjacent_image_link( false ) ; ?>  
+							
 						</nav><!-- .nav-single -->
 					
 					<header class="entry-header">
@@ -32,8 +29,8 @@ get_header(); ?>
 
 					<div class="entry-content">
 
-						<div class="entry-attachment">
-							<div class="attachment">
+						
+						<div class="attachment">
 								<?php
 								
 								$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
@@ -72,8 +69,8 @@ get_header(); ?>
 								?></a>
 
 								
-
-						</div><!-- .entry-attachment -->
+						</div><!-- .attachment -->
+						
 
 						<div class="entry-description">
 							<?php wp_link_pages( array( 'before' => '<div class="page-links">'. __( 'Pages', 'manduca' ), 'after' => '</div>' ) ); ?>
@@ -141,14 +138,12 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 					
 					<nav id="image-navigation" class="nav-single">
-							<div class="nav-previous">
-								<span><?php previous_image_link( false, __( 'Previous', 'manduca' ) ); ?></span>
-							</div>
 							
-							<div class="nav-next">
-								<span><?php next_image_link( false, __( 'Next', 'manduca' ) ); ?>  </span>
-							</div>					
+							<?php manduca_adjacent_image_link( true ); ?>
+							<?php manduca_adjacent_image_link( false ) ; ?>  
+							
 					</nav><!-- .nav-single -->
+					
 
 				</article><!-- #post -->
 

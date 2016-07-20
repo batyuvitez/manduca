@@ -711,45 +711,112 @@ add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
 endif;
 
 
-
-/*
- *Built ind breadcrumb function. 
+/**
+ * Breadcrumb
+ * 
+ * Display breadcrumb
+ *     = display category in case of sinlge post
+ *     = display hierarchy of pages
+ * 
+ * @since 16.4
  *
- *If Yoast Seo is installed, that is used instead of this
+ *  
  */
+
 
 if( !function_exists( 'manduca_breadcrumb') ) :
 
 function manduca_breadcrumb() {
 	
 	if (is_home() || is_front_page() ) {
-		echo '<strong>';
-		_e( 'Home', 'manduca' );
-		echo '</strong>'; 
-		
+		printf( '<strong>%s</strong>', __( 'Home', 'manduca' ) );
 	}
-	else  {
+	
+	else {
 		?>
-					<a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-right" aria-hidden="true"></i>
+		<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
 		<?php
-			if ( is_single() || is_page()) {
-				echo '<strong>';
-				the_title();
-				echo '</strong>';
+		
+			/**
+			* Add custom post types or custom taxonomies here
+			*
+			* @since 16.7
+			*/
+		
+			do_action( 'manduca_custom_breadcrumb' );
+			
+			if (is_category() ) { 
+					$category_ID  		= get_queried_object()->term_id;
+					$category_object 	= get_category( $category_ID );
+					$parent_ID			= $category_object->category_parent;
+					echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' ); 
+					single_cat_title();
+			}
+			
+			
+			
+			elseif (is_single()) { //Title of post in category
+			
+				
+				$term_object = get_the_terms( get_the_ID() , 'category' );
+				$term  = $term_object [0];
+				$link = esc_url( get_term_link( $term ) );
+				
+				//get parent
+				$parent_object  = get_term_by( 'id', $term->parent, 'category' );
+				if ( !empty( $parent_object) ) { 
+					$parent_link = esc_url( get_term_link( $parent_object ) );
+					
+					echo sprintf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="%3$s">%4$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>%5$s' ,
+								$parent_link,
+								$parent_object->name,
+								$link,
+								$term->name,
+								the_title( '', '', FALSE )
+								);
+				}
+				else {
+					
+					the_title();
+				}
 			}
 		
-			if (is_archive() ) { 
-				the_archive_title();
+		elseif ( is_page() ) {
+			global $post;
+			$first_parent = $post->post_parent;
+			
+			$first_parent_object = get_post( $first_parent );
+			$second_parent = $first_parent_object->post_parent;
+			
+			
+			if ( $second_parent ) {
+				printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+					   get_page_link( $second_parent ),
+					   get_the_title( $second_parent )
+					  );
+			}
+			if ( $first_parent ) {
+				printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+					   get_page_link( $first_parent ),
+					   get_the_title( $first_parent )
+					  );
+			}
+			
+			
+			the_title();
 		}
 		
-		if (is_404() ) {
+		if (is_404()) {
 			_e( 'Page not found', 'manduca' );
 		}
-		if (is_search() ) {
-			echo sprintf( __( 'Search of the following: %1$s', 'manduca' ),  '<strong>' .get_search_query() .'</strong>' );
-		}
+		if (is_search()) {
+			_e( 'Search', 'manduca' );
+		} ?>
+	
+	<?php
 	}
 }
+
 
 endif;
 
@@ -867,7 +934,10 @@ endif;
  endif;
  
 /*
- *Stop reserving slug for media items. 
+ * Stop reserving slug for media items.
+ * Computes a unique slug for the post, when given the desired slug and some post details.
+ *
+ * @since 16.7
  *
  **/
 
@@ -876,4 +946,52 @@ add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
 
 
 
+/**
+ * Displays previous image link
+ * in spite of the WP function: browse all, not only the ones belong the same parent.
+ *
+ * @since 16.7
+ *
+ * @param bool         $prev Optional. Whether to display the next (false) or previous (true) link. 
+ * 
+ */
+
+function manduca_adjacent_image_link( $prev ) {
+    $post = get_post();
+    $attachments = array_values( get_children( array(
+													 'post_status' => 'inherit',
+													 'post_type' => 'attachment',
+													 'post_mime_type' => 'image',
+													 'order' => 'ASC',
+													 'orderby' => 'menu_order ID' ) ) );
+ 
+    foreach ( $attachments as $k => $attachment ) {
+        if ( $attachment->ID == $post->ID ) {
+            break;
+        }
+    }
+ 
+    $output = '';
+    $attachment_id = 0;
+ 
+    if ( $attachments ) {
+        $k = $prev ? $k - 1 : $k + 1;
+		$text = $prev ?  __( 'Previous', 'manduca' ) : __( 'Next', 'manduca' ) ;
+ 
+        if ( isset( $attachments[ $k ] ) ) {
+            $attachment_id = $attachments[ $k ]->ID;
+            $output = wp_get_attachment_link( $attachment_id, false, true, false, $text );
+        }
+    }
+	if ( !empty( $output ) ) {
+		if ( $prev ) {
+			printf( '<div class="nav-previous">%s</div>', $output );
+    
+		}
+		else {
+			printf( '<div class="nav-next">%s</div>', $output );
+		}
+	}
+	
+}
 ?>

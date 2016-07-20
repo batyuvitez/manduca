@@ -498,16 +498,7 @@ img.wp-smiley,
 	top: -2px;
 	background-color: white;
 }
-.nav-previous span,
-.nav-next span {
-	position: relative;
-}
-.nav-previous span {
-		left: 4px;
-}
-.nav-next span {
-		right: 4px;
-}
+
 .nav-previous{
 	float: left;
 }
@@ -518,10 +509,14 @@ img.wp-smiley,
 .nav-next:after {
 	content: " \f101";
 	font-family: fontAwesome;
+	padding-left: 7px;
+	padding-left: 0.5rem;
 }
 .nav-previous:before {
 	content: "\f100 ";
 	font-family: fontAwesome;
+	padding-right: 7px;
+	padding-right: 0.5rem;
 }
 
 .nav-single + .comments-area,
@@ -1090,6 +1085,12 @@ comments-link a:hover,
 	font-size: 24px;
 	font-size: 1.714rem;
 	color: #080B10;
+}
+.single-attachment .image-attachment h1.entry-title {
+	text-align: center;
+}
+.attachment .entry-title:first-letter {
+	text-transform: uppercase;
 }
 .archive-title span.vcard a {
 	color: #DAF2FF;
