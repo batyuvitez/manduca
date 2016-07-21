@@ -28,7 +28,7 @@
 <body id="total" <?php body_class(); ?>>
 	<?php echo apply_filters( 'manduca_background_images', '' ); ?>
 	<div id="page" class="hfeed site">
-		
+		<div class="top-bar"></div>
 		<div id="masthead" class="site-header" >
 			<div id="header-bar" class="header-bar">
 				<header>

@@ -366,4 +366,13 @@ ver 16.7
             - add an action hook for custom taxonomy or post type
         ==attachment page ==
             -always show image navigation (so far navigation was possible only with common parents);
-            -center heading of the page. 
+            -center heading of the page.
+    
+    commit #16.7.3
+    21 July, 2016
+        ==responsive design fixings ==
+            - header layout change: insert top bar. 
+            - fix margins, paddings
+        ==bug==
+            -breadcrumb first level category error
+        

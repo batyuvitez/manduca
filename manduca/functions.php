@@ -712,13 +712,13 @@ endif;
 
 
 /**
- * Breadcrumb
+ * Breadcrumb navigation
  * 
- * Display breadcrumb
+ * Display breadcrumb navigation
  *     = display category in case of sinlge post
  *     = display hierarchy of pages
  * 
- * @since 16.4
+ * @since 2.1.4
  *
  *  
  */
@@ -749,7 +749,9 @@ function manduca_breadcrumb() {
 					$category_ID  		= get_queried_object()->term_id;
 					$category_object 	= get_category( $category_ID );
 					$parent_ID			= $category_object->category_parent;
-					echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' ); 
+					if( $parent_ID !== 0 ) {
+						echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' );
+					}
 					single_cat_title();
 			}
 			

@@ -287,8 +287,6 @@ article.post-password-required input[type=submit],
 	padding: 0.428571429rem 0.714285714rem;
 	border: 1px solid #d2d2d2;
 	box-shadow: 0 1px 2px rgba(64, 64, 64, 0.1);
-	margin: 14px 14px 0 0;
-	margin: 1rem 1rem 0 0;
 	white-space: nowrap;
 }
 .site-content a.kvazi-button,
@@ -564,7 +562,8 @@ body .site{
 	background-color: #F3F3F5;
 	font-size: 14px;
 	font-size: 1rem;
-
+	background-color: #fff;
+	position: relative;
 }
 .wrapper {
 		background-color: #f3f3f3;	
@@ -642,9 +641,7 @@ body .site{
 }
 
 /* Page structure */
-.site {
-	background-color: #fff;
-}
+
 .site-content,
 .widget-area
 {
@@ -652,28 +649,38 @@ body .site{
 	padding: 0.5714285714285714rem 0;
 }
 
-.site-content {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
-}
+
 .widget-area {
 	margin: 24px 0 0;
 	margin: 1.714285714rem 0 0;
 }
 
 /* Header */
+.top-bar {
+	height: 51px;
+	background-color: #164e68;
+	width: 100%;
+}
 
-.site-title {
+
+.searchform {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.site-title {	
 	font-weight: 500;
 	color: #515151;
-	padding: 17px;
-	padding: 1.214285714285714rem;
+	height: 110px;
 	display: block;
 	text-decoration: none;
 	color: #444;
 	line-height: 2;
 	font-size: 20px;
 	font-size: 1.429rem;
+	padding: 14 7px;
+	padding: 1rem 0.5rem;
 	text-align: center;
 }
 .header-bar > header > a.site-title {
@@ -686,9 +693,6 @@ body .site{
 	padding: 0 3px;
 	padding: 0 0.214rem;
 }
-.searchform{
-	text-align: center;
-}
 
 .search-form label{
 	font-size: 148%;
@@ -697,8 +701,8 @@ body .site{
 }
 
 .breadcrumb {
-	margin-left: 5px;
-	margin-left: 0.357rem;
+	margin: 12px 0 0 6px;
+	margin-left: 0.857rem 0 0 0.428rem;
 }
 
 /* Navigation Menu */
@@ -709,10 +713,15 @@ body .site{
 	padding: 5%;
 	background-color: #daf2ff;
 }
+.searchform {
+	text-align: right;
+}
 
 .menu-toggle {
 	display: block;
-	margin: 5px auto;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .site-header-menu.toggled-on,
@@ -1016,6 +1025,11 @@ section[role="banner"] {
 	width:  98%;
 	line-height: 1.5;
 	border-radius: 5px;
+}
+
+.taxonomy-description {
+	padding: 11px 5px;
+	padding: 0.785rem 0.357rem;
 }
 
 .entry-header .featured-post {
@@ -1706,7 +1720,7 @@ a.comment-edit-link:hover {
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. Sg500ee https://core.trac.wordpress.org/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;
@@ -1736,9 +1750,11 @@ a.comment-edit-link:hover {
 		font-size: 24px;
 		font-size: 1.714rem;
 		border-bottom: none;
-		padding: 17px 0;
-		padding: 1.214285714285714rem 0;
+		padding: 17px 6px;
+		padding: 1.214285714285714rem 0.5rem;
+		margin-bottom: 0;
 	}
+	
 	
 	.site-content,
 	.widget-area
@@ -1748,9 +1764,10 @@ a.comment-edit-link:hover {
 		vertical-align: top;
 		
 	}
-	.site-content
-	{
+	.site-content {
 		width: 63%;
+		margin: 24px 0 0;
+		margin: 1.714285714rem 0 0;
 	}
 	.widget-area
 	{
@@ -1862,8 +1879,24 @@ a.comment-edit-link:hover {
 /* 13 c) Minimum width of 764 pixels
 open the toggle boxes*/
 
+@media screen and (max-width: 350px) {
+	#s {
+		width: 138px;
+		width: 9.857rem;
+	}
+}
 @media screen and (min-width: 764px){
 	
+	.site-title {
+			position: static;
+			text-align: left;
+			
+	}
+	.site-header .searchform {
+		top: 0;
+		right: 9px;
+		right: 0.642rem;
+	}
 	.site-header-menu {
 		display: block;
 		padding: 11px 0;
@@ -2034,14 +2067,8 @@ open the toggle boxes*/
 		margin-bottom: 0;
 		box-shadow: none;
 	}
-	.site-title{
-		text-align: left;	
-	}
-	.site-header .searchform {
-		position: absolute;
-		top: 0;
-		right: 9px;
-	}
+	
+	
 	.breadcrumb {
 		margin-left: 0;
 	}
