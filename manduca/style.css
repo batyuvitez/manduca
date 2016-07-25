@@ -479,15 +479,18 @@ img.wp-smiley,
 	height: 36px;
 	text-align: center;
 }
-.pagination .next,
-.pagination .prev {
+.page-numbers {
 	padding: 0 7px;
+	padding: 0 0.5rem;
 }
+
 .pagination .prev i {
-	padding-right:  6px;
+	padding-right:  7px;
+	padding-right: 0.5rem;
 }
 .pagination .next i {
 	padding-left: 6px;
+	padding-left: 0.5rem;
 }
 .pagination .current {
 	font-size: 110%;
@@ -1731,6 +1734,9 @@ a.comment-edit-link:hover {
 
 /* 13.a) Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
+	.top-bar {
+		display: none;
+	}
 	.author-avatar {
 		float: left;
 		margin-top: 8px;
@@ -1753,6 +1759,7 @@ a.comment-edit-link:hover {
 		padding: 17px 6px;
 		padding: 1.214285714285714rem 0.5rem;
 		margin-bottom: 0;
+		height: auto;
 	}
 	
 	
@@ -1888,7 +1895,6 @@ open the toggle boxes*/
 @media screen and (min-width: 764px){
 	
 	.site-title {
-			position: static;
 			text-align: left;
 			
 	}

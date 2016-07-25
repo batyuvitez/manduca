@@ -376,3 +376,9 @@ ver 16.7
         ==bug==
             -breadcrumb first level category error
         
+    commit #16.7.4
+    25 July, 2016
+        == new function ==
+            -manduca page navigation. Shows the serial number of posts. eg. 1-10, 11-20 etc.
+        ==bug==
+            from previous commit: hide top bar in large screen. 

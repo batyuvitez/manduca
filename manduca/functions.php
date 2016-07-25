@@ -286,9 +286,18 @@ function manduca_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'manduca_customize_preview_js' );
 
-//-------------------------------------------------------------------------------------------
-// Manduca post navigation
-//-------------------------------------------------------------------------------------------
+
+/**
+ * Displays paginated link for post pages in the format of serial numbers (e.g. '11-20' ).
+ * Shows all links. 
+ *
+ * @since 16.7
+ *
+ * @global WP_Query   $wp_query
+ * @global WP_Rewrite $wp_rewrite
+ *
+ */
+
 if ( ! function_exists( 'manduca_page_navigation' ) ) :
  
 	function manduca_page_navigation() {
@@ -297,33 +306,97 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		if ( $wp_query->max_num_pages < 2 ) {
 			return;
 		}
-	
-		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+		
+		// Setting up default values based on the current URL.
 		$pagenum_link = html_entity_decode( get_pagenum_link() );
-		$query_args   = array();
 		$url_parts    = explode( '?', $pagenum_link );
-	
+		
 		if ( isset( $url_parts[1] ) ) {
-			wp_parse_str( $url_parts[1], $query_args );
-		}
+				wp_parse_str( $url_parts[1], $query_args );
+			}
+		
 	
-		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+		// Get max pages and current page out of the current query, if available.
+		$total   = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+		$current = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
 	
+		// Append the format placeholder to the base URL.
+		$pagenum_link = trailingslashit( $url_parts[0] ) . '%_%';
+	
+		// URL base depends on permalink settings.
 		$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
 		$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%';
 	
-		$links = paginate_links( array(
-			'base'     => $pagenum_link,
-			'format'   => $format,
-			'total'    => $wp_query->max_num_pages,
-			'current'  => $paged,
-			'mid_size' => 1,
-			'add_args' => array_map( 'urlencode', $query_args ),
+		//default post per page
+		$default_posts_per_page 	= get_option( 'posts_per_page' );
+		
+		$args = array(
+			'base' => $pagenum_link, // http://example.com/all_posts.php%_% : %_% is replaced by format (below)
+			'format' => $format, // ?page=%#% : %#% is replaced by the page number
+			'total' => $total,	
+			'current' => $current,
+			'show_all' => true,
+			'prev_next' => true,
 			'prev_text' =>  '<i class="fa fa-angle-left"></i>' .__( 'Previous', 'manduca' ),
 			'next_text' => __( 'Next', 'manduca' )  .'<i class="fa fa-angle-right"></i>',
-			'show_all'	=> true
-		) );
+			'end_size' => 1,
+			'mid_size' => 1,
+			'add_args' => array_map( 'urlencode', array() ),
+			'add_fragment' => '',
+			'before_page_number' => '',
+			'after_page_number' => ''
+		);
+	
+	
+	
+		$add_args = $args['add_args'];
+		$page_links = array();
+		$dots = false;
+	
+		if ( $args['prev_next'] && $current && 1 < $current ) :
+			$link = str_replace( '%_%', 2 == $current ? '' : $args['format'], $args['base'] );
+			$link = str_replace( '%#%', $current - 1, $link );
+			if ( $add_args )
+				$link = add_query_arg( $add_args, $link );
+			$link .= $args['add_fragment'];
+	
+			$page_links[] = '<a class="prev page-numbers" href="' . esc_url( $link  ) . '">' . $args['prev_text'] . '</a>';
+		endif;
+		for ( $n = 1; $n <= $total; $n++ ) :
+			
+			$current_display = manduca_current_pagination_display( $default_posts_per_page, $n - 1 );
+			
+			if ( $n == $current ) :
+				$page_links[] = "<span class='page-numbers current'>" . $args['before_page_number'] . $current_display . $args['after_page_number'] . "</span>";
+				$dots = true;
+			else :
+				if ( $args['show_all'] || ( $n <= $end_size || ( $current && $n >= $current - $mid_size && $n <= $current + $mid_size ) || $n > $total - $end_size ) ) :
+					$link = str_replace( '%_%', 1 == $n ? '' : $args['format'], $args['base'] );
+					$link = str_replace( '%#%', $n, $link );
+					if ( $add_args )
+						$link = add_query_arg( $add_args, $link );
+					$link .= $args['add_fragment'];
+	
+					$page_links[] = "<a class='page-numbers' href='" . esc_url( $link ) . "'>" . $args['before_page_number'] . $current_display . $args['after_page_number'] . "</a>";
+					$dots = true;
+	
+				elseif ( $dots && ! $args['show_all'] ) :
+					$page_links[] = '<span class="page-numbers dots">' . __( '&hellip;' ) . '</span>';
+					$dots = false;
+				endif;
+			endif;
+		endfor;
+		if ( $args['prev_next'] && $current && ( $current < $total || -1 == $total ) ) :
+			$link = str_replace( '%_%', $args['format'], $args['base'] );
+			$link = str_replace( '%#%', $current + 1, $link );
+			if ( $add_args )
+				$link = add_query_arg( $add_args, $link );
+			$link .= $args['add_fragment'];
+	
+			$page_links[] = '<a class="next page-numbers" href="' . esc_url( $link ) . '">' . $args['next_text'] . '</a>';
+		endif;
+		
+		$links = join("\n", $page_links);
 	
 		if ( $links ) :
 	
@@ -337,6 +410,33 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		<?php
 		endif;
 }
+endif;
+
+/**
+ * Manduca format of page navigation
+ * that is show the serial number of posts eg. 11-20, 21-30 etc. 
+ *
+ * @since 16.7
+ *
+ * @parameters 
+ * 		@type number 	$default_posts_per_page		Number of posts per page
+ * 		@type number 	$link_number				Number of page of the posts
+ * @global WP_Query   $wp_query
+ * @global WP_Rewrite $wp_rewrite
+ *
+ * @return Void string manduca format of page navigation (e.g. '11-20')
+ */
+
+
+if( !function_exists( 'manduca_current_pagination_display' ) ) :
+
+	function manduca_current_pagination_display( $default_posts_per_page, $link_number ) {
+		$post_count_first 	= ( $default_posts_per_page  * ( $link_number ) ) + 1; 
+		$post_count_last	= $post_count_first +$default_posts_per_page - 1;
+		return number_format_i18n( $post_count_first ) .' - ' .number_format_i18n($post_count_last );
+		
+	}
+
 endif;
 
 
