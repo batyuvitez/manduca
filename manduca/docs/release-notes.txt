@@ -381,4 +381,18 @@ ver 16.7
         == new function ==
             -manduca page navigation. Shows the serial number of posts. eg. 1-10, 11-20 etc.
         ==bug==
-            from previous commit: hide top bar in large screen. 
+            from previous commit: hide top bar in large screen.
+            
+    version 16.7 not uploaded to repository
+    
+    commit #16.8.1
+    8 August, 2016
+        == bug ==
+            -some PHP configuration did not show hungarian dates in excerpts. Fixed in function.php
+        - add shortcode: display subpages. e.g. [subpages parent="1"]
+        ==add filter ==
+            /* Boolean filter
+             * @ name: manduca_page_navigation_format
+             * @ true : default : use from-to pagination
+             * @ false : use classic navigation
+		

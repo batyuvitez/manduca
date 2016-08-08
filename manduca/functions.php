@@ -287,11 +287,16 @@ function manduca_customize_preview_js() {
 add_action( 'customize_preview_init', 'manduca_customize_preview_js' );
 
 
+
+
+
+
 /**
  * Displays paginated link for post pages in the format of serial numbers (e.g. '11-20' ).
  * Shows all links. 
  *
  * @since 16.7
+ * Manduca replaces wp_list_pages() with this function. 
  *
  * @global WP_Query   $wp_query
  * @global WP_Rewrite $wp_rewrite
@@ -306,6 +311,7 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		if ( $wp_query->max_num_pages < 2 ) {
 			return;
 		}
+		
 		
 		// Setting up default values based on the current URL.
 		$pagenum_link = html_entity_decode( get_pagenum_link() );
@@ -352,6 +358,14 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		$add_args = $args['add_args'];
 		$page_links = array();
 		$dots = false;
+		
+		/* Boolean filter
+		 * @ name: manduca_page_navigation_format
+		 * @ true : default : use from-to pagination
+		 * @ false : use classic navigation
+		 * */
+		$type_flag = apply_filters( 'manduca_page_navigation_format' , '__return_true');
+		
 	
 		if ( $args['prev_next'] && $current && 1 < $current ) :
 			$link = str_replace( '%_%', 2 == $current ? '' : $args['format'], $args['base'] );
@@ -364,7 +378,12 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		endif;
 		for ( $n = 1; $n <= $total; $n++ ) :
 			
-			$current_display = manduca_current_pagination_display( $default_posts_per_page, $n - 1 );
+			if ( $type_flag ) {
+				$current_display = manduca_current_pagination_display( $default_posts_per_page, $n - 1 );
+			}
+			else {
+				$current_display = $n;
+			}
 			
 			if ( $n == $current ) :
 				$page_links[] = "<span class='page-numbers current'>" . $args['before_page_number'] . $current_display . $args['after_page_number'] . "</span>";
@@ -1013,9 +1032,10 @@ endif;
 			
 					<?php
 					$month = esc_html( get_the_date( 'M' ) );
-					if ( get_locale() ==='hu_HU' ) {
-							setlocale(LC_ALL,'hungarian');
-							$month = utf8_encode( strftime( '%b', get_post_time('U', true) ) );
+		
+					if ( get_bloginfo( 'language' ) ==='hu-HU' ) {
+							setlocale(LC_ALL, 'hu_HU.UTF8');
+							$month =  strftime( '%b', get_post_time('U', true) ) ;
 					}
 					
 					 printf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
@@ -1059,6 +1079,7 @@ add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
  */
 
 function manduca_adjacent_image_link( $prev ) {
+	
     $post = get_post();
     $attachments = array_values( get_children( array(
 													 'post_status' => 'inherit',
@@ -1096,4 +1117,33 @@ function manduca_adjacent_image_link( $prev ) {
 	}
 	
 }
+
+
+/**
+ * Display subpages
+ * should be use in parent pages
+ *
+ * use the following shortcode e.g. [subpage parent="14"]
+ *
+ * @since 16.8
+ * */
+
+if ( !function_exists( 'mandcua_display_subpages' )  ) : 
+	function manduca_display_subpages( $shortcode_attributes ) {
+		
+		$args = shortcode_atts( array( 'parent' => 'alapértelmezett' ), $shortcode_attributes ) ;
+	
+		wp_list_pages( array (
+			'child_of' 		=> $args[ 'parent' ],
+			'depth'			=> 1,
+			'title_li'		=>''
+			)
+		);
+	}
+
+endif;
+	
+add_shortcode ('subpages', 'manduca_display_subpages' );
+
+ 
 ?>
