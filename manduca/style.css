@@ -279,7 +279,7 @@ article.post-password-required input[type=submit],
 .kvazi-button,
 .more-link{
 	color: white;
-	background-color: #9e430e;
+	background-color: #ab490f;
 	border-radius: 3px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -322,8 +322,8 @@ article.post-password-required input[type=submit]:hover,
 a.kvazi-button:hover,
 a.more-link:hover{
 	background-color: #fff;
-	outline: ridge 3px #9e430e;
-	color: #9e430e;	
+	outline: ridge 3px #ab490f;
+	color: #ab490f;	
 }
 .menu-toggle:active,
 .menu-toggle.toggled-on,
@@ -708,8 +708,8 @@ body .site{
 }
 
 .breadcrumb {
-	margin: 12px 0 0 6px;
-	margin-left: 0.857rem 0 0 0.428rem;
+	margin: 12px 0 12px 6px;
+	margin: 0.857rem 0 0.857rem  0.428rem;
 }
 
 /* Navigation Menu */
@@ -949,13 +949,15 @@ section[role="banner"] {
 	float:left;
 	width:200%;
 	position:relative;
-	left:60px;
+	left:75px;
+	left: 5.357rem;
 }
 .column-right-wrapper {
 	float:right;
-	width:50%;
+	width:49%;
 	position:relative;
-	right:60px;
+	right:75px;
+	right: 5.357rem;;
 	padding-bottom:1em;
 }
 .column-right {
@@ -969,19 +971,20 @@ section[role="banner"] {
 	float:left;
 	width:60px;
 	position:relative;
-	right:60px;
+	right:75px;
+	right: 5.357rem;
 }
 
 
 .entry-header .content-date,
 .excerpt-header .content-date {
 		padding-right: 8px;
-		width: 43px;
-		width: 3.1rem;
+		width: 55px;
+		width: 3.928rem;
 		text-decoration: none;
 		font-weight: 300;
 		text-align: center;
-		background-color: #9e430e;
+		background-color: #ab490f;
 		color: #fff;
 		padding: 2px;
 		border-radius: 4px;
@@ -989,19 +992,29 @@ section[role="banner"] {
 		line-height: 1.714285714285714rem;
 }
 
+.content-date span.entry-date-month,
+.content-date span.entry-date-day {
+		display: inline-block;
+		padding: 2px;
+		padding: 0.143rem;
+		background-color: #ab490f;
+	}
+	
 
-
-.content-date span {
-	display: block;
-}
 .content-date .entry-date-month {
-	font-size: 70%;
+	font-size: 65%;
 	text-transform: uppercase;
 	background-color: #164e68; 
 }
 .content-date .entry-date-day {
-	font-size: 85%;
+	font-size: 70%;
 }
+.content-date .entry-date-year {
+		display: block;
+		font-size: 58%;
+		font-weight: 200;
+		border-top: 2px #164e68 solid
+	}
 
 
 .excerpt-wrapper .sticky {
@@ -1010,7 +1023,7 @@ section[role="banner"] {
 	color: #000;
 }
 .highlight-1{
-	background-color: #9e430e;
+	background-color: #ab490f;
 	color: white;
 	width:  98%;
 	font-size: 130%;
@@ -1823,17 +1836,6 @@ a.comment-edit-link:hover {
 		font-size: 21px;
 		font-size: 1.5rem;
 	}
-	.entry-header .content-date {
-		padding-right: 0;
-		width: 48px;
-	}
-
-	.content-date .entry-date-month {
-		font-size: 83%;
-	}
-	.content-date .entry-date-day {
-		font-size: 100%;
-	}
 	
 	#respond form input[type="text"] {
 		width: 46.333333333%;
@@ -1849,10 +1851,7 @@ a.comment-edit-link:hover {
 		float: left;
 		width: 47.916666667%;
 	}
-	.entry-header .content-date time
-	{
-		font-size: 126%;
-	}
+	
 	.entry-page-image {
 		float: right;
 		margin-bottom: 0;
@@ -1884,6 +1883,33 @@ a.comment-edit-link:hover {
 		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
+	
+	/*content date format
+	 @since 16.8 */
+	.column-left {
+		width: 100px;
+		width: 7.143rem;
+		right: 100px;
+		right: 7.143rem;
+	}
+	.columns-wrapper {
+		left: 100px;
+		left: 7.143rem;
+	}
+	.excerpt-header .content-date,
+	.entry-header .content-date {
+		width: 89px;
+		width: 6.357rem;
+	}
+.content-date span.entry-date-month,
+.content-date span.entry-date-day {
+		padding: 2px 6px;
+		padding: 0.143rem 0.428rem;
+		font-size: 90%;
+	}
+.content-date span.entry-date-year {
+	font-size: 75%;
+
 
 }
 

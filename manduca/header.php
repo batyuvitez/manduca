@@ -33,6 +33,7 @@
 			<div id="header-bar" class="header-bar">
 				<header>
 					<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'manduca' ); ?></a>
+					<a class="screen-reader-text skip-link" href="#secondary"><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>
 					
 					<?php
 					echo apply_filters( 'manduca_site_title', sprintf ( '<a class="site-title" href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ) , get_bloginfo( 'name' ) ) );

@@ -6,7 +6,7 @@
 
 get_header(); ?>
 	<section id="primary" class="site-content">
-		<main id="content" role="main">
+		<main id="content">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

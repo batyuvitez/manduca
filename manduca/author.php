@@ -7,7 +7,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-		<div id="content" role="main">
+		<main id="content">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -54,7 +54,7 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
+		</main><!-- #content -->
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>

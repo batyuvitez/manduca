@@ -7,7 +7,7 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
-		<div id="content" role="main">
+		<main id="content">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -151,7 +151,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
+		</main><!-- #content -->
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

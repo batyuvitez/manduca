@@ -6,7 +6,7 @@
 
 get_header(); ?>
 	<section id="primary" class="site-content">
-		<div id="content" role="main">
+		<main id="content">
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
@@ -26,8 +26,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
+		</main><!-- #content -->
+!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

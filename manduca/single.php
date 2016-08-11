@@ -9,7 +9,7 @@ get_header(); ?>
 		
 		<?php manduca_post_navigation() ?>
 		
-		<div id="content" role="main">
+		<main id="content">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -21,7 +21,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
+		</main><!-- #content -->
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

@@ -1038,10 +1038,17 @@ endif;
 							$month =  strftime( '%b', get_post_time('U', true) ) ;
 					}
 					
-					 printf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%3$s</span><span class="entry-date-day">%2$s</span></p>',
-						esc_attr( get_the_date( 'c' ) ),
-						esc_html( get_the_date( 'j' ) ),
-						$month
+					/*
+					 *  Filter of content date of the entry header
+					 * @ since 16.8
+					 * */
+					echo apply_filters( 'manduca_content_date', 
+						sprintf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%4$s</span><span class="entry-date-day">%3$s</span><span class="entry-date-year">%2$s</span></p>',
+							esc_attr( get_the_date( 'c' ) ),
+							esc_attr( get_the_date( 'Y' ) ),
+							esc_html( get_the_date( 'j' ) ),
+							$month
+					   )
 					); ?>
 			
 			</div>

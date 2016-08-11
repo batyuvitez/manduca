@@ -396,3 +396,20 @@ ver 16.7
              * @ true : default : use from-to pagination
              * @ false : use classic navigation
 		
+    commit #16.8.2
+        ....
+        ==bugs  ==
+            -delete 'A' from hungarian translation (author archives)
+            -change color of vcard item (there was contrast problem)
+        ==code optimize==
+            -add <main> and delete rule="main" from all files.
+            /* see: http://stackoverflow.com/questions/10403138/what-is-the-purpose-of-the-role-attribute-in-html
+            -add more rem element to style.css 
+        =change color ==
+         - slightly light red from 9e430e to ab490f
+        == entry header date ==
+        - add filter to modify entry date
+        - add year to the entry date fields
+        ==accessibility==
+        - add skip link to sidebar
+            
