@@ -397,11 +397,7 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 					$link .= $args['add_fragment'];
 	
 					$page_links[] = "<a class='page-numbers' href='" . esc_url( $link ) . "'>" . $args['before_page_number'] . $current_display . $args['after_page_number'] . "</a>";
-					$dots = true;
-	
-				elseif ( $dots && ! $args['show_all'] ) :
-					$page_links[] = '<span class="page-numbers dots">' . __( '&hellip;' ) . '</span>';
-					$dots = false;
+				
 				endif;
 			endif;
 		endfor;
@@ -1125,32 +1121,6 @@ function manduca_adjacent_image_link( $prev ) {
 	
 }
 
-
-/**
- * Display subpages
- * should be use in parent pages
- *
- * use the following shortcode e.g. [subpage parent="14"]
- *
- * @since 16.8
- * */
-
-if ( !function_exists( 'mandcua_display_subpages' )  ) : 
-	function manduca_display_subpages( $shortcode_attributes ) {
-		
-		$args = shortcode_atts( array( 'parent' => 'alapértelmezett' ), $shortcode_attributes ) ;
 	
-		wp_list_pages( array (
-			'child_of' 		=> $args[ 'parent' ],
-			'depth'			=> 1,
-			'title_li'		=>''
-			)
-		);
-	}
-
-endif;
-	
-add_shortcode ('subpages', 'manduca_display_subpages' );
-
  
 ?>

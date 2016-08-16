@@ -23,6 +23,36 @@
 <h2 id="posts"><?php _e( 'Posts:', 'manduca' ) ?></h2>
   <ol>
     <?php
+    
+        /* Boolean filter
+		 * @ name: manduca_sitemap_display_category
+		 * @ true : default : use category breakdown (as in previous versions of Manduca)
+		 * @ false : use alphabetic order
+		 * */
+		$type_flag = apply_filters( 'manduca_sitemap_display_category' , '__return_true');
+    
+    if ( $type_flag ) :
+        $cats = get_categories();
+        foreach ( $cats as $cat ) {
+          echo '<h3>' .esc_html( $cat->cat_name ) .'</h3>';
+          echo '<ul>';
+          query_posts('posts_per_page=-1&cat='.$cat->cat_ID);
+          
+          while ( have_posts() ) {
+            the_post();
+            $category = get_the_category();
+            
+            if ( $category[0] -> cat_ID == $cat->cat_ID ) {
+              echo '<li><a href="'.get_permalink() .'">' .get_the_title() .'</a></li>';
+            }
+          }
+          echo '</ul>';
+          echo '</li>';
+      }
+     
+    
+    
+    else: 
         $list_posts = new WP_Query( array( 
             'post_type'       => 'post', 
             'posts_per_page'  => -1, 
@@ -39,7 +69,8 @@
                        get_the_title()
                       );
       endwhile;
-            
+    
+    endif;  
       ?>
   </ol>
   

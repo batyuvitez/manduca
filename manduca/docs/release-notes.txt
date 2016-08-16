@@ -397,7 +397,7 @@ ver 16.7
              * @ false : use classic navigation
 		
     commit #16.8.2
-        ....
+        11 August, 2016.
         ==bugs  ==
             -delete 'A' from hungarian translation (author archives)
             -change color of vcard item (there was contrast problem)
@@ -413,3 +413,17 @@ ver 16.7
         ==accessibility==
         - add skip link to sidebar
             
+    commit #16.8.3
+    16 Aug, 2016
+        /* Boolean filter
+		 * @ name: manduca_sitemap_display_category
+		 * @ true : default : use category breakdown (as in previous versions of Manduca)
+		 * @ false : use alphabetic order
+		 * */
+         
+        ==bug==
+        css parsing error (media end bracket missing);
+        
+        ==THEME CHECK REQUIRED==
+        - shortocde not allowed (plugin function)
+        
