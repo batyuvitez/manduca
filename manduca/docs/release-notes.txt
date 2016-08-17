@@ -427,3 +427,12 @@ ver 16.7
         ==THEME CHECK REQUIRED==
         - shortocde not allowed (plugin function)
         
+    commit #16.8.4
+    17 August, 2016.
+        -add <q>and <abbr> HTML tags to tinyMCE styleformat button
+        -move styleformat button to 2nd row of editor
+        -add <sub> and <sup> HTML buttons to tinyMCE as disabled by default
+        -add previous and next page links, because THEME CHECK required them.
+        -update language files with new terms. 
+        
+        

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2015-11-20 10:00:00+01:00\n"
-"PO-Revision-Date: 2016-08-09 06:37+0200\n"
+"PO-Revision-Date: 2016-08-17 07:21+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,8 +78,17 @@ msgid "Your email address is confidential."
 msgstr "Az e-mail címét nem adjuk ki másnak."
 
 #: functions.php:338
-msgid "Highlight"
-msgstr "Kiemelés"
+msgid "Highlight-1"
+msgstr "Nagy kiemelés"
+
+msgid "Highlight-2"
+msgstr "Kisebb kiemelés"
+
+msgid "Quotation"
+msgstr "Rövid idézet"
+
+msgid "Abbreviation"
+msgstr "Rövidítés"
 
 #: comments.php:26
 msgid "&larr; Older comments"

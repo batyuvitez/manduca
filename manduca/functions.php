@@ -485,52 +485,94 @@ if( !function_exists( 'manduca_comment_form_text' ) ) :
 	}
 endif;
 	
-//-------------------------------------------------------------------------------------------
-//  additional form button to MCE 
-//-------------------------------------------------------------------------------------------
-
-
-function manduca_form_MCE( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
-    return $buttons;
-    }
-add_filter( 'mce_buttons_3', 'manduca_form_MCE' );
-
-
-function manduca_before_init_insert_formats( $init_array ) {  
+	
+/*
+ * Setup TinyMCE so user can easaly use accessible formats. 
+ *
+ * @ Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
+ * @ add 2 highlights formats
+ * 
+ * Thanks to Joe dolson 
+ * */
+if( !function_exists( 'manduca_tinymce_init') ) :
+ 
+function manduca_tinymce_init( $init_array ) {
+	
 	// Define the style_formats array
 	$style_formats = array(  
 		// Each array child is a format with it's own settings
 		array(  
-			'title' => __( 'Highlight' , 'manduca' ) .'-1',
+			'title' => __( 'Highlight-2' , 'manduca' ) ,
 			'block' => 'div',  
 			'classes' => 'highlight-1',
 			'wrapper' => true,
 			
 		),  
 		array(  
-			'title' => __( 'Highlight' , 'manduca' ) .'-2',  
+			'title' => __( 'Highlight-1' , 'manduca' ) ,  
 			'block' => 'div',  
 			'classes' => 'highlight-2',
 			'wrapper' => true,
+		),
+		array(  
+			'title' => __( 'Quotation' , 'manduca' ),  
+			'inline' => 'q',  
+			'wrapper' => true,
+		),
+			array(  
+			'title' => __( 'Abbreviation' , 'manduca' ),  
+			'inline' => 'abbr',  
+			'wrapper' => true,
 		)
-		
-	);  
-	// Insert the array, JSON ENCODED, into 'style_formats'
-	$init_array['style_formats'] = json_encode( $style_formats );  
+	);
 	
-	return $init_array;  
-  
-} 
+			
+	
+	$init_array['style_formats'] = json_encode( $style_formats );
+	
+	
+	
+    // replace block formats with elements helps bulding an accessibile content
+		$block_formats 			= 'Paragraph=p; ' .__( 'Heading 2', 'manduca' ) .'=h2; ';
+		$block_formats 			.= __( 'Heading 3', 'manduca' ) .'=h3; ';
+		$block_formats 			.= __( 'Preformatted', 'manduca' ) .'=pre; ';
+		$block_formats			.= __( 'Blockquote', 'manduca') .'=blockquote;';
+		
+		
+		$init_array[ 'block_formats' ] = $block_formats;
+		
+			
+    return $init_array;  
+}
 
-add_filter( 'tiny_mce_before_init', 'manduca_before_init_insert_formats' );
+add_filter( 'tiny_mce_before_init', 'manduca_tinymce_init' );
+
+endif;
+	
+	
+	
+	
+/*
+ *
+ * Add in a core buttons that's disabled by default and stylebutton 
+ *
+ **/
 
 
-function editor_css() {
+function manduca_form_button( $buttons ) {	
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+add_filter( 'mce_buttons_2', 'manduca_form_button' );
+
+
+function manduca_editor_css() {
 	add_editor_style( 'editor.css' );    
 }
 
-add_action( 'after_setup_theme', 'editor_css' );
+add_action( 'after_setup_theme', 'manduca_editor_css' );
 
 //-------------------------------------------------------------------------------------------
 // Get custom header's alt data.
@@ -937,27 +979,7 @@ function manduca_breadcrumb() {
 
 endif;
 
-/*
- * Remove H1 from TinyMCE so users are discouraged from breaking headings hierarchy.
- *
- *Thanks to Joe dolson 
- * */
-if( !function_exists( 'manduca_tinymce_init') ) :
- 
-function manduca_tinymce_init( $init ) {
-    
-		$block_formats 	= 'Paragraph=p; ' .__( 'Heading 2', 'manduca' ) .'=h2; ';
-		$block_formats 		.= __( 'Heading 3', 'manduca' ) .'=h3; ';
-		$block_formats 		.= __( 'Preformatted', 'manduca' ) .'=pre; ';
-		$block_formats		.= __( 'Blockquote', 'manduca') .'=blockquote';
-		$init['block_formats'] = $block_formats;
-    
-    return $init;
-}
 
-add_filter( 'tiny_mce_before_init', 'manduca_tinymce_init' );
-
-endif;
 
 
 /*
@@ -967,11 +989,12 @@ endif;
  *
  * */
 
+ 
+ //Use posts_nav_link() or paginate_links() or the_posts_pagination() or the_posts_navigation() or next_posts_link() and previous_posts_link() to add post pagination.
+ 
  if( !function_exists( 'manduca_post_navigation' ) ) :
  
  function manduca_post_navigation() {
-	$previous_post 	= get_previous_post_link(  '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' );
-	$next_post 		= get_next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' );
 	?>
 	
 	<nav class="nav-single">
@@ -980,7 +1003,7 @@ endif;
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					<?php echo $previous_post; ?>
+					<?php previous_post_link(  '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' ); ?>
 				</div>
 				
 				<?php endif;
@@ -989,7 +1012,7 @@ endif;
 				if( !empty( $next_post ) ) : ?>
 				<div class="nav-next">
 					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
-					<?php echo $next_post; ?>
+					<?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' );?>
 				</div>
 				<?php endif;
 			?>
@@ -1000,6 +1023,12 @@ endif;
  }
  
  endif;
+ /*
+  * Display entry header
+  * Display the header of the article in two-column format. 
+  *
+  * since @16.8
+  * */
  
  if( !function_exists( 'manduca_display_entry_header' ) ) :
  
