@@ -437,8 +437,15 @@ ver 16.7
         
     commit #16.8.5
     18 August, 2016
+        ready to upload to repository
+        -add dot after hungarian month (in entry-header content-date)
         -add post_navigation function for the sake of theme check,
         -redesign enry-header content date to have square
+        ==bug== correct post navigation (did not work in the code of the previous commit)
         
-        
+    commit #16.8.6
+    18 August, 2016
+    -testing in akadálymentes-webdesign.hu
+    -add dot after day.
+    -fix the design problem af content-date
         

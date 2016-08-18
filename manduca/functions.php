@@ -1056,11 +1056,13 @@ endif;
 			<div class="column-left">
 			
 					<?php
-					$month = esc_html( get_the_date( 'M' ) );
+					$month 	= esc_html( get_the_date( 'M' ) );
+					$day	= esc_html( get_the_date( 'j' ) );
 		
 					if ( get_bloginfo( 'language' ) ==='hu-HU' ) {
 							setlocale(LC_ALL, 'hu_HU.UTF8');
-							$month =  strftime( '%b', get_post_time('U', true) ) .'.' ;
+							$month 		=  strftime( '%b', get_post_time('U', true) ) .'.' ;
+							$day 		.= '.';
 					}
 					
 					/*
@@ -1071,7 +1073,7 @@ endif;
 						sprintf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%4$s</span><span class="entry-date-day">%3$s</span><span class="entry-date-year">%2$s</span></p>',
 							esc_attr( get_the_date( 'c' ) ),
 							esc_attr( get_the_date( 'Y' ) ),
-							esc_html( get_the_date( 'j' ) ),
+							$day,
 							$month
 					   )
 					); ?>
