@@ -433,6 +433,12 @@ ver 16.7
         -move styleformat button to 2nd row of editor
         -add <sub> and <sup> HTML buttons to tinyMCE as disabled by default
         -add previous and next page links, because THEME CHECK required them.
-        -update language files with new terms. 
+        -update language files with new terms.
+        
+    commit #16.8.5
+    18 August, 2016
+        -add post_navigation function for the sake of theme check,
+        -redesign enry-header content date to have square
+        
         
         

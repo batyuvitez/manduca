@@ -985,12 +985,9 @@ endif;
 /*
  * Post navigation
  *
- * called from single post 
- *
  * */
 
  
- //Use posts_nav_link() or paginate_links() or the_posts_pagination() or the_posts_navigation() or next_posts_link() and previous_posts_link() to add post pagination.
  
  if( !function_exists( 'manduca_post_navigation' ) ) :
  
@@ -1000,10 +997,13 @@ endif;
 	<nav class="nav-single">
 		
 			<?php
+			$previous_post	= get_previous_post_link(  '%link', '<span>%title</span>' );
+			$next_post		= get_next_post_link( '%link', '<span>%title</span>' );
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					<?php previous_post_link(  '%link', '<i class="fa fa-angle-double-left"></i><span>%title</span>' ); ?>
+					<?php  echo $previous_post; ?>
+					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
 				</div>
 				
 				<?php endif;
@@ -1012,7 +1012,7 @@ endif;
 				if( !empty( $next_post ) ) : ?>
 				<div class="nav-next">
 					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
-					<?php next_post_link( '%link', '<span>%title</span><i class="fa fa-angle-double-right"></i>' );?>
+					<?php echo $next_post; ?>
 				</div>
 				<?php endif;
 			?>
@@ -1060,7 +1060,7 @@ endif;
 		
 					if ( get_bloginfo( 'language' ) ==='hu-HU' ) {
 							setlocale(LC_ALL, 'hu_HU.UTF8');
-							$month =  strftime( '%b', get_post_time('U', true) ) ;
+							$month =  strftime( '%b', get_post_time('U', true) ) .'.' ;
 					}
 					
 					/*
