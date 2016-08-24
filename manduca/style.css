@@ -240,6 +240,7 @@ select,
 textarea {
 	border-radius: 3px;
 	font-family: inherit;
+	font-size: 120%;
 	padding: 6px;
 	padding: 0.428571429rem;
 	max-width: 100%;
@@ -421,7 +422,7 @@ img.wp-post-image {
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {	
-	font-size: smaller;
+	font-size: 95%;
 	line-height: 2;
 	color: #000;
 }
@@ -486,6 +487,8 @@ img.wp-smiley,
 .page-numbers {
 	padding: 0 7px;
 	padding: 0 0.5rem;
+	margin: 7px 0;
+	margin: 0.5rem 0;
 }
 
 .pagination .prev i {
@@ -498,10 +501,9 @@ img.wp-smiley,
 }
 .pagination .current {
 	font-size: 110%;
-	border: 2px solid green;
+	border: none;
 	position: relative;
 	top: -2px;
-	background-color: white;
 }
 
 .nav-previous{
@@ -975,21 +977,23 @@ section[role="banner"] {
 	right: 5.357rem;
 }
 
+header.excerpt-header {
+	display: inline-block; /*in order to fill out the full with.*/
+}
 
 .entry-header .content-date,
 .excerpt-header .content-date {
-		padding-right: 8px;
-		width: 55px;
-		width: 3.928rem;
+		width: 56px;
+		width: 4rem;
 		text-decoration: none;
 		font-weight: 300;
 		text-align: center;
 		background-color: #ab490f;
 		color: #fff;
-		padding: 2px;
 		border-radius: 4px;
 		line-height: 24px;
 		line-height: 1.714285714285714rem;
+		box-shadow: 0 0 9px 3px rgba(0,0,0,0.2);
 }
 
 .content-date span.entry-date-month,
@@ -999,6 +1003,8 @@ section[role="banner"] {
 	}
 .content-date span.entry-date-month {
 	padding-right: 2px;
+	padding-right: 0.14rem;
+	padding-left: 2px;
 	padding-right: 0.14rem;
 }
 	
@@ -1135,8 +1141,8 @@ comments-link a:hover,
 .single .entry-title,
 .excerpt-header .entry-title {
 	text-align: left;
-	font-size: 16px;
-	font-size: 1.142rem;
+	font-size: 18px;
+	font-size: 1.286rem;
 	font-weight: 300;
 }
 .page-header .page-title,
@@ -1898,16 +1904,9 @@ a.comment-edit-link:hover {
 		left: 100px;
 		left: 7.143rem;
 	}
-	.excerpt-header .content-date,
-	.entry-header .content-date {
-		width: 56px;
-		width: 4rem;
-	}
+	
 .content-date span.entry-date-month,
-.content-date span.entry-date-day {
-    font-size: 80%;
-	}
-
+.content-date span.entry-date-day,
 .content-date span.entry-date-year {
 	font-size: 75%;
 	}
