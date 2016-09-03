@@ -1056,13 +1056,16 @@ endif;
 			<div class="column-left">
 			
 					<?php
-					$month 	= esc_html( get_the_date( 'M' ) );
-					$day	= esc_html( get_the_date( 'j' ) );
+					$month 		= esc_html( get_the_date( 'M' ) );
+					$day		= esc_html( get_the_date( 'j' ) );
+					$date_mask	='<p class="content-date"><time class="entry-date" datetime="%1$s"><span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span> <span class="entry-date-year">%2$s</span></time></p>';
 		
 					if ( get_bloginfo( 'language' ) ==='hu-HU' ) {
 							setlocale(LC_ALL, 'hu_HU.UTF8');
 							$month 		=  strftime( '%b', get_post_time('U', true) ) .'.' ;
 							$day 		.= '.';
+							$date_mask	='<p class="content-date"><time class="entry-date" datetime="%1$s"><span class="entry-date-year">%2$s.</span> <span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span></time></p>';
+		
 					}
 					
 					/*
@@ -1070,7 +1073,7 @@ endif;
 					 * @ since 16.8
 					 * */
 					echo apply_filters( 'manduca_content_date', 
-						sprintf( '<p class="content-date"><time class="entry-date" datetime="%1$s"></time><span class="entry-date-month">%4$s</span><span class="entry-date-day">%3$s</span><span class="entry-date-year">%2$s</span></p>',
+						sprintf( $date_mask,
 							esc_attr( get_the_date( 'c' ) ),
 							esc_attr( get_the_date( 'Y' ) ),
 							$day,

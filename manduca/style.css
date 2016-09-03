@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.8
+Version: 16.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -203,8 +203,7 @@ img {
 .pagination .prev:before,
 .pagination .next:before,
 .pagination .nav-links:before,
-.pagination .nav-links:after,
-.search-submit:before {
+.pagination .nav-links:after {
 	display: inline-block;
 	font-family: "fontAwesome";
 	font-size: larger;
@@ -240,13 +239,15 @@ select,
 textarea {
 	border-radius: 3px;
 	font-family: inherit;
-	font-size: 120%;
+	font-size: 16.8px;
+	font-size: 1.2rem;
 	padding: 6px;
 	padding: 0.428571429rem;
 	max-width: 100%;
 	margin: 6px;
 	margin: 0.428571429rem;	
 }
+
 button,
 input {
 	line-height: normal;
@@ -347,10 +348,39 @@ input[type="reset"]:active,
 	box-shadow: none;
 	padding: 0;
 }
+/*search */
 .search-submit {
-    font-family: FontAwesome;
+	height: 40px;
+	height: 2.857rem;
+	width: 40px;
+	width: 2.857rem;
+	padding: 0;
+	margin: 0;
+	float: right;
+	background-color: #ab490f;
 }
-
+.search-submit svg {
+	height: 26px;
+	height: 1.857rem;
+	width: 26px;
+	width: 1.857rem;
+	fill: white;
+}
+.header-searchform .search-submit {
+	margin: 6px;
+	margin: 0.428rem;
+}
+#s {
+	width: 43%;
+}
+#ws {
+	margin-top: 0;
+}
+#ws,
+#s{
+	height: 40px;
+	height: 2.857rem;
+}
 /* Responsive images */
 .entry-content img,
 .comment-content img,
@@ -672,7 +702,7 @@ body .site{
 }
 
 
-.searchform {
+.header-searchform {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -722,7 +752,7 @@ body .site{
 	padding: 5%;
 	background-color: #daf2ff;
 }
-.searchform {
+.header-searchform {
 	text-align: right;
 }
 
@@ -886,9 +916,6 @@ section[role="banner"] {
 }
 
 
-.widget-area .search-field {
-	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
-}
 
 
 /* Footer */
@@ -938,92 +965,12 @@ section[role="banner"] {
 
 /* 4. Main content and comment content
 -------------------------------------------------------------- */
-.columns-mask {
-	position:relative;		
-	clear:both;
-	float:left;
-    width:100%;			
-	overflow:hidden;
-	margin-bottom: 36px;
-	margin-bottom: 2.571rem;
-}
-.columns-wrapper {
-	float:left;
-	width:200%;
-	position:relative;
-	left:75px;
-	left: 5.357rem;
-}
-.column-right-wrapper {
-	float:right;
-	width:49%;
-	position:relative;
-	right:75px;
-	right: 5.357rem;;
-	padding-bottom:1em;
-}
-.column-right {
-	margin:0 15px 0 60px;
-	position:relative;
-	right:100%;
-	overflow:hidden;
-	top: -4px;
-}
-.column-left {
-	float:left;
-	width:60px;
-	position:relative;
-	right:75px;
-	right: 5.357rem;
-}
 
 header.excerpt-header {
 	display: inline-block; /*in order to fill out the full with.*/
 }
 
-.entry-header .content-date,
-.excerpt-header .content-date {
-		width: 56px;
-		width: 4rem;
-		text-decoration: none;
-		font-weight: 300;
-		text-align: center;
-		background-color: #ab490f;
-		color: #fff;
-		border-radius: 4px;
-		line-height: 24px;
-		line-height: 1.714285714285714rem;
-		box-shadow: 0 0 9px 3px rgba(0,0,0,0.2);
-}
-
-.content-date span.entry-date-month,
-.content-date span.entry-date-day {
-		display: inline-block;
-		background-color: #ab490f;
-	}
-.content-date span.entry-date-month {
-	padding-right: 2px;
-	padding-right: 0.14rem;
-	padding-left: 2px;
-	padding-right: 0.14rem;
-}
-	
-
-.content-date .entry-date-month {
-	font-size: 65%;
-	text-transform: uppercase;
-	background-color: #164e68; 
-}
-.content-date .entry-date-day {
-	font-size: 70%;
-}
-.content-date .entry-date-year {
-		display: block;
-		font-size: 58%;
-		font-weight: 200;
-		border-top: 2px #164e68 solid
-	}
-
+/*sticky and highlight*/
 
 .excerpt-wrapper .sticky {
 	border: 1px #531FFF groove;
@@ -1143,8 +1090,9 @@ comments-link a:hover,
 	text-align: left;
 	font-size: 18px;
 	font-size: 1.286rem;
-	font-weight: 300;
+	font-weight: 600;
 }
+
 .page-header .page-title,
 .archive-title,
 .error404 .entry-title {
@@ -1734,11 +1682,7 @@ a.comment-edit-link:hover {
 	padding-right: 1.714285714rem;
 	text-align: right;
 }
-.widget_search label {
-	display: inline;
-	font-size: smaller;
-	line-height: 1.846153846;
-}
+
 
 
 
@@ -1756,12 +1700,16 @@ a.comment-edit-link:hover {
 @viewport {
 	width: device-width;
 }
-
-/* 13.a) Minimum width of 600 pixels. */
-@media screen and (min-width: 600px) {
-	.top-bar {
-		display: none;
+/*  Minimum width of 385 pixels. */
+@media screen and (min-width: 385px) {
+	#s {
+		width: 76%;
 	}
+}
+
+
+/*  Minimum width of 600 pixels. */
+@media screen and (min-width: 600px) {
 	.author-avatar {
 		float: left;
 		margin-top: 8px;
@@ -1786,7 +1734,9 @@ a.comment-edit-link:hover {
 		margin-bottom: 0;
 		height: auto;
 	}
-	
+	#ws {
+		width: 70%;
+	}
 	
 	.site-content,
 	.widget-area
@@ -1825,21 +1775,56 @@ a.comment-edit-link:hover {
 	body.full-width .site-content {
 		width: 100%;
 	}
-	.site-header .search-form
-	{
-		float:right;
-		margin-bottom: 80px;
-		margin-bottom: 5.714285714285714rem;
-	}
-	.widget-area .searchform input[type="text"]{
-		max-width: 122px;
-	}
 	
+	
+	
+	/*entry-header two column */
+
+	.columns-mask {
+		position:relative;		
+		clear:both;
+		float:left;
+		width:100%;			
+		overflow:hidden;
+		margin-bottom: 36px;
+		margin-bottom: 2.571rem;
+	}
+	.columns-wrapper {
+		float:left;
+		width:200%;
+		position:relative;
+		left:75px;
+		left: 5.357rem;
+	}
+	.column-right-wrapper {
+		float:right;
+		width:49%;
+		position:relative;
+		right:75px;
+		right: 5.357rem;;
+		padding-bottom:1em;
+	}
+	.column-right {
+		margin:0 15px 0 60px;
+		position:relative;
+		right:100%;
+		overflow:hidden;
+		top: -4px;
+	}
+	.column-left {
+		float:left;
+		width:60px;
+		position:relative;
+		right:75px;
+		right: 5.357rem;
+}
+
 	.entry-header {
 		position: relative;
 		margin: 0 0 24px 0;
 		margin: 0 0 1.714285714285714rem 0;	
 	}
+	
 	.entry-title {
 		font-size: 21px;
 		font-size: 1.5rem;
@@ -1894,6 +1879,51 @@ a.comment-edit-link:hover {
 	
 	/*content date format
 	 @since 16.8 */
+	
+	/*content date format*/
+	.entry-header .content-date,
+	.excerpt-header .content-date {
+			width: 56px;
+			width: 4rem;
+			text-decoration: none;
+			font-weight: 300;
+			text-align: center;
+			background-color: #ab490f;
+			color: #fff;
+			border-radius: 4px;
+			line-height: 24px;
+			line-height: 1.714285714285714rem;
+			box-shadow: 0 0 9px 3px rgba(0,0,0,0.2);
+	}
+	
+	.content-date span.entry-date-month,
+	.content-date span.entry-date-day {
+			display: inline-block;
+			background-color: #ab490f;
+		}
+	.content-date span.entry-date-month {
+		padding-right: 2px;
+		padding-right: 0.14rem;
+		padding-left: 2px;
+		padding-right: 0.14rem;
+	}
+		
+	
+	.content-date .entry-date-month {
+		font-size: 65%;
+		text-transform: uppercase;
+		background-color: #164e68; 
+	}
+	.content-date .entry-date-day {
+		font-size: 75%;
+	}
+	.content-date .entry-date-year {
+		display: block;
+		font-size: 75%;
+		font-weight: 200;
+		border-top: 2px #164e68 solid
+	}
+
 	.column-left {
 		width: 100px;
 		width: 7.143rem;
@@ -1905,32 +1935,28 @@ a.comment-edit-link:hover {
 		left: 7.143rem;
 	}
 	
-.content-date span.entry-date-month,
-.content-date span.entry-date-day,
-.content-date span.entry-date-year {
-	font-size: 75%;
-	}
+
 }
 
 /* 13 c) Minimum width of 764 pixels
 open the toggle boxes*/
 
-@media screen and (max-width: 350px) {
-	#s {
-		width: 138px;
-		width: 9.857rem;
-	}
-}
+
+
 @media screen and (min-width: 764px){
+	.top-bar {
+		display: none;
+	}
 	
 	.site-title {
 			text-align: left;
 			
 	}
-	.site-header .searchform {
-		top: 0;
-		right: 9px;
-		right: 0.642rem;
+	.header-searchform {
+		top: 16px;
+		top: 1.142rem;
+		right: 16px;
+		right: 1.142rem;
 	}
 	.site-header-menu {
 		display: block;
@@ -2102,7 +2128,10 @@ open the toggle boxes*/
 		margin-bottom: 0;
 		box-shadow: none;
 	}
-	
+	#ws {
+		width: 238px;
+		width: 17rem;
+	}
 	
 	.breadcrumb {
 		margin-left: 0;
@@ -2133,9 +2162,7 @@ open the toggle boxes*/
 	font-size: 14px;
 	font-size: 1rem;
 	}
-	.widget .searchform{
-		float: none;	
-	}
+	
 		
 	.main-navigation li a {
 		padding: 7px;
@@ -2176,12 +2203,23 @@ open the toggle boxes*/
 		max-width: 1280px;
 		max-width: 91.428rem;
 	}
+	#s {
+		width: 300px;
+	}
+	#ws {
+		width: 283px;
+		width: 20.14rem;
+		margin-top: 2px;
+		margin-top: 0.143rem;
+	}
 	.site-content {
 		width: 70%;	
 	}
 	.widget-area {
-		width: 28.6%;
-		
+		width: 28.6%;	
+	}
+	header.excerpt-header {
+		display: block;
 	}
 	
 	.excerpt-entry,

@@ -450,3 +450,21 @@ ver 16.7
         -add dot after day.
         -fix the design problem af content-date
         
+    commit #16.8.7
+    24 August, 2016
+        == design enhancement ==
+        -page navigaton,
+        -add more rem size,
+        - bug: new header was not 100% width.
+    
+version 16.9
+    commit #16.9.1
+        ==responsive design enhancemet==
+        - content-date below the entry title
+        - two content date formats: US and Hungarian depending on the language settings.
+        - other design fixings.
+        ==search button review==
+        - remove FontAweseom and replace it with SVG
+        - set up desgin in every screen-size;
+        - add searchform.php for accessible widget search. 
+        - difference clearly between widget and header search. 
