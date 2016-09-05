@@ -4,13 +4,23 @@
  *
  * @since 1.8 */
 
+
+/* Boolean filter
+* @ name: manduca_exclude_author_page
+* @ true : default : show authoer pages in sitemap
+* @ false : Do not use author pages
+* */
+$author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_true');
+
 ?>
 
+<?php if( $author_page_flag ) : ?>
 <h2 id="authors"><?php _e( 'Authors:', 'manduca' ) ?></h2>
 <ul>
   <?php wp_list_authors( array( 'exclude_admin' => true, ) ); ?>
 </ul>
 
+<?php endif; ?>
 <h2 id="pages"><?php _e( 'Pages:' , 'manduca' ) ?></h2>
 <ul>
   <?php wp_list_pages( array(

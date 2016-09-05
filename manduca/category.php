@@ -27,7 +27,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #content -->
-!-- #primary -->
+	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
