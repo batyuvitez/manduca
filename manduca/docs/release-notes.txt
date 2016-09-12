@@ -459,6 +459,7 @@ ver 16.7
     
 version 16.9
     commit #16.9.1
+    3 September, 2016
         ==responsive design enhancemet==
             - content-date below the entry title
             - two content date formats: US and Hungarian depending on the language settings.
@@ -470,11 +471,25 @@ version 16.9
             - difference clearly between widget and header search.
             
     commit #16.9.2
-        -responsive design precision fixings.
+    6 September, 2016
+        - content dateresponsive design precision fixings .
         ==Bug==
             -catgory.php: since 16.8.1, </section>section was missing.
+        ==sitemap filter==
             /* Boolean filter
             * @ name: manduca_exclude_author_page
             * @ true : default : show authoer pages in sitemap
             * @ false : Do not use author pages
-* */
+    
+    commit #16.9.3
+        12 September, 2016.
+            ==upload to repository as 16.9 ==
+            -design fixings,
+            - Last validator warnings fixed: Now no error, no warnings! 
+            - search icon replaced with SVG background in css.
+            - add #svg-layer to header.php and footer.php
+            - style.css has 3 warnings in Komodo (hypens and  
+            ==bug==
+                -header image was smaller than than wrapper. custom-head.php now fixed. 
+        
+        

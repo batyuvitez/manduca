@@ -8,8 +8,8 @@ function manduca_custom_header_setup() {
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 200,
-		'width'                  => 1176,
-		'max-width'              => 1176,
+		'width'                  => 1267,
+		'max-width'              => 1267,
 
 		// Support flexible height and width.
 		'flex-height'            => true,

@@ -37,6 +37,9 @@ ol,
 ul {
 	list-style: none;
 }
+fieldset {
+	min-width: 0; 
+}
 blockquote
 {
 	quotes: none;
@@ -711,7 +714,6 @@ body .site{
 .site-title {	
 	font-weight: 500;
 	color: #515151;
-	height: 110px;
 	display: block;
 	text-decoration: none;
 	color: #444;

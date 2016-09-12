@@ -416,7 +416,7 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 		if ( $links ) :
 	
 		?>
-		<nav class="navigation paging-navigation" role="navigation">
+		<nav class="navigation paging-navigation">
 			<h3 class="screen-reader-text"><?php _e( 'Posts navigation', 'manduca' ); ?></h3>
 			<div class="pagination loop-pagination">
 				<?php echo $links; ?>
