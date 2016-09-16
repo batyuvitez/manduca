@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.9
+Version: 16.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -373,14 +373,13 @@ input[type="reset"]:active,
 	margin: 6px;
 	margin: 0.428rem;
 }
-#s {
+.header-searchform #s {
 	width: 43%;
 }
-#ws {
+.widget-searchform ws {
 	margin-top: 0;
 }
-#ws,
-#s{
+.header-searchform #s{
 	height: 40px;
 	height: 2.857rem;
 }
@@ -1744,8 +1743,10 @@ a.comment-edit-link:hover {
 		margin-bottom: 0;
 		height: auto;
 	}
-	#ws {
+	.widget-searchform #s {
 		width: 70%;
+		position: relative;
+		top: -4px;
 	}
 	
 	.site-content,
@@ -2137,7 +2138,7 @@ open the toggle boxes*/
 		margin-bottom: 0;
 		box-shadow: none;
 	}
-	#ws {
+	.widget-searchfrom #s {
 		width: 238px;
 		width: 17rem;
 	}
@@ -2212,14 +2213,12 @@ open the toggle boxes*/
 		max-width: 1280px;
 		max-width: 91.428rem;
 	}
-	#s {
+	.header-searchform #s {
 		width: 300px;
 	}
-	#ws {
+	.widget-searchform #s {
 		width: 283px;
 		width: 20.14rem;
-		margin-top: 2px;
-		margin-top: 0.143rem;
 	}
 	.site-content {
 		width: 70%;	

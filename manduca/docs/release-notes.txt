@@ -483,6 +483,7 @@ version 16.9
     
     commit #16.9.3
         12 September, 2016.
+            Validator: 0 error, 0 warnings. CSS. 0 error 3 warnings (hypens and viewport)
             ==upload to repository as 16.9 ==
             -design fixings,
             - Last validator warnings fixed: Now no error, no warnings! 
@@ -490,6 +491,25 @@ version 16.9
             - add #svg-layer to header.php and footer.php
             - style.css has 3 warnings in Komodo (hypens and  
             ==bug==
-                -header image was smaller than than wrapper. custom-head.php now fixed. 
+                -header image was smaller than than wrapper. custom-head.php now fixed.
+                - fieldset should be set for browser compatibility.
+                
+
+
+version 16.10
+    commit #16.10.1
+        - 16 September, 2016
+        ==bug==
+            -widget searchform did not work because I rewrote id="ws".
+        ==code optimazation==
+            -add nav to breadcrumb
+            -add id to top-bar
+        ==sitemap developing==
+            -not display PDF, if there is none.
+            /* Boolean filter
+            * @ name: manduca_exclude_author_page
+            * @ true : default : show authoer pages in sitemap
+            * @ false : Do not use author pages
+
         
         

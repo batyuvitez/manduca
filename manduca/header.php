@@ -29,7 +29,7 @@
 	<div id="svg-layer">
 		<?php echo apply_filters( 'manduca_background_images', '' ); ?>
 		<div id="page" class="hfeed site">
-			<div class="top-bar"></div>
+			<div class="top-bar" id="top-bar"></div>
 			<div id="masthead" class="site-header" >
 				<div id="header-bar" class="header-bar">
 					<header>
@@ -80,16 +80,15 @@
 				</div>
 			
 			
-				<div class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" role="navigation">	
+				<nav class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" >	
 		
-				<?php 	if( !is_attachment() ) :
-							manduca_breadcrumb();
-						endif;
-				?>
+					<?php 	if( !is_attachment() ) :
+								manduca_breadcrumb();
+							endif;
+					?>
 					
-			
-			</div>
+				</nav>
 		
 			</div><!-- .masthead -->
 	
-			<div id="wrapper" class="wrapper" tabindex="-1">
+			<div id="wrapper" class="wrapper">

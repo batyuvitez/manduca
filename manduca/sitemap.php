@@ -5,6 +5,12 @@
  * @since 1.8 */
 
 
+?>
+
+<h1><?php _e( 'Sitemap', 'manduca' ); ?></h1>
+
+
+<?php
 /* Boolean filter
 * @ name: manduca_exclude_author_page
 * @ true : default : show authoer pages in sitemap
@@ -12,9 +18,7 @@
 * */
 $author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_true');
 
-?>
-
-<?php if( $author_page_flag ) : ?>
+if( $author_page_flag ) : ?>
 <h2 id="authors"><?php _e( 'Authors:', 'manduca' ) ?></h2>
 <ul>
   <?php wp_list_authors( array( 'exclude_admin' => true, ) ); ?>
@@ -112,8 +116,7 @@ $author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_tru
 </ol>
   
   
-  <h2 id="posts"><?php _e( 'PDFs:', 'manduca' ) ?></h2>
-  <ol>
+  
   <?php 
           
       $query_pdf = new WP_Query( array(
@@ -127,7 +130,14 @@ $author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_tru
       );
       
     $pdf = array();
-      foreach ( $query_pdf->posts as $pdf) {
+     
+	If( $query_pdf->post_count  > 0 ) {
+	  ?>
+	  <h2 id="posts"><?php _e( 'PDFs:', 'manduca' ) ?></h2>
+	  <ol>
+	  
+	  <?php 
+	  foreach ( $query_pdf->posts as $pdf) {
           setup_postdata($pdf);
           
           printf( '<li><a href="%1$s">%2$s</a></li>',
@@ -136,5 +146,6 @@ $author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_tru
                  );
           
       }
+	}
   ?>
 </ol>
