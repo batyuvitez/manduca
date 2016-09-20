@@ -1819,6 +1819,7 @@ a.comment-edit-link:hover {
 		margin:0 15px 0 60px;
 		position:relative;
 		right:100%;
+		width: 89%;
 		overflow:hidden;
 		top: -4px;
 	}
@@ -1965,8 +1966,8 @@ open the toggle boxes*/
 	.header-searchform {
 		top: 16px;
 		top: 1.142rem;
-		right: 16px;
-		right: 1.142rem;
+		right: 22px;
+		right: 1.571rem;
 	}
 	.site-header-menu {
 		display: block;
@@ -2233,6 +2234,8 @@ open the toggle boxes*/
 	.excerpt-entry,
 	.crop-height {
 		float: left;
+		width: 274px;
+		width: 19.57rem;
 	}
 	.crop-height {
 		margin: 0;

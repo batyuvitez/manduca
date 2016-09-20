@@ -17,14 +17,18 @@ get_header(); ?>
 			?>
 			
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'manduca' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+				<h1 class="archive-title">
+				<?php
+					printf( __( 'Author: %s', 'manduca' ),
+						   '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" >' . get_the_author() . '</a></span>' );
+				?>
+				</h1>
+				
 			</header><!-- .archive-header -->
 
-			<?php
-				rewind_posts();
-			?>
+			<?php rewind_posts(); ?>
 
-			<?php manduca_page_navigation(); ?>
+			
 
 			<?php
 			$author_description = get_the_author_meta( 'description' );
@@ -38,6 +42,22 @@ get_header(); ?>
 				</div><!-- .author-avatar -->
 				<div class="author-description">
 					<h3><?php printf( __( 'About %s', 'manduca' ), get_the_author() ); ?></h3>
+					
+					<?php
+						$user_url= get_the_author_meta( 'user_url' );
+						If ( !empty( $user_url ) ) {
+							if( function_exists ( 'idn_to_utf8') ) {
+								$user_url_utf8 = idn_to_utf8($user_url );
+							}
+							else {
+								$user_url_utf8 = $user_url;
+							}
+							printf( '<p><a href="%1$s">%2$s</a></p>',
+										$user_url,
+										$user_url_utf8
+									   ) ;
+						}
+					?>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->

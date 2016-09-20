@@ -511,5 +511,11 @@ version 16.10
             * @ true : default : show authoer pages in sitemap
             * @ false : Do not use author pages
 
-        
+    commit #16.10.2
+        20 Sept ,2016
+            ==bug==
+                - Author page __ function did not work (I do not know why)
+            Author page: add website to author.php
+            design: some style fixed.  (excerpt, header search )
+            
         
