@@ -15,8 +15,14 @@ get_header(); ?>
 					
 					<nav id="image-navigation" class="nav-single">
 							
-							<?php manduca_adjacent_image_link( true ); ?>
-							<?php manduca_adjacent_image_link( false ) ; ?>  
+							<div class="nav-previous">
+								<?php previous_image_link( false, __( 'Previous', 'manduca' ) ) ; ?> 
+							</div>
+							
+							<div class="nav-next">
+								<?php next_image_link( false, __( 'Next', 'manduca' ) ) ; ?>
+							</div>
+							
 							
 						</nav><!-- .nav-single -->
 					

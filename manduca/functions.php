@@ -1104,57 +1104,24 @@ add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
 
 
 
-
-/**
- * Displays previous image link
- * in spite of the WP function: browse all, not only the ones belong the same parent.
+/*
+ *Add anchor to image images anchor instert in post content
  *
- * @since 16.7
+ *@since 16.10
  *
- * @param bool         $prev Optional. Whether to display the next (false) or previous (true) link. 
- * 
  */
 
-function manduca_adjacent_image_link( $prev ) {
-	
-    $post = get_post();
-    $attachments = array_values( get_children( array(
-													 'post_status' => 'inherit',
-													 'post_type' => 'attachment',
-													 'post_mime_type' => 'image',
-													 'order' => 'ASC',
-													 'orderby' => 'menu_order ID' ) ) );
- 
-    foreach ( $attachments as $k => $attachment ) {
-        if ( $attachment->ID == $post->ID ) {
-            break;
-        }
-    }
- 
-    $output = '';
-    $attachment_id = 0;
- 
-    if ( $attachments ) {
-        $k = $prev ? $k - 1 : $k + 1;
-		$text = $prev ?  __( 'Previous', 'manduca' ) : __( 'Next', 'manduca' ) ;
- 
-        if ( isset( $attachments[ $k ] ) ) {
-            $attachment_id = $attachments[ $k ]->ID;
-            $output = wp_get_attachment_link( $attachment_id, false, true, false, $text );
-        }
-    }
-	if ( !empty( $output ) ) {
-		if ( $prev ) {
-			printf( '<div class="nav-previous">%s</div>', $output );
-    
-		}
-		else {
-			printf( '<div class="nav-next">%s</div>', $output );
-		}
-	}
-	
-}
 
-	
+function manduca_add_class_image_anchor($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
+  $classes = 'image-link'; 
+
+  if ( preg_match('/<a.*? class=".*?">/', $html) ) {
+    $html = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $html);
+  } else {
+    $html = preg_replace('/(<a.*?)>/', '$1 class="' . $classes . '" >', $html);
+  }
+  return $html;
+}
+add_filter('image_send_to_editor','manduca_add_class_image_anchor',10,8);
  
 ?>

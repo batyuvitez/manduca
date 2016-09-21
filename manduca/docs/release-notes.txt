@@ -364,8 +364,8 @@ ver 16.7
             - shows category prefix if single
             - shows hierarchy of pages.
             - add an action hook for custom taxonomy or post type
-        ==attachment page ==
-            -always show image navigation (so far navigation was possible only with common parents);
+        ==attachment page (image.php) ==
+            -always show image navigation (so far navigation was possible only with common parents): adjacent_image_links in function.php;
             -center heading of the page.
     
     commit #16.7.3
@@ -517,5 +517,10 @@ version 16.10
                 - Author page __ function did not work (I do not know why)
             Author page: add website to author.php
             design: some style fixed.  (excerpt, header search )
+    
+    commit #16.10.3
+        -add class to image anchor in order to avoid border-bottom (code: https://gist.github.com/rugor/5418051)
+        -remove adjacent_image_link function added in commit#16.7.2. Reason: not work fine in somogyivakok.hu
+        -remove image link Font-Awesome icons
             
         

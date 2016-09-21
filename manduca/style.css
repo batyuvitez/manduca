@@ -85,10 +85,15 @@ body a:link{
 	text-decoration: none;
 	border-bottom: 0.08em solid #2077a0;
 }
+
+
 body a:visited {
 	color: #104E51;
 	border-bottom: 0.08em solid #1a9fa4;
 	text-decoration: none;
+}
+body a.image-link {
+	border-bottom: none
 }
 
 .site a:focus,
@@ -480,6 +485,7 @@ img.wp-smiley,
 }
 .gallery-item a {
 	display: block;
+	border-bottom: none !important;
 }
 .gallery-caption a {
 	display: inline;
@@ -545,20 +551,7 @@ img.wp-smiley,
 	float: right;
 	text-align: right;
 }
-.nav-next:after {
-	content: " \f101";
-	font-family: fontAwesome;
-	padding-left: 7px;
-	padding-left: 0.5rem;
-}
-.nav-previous:before {
-	content: "\f100 ";
-	font-family: fontAwesome;
-	padding-right: 7px;
-	padding-right: 0.5rem;
-}
 
-.nav-single + .comments-area,
 
 /* Author profiles */
 .author .archive-header {
