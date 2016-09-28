@@ -751,7 +751,7 @@ function manduca_more_unique_id () {
 }
 
 function manduca_content_more_link() {
-	return '<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+	return '<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
 <span class="screen-reader-text">' .manduca_more_unique_id() .'</span></a>';
 }
 add_filter( 'the_content_more_link', 'manduca_content_more_link' );
@@ -761,7 +761,7 @@ add_filter( 'excerpt_more', 'manduca_content_more_link' );
 function manduca_manual_excerpt ( $param ) {
 	global $post;
 	if( $post->post_excerpt ) {
-    return $param .'<a class="more-link" rel="nofollow" href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+    return $param .'<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
 <span class="screen-reader-text">  ' .manduca_more_unique_id() .'</span></a>';
 	} else {
 		return $param;
@@ -770,7 +770,7 @@ function manduca_manual_excerpt ( $param ) {
 add_filter('get_the_excerpt', 'manduca_manual_excerpt');
 
 /*
-* Add "ext-link" class aan d aria-label to external links
+* Add class="ext-link" to external links
 *
 * */
 
@@ -782,6 +782,13 @@ function manduca_get_domain_name_from_uri( $uri ) {
 	return $host;
 }
 
+/* callback function of preg_replace to parse external links
+ *
+ * @param $matches HTML code to filter
+ *
+ * @return modified HTML code, where class="wxt-links" are added. 
+ *
+ * */
 
 function mandcua_parse_external_links( $matches ) {
 	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
@@ -1002,6 +1009,9 @@ endif;
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30"
+						><path d="m63.8 23.2 112.7 0 0 43.5-112.7 0 0 18.1s-59.3-39.9-59.3-39.9l59.3-39.9v18.1z" sstroke="#9E430E" stroke-width="2" fill="#0E509E"/>
+					</svg>
 					<?php  echo $previous_post; ?>
 					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
 				</div>
@@ -1012,7 +1022,11 @@ endif;
 				if( !empty( $next_post ) ) : ?>
 				<div class="nav-next">
 					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
+					
 					<?php echo $next_post; ?>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30">
+						<path d="M117.2 66.8L4.5 66.8 4.5 23.2 117.2 23.2 117.2 5.1C117.2 5.1 176.5 45 176.5 45L117.2 84.9 117.2 66.8z" stroke="#9E430E" stroke-width="2" fill="#0E509E"/>
+					</svg>
 				</div>
 				<?php endif;
 			?>

@@ -522,6 +522,10 @@ img.wp-smiley,
 	height: 36px;
 	text-align: center;
 }
+.nav-single svg {
+	height: 1.3rem;
+	width: 1.857rem;
+}
 .page-numbers {
 	padding: 0 7px;
 	padding: 0 0.5rem;

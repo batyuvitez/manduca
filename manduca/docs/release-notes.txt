@@ -519,8 +519,9 @@ version 16.10
             design: some style fixed.  (excerpt, header search )
     
     commit #16.10.3
+        28 Sept, 2016
         -add class to image anchor in order to avoid border-bottom (code: https://gist.github.com/rugor/5418051)
         -remove adjacent_image_link function added in commit#16.7.2. Reason: not work fine in somogyivakok.hu
         -remove image link Font-Awesome icons
-            
+        -add svg to single post navigation.             
         
