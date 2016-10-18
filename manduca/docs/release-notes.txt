@@ -524,4 +524,10 @@ version 16.10
         -remove adjacent_image_link function added in commit#16.7.2. Reason: not work fine in somogyivakok.hu
         -remove image link Font-Awesome icons
         -add svg to single post navigation.             
-        
+    
+    commit #16.10.4
+        18 Oct, 2016
+        - remove ext-link class if the anchor is in-page (hash) link.
+        - add breadcrumb as action hook (in order to    manipulate even better)
+        -tiny design fixing: excerpt-header margin and padding
+            

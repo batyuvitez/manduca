@@ -995,6 +995,9 @@ header.excerpt-header {
 	border-radius: 5px;
 	font-weight: bolder;
 	margin: 20px 0;
+	margin: 1.428rem 0;
+	padding: 10px;
+	padding: 0.714rem;
 }
 
 .highlight-2

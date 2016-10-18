@@ -79,15 +79,17 @@
 					<?php endif; ?>
 				</div>
 			
-			
-				<nav class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" >	
-		
-					<?php 	if( !is_attachment() ) :
-								manduca_breadcrumb();
-							endif;
-					?>
+					<?php 
+						/*		
+						 *  Add breadcrumb  at the very end of masthead
+						 * @ since 16.10
+						 * */
+						
+						do_action( 'manduca_masthead_end' );
 					
-				</nav>
+					?> 
+			
+				
 		
 			</div><!-- .masthead -->
 	

@@ -791,19 +791,20 @@ function manduca_get_domain_name_from_uri( $uri ) {
  * */
 
 function mandcua_parse_external_links( $matches ) {
-	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) ) {
+	if ( manduca_get_domain_name_from_uri( $matches[3] ) != manduca_get_domain_name_from_uri( $_SERVER["HTTP_HOST"] ) &&  $matches[2][0] !=='#') {
 		
 		$flag = FALSE ;
 		foreach( $matches as $key => $match ) {
 			
 			if( !empty ($match) ) {
-	
+				
 				if ( strpos( $match, 'class=') !== FALSE  ) {
 					$matches[$key] = str_replace ( 'class="', 'class="ext-link ', $match);
 					$flag = TRUE;
 				}
 			}
 		}
+		
 		if ( $flag ) {
 		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'>' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 	
 		}
@@ -892,99 +893,110 @@ if( !function_exists( 'manduca_breadcrumb') ) :
 
 function manduca_breadcrumb() {
 	
-	if (is_home() || is_front_page() ) {
-		printf( '<strong>%s</strong>', __( 'Home', 'manduca' ) );
-	}
+	?>
+	<nav class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" >	
+		
+	<?php 	if( !is_attachment() ) : 
 	
-	else {
-		?>
-		<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
-		<?php
+	
+		if (is_home() || is_front_page() ) {
+			printf( '<strong>%s</strong>', __( 'Home', 'manduca' ) );
+		}
 		
-			/**
-			* Add custom post types or custom taxonomies here
-			*
-			* @since 16.7
-			*/
-		
-			do_action( 'manduca_custom_breadcrumb' );
+		else {
+			?>
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			<?php
 			
-			if (is_category() ) { 
-					$category_ID  		= get_queried_object()->term_id;
-					$category_object 	= get_category( $category_ID );
-					$parent_ID			= $category_object->category_parent;
-					if( $parent_ID !== 0 ) {
-						echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' );
+				/**
+				* Add custom post types or custom taxonomies here
+				*
+				* @since 16.7
+				*/
+			
+				do_action( 'manduca_custom_breadcrumb' );
+				
+				if (is_category() ) { 
+						$category_ID  		= get_queried_object()->term_id;
+						$category_object 	= get_category( $category_ID );
+						$parent_ID			= $category_object->category_parent;
+						if( $parent_ID !== 0 ) {
+							echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' );
+						}
+						single_cat_title();
+				}
+				
+				
+				
+				elseif (is_single()) { //Title of post in category
+				
+					
+					$term_object = get_the_terms( get_the_ID() , 'category' );
+					$term  = $term_object [0];
+					$link = esc_url( get_term_link( $term ) );
+					
+					//get parent
+					$parent_object  = get_term_by( 'id', $term->parent, 'category' );
+					if ( !empty( $parent_object) ) { 
+						$parent_link = esc_url( get_term_link( $parent_object ) );
+						
+						echo sprintf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="%3$s">%4$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>%5$s' ,
+									$parent_link,
+									$parent_object->name,
+									$link,
+									$term->name,
+									the_title( '', '', FALSE )
+									);
 					}
-					single_cat_title();
-			}
-			
-			
-			
-			elseif (is_single()) { //Title of post in category
-			
-				
-				$term_object = get_the_terms( get_the_ID() , 'category' );
-				$term  = $term_object [0];
-				$link = esc_url( get_term_link( $term ) );
-				
-				//get parent
-				$parent_object  = get_term_by( 'id', $term->parent, 'category' );
-				if ( !empty( $parent_object) ) { 
-					$parent_link = esc_url( get_term_link( $parent_object ) );
-					
-					echo sprintf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="%3$s">%4$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>%5$s' ,
-								$parent_link,
-								$parent_object->name,
-								$link,
-								$term->name,
-								the_title( '', '', FALSE )
-								);
+					else {
+						
+						the_title();
+					}
 				}
-				else {
-					
-					the_title();
+			
+			elseif ( is_page() ) {
+				global $post;
+				$first_parent = $post->post_parent;
+				
+				$first_parent_object = get_post( $first_parent );
+				$second_parent = $first_parent_object->post_parent;
+				
+				
+				if ( $second_parent ) {
+					printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+						   get_page_link( $second_parent ),
+						   get_the_title( $second_parent )
+						  );
 				}
+				if ( $first_parent ) {
+					printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+						   get_page_link( $first_parent ),
+						   get_the_title( $first_parent )
+						  );
+				}
+				
+				
+				the_title();
 			}
+			
+			if (is_404()) {
+				_e( 'Page not found', 'manduca' );
+			}
+			if (is_search()) {
+				_e( 'Search', 'manduca' );
+			} ?>
 		
-		elseif ( is_page() ) {
-			global $post;
-			$first_parent = $post->post_parent;
-			
-			$first_parent_object = get_post( $first_parent );
-			$second_parent = $first_parent_object->post_parent;
-			
-			
-			if ( $second_parent ) {
-				printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-					   get_page_link( $second_parent ),
-					   get_the_title( $second_parent )
-					  );
-			}
-			if ( $first_parent ) {
-				printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-					   get_page_link( $first_parent ),
-					   get_the_title( $first_parent )
-					  );
-			}
-			
-			
-			the_title();
+		<?php
 		}
-		
-		if (is_404()) {
-			_e( 'Page not found', 'manduca' );
-		}
-		if (is_search()) {
-			_e( 'Search', 'manduca' );
-		} ?>
-	
-	<?php
-	}
+	endif; 
 }
 
 
 endif;
+
+add_action( 'manduca_masthead_end', 'manduca_breadcrumb'); 
+
+
 
 
 
