@@ -531,3 +531,7 @@ version 16.10
         - add breadcrumb as action hook (in order to    manipulate even better)
         -tiny design fixing: excerpt-header margin and padding
             
+    commit #16.10.5
+        28 Oct, 2016
+        = bug = breadcrumb has wrong DOM ( missing end nav tag) fixed.
+		*  Filter of inital text: manduca_breadcrumb_prefix

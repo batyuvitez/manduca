@@ -894,18 +894,26 @@ if( !function_exists( 'manduca_breadcrumb') ) :
 function manduca_breadcrumb() {
 	
 	?>
-	<nav class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" >	
+	<nav class="breadcrumb" id="breadcrumb" aria-label="<?php _e( 'Breadcrumb navigation', 'manduca'); ?>" >
+	
+	<?php
+		/*
+		*  Filter of inital text
+		* @ since 16.10
+		* */
+		echo apply_filters( 'manduca_breadcrumb_prefix',  '' );
 		
-	<?php 	if( !is_attachment() ) : 
+		
+		if( !is_attachment() ) : 
 	
 	
-		if (is_home() || is_front_page() ) {
+		if ( is_home() || is_front_page() ) {
 			printf( '<strong>%s</strong>', __( 'Home', 'manduca' ) );
 		}
 		
 		else {
 			?>
-			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _E( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
 			<?php
 			
 				/**
@@ -988,7 +996,10 @@ function manduca_breadcrumb() {
 		
 		<?php
 		}
-	endif; 
+	endif;
+	?>
+	</nav>
+	<?php
 }
 
 
