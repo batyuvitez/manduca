@@ -1225,7 +1225,9 @@ blockquote:after{
 	content: '';
 	content: none;
 }
-
+blockquote p{
+	display: inline;
+}
 .entry-content blockquote p:last-child,
 .comment-content blockquote p:last-child {
 	margin-bottom: 0;

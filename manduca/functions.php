@@ -200,8 +200,7 @@ endif;
 
 if ( ! function_exists( 'manduca_entry_meta' ) ) :
 
-	function manduca_entry_meta()
-	{	
+	function manduca_entry_meta()	{	
 		$categories_list = get_the_category_list( ', ' );
 		$tag_list = get_the_tag_list( '', ', ' );	
 		$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><abbr class="published" title="%3$s"><time class="entry-date" datetime="%3$s">%4$s</time></abbr></a>',
@@ -1032,8 +1031,8 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb');
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30"
-						><path d="m63.8 23.2 112.7 0 0 43.5-112.7 0 0 18.1s-59.3-39.9-59.3-39.9l59.3-39.9v18.1z" sstroke="#9E430E" stroke-width="2" fill="#0E509E"/>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30">
+						<path d="m63.8 23.2 112.7 0 0 43.5-112.7 0 0 18.1s-59.3-39.9-59.3-39.9l59.3-39.9v18.1z" sstroke="#9E430E" stroke-width="2" fill="#0E509E"/>
 					</svg>
 					<?php  echo $previous_post; ?>
 					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
