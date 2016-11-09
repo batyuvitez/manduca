@@ -90,9 +90,6 @@ function manduca_scripts_styles() {
 	wp_enqueue_style( 'manduca-main-style', get_stylesheet_uri(), false, false, 'all' );
 	wp_enqueue_style( 'manduca-print-style', get_template_directory_uri() .'/css/print.min.css', false, false, 'print'  );
 	
-	//Loads Font Awesome
-	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css' );
-
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/css/ie.css', array( 'manduca-style' ), '20121010' );
 	$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
@@ -151,7 +148,7 @@ function manduca_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?></p>
+		<p><?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'manduca' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -181,7 +178,7 @@ function manduca_comment( $comment, $args, $depth ) {
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'manduca' ), '<p class="edit-link"><i class="fa fa-pencil"></i> ', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'manduca' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
 
 			<div class="reply">
@@ -225,20 +222,20 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 		$utility_text ='<p class="screen-reader-text">'. __( 'Post meta', 'manduca' ) .'</p>';
 		$utility_text .= "<ul>";
 		
-		$utility_text .= '<li><i class="fa fa-clock-o" aria-hidden="true"></i><span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
+		$utility_text .= '<li><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M192 1664h288v-288h-288v288zm352 0h320v-288h-320v288zm-352-352h288v-320h-288v320zm352 0h320v-320h-320v320zm-352-384h288v-288h-288v288zm736 736h320v-288h-320v288zm-384-736h320v-288h-320v288zm768 736h288v-288h-288v288zm-384-352h320v-320h-320v320zm-352-864v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm736 864h288v-320h-288v320zm-384-384h320v-288h-320v288zm384 0h288v-288h-288v288zm32-480v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm384-64v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"/></svg><span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
 		
 		if( get_the_date() !== get_the_modified_date() ) {
-			$utility_text .='<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span> ' . __( 'Last revision:', 'manduca' ) .':</span> ' .$modified_date .'</li>';
+			$utility_text .='<li><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1536 256q52 0 90 38t38 90v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128zm-384-96v288q0 14 9 23t23 9h64q14 0 23-9t9-23v-288q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23zm-768 0v288q0 14 9 23t23 9h64q14 0 23-9t9-23v-288q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23zm1152 1504v-1024h-1408v1024h1408zm-640-576h224q14 0 23 9t9 23v64q0 14-9 23t-23 9h-224v224q0 14-9 23t-23 9h-64q-14 0-23-9t-9-23v-224h-224q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-224q0-14 9-23t23-9h64q14 0 23 9t9 23v224z"/></svg><span> ' . __( 'Last revision:', 'manduca' ) .':</span> ' .$modified_date .'</li>';
 		}
 		
-		$utility_text .= '<li><i class="fa fa-user" aria-hidden="true"></i><span> ' .__( 'Author', 'manduca' ) .':</span> ' . $author .'</li>';
+		$utility_text .= '<li><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 1405q0 120-73 189.5t-194 69.5h-874q-121 0-194-69.5t-73-189.5q0-53 3.5-103.5t14-109 26.5-108.5 43-97.5 62-81 85.5-53.5 111.5-20q9 0 42 21.5t74.5 48 108 48 133.5 21.5 133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5t-271.5 112.5-271.5-112.5-112.5-271.5 112.5-271.5 271.5-112.5 271.5 112.5 112.5 271.5z"/></svg><span> ' .__( 'Author', 'manduca' ) .':</span> ' . $author .'</li>';
 	
 		if ( $categories_list ) {
-			$utility_text .='<li><i class="fa fa-folder-open-o" aria-hidden="true"></i><span> ' .__( 'Category', 'manduca' ) .':</span> ' .$categories_list .'</li>';
+			$utility_text .='<li><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1815 952q0 31-31 66l-336 396q-43 51-120.5 86.5t-143.5 35.5h-1088q-34 0-60.5-13t-26.5-43q0-31 31-66l336-396q43-51 120.5-86.5t143.5-35.5h1088q34 0 60.5 13t26.5 43zm-343-344v160h-832q-94 0-197 47.5t-164 119.5l-337 396-5 6q0-4-.5-12.5t-.5-12.5v-960q0-92 66-158t158-66h320q92 0 158 66t66 158v32h544q92 0 158 66t66 158z"/></svg><span> ' .__( 'Category', 'manduca' ) .':</span> ' .$categories_list .'</li>';
 		}
 		
 		if ( $tag_list ) {
-			$utility_text .= '<li><i class="fa fa-tags" aria-hidden="true"></i><span> '. __( 'Tags', 'manduca' ) .':</span> ' .$tag_list .'</li>';
+			$utility_text .= '<li><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M384 448q0-53-37.5-90.5t-90.5-37.5-90.5 37.5-37.5 90.5 37.5 90.5 90.5 37.5 90.5-37.5 37.5-90.5zm1067 576q0 53-37 90l-491 492q-39 37-91 37-53 0-90-37l-715-716q-38-37-64.5-101t-26.5-117v-416q0-52 38-90t90-38h416q53 0 117 26.5t102 64.5l715 714q37 39 37 91zm384 0q0 53-37 90l-491 492q-39 37-91 37-36 0-59-14t-53-45l470-470q37-37 37-90 0-52-37-91l-715-714q-38-38-102-64.5t-117-26.5h224q53 0 117 26.5t102 64.5l715 714q37 39 37 91z"/></svg><span> '. __( 'Tags', 'manduca' ) .':</span> ' .$tag_list .'</li>';
 		}
 		
 		
@@ -342,8 +339,8 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 			'current' => $current,
 			'show_all' => true,
 			'prev_next' => true,
-			'prev_text' =>  '<i class="fa fa-angle-left"></i>' .__( 'Previous', 'manduca' ),
-			'next_text' => __( 'Next', 'manduca' )  .'<i class="fa fa-angle-right"></i>',
+			'prev_text' =>  '&rarr;' .__( 'Previous', 'manduca' ),
+			'next_text' => __( 'Next', 'manduca' )  .'&larr;',
 			'end_size' => 1,
 			'mid_size' => 1,
 			'add_args' => array_map( 'urlencode', array() ),
@@ -674,7 +671,7 @@ add_filter( 'body_class', 'manduca_body_class' );
 							<?php manduca_display_entry_header(); ?>
 						</header>
 						
-						<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><i class="fa fa-pencil" aria-hidden="true"></i> ', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link">', '</span>' ); ?>
 						
 							<?php if ( has_post_thumbnail() ) :?>
 							<div class="crop-height">
@@ -746,21 +743,25 @@ function manduca_more_unique_id () {
 	if ( $space_count > 4) {
 		$firstwords .= '&hellip;'; 
 	}
-	return  sprintf( __( 'Titled as follows: %s', 'manduca' ), $firstwords );
+	return  sprintf( __( 'Title of article: %s', 'manduca' ), $firstwords );
 }
 
 function manduca_content_more_link() {
-	return '<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+	return '<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;
 <span class="screen-reader-text">' .manduca_more_unique_id() .'</span></a>';
 }
+
 add_filter( 'the_content_more_link', 'manduca_content_more_link' );
 add_filter( 'excerpt_more', 'manduca_content_more_link' );
 
-// add read-more link to manual excerpt
+
+/*
+ * add read-more link to manual excerpt
+ * */
 function manduca_manual_excerpt ( $param ) {
 	global $post;
 	if( $post->post_excerpt ) {
-    return $param .'<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;<i class="fa fa-angle-double-right"></i>
+    return $param .'<a class="more-link"  href="' . get_permalink() .'">' . __( 'Continue reading', 'manduca' ) .'&nbsp;&rarr;
 <span class="screen-reader-text">  ' .manduca_more_unique_id() .'</span></a>';
 	} else {
 		return $param;
@@ -805,10 +806,10 @@ function mandcua_parse_external_links( $matches ) {
 		}
 		
 		if ( $flag ) {
-		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'>' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 	
+		$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .'>' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1408 928v320q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h704q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-320q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10l-114-114q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/></svg></a>';	 	
 		}
 		else {
-			$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' class="ext-link">' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span></a>';	 
+			$pattern = '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] .' class="ext-link">' . $matches[5] . '<span class="screen-reader-text"> ' .__( 'external', 'manduca' ) .'</span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1408 928v320q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h704q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-320q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10l-114-114q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/></svg></a>';	 
 		}
 		return $pattern;
 	
@@ -900,7 +901,7 @@ function manduca_breadcrumb() {
 		*  Filter of inital text
 		* @ since 16.10
 		* */
-		echo apply_filters( 'manduca_breadcrumb_prefix',  '' );
+		echo apply_filters( 'manduca_breadcrumb_prefix',  __( 'You are here:', 'manduca' ) .' ' ) ;
 		
 		
 		if( !is_attachment() ) : 
@@ -912,7 +913,7 @@ function manduca_breadcrumb() {
 		
 		else {
 			?>
-			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg> 
 			<?php
 			
 				/**
@@ -928,7 +929,7 @@ function manduca_breadcrumb() {
 						$category_object 	= get_category( $category_ID );
 						$parent_ID			= $category_object->category_parent;
 						if( $parent_ID !== 0 ) {
-							echo get_category_parents( $parent_ID, true, '<i class="fa fa-angle-double-right" aria-hidden="true"></i>' );
+							echo get_category_parents( $parent_ID, true, '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>' );
 						}
 						single_cat_title();
 				}
@@ -947,7 +948,7 @@ function manduca_breadcrumb() {
 					if ( !empty( $parent_object) ) { 
 						$parent_link = esc_url( get_term_link( $parent_object ) );
 						
-						echo sprintf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="%3$s">%4$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>%5$s' ,
+						echo sprintf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>%5$s' ,
 									$parent_link,
 									$parent_object->name,
 									$link,
@@ -970,13 +971,13 @@ function manduca_breadcrumb() {
 				
 				
 				if ( $second_parent ) {
-					printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+					printf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>',
 						   get_page_link( $second_parent ),
 						   get_the_title( $second_parent )
 						  );
 				}
 				if ( $first_parent ) {
-					printf( '<a href="%1$s">%2$s</a><i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+					printf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>',
 						   get_page_link( $first_parent ),
 						   get_the_title( $first_parent )
 						  );
@@ -995,6 +996,14 @@ function manduca_breadcrumb() {
 		
 		<?php
 		}
+	else: 
+		?>
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a>
+			<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+				<path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/>
+			</svg> 
+	<?php the_title();
+	
 	endif;
 	?>
 	</nav>
@@ -1031,8 +1040,8 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb');
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30">
-						<path d="m63.8 23.2 112.7 0 0 43.5-112.7 0 0 18.1s-59.3-39.9-59.3-39.9l59.3-39.9v18.1z" sstroke="#9E430E" stroke-width="2" fill="#0E509E"/>
+					<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1037 1395l102-102q19-19 19-45t-19-45l-307-307 307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
 					</svg>
 					<?php  echo $previous_post; ?>
 					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
@@ -1046,8 +1055,8 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb');
 					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
 					
 					<?php echo $next_post; ?>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 30">
-						<path d="M117.2 66.8L4.5 66.8 4.5 23.2 117.2 23.2 117.2 5.1C117.2 5.1 176.5 45 176.5 45L117.2 84.9 117.2 66.8z" stroke="#9E430E" stroke-width="2" fill="#0E509E"/>
+					<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+						<path d="M845 1395l454-454q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-102 102q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
 					</svg>
 				</div>
 				<?php endif;
@@ -1159,5 +1168,6 @@ function manduca_add_class_image_anchor($html, $id, $caption, $title, $align, $u
   return $html;
 }
 add_filter('image_send_to_editor','manduca_add_class_image_anchor',10,8);
+
  
 ?>

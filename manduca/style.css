@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.10
+Version: 16.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -202,28 +202,6 @@ img {
 
 /* 2. Repeatable patterns
 -------------------------------------------------------------- */
-/* fontAwesome*/
-.menu-item-has-children a:after,
-.social-navigation a:before,
-.dropdown-toggle:after,
-.bypostauthor > article .fn:after,
-.comment-reply-title small a:before,
-.pagination .prev:before,
-.pagination .next:before,
-.pagination .nav-links:before,
-.pagination .nav-links:after {
-	display: inline-block;
-	font-family: "fontAwesome";
-	font-size: larger;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 1;
-	text-align: center;
-	text-decoration: inherit;
-	text-transform: none;
-	vertical-align: top;
-}
 
 
 /* subheaders */
@@ -522,10 +500,7 @@ img.wp-smiley,
 	height: 36px;
 	text-align: center;
 }
-.nav-single svg {
-	height: 1.3rem;
-	width: 1.857rem;
-}
+
 .page-numbers {
 	padding: 0 7px;
 	padding: 0 0.5rem;
@@ -608,11 +583,6 @@ body .site{
 }
 
 
-.site-content a.ext-link:after{
-    content: " \F08E";
-    font-family: FontAwesome;
-	color: #20399d;
-}
 
 .post .entry-content p a:hover,
 .post .entry-content p a:focus,
@@ -726,10 +696,8 @@ body .site{
 .breadcumb {
 	padding: 0.5rem;
 }
-.breadcrumb .fa {
-	padding: 0 3px;
-	padding: 0 0.214rem;
-}
+
+
 
 .search-form label{
 	font-size: 148%;
@@ -760,6 +728,7 @@ body .site{
 	top: 0;
 	left: 0;
 }
+
 
 .site-header-menu.toggled-on,
 .no-js .site-header-menu {
@@ -945,8 +914,8 @@ section[role="banner"] {
 .footer-navigation ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 0 3px;
-	padding: 0 0.2142857142857143rem;
+	padding: 0 5px;
+	padding: 0 0.357rem;
 }
 .footer-navigation ul li ul{
 	display: none;
@@ -1029,6 +998,7 @@ footer.entry-meta {
 	clear: both;
 	border-top: 1px dotted #DAF2FF;
 }
+
 .entry-header {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
@@ -1691,8 +1661,68 @@ a.comment-edit-link:hover {
 }
 
 
+/*14. Focus snail css*
+ ------------------------*/
+#focus-snail_svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	background: transparent;
+	visibility: hidden;
+	pointer-events: none;
+	-webkit-transform: translateZ(0);
+}
+
+#focus-snail_svg.focus-snail_visible {
+	visibility: visible;
+	z-index: 999;
+}
+
+#focus-snail_polygon {
+	stroke-width: 0;
+}
+
+/*15. SVG formating*/
+svg {
+	margin: 0 4px;
+	margin: 0 0.285rem;
+	position: relative;
+}
+
+.breadcrumb svg,
+footer.entry-meta svg,
+.nav-single svg,
+.ext-link svg,
+.edit-link svg{
+	width: 13px;
+	width: 0.929rem;
+	height: 13px;
+	height: 0.929rem;
+	top: 1px;
+	top: 0.07rem;
+}
+
+.nav-single svg,
+.menu-toggle svg {
+	width: 17px;
+	width: 1.214rem;
+	height: 17px;
+	height: 1.214rem;
+	top: 3px;
+	top: 0.214rem;
+}
+
+.menu-toggle svg {
+	fill: white;
+}
 
 
+
+
+ 
 /* 13. Media queries
 -------------------------------------------------------------- */
 
@@ -2085,14 +2115,22 @@ open the toggle boxes*/
 		padding-right: 2.25em;
 	}
 
-	.main-navigation .menu-item-has-children > a:after {
-		content: "\f107";
+	.main-navigation li:not(.menu-item-has-children) svg  {
+		display: none;
+	}
+	.main-navigation svg {
+		width: 19px;
+		width: 1.357rem;
+		height: 19px;
+		height: 1.357rem;
 		position: absolute;
 		right: 14px;
 		right: 1rem;
 		top: 13px;
 		top: 0.9rem;
 	}
+	
+
 
 	.main-navigation ul ul .menu-item-has-children > a {
 		padding-right: 2.0625em;
@@ -2199,7 +2237,7 @@ open the toggle boxes*/
 	.widget-area .widget p,
 	.widget-area .widget li,
 	.widget-area .widget .textwidget {
-	line-height: 1.3;
+	line-height: 1.6;
 	padding: 7px 0;
 	padding: 0.5rem 0;
 	}
@@ -2257,27 +2295,3 @@ open the toggle boxes*/
 }
 
 
-
-/*14. Focus snail css*
- ------------------------*/
-#focus-snail_svg {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: 0;
-	background: transparent;
-	visibility: hidden;
-	pointer-events: none;
-	-webkit-transform: translateZ(0);
-}
-
-#focus-snail_svg.focus-snail_visible {
-	visibility: visible;
-	z-index: 999;
-}
-
-#focus-snail_polygon {
-	stroke-width: 0;
-}

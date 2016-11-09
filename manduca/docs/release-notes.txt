@@ -535,3 +535,14 @@ version 16.10
         28 Oct, 2016
         = bug = breadcrumb has wrong DOM ( missing end nav tag) fixed.
 		*  Filter of inital text: manduca_breadcrumb_prefix
+    commit #16.10.6
+        3 November,2016
+        - upload to repository as 16.10
+        -blockquote nov a display element as default.
+        -tiny fixings in code.
+        
+16.11
+    commit #16.11.1
+        9 November, 2016
+        - replace fontawesome with svg
+        -tiny design fixings. 
