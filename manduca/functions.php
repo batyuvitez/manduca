@@ -1107,7 +1107,8 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb');
 		
 					if ( get_bloginfo( 'language' ) ==='hu-HU' ) {
 							setlocale(LC_ALL, 'hu_HU.UTF8');
-							$month 		=  strftime( '%b', get_post_time('U', true) ) .'.' ;
+							$short_month_array = array('','jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.');
+							$month =$short_month_array[ get_post_time( 'n' ) ] ;
 							$day 		.= '.';
 							$date_mask	='<p class="content-date"><time class="entry-date" datetime="%1$s"><span class="entry-date-year">%2$s.</span> <span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span></time></p>';
 		

@@ -37,7 +37,14 @@
 						<a class="screen-reader-text skip-link" href="#secondary"><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>
 						
 						<?php
+						/*
+						 *Filter of site title
+						 **/
 						echo apply_filters( 'manduca_site_title', sprintf ( '<a class="site-title" href="%1$s" rel="home">%2$s</a>', esc_url( home_url( '/' ) ) , get_bloginfo( 'name' ) ) );
+						
+						/*
+						 *Filter of blog description
+						 **/
 						echo apply_filters( 'manduca_blog_description', '' );
 						?>
 						
@@ -70,10 +77,15 @@
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 						<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary Menu', 'manduca' ); ?>">
 							<?php
+								/*
+								*Filter of submenu icon
+								**/
+								$submenu_icon = apply_filters( 'manduca_submenu_icon' , '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>' );
+			
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
 									'menu_class'     => 'primary-menu',
-									'after'			 =>'<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>'
+									'after'			 => $submenu_icon
 								 ) );
 							?>
 						</nav><!-- .main-navigation -->

@@ -544,5 +544,14 @@ version 16.10
 16.11
     commit #16.11.1
         9 November, 2016
-        - replace fontawesome with svg
-        -tiny design fixings. 
+        - replace fontawesome with svg. Font Awesome never again!
+        - tiny design fixings.
+        - mo files regenerated. Copied from wordpress.org
+        -add breadcrumb to attachement page
+        
+    commit #16.11.2
+        
+        -add filter of submenu icon
+        - delete unnecessary lines from css.
+        -add array-solution to content date month (php solution was unreliable)
+        -widen the content date. to have padding and place for Hungarian months

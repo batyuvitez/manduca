@@ -584,13 +584,6 @@ body .site{
 
 
 
-.post .entry-content p a:hover,
-.post .entry-content p a:focus,
-.post .entry-content p a:active
-{
-	background-color: #ffffcc;
-	outline: 2px ridge #3486B8;
-}
 
 /* Assistive text */
 .assistive-text,
@@ -1690,13 +1683,6 @@ svg {
 	margin: 0 4px;
 	margin: 0 0.285rem;
 	position: relative;
-}
-
-.breadcrumb svg,
-footer.entry-meta svg,
-.nav-single svg,
-.ext-link svg,
-.edit-link svg{
 	width: 13px;
 	width: 0.929rem;
 	height: 13px;
@@ -1718,8 +1704,6 @@ footer.entry-meta svg,
 .menu-toggle svg {
 	fill: white;
 }
-
-
 
 
  
@@ -1923,8 +1907,8 @@ footer.entry-meta svg,
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt-header .content-date {
-			width: 58px;
-			width: 4.143rem;
+			width: 71px;
+			width: 5.071rem;
 			text-decoration: none;
 			font-weight: 300;
 			text-align: center;
@@ -1933,7 +1917,9 @@ footer.entry-meta svg,
 			border-radius: 4px;
 			box-shadow: 0 0 9px 3px rgba(0,0,0,0.2);
 			font-size: inherit;
-			margin: 0;	
+			margin: 0;
+			padding: 3px;
+			padding: 0.214rem;
 	}
 	
 	.content-date span.entry-date-month,
