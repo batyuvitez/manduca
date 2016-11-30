@@ -2101,7 +2101,8 @@ open the toggle boxes*/
 		padding-right: 2.25em;
 	}
 
-	.main-navigation li:not(.menu-item-has-children) svg  {
+	.main-navigation li:not(.menu-item-has-children) svg,
+	a.kvazi-button svg {
 		display: none;
 	}
 	.main-navigation svg {
@@ -2112,8 +2113,8 @@ open the toggle boxes*/
 		position: absolute;
 		right: 14px;
 		right: 1rem;
-		top: 13px;
-		top: 0.9rem;
+		top: 14px;
+		top: 1rem;
 	}
 	
 

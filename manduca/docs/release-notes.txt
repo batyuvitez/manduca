@@ -550,8 +550,13 @@ version 16.10
         -add breadcrumb to attachement page
         
     commit #16.11.2
-        
-        -add filter of submenu icon
+        18 November, 2016
+        -add filter of submenu icon (header.php)
         - delete unnecessary lines from css.
         -add array-solution to content date month (php solution was unreliable)
         -widen the content date. to have padding and place for Hungarian months
+        
+    commit #16.11.3
+        29 Nov, 2016
+        -change suibmenu icon from chevron to triangle.
+        

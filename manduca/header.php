@@ -80,7 +80,7 @@
 								/*
 								*Filter of submenu icon
 								**/
-								$submenu_icon = apply_filters( 'manduca_submenu_icon' , '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>' );
+								$submenu_icon = apply_filters( 'manduca_submenu_icon' , '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z"/></svg>' );
 			
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
