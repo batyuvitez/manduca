@@ -1013,7 +1013,7 @@ function manduca_breadcrumb() {
 
 endif;
 
-add_action( 'manduca_masthead_end', 'manduca_breadcrumb'); 
+add_action( 'manduca_masthead_end', 'manduca_breadcrumb' , 0 ); 
 
 
 

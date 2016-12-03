@@ -203,6 +203,29 @@ img {
 /* 2. Repeatable patterns
 -------------------------------------------------------------- */
 
+/* fontAwesome*/
+.menu-item-has-children a:after,
+.social-navigation a:before,
+.dropdown-toggle:after,
+.bypostauthor > article .fn:after,
+.comment-reply-title small a:before,
+.pagination .prev:before,
+.pagination .next:before,
+.pagination .nav-links:before,
+.pagination .nav-links:after {
+	display: inline-block;
+	font-family: "fontAwesome";
+	font-size: larger;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top;
+}
+
 
 /* subheaders */
 .archive-title:first-letter{
@@ -658,7 +681,8 @@ body .site{
 
 /* Header */
 .top-bar {
-	height: 51px;
+	height: 58px;
+	height: 4.142rem;
 	background-color: #164e68;
 	width: 100%;
 }
@@ -805,9 +829,6 @@ body .site{
 	border-color: transparent;
 }
 
-.dropdown-toggle.toggled-on:after {
-	content: "\f106";
-}
 
 
 

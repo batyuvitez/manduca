@@ -557,6 +557,16 @@ version 16.10
         -widen the content date. to have padding and place for Hungarian months
         
     commit #16.11.3
-        29 Nov, 2016
+        30 Nov, 2016
         -change suibmenu icon from chevron to triangle.
+        - tiny move down of submenu toggle svg
+        - submenu sometimes(!) remain open.
+        -po files updated
+    
+    commit #16.11.4
+        3 Dec, 2016
+        -upload to repository
+        -new filter hooks to header
+        -add new divs to header for easing formating child theme
+        
         

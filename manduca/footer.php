@@ -4,8 +4,8 @@
  *
  * @since 1.0 */
  
-?>
-				</div><!-- #main .wrapper -->
+?>			</div><!-- .outer-wrapper -->
+				</div><!-- .wrapper -->
 				<div id="footer-wrapper" class="footer-wrapper">
 					<footer id="colophon" >
 						<?php do_action( 'manduca_before_footer' ); ?>
