@@ -5,8 +5,6 @@ Contributors:
 
 Requires at least: WordPress 3.5
 
-Tested up to: WordPress 4.4
-
 License: GPLv2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +70,8 @@ Tim Berners-Lee said:
  
 ### 2.0
  Released November 26, 2015. Tested by WordPress Theme Standards
+ 
+ All release notes are included in /docs library.
  
  
 ## Special Acknowledgement
