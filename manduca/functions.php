@@ -1035,14 +1035,16 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb' , 0 );
 	<nav class="nav-single">
 		
 			<?php
-			$previous_post	= get_previous_post_link(  '%link', '<span>%title</span>' );
-			$next_post		= get_next_post_link( '%link', '<span>%title</span>' );
+			$previous_post	= get_previous_post_link(  '%link', '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1037 1395l102-102q19-19 19-45t-19-45l-307-307 307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
+					</svg><span>%title</span>' );
+			$next_post		= get_next_post_link( '%link', '<span>%title</span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+						<path d="M845 1395l454-454q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-102 102q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
+					</svg>' );
 				if( !empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
 					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1037 1395l102-102q19-19 19-45t-19-45l-307-307 307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-					</svg>
+					
 					<?php  echo $previous_post; ?>
 					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
 				</div>
@@ -1055,9 +1057,7 @@ add_action( 'manduca_masthead_end', 'manduca_breadcrumb' , 0 );
 					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
 					
 					<?php echo $next_post; ?>
-					<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-						<path d="M845 1395l454-454q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-102 102q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-					</svg>
+					
 				</div>
 				<?php endif;
 			?>

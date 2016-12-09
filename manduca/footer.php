@@ -22,8 +22,15 @@
 								if ( ! empty ( $menu ) ) {
 									echo '<nav id="footer-navigation" class="footer-navigation">' .$menu .'</nav>';
 								}
+							
+							/*
+							 * filter of copyright text
+							 * @since 16.12
+							 * */
+							
+							echo apply_filters( 'manduca_copyright_text' , sprintf ('<p>&copy; %1$s, %2$s</p>', date( 'Y' ), get_bloginfo() ) ) ;
 							?>
-							<p>&copy; <?php echo date( 'Y' ) .", " .esc_html( get_theme_mod( 'manduca_copyright_text', get_bloginfo() ) ); ?></p>
+								
 						</div><!-- .site-info -->
 						<?php do_action( 'manduca_after_footer' ); ?>
 					</footer><!-- #colophon -->

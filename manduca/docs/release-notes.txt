@@ -566,7 +566,13 @@ version 16.10
     commit #16.11.4
         3 Dec, 2016
         -upload to repository
-        -new filter hooks to header
-        -add new divs to header for easing formating child theme
+        -new filter hooks to header (manduca_background images, mandsuca_after_masthead )
+        -add new divs (outer-wrapper, outer-masthead) to header (and outer-wrapper to footer) for easing formating child theme.
         
+16.12
+    commit #16.12.1
+        9 dec, 2016
+        - page navigation: svg is included in anchor to be clickable. Design also effected.
+        -New hook: manduica_copyright_text in footer.php
+        -header search  form: "search" text receives other css class in order to child theme is able to display it. 
         
