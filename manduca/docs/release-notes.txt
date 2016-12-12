@@ -575,4 +575,9 @@ version 16.10
         - page navigation: svg is included in anchor to be clickable. Design also effected.
         -New hook: manduica_copyright_text in footer.php
         -header search  form: "search" text receives other css class in order to child theme is able to display it. 
-        
+
+    commit #16.12.2
+        12 Dec, 2016
+        ==bug== menu toggle did not work (since #16.11.1). SVG is now coming from css (base64), not from the html.
+        -menu word becomes screen reader text
+        -filter of manduca_search_placeholder of input text in search fiels. 

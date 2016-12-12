@@ -359,8 +359,8 @@ input[type="reset"]:active,
 }
 /*search */
 .search-submit {
-	height: 40px;
-	height: 2.857rem;
+	height: 36px;
+	height: 2.571rem;
 	width: 40px;
 	width: 2.857rem;
 	padding: 0;
@@ -386,8 +386,8 @@ input[type="reset"]:active,
 	margin-top: 0;
 }
 .header-searchform #s{
-	height: 40px;
-	height: 2.857rem;
+	height: 36px;
+	height: 2.571rem;
 }
 /* Responsive images */
 .entry-content img,
@@ -545,8 +545,8 @@ img.wp-smiley,
 	position: relative;
 	top: -2px;
 }
-.nav-single a {
-	border: none;
+.nav-single a:link {
+	border-bottom: none;
 	background-color: white;
 	padding: 6px;
 }
@@ -704,7 +704,8 @@ body .site{
 	top: 0;
 	right: 0;
 }
-.header-searchform label {
+.header-searchform label,
+.menu-toggle span {
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);
 	overflow: hidden;
@@ -810,32 +811,24 @@ body .site{
 	display: block;
 }
 
-.main-navigation .menu-item-has-children > a {
-	margin-right: 56px;
-}
 
 .dropdown-toggle {
 	background-color: transparent;
 	border: 0;
 	border-radius: 0;
 	color: #1a1a1a;
-	content: "";
-	height: 48px;
+	background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDcwNHEwIDI2LTE5IDQ1bC00NDggNDQ4cS0xOSAxOS00NSAxOXQtNDUtMTlsLTQ0OC00NDhxLTE5LTE5LTE5LTQ1dDE5LTQ1IDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIvPjwvc3ZnPg==);
+	height: 30px;
 	padding: 0;
 	position: absolute;
 	right: 0;
 	text-transform: none;
 	top: 0;
-	width: 48px;
+	width: 30px;
 }
 
-.dropdown-toggle:after {
-	border: 0 solid #d1d1d1;	
-	content: "\f107";
-	font-size: 180%;
-	left: 1px;
-	position: relative;
-	width: 48px;
+.dropdown-toggle.toggled-on {
+	background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDEyMTZxMCAyNi0xOSA0NXQtNDUgMTloLTg5NnEtMjYgMC00NS0xOXQtMTktNDUgMTktNDVsNDQ4LTQ0OHExOS0xOSA0NS0xOXQ0NSAxOWw0NDggNDQ4cTE5IDE5IDE5IDQ1eiIvPjwvc3ZnPg==);
 }
 
 .dropdown-toggle:hover,
@@ -843,11 +836,6 @@ body .site{
 	color: white;
 	background-color: #2c82b5
 	}
-
-.dropdown-toggle:focus:after {
-	border-color: transparent;
-}
-
 
 
 
