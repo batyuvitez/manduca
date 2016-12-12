@@ -67,6 +67,7 @@
 							echo apply_filters( 'manduca_blog_description', '' );
 							
 							/*
+							 *Filter of search input field placeholder. 
 							 **/
 							$placeholder = apply_filters( 'manduca_search_placeholder', __( 'Search', 'manduca' ) );
 							
