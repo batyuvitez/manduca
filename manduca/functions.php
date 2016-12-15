@@ -902,7 +902,7 @@ function manduca_breadcrumb() {
 		* @ since 16.10
 		* */
 		echo apply_filters( 'manduca_breadcrumb_prefix',  __( 'You are here:', 'manduca' ) .' ' ) ;
-		
+		$svg = '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>';
 		
 		if( !is_attachment() ) : 
 	
@@ -913,8 +913,10 @@ function manduca_breadcrumb() {
 		
 		else {
 			?>
-			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg> 
+			<a rel="bookmark" href="<?php echo get_site_url(); ?>"><?php _e( 'Home', 'manduca' ); ?></a>
+		
 			<?php
+			echo $svg;
 			
 				/**
 				* Add custom post types or custom taxonomies here
@@ -929,7 +931,7 @@ function manduca_breadcrumb() {
 						$category_object 	= get_category( $category_ID );
 						$parent_ID			= $category_object->category_parent;
 						if( $parent_ID !== 0 ) {
-							echo get_category_parents( $parent_ID, true, '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>' );
+							echo get_category_parents( $parent_ID, true, $svg );
 						}
 						single_cat_title();
 				}
@@ -948,12 +950,13 @@ function manduca_breadcrumb() {
 					if ( !empty( $parent_object) ) { 
 						$parent_link = esc_url( get_term_link( $parent_object ) );
 						
-						echo sprintf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>%5$s' ,
+						echo sprintf( '<a href="%1$s">%2$s</a>%6$s<a href="%3$s">%4$s</a>%6$s%5$s' ,
 									$parent_link,
 									$parent_object->name,
 									$link,
 									$term->name,
-									the_title( '', '', FALSE )
+									the_title( '', '', FALSE ),
+									$svg
 									);
 					}
 					else {
@@ -968,23 +971,30 @@ function manduca_breadcrumb() {
 				
 				$first_parent_object = get_post( $first_parent );
 				$second_parent = $first_parent_object->post_parent;
+				//echo '<pre>';print_r($first_parent_object);echo '2nd parent=' .$second_parent;echo 'post_parent_title=' .$first_parent_object -> post_title;
 				
-				
-				if ( $second_parent ) {
-					printf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>',
+				if ( $second_parent != 0 ) {
+					printf( '<a href="%1$s">%2$s</a>%3$s',
 						   get_page_link( $second_parent ),
-						   get_the_title( $second_parent )
+						   get_the_title( $second_parent ),
+						   $svg
 						  );
+					
 				}
-				if ( $first_parent ) {
-					printf( '<a href="%1$s">%2$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg><a href="%3$s">%4$s</a><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M979 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23zm384 0q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>',
+			
+				if ( $first_parent != 0 ) {
+					printf( '<a href="%1$s">%2$s</a>%3$s',
 						   get_page_link( $first_parent ),
-						   get_the_title( $first_parent )
-						  );
+						   $first_parent_object -> post_title,
+						   $svg
+						  );		
 				}
-				
-				
-				the_title();
+								
+				?>
+			
+			<?php
+			
+			the_title();
 			}
 			
 			if (is_404()) {
