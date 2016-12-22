@@ -4,11 +4,19 @@
  *
  * @since 1.0 */
  
+		/* Before footer hook
+		 * */
+		do_action( 'manduca_after_content' );
+
 ?>			</div><!-- .outer-wrapper -->
 				</div><!-- .wrapper -->
 				<div id="footer-wrapper" class="footer-wrapper">
 					<footer id="colophon" >
-						<?php do_action( 'manduca_before_footer' ); ?>
+						<?php
+							/*add comething at the beginning of footer
+							 **/
+							do_action( 'manduca_before_footer' );
+						?>
 						<div class="site-info">
 							<?php
 								$menu = wp_nav_menu(array (

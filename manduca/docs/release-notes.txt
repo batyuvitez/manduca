@@ -583,7 +583,11 @@ version 16.10
         -filter of manduca_search_placeholder of input text in search fiels.
         
     commit #16.12.3
-    15 Dec, 2016
+        15 Dec, 2016
         ==bug== breadcrumb has wrong code when subpage is displayed.
         - also optimize the breadcrumb function
-        
+    
+    commit #16.12.4
+        - add rem basis to each px unit. Check all.         
+        - css:search submit and menu-toggle hover and focus colouring
+        - testing with different browsoers and fix proglems. 

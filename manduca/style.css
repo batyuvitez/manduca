@@ -46,7 +46,7 @@ blockquote
 	background-color: #f9f9f9;
 	border-left: 10px solid #DAF2FF;
 	margin: 1.5em 10px;
-	padding: 0.5em 10px;
+	padding: 0.5em 0.71rem;
 	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
 }
 blockquote:before
@@ -99,7 +99,6 @@ body a.image-link {
 .site a:focus,
 .site a:hover,
 .site a:active {
-    outline: 1px ridge #336699;
 	color: white;
 	background-color: #2c82b5;
 }
@@ -247,6 +246,7 @@ input,
 select,
 textarea {
 	border-radius: 3px;
+	border-radius: 0.2rem;
 	font-family: inherit;
 	font-size: 16.8px;
 	font-size: 1.2rem;
@@ -291,13 +291,12 @@ article.post-password-required input[type=submit],
 .more-link{
 	color: white;
 	background-color: #ab490f;
-	border-radius: 3px;
+	border-radius: 0.214rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 6px 10px;
 	padding: 0.428571429rem 0.714285714rem;
 	border: 1px solid #d2d2d2;
-	box-shadow: 0 1px 2px rgba(64, 64, 64, 0.1);
 	white-space: nowrap;
 }
 .site-content a.kvazi-button,
@@ -306,6 +305,7 @@ article.post-password-required input[type=submit],
 	display: block;
 	color: #fff;
 	max-width: 300px;
+	max-width: 21.4rem;
 	margin: 14px 0;
 	margin: 1rem 0;
 	border-radius: 5px;
@@ -345,7 +345,6 @@ input[type="reset"]:active,
 .kvazi-button:active{
 	color: #757575;
 	background-color: #e1e1e1;
-	box-shadow: inset 0 0 8px 2px #c6c6c6, 0 1px 0 0 #f4f4f4;
 	border-color: transparent;
 }
 .bypostauthor cite span {
@@ -353,7 +352,7 @@ input[type="reset"]:active,
 	background-color: #21759b;
 	background-image: none;
 	border: 1px solid #1f6f93;
-	border-radius: 2px;
+	border-radius: 0.21rem;
 	box-shadow: none;
 	padding: 0;
 }
@@ -434,6 +433,7 @@ video {
 	max-height: 14rem;
 	overflow: hidden;
 	margin: 15px auto;
+	margin: 1.07rem auto;
 }
 .crop-height>img{
 	display: block;
@@ -450,12 +450,13 @@ video {
 .author-avatar img,
 img.wp-post-image {
 	/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-	border-radius: 3px;
+	border-radius: 0.214rem;
 	border: 4px solid 	#DAF2FF;
 }
 .wp-caption {
 	max-width: 100%; /* Keep wide captions from overflowing their container. */
 	padding: 4px;
+	padding: 0.28rem;
 }
 .wp-caption .wp-caption-text,
 .gallery-caption,
@@ -520,7 +521,9 @@ img.wp-smiley,
 	text-decoration: none;
 	display: inline-block;
 	min-width: 44px;
+	min-width: 3.14rem;
 	height: 36px;
+	height: 2.57rem;
 	text-align: center;
 }
 
@@ -544,11 +547,13 @@ img.wp-smiley,
 	border: none;
 	position: relative;
 	top: -2px;
+	top: 0.14rem;
 }
 .nav-single a:link {
 	border-bottom: none;
 	background-color: white;
 	padding: 6px;
+	padding: 0.428rem;
 }
 .nav-single a span {
 	border-bottom: 0.08em solid #1a9fa4;
@@ -599,7 +604,7 @@ img.wp-smiley,
 
 /* Body, links, basics */
 html {
-	font-size: 87.5%; /*set rem basis to 14px*/
+	font-size: 87.5%; /*set rem basis to 14px in case of default settings of the browser*/
 }
 
 body .site{
@@ -634,43 +639,46 @@ body .site{
 .screen-reader-text:active,
 .screen-reader-text:focus {
 	border: 2px solid #333;
-	border-radius: 3px;
+	border-radius: 0.214rem;
 	clip: auto !important;
 	color: #000;
 	display: block;
 	font-size: smaller;
 	height: auto;
 	padding: 12px;
+	padding: 0.857rem;
 	position: absolute;
 	top: 5px;
+	top: 0.357rem;
 	left: 5px;
+	left: 0.357rem;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
 
 .skip-link {
 	background-color: #f1f1f1;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 	color: #21759B;
 	display: block;
 	font-weight: 700;
 	left: -9999em;
 	outline: none;
 	padding: 15px 23px 14px;
+	padding: 1.07rem 1.642rem 1rem;
 	text-decoration: none;
 	text-transform: none;
 	top: -9999em;
 }
 
-.logged-in .site .skip-link {
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-}
+
 
 .site .skip-link:focus {
 	clip: auto;
 	height: auto;
 	left: 6px;
+	left: 0.428rem;
 	top: 7px;
+	top: 0.5rem;
 	width: auto;
 	z-index: 100000;
 }
@@ -738,8 +746,8 @@ body .site{
 
 .search-form label{
 	font-size: 148%;
-	border-radius: 5px;
-	padding: 3px;
+	border-radius: 0.357rem;
+	padding: 0.214rem;
 }
 
 .breadcrumb {
@@ -803,7 +811,7 @@ body .site{
 	margin-left: 1.285714285714286rem;
 }
 
-.no-js .main-navigation ul ul {
+.no-js .main-navigation ul-sub-menu {
 	display: block;
 }
 
@@ -818,17 +826,17 @@ body .site{
 	border-radius: 0;
 	color: #1a1a1a;
 	background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDcwNHEwIDI2LTE5IDQ1bC00NDggNDQ4cS0xOSAxOS00NSAxOXQtNDUtMTlsLTQ0OC00NDhxLTE5LTE5LTE5LTQ1dDE5LTQ1IDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIvPjwvc3ZnPg==);
-	height: 30px;
+	height: 1.714rem;
 	padding: 0;
 	position: absolute;
 	right: 0;
 	text-transform: none;
-	top: 0;
-	width: 30px;
+	top: 0.3rem;
+	width: 1.714rem;
 }
 
 .dropdown-toggle.toggled-on {
-	background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDEyMTZxMCAyNi0xOSA0NXQtNDUgMTloLTg5NnEtMjYgMC00NS0xOXQtMTktNDUgMTktNDVsNDQ4LTQ0OHExOS0xOSA0NS0xOXQ0NSAxOWw0NDggNDQ4cTE5IDE5IDE5IDQ1eiIvPjwvc3ZnPg==);
+transform: rotate(180deg);
 }
 
 .dropdown-toggle:hover,
@@ -859,7 +867,7 @@ section[role="banner"] {
 	word-wrap: break-word;
 	padding: 0 7px;
 	padding: 0 0.5rem;
-	border-radius: 5px;
+	border-radius: 0.357rem;
 	background-color: #fff;
 }
 
@@ -982,7 +990,7 @@ header.excerpt-header {
 	line-height: 1.5;
 	border-bottom: 2px solid #e6e6e6;
 	border-top: 2px solid #e6e6e6;
-	border-radius: 5px;
+	border-radius: 0.357rem;
 	font-weight: bolder;
 	margin: 20px 0;
 	margin: 1.428rem 0;
@@ -994,11 +1002,12 @@ header.excerpt-header {
 {
 	background-color: #531fff;
 	padding: 10px;
+	padding: 0.714rem;	
 	font-size: 120%;
 	color: #fff;
 	width:  98%;
 	line-height: 1.5;
-	border-radius: 5px;
+	border-radius: 0.314rem;
 }
 
 .taxonomy-description {
@@ -1009,7 +1018,8 @@ header.excerpt-header {
 .entry-header .featured-post {
 	display:table-cell;
 	padding-right: 8px;
-	width: 400px;
+	max-width: 400px;
+	max-width: 28.57rem;
 	 overflow: hidden; 
 	white-space: nowrap;
 	font-weight: bolder;
@@ -1112,7 +1122,7 @@ comments-link a:hover,
  .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
-	line-height: 21px;
+	line-height: 1.6;
 	font-size: 1.5rem;
 	margin: 21px 0;
 	margin: 1.5rem 0;
@@ -1326,10 +1336,11 @@ img.aligncenter,
 .comment-content th	{
 	border-top: 1px solid #ededed;
 	padding: 6px 10px 6px 0;
+	padding: 0.428rem 0.714rem 0.728rem 0;
 }
 
 .site-content article {
-	border-radius: 5px;
+	border-radius: 0.314rem;
 	background-color: #fff;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
@@ -1384,10 +1395,12 @@ footer.entry-meta {
 
 .attachment .entry-content .mejs-audio {
 	max-width: 400px;
+	max-width: 28.5rem;
 }
 
 .attachment .entry-content .mejs-container {
 	margin-bottom: 24px;
+	margin-bottom: 1.714rem;
 }
 
 
@@ -1431,7 +1444,7 @@ article.format-aside a:hover {
 }
 article.format-aside .aside {
 	padding: 24px 24px 0;
-	padding: 1.714285714rem;
+	padding: 1.714285714rem 1.714285714rem 0;
 	background-color: #d2e0f9;
 	border-left: 22px solid #a8bfe8;
 }
@@ -1516,7 +1529,7 @@ comments-area article header a {
 	font-weight: normal;
 	color: #fff;
 	background-color: #0088d0;
-	border-radius: 3px;
+	border-radius: 0.217rem;
 	border: 1px solid #007cbd;
 }
 .comments-area .bypostauthor cite span {
@@ -1638,8 +1651,7 @@ a.comment-edit-link:hover {
 -------------------------------------------------------------- */
 
 .widget-title {
-	line-height: 21px;
-	line-height: 1.5rem;
+	line-height: 1.5;
 	font-size: 142%;
 	font-weight: 400;
 	margin: 0 0 14px;
@@ -1732,7 +1744,14 @@ svg {
 .menu-toggle svg {
 	fill: white;
 }
-
+.menu-toggle:hover svg,
+.menu-toggle:focus svg {
+	fill: black;
+}
+.search-submit:hover svg,
+.search-submit:focus svg{
+	fill: black;
+}
 
  
 /* 13. Media queries
@@ -1787,6 +1806,7 @@ svg {
 		width: 70%;
 		position: relative;
 		top: -4px;
+		top: -0.285rem;
 	}
 	
 	.site-content,
@@ -1819,6 +1839,7 @@ svg {
 		bottom: 0;
 		display: block;
 		width: 4px;
+		width: 0.285rem;
 	}
 	
 	body.template-front-page .site-content,
@@ -1857,15 +1878,18 @@ svg {
 	}
 	.column-right {
 		margin:0 15px 0 60px;
+		margin: 0 1.071rem 0 4.285rem;
 		position:relative;
 		right:100%;
 		width: 89%;
 		overflow:hidden;
 		top: -4px;
+		top: -0.285rem;
 	}
 	.column-left {
 		float:left;
 		width:60px;
+		width: 4.285rem;
 		position:relative;
 		right:75px;
 		right: 5.357rem;
@@ -1942,8 +1966,7 @@ svg {
 			text-align: center;
 			background-color: #ab490f;
 			color: #fff;
-			border-radius: 4px;
-			box-shadow: 0 0 9px 3px rgba(0,0,0,0.2);
+			border-radius: 0.214rem;
 			font-size: inherit;
 			margin: 0;
 			padding: 3px;
@@ -2054,7 +2077,7 @@ open the toggle boxes*/
 		color: #007acc;
 	}
 
-	.main-navigation ul ul {
+	.main-navigation ul.sub-menu {
 		display: block;
 		left: -999em;
 		margin: 0;
@@ -2067,6 +2090,7 @@ open the toggle boxes*/
 
 	.main-navigation ul ul ul {
 		top: -1px;
+		top: -0.071rem;
 	}
 
 	.main-navigation ul ul ul:before,
@@ -2102,14 +2126,19 @@ open the toggle boxes*/
 		border-color: #d1d1d1 transparent;
 		border-width: 0 10px 10px;
 		right: 9px;
+		right: 0.642rem;
 		top: -9px;
+		top: -0.642rem;
 	}
 
 	.main-navigation ul ul:after {
 		border-color: #fff transparent;
 		border-width: 0 8px 8px;
+		border-width: 0 0.571rem 0.571rem;
 		right: 11px;
+		right: 0.785rem;
 		top: -7px;
+		top: -0.5rem;
 	}
 
 	.main-navigation li:hover > ul,
@@ -2150,26 +2179,14 @@ open the toggle boxes*/
 	.main-navigation ul ul .menu-item-has-children > a {
 		padding-right: 2.0625em;
 	}
-
-	.main-navigation ul ul .menu-item-has-children > a:after {
-		right: 0.5625em;
-		top: 0.875em;
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-		transform: rotate(90deg);
-	}
-
-	.dropdown-toggle,
-	.main-navigation ul .dropdown-toggle.toggled-on,
-	.menu-toggle,
-	.site-header .social-navigation,
-	.site-footer .main-navigation {
+	
+	.menu-toggle {
 		display: none;
 	}
 		.excerpt-wrapper article {
 		background-color: #ffffff;
 		margin: 0 5px 11px;
+		margin: 0 0.357rem 0.785rem;
 	}
 }
 
@@ -2244,6 +2261,7 @@ open the toggle boxes*/
 	
 	.excerpt-wrapper article{
 		margin: 0 5px 11px;
+		margin: 0 0.357rem 0.785rem;
 	}
 	.nav-next,
 	.nav-previous {
@@ -2267,6 +2285,7 @@ open the toggle boxes*/
 	}
 	.header-searchform #s {
 		width: 300px;
+		width: 21.42rem;
 	}
 	.widget-searchform #s {
 		width: 283px;
@@ -2299,6 +2318,7 @@ open the toggle boxes*/
 	}
 	.excerpt-wrapper {
 		margin-bottom: 20px;
+		margin-bottom: 1.428rem;
 	}
 	
 	.no-thumbnail {
