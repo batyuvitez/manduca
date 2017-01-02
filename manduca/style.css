@@ -551,7 +551,6 @@ img.wp-smiley,
 }
 .nav-single a:link {
 	border-bottom: none;
-	background-color: white;
 	padding: 6px;
 	padding: 0.428rem;
 }
@@ -610,8 +609,7 @@ html {
 body .site{
 	font-family: Verdana, Geneva, Ubuntu, 'Helvetica Neue', sans-serif; /*add fallbacks to most systems*/
 	text-rendering: optimizeLegibility;
-	color: #222;
-	background-color: #F3F3F5;
+	color: #222;;
 	font-size: 14px;
 	font-size: 1rem;
 	background-color: #fff;
@@ -834,6 +832,10 @@ body .site{
 	top: 0.3rem;
 	width: 1.714rem;
 }
+/* Original svg:
+ * carret down:
+ * <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z"/></svg>
+*/
 
 .dropdown-toggle.toggled-on {
 transform: rotate(180deg);

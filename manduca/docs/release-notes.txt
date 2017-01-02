@@ -588,6 +588,16 @@ version 16.10
         - also optimize the breadcrumb function
     
     commit #16.12.4
+        22 December, 2016
         - add rem basis to each px unit. Check all.         
         - css:search submit and menu-toggle hover and focus colouring
-        - testing with different browsoers and fix proglems. 
+        - testing with different browsoers and fix proglems.
+        -action hook: manduca_after_content (before outer-wrapper)
+        -new screenshot (screenshot mobile deleted)
+        
+    commit #16.12.5
+        2 January, 2017
+        -prepared for repository
+        -bradcrumb: single category displayed in breadcrumb
+        -page navigation hover design fixed (sometimes it was invisible)
+        -site background color deleted (it was a gray, sometimes it was visible, not always)

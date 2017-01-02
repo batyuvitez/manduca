@@ -339,8 +339,8 @@ if ( ! function_exists( 'manduca_page_navigation' ) ) :
 			'current' => $current,
 			'show_all' => true,
 			'prev_next' => true,
-			'prev_text' =>  '&rarr;' .__( 'Previous', 'manduca' ),
-			'next_text' => __( 'Next', 'manduca' )  .'&larr;',
+			'prev_text' =>  '&larr; ' .__( 'Previous', 'manduca' ),
+			'next_text' => __( 'Next', 'manduca' )  . ' &rarr;',
 			'end_size' => 1,
 			'mid_size' => 1,
 			'add_args' => array_map( 'urlencode', array() ),
@@ -943,13 +943,21 @@ function manduca_breadcrumb() {
 					
 					$term_object = get_the_terms( get_the_ID() , 'category' );
 					$term  = $term_object [0];
+					
+					if( $term->term_id == 1 && isset( $term_object[1] ) ) {
+						$term = $term_object [1];
+					}
+					
 					$link = esc_url( get_term_link( $term ) );
 					
-					//get parent
-					$parent_object  = get_term_by( 'id', $term->parent, 'category' );
-					if ( !empty( $parent_object) ) { 
-						$parent_link = esc_url( get_term_link( $parent_object ) );
+					//get parent if there is 
+					if( $term->parent !==0 ) {
+						$parent_object  = get_term_by( 'id', $term->parent, 'category' );
 						
+						if ( !empty( $parent_object) ) { 
+							$parent_link = esc_url( get_term_link( $parent_object ) );
+						}
+												
 						echo sprintf( '<a href="%1$s">%2$s</a>%6$s<a href="%3$s">%4$s</a>%6$s%5$s' ,
 									$parent_link,
 									$parent_object->name,
@@ -960,8 +968,12 @@ function manduca_breadcrumb() {
 									);
 					}
 					else {
-						
-						the_title();
+						echo sprintf( '<a href="%1$s">%2$s</a>%4$s%3$s' ,
+									$link,
+									$term->name,
+									the_title( '', '', FALSE ),
+									$svg
+									);
 					}
 				}
 			
@@ -971,7 +983,6 @@ function manduca_breadcrumb() {
 				
 				$first_parent_object = get_post( $first_parent );
 				$second_parent = $first_parent_object->post_parent;
-				//echo '<pre>';print_r($first_parent_object);echo '2nd parent=' .$second_parent;echo 'post_parent_title=' .$first_parent_object -> post_title;
 				
 				if ( $second_parent != 0 ) {
 					printf( '<a href="%1$s">%2$s</a>%3$s',
