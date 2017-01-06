@@ -601,3 +601,8 @@ version 16.10
         -bradcrumb: single category displayed in breadcrumb
         -page navigation hover design fixed (sometimes it was invisible)
         -site background color deleted (it was a gray, sometimes it was visible, not always)
+        
+#17.1
+    commit #17.1.1
+        =bug=-focus snake did not work: style css svg fixed
+        =universal planning= verdana and other font famaily deleted, browser default allowed. 

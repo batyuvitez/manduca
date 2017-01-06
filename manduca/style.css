@@ -3,7 +3,7 @@ Theme Name: manduca
 Theme URI: http://xn--akadlymentes-wordpress-sablon-jnc.hu/
 Author: Zsolt Edelényi
 Author URI: http://www.akadálymentes-honlap.hu
-Version: 16.12
+Version: 17.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Theme focusing on ergonomy and compliance with WCAG 2.0 
@@ -47,7 +47,7 @@ blockquote
 	border-left: 10px solid #DAF2FF;
 	margin: 1.5em 10px;
 	padding: 0.5em 0.71rem;
-	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
+	font-style: italic;
 }
 blockquote:before
 {
@@ -157,7 +157,7 @@ sub {
 	bottom: -0.25em;
 }
 small {
-	font-size: smaller;
+	font-size: 75%;
 }
 img {
 	border: 0;
@@ -201,29 +201,6 @@ img {
 
 /* 2. Repeatable patterns
 -------------------------------------------------------------- */
-
-/* fontAwesome*/
-.menu-item-has-children a:after,
-.social-navigation a:before,
-.dropdown-toggle:after,
-.bypostauthor > article .fn:after,
-.comment-reply-title small a:before,
-.pagination .prev:before,
-.pagination .next:before,
-.pagination .nav-links:before,
-.pagination .nav-links:after {
-	display: inline-block;
-	font-family: "fontAwesome";
-	font-size: larger;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 1;
-	text-align: center;
-	text-decoration: inherit;
-	text-transform: none;
-	vertical-align: top;
-}
 
 
 /* subheaders */
@@ -516,7 +493,7 @@ img.wp-smiley,
 .pagination span,
 .pagination a {
 	border: 2px solid #D1CFE4;
-	font-size: larger;
+	font-size: 110%;
 	color: black;
 	text-decoration: none;
 	display: inline-block;
@@ -607,7 +584,7 @@ html {
 }
 
 body .site{
-	font-family: Verdana, Geneva, Ubuntu, 'Helvetica Neue', sans-serif; /*add fallbacks to most systems*/
+	font-family: sans-serif; 6 /*universal access: use default font*/
 	text-rendering: optimizeLegibility;
 	color: #222;;
 	font-size: 14px;
@@ -1213,7 +1190,7 @@ comments-link a:hover,
 	border-left: 7px #DAF2FF solid;	
 	quotes: none;
 	background-color: #f9f9f9;
-	font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
+	font-style: italic; 
 }
 blockquote:before
 {
@@ -1246,7 +1223,7 @@ blockquote:after{
 .comment-content tt,
 .entry-content b,
 .comment-content b {
-	font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	font-family: monospace;
 	line-height: 1.714285714;
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
@@ -1721,7 +1698,11 @@ a.comment-edit-link:hover {
 }
 
 /*15. SVG formating*/
-svg {
+
+/*15. SVG formating*/
+svg.search-icon,
+.menu-toggle svg,
+.menu-item.svg {
 	margin: 0 4px;
 	margin: 0 0.285rem;
 	position: relative;
