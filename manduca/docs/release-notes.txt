@@ -605,4 +605,10 @@ version 16.10
 #17.1
     commit #17.1.1
         =bug=-focus snake did not work: style css svg fixed
-        =universal planning= verdana and other font famaily deleted, browser default allowed. 
+        =universal planning= verdana and other font famaily deleted, browser default allowed.
+    
+    commit #17.1.2
+        ==footer design changes==
+            - on line per menu item on mobil
+            - button-like in footer
+        

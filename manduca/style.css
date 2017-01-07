@@ -907,35 +907,28 @@ section[role="banner"] {
 	
 }
 
-.footer-wrapper p {	
-	float: left;
-}
-.footer-navigation{
-	padding-right: 14px;
-	padding-right: 1rem;
-	float: right;
-	max-width: 50%;
-}
-.footer-navigation ul{
-	text-align: right;
-}
+
 .footer-navigation ul li{
 	list-style-type: none;
-	display: inline-block;
-	padding: 0 5px;
-	padding: 0 0.357rem;
+	padding: 1rem 0;
+	background-color: #daf2ff;
+	text-align: center;
 }
 .footer-navigation ul li ul{
 	display: none;
 }
 .footer-navigation ul li a{
-	color:  white;
-	text-align: center;
+	color: black;
+	border-bottom: none;
 }
 .footer-navigation ul li a:hover,
 .footer-navigation ul li a:focus{
 	color: black;
 	background-color: #daf2ff;
+}
+
+.copyright-text {
+	margin-top: 2rem;
 }
 
 /* 4. Main content and comment content
@@ -1993,7 +1986,25 @@ svg.search-icon,
 		left: 100px;
 		left: 7.143rem;
 	}
-	
+	/* footer */
+	.footer-wrapper p {	
+		float: left;
+	}
+	.footer-navigation{
+		padding-right: 14px;
+		padding-right: 1rem;
+		float: right;
+		max-width: 50%;
+	}
+	.footer-navigation ul{
+		text-align: right;
+	}
+	.footer-navigation ul li{
+		list-style-type: none;
+		display: inline-block;
+		padding: 0 5px;
+		padding: 0 0.357rem;
+	}
 
 }
 
