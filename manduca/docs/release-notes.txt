@@ -611,4 +611,10 @@ version 16.10
         ==footer design changes==
             - on line per menu item on mobil
             - button-like in footer
-        
+    commit #17.1.3
+        ==universal planning: 
+            -sidebar width needed to be changed
+            -default fonts of Manduca become the  browser default font.
+        ==css enhancement
+        -add class to copyright text
+        -delete async and deffer tags from script loadings 

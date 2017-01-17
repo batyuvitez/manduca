@@ -584,7 +584,7 @@ html {
 }
 
 body .site{
-	font-family: sans-serif; 6 /*universal access: use default font*/
+	font-family: sans-serif; /*universal access: use default font*/
 	text-rendering: optimizeLegibility;
 	color: #222;;
 	font-size: 14px;
@@ -1694,8 +1694,11 @@ a.comment-edit-link:hover {
 
 /*15. SVG formating*/
 svg.search-icon,
-.menu-toggle svg,
-.menu-item.svg {
+.menu-item.svg,
+.breadcrumb svg,
+.edit-link svg,
+.ext-link svg,
+.entry-meta svg {
 	margin: 0 4px;
 	margin: 0 0.285rem;
 	position: relative;
@@ -1709,12 +1712,15 @@ svg.search-icon,
 
 .nav-single svg,
 .menu-toggle svg {
+	position: relative;
 	width: 17px;
 	width: 1.214rem;
 	height: 17px;
 	height: 1.214rem;
 	top: 3px;
 	top: 0.214rem;
+	margin: 0 4px;
+	margin: 0 0.285rem;
 }
 
 .menu-toggle svg {
@@ -2257,10 +2263,7 @@ open the toggle boxes*/
 		margin: 0 5px 11px;
 		margin: 0 0.357rem 0.785rem;
 	}
-	.nav-next,
-	.nav-previous {
-		max-width: 48%;
-	}
+	
 	.widget-area .widget p,
 	.widget-area .widget li,
 	.widget-area .widget .textwidget {
@@ -2289,7 +2292,7 @@ open the toggle boxes*/
 		width: 70%;	
 	}
 	.widget-area {
-		width: 28.6%;	
+		width: 28%;	
 	}
 	header.excerpt-header {
 		display: block;
@@ -2324,3 +2327,4 @@ open the toggle boxes*/
 }
 
 
+z

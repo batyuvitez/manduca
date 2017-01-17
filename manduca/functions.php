@@ -241,6 +241,7 @@ if ( ! function_exists( 'manduca_entry_meta' ) ) :
 		
 		$utility_text .="</ul>";
 		
+		$utility_text = apply_filters( 'manduca_post_meta', $utility_text );
 		
 		echo $utility_text;
 	}
@@ -853,26 +854,6 @@ if( !function_exists( 'manduca_heading_correction' ) ) :
 
 	add_filter( 'the_content', 'manduca_heading_correction' );
 
-endif;
-
-/*
- * Speed up page
- * Function to add async to all scripts
- * 
- */
-
-if( !function_exists( 'manduca_js_async' ) ) :
-
-	function manduca_js_async( $tag, $handle ) {
-		if( !is_admin() ) {
-			$tag = str_replace( ' src', ' async defer src', $tag );
-		}
-		
-		return $tag;
-	}
-
-add_filter( 'script_loader_tag', 'manduca_js_async', 20, 2 );
-	
 endif;
 
 
