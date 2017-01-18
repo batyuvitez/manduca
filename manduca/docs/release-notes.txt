@@ -615,6 +615,7 @@ version 16.10
         ==universal planning: 
             -sidebar width needed to be changed
             -default fonts of Manduca become the  browser default font.
-        ==css enhancement
-        -add class to copyright text
-        -delete async and deffer tags from script loadings 
+        ==css enhancement: add class to copyright text
+        -delete async and deffer tags from script loadings
+        -page navigation full screen, not half.
+        ==bug== for long time: the search pagination was wrong. I fixed it, but the numbering is still not as I would like to (i.e. number of posts instead of no of pages.)

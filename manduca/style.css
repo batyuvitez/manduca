@@ -30,7 +30,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 body {
-	line-height: 1.4;
+	line-height: 1.7;
 }
 
 ol,
@@ -1691,9 +1691,15 @@ a.comment-edit-link:hover {
 }
 
 /*15. SVG formating*/
-
-/*15. SVG formating*/
-svg.search-icon,
+svg.search-icon {
+	width: 23px;
+	width: 1.64rem;
+	height: 23px;
+	height: 1.642rem;
+	position:relative;
+	top: 5px;
+	top: 0.35rem;
+}
 .menu-item.svg,
 .breadcrumb svg,
 .edit-link svg,
@@ -1783,6 +1789,9 @@ svg.search-icon,
 		padding: 1.214285714285714rem 0.5rem;
 		margin-bottom: 0;
 		height: auto;
+	}
+	.header-searchform #s {
+		width: auto;
 	}
 	.widget-searchform #s {
 		width: 70%;
