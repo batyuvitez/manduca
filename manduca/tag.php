@@ -12,7 +12,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title" itemprop="headline"><?php echo single_cat_title( '', false ) ; ?></h1>
+				<h1 class="archive-title"><?php echo single_cat_title( '', false ) ; ?></h1>
 
 			<?php
 					// Show an optional term description.
@@ -26,7 +26,7 @@ get_header(); ?>
 			<?php manduca_display_excerpt() ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
 		<?php endif; ?>
 
 		</main><!-- #content -->

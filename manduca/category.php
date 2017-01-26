@@ -23,7 +23,7 @@ get_header(); ?>
 			<?php manduca_display_excerpt() ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
 		<?php endif; ?>
 
 		</main><!-- #content -->

@@ -5,7 +5,6 @@
  * @since 1.0 */
 
 get_header(); ?>
-
 	<section id="primary" class="site-content">
 		<main id="content">
 
@@ -25,19 +24,7 @@ get_header(); ?>
 			</header>
 
 			
-			<?php
-				global $wp_query;
-			
-				if ( $wp_query->max_num_pages > 1 ) : ?>
-					<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'manduca' ); ?></h3>
-						<div class="nav-previous"><span class="meta-nav">&larr;</span> <?php next_posts_link( __( 'Older posts', 'manduca' ) ); ?></div>
-						<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'manduca' ) ); ?> <span class="meta-nav"> &rarr;</span></div>
-					</nav><!-- .navigation -->
-				
-				<?php endif;
-			
-				manduca_display_excerpt() ?>
+			<?php manduca_display_excerpt(); ?>
 
 		<?php else : ?>
 

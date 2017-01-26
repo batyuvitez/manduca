@@ -590,67 +590,7 @@ function manduca_body_class( $classes ) {
 }
 add_filter( 'body_class', 'manduca_body_class' );
 
-
- /*
-  *
-  * original:
-  * Display posts in two columns
-  * but this was a bad typography and changed.
-  *
-  *Name has been remained for compatibility of child themes
-  *
-  * used in front-page and archive pages
- /**/
  
- if( !function_exists(  'manduca_display_excerpt' ) ) :
- 
-	function manduca_display_excerpt() {
-	?>				<div class="excerpt-wrapper">
-	
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  >
-						
-						<header class="excerpt-header">
-							<?php manduca_display_entry_header(); ?>
-						</header>
-						
-						<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link">', '</span>' ); ?>
-						
-							<?php if ( has_post_thumbnail() ) :?>
-							<div class="crop-height">
-								<?php the_post_thumbnail( 'excerpt-size' ); ?>
-							</div>
-							
-							<div class="excerpt-entry has-thumbnail">
-						
-						<?php else : ?>
-							<div class="excerpt-entry no-thumbnail">
-						<?php endif; ?>
-				
-						
-							<?php
-								if( strpos( get_the_content(), 'more-link' ) === false ) {
-									the_excerpt();
-								}
-								else {
-									the_content();
-								}
-							?>
-							</div>
-						<div class='clearfix-content'></div>
-					</article>				
-				<?php
-				endwhile;
-				
-				manduca_page_navigation();
-				?>
-				</div>
-	<?php
-	}
-endif;
 //-------------------------------------------------------------------------------------------
 // Avatar need alt tag
 //-------------------------------------------------------------------------------------------
@@ -963,58 +903,6 @@ endif;
 add_action( 'manduca_masthead_end', 'manduca_breadcrumb' , 0 ); 
 
 
-
-
-
-
-/*
- * Post navigation
- *
- * */
-
- 
- 
- if( !function_exists( 'manduca_post_navigation' ) ) :
- 
- function manduca_post_navigation() {
-	?>
-	
-	<nav class="nav-single">
-		
-			<?php
-			$previous_post	= get_previous_post_link(  '%link', '<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1037 1395l102-102q19-19 19-45t-19-45l-307-307 307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19l-454 454q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-					</svg><span>%title</span>' );
-			$next_post		= get_next_post_link( '%link', '<span>%title</span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-						<path d="M845 1395l454-454q19-19 19-45t-19-45l-454-454q-19-19-45-19t-45 19l-102 102q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-					</svg>' );
-				if( !empty( $previous_post ) ) : ?>
-				<div class="nav-previous">
-					<p class="assistive-text"><?php _e( 'Previous post', 'manduca' ) ?></p>
-					
-					<?php  echo $previous_post; ?>
-					<?php paginate_links(); //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
-				</div>
-				
-				<?php endif;
-				
-				
-				if( !empty( $next_post ) ) : ?>
-				<div class="nav-next">
-					<p class="assistive-text"><?php _e( 'Next post', 'manduca' ) ?></p>
-					
-					<?php echo $next_post; ?>
-					
-				</div>
-				<?php endif;
-			?>
-		
-	</nav><!-- .nav-single -->
- 
- <?php 
- }
- 
- endif;
  /*
   * Display entry header
   * Display the header of the article in two-column format. 
@@ -1124,4 +1012,27 @@ add_filter('image_send_to_editor','manduca_add_class_image_anchor',10,8);
  * */
 add_filter( 'use_default_gallery_style', '__return_false' );
  
+ 
+/*
+ *Display excerpt with navigation bar
+ *
+ * @since 17.1
+ **/
+if( !function_exists( 'manduca_display_excerpt' ) ) :
+ 
+	function manduca_display_excerpt() {
+
+		$nav = get_the_posts_pagination( array(
+				'prev_text' => '&larr;' . __( 'Newer posts', 'manduca' ),
+				'next_text' => __( 'Older posts', 'manduca' ) . '&rarr;',
+				'before_page_number' => '<span class="screen-reader-text">' . __( 'page', 'manduca' ) . ' </span>'
+			) );
+			
+		echo '<a href="#entry-content" class="screen-reader-text">' .__( 'Jump the meta to the post' , 'manduca' ) .'</a>';
+		echo $nav;
+		get_template_part( 'template-parts/posts/content', 'excerpt' );
+		echo $nav;
+
+	}
+endif;
 ?>

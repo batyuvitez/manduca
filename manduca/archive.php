@@ -1,8 +1,11 @@
 <?php
 /**
- * Manduca
+ * The template for displaying archive pages
  *
- * @since 1.0 */
+ * @ Theme: Manduca
+ * @since 1.0
+ * Version 17.1
+ */
 
 get_header(); ?>
 	<section id="primary" class="site-content">
@@ -30,10 +33,12 @@ get_header(); ?>
 				} ?>
 			</header><!-- .archive-header -->
 			
-			<?php manduca_display_excerpt() ?>
+			<?php manduca_display_excerpt(); ?>
+				
+			
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
 		<?php endif; ?>
 
 		</main><!-- #content -->

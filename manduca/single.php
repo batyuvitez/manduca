@@ -13,10 +13,8 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
-
-				<?php manduca_post_navigation() ?>
-		
+				<?php get_template_part( 'template-parts/posts/content', get_post_format() ); ?>
+	
 				<?php comments_template(); ?>
 
 			<?php endwhile; // end of the loop. ?>

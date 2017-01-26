@@ -638,4 +638,10 @@ version 16.10
     commit #17.1.6
         26 January, 2017
             -bug: </div> problem in content:php
-            - theme check ok. 
+            - theme check ok.
+            
+    commit #17.1.7
+        26 January, 2017
+            - replace manduca pagination to Wp core pagination function
+            - add tapmlate-parts folder and move template part files to here.
+            - change manduca_display_excerpt function to always use wp pagination. 

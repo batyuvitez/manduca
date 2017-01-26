@@ -24,7 +24,7 @@ get_header(); ?>
 						<?php _e( 'The requested page could not be located on this blog. We highly recommend to choose from the HTML sitemap below.', 'manduca' ) ?>
 					</p>	
 					
-					<?php get_template_part( '/sitemap' ); ?>
+					<?php get_template_part( 'template-parts/sitemap' ); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 
