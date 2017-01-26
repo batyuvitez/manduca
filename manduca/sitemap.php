@@ -13,10 +13,11 @@
 <?php
 /* Boolean filter
 * @ name: manduca_exclude_author_page
-* @ true : default : show authoer pages in sitemap
+* @ true : default : show author pages in sitemap
 * @ false : Do not use author pages
 * */
-$author_page_flag = apply_filters( 'manduca_exclude_author_page' , '__return_true');
+
+$author_page_flag = apply_filters( 'manduca_exclude_author_page' , TRUE );
 
 if( $author_page_flag ) : ?>
 <h2 id="authors"><?php _e( 'Authors:', 'manduca' ) ?></h2>

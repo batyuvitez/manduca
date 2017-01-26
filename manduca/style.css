@@ -209,9 +209,9 @@ img {
 	}
 
 /* Shared Post Format styling */
-article.format-quote footer.entry-meta,
-article.format-link footer.entry-meta,
-article.format-status footer.entry-meta {
+article.format-quote .entry-meta,
+article.format-link .entry-meta,
+article.format-status .entry-meta {
 	font-size: 11px;
 	font-size: 0.785714286rem;
 	line-height: 2.181818182;
@@ -841,15 +841,14 @@ section[role="banner"] {
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
-	margin-bottom: 48px;
 	margin-bottom: 3.428571429rem;
 	word-wrap: break-word;
-	padding: 0 7px;
-	padding: 0 0.5rem;
 	border-radius: 0.357rem;
 	background-color: #fff;
 }
-
+.widget-content {
+	padding: 0 0.714rem;
+}
 
 .widget-area a {
 	font-size: 16px;
@@ -890,6 +889,12 @@ section[role="banner"] {
 	margin-left: 1.142857142857143rem;
 }
 
+.widget_recent_entries li {
+	list-style-type: none;
+}
+.widget_recent_entries li a {
+	border-bottom: none;
+}
 
 
 
@@ -997,7 +1002,7 @@ header.excerpt-header {
 	font-weight: bolder;
 }
 
-footer.entry-meta {
+.entry-meta {
 	clear: both;
 	border-top: 1px dotted #DAF2FF;
 }
@@ -1022,7 +1027,7 @@ footer.entry-meta {
 	line-height: 1.846153846;
 	color: #757575;
 }
-.entry-meta li{
+.post-meta li{
 	display: inline-block;
 	margin-right: 24px;
 	margin-right: 1.714285714285714rem;
@@ -1042,23 +1047,23 @@ comments-link a:hover,
 }
 .entry-content,
 .entry-summary,
+.entry-meta,
+.comments-area,
 .mu_register {
-	line-height: 1.714285714;
-	margin-top: 24px;
 	margin-top: 1.714285714285714rem;
-	
+	padding: 0 1.714285714rem 0.5rem ;	
 }
 
 .entry-title,
 .page-title,
-.archive-title,
-.entry-content h1 { 
-	font-size: 24px;
+.archive-title { 
 	font-size: 1.714rem;
-	color: #080B10;
+	padding: 0.714rem 0;
 }
-.single-attachment .image-attachment h1.entry-title {
+.single-attachment .image-attachment h1.entry-title,
+.page h1.entry-title {
 	text-align: center;
+	border-bottom: double #daf2ff 3px;
 }
 .attachment .entry-title:first-letter {
 	text-transform: uppercase;
@@ -1094,9 +1099,7 @@ comments-link a:hover,
  .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
-	line-height: 1.6;
 	font-size: 1.5rem;
-	margin: 21px 0;
 	margin: 1.5rem 0;
 }
 .entry-content h3,
@@ -1316,11 +1319,10 @@ img.aligncenter,
 	background-color: #fff;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
-	padding: 24px;
-	padding: 1.714285714rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
+	-ms-hyphens: auto;
 	hyphens: auto;
 }
 
@@ -1328,10 +1330,7 @@ img.aligncenter,
 	clear: both;
 	line-height: 1.714285714;
 }
-footer.entry-meta {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	line-height: 1.846153846;
+.entry-meta {
 	color: #565656;
 	font-size: 95%;
 }
@@ -1623,13 +1622,12 @@ a.comment-edit-link:hover {
 -------------------------------------------------------------- */
 
 .widget-title {
-	line-height: 1.5;
-	font-size: 142%;
+	font-size: 1.714rem;
 	font-weight: 400;
-	margin: 0 0 14px;
 	margin: 0 0 1rem;
-	padding: 3% 0;
+	padding: 0.714rem 0;
 	border-bottom: double #daf2ff 3px;
+	text-align: center;
 }
 
 .widget-area .widget ul ul {
@@ -1704,7 +1702,8 @@ svg.search-icon {
 .breadcrumb svg,
 .edit-link svg,
 .ext-link svg,
-.entry-meta svg {
+.entry-meta svg,
+.post-meta svg {
 	margin: 0 4px;
 	margin: 0 0.285rem;
 	position: relative;
@@ -1753,9 +1752,7 @@ svg.search-icon {
 @-ms-viewport {
 	width: device-width;
 }
-@viewport {
-	width: device-width;
-}
+
 /*  Minimum width of 385 pixels. */
 @media screen and (min-width: 385px) {
 	#s {
@@ -1816,8 +1813,7 @@ svg.search-icon {
 	.widget-area
 	{
 		width: 33%;
-		margin: 23px 0 0 12px;
-		margin: 1.642857142857143rem 0 0 0.8571428571428571rem;
+		margin: 1.43rem 0 0 0.86rem;
 	}
 	.site-content:before,
 	.site-content:after,
@@ -1884,7 +1880,7 @@ svg.search-icon {
 		position:relative;
 		right:75px;
 		right: 5.357rem;
-}
+	}
 
 	.entry-header {
 		position: relative;
@@ -2227,8 +2223,7 @@ open the toggle boxes*/
 	/*wrapper*/
 	.wrapper
 	{
-		padding: 10px;
-		padding: 0.7142857142857143rem;
+		padding: 1rem 0;
 	}
 	.site-header {
 		position: relative;
@@ -2334,6 +2329,3 @@ open the toggle boxes*/
 	}
 	
 }
-
-
-z
