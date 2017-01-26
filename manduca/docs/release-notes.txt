@@ -604,14 +604,17 @@ version 16.10
         
 #17.1
     commit #17.1.1
+    6 January, 2016
         =bug=-focus snake did not work: style css svg fixed
         =universal planning= verdana and other font famaily deleted, browser default allowed.
     
     commit #17.1.2
+        6 January, 2016
         ==footer design changes==
             - on line per menu item on mobil
             - button-like in footer
     commit #17.1.3
+        17 January, 2017
         ==universal planning: 
             -sidebar width needed to be changed
             -default fonts of Manduca become the  browser default font.
@@ -619,3 +622,20 @@ version 16.10
         -delete async and deffer tags from script loadings
         -page navigation full screen, not half.
         ==bug== for long time: the search pagination was wrong. I fixed it, but the numbering is still not as I would like to (i.e. number of posts instead of no of pages.)
+        
+    commit #17.1.4
+        18 January, 2017
+            - bigger svg search icon
+            - Hungarian translation of older and newer posts (in search.php)
+            -header searchform fixings on 700px wide screen
+        
+    commit #17.1.5
+        26 January, 2017
+            -new hook to display entry-meta after entry-title
+            -program optimazation: content-meta.php for displaying entry meta
+            -small design fixings.
+            
+    commit #17.1.6
+        26 January, 2017
+            -bug: </div> problem in content:php
+            - theme check ok. 

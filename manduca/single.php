@@ -5,7 +5,7 @@
  * @since 1.0 */
 
 get_header(); ?>
-	<div id="primary" class="site-content" >
+	<section id="primary" class="site-content" >
 		
 		<?php manduca_post_navigation() ?>
 		
@@ -22,7 +22,7 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #content -->
-	</div><!-- #primary -->
+	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

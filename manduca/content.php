@@ -26,16 +26,14 @@
 			 **/
 			$meta_flag = FALSE;
 			$meta_flag  = apply_filters( 'manduca_meta_in_header' , FALSE ) ;
-			if( $meta_flag ) {
+			if( $meta_flag ) :
 			?>
 				<a href="#entry-content" class="screen-reader-text"><?php _e( 'Jump the meta to the post' , 'manduca' ); ?></a>
 				<div class="entry-meta">
-			<?php
-				get_template_part( 'content', 'meta' );
-			}
-			
-			?>
-				</div>			
+				<?php get_template_part( 'content', 'meta' ); ?>
+			</div>			
+			<?php endif; ?>
+				
 			
 			
 		
