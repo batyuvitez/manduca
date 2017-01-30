@@ -7,7 +7,7 @@
 get_header(); ?>
 	<section id="primary" class="site-content" >
 		
-		<?php manduca_post_navigation() ?>
+		<?php manduca_page_navigation() ?>
 		
 		<main id="content">
 

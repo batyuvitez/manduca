@@ -17,7 +17,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  >
 			
 			<header class="excerpt-header">
-				<?php manduca_display_entry_header(); ?>
+				<?php get_template_part( 'template-parts/posts/entry-header' ); ?>
 			</header>
 			
 			<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link">', '</span>' ); ?>

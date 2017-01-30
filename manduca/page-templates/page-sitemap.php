@@ -10,7 +10,7 @@ get_header(); ?>
 	<div id="primary" class="site-content entry-content">
 		<div id="content" class="sitemap" role="main">
 
-				<?php get_template_part( '/sitemap'); ?>
+				<?php get_template_part( 'template-parts/sitemap'); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

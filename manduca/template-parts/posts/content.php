@@ -9,8 +9,8 @@
 		
 		<header class="entry-header">
 			
-			<?php
-				manduca_display_entry_header(); 
+			<?php get_template_part( 'template-parts/posts/entry-header' );
+	
 			
 			/* Action hook
 			 * name: add code after entry header
@@ -28,10 +28,10 @@
 			$meta_flag  = apply_filters( 'manduca_meta_in_header' , FALSE ) ;
 			if( $meta_flag ) :
 				echo '<a href="#entry-content" class="screen-reader-text">' ._e( 'Jump the meta to the post' , 'manduca' ) .'</a>';
-				<div class="entry-meta">
-				<?php get_template_part( 'content', 'meta' ); ?>
-			</div>			
-			<?php endif; ?>
+				echo '<div class="entry-meta">';
+				get_template_part( 'content', 'meta' );
+				echo '</div>';
+			endif; ?>
 				
 			
 			

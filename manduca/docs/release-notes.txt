@@ -644,4 +644,12 @@ version 16.10
         26 January, 2017
             - replace manduca pagination to Wp core pagination function
             - add tapmlate-parts folder and move template part files to here.
-            - change manduca_display_excerpt function to always use wp pagination. 
+            - change manduca_display_excerpt function to always use wp pagination.
+            
+        commit #17.1.8
+        30 January, 2017
+            -manduca_entry_header had been replaced by template-parts/posts/entry-header.php
+            -add new page template: parent of pages.
+            -small design fixings in entry header
+            -change image sizes
+                

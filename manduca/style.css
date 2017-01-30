@@ -383,6 +383,10 @@ img.wp-post-image {
 	max-width: 100%;
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
+img.wp-post-image {
+	display: block;
+	margin: 0 auto;
+}
 
 /* Make sure videos and embeds fit their containers */
 embed,
@@ -924,12 +928,13 @@ section[role="banner"] {
 }
 .footer-navigation ul li a{
 	color: black;
+	background-color: #daf2ff;
 	border-bottom: none;
 }
 .footer-navigation ul li a:hover,
 .footer-navigation ul li a:focus{
-	color: black;
-	background-color: #daf2ff;
+	color: #daf2ff;
+	background-color: #164e68;
 }
 
 .copyright-text {
@@ -988,8 +993,7 @@ header.excerpt-header {
 }
 
 .taxonomy-description {
-	padding: 11px 5px;
-	padding: 0.785rem 0.357rem;
+	padding: 1rem;
 }
 
 .entry-header .featured-post {
@@ -1051,14 +1055,12 @@ comments-link a:hover,
 .comments-area,
 .mu_register {
 	margin-top: 1.714285714285714rem;
-	padding: 0 1.714285714rem 0.5rem ;	
 }
 
 .entry-title,
 .page-title,
 .archive-title { 
 	font-size: 1.714rem;
-	padding: 0.714rem 0;
 }
 .single-attachment .image-attachment h1.entry-title,
 .page h1.entry-title {
@@ -1319,6 +1321,7 @@ img.aligncenter,
 	background-color: #fff;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
+	padding: 1rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -1739,7 +1742,9 @@ svg.search-icon {
 .search-submit:focus svg{
 	fill: black;
 }
-
+.entry-content a > span + svg { /* since 17.1 remove extlink svg in case of external images.*/
+	display: none;
+}
  
 /* 13. Media queries
 -------------------------------------------------------------- */
@@ -1865,7 +1870,7 @@ svg.search-icon {
 	}
 	.column-right {
 		margin:0 15px 0 60px;
-		margin: 0 1.071rem 0 4.285rem;
+		margin: 0 1.071rem 0 2.57rem;
 		position:relative;
 		right:100%;
 		width: 89%;
