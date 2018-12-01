@@ -1,0 +1,235 @@
+==
+Theme: Manduca - focus on accessibility
+Release notes
+Year: 2018
+==
+        
+17.12.1
+    3 January, 2017
+        - Breadcrumb: show or hide hierarchical terms for post types
+        
+17.12.2
+        5 January,  2018
+        - More link is easily customizable from function.php
+        - new window link: popup alert if link opens in new window.
+        - new trasnlation add to lang files. 
+        - accessibilty features.txt
+        - add accordion header to change the accordion parameters.
+17.12.3
+        7 January,  2018
+        - add nav sinlg to single.php accidentaly removed once)
+        
+17.12.4
+        9 January, 2018
+        - Breadcrumb : check if taxonomy link is the same of post link. If the same, do not display.
+
+
+17.12.5
+        25 January, 2018
+        - PHP7 compatibilty: delete depretiated functions (class-manduca.php )
+        
+17.12.6
+        26 January, 2018
+                - add autoload function (class Autolad )
+                - Move theme setup functions from class Manduca to class Manduca_Features.
+                
+17.12.7
+        26 January, 2018
+                -autoload changed to classloader: it loads class when necessery. added to spl_autoload_register.
+                
+17.12.8
+        26 January, 2018
+        - Not implemented feature: add autolad dirs and subdirs.
+        
+17.12.9
+        26 January, 2018 Seems stable
+        - Tested and some errors corrected.
+        
+17.12.10 
+        30 January, 2018
+        - tested
+        - tiny design problems fixed
+        - phpe errors fixed
+        - added backgroundimages template possiblity if child theme declare it. (template-parts/header6backgroundimage.php)
+        
+17.12.11
+        31 January, 2018
+                -svg data converted to xml
+                - more-link did not loaded svg, because of its late-call. Corrected .
+                
+17.12.12
+        31 January, 2018
+                - add new template of /template-parts/footer/footer-before.php.
+                - add clearfix to the article of page (page.php)
+17.12.13
+        2 February, 2018
+                - Theme check failed because of xml file loading with file_get_contents. This xml is removed and svg icons loaded as php array.
+                - testing and fixing tiny problems. 
+
+17.18.1 = 17.12.13 
+        2 February, 2018 Uploaded to repository.
+        Accidentaly with errorneous version numbar
+        
+18.1
+        2 February,2018
+                - focus snail JS variabe was errorneous,
+                 - correct class name in function.php
+                 
+18.1.2
+        6 February, 2018
+                - svg functions did not worked well if svg wa not path.
+                        - svg-icons.php corrected
+                        - load_svg-to_global fixed.
+                        
+18.1.3
+        6 February, 2018
+                - add manduca_svg_icons hook (dokumented in hooks.php )
+                
+18.1.5
+        13 February, 2018
+                ==reported bug : header image shows warning because alt text. Fixed (template parts/header/headerimage.php )
+                        
+18.1.6
+        22 February, 2018
+                - Reply to comments: make it a button (css).
+                - New template: template-parts/posts/content-search.php
+                - Emphasise search keys (class Search_Functions )
+                - Add map-marker icon if google map is included in link.
+                - Remove self-link on homepage
+                - remove 'has thumbnail' class since it is indicated by default in article
+                - remove first empty line on homepage
+                - add theme
+                
+18.1.7
+        22 February, 2018
+                - add theme-customizer.js to assets/js, but customizer still not show the copíright text
+                - fix adminc.ss uri
+                - remove oll manduca::controller and remove class Manduca.
+                
+      
+18.1.8 = 18.2
+        23 February, 2018
+        - Tiny ':' changes in content-meta.php
+        - test of reading options: color-1, color-2, color-3 and fix design errors.
+        - fix html validation problem with postlink-edit.php
+        - remove type attributes from links and styles (inline still have it)
+        
+18.2.1
+        23 February, 2018
+        - levélküldés is still in link-functions. No probem, but deleted.
+        - po file updated. 
+
+18.2.2
+        20 March, 2018
+        - validation error fixed: more-link no space between attributes
+        - validatio error fixed:
+        
+Manduca 18.5
+=========================================
+18.4.1
+        25 May, 2018        
+        - function.php : rearranged, optimizes and add else branch: if class autoloader is already exists. 
+        - class-link-function.php: removed image in link branch due to the testing result: NVDA ignore alt text if aria-label exists.
+        - documentation: features.txt updated
+        - class-link-functions.php : enhance function (change regex and error-handling)
+        
+18.4.2
+        2 June, 2018
+        - bug in class-link-functions.php : if it is an anhor link, '//' was inserted before it. Fixed.
+        - Start docs/how-to.txt with accordion (i.e. collapsable paragrapnh)
+        
+18.4.3
+        uploaded to repository as Manduca 18.5
+        5 June, 2018
+        - tempalte-parts/postlink-edit. Showed only if ogged in.
+        -validator: 1 warnings (WP's fault: The type attribute is unnecessary for JavaScript resources.)
+        - The tag theme-options is being used more than once, removed it from your style.css header.
+        
+Manduca 18.6
+=========================================  
+18.5.1
+        June 11, 2018
+        - tiny fixings (not errors) in the code
+        
+18.5.2 as 18.6
+        June 12, 2018
+                -removed manduca_comment_form_text from comment-functions.php. Goal: to display WP core GDPR consent checkbox
+                -change style.css to format comment form consent checkbox. 
+        
+
+Manduca 18.7
+=========================================  
+
+18.6.1
+        22 June, 2018
+                -css breadcrumb modify.
+                
+18.6.2
+        18 July, 2018
+                - Refactoring of class-link-functions.php
+                - Introduce file-indication with icons. add 3 more icons: at, epub
+                - Introduces href scheme realted (mailto ) indication icon
+                
+18.6.3 
+        19 July, 2018
+                - add class-remove-attributes-from-script.php
+                - and current
+                - Current menu item become non-link
+                - admin bar will not cover Manduca top bar any longer: Top bar gets down to admin bar. 
+18.6.4  = 18.7 
+        23 July, 2018
+                - template-parts/posts/content-meta.php : refactored: functions moved to class-meta-tag-generators.php
+                - validation error in modified date (stray </a>). Fixed.        
+                - class-link-functions : error if the content is empty. bug fixed. 
+                
+
+18.7.1
+        23 July, 2018
+                - language po and mo updated from repository. 
+
+18.7.2
+        Uploaded to repository
+        28 July, 2018
+                - bug in class-link-functions.php : when checking if internal link, scheme (http) was not handled correctly (home_url includes scheme)
+                - warning: offset not contained in string in /home/www/domains/das.hu/public/wp-content/themes/manduca/inc/class-link-functions.php on line 97
+                        -> fixed by https://github.com/antecedent/patchwork/issues/40
+                - Classloader renamed to Manduca_Classloader
+                - Add some remarks to functions.php
+
+18.8
+=========================================  
+
+18.7.3
+        31 July, 2018
+                - class-link-function.php:
+                        -if there is url scheme (eg. mailto: ) no extlink is aplied to it
+                        - make it ready to extend the function in child-theme or plugin        
+                
+18.9
+=========================================
+
+18.8.1
+        23 Aug, 2018
+                conflict with plugin:
+                - modify classloader class: In manduca, I do not use namespaces.
+                 I cut this branch out, because it leaded to conflicts with other autoloaders in plugins
+                 
+18.8.2
+        25 September, 2018
+                - add accessible pagination of post ( class-manduca-functions manduca link_pages method )
+                - add heading to post navigation (templat-parts/posts/navigation.php)
+                
+        
+18.8.3
+        28 September,2018
+                1.  role = "search" moved to <div> element based on JAWS user requirement and http://adrianroselli.com/2015/08/where-to-put-your-search-role.html
+                2. post -navigation (class-manducat-template-functions) : add access keys to previous and next page buttons.
+                3. Reading optiojns: arrange the buttons inline
+                4. design corrections I take care of backwards-compatibility)
+                5. Reading option: change HTML markup from li to table (reason: cannot diplsay buttons inline )
+                6. add font-size 4 extra large.
+                7. More link aria labelled by - tested and now it is working. (check: https://codepen.io/grayghostvisuals/pen/Gtoua)
+                8. Sideber h1 hidden from (becomes screen-reader-text)
+                
+
+                

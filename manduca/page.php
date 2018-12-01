@@ -1,21 +1,23 @@
 <?php
 /**
- * Manduca
+ * Display content of page
  *
- * @since 1.0 */
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
+ **/
 
+get_header();
 
-get_header(); ?>
-
-	<div id="primary" class="site-content">
-		<main id="content">
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/pages/content', 'page' ); ?>
+	while ( have_posts() ) : the_post(); 
+		
+        get_template_part( 'template-parts/pages/content', 'page' ); 
+					
+			//Add content after each page					
+			do_action( 'manduca_after_single_page' );
+					
+			comments_template(); 
+			
+	endwhile; // end of the loop.
 				
-			<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_footer();
+?>

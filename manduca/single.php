@@ -1,26 +1,23 @@
 <?php
 /**
- * Manduca
- *
- * @since 1.0 */
+ * Display Singe post 
+ * 
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
+ **/
+?>
 
-get_header(); ?>
-	<section id="primary" class="site-content" >
+<?php get_header(); ?>
+				
+<?php while ( have_posts() ) : the_post(); ?>
+
+    <?php get_template_part( 'template-parts/posts/content', get_post_format() );  ?>
+    
+    
+    <?php get_template_part( '/template-parts/posts/navigation' ) ; ?>
+
+    <?php comments_template(); ?>
+
+<?php endwhile; // end of the loop. ?>
 		
-		<?php manduca_page_navigation() ?>
-		
-		<main id="content">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/posts/content', get_post_format() ); ?>
-	
-				<?php comments_template(); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

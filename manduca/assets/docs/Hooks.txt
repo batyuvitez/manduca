@@ -1,0 +1,30 @@
+Theme: Manduca - focus on accessibility
+
+List of Hooks 
+==
+
+
+        
+Data filters:
+-------------
+manduca_focus_snail_color       : Modify the color of focus-snake | located: inc/class-manduca-setup.php
+manduca_toolbar_info_button     : Add info to the button in reading options block. | located: template-parts/header/toolbar-buttons.php
+manduca_post_meta               : Add meta information to the end of post-meta | located: template-parts/posts/post-meta.php
+manduca_more_links              : Change the text, icon, class of read-more links. | located: inc/class-manduca-setup.php
+manduca_svg_icons               : Filter svg icon array before put it into global variable | located: class-svg-functions.php
+manduca_extension_array         : Filter the aria label texts and icons added to the links | located: class-link-functions.php
+manduca_url_scheme_array        : Filter the aria label texts and icons added to the links | located: class-link-functions.php
+
+
+Boolean filters:
+----------------
+
+
+Action hooks:
+-------------
+manduca_after_single_page       : All page template has this hook before footer
+manduca_after_single_post       : add output after single post before comment
+manduca_after_body_snippet      : Add snippet just after the <body> tag* e.g. Google tag manager, Facebook page plugin.
+manduca_after_footer            : will be depretiated. Do not use
+
+

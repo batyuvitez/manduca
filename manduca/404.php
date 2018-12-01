@@ -1,34 +1,60 @@
 <?php
 /**
- * Manduca
+ * Display page 404
+ * if there is one page is saved with "page not found page" template, that is used instead of this.
  *
- * @since 1.0 */
+ * 
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
+ **/
+?>
 
+<?php get_header(); ?>
 
+<?php
+	$args = array(
+				'post_type' => 'page',
+				'posts_per_page' => 1,
+				'meta_query' => array(
+					array(
+						'key' => '_wp_page_template',
+						'value' => 'page-templates/page-notfound.php'
+					)
+				)
+			);
+		$the_pages = new WP_Query( $args );
+							
+		if( $the_pages->have_posts() ){
+				
+				$the_pages->the_post();
+				$title 		= the_title( '', '', false );
+				$content  	= get_the_content();
+				$content	= apply_filters( 'the_content', $content );
+		}
+		else{
+			//Translators: Default 404 page title
+			$title 		= __( 'Error 404 &#45; Page Not Found!', 'manduca' );
+			// Translators: Default 404 page content
+			$content 	= __( 'The requested page could not be located on this blog.', 'manduca' ) ;
+		}
+		
+		$article = array(
+				'title' 	=> $title,
+				'content' 	=> $content
+				);
 
-get_header(); ?>
+?>
 
-	<div id="primary" class="site-content">
-		<main id="content">
+<article>
+	<header class="no-thumbnail">
+		<h1>
+			<?php echo $article[ 'title' ]; ?>
+		</h1>
+	</header>
 
-			<article id="post-0" class="post error404 no-results not-found">
-				<header class="entry-header">
-					<h1 class="entry-title">
-						<?php _e( 'Error 404 &#45; Page Not Found!', 'manduca' ); ?>
-					</h1>
-					
-				</header>
-
-				<div class="entry-content" >
-					<p>
-						<?php _e( 'The requested page could not be located on this blog. We highly recommend to choose from the HTML sitemap below.', 'manduca' ) ?>
-					</p>	
-					
-					<?php get_template_part( 'template-parts/sitemap' ); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
-
-		</main><!-- #content -->
-	</div><!-- #primary -->
+	<div class="entry-content" >
+		<?php echo $article[ 'content' ]; ?>
+	</div>
+</article>
 
 <?php get_footer(); ?>

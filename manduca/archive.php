@@ -1,19 +1,17 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying date archive pages
  *
- * @ Theme: Manduca
- * @since 1.0
- * Version 17.1
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
  */
+?>
 
-get_header(); ?>
-	<section id="primary" class="site-content">
-		<main id="content">
+<?php get_header() ?>
 
 		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php
+			<header>
+				<h1><?php
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s', 'manduca' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
@@ -25,24 +23,13 @@ get_header(); ?>
 					endif;
 				?></h1>
 
-
-			<?php
-				$term_description = category_description();
-				if ( ! empty( $term_description ) ) {
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-				} ?>
-			</header><!-- .archive-header -->
+			</header>
 			
-			<?php manduca_display_excerpt(); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
 				
-			
 
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
 		<?php endif; ?>
 
-		</main><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_footer() ?>

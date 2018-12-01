@@ -1,16 +1,18 @@
 <?php
 /**
- * Manduca
+ * Display category page
  *
- * @since 1.0 */
+ * 
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
+ **/
+?>
 
-get_header(); ?>
-	<section id="primary" class="site-content">
-		<main id="content">
+<?php get_header() ?>
 
 		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><span><?php echo single_cat_title( '', false ); ?></span></h1>
+			<header>
+				<h1><?php echo single_cat_title( '', false ); ?></h1>
 
 
 			<?php
@@ -18,16 +20,10 @@ get_header(); ?>
 				if ( ! empty( $term_description ) ) {
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
 				} ?>
-			</header><!-- .archive-header -->
+			</header>
 			
-			<?php manduca_display_excerpt() ?>
-
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
+			
 		<?php endif; ?>
 
-		</main><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_footer() ?>

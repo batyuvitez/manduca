@@ -1,53 +1,54 @@
 <?php
 /**
- * Manduca
+ * Display end of the page 
  *
- * @since 1.0 */
- 
-		/* Before footer hook
-		 * */
-		do_action( 'manduca_after_content' );
-
-?>			</div><!-- .outer-wrapper -->
-				</div><!-- .wrapper -->
+ * @ Theme: Manduca - focus on accessibility 
+ * @ since 1.0
+ **/
+?>
+						
+								</main>
+							</div> <?php // END #primary .site-content ?>
+							 
+						 <?php get_sidebar(); ?>
+			 
+					</div> <?php // END .wrapper ?>
+					
+					<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>
+						   
 				<div id="footer-wrapper" class="footer-wrapper">
 					<footer id="colophon" >
 						<?php
-							/*add comething at the beginning of footer
-							 **/
+							/*add something at the beginning of footer
+							 * To be  Depreciated since 17.4
+							 * */
 							do_action( 'manduca_before_footer' );
 						?>
+						
 						<div class="site-info">
-							<?php
-								$menu = wp_nav_menu(array (
-										'echo' => false,
-										'fallback_cb' => '__return_false',
-										'container'       	=> false,
-										'theme_location' 	=> 'footer',
-										'menu_class' 		=> 'footer-menu'
-									) );
-								
-								if ( ! empty ( $menu ) ) {
-									echo '<nav id="footer-navigation" class="footer-navigation">' .$menu .'</nav>';
-								}
-							
-							/*
-							 * filter of copyright text
-							 * @since 16.12
-							 * */
-							
-							echo apply_filters( 'manduca_copyright_text' , sprintf ('<p class="copyright-text">&copy; %1$s, %2$s</p>', date( 'Y' ), get_bloginfo() ) ) ;
-							?>
-								
-						</div><!-- .site-info -->
-						<?php do_action( 'manduca_after_footer' ); ?>
-					</footer><!-- #colophon -->
+						
+						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
+						
+						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>
+						
+						</div>
+											
+						<?php
+						/*
+						 * Add action after footer
+						 * to be depretiated - use template instead
+						 * */
+						do_action( 'manduca_after_footer' );
+						?>
+						
+					</footer>
 					<div class="clearfix"></div>
 				</div>
-		
-			</div><!-- #page -->
-		
+
+			<?php get_template_part( 'template-parts/footer/footer', 'after' ); ?>
+			
 			<?php wp_footer(); ?>
-		</div><!-- #svg-layer -->
+			
+		</div> <?php // closing tag of  .site #page  ?>
 	</body>
 </html>

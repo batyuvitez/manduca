@@ -1,0 +1,15 @@
+HOW TO...
+Manduca - focus on accessibililty
+
+
+How to 
+... use collapsable paragraph template
+      - use <h2></h2> elements for titles of collapsable paragraph.
+      - Before first (h2) is not collapsable.
+
+... add new svg icons.
+      Use filter 'manduca_svg_icons' Input parameter is Manduca svg icons, and you can extend it with yours.
+      
+... change breadcrumb parameters
+      - copy breadcrumb-template file to the child theme's template-parts/header directory and change the parameters in it.
+      - or - if you are familiar with PHP programming: extend the breadcrumb class. 

@@ -1,40 +1,33 @@
 <?php
 /**
- * Manduca
- *
- * @since 1.0 */
-
-get_header(); ?>
-
-
-	<section id="primary" class="site-content">
-		<main id="content" >
+ * Default homepages
+ * 
+ * @ Theme: Manduca - focus on accessibility
+ * @ Since 1.0
+ **/
+?>
+<?php get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php bloginfo( 'description' ); ?></h1>
+			<header>
+				<h1><?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?></h1>
 			</header>
 
-			<?php manduca_display_excerpt() ?>
+			<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
 			
-
 		<?php else : ?>
 
-			<article id="post-0" class="post no-results not-found">
-				<header class="entry-header">
-					<h2 class="entry-title"><?php _e( 'No matching result found.', 'manduca' ) ?></h2>
+			<article class="post no-results not-found">
+				<header>
+					<h1><?php _e( 'No matching result found.', 'manduca' ) ?></h1>
 				</header>
 
 				<div class="entry-content">
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
+				</div>	
+			</article>
 
 		<?php endif; ?>
 
-		</main><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

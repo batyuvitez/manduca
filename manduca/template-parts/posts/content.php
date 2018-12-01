@@ -5,66 +5,54 @@
  * @since 1.0 */
 
 ?>		
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
-		<header class="entry-header">
-			
-			<?php get_template_part( 'template-parts/posts/entry-header' );
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+	<?php if ( has_post_thumbnail() ) {
+				$class = 'has-thumbnail'; 
+			}
+			else{
+				$class = 'no-thumbnail';
+			}
+			//display header tag
+			printf( '<header class="%1$s">',
+				   $class
+				   );
+	?>
 			
-			/* Action hook
-			 * name: add code after entry header
-			 **/
-			do_action('manduca_after_title');
-			
-			
-			/* Boolean filter
-			* @ name: manduca_meta_in_header
-			* @ true : default : show meta data in footer
-			* @ false : show meta data in entry header
-			* since @17.1
-			 **/
-			$meta_flag = FALSE;
-			$meta_flag  = apply_filters( 'manduca_meta_in_header' , FALSE ) ;
-			if( $meta_flag ) :
-				echo '<a href="#entry-content" class="screen-reader-text">' ._e( 'Jump the meta to the post' , 'manduca' ) .'</a>';
-				echo '<div class="entry-meta">';
-				get_template_part( 'content', 'meta' );
-				echo '</div>';
-			endif; ?>
-				
-			
-			
-		
-			
-		</header><!-- .entry-header -->
-		
-		
-		<?php edit_post_link( __( 'Edit', 'manduca' ), '<span class="edit-link"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"/></svg>', '</span>' ); ?>
-		
-		<?php if ( ! post_password_required() && ! is_attachment() ) :
-				the_post_thumbnail( 'post-size' ); endif; ?>
-			
+		<?php get_template_part( 'template-parts/posts/entry-header' ); ?>
 
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+		<?php if ( has_post_thumbnail() ) : ?>
 			
-		</div><!-- .entry-summary -->
-		<?php else : ?>
-		<div class="entry-content" id="entry-content" >
-			<?php the_content( __( 'Continue reading', 'manduca' ) .'<span class="screen-reader-text">  ' .get_the_title() .'</span><span class="meta-nav" aria-hidden="true">&rarr;</span>' ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Paging', 'manduca' ), 'after' => '</div>' ) ); ?>
-		<div class="clearfix-content"></div>
-		</div><!-- .entry-content -->
+			<div>
+				<?php the_post_thumbnail( 'post-size' ); ?> 
+			</div>
+
 		<?php endif; ?>
-
-		<footer class="entry-meta">
-			<?php
-				if( !$meta_flag ) {
-					get_template_part( 'content', 'meta' );
-				}
-			?>
+		
+		<?php //deprecated_after_title_function(); ?>
+		
+	</header>
 			
-		</footer><!-- .entry-meta -->
-	</article><!-- #post -->
+	<?php get_template_part( '/template-parts/postlink', 'edit' ) ; ?>
+	
+
+	<div class="entry-content" >
+		<?php Manduca_Template_Functions::manduca_link_pages(); ?>
+		<?php the_content() ; //last correction: @17.9?>
+		<?php Manduca_Template_Functions::manduca_link_pages(); ?>
+	<div class="clearfix-content"></div>
+	</div>
+	
+	<?php
+		/* Action hook: manduca_after_entry_content
+		 * Add something after entry content
+		 * @since 17.2.8
+		 * */
+		do_action( 'manduca_after_entry_content' );
+	?>
+
+	<footer>
+		<?php get_template_part( 'template-parts/posts/content', 'meta' ); ?>
+	</footer>
+
+</article>
