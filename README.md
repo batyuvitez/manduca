@@ -5,16 +5,9 @@
 There is no customizer in this theme. You should use Manduca with child theme in order to create individual design and setup accessibility features. 
 
 ## Key features
-### This is suitable for Hungarian language sites
-* It has special Hungarian functions.
-* The translation is kept up-to-date.
-### Suitable for sites want to comply with ISO/IEC 40500:2012.
-* This theme complies with WCAG.
-* Tested with older browsers and without JavaScript.
-* Tested with assistive technology.
-### Best user experience
-* Apply the techniques which work for most browsers.
-* Tested expansively with different tools. 
+* This is suitable for Hungarian language sites: it has special Hungarian functions and the translation is kept up-to-date.
+* Suitable for sites want to comply with ISO/IEC 40500:2012 (WCAG).
+* Tested expansivel with differnt browsers and assistive technology.
 * Focus snail to improve focus changes for visualy impairment people.
 
 ## Installation
@@ -23,10 +16,10 @@ There is no customizer in this theme. You should use Manduca with child theme in
 3. Click on the 'Activate' button to use your new theme right away.
 
 ## Troubleshooting
-In case of notice any bugs or failure please contact me: Zsolt Edelényi ezs@web25.hu
+In case of notice any bugs or failure, please contact me: Zsolt Edelényi (mailto:ezs@web25.hu)
 
 ## Copyright and licencing information
-This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). And any external resources used and bundled with the theme are also fully compatible with the GPL.
+This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
 
 ### Focus Snake
     - licence: MIT 
