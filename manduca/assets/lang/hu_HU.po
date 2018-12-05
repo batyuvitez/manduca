@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Themes - manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-09-28 14:03+0200\n"
+"PO-Revision-Date: 2018-12-01 12:21+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 1.8.11\n"
 "Language: hu\n"
 "Project-Id-Version: Themes - manduca\n"
 "POT-Creation-Date: \n"
@@ -16,17 +16,73 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid "New generation theme to start build an ISO/IEC 40500:2012 ( i.e. WCAG 2.0 )  compliant accessible website. Add child theme with individual design. Special features for Hungarian users. PHP 7 compatible."
-msgstr "Egy jövőbe tekintő honlap. Az ISO/IEC 40500:2015 ( magyarul: Web-akadálymentesítési útmutató WCAG 2.0) szabványnak megfelelő honlapok készítésére alkalmas. Származtatott sablonnal bármilyen webdizájn kialakítható vele. A magyar felhasználók számára speciális funkciókkal. A PHP legfrissebb változatával  is működik."
+msgstr "Egy jövőbe tekintő honlap. Az ISO/IEC 40500:2015 ( magyarul: Web-akadálymentesítési útmutató WCAG 2.0) szabványnak megfelelő honlapok készítésére alkalmas. Származtatott sablonnal bármilyen webdizájn kialakítható vele. A magyar felhasználók számára speciális funkciókkal. A PHP 7+ változatával is működik."
 
 #. Theme Name of the plugin/theme
 msgid "manduca"
 msgstr "Manduca"
 
-#: inc/class-link-functions.php:275 inc/class-link-functions.php:288
+#. Translators: %s = alt text of image. This is an aria label to a link which
+#. has a children of an image.
+#: inc/class-link-functions.php:86
+msgid "Image: %s"
+msgstr "Kép: %s"
+
+#. Translators: %s = title of post. This is an aria-label to a link  which has
+#. a children of an image, and image has no alt text.
+#: inc/class-link-functions.php:76
+msgid "Image to the post titled: %s"
+msgstr "Kép a %s cikkhez. "
+
+#: template-parts/header/toolbar.php:48
+msgid "Extra Large"
+msgstr "Extra nagy"
+
+#: template-parts/header/toolbar.php:47
+msgid "Large"
+msgstr "Nagy"
+
+#: template-parts/header/toolbar.php:46
+msgid "Normal"
+msgstr "Átlagos"
+
+#: template-parts/header/toolbar.php:45
+msgid "Small"
+msgstr "Kicsi"
+
+#: template-parts/header/skiplinks.php:12
+msgid "Skip to footer"
+msgstr "Ugrás a lábrészhez"
+
+#: template-parts/header/skiplinks.php:10
+msgid "Skip to main content"
+msgstr "Ugrás a fő tartalomhoz"
+
+#: inc/class-manduca-template-functions.php:24
+msgid "Pages of this post"
+msgstr "E bejegyzés több oldalból áll"
+
+#: inc/class-manduca-template-functions.php:20
+msgid "Previous page of post"
+msgstr "A bejegyzés előző oldala"
+
+#: inc/class-manduca-template-functions.php:15
+msgid "Next page of post"
+msgstr "A bejegyzés következő oldala"
+
+#: inc/class-link-functions.php:377
+msgid "Call on phone"
+msgstr "Telefonhívás"
+
+#: inc/class-link-functions.php:372
+msgid "Send email"
+msgstr "E-mail küldése"
+
+#: inc/class-link-functions.php:360
 msgid "Electronic book"
 msgstr "Elektronikus könyv"
 
-#: inc/class-link-functions.php:65
+#: inc/class-link-functions.php:115
 msgid "open map"
 msgstr "Térkép megnyitása"
 
@@ -41,7 +97,7 @@ msgid "No svg icon declared"
 msgstr "Nincs definálva az svg ikon"
 
 #. Translators: add screen-reader text to link
-#: inc/class-link-functions.php:85
+#: inc/class-link-functions.php:135
 msgid "Opens a new window"
 msgstr "Új ablakban nyílik meg"
 
@@ -73,7 +129,7 @@ msgstr "A bejegyzések kategóriánként"
 msgid "No title"
 msgstr "Nincs cím"
 
-#: inc/class-manduca-setup.php:183
+#: inc/class-manduca-setup.php:181
 msgid "Excerpt size"
 msgstr "A kivonatba való képméret"
 
@@ -98,7 +154,7 @@ msgstr "%d. oldal"
 #. Translators: search page singular in breadcrumb
 #: template-parts/header/breadcrumb-template.php:39
 msgid "%s hits of searching for <em>%s</em>"
-msgstr "%s találat a <em>%s</em> keresett kifjezéshez"
+msgstr "%s találat a <em>%s</em> keresett kifejezéshez"
 
 #. translators: link to the related page on attachment page
 #: image.php:203
@@ -111,17 +167,17 @@ msgid "Image navigation"
 msgstr "Képek közti navigáció"
 
 #. translators: Aria label for pdf links.
-#: inc/class-link-functions.php:270
+#: inc/class-link-functions.php:355
 msgid "PDF document"
 msgstr "PDF dokumentum"
 
 #. translators: Aria label for xls and xlsx links.
-#: inc/class-link-functions.php:259 inc/class-link-functions.php:264
+#: inc/class-link-functions.php:344 inc/class-link-functions.php:349
 msgid "MS Excel document"
 msgstr "Excel dokumentum"
 
-#: inc/class-link-functions.php:244 inc/class-link-functions.php:249
-#: inc/class-link-functions.php:254
+#: inc/class-link-functions.php:329 inc/class-link-functions.php:334
+#: inc/class-link-functions.php:339
 msgid "MS Word document"
 msgstr "Word dokumentum"
 
@@ -133,55 +189,57 @@ msgstr "Az éppen nyitott fül"
 msgid "Missing alternative text"
 msgstr "Hiányzik a helyettesítő szöveg. Kérlem pótolni!"
 
-#: template-parts/header/toolbar.php:44
+#: template-parts/header/new.php:50
 msgid "Biggest"
 msgstr "Legnagyobb"
 
-#: template-parts/header/toolbar.php:43
+#: template-parts/header/new.php:49
 msgid "Bigger"
 msgstr "Nagyobb"
 
-#: template-parts/header/toolbar.php:41
+#: template-parts/header/new.php:47 template-parts/header/toolbar.php:44
 msgid "Font size:"
 msgstr "Betűméret:"
 
-#: template-parts/header/toolbar.php:37
+#: template-parts/header/new.php:43 template-parts/header/toolbar.php:40
 msgid "Serif"
 msgstr "Könyv:"
 
-#: template-parts/header/toolbar.php:36
+#: template-parts/header/new.php:42 template-parts/header/toolbar.php:39
 msgid "Fixed with"
 msgstr "Írógép"
 
-#: template-parts/header/toolbar.php:35 template-parts/header/toolbar.php:42
+#: template-parts/header/new.php:41 template-parts/header/new.php:48
+#: template-parts/header/toolbar.php:38
 msgid "Original"
 msgstr "Eredeti"
 
-#: template-parts/header/toolbar.php:34
+#: template-parts/header/new.php:40 template-parts/header/toolbar.php:37
 msgid "Font type:"
 msgstr "Betűtípus:"
 
-#: template-parts/header/toolbar.php:30
+#: template-parts/header/new.php:36 template-parts/header/toolbar.php:33
 msgid "Yellow background with black letters"
 msgstr "Fekete betűk sárga háttéren"
 
-#: template-parts/header/toolbar.php:29
+#: template-parts/header/new.php:35 template-parts/header/toolbar.php:32
 msgid "Black background with yellow letters"
 msgstr "Sárga betűk fekete háttéren"
 
-#: template-parts/header/toolbar.php:28
+#: template-parts/header/new.php:34 template-parts/header/toolbar.php:31
 msgid "Pastel background"
 msgstr "Pasztell színű háttér"
 
-#: template-parts/header/toolbar.php:27
+#: template-parts/header/new.php:33 template-parts/header/toolbar.php:30
 msgid "Original contrast"
 msgstr "Eredeti kontraszt"
 
-#: template-parts/header/toolbar.php:26
+#: template-parts/header/new.php:32 template-parts/header/toolbar.php:29
 msgid "Contrast:"
 msgstr "Kontraszt:"
 
-#: template-parts/header/toolbar.php:15
+#: template-parts/header/new.php:15 template-parts/header/new.php:21
+#: template-parts/header/toolbar.php:15 template-parts/header/toolbar.php:21
 msgid "Display options"
 msgstr "Olvasási beállítások"
 
@@ -209,22 +267,19 @@ msgstr "Az almenü vége"
 msgid "Parent of pages template"
 msgstr "A szülő oldal sablonja"
 
-#: template-parts/header/sitetitle.php:25
+#: template-parts/header/sitetitle.php:24
 msgid "site title to jump homepage"
 msgstr "Kezdőlapra ugrás"
 
-#: template-parts/posts/content-excerpt.php:26
-#: template-parts/posts/content-search.php:20
+#: inc/class-manduca-template-functions.php:50
 msgid "page"
 msgstr "Oldal"
 
-#: template-parts/posts/content-excerpt.php:25
-#: template-parts/posts/content-search.php:19
+#: inc/class-manduca-template-functions.php:49
 msgid "Older posts"
 msgstr "Régebbi bejegyzések"
 
-#: template-parts/posts/content-excerpt.php:24
-#: template-parts/posts/content-search.php:18
+#: inc/class-manduca-template-functions.php:48
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
@@ -301,11 +356,11 @@ msgstr "%s napján kelt bejegyzések: "
 msgid "Images"
 msgstr "Képek"
 
-#: template-parts/posts/navigation.php:30
+#: template-parts/posts/navigation.php:32
 msgid "Next post"
 msgstr "Következő bejegyzés"
 
-#: template-parts/posts/navigation.php:21
+#: template-parts/posts/navigation.php:23
 msgid "Previous post"
 msgstr "Előző bejegyzés"
 
@@ -349,24 +404,24 @@ msgstr "Következő"
 msgid "Previous"
 msgstr "Előző"
 
-#: inc/class-manduca-setup.php:219
+#: inc/class-manduca-setup.php:217
 msgid "collapse child menu"
 msgstr "Almenü összezárása"
 
-#: inc/class-manduca-setup.php:218
+#: inc/class-manduca-setup.php:216
 msgid "expand child menu"
 msgstr "Almenü szétnyitása"
 
-#: inc/class-manduca-setup.php:181
+#: inc/class-manduca-setup.php:179
 msgid "Image in Post"
 msgstr "Bejegyzésben lévő kép"
 
-#: inc/class-manduca-setup.php:180
+#: inc/class-manduca-setup.php:178
 msgid "Thumbnail"
 msgstr "Előkép"
 
 #. Translators: add aria-label to link.
-#: inc/class-link-functions.php:75
+#: inc/class-link-functions.php:125
 msgid "external"
 msgstr "külső"
 
@@ -410,7 +465,7 @@ msgstr "Kezdhetjük a blogolást?"
 msgid "No post"
 msgstr "Nincs bejegyzés"
 
-#: image.php:57 image.php:84 inc/class-manduca-setup.php:182
+#: image.php:57 image.php:84 inc/class-manduca-setup.php:180
 msgid "Original size"
 msgstr "Eredeti méret"
 
@@ -422,13 +477,13 @@ msgstr "Nincs találat, újabb keresési lehetőség. "
 msgid "Menu"
 msgstr "Menü"
 
-#: template-parts/header/skiplinks.php:10
-msgid "Skip to content"
-msgstr "Tovább a tartalomhoz"
-
-#: inc/class-manduca-setup.php:273
+#: inc/class-manduca-setup.php:271
 msgid "avatar"
 msgstr "Avatar"
+
+#: template-parts/posts/navigation.php:19
+msgid "Post navigation"
+msgstr "Bejegyzések oldalai"
 
 #: inc/class-customizer.php:38
 msgid "Copyright text"
@@ -442,12 +497,12 @@ msgstr "Címkék"
 #. translators: Category of post - in the post meta
 #: template-parts/posts/content-meta.php:46
 msgid "Category"
-msgstr "Kategória: "
+msgstr "Kategória"
 
 #. translators: Last modification of post - in the post meta
 #: template-parts/posts/content-meta.php:26
-msgid "Last revision:"
-msgstr "Utolsó módosítás: "
+msgid "Last revision"
+msgstr "Utolsó módosítás"
 
 #. translators: Date of post - in the post meta.
 #: template-parts/posts/content-meta.php:17
@@ -477,20 +532,20 @@ msgid "Author"
 msgstr "Szerző"
 
 #. translators: sidebar description
-#: inc/class-manduca-setup.php:240
+#: inc/class-manduca-setup.php:238
 msgid "Appears all pages except when using full page template"
 msgstr "Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát használunk."
 
 #. translators: name of the sidebar
-#: inc/class-manduca-setup.php:237
+#: inc/class-manduca-setup.php:235
 msgid "Sidebar"
 msgstr "Oldalsáv"
 
-#: inc/class-manduca-setup.php:131
+#: inc/class-manduca-setup.php:129
 msgid "Footer navigation"
 msgstr "Lábrész menü"
 
-#: inc/class-manduca-setup.php:130
+#: inc/class-manduca-setup.php:128
 msgid "Main navigation"
 msgstr "Főmenü"
 
@@ -503,10 +558,8 @@ msgstr "%s összes bejegyzése"
 msgid "Author: %s"
 msgstr "Szerző: %s"
 
-#: template-parts/posts/content.php:41
-msgid "Paging"
-msgstr "Lapozó"
-
+#. Translators: text of the read more and excerpt more buttons
+#: inc/class-more-links.php:20
 msgid "Continue reading"
 msgstr "Tovább olvasom"
 
@@ -565,29 +618,29 @@ msgstr "http://www.akadálymentes-honlap.hu"
 msgid "Zsolt Edelényi"
 msgstr "Edelényi Zsolt"
 
-msgid "Pages of this post"
-msgstr "A bejegyzés részei"
+msgid "Jump links"
+msgstr "Ugrási lehetőségek"
 
-msgid "Next page of post"
-msgstr "A bejegyzés következő oldala"
+msgid "Jump to access key details"
+msgstr "Gyorsbillentyűk listája"
 
-msgid "Previous page of post"
-msgstr "A bejegyzés előző oldala"
+msgid "Main menu"
+msgstr "Főmenü"
 
-msgid "Skip to main content"
-msgstr "A fő tartalmi részhez ugrás"
+msgid "<span class=\"screen-reader-text\">Page</span> %s"
+msgstr " %s<span class=\"screen-reader-text\">. oldal</span>"
 
-msgid "Skip to footer"
-msgstr "A lábrészre ugrás"
+msgid "Not indicated pages"
+msgstr "Nem jelzett oldalak"
 
-msgid "Normal"
-msgstr "Normál méret"
+msgid "Current page"
+msgstr "Jelenlegi oldal"
 
-msgid "Small"
-msgstr "Kisméret"
+msgid "Page %s"
+msgstr "%s. oldal"
 
-msgid "Large"
-msgstr "Nagy méret"
+msgid "access key: p"
+msgstr "gyorbillenytyű: p"
 
-msgid "Extra large"
-msgstr "Extra nagy"
+msgid "access key: n"
+msgstr "gyorsbillentyű: n"

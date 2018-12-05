@@ -1,26 +1,34 @@
-=== Manduca ===
-Készítette:  Edelényi Zsolt - ezs@web25.hu.hu
+Manduca akadálymentes WordPress sablon
+Copyright 2015-2018; Edelényi Zsolt (ezs@web25.hu);
+
+Ez a program szabad szoftver; terjeszthető illetve módosítható a Free Software
+Foundation által kiadott GNU General Public License dokumentumában leírtak;
+akár a licenc 2-es, akár (tetszőleges) későbbi változata szerint.
+
+Ez a program abban a reményben kerül közreadásra, hogy hasznos lesz, de minden
+egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA VALÓ
+ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve. További
+részleteket a GNU General Public License (gnu-general-public-licence.txt) tartalmaz.
+
+A felhasználónak a programmal együtt meg kell kapnia a GNU General Public
+License egy példányát; ha mégsem kapta meg, akkor ezt a Free Software
+Foundationnak küldött levélben jelezze (cím: Free Software Foundation Inc.,
+59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.)
+
+
+
+============================
+==       LEÍRÁS           ==
+============================
 A sablon részletes bemutatása: http://akadálymentes-wordpress-sablon.hu/
-Szerző honlapja: http://www.akadálymentes-honlap.hu
-Legutolsó tesztelt és stabilváltozat: 2.1.2
-Szellemi jogok: GPLv2 or later
-Szellemi jogok WIKI: https://hu.wikipedia.org/wiki/GNU_General_Public_License
-
-
-== Leírás ==
-A manduca sablon alapja minden idők legnépszerűbb WordPress sablonja: a twenty twelve
 A Manduca sablon leglényegesebb jellemzője: megfelel a nemzetközi WEB akadálymentesítési irányelveknek (WCAG 2.0), és sok mindenben ezen felül is támogatja a fogyatékosságal élő felhasználókat.
 Az akadálymentes weboldal ergonómikus honlap. Egyszerű, nem zsúfolt, gyors, átlátható, érthető. A lényeg, hogy gyorsan és könnyen megtaláld benne a téged érintő tartalmat, és könnyen tudd használni.
-A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.
+A design egyszerű (minimál), mert származtatott sablonokkal érdemes használni.
 
-== Telepítés  ==
 
-1. Admin panel ->Megjelenés>Sablonok.
-2. Feltöltés és a fájl kiválasztása.
-3. Sablon aktiválása.
-4. Admin panelen megjelenés>testreszabás.
-
-== A legfontosabb jellemzők ==
+===========================
+==    JELLEMZŐK          ==
+===========================
     A weboldal területeinek jelzése WAI-ARIA elemekkel;
     Akadálymentes, szabályos címsorszintrendszer;
     Egyedi magyar fordítás. Nem voltam elégedett a beépített sablonok fordításaival. Szerettem volna személyesebb, más szövegeket. A sablonom magyar, nincs előkészítve fordításra.
@@ -29,23 +37,17 @@ A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.
     Alaposan tesztelve több tucat böngészőn, képernyőfelbontással, képernyőolvasóval, nagykontrasztú üzemmódban, JavaScript nélkül is.
     A címsorszintrendszer és a tipográfia egységesítése és jobb összehangolása. A weboldal címe többé nem első címsorszint, hanem egyszerű szöveg. A cím ugyanis a fejlécben szerepel minden oldalon, és a fő tartalom csak a második címsorszintben szerepel. Mostantól a fő tartalom címsorszintje lesz az első.
 
-== Telepítés  ==
-
+============================
+==      TELEPÍTÉS         ==
+============================
 1. Admin panel ->Megjelenés>Sablonok 
 2. Feltöltés és a fájl kiválasztása
 3. Sablon aktiválása
 
-== Licence ==
+============================
+==      EGYÉB LICENCE     ==
+============================
 
-   A sablon és benne minden általános nyilvános licence-el rendelkezik.(GNU GPL).
-   Lásd: https://hu.wikisource.org/wiki/GNU_General_Public_License_%28magyar%29Egy sor mely megadja a program nevét, és leírja, hogy mit csinál.
-
-   Manduca WordPress Sablon, Copyright 2015 Edelényi Zsolt
-
-1. Font Awesome
-	- MIT licence
-	- A betűtípusok SIL OFL 1.1 
-	- http://fortawesome.github.io/Font-Awesome/
 
 2. Focus Snake
     - MIT Licence
@@ -55,7 +57,9 @@ A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.
 	-https://github.com/adobe-accessibility/Accessible-Mega-Menu/
 	-Apache 2.0 licence
 
-== GYIK ==
+============================
+==         GYIK           ==
+============================
 - Miért készítettél újabb sablon, hiszen annyi van az interneten?
 - Alig van olyan sablon, amely az általános hozzáférést, akadálymentességet tartja legfőbb erényének. Ráadásul, e sablonhoz magyar fordítás és olvassel.txt is tartozik.
 
@@ -63,15 +67,17 @@ A design egyszerű (minimál), mert gyereksablonokkal célszerű használni.
 - Tim Barners-Lee mondta: "Az internet ereje az univerzalitás. Minden ember képes használni, képességeitől függetlenül. (https://en.wikiquote.org/wiki/Tim_Berners-Lee)
 
 
-== Változatok ==
-
+============================
+==      VÁLTOZATOK        ==
+============================
  = 1.0 =
  Elkészült: 2015. április 24.
- Teszteléshez, főképp magán használatra. 
+ Teszteléshez, magán használatra. 
  
  = 2.0 =
  2015. december 3.
- A sablon alapos ellenőrzése után. 
- 
+ A sablon alapos ellenőrzése után felkerült a WordPress theme repositoryba. 
+
+A továbbiakat lásd release-notes.txt fájlokban
 
 

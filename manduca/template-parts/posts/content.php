@@ -37,9 +37,11 @@
 	
 
 	<div class="entry-content" >
-		<?php Manduca_Template_Functions::manduca_link_pages(); ?>
+		
 		<?php the_content() ; //last correction: @17.9?>
+		
 		<?php Manduca_Template_Functions::manduca_link_pages(); ?>
+	
 	<div class="clearfix-content"></div>
 	</div>
 	

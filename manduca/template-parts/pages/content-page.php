@@ -16,7 +16,7 @@
 				<?php if ( has_post_thumbnail() ) :  ?>
 				
 					<div>
-						<?php the_post_thumbnail( null, 'post-size' ); ?>
+						<?php the_post_thumbnail( 'post-size' ); ?>
 					</div>
 		
 				<?php endif; ?>

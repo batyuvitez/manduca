@@ -1,10 +1,23 @@
-=== Manduca ===
-Main contributor: Zsolt Edelényi - ezs@web25.hu
-Requires at least: WordPress 3.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-== IMPORTANT ==
+Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+
+   Manduca is a free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+
+============================
+==      IMPORTANT         ==
+============================
+
 Manduca is currently under strong development.
 It is going to be the leading theme on focusing accessibility.
 This includes the security, optimalization of code, speed and other qualities as well.
@@ -17,13 +30,19 @@ Changelog/release notes are in details breakdown by years in release-notes files
 ( e.g. release-notes-2017.txt )
 
 
-== Description==
-    Manduca is based on most popular WordPress theme: twenty twelve 
+============================
+==      DESCRIPTION       ==
+============================
+
+ At the very begining, Manduca based on most popular and undoubtly best WordPress theme: 2012
 	This theme is focusing on accessibility by the wildest range of users.
 	This is called defined as universal access as well. It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.).
 	In addition, there are features to support even more the impaired users of the web. 
 
-== Main features ==
+============================
+==       KEY FEAUTRES     ==
+============================
+
     - Responsive of course,
     - WAI ARIA used for screen-reader users.
     - Classic ergonomy (simplicity, readiblity, usability, etc.)
@@ -34,7 +53,9 @@ Changelog/release notes are in details breakdown by years in release-notes files
     - HTML and CSS code is shortened in order peoplw with slower internet bandwith can use effectively. 
 
 
-== Installation ==
+============================
+==       INSTALLATION     ==
+============================
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Manduca in the search form and press the 'Enter' key in your keyboard.
@@ -42,12 +63,12 @@ Changelog/release notes are in details breakdown by years in release-notes files
 5. Navigate to Appearance > Customize in your admin panel.
 
 
-== Licences ==
+============================
+==   OTHER LICENCES       ==
+============================
 
-This theme is 100% GPL. And any external resources used and bundled with the theme are also Fully Compatible with the GPL.
 
-
-2. Focus Snake
+1. Focus Snake
     - Code under MIT Licence
     - https://github.com/NV/focus-snail
 
@@ -67,12 +88,12 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 	-http://github.com/ginader/Accessible-Tabs
 	- Licence: MIT & GPL
 
+============================
+==         F A Q          ==
+============================
 
 
-Manduca WordPress Theme, Copyright 2015 Zsolt Edelényi 
-Manduca is Distributed under the terms of the GNU GPL
 
-== FAQ ==
 
 - Why you developed a new theme if there is so many professional ones on the web?
 - This is one of the few themes which are focusing on universal access that is accessibility. In addition, this theme inludes Hungarian translation and readme, which is also unique. 
@@ -89,11 +110,26 @@ Manduca is Distributed under the terms of the GNU GPL
  = 2.0 =
  Released November 26, 2015. Tested against WordPress Theme Standards
  
+====================================
+==    Special Acknowledgement     ==
+====================================
  
-== Special Acknowledgement ==
-
-I wish to convey special thanks to my wife: Nóra and friends: János and Áron who tested my themes many times. They gave me so many feedback on my work and helped me to improve Manduca. 
+I wish to convey special thanks to my wife: Nóra.
+Thank you  for János Hosszú.
+Thank you for Áron Ócsváry, who also contributed to the development. 
 I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times,  and contributed to form a messy theme to a professional one.
-
+Special Thanks to Gábor Hegedűs and his friends, who is my most sensitive and very patient tester. 
+And the most importand. Thanks for Jesus who was the most important supporter of my work. 
  
-
+ 
+ 
+      |V|
+   .::| |::.
+  ::__| |__::
+ >____   ____<
+  ::  | |  ::
+   '::| |::'
+      | |
+      | |
+jgs   |A|
+(This art usage is based on: https://www.asciiart.eu/terms-of-use )
