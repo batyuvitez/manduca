@@ -2,22 +2,25 @@
 
 
 ## Demo 
-* [Demo](http://www.xn--akadlymentes-wordpress-sablon-jnc.hu)
+* [http://akadálymentes-wordpress-sablon.hu](http://www.xn--akadlymentes-wordpress-sablon-jnc.hu)
 
 ## Important
-* It has special Hungarian functions.
-* The translation is kept up-to-date.
 * It should be used with child theme, or as a skeleton of your theme.
     There are lots of accessiblilty features in it, which can be used.
 
-## Description
-* 
 
 ## Key features
-* This theme wants to comply with WEB content accessiblilty guidelines (WCAG 2.1 )
+### This is suitable for Hungarian language sites
+* It has special Hungarian functions.
+* The translation is kept up-to-date.
+### Suitable for sites want to comply with ISO/IEC 40500:2012.
+* This theme complies with WCAG.
 * Tested with older browsers and without JavaScript.
-* Tested with assistive technology
-* Focus snail to improve focus changes for visualy impairment people,
+* Tested with assistive technology.
+### Best user experience
+* Apply the techniques which work for most browsers.
+* Tested expansively with different tools. 
+* Focus snail to improve focus changes for visualy impairment people.
 
 ## Installation
 
@@ -30,23 +33,18 @@
 * This theme is 100% GPL. And any external resources used and
 * bundled with the theme are also Fully Compatible with the GPL.
 
-### Font Awesome
-	- Code under MIT License
-	- Font under SIL OFL 1.1 
-	- http://fortawesome.github.io/Font-Awesome/
 ### Focus Snake
-    - Code under MIT Licence
-    - https://github.com/NV/focus-snail
+    - licence: MIT 
+    - [github/focus-snail](https://github.com/NV/focus-snail)
 ### Accessible Megamenu Copyright © 2013 Adobe Systems Incorporated.
-	- https://github.com/adobe-accessibility/Accessible-Mega-Menu/
-	- licensed under the Apache License, Version 2.0 (the “License”);
-### Smart undelrine
+	- lecence: Apache License 2.0 
+    - [github/accessible-mega-menu](https://github.com/adobe-accessibility/Accessible-Mega-Menu)
+### Smart underline
     - Licence: MIT
-	- https://github.com/EagerIO/SmartUnderline
-	
+	- [gtihub/Smartunderline](https://github.com/EagerIO/SmartUnderline)
 ### Accessible tabs
 	- Licence: MIT & GPL
-	- http://github.com/ginader/Accessible-Tabs
+	- [github/accessible-tabs](http://github.com/ginader/Accessible-Tabs)
 
 
 ## FAQ
@@ -59,7 +57,7 @@
 * The power of the Web is in its universality.
 * Access by everyone regardless of disability is an essential aspect.
 
-## Change log
+## Development
  
 ### 1.0
  Released April 24, 2015.
@@ -68,7 +66,8 @@
 ### 2.0
  Released November 26, 2015. Tested by WordPress Theme Standards
  
- Other release notes are in 'assets/docs/' library. 
+### Further release notes are in 'assets/docs/' library.
+
  
  
 ## Special Acknowledgement
