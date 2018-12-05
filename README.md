@@ -31,6 +31,7 @@ This is one of the few themes which are focusing on universal access that is acc
 ### Why it is important that your theme should be accessible by all kind of people? 
 Tim Berners-Lee said:
 > The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.
+
 Accessibility is a quality mark for a webpage. All user can use it easier.
 
 ## Changelog
