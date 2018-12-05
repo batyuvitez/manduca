@@ -2,13 +2,13 @@
 
 
 ## Important
-There is no customizer in this theme. You should use Manduca with child theme in order to create individual design and setup accessibility features. 
+There is only a very basic customizer in this theme. You are encouraged to use Manduca with child theme in order to create individual design and setup accessibility features. 
 
 ## Key features
-* This is suitable for Hungarian language sites: it has special Hungarian functions and the translation is kept up-to-date.
-* Suitable for sites want to comply with ISO/IEC 40500:2012 (WCAG).
-* Tested expansivel with differnt browsers and assistive technology.
-* Focus snail to improve focus changes for visualy impairment people.
+* This is suitable for *Hungarian language sites*: it has special Hungarian functions and the translation is kept up-to-date.
+* Suitable for sites want to comply with *ISO/IEC 40500:2012 (WCAG)*.
+* Tested in comprehensive manner: very differnt OS, browsers and assistive technologies.
+* Focus snail to improve focus changes for people uses keyboard rather than mouse.
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
