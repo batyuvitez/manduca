@@ -20,20 +20,10 @@ In case of notice any bugs or failure, please contact me: Zsolt Edelényi (ezs@w
 
 ## Copyright and licencing information
 This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
-
-### Focus Snake
-    * licence: MIT 
-    * [github/focus-snail](https://github.com/NV/focus-snail)
-### Accessible Megamenu Copyright © 2013 Adobe Systems Incorporated.
-	* licence: Apache License 2.0 
-    * [github/accessible-mega-menu](https://github.com/adobe-accessibility/Accessible-Mega-Menu)
-### Smart underline
-    * licence: MIT
-	* [gtihub/Smartunderline](https://github.com/EagerIO/SmartUnderline)
-### Accessible tabs
-	* Licence: MIT & GPL
-	* [github/accessible-tabs](http://github.com/ginader/Accessible-Tabs)
-
+* Focus Snake <https://github.com/NV/focus-snail> : licence: MIT 
+* Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 
+* Smart underline <https://github.com/EagerIO/SmartUnderline> licence: MIT
+* Accessible tabs <http://github.com/ginader/Accessible-Tabs>  Licence: MIT & GPL
 
 ## FAQ
 ### Why you developed a new theme if there is so many professional ones on the web?
