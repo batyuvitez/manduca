@@ -5,7 +5,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 ## Demo 
-    Hungarian: http://www.xn--akadlymentes-wordpress-sablon-jnc.hu/
+    You can check this theme here:
+    http://www.xn--akadlymentes-wordpress-sablon-jnc.hu
 
 ## Important
     This theme is write by a Hungarian developer. It has special Hungarian functions. Also, the translation is kept up-to-date.
@@ -54,11 +55,13 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 	- https://github.com/adobe-accessibility/Accessible-Mega-Menu/
 	- licensed under the Apache License, Version 2.0 (the “License”);
 4. Smart undelrine
-	-https://github.com/EagerIO/SmartUnderline
-	- Licence: MIT
+    - Licence: MIT
+	- https://github.com/EagerIO/SmartUnderline
+	
 5. Accessible tabs
-	-http://github.com/ginader/Accessible-Tabs
 	- Licence: MIT & GPL
+	- http://github.com/ginader/Accessible-Tabs
+
 
 ## FAQ
 
@@ -83,6 +86,9 @@ Tim Berners-Lee said:
  
 ## Special Acknowledgement
 
-I wish to convey special thanks to my wife: Nóra and friends: János and Áron who tested my themes many times. They gave me so many feedback on my work and helped me to improve Manduca. 
-I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times,  and contributed to form a messy theme to a professional one.
-
+    I wish to convey special thanks to my wife: Nóra.
+    Thank you  for János Hosszú.
+    Thank you for Áron Ócsváry, who also contributed to the development. 
+    I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times,  and contributed to form a messy theme to a professional one.
+    Special Thanks to Gábor Hegedűs and his friends, who is my most sensitive and very patient tester. 
+    And the most importand. Thanks for Jesus who was the most important supporter of my work. 
