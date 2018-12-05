@@ -1,26 +1,27 @@
 # Manduca WordPress Theme - focus on accessibility
-Contributors: 
-- [Zsolt Edelényi] (http://www.akadálymentes-honlap.hu) - edelenyi.zsolt@akadalymentes-honlap.hu
-- [Áron Ócsvári] (http://www.oaron.hu) - oaron1@gmail.com
-
-Requires at least: WordPress 3.5
 
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Image licence: http://www.w3.org/WAI/WCAG2-Conformance
+## Demo 
+    Hungarian: http://www.xn--akadlymentes-wordpress-sablon-jnc.hu/
 
-Originated from  Hungarian. Hungarian description and po file included.
-Further reading in Hungarian: http://www.xn--akadlymentes-wordpress-sablon-jnc.hu/
-
+## Important
+    This theme is write by a Hungarian developer. It has special Hungarian functions. Also, the translation is kept up-to-date.
+    It is going to be the leading theme on focusing accessibility.
+    This includes the security, optimalization of code, speed and other qualities as well.    
+    Manduca is not going to be an independent trendy theme.
+    It should be used with child theme, or as a skeleton of your theme.
+    There are lots of accessiblilty features in it, which can be used.
 
 ## Description
-    This theme is focusing on accessibility (or universal access) by the wildest range of users. 
-    It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.). 
-    In addition, there are features to support even more the impaired users of the web. 
+    At the very begining, Manduca based on most popular and undoubtly best WordPress theme: 2012
+	This theme is focusing on accessibility by the wildest range of users.
+	This is called defined as universal access as well. It should uses by websites, which wants to comply with WEB content accessiblilty guidelines (WCAG 2.0.).
+	In addition, there are features to support even more the impaired users of the web. 
 
-## Main features
+## Key features
 
     - Responsive of course,
     - WAI ARIA used for screen-reader users.
@@ -29,7 +30,7 @@ Further reading in Hungarian: http://www.xn--akadlymentes-wordpress-sablon-jnc.h
     - Microfomats
     - Focus snail to improve focus changes for visualy impairment people,
     - Tested with all kind of screen-readers used in Hungary
-    - HTML and CSS code is shortened in order people with slower internet bandwith can use effectively. 
+    - HTML and CSS code is shortened in order peoplw with slower internet bandwith can use effectively. 
 
 ## Installation
 
@@ -49,9 +50,15 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 2. Focus Snake
     - Code under MIT Licence
     - https://github.com/NV/focus-snail
-
-Manduca WordPress Theme, Copyright 2015 Zsolt Edelényi 
-Manduca is Distributed under the terms of the GNU GPL
+3. Accessible Megamenu Copyright © 2013 Adobe Systems Incorporated.
+	- https://github.com/adobe-accessibility/Accessible-Mega-Menu/
+	- licensed under the Apache License, Version 2.0 (the “License”);
+4. Smart undelrine
+	-https://github.com/EagerIO/SmartUnderline
+	- Licence: MIT
+5. Accessible tabs
+	-http://github.com/ginader/Accessible-Tabs
+	- Licence: MIT & GPL
 
 ## FAQ
 
@@ -71,7 +78,7 @@ Tim Berners-Lee said:
 ### 2.0
  Released November 26, 2015. Tested by WordPress Theme Standards
  
- All release notes are included in /docs library.
+ Other release notes are in 'assets/docs/' library. 
  
  
 ## Special Acknowledgement

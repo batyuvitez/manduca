@@ -18,7 +18,6 @@ Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
 ==      IMPORTANT         ==
 ============================
 
-Manduca is currently under strong development.
 It is going to be the leading theme on focusing accessibility.
 This includes the security, optimalization of code, speed and other qualities as well.
 
@@ -26,8 +25,7 @@ Manduca is not going to be an independent trendy theme.
 It should be used with child theme, or as a skeleton of your theme.
 There are lots of accessiblilty features in it, which can be used.
 
-Changelog/release notes are in details breakdown by years in release-notes files. 
-( e.g. release-notes-2017.txt )
+Changelog/release notes are in details in /assets/docs' library. 
 
 
 ============================
