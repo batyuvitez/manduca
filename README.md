@@ -29,7 +29,9 @@ This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Othe
 ### Why you developed a new theme if there is so many professional ones on the web?
 This is one of the few themes which are focusing on universal access that is accessibility. In addition, this theme includes Hungarian translation and readme, which is also unique. 
 ### Why it is important that your theme should be accessible by all kind of people? 
-Tim Berners-Lee said: The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.
+Tim Berners-Lee said:
+> The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.
+Accessibility is a quality mark for a webpage. All user can use it easier.
 
 ## Changelog
  
