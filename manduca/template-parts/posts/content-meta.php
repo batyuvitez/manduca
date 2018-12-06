@@ -9,7 +9,7 @@
 
 $meta_generator = new Meta_Tag_Generators;
 $list_item_mask 	= '<li>%s<span>%s : </span>%s</li>';
-//$utility_text .= '<li>' .manduca_get_svg( array( 'icon' => 'calendar' ) ) . '<span> ' .__( 'Entry date', 'manduca' ) .':</span> ' . $date .'</li>';
+
 $utility_text 	= sprintf(
 							$list_item_mask,
 							manduca_get_svg( array( 'icon' => 'calendar' ) ) ,
@@ -23,12 +23,12 @@ if( get_the_date() !== get_the_modified_date() ) {
 							$list_item_mask,
 							manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
 							//translators: Last modification of post - in the post meta
-							 __( 'Last revision:', 'manduca' ),
+							 __( 'Last revision', 'manduca' ),
 							 $meta_generator->get_modified_date()
 						);				
 }
 
-//$utility_text .= '<li>' .manduca_get_svg( array( 'icon' => 'author' ) ) . '<span> ' .__( 'Author', 'manduca' ) .':</span> ' . $author .'</li>';
+
 $utility_text 	.= sprintf(
 							$list_item_mask,
 							manduca_get_svg( array( 'icon' => 'author' ) ),
@@ -38,7 +38,7 @@ $utility_text 	.= sprintf(
 						);				
 
 if ( has_category() ) {
-	//$utility_text .='<li>' .manduca_get_svg( array( 'icon' => 'folder-open' ) ) . '<span> ' .__( 'Category', 'manduca' ) .':</span> ' .$categories_list .'</li>';
+
 	$utility_text 	.= sprintf(
 							$list_item_mask,
 							manduca_get_svg( array( 'icon' => 'folder-open' ) ),
@@ -49,7 +49,7 @@ if ( has_category() ) {
 }
 
 if ( has_tag()) {
-	//$utility_text .= '<li>' .manduca_get_svg( array( 'icon' => 'tags' ) ) . '<span> '. __( 'Tags', 'manduca' ) .':</span> ' .$tag_list .'</li>';
+
 	$utility_text 	.= sprintf(
 							$list_item_mask,
 							manduca_get_svg( array( 'icon' => 'tags' ) ),
@@ -60,7 +60,7 @@ if ( has_tag()) {
 }
 
 $meta_header='<h2 class="screen-reader-text">'. __( 'Post meta', 'manduca' ) .'</h2>';
-printf( '<div>%s<ul>%s</ul></div>',
+printf( '<div class="metatags">%s<ul>%s</ul></div>',
 					$meta_header,
 					$utility_text
 					);

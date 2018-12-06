@@ -30,10 +30,8 @@
             if( event.target.tagName.toLowerCase() === 'svg' ) {
                 accordionHeader = $( event.target ).parent();
             }
-            if( event.target.tagName.toLowerCase() === 'use') {
-                accordionHeader = $( event.target ).parent().parent();
-            }
-            if( event.target.tagName.toLowerCase() === 'h2') {
+            
+            if( event.target.tagName.toLowerCase() ===  manducaAccordionArgs.header) {
                 accordionHeader = $( event.target );
             }
             var accordionBody = accordionHeader.next();

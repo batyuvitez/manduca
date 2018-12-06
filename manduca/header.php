@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
-<!-- Manduca - accessible theme -->
+<!-- Manduca <?php echo ( is_child_theme() )? wp_get_theme()->parent()->Version : wp_get_theme()->Version ; ?> - focus on accessibility  -->
 </head>
 <?php
 	/*
@@ -67,7 +67,7 @@
 						
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 						
-						<?php get_template_part( '/template-parts/header/searchform' ); ?>
+					
 					
 					</header>
 				</div>
@@ -75,6 +75,8 @@
 					<?php get_template_part( '/template-parts/header/headerimage' ); ?>
 					
 					<?php get_template_part( '/template-parts/header/menu' ); ?>
+					
+					<?php get_template_part( '/template-parts/header/searchform' ); ?>
 				
 					
 			</div>
@@ -83,5 +85,5 @@
 					
 					<?php get_template_part( '/template-parts/header/breadcrumb' , 'template' ); ?>
 					
-					<div id="primary" class="site-content">
+					<div id="primary" accesskey="s"class="site-content">
 						<main id="content">

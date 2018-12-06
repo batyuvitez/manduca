@@ -2,8 +2,9 @@
 /**
  * The template for displaying date archive pages
  *
- * @ Theme: Manduca - focus on accessibility
- * @ Since 1.0
+ * @author Zsolt Edelényi <ezs@web25.hu>
+ * @theme Manduca - focus on accessibility
+ * @since 1.0
  */
 ?>
 
@@ -13,11 +14,11 @@
 			<header>
 				<h1><?php
 					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'manduca' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Daily Archives: %s', 'manduca' ), '<span>' . get_the_date( 'Y. F j.' ) . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'manduca' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Monthly Archives: %s', 'manduca' ), '<span>' . get_the_date( 'Y. F' ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'manduca' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Yearly Archives: %s', 'manduca' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 					else :
 						_e( 'Archives', 'manduca' );
 					endif;

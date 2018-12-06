@@ -8,7 +8,6 @@
  * Use in child theme!
  **/
 
-
  class Hungarian_Contents {
 
 	
@@ -34,5 +33,32 @@
 	   }
 	   return $article;
 	}
+	
+	/*
+    * Calculate and wordsDifference of today and a given date in Hungarian. 
+	 *
+    *@see https://wordpress.stackexchange.com/questions/163263/relative-time-how-to-calculate-difference-beween-post-publish-date-and-current
+	 *
+	 *@param string $unix_timestamp : this is the reference to calculate the difference with. 
+	 *@return  string HTML markup of time difference
+	 * */
+	public static function get_date_difference( $unix_timestamp ){
+		 $date_diff =  human_time_diff( $unix_timestamp, current_time( 'timestamp' ) ) ;
+		 if ( get_locale() ==='hu_HU' ) {
+			$replace = array(
+			 'év'  		=> 'éve',
+			 'hét'		=> 'hete',
+			 'hónappal'	=> 'hónapja',
+			 'óra' 		=> 'órája',
+			 'órával' 	=> 'órája',
+			 'nappal'   => 'napja',
+			 'évevel'	=> 'évvel'
+			);
+			$date_diff = strtr( $date_diff , $replace );
+		 }
+	   return $date_diff;
+	}
+	
+	
+	
  }
-?>

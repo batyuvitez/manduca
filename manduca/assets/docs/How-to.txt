@@ -12,4 +12,7 @@ How to
       
 ... change breadcrumb parameters
       - copy breadcrumb-template file to the child theme's template-parts/header directory and change the parameters in it.
-      - or - if you are familiar with PHP programming: extend the breadcrumb class. 
+      - or - if you are familiar with PHP programming: extend the breadcrumb class.
+
+... add access key details:
+      define MANDUCA_ACCESS_KES global with an url pointing to the details. 

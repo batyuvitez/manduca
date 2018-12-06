@@ -1,19 +1,9 @@
-Manduca - WordPress Theme - focus on accessibility
-    Copyright (C) 2018 Zsolt Edelényi (ezs@web25.hu)
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program (see: assets/docs/licence).  If not, see <https://www.gnu.org/licenses/>.        
-
+==
+Theme: Manduca - focus on accessibility
+Release notes
+Year: 2018
+==
+        
 17.12.1
     3 January, 2017
         - Breadcrumb: show or hide hierarchical terms for post types
@@ -445,11 +435,12 @@ Manduca 18.7
 ==========================================================================
 18.11.1
     30 November, 2018
-    -   add Manduca version to headar (apperas as HTML comment);
+    -   add Manduca version to header (apperas as HTML comment);
     -remove namespace from hungarian content (focus on compatibility with previous versions)
 
 18.11.2
     4 December 2018
+     - tiny bus
     - add licence to docs.
     - modify Hungarian and English readme.
     

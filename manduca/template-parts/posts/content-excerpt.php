@@ -11,9 +11,9 @@
  
 ?>
 
-<?php $nav = Manduca_Template_Functions::post_navigation(); ?>
 
-<?php echo $nav; ?>
+
+
 
 <div class="excerpt-wrapper">
 
@@ -34,18 +34,8 @@
 			<?php endif; ?>
 			 
 				
-			<div class="entry-content">
-			
-			<?php If( has_excerpt() === true ) : ?>
-				<?php $post = get_post(); ?>
-				<?php echo $post->post_excerpt; ?>
-			<?php endif; ?>
-			<?php if( strpos( get_the_content(), 'more-link' ) === false ) : ?>
-					<?php the_excerpt(); ?> 
-			<?php else:  ?>
-					<?php the_content(); ?> 
-			<?php endif; ?>
-			
+			<div class="entry-content">		
+					<?php echo Manduca_Template_Functions::get_the_excerpt(); ?>
 			</div>
 			
 			<div class="clearfix-content"></div>
@@ -56,4 +46,4 @@
 
 </div>
 
-<?php echo $nav; ?>
+<?php echo Manduca_Template_Functions::post_navigation(); ?>

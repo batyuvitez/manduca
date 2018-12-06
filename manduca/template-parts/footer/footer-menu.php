@@ -5,19 +5,28 @@
  * &since 17.3
  **/
 
-    $menu = wp_nav_menu(array (
-            'echo' => false,
-            'fallback_cb' => '__return_false',
-            'container'       	=> false,
-            'theme_location' 	=> 'footer',
-            'menu_class' 		=> 'footer-menu',
-            'depth'             => 1    //only one level should be included in footer menu
-        ) );
     
-    if ( ! empty ( $menu ) ) {
-        echo '<nav id="footer-navigation" class="footer-navigation">' .$menu .'</nav>';
-    }
-
-?>
+    // Translators: name of the footer menu for screen-reader users. 
+    $menu_name = __( 'Footer navigation', 'manduca' );
+    ?>
+    
+    <?php if ( has_nav_menu( 'footer' ) ) : ?>
         
+        <nav id="footer-navigation" class="footer-navigation" >
+            <h3 class="screen-reader-text"><?php echo $menu_name; ?></h3>       
+            
+            
+            <?php
+                echo wp_nav_menu(array (
+                    'echo' => false,
+                    'fallback_cb' => '__return_false',
+                    'container'       	=> false,
+                    'theme_location' 	=> 'footer',
+                    'menu_class' 		=> 'footer-menu',
+                    'depth'             => 1    //only one level should be included in footer menu
+                ) );
+            ?>
 
+        </nav>
+    
+    <?php endif; ?>

@@ -1,22 +1,30 @@
 /*
-Theme Name: manduca
+Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
-Author URI: https://www.akadálymentes-honlap.hu
-Version: 18.8.3
+Author URI: http://www.web25.hu
+Version: 18.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: New generation theme to start build an ISO/IEC 40500:2012 ( i.e. WCAG 2.0 )  compliant accessible website. Add child theme with individual design. Special features for Hungarian users. PHP 7 compatible.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
+Commented css: /assets/css/style.original.css 
 **/
 
-
+/*Color scheme:
+ *
+ *red: 9E430E
+ *blue with white: 21759B,
+ *blue with black: DAF2FF,
+ *grey with dark: F3F3F5
+ *https://www.colourlovers.com/palette/3741887/Manduca
+ **/
 
 /* Reset and set defaults
 -------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -166,6 +174,9 @@ a.page-numbers.prev,
 .site select:active {
 	outline: 4px solid #9E430E;
 	outline-offset: 2px 
+}
+.header-bar .site-title > a:focus {
+	margin-left: 7px;  /* TO DISPLAY THE LEFT SIDE OF OUTLINE. &SINCE 18.10.3*/
 }
 /* Hover needs lighter sign. since &17.9.3 */
 .site a:hover,
@@ -548,7 +559,12 @@ video {
 
 
 
-/* post pagination -*/
+/* post pagination @since 18.10.17-*/
+.site .pagination h4 {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
 
 .pagination span,
 .pagination a {
@@ -572,7 +588,6 @@ a.page-numbers.next,
 a.page-numbers.prev {
 	position: relative;
 	top: 0.5rem;
-	padding: 0;
 	height: 2.07rem; /* it is necessary to display the hover outline */
 }
 
@@ -583,15 +598,40 @@ a.page-numbers.next {
 a.page-numbers.prev {
 	margin-right: 2rem;
 }
+/* Tooltip  @since 18.10.11 */
+a.page-numbers.prev .tooltip,
+a.page-numbers.next .tooltip {
+	display: none;
+}
+
+a.page-numbers.prev:hover .tooltip,
+a.page-numbers.next:hover .tooltip,
+a.page-numbers.prev:focus .tooltip,
+a.page-numbers.next:focus .tooltip{
+    display: inline-block;
+	white-space: nowrap;
+    text-align: center;
+	font-size: 75%;
+	color: black;
+    padding: 3px 7px;
+	background-color: #DAF2FF;
+    position: absolute;
+	top: -96%;
+    left: 0;
+}
+
+
 
 .site-content nav {
 	clear: both;
 	overflow: hidden;
-	margin: 1rem 0;
+	padding: 1rem 0;
 }
  main > nav.nav-single {
         margin-top: 0;
     }
+
+
 
 /* Image navigation */
 .image-navigation {
@@ -686,6 +726,13 @@ body .site,
 Updeted in 17.9.3
 https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css
 */
+/* #skip links inserted in 18.10.14 */
+#skip-links {
+	position: relative;
+}
+#skip-links ul {
+	list-style: none;
+}
 .assistive-text,
 .screen-reader-text,
 .skip-link {
@@ -799,9 +846,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links
 	font-size: 1.5em;
 	text-align: center;
 }
-.header-bar > header > a.site-title {
+.header-bar .site-title > a {
 	text-decoration: none;
-	display: block;
 }
 
 /* Breadcrumb */
@@ -1166,8 +1212,6 @@ transform: rotate(180deg);
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 	overflow: auto;
-	padding: 3px 6px;
-	padding: 0.214rem 0.428rem;
 	background-color: #e3e6e8;
 }
 .site pre {
@@ -1191,7 +1235,24 @@ transform: rotate(180deg);
 	font-weight: bolder;
 	line-height: 1.2;
 }
-
+.site kbd {   /* since @18.10.4 from wikipedia css */
+	    border: 1px solid #aaa;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+    background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
+    color: #000;
+    padding: 0.1em 0.3em;
+    font-family: inherit;
+    font-size: 0.85em;
+}
 
 /* defaults headings */
 .site h1 {
@@ -1200,7 +1261,11 @@ transform: rotate(180deg);
 	margin: 0 0 1em;
 	text-align: center;
 	clear: both;
-} 
+}
+
+.font-size-3 h1 {
+	font-size: 1.4em;
+}
 .site h2 {
 	font-size: 1.236em;
 	line-height: 1.25;
@@ -1692,7 +1757,7 @@ a.comment-edit-link {
 .site svg {
 	width: 16px;
 	height: 16px;
-	margin: 3px;
+	margin: 0 3px;
 }
 
 
@@ -1722,7 +1787,6 @@ svg.icon-extlink {
 }
 
 .reply svg,
-.page-numbers svg,
 .menu-toggle svg,
 .more-link svg,
 svg.search-icon,
@@ -1732,10 +1796,12 @@ svg.search-icon,
 .info-container svg{
 	fill: white;	
 }
-.page-numbers svg {
+.page-numbers.prev svg,
+.page-numbers.next svg{
 	background-color: #164e68;
 	width: 28px;
 	height: 28px;
+	fill: white;	
 }
 
 
@@ -1756,10 +1822,6 @@ svg.search-icon,
 -------------------------------------------------------------- */
 
 
-.toolbar-buttons button {
-	outline: 1px black solid;
-	outline-offset: -1px;
-}
 
 /*high-cont	rast-1: low contrast pastel background easy to read in midnight*/
 .high-contrast-1,
@@ -1883,7 +1945,8 @@ high-contrast-3: high contrast: yellow background, dark letters.
 .high-contrast-3 .footer-wrapper,
 .high-contrast-3 .toolbar-buttons,
 .high-contrast-3 .more-link,
-.high-contrast-3 .page-numbers svg,
+.high-contrast-3 .next.page-numbers svg,
+.high-contrast-3 .prev.page-numbers svg,
 .high-contrast-3 .toolbar-label,
 .toolbar-buttons #high-contrast-3 {
     background: #ff0 !important;
@@ -2022,19 +2085,19 @@ high-contrast-3: high contrast: yellow background, dark letters.
 	margin: 0 7px;
 }
 
-.toolbar-label {
-    font-size: calc(0.4em + 3vw);
-	padding-right: 7px;
-}
+body.font-size-2 .toolbar-label,
+body.font-size-3 .toolbar-label {
+ display: none;
+ }
 #toolbar-buttons button {
-    margin-left:0.5rem;
-    padding: 0.25rem 0.5rem;
-	font-size: calc(0.4em + 3vw);
+    margin-left: 3px;
+    padding: 7px 3px;
+	font-size: 0.8em;
 }
  
 #toolbar-buttons td {
 	border: none;
-	padding: 0.25em 0.5em;
+	padding: 3px;
 }
 
     
@@ -2049,7 +2112,7 @@ body.high-contrast-3 #high-contrast-3,
 body.font-size-0 #font-size-0,
 body.font-size-1 #font-size-1,
 body.font-size-2 #font-size-2{
-    border: 5px white solid;  /* since @18.8.2 */
+    border: 5px #333333 solid;  /* since @18.8.2 */
 }
 
 /*mobil appearance */
@@ -2084,6 +2147,9 @@ body.font-size-2 #font-size-2{
 .button-container li {
     list-style: none;
 }
+
+
+
 
 
  
@@ -2701,6 +2767,7 @@ body.font-size-2 #font-size-2{
 	
 	body .site {
 		max-width: 1280px;
+		margin: 0 auto;
 	}
 	.widget-searchform #s {
 		width: 17rem;

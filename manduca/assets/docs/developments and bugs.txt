@@ -9,7 +9,7 @@ Tervezett fejlesztések , hibák.
 - Nem működik a lábrész customizer, 
 - a kép leírása is legyen screen-reader-text el az oldalon a galériában
 - template-eket visszarendezni <?php-ra
-- Böngésző nevét beletenní a body class-ba (most nem is tesz bele semmit !)
+- Böngésző nevét beletenní a body class-ba (most nem is tesz bele semmit !)                                         | 18.10.12-ben működik.
 - Customizer letiltható legyen, hogy a js manduca script 92. sorára ne legyen szükség
 - oldaltérkép: rejtett és jelszóval védett oldalak ne legyenek benne. filter a paraméterekhez
 - kivenni és pluginba tenni a klikkelhető widgetcímet                                                               | 18.9.3
@@ -18,3 +18,11 @@ Tervezett fejlesztések , hibák.
 - footer menóü osztálya miért ékezetes? (menü registrálásánál nézd)
 - a namespece bevezetése és calssloader-rel használva. (a classloader ne legyen namespace-ben)
 - firefox kiírja. hogy lelassítja az oldalt. miért??
+- style.css:
+        -az eredeti betűméret legyen mindig talaptlan.
+        - ellenőrizni, hogy az olvasási beállítások megfeleők legyeenk. Különösen a fejléc!             
+        - 4k-ra is előkészítieni
+- Modaal (https://github.com/humaan/Modaal ) integrálása
+- a Manduca_Template_Function:post_navigation() átnézése és optimalzálása
+- a kenyérmorzsába beletenni a többrészes bejegyzés sorszámát.
+- a classloader a könyvtárakhoz hozzárendeljen namespace-t is. 

@@ -189,13 +189,22 @@ abstract class Breadcrumb {
 					if ( ! empty( $taxonomies ) ) {
 						$taxonomy = $taxonomies[0]->name; // Get the first taxonomy
 						$terms = get_the_terms( $_id, $taxonomy );
-
+						$terms = array_values( $terms );
 						if ( ! empty( $terms ) ) {
-							$terms = array_values( $terms );
-							$term = $terms[0]; // Get the first term
-
-							if ( 0 != $term->parent )
+							$term = $terms[0];
+							
+							// Show the post's 'Primary' category, if this Yoast feature is available, & one is set
+							//since 18.10.17
+							if ( 'category' == $taxonomy && class_exists('WPSEO_Primary_Term') ) {
+								$wpseo_primary_term = new WPSEO_Primary_Term( $taxonomy , get_the_id() );
+								$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+								if( $wpseo_primary_term ) { 
+									$term = get_term( $wpseo_primary_term );
+								}
+							}
+							if ( 0 != $term->parent ) {
 								$this->generate_tax_parents( $term->term_id, $taxonomy );
+							}
 							$this->breadcrumb["archive_{$taxonomy}"] = $this->template( array(
 								'link' => get_term_link( $term->slug, $taxonomy ),
 								'title' => $term->name

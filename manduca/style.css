@@ -205,24 +205,6 @@ a.page-numbers.prev,
 	padding: 3.5px;
 }
 
-/* If admin bar displayed, top-bar is positioned below is */
-
-body.admin-bar .site {
-	position: static;
-}
-.admin-bar .header-bar{
-	position: relative;
-}
-
-.admin-bar .menu-toggle {
-	top: 62px;
-}
-.admin-bar .toolbar-buttons-open {
-	top: -46px;
-}
-.admin-bar .header-searchform {
-	top: -48px;
-}
 .entry-content .search-submit {  /* This is not inline, need correction */
 	position: relative;
 	top: 5px;
@@ -2571,7 +2553,8 @@ body.font-size-2 #font-size-2{
 	}
 	
 	.widget-area	{
-		width: 33%;
+		width: 32%;
+		margin-left: 2%;
 	}
 	
 	
@@ -2651,8 +2634,9 @@ body.font-size-2 #font-size-2{
 	.sub-nav {
 		position: absolute;
 	}
-	.sub-nav ul {
+.site ul	.sub-nav ul {
 		margin: 0;
+		padding: 0;
 	}
 
 

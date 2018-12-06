@@ -25,7 +25,7 @@
 			</header>
 
 			
-			<?php get_template_part( 'template-parts/posts/content', 'search' ); ?>
+			<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
 
 		<?php else : ?>
 

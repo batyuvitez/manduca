@@ -19,7 +19,7 @@
 					
 	
 				<?php if ( is_single() ) :
-					printf( '<h1>%2$s</h1>',
+					printf( '<h1 id="post-%1$s-title">%2$s</h1>',
 						   get_the_ID(),
 						   get_the_title()
 						  );
@@ -27,18 +27,21 @@
 					elseif( is_search() ) :
 					$title = Search_Functions::emphasize( get_the_title(), get_search_query() );
 
-					printf( '<h2 class="entry-title"><a href="%1$s" rel="bookmark">%2$s</a></h2>',
+					printf( '<h2 class="entry-title"><a  id="post-%3$s-title" href="%1$s" rel="bookmark">%2$s</a></h2>',
 						   esc_url( get_permalink() ),
-						   $title
+						   $title,
+						   get_the_ID()
 						   );
 					
 					else : 
-					printf( '<h2><a href="%1$s" class="underlined" rel="bookmark">%3$s</a></h2>',
+					printf( '<h2 class="entry-title"><a href="%1$s" id="post-%2$s-title" class="underlined" rel="bookmark">%3$s</a></h2>',
 						   get_permalink(),
 						   get_the_ID(),
 						   get_the_title()
 						  );
 				endif; // is_single() ?>
+				
+				<?php do_action( 'manduca_post_subtitle' ); ?>
 					
 			</div>
 		</div>

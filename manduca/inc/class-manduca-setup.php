@@ -29,9 +29,19 @@ class Manduca_Setup {
 		// remove built-in image sizes and add optimized image sizes and names. 
 		$this->image_settings();
 		
-		// Link function (add svg, aria etc. )
-		$link_function = new Link_Functions();
+		/* Link function (add svg, aria etc. )
+		 * Filter to disable link function in child theme since@18.10.6
+		 * */
+		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
+		if( $link_function_enable ) {	
+			$link_function = new \Manduca\Link_Functions();
+		}
 		
+		// Link function (add svg, aria etc. )
+		$template_functions= new Manduca_Template_Functions();
+		
+		//Filter page title
+		new \Manduca\Manduca_Filter_Title;
 		
 		// Registger sidebar		
 		add_action( 'widgets_init', array( $this, 'sidebar')  );
@@ -91,8 +101,6 @@ class Manduca_Setup {
 			//add aria-current="page to the current menu item. 
 			$accessible_menu = new Accessible_Menu;
 			
-			// role="navigation" and h2 template removed from WP core's markup 
-			add_filter( 'navigation_markup_template', array( $this, 'correct_wp_markup' ), 10, 2);
 			
 			// Eliminate W3Cvalidation warnings and shorten html file. 
 			add_filter('style_loader_tag', array( $this, 'codeless_remove_type_attr' ) , 10, 2);
@@ -125,7 +133,9 @@ class Manduca_Setup {
 		add_theme_support( 'title-tag' );
 		
 		//Register navigation menus
+		//translators: name of main menu for admin and for screen reader users also
 		register_nav_menu( 'primary', __( 'Main navigation', 'manduca' ) );
+		//translators: name of menu in footer for admin and screen reader users also
 		register_nav_menu( 'footer', __( 'Footer navigation', 'manduca' ) );
 		
 		//Makes translation-ready
@@ -281,12 +291,6 @@ class Manduca_Setup {
 			$args['show_home'] = true;
 		}
 		return $args;
-	}
-	
-		
-	function correct_wp_markup( $template, $class ) {	
-		$template='<nav class="navigation %1$s"><div class="nav-links">%3$s</div></nav>';
-	   return $template;
 	}
 	
 	

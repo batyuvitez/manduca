@@ -63,24 +63,27 @@ class Manduca_Classloader {
      */
     public static function autoLoad( $class ) {
         $success = FALSE;
+        $filename = $class;
         // Check if it has namespace prefix
         if( false !== strpos( $class , '\\' ) ) {
-            /*In manduca, I do not use namespaces.
-            * I cut this branch out, because it leaded to conflicts with other autoloaders in plugins
-            * Since @18.8.1*/
-            return false;
-            
-            $namespaces= explode( '\\' , $class );
-            $filename = array_pop( ( array_slice( $namespaces  , -1 ) ) );
-            $filename = $filename .'.php';
+            $prefixes = array( 'Web25', 'Manduca' ); // autoload only this two namespaces.
+             // Does the class use the namespace prefix?
+            $catched = false;
+            foreach( $prefixes as $prefix ) {
+                $len = strlen($prefix);
+                if ( strncmp( $prefix, $class, $len) === 0) {
+                    $catched = true;
+                    break; 
+                }
+            }
+            if( !$catched ) return ; // no, move to the next registered autoloader
+            $namespaces = explode( '\\' , $class );
+            $filename   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
         }
-        else{
-            $filename = strtolower( $class );
-            $filename = str_replace( '_', '-' , $filename  );
-            $filename = 'class-' .$filename .'.php';
-        }
-        
-        
+        $filename = str_replace( '_', '-' , $filename );
+        $filename   =sprintf( 'class-%s.php',
+                              strtolower( $filename )
+                             );
         foreach (self::$lookup_directories as $start) {
             $file = $start . $filename;
             if (self::loadFile( $file ) ) {
