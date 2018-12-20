@@ -1,0 +1,52 @@
+This file is part of WordPress theme named Manduca - focus on accessibility.
+
+Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+
+********************************************************************************************
+
+
+How to ...
+
+
+... use collapsable paragraph template
+      - use <h2></h2> elements for titles of collapsable paragraph.
+      - Before first (h2) is not collapsable.
+
+... add new svg icons.
+      Use filter 'manduca_svg_icons' Input parameter is Manduca svg icons, and you can extend it with yours.
+      
+... change breadcrumb parameters
+      - copy breadcrumb-template file to the child theme's template-parts/header directory and change the parameters in it.
+      - or - if you are familiar with PHP programming: extend the breadcrumb class.
+
+... add access key details:
+      define MANDUCA_ACCESS_KES global with an url pointing to the details.
+      
+      
+... add accessible tabs to page.
+      - add new page
+      - select page tempalte named 'accessible tabs '
+      The html markup should be te following: 
+      <div class="tabs">
+         <h2>Tab #1 label</h2>
+         <div class="tabbody">
+            tab #1 content
+         </div>
+         <h2>Tab #2 label</h2>
+         <div class="tabbody">
+             tab #2 content
+         </div>
+      </div>
