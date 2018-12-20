@@ -3,7 +3,8 @@
  * Add accessible tabs scripts and style to the page
  *
  * This function should be added to footer when needed. 
- *	
+ *
+ *@see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
  */
 
   /*  This file is part of WordPress theme named Manduca - focus on accessibility.

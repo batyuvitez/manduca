@@ -28,3 +28,5 @@ Version number
                                                 This commit also inlcludes some files missed out from previous commit (i.e. belong to version 18.12)
    
    19 Dec 2018    'enhance accessible tabs'     Make accessible tabs more reliable by creating own template (previously used content-page.php).
+   
+   19 Dec 2018    'docs of accessible tabs'     Add How to documents to use accessible tabs

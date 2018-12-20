@@ -17,6 +17,9 @@ in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 
 ********************************************************************************************
 
+see also: https://github.com/batyuvitez/manduca/wiki/
+
+********************************************************************************************
 
 How to ...
 
@@ -36,17 +39,3 @@ How to ...
       define MANDUCA_ACCESS_KES global with an url pointing to the details.
       
       
-... add accessible tabs to page.
-      - add new page
-      - select page tempalte named 'accessible tabs '
-      The html markup should be te following: 
-      <div class="tabs">
-         <h2>Tab #1 label</h2>
-         <div class="tabbody">
-            tab #1 content
-         </div>
-         <h2>Tab #2 label</h2>
-         <div class="tabbody">
-             tab #2 content
-         </div>
-      </div>

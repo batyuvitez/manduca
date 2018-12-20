@@ -4,13 +4,7 @@
  *
  * Add accessible tabs to sitemap page
  *
- * How to use: <div class="tabs">
- *             <h2>Tab #1 label</h2>
- *             <div class="tabbody">tab #1 content</div>
- *             <h2>Tab #2 label</h2>
- *             <div class="tabbody">tab #2 content</div>
- *         </div>
- *
+ *@see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
  */
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
