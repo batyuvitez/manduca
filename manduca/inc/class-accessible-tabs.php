@@ -26,7 +26,7 @@
 
  class Accessible_Tabs{
 		  
-		  public function add_hooks_to_wp (){
+		  public function __construct (){
 					add_action( 'wp_footer', array(
 												   $this,
 												  'accessible_tabs_js' )

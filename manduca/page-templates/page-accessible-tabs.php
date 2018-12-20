@@ -30,24 +30,49 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+?>
+
+<?php new Accessible_Tabs; //hook JS to the html ?>
 
 
-// Insert scripts, css to footer.  
-$accessible_tabs = new Accessible_Tabs;
-$accessible_tabs->add_hooks_to_wp();
 
+<?php get_header(); ?> 
 
-get_header();
-
-	while ( have_posts() ) : the_post(); 
+	<?php  while ( have_posts() ) : the_post(); ?> 
 		
-        get_template_part( 'template-parts/pages/content', 'page' ); 
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					
-			//Add content after each page					
-			do_action( 'manduca_after_single_page' );
+					<header>
+							<h1><?php echo str_replace(' | ', '<br />', get_the_title() ); ?></h1>
+									
+						
+							<?php if ( has_post_thumbnail() ) :  ?>
+							
+								<div>
+									<?php the_post_thumbnail( 'post-size' ); ?>
+								</div>
 					
-			comments_template(); 
-			
-	endwhile; // end of the loop.
+							<?php endif; ?>
+						
+					</header>
+						
+							
+				<?php get_template_part( '/template-parts/postlink', 'edit' ) ;?>
 				
-get_footer();
+				<div class="tabs">
+					
+					<?php the_content(); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links">' .__( 'Pages',' manduca' ), 'after' => '</div>' ) ); ?>
+				
+				</div>
+				
+				<div class="clearfix-content"></div>
+				
+			</article>
+							
+			<?php do_action( 'manduca_after_single_page' ); ?> 
+					
+			
+	<?php endwhile; ?>
+				
+<?php get_footer(); ?>

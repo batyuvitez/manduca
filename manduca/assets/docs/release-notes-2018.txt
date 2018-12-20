@@ -473,9 +473,3 @@ Manduca 18.7
         - other tiny changes in css.
         
         
-version 19.1
-**************************************************************************
-18.12.1
-   19 Dec, 2018
-      -add GNU notices to the beggining of some files.
-      
