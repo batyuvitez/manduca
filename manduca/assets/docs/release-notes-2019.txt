@@ -30,3 +30,6 @@ Version number
    19 Dec 2018    'enhance accessible tabs'     Make accessible tabs more reliable by creating own template (previously used content-page.php).
    
    19 Dec 2018    'docs of accessible tabs'     Add How to documents to use accessible tabs
+   
+   19 Dec 2018    'clear accessible-tabs css'   Not use html elements ins selector, when class is given.
+                                                Also make compressed accessible-tab css (sliding-doors.css and sliding-doors.originals.css)
