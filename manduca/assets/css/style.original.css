@@ -3,23 +3,43 @@ Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: http://www.web25.hu
-Version: 18.11
+Version: 18.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: New generation theme to start build an ISO/IEC 40500:2012 ( i.e. WCAG 2.0 )  compliant accessible website. Add child theme with individual design. Special features for Hungarian users. PHP 7 compatible.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
-Commented css: /assets/css/style.original.css 
-**/
+Github: https://github.com/batyuvitez/manduca
+Commented css: /assets/css/style.original.css
+*/
 
-/*Color scheme:
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
+	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+	
+/*Color scheme of Manduca:
  *red: 9E430E
- *blue with white: 21759B,
- *blue with black: DAF2FF,
+ *dark blue with white: 21759B,
+ *light blue with black: DAF2FF,
  *grey with dark: F3F3F5
- *https://www.colourlovers.com/palette/3741887/Manduca
+ *
+ *@see: https://www.colourlovers.com/palette/3741887/Manduca
  **/
+
 
 /* Reset and set defaults
 -------------------------------------------------------------- */
@@ -200,24 +220,6 @@ a.page-numbers.prev,
 	padding: 3.5px;
 }
 
-/* If admin bar displayed, top-bar is positioned below is */
-
-body.admin-bar .site {
-	position: static;
-}
-.admin-bar .header-bar{
-	position: relative;
-}
-
-.admin-bar .menu-toggle {
-	top: 62px;
-}
-.admin-bar .toolbar-buttons-open {
-	top: -46px;
-}
-.admin-bar .header-searchform {
-	top: -48px;
-}
 .entry-content .search-submit {  /* This is not inline, need correction */
 	position: relative;
 	top: 5px;
@@ -723,8 +725,8 @@ body .site,
 
 
 /* Assistive text
-Updeted in 17.9.3
-https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css
+ *Updeted in 17.9.3
+ * https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css
 */
 /* #skip links inserted in 18.10.14 */
 #skip-links {
@@ -1028,14 +1030,11 @@ transform: rotate(180deg);
 	margin-top: 0;
 }
 .widget-area .widget {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-	margin-bottom: 14px;
-	padding-bottom: 14px;
+	margin-bottom: 1rem;
+	padding: 0 0.5rem 1rem;
 	word-wrap: break-word;
 	background-color: #fff;
+	
 }
 
 
@@ -1096,6 +1095,17 @@ transform: rotate(180deg);
  * This part is used in tiny mce stylesheet as well.
  **/
 
+/* this was disabled in media-query
+ * @since 18.12
+ * */
+.widget-area .widget,
+.site-content article {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
+}
 
 .site del {
 	color: #333;
@@ -1473,11 +1483,6 @@ img.aligncenter,
 }
 
 .site-content article {
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
 	position: relative; /* to position the edit link */
 }
 .site-content article .entry-content,
@@ -1832,7 +1837,7 @@ svg.search-icon,
 .high-contrast-1 .toolbar-buttons,
 .high-contrast-1 .more-link,
 .toolbar-buttons #high-contrast-1{
-    background-color: #eaeac8 !important;
+    background-color: #c6d17e !important;
     background-image: none;
     color: #808067 !important;
 	
@@ -1846,7 +1851,7 @@ svg.search-icon,
 .high-contrast-1 .site a:link:hover,
 .high-contrast-1 .site a:link:focus,
 .high-contrast-1 .site a:link:active {
-	background-color: #eaeac8 !important;
+	background-color: #c6d17e !important;
     background-image: none;
 	color: #4d99ff !important;
 	text-decoration: underline;
@@ -1861,7 +1866,7 @@ svg.search-icon,
 .high-contrast-1 .site-header-menu,
 .high-contrast-1 .site-header-menu li,
 .high-contrast-1 .site-header-menu li a {
-    background-color: #e8f1ad !important;
+    background-color: #c6d17e !important;
     background-image: none;
     color: #666652 !important;
 }
@@ -1889,7 +1894,7 @@ high-contrast-2: High contrast black background and yellow letters, blue links
 .high-contrast-2 .more-link,
 .toolbar-buttons #high-contrast-2 {
     background: #000  !important;
-    color: #ff0  !important;
+    color: #fff  !important;
     background-image: none !important;
 }
 
@@ -1899,7 +1904,7 @@ high-contrast-2: High contrast black background and yellow letters, blue links
 .high-contrast-2 .site a:visited {
 	background: #000  !important;
     background-image: none;
-	color: #14ffff !important;
+	color: #33dddd !important;
 	text-decoration: underline;
 	text-shadow: none !important;
 }
@@ -1922,7 +1927,7 @@ high-contrast-2: High contrast black background and yellow letters, blue links
 
 .high-contrast-2 .toolbar-buttons,
 .high-contrast-2 .widget-area .widget {
-	border: 3px #ffff00 solid;
+	border: 3px #33aaaa solid;
 	padding: 0 7px;
 }
 
@@ -1949,7 +1954,7 @@ high-contrast-3: high contrast: yellow background, dark letters.
 .high-contrast-3 .prev.page-numbers svg,
 .high-contrast-3 .toolbar-label,
 .toolbar-buttons #high-contrast-3 {
-    background: #ff0 !important;
+    background: #fff !important;
     color: #000 !important;
     background-image: none !important;
 }
@@ -1957,7 +1962,7 @@ high-contrast-3: high contrast: yellow background, dark letters.
 /* Links */
 .high-contrast-3 .site a:link,
 .high-contrast-3 .site a:visited {
-	background: #ff0 !important;
+	background: #fff !important;
     color: blue !important;
 	font-weight: bolder;
     background-image: none !important;
@@ -2197,6 +2202,14 @@ body.font-size-2 #font-size-2{
 	line-height: 1.64285; /* Golden rule*/
 	}
 
+	.widget-area .widget,
+	.site-content article {
+		-webkit-hyphens: none;
+		   -moz-hyphens: none;
+			-ms-hyphens: none;
+				hyphens: none;
+}
+
 	
 	/* Colors */
 	
@@ -2422,6 +2435,7 @@ body.font-size-2 #font-size-2{
 	}
 	.footer-navigation ul{
 		text-align: right;
+		margin: 0;
 	}
 	.footer-navigation ul li{
 		list-style-type: none;
@@ -2566,7 +2580,8 @@ body.font-size-2 #font-size-2{
 	}
 	
 	.widget-area	{
-		width: 33%;
+		width: 32%;
+		margin-left: 2%;
 	}
 	
 	
@@ -2646,8 +2661,9 @@ body.font-size-2 #font-size-2{
 	.sub-nav {
 		position: absolute;
 	}
-	.sub-nav ul {
+.site ul	.sub-nav ul {
 		margin: 0;
+		padding: 0;
 	}
 
 
@@ -2733,8 +2749,10 @@ body.font-size-2 #font-size-2{
 		width: 17rem;
 	}
 	
-	.breadcrumb {
+	.breadcrumb,
+	.breadcrumb ul {
 		margin-left: 0;
+		padding-left: 0; /* since @18.12 */
 	}
 	
 	.site-header {
@@ -2818,6 +2836,56 @@ body.font-size-2 #font-size-2{
 	}
 	
 }
+
+
+
+
+
+@media screen and (min-width: 1590px ){
+	/*@since 18.9 */
+	#page {
+		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
+	    min-width: 1590px;
+        max-width: none;
+		padding: 1em;
+    }
+	#masthead {
+		width: 1280px;
+		margin: 1em auto;
+	}
+    #primary {
+        width: 1206px;
+        margin: 0;
+		padding: 0;
+    }
+	.excerpt-wrapper,
+	.single #content .entry-content,
+	.page #content .entry-content{
+		column-count: 2;
+        column-rule: 1px dotted #505050;
+		column-gap: 56px;
+	}
+	article > header {
+		text-align: center;
+	}
+    #secondary {
+        width: 315px;
+		border-left: 1px solid #DAF2FF;
+		padding-left: 1em;
+    }
+    	#toolbar-buttons-open {
+		top: 10px;
+		left: auto;
+		right: 320px;
+	}
+	#header-searchform {
+		top: 10px;
+		right: 10px;
+		left: auto;
+	}
+	
+}
+
 
 @media print {
 	
