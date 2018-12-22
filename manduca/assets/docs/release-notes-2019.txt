@@ -2,12 +2,12 @@ This file is part of WordPress theme named Manduca - focus on accessibility.
 
 Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
 
-This program is free software: you can redistribute it and/or modify
+Manduca is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
+Manduca is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
@@ -33,3 +33,6 @@ Version number
    
    19 Dec 2018    'clear accessible-tabs css'   Not use html elements ins selector, when class is given.
                                                 Also make compressed accessible-tab css (sliding-doors.css and sliding-doors.originals.css)
+                                                
+   22 Dec 2018    'autoload class namespaces'   You can assign namespaces to inlcude dir (namspace => dir) to avoid conflicts of the same names
+                                                If you specify the namespace, that class will be searched only in the given dir.    

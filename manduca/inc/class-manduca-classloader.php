@@ -1,15 +1,30 @@
 <?php
 /**
- * Autolad classes for Manduca
- *
- * Apply WordPress PHP standards
+ * Autolad classes for Manduca 
  *
  *
- * https://phpbits.in/autoloading-classes-php-7/
+ *@see: https://phpbits.in/autoloading-classes-php-7/
+ *@since : 17.12.6
  *
- * @since : 17.12.6
- * @theme : Manduca -focus on accessibilty
-  */
+ **/
+/*
+    This file is part of WordPress theme named Manduca - focus on accessibility.
+    
+    Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+    
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    Manduca is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
 
 class Manduca_Classloader {
     const UNABLE_TO_LOAD = 'Unable to load class';
@@ -63,11 +78,10 @@ class Manduca_Classloader {
      */
     public static function autoLoad( $class ) {
         $success = FALSE;
-        $filename = $class;
+
         // Check if it has namespace prefix
         if( false !== strpos( $class , '\\' ) ) {
             $prefixes = array( 'Web25', 'Manduca' ); // autoload only this two namespaces.
-             // Does the class use the namespace prefix?
             $catched = false;
             foreach( $prefixes as $prefix ) {
                 $len = strlen($prefix);
@@ -76,19 +90,46 @@ class Manduca_Classloader {
                     break; 
                 }
             }
-            if( !$catched ) return ; // no, move to the next registered autoloader
+            if( !$catched ) {
+                return ; // no, move to the next registered autoloader
+            }
             $namespaces = explode( '\\' , $class );
-            $filename   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
+            $class_name_wo_namespace   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
+            $class_namespace = str_ireplace( $class_name_wo_namespace, '',  $class );
+            $class_namespace = untrailingslashit( $class_namespace );
+                        
         }
-        $filename = str_replace( '_', '-' , $filename );
+        else{
+                $class_name_wo_namespace = $class;
+        }
+        $filename = str_replace( '_', '-' , $class_name_wo_namespace );
         $filename   =sprintf( 'class-%s.php',
                               strtolower( $filename )
-                             );
-        foreach (self::$lookup_directories as $start) {
-            $file = $start . $filename;
-            if (self::loadFile( $file ) ) {
-                $success = TRUE;
-                break;
+                );
+        foreach (self::$lookup_directories as $namespace => $directory) {
+            
+            /*
+             *Ha megadunk egy névmezőt is, akkor csak az ahhoz rendelt könyvtárban keres
+             *@since 19.1
+             **/
+                    
+            $aplicable_dir = false;
+            if( isset ($class_namespace ) ) {
+               if( $namespace === $class_namespace ) {
+                    $aplicable_dir = true;
+                }
+            }
+            elseif( is_integer( $namespace ) ) {
+                    $aplicable_dir = true;
+                }
+            
+            if( $aplicable_dir ){
+                $file = $directory . $filename;
+                if (self::loadFile( $file ) ) {
+                    
+                    $success = TRUE;
+                    break;
+                }
             }
         }
         
