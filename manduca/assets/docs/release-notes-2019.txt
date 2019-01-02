@@ -18,21 +18,31 @@ in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 ............................................................................
 
 Version number
-   Date           Github commit marker           Description
+   Date           Github commit marker
+                              Description
 
 ............................................................................
 
 19.1
 
-   19 Dec 2018    'add GNU notices'             Add GNU notices to the beggining of some files.
-                                                This commit also inlcludes some files missed out from previous commit (i.e. belong to version 18.12)
+   19 Dec 2018    'add GNU notices'
+                              Add GNU notices to the beggining of some files.
+                              This commit also inlcludes some files missed out from previous commit (i.e. belong to version 18.12)
    
-   19 Dec 2018    'enhance accessible tabs'     Make accessible tabs more reliable by creating own template (previously used content-page.php).
+   19 Dec 2018    'enhance accessible tabs'
+                              Make accessible tabs more reliable by creating own template (previously used content-page.php).
    
-   19 Dec 2018    'docs of accessible tabs'     Add How to documents to use accessible tabs
+   19 Dec 2018    'docs of accessible tabs'
+                              Add How to documents to use accessible tabs
    
-   19 Dec 2018    'clear accessible-tabs css'   Not use html elements ins selector, when class is given.
-                                                Also make compressed accessible-tab css (sliding-doors.css and sliding-doors.originals.css)
+   19 Dec 2018    'clear accessible-tabs css'
+                              Not use html elements ins selector, when class is given.
+                              Also make compressed accessible-tab css (sliding-doors.css and sliding-doors.originals.css)
                                                 
-   22 Dec 2018    'autoload class namespaces'   You can assign namespaces to inlcude dir (namspace => dir) to avoid conflicts of the same names
-                                                If you specify the namespace, that class will be searched only in the given dir.    
+   22 Dec 2018    'class-autoloader handle namespaces'
+                              You can assign namespaces to inlcude dir (namspace => dir) to avoid conflicts of the same names
+                              If you specify the namespace, that class will be searched only in the given dir.
+   
+   2 Jan 2019     'correct manduca init'
+                              Correct classloader parameters in function.php according to the class-looader modifications in prev. commit.
+                              

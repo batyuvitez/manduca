@@ -26,4 +26,5 @@ Tervezett fejlesztések , hibák.
 18.11.15 a classloader a könyvtárakhoz hozzárendeljen namespace-t is. 
 18.12.14 a bejegyzés Frissítve funkciót beletenni.
 18.12.14 a GPL követlményt minden fájl elejére.
-18.12.14 ne legyen sárga-fekete változat az olvasási beállításokban. 
+.18.12.14 ne legyen sárga-fekete változat az olvasási beállításokban.
+18.12.22. legyen lehetőség a role=presentation beállítására. Ennek a kezeléét átgondolni. 

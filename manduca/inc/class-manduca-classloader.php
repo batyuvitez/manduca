@@ -34,7 +34,7 @@ class Manduca_Classloader {
     /**
      * Initializes directories array
      * 
-     * @param array $dirs
+     *@param array $dirs
      */
     public function __construct(array $dirs = array() )    {
         self::init($dirs);
@@ -43,7 +43,7 @@ class Manduca_Classloader {
     /**
      * Adds directories to the existing array of directories
      * 
-     * @param array | string $dirs
+     *@param array | string $dirs
      */
     public static function add_dirs($dirs)
     {
@@ -58,7 +58,7 @@ class Manduca_Classloader {
      * Adds a directory to the list of supported directories
      * Also registers "autoload" as an autoloading method
      *
-     * @param array | string $dirs
+     *@param array | string $dirs
      */
     public static function init( $dirs = array() )     {
         if ($dirs) {
@@ -73,8 +73,8 @@ class Manduca_Classloader {
     /**
      * Locates a class file 
      * 
-     * @param string $class
-     * @return boolean
+     *@param string $class
+     *@return boolean
      */
     public static function autoLoad( $class ) {
         $success = FALSE;
@@ -145,8 +145,8 @@ class Manduca_Classloader {
     /**
      * Loads a file
      * 
-     * @param string $file
-     * @return boolean
+     *@param string $file
+     *@return boolean
      */
     protected static function loadFile($file) {
                     

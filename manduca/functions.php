@@ -26,7 +26,8 @@
  
  // Load files
  
- $dirs = array( get_template_directory() .'/inc/' ) ;
+ $dirs = array( get_template_directory() .'/inc/',
+               'Manduca' => get_template_directory() .'/inc/' ) ;
 		
 // Open the files which ara not classes. 
 $dir 			= get_template_directory() .'/inc/notclasses/' ;
