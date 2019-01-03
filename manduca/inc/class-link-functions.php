@@ -5,9 +5,27 @@
  *
  *
  *@see https://www.w3.org/WAI/GL/wiki/Using_aria-label_for_link_purpose
- *@author Zsolt Edelényi <ezs@web25.hu>
  *@since 17.9.6
  * */
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 
 namespace Manduca;
   
@@ -36,7 +54,6 @@ namespace Manduca;
    */
    public function filter_links( $content ) {
       libxml_use_internal_errors( true );
-      $this->dom = new \DOMDocument;
       $content = mb_convert_encoding (
               $content,
               'HTML-ENTITIES',
@@ -45,6 +62,8 @@ namespace Manduca;
       if( empty ( $content ) ) {
        return ;
       }
+      $this->dom = new \DOMDocument;
+      $this->dom->encoding = 'utf-8'; //@see: https://stackoverflow.com/questions/6573258/domdocument-and-special-characters
       $this->dom->loadHTML( $content ); 
       libxml_use_internal_errors( false );
     
@@ -176,9 +195,8 @@ namespace Manduca;
       }
       
       /* Add role="presentation" to images without alt-text
-      * @since 18.9.3
+      * @since 18.10
       */
-    
       foreach ( $this->dom->getElementsByTagName('img') as $node) {
         $alt= 	$node->getAttribute( 'alt' );
         if( empty( $alt ) || '' == $alt ) {
@@ -392,6 +410,9 @@ namespace Manduca;
        'icon'		=> 'epub'
        )
       );
+    /*
+     *filter manduca_extenstion_array
+     */
      return apply_filters( 'manduca_extenstion_array' , $extenstion_array );
    }
    
@@ -409,8 +430,13 @@ namespace Manduca;
        'icon'		=> 'phone'
        )
     );
+    /*
+     *filter manduca_url_sheme_array
+     *Filter the aria label texts and icons added to the links of schemes (mailto, tel )
+     **/    
     return apply_filters( 'manduca_url_scheme_array' , $url_schemes );
    }
+   
    
    /*
     * Add screen-reader text to $parent_node

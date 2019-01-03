@@ -46,3 +46,5 @@ Version number
    2 Jan 2019     'correct manduca init'
                               Correct classloader parameters in function.php according to the class-looader modifications in prev. commit.
                               
+   3 Jan 2019     'link function enhancement'
+                              utf-8 for link manipulation, some documentation. 
