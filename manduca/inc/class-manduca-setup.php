@@ -57,7 +57,7 @@ class Manduca_Setup {
 		$template_functions= new Manduca_Template_Functions();
 		
 		//Filter page title
-		new \Manduca\Manduca_Filter_Title;
+		new \Manduca\Filter_Title;
 		
 		// Registger sidebar		
 		add_action( 'widgets_init', array( $this, 'sidebar')  );

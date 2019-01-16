@@ -28,7 +28,7 @@
 
 namespace Manduca;
 
-class Manduca_Filter_Title{
+class Filter_Title{
     
     public function __construct(){ 
         add_action ( 'init',

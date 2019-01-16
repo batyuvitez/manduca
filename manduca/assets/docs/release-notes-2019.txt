@@ -47,4 +47,7 @@ Version number
                               Correct classloader parameters in function.php according to the class-looader modifications in prev. commit.
                               
    3 Jan 2019     'link function enhancement'
-                              utf-8 for link manipulation, some documentation. 
+                              utf-8 for link manipulation, some documentation.
+                              
+   14 Jan 2019    'fix title filter'
+                              Page number was missing from the title of paged archives etc. Fixed. 
