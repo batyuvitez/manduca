@@ -62,7 +62,9 @@ class Manduca_Setup {
 		// Registger sidebar		
 		add_action( 'widgets_init', array( $this, 'sidebar')  );
 		
-			
+		// Az svg tábla beolvasása globális változóba
+			(new \Manduca\Define_Globals ) -> load_svg_to_global();
+				
 		
 		// Functions of admin size
 		if ( is_admin() ){
@@ -88,9 +90,6 @@ class Manduca_Setup {
 		 **/
 		else {
 			
-			
-			// Az svg tábla beolvasása globális változóba
-			SVG_Functions::load_svg_to_global();
 			
 			// Add accessible more-links Need svg to be loaded. 
 			$more_links = new More_Links;

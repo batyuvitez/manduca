@@ -69,129 +69,136 @@ namespace Manduca;
     
       foreach ( $this->dom->getElementsByTagName('a') as $node) {
          
-       $href		= 	$node->getAttribute( 'href' );
-       $link_text 	= $node->nodeValue;
-       $link_text= preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
-       
-       
-       if( ! $this->check_if_valid_link( $href ) ){
-        continue;
-       }
-       
-       // Search for img child-node
-       $has_img_child = false;
-       $child_nodes = $node->childNodes;
-       foreach( $child_nodes as $child_node) {
-        if( 'img' == $child_node->nodeName ) {
-         $has_img_child = true;
-         $attrs = $child_node->attributes;
-         foreach( $attrs  as $attr ) {
-          if( 'alt' == $attr->name) {
-           $alt_text = $attr->value ;
-           $child_node->setAttribute( 'role', 'presentation' );
+         /*If role="button", do not insert anything.
+          *@since 19.1
+          ***/
+         if( 'button' === $node->getAttribute( 'role' )  ){
+            continue;
+         }
+         
+         $href		= 	$node->getAttribute( 'href' );
+         $link_text 	= $node->nodeValue;
+         $link_text= preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
+         
+         
+         if( ! $this->check_if_valid_link( $href ) ){
+          continue;
+         }
+         
+         // Search for img child-node
+         $has_img_child = false;
+         $child_nodes = $node->childNodes;
+         foreach( $child_nodes as $child_node) {
+           if( 'img' == $child_node->nodeName ) {
+              $has_img_child = true;
+              $attrs = $child_node->attributes;
+              foreach( $attrs  as $attr ) {
+                 if( 'alt' == $attr->name) {
+                    $alt_text = $attr->value ;
+                    $child_node->setAttribute( 'role', 'presentation' );
+                   }
+                }
+           }
+         }
+         if( $has_img_child ) {
+          if( !isset( $alt_text ) || '' == $alt_text ) {
+           $post_title= get_the_title();
+           if( ! empty( $post_title) ) {
+            //Translators: %s = title of post. This is an aria-label to a link  which has a children of an image, and image has no alt text. 
+            $aria_label = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
+                   $post_title
+                  );
+            $node->setAttribute( 'aria-label', $aria_label );
+           }
+           
+           unset( $post_title );
+          }
+          else{
+           //Translators: %s = alt text of image. This is an aria label to a link which has a children of an image.
+           $aria_label = sprintf( __( 'Image: %s' , 'manduca' ),
+                   $alt_text
+                   );
+           $node->setAttribute( 'aria-label', $aria_label) ;					
+           unset( $alt_text);
           }
          }
-        }
-       }
-       if( $has_img_child ) {
-        if( !isset( $alt_text ) || '' == $alt_text ) {
-         $post_title= get_the_title();
-         if( ! empty( $post_title) ) {
-          //Translators: %s = title of post. This is an aria-label to a link  which has a children of an image, and image has no alt text. 
-          $aria_label = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
-                 $post_title
-                );
-          $node->setAttribute( 'aria-label', $aria_label );
+         
+         // Looking for url_scheme
+         elseif( false !== strpos( $href, ':' ) && 4 < strlen( $href ) && false === strpos( $href , 'http' ) ) {
+           $node = $this->add_icon_to_url_schemes( $node, $href );
          }
-         
-         unset( $post_title );
-        }
-        else{
-         //Translators: %s = alt text of image. This is an aria label to a link which has a children of an image.
-         $aria_label = sprintf( __( 'Image: %s' , 'manduca' ),
-                 $alt_text
-                 );
-         $node->setAttribute( 'aria-label', $aria_label) ;					
-         unset( $alt_text);
-        }
-       }
-       
-       // Looking for url_scheme
-       elseif( false !== strpos( $href, ':' ) && 4 < strlen( $href ) && false === strpos( $href , 'http' ) ) {
-         $node = $this->add_icon_to_url_schemes( $node, $href );
-       }
-    
-       elseif( $this->check_if_self_link( $href ) ) {
-         $parent_node = 	$node->parentNode;
-         $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
-         $span_element->setAttribute(
-          'class',
-          'self-link'
-         );
-         
-         $screen_reader_text = $this->dom->createElement(
-             'span',
-              // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
-              $screen_reader_text =  __( 'Current page', 'manduca' )  
-             );
-         $screen_reader_text->setAttribute(
-             'class',
-             'screen-reader-text'
-          );
-         $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
-         $parent_node->insertBefore( $screen_reader_text, $node);
-         $parent_node->insertBefore( $span_element, $node );
-         $parent_node->removeChild( $node );
-         
-         
-        }
-       elseif( !$this->check_if_internal_link( $href ) ) {
-        //Google map link
-        if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
-          
-         $node->setAttribute( 'aria-label',
-              //Translatos: add aria label to links to google maps. 
-            __( 'open map', 'manduca' ) .' : ' .$link_text
-              );
-         $svg_node = $this->create_svg_node( 'map-marker' );
-         $node->appendChild( $svg_node ) ; 
-        }
-       
-        //all other external link
-        else{
-         
-            $node->setAttribute( 'aria-label',
-                        //Translators: add screen-reader-text to external link. 
-                         __( 'external', 'manduca' ) .' : ' .$link_text
-                         );
-             $svg_node = $this->create_svg_node( 'extlink' );
-             $node->appendChild( $svg_node ) ; 
       
-        }
-        
-        //open in new window
-        if( '_blank' == $node->getAttribute( 'target' ) ) {
-         /*Add rel=noopener to links open in new window
-          *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
-          @since 18.11
-          */
-         $node->setAttribute(
-            'rel',
-            'noopener noreferrer'
-         );
+         elseif( $this->check_if_self_link( $href ) ) {
+           $parent_node = 	$node->parentNode;
+           $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
+           $span_element->setAttribute(
+            'class',
+            'self-link'
+           );
+           
+           $screen_reader_text = $this->dom->createElement(
+               'span',
+                // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
+                $screen_reader_text =  __( 'Current page', 'manduca' )  
+               );
+           $screen_reader_text->setAttribute(
+               'class',
+               'screen-reader-text'
+            );
+           $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
+           $parent_node->insertBefore( $screen_reader_text, $node);
+           $parent_node->insertBefore( $span_element, $node );
+           $parent_node->removeChild( $node );
+           
+           
+          }
+         elseif( !$this->check_if_internal_link( $href ) ) {
+          //Google map link
+          if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
+            
+           $node->setAttribute( 'aria-label',
+                //Translatos: add aria label to links to google maps. 
+              __( 'open map', 'manduca' ) .' : ' .$link_text
+                );
+           $svg_node = $this->create_svg_node( 'map-marker' );
+           $node->appendChild( $svg_node ) ; 
+          }
          
-
-         $node->setAttribute( 'aria-label',
-                        //Translators: add screen-reader-text to target="'_blank". 
-                     __( 'Opens a new window' , 'manduca' ) .' : ' .$link_text
-                     );
-         $svg_node = $this->create_svg_node( 'new-window' );
-         $node->appendChild( $svg_node ) ; 
-        }
-       } //end of external-link
-       if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
-        $node = $this->add_icon_to_static_files( $node, $href );
-       }
+          //all other external link
+          else{
+           
+              $node->setAttribute( 'aria-label',
+                          //Translators: add screen-reader-text to external link. 
+                           __( 'external', 'manduca' ) .' : ' .$link_text
+                           );
+               $svg_node = $this->create_svg_node( 'extlink' );
+               $node->appendChild( $svg_node ) ; 
+        
+          }
+          
+          //open in new window
+          if( '_blank' == $node->getAttribute( 'target' ) ) {
+           /*Add rel=noopener to links open in new window
+            *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
+            @since 18.11
+            */
+           $node->setAttribute(
+              'rel',
+              'noopener noreferrer'
+           );
+           
+  
+           $node->setAttribute( 'aria-label',
+                          //Translators: add screen-reader-text to target="'_blank". 
+                       __( 'Opens a new window' , 'manduca' ) .' : ' .$link_text
+                       );
+           $svg_node = $this->create_svg_node( 'new-window' );
+           $node->appendChild( $svg_node ) ; 
+          }
+         } //end of external-link
+         if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
+            $node = $this->add_icon_to_static_files( $node, $href );
+         }
       }
       
       /* Add role="presentation" to images without alt-text
@@ -331,6 +338,7 @@ namespace Manduca;
     if( !isset( $GLOBALS[ 'svg_icons' ][ $svg ] ) ) {
      $svg = 'close';
     }
+    
      $svg_array = $GLOBALS[ 'svg_icons' ][ $svg ] ;
      $svg_node 	= $this->dom->createElement( 'svg' );
         

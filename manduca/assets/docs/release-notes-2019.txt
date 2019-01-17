@@ -50,4 +50,8 @@ Version number
                               utf-8 for link manipulation, some documentation.
                               
    14 Jan 2019    'fix title filter'
-                              Page number was missing from the title of paged archives etc. Fixed. 
+                              Page number was missing from the title of paged archives etc. Fixed.
+                              
+   17 Jan 2019    'fix Guttenberg issue'
+                              Using Guttenberg generates errors because svg handler.
+                              So far only the frontend applied it, ant this was not a problem
