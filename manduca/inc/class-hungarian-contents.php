@@ -1,26 +1,41 @@
 <?php
 /**
  * Functions related to Hungarian languages
- * 
  *
- * @theme: Manduca - focus on accessibility
- *
- * Use in child theme!
+ * You can use them in your child theme.
  **/
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
 
  class Hungarian_Contents {
 
 	
    /*
 	* Make hungarian definite article ('a' or 'az')
-	*
 	* depending on the input
 	*
-	* &paramter $word : word to get the article;
+	*@paramter (string) $word : word to get the article;
+	*@return   (string)       : only the article. 
 	*
 	* */
 
-	public static function definite_article( $word ) {
+	public static function definite_article( string $word ) {
 	   //only works if the language is Hungarian 
 	   if ( get_locale() ==='hu_HU' ) {
 		   $hungarian_regex = '/^[aáeéiíoóöőuúüű]/i';
@@ -34,31 +49,52 @@
 	   return $article;
 	}
 	
-	/*
-    * Calculate and wordsDifference of today and a given date in Hungarian. 
-	 *
-    *@see https://wordpress.stackexchange.com/questions/163263/relative-time-how-to-calculate-difference-beween-post-publish-date-and-current
-	 *
-	 *@param string $unix_timestamp : this is the reference to calculate the difference with. 
-	 *@return  string HTML markup of time difference
-	 * */
-	public static function get_date_difference( $unix_timestamp ){
-		 $date_diff =  human_time_diff( $unix_timestamp, current_time( 'timestamp' ) ) ;
-		 if ( get_locale() ==='hu_HU' ) {
-			$replace = array(
-			 'év'  		=> 'éve',
-			 'hét'		=> 'hete',
-			 'hónappal'	=> 'hónapja',
-			 'óra' 		=> 'órája',
-			 'órával' 	=> 'órája',
-			 'nappal'   => 'napja',
-			 'évevel'	=> 'évvel'
-			);
-			$date_diff = strtr( $date_diff , $replace );
-		 }
-	   return $date_diff;
-	}
 	
+    
+    /**
+ * Determines the difference between two timestamps.
+ * Rewrite of WP's function (formatting.php #3219 ) named human_time_diff(); (* @since 1.5.0 , so very old)
+ * Because of :
+ *          - not acceptable translation of WP
+ *          - No need for weeks
+ * 
+ *
+ * @param int $from Unix timestamp from which the difference begins.
+ * @param int $to   Optional. Unix timestamp to end the time difference. Default becomes time() if not set.
+ * @return string Human readable time difference.
+ *
+ * @modified 19.1
+ */
+	public static function get_date_difference( int $from, int $to = NULL ){
+        if ( empty( $to ) ) {
+            $to = time();
+        }
+    
+        $diff = (int) abs( $to - $from );
+    
+        if ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
+            $days = round( $diff / DAY_IN_SECONDS );
+            if ( $days <= 1 )
+                $days = 1;
+            /* translators: Time difference between two dates, in days. 1: Number of days */
+            $since = sprintf( _n( '%s day', '%s days', $days, 'manduca' ), $days );
+        } elseif ( $diff < YEAR_IN_SECONDS && $diff >= MONTH_IN_SECONDS ) {
+            $months = round( $diff / MONTH_IN_SECONDS );
+            if ( $months <= 1 )
+                $months = 1;
+            /* translators: Time difference between two dates, in months. 1: Number of months */
+            $since = sprintf( _n( '%s month', '%s months', $months, 'manduca' ), $months );
+        } elseif ( $diff >= YEAR_IN_SECONDS ) {
+            $years = round( $diff / YEAR_IN_SECONDS );
+            if ( $years <= 1 )
+                $years = 1;
+            /* translators: Time difference between two dates, in years. 1: Number of years */
+            $since = sprintf( _n( '%s year', '%s years', $years, 'manduca' ), $years);
+        }
+
+        return $since;
+    }
+
 	
 	
  }

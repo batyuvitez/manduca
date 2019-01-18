@@ -55,3 +55,7 @@ Version number
    17 Jan 2019    'fix Guttenberg issue'
                               Using Guttenberg generates errors because svg handler.
                               So far only the frontend applied it, ant this was not a problem
+                              
+   18 Jan 2019    'Hungarian date difference'
+                              The date difference WP function in Hungarien language was unusable.
+                              I made the function in Hungarian_Contents class.
