@@ -153,51 +153,53 @@ namespace Manduca;
            
           }
          elseif( !$this->check_if_internal_link( $href ) ) {
+            $aria_label = array();
           //Google map link
-          if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
-            
-           $node->setAttribute( 'aria-label',
-                //Translatos: add aria label to links to google maps. 
-              __( 'open map', 'manduca' ) .' : ' .$link_text
-                );
-           $svg_node = $this->create_svg_node( 'map-marker' );
-           $node->appendChild( $svg_node ) ; 
-          }
-         
-          //all other external link
-          else{
-           
-              $node->setAttribute( 'aria-label',
-                          //Translators: add screen-reader-text to external link. 
-                           __( 'external', 'manduca' ) .' : ' .$link_text
-                           );
-               $svg_node = $this->create_svg_node( 'extlink' );
+               if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
+               
+               //Translatos: add aria label to links to google maps. 
+               $aria_label[] = __( 'open map', 'manduca' );
+               
+               $svg_node = $this->create_svg_node( 'map-marker' );
                $node->appendChild( $svg_node ) ; 
-        
-          }
-          
-          //open in new window
-          if( '_blank' == $node->getAttribute( 'target' ) ) {
-           /*Add rel=noopener to links open in new window
-            *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
-            @since 18.11
-            */
-           $node->setAttribute(
-              'rel',
-              'noopener noreferrer'
-           );
-           
-  
-           $node->setAttribute( 'aria-label',
-                          //Translators: add screen-reader-text to target="'_blank". 
-                       __( 'Opens a new window' , 'manduca' ) .' : ' .$link_text
-                       );
-           $svg_node = $this->create_svg_node( 'new-window' );
-           $node->appendChild( $svg_node ) ; 
-          }
-         } //end of external-link
-         if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
-            $node = $this->add_icon_to_static_files( $node, $href );
+             }
+            
+             //all other external link
+             else{
+                  //Translators: add screen-reader-text to external link. 
+                  $aria_label[] = __( 'external' , 'manduca' );
+                  $svg_node = $this->create_svg_node( 'extlink' );
+                  $node->appendChild( $svg_node ) ; 
+                  $external_link = true;
+             }
+             
+             //open in new window
+               if( '_blank' == $node->getAttribute( 'target' ) ) {
+                
+                 /*
+                  *Add rel=noopener to links open in new window
+                  *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
+                  @since 18.11
+                  */
+                 $node->setAttribute(
+                    'rel',
+                    'noopener noreferrer'
+                 );
+                 //Translators: add screen-reader-text to target="'_blank". 
+                  $aria_label[] = __( 'opens a new window' , 'manduca' ) ;
+                 
+                 $svg_node = $this->create_svg_node( 'new-window' );
+                 $node->appendChild( $svg_node ) ; 
+                }
+                $aria_label = sprintf( '%s (%s)',
+                                 $link_text,
+                                 implode( ', ', $aria_label)
+                                 );
+                                 
+                $node->setAttribute( 'aria-label', $aria_label );
+              } //end of external-link
+            if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
+               $node = $this->add_icon_to_static_files( $node, $href );
          }
       }
       

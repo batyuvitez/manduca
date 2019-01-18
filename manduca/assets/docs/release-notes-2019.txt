@@ -56,6 +56,11 @@ Version number
                               Using Guttenberg generates errors because svg handler.
                               So far only the frontend applied it, ant this was not a problem
                               
-   18 Jan 2019    'Hungarian date difference'
+   18 Jan 2019    'date difference in Hungarian'
                               The date difference WP function in Hungarien language was unusable.
                               I made the function in Hungarian_Contents class.
+
+   18 Jan, 2018   'link aria-label changes'
+                              Based on user feedbacks: external, open in new window and Google map indicators in aria-label
+                              put in brackets,
+                              + all indicators included in bracket. 
