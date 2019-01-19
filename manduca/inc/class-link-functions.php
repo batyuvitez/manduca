@@ -179,11 +179,12 @@ namespace Manduca;
                  /*
                   *Add rel=noopener to links open in new window
                   *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
-                  @since 18.11
+                  @since 18.11, filter: 19.1
                   */
+                 $rel = apply_filters( 'manduca_link_rel' , 'noopener noreferrer' );
                  $node->setAttribute(
                     'rel',
-                    'noopener noreferrer'
+                    $rel
                  );
                  //Translators: add screen-reader-text to target="'_blank". 
                   $aria_label[] = __( 'opens a new window' , 'manduca' ) ;

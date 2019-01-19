@@ -14,6 +14,7 @@ manduca_more_links              : Change the text, icon, class of read-more link
 manduca_svg_icons               : Filter svg icon array before put it into global variable | located: class-svg-functions.php
 manduca_extension_array         : Filter the aria label texts and icons added to the links | located: class-link-functions.php
 manduca_url_scheme_array        : Filter the aria label texts and icons added to the links | located: class-link-functions.php
+manduca_link_rel                : Filter the rel attributes of external links. | since 19.1 | located: class-add-nofollow-to-links.php
 
 
 Boolean filters:

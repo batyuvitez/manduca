@@ -60,7 +60,10 @@ Version number
                               The date difference WP function in Hungarien language was unusable.
                               I made the function in Hungarian_Contents class.
 
-   18 Jan, 2018   'link aria-label changes'
+   18 Jan, 2019   'link aria-label changes'
                               Based on user feedbacks: external, open in new window and Google map indicators in aria-label
                               put in brackets,
-                              + all indicators included in bracket. 
+                              + all indicators included in bracket.
+   19 Jan, 2019   'add data filter'
+                              Add manduca_link_rel filter to link function class.
+                              Also documented in docs/hooks.txt
