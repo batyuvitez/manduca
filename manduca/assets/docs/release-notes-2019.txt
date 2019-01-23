@@ -67,3 +67,9 @@ Version number
    19 Jan, 2019   'add data filter'
                               Add manduca_link_rel filter to link function class.
                               Also documented in docs/hooks.txt
+                              
+   22 Jan, 2019   'fix skiplink issues'
+                              Because Voiceover  cannot handle the links, necessary to apply javascripts to have jump links accessible.
+                              Also, accessible back-to-top links included.
+                              Double arrow-up svg icon included.
+                              In order to give focus to header, tabindex attribute introduced. 

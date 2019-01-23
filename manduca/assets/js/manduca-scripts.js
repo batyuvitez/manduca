@@ -1,8 +1,13 @@
+/*
+ * Scripts of frontend
+ * */
+
+
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2019 Zsolt Edelényi (ezs@web25.hu)
 
-    This program is free software: you can redistribute it and/or modify
+    Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -15,7 +20,6 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-
 jQuery.noConflict();(function(){var isWebkit=navigator.userAgent.toLowerCase().indexOf('webkit')>-1,isOpera=navigator.userAgent.toLowerCase().indexOf('opera')>-1,isIE=navigator.userAgent.toLowerCase().indexOf('msie')>-1;if((isWebkit||isOpera||isIE)&&document.getElementById&&window.addEventListener){window.addEventListener('hashchange',function(){var id=location.hash.substring(1),element;if(!(/^[A-z0-9_-]+$/.test(id))){return}
 element=document.getElementById(id);if(element){if(!(/^(?:a|select|input|button|textarea)$/i.test(element.tagName))){element.tabIndex=-1}
 element.focus();window.scrollBy(0,-53)}},!1)}})();'use strict';var OFFSET_PX=0;var MIN_WIDTH=12;var MIN_HEIGHT=8;var START_FRACTION=0.4;var MIDDLE_FRACTION=0.8;var focusSnail={enabled:!0,trigger:trigger};function trigger(prevFocused,target){if(svg){onEnd()}else{initialize()}
@@ -77,7 +81,7 @@ if(fontSize){$('body').addClass(fontSize)}
 else{$('body').addClass("font-size-0")}
 $('.toolbar-buttons-open').click(function(){$('.toolbar-buttons').slideToggle(200);if($(".menu-toggle").hasClass("toggled-on")){$(".megamenu").removeClass("toggled-on");$(".menu-toggle").removeClass("toggled-on")}
 if($(".toolbar-buttons").hasClass("toggled-on")){$(".toolbar-buttons").removeClass("toggled-on");$(".toolbar-buttons-open").removeClass("toggled-on");$(".toolbar-buttons-open").attr('aria-expanded','false')}
-else{$(".toolbar-buttons").addClass("toggled-on");$(".toolbar-buttons-open").addClass("toggled-on");$(".toolbar-buttons-open").attr('aria-expanded','true')}});$('#buttons-close').click(function(){$('#toolbar-buttons').slideUp();$(".toolbar-buttons-open").removeClass("toggled-on");$(".toolbar-buttons").removeClass("toggled-on")});$('.change-font-size').click(function(){var fontSize=$(this).attr('data-zoom');var CookieDate=new Date;$('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');$('body').addClass(fontSize);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='fontSize='+fontSize+'; expires='+CookieDate.toGMTString()+'; path=/'});$('.high-contrast').click(function(){var contrastType=$(this).attr('data-contrast-type');var CookieDate=new Date;$('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');$('body').addClass(contrastType);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='contrastType='+contrastType+'; expires='+CookieDate.toGMTString()+'; path=/'});$('.change-font-type').click(function(){var fontType=$(this).attr('data-font-type');var CookieDate=new Date;$('body').removeClass('font-type-1 font-type-2 font-type-0');$('body').addClass(fontType);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='fontType='+fontType+'; expires='+CookieDate.toGMTString()+'; path=/'})})(jQuery);function createCookie(name,value,days){if(days){var date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString()}
+else{$(".toolbar-buttons").addClass("toggled-on");$(".toolbar-buttons-open").addClass("toggled-on");$(".toolbar-buttons-open").attr('aria-expanded','true')}});$('#buttons-close').click(function(){$('#toolbar-buttons').slideUp();$(".toolbar-buttons-open").removeClass("toggled-on");$(".toolbar-buttons").removeClass("toggled-on")});$('.change-font-size').click(function(){var fontSize=$(this).attr('data-zoom');var CookieDate=new Date;$('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');$('body').addClass(fontSize);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='fontSize='+fontSize+'; expires='+CookieDate.toGMTString()+'; path=/'});$('.high-contrast').click(function(){var contrastType=$(this).attr('data-contrast-type');var CookieDate=new Date;$('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');$('body').addClass(contrastType);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='contrastType='+contrastType+'; expires='+CookieDate.toGMTString()+'; path=/'});$('.change-font-type').click(function(){var fontType=$(this).attr('data-font-type');var CookieDate=new Date;$('body').removeClass('font-type-1 font-type-2 font-type-0');$('body').addClass(fontType);CookieDate.setFullYear(CookieDate.getFullYear()+10);document.cookie='fontType='+fontType+'; expires='+CookieDate.toGMTString()+'; path=/'});$('#skip-to-content').click(function(){event.preventDefault();$('#primary').find('h1').first().focus()});$('#skip-to-sidebar').click(function(){event.preventDefault();$('#secondary').find('h1').first().focus()});$('#manduca-back-to-top').click(function(){event.preventDefault();$('#primary').find('h1').first().focus();$('html, body').animate({scrollTop:0},800);return!1});$(document).on('scroll',function(){if($(window).scrollTop()>100){$('.manduca-back-to-top-div').addClass('show')}else{$('.manduca-back-to-top-div').removeClass('show')}})})(jQuery);function createCookie(name,value,days){if(days){var date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString()}
 else var expires="";document.cookie=name+"="+value+expires+"; path=/"}
 function readCookie(name){var nameEQ=name+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1,c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length,c.length)}
 return null}

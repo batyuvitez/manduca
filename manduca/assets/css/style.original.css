@@ -1,9 +1,10 @@
+@charset "UTF-8";
 /*
 Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: http://www.web25.hu
-Version: 18.12
+Version: 19.1 beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: New generation theme to start build an ISO/IEC 40500:2012 ( i.e. WCAG 2.0 )  compliant accessible website. Add child theme with individual design. Special features for Hungarian users. PHP 7 compatible.
@@ -2154,9 +2155,42 @@ body.font-size-2 #font-size-2{
 }
 
 
+/* accessible back-to-top function
+ * @since 19.1
+ * */
+.manduca-back-to-top-div {
+	position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    color: #ffffff;
+    right: 2em;
+    bottom: 2em;
+    padding: 0.4em;
+	border: 2px solid #21759B;
+	background-color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.manduca-back-to-top-div svg {
+	width:  2em;
+	height: 2em;
+	vertical-align: middle;
+	fill: #21759B;
+}
 
 
-
+.manduca-back-to-top-div.show{
+    visibility: visible;
+    cursor: pointer;
+    opacity: 1.0;
+}
  
 /* 13. Media queries
 -------------------------------------------------------------- */

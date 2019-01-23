@@ -1,4 +1,36 @@
+/*
+ * Scripts of frontend
+ * */
+
+
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+
+
+ 
+ 
 jQuery.noConflict();
+
+
+
+
+
 /**
  * Makes "skip to content" link work correctly in IE9, Chrome, and Opera
  * for better accessibility.
@@ -35,6 +67,11 @@ jQuery.noConflict();
 		}, false );
 	}
 } )();
+
+
+
+
+
 
 /*
  * Focus snail  applied to Manduca
@@ -442,6 +479,11 @@ function constrain(amt, low, high) {
 }
 
 
+
+
+
+
+
 /*
  * Contains handlers for navigation and widget area.
  * based on the script in theme twenty seventeen.
@@ -587,10 +629,14 @@ function constrain(amt, low, high) {
              $('body').addClass( "font-size-0" );
           }
       
+      
+      
+      
+      
    
       /*
-       * Behaviour of open toolbar button
-       * */
+       * Behaviour open toolbar button of reading options 
+       **/
    
           //Toggle tollbar
       $('.toolbar-buttons-open').click(function(){
@@ -626,7 +672,6 @@ function constrain(amt, low, high) {
    /*
     *Toolbar-buttons behaviour
     **/
- 
     //change font size
     $('.change-font-size').click(function () {
          var fontSize = $(this).attr('data-zoom');
@@ -662,13 +707,51 @@ function constrain(amt, low, high) {
         document.cookie = 'fontType=' + fontType + '; expires=' + CookieDate.toGMTString() + '; path=/';
     });
     
+    /*
+    * Skiplinks 
+    * Because Voiceover  cannot handle the links,
+    * necessary to apply javascripts to have jump links accessible
+    *
+    * @since: 19.1
+    * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
+    **/
+	
+     $('#skip-to-content').click(function() {
+       event.preventDefault();
+       $('#primary').find('h1').first().focus();    
+     });
+     $('#skip-to-sidebar').click(function() {
+       event.preventDefault();
+       $('#secondary').find('h1').first().focus();    
+     });
+     
+     $('#manduca-back-to-top').click(function(){
+           event.preventDefault();
+           $('#primary').find('h1').first().focus();    
+           $('html, body').animate({scrollTop : 0},800);
+           return false;
+       });
+
+        $(document).on( 'scroll', function(){
+
+			if ($(window).scrollTop() > 100) {
+				$('.manduca-back-to-top-div').addClass('show');
+			} else {
+				$('.manduca-back-to-top-div').removeClass('show');
+			}
+		});
+    
+    
     
 //end of ($)functions
 })( jQuery ); 
 
 
+
+
+
 /*
- **Cookie functions.
+ **Cookie functions
  *
  *https://www.quirksmode.org/js/cookies.html
  *
@@ -1209,3 +1292,6 @@ var isHighContrast3 = document.getElementsByClassName('high-contrast-3');
 if ( isFirefox.length !=1 && isHighContrast1.length !=1 && isHighContrast2.length != 1 ) {
       manducaUnderline.call(this); 
 }
+
+
+
