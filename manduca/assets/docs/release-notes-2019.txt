@@ -72,4 +72,9 @@ Version number
                               Because Voiceover  cannot handle the links, necessary to apply javascripts to have jump links accessible.
                               Also, accessible back-to-top links included.
                               Double arrow-up svg icon included.
-                              In order to give focus to header, tabindex attribute introduced. 
+                              In order to give focus to header, tabindex attribute introduced.
+
+............................................................................
+
+   285 Jan, 2019  'language file from repository'
+                              Upon auploading to repo, current language file copied here. 

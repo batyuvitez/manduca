@@ -1,6 +1,6 @@
 <?php
 /**
- * Manduca initialisation
+ * Manduca initialization
  * 
  * @ Since 1.0
  **/
