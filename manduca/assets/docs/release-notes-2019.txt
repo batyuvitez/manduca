@@ -76,5 +76,7 @@ Version number
 
 ............................................................................
 
-   285 Jan, 2019  'language file from repository'
-                              Upon auploading to repo, current language file copied here. 
+   28 Jan, 2019  'language file from repository'
+                              Upon auploading to repo, current language file copied here.
+   
+   31 Jan, 2019   'tiny fixings'

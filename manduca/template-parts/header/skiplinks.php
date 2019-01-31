@@ -25,9 +25,11 @@
 ?>
 <nav id="skip-links" aria-label="<?php _e( 'Jump links' , 'manduca' ) ?>" >
 
-    <a class="skip-link" id="skip-to-content" href="#content"><?php _e( 'Skip to main content', 'manduca' ); ?></a>
+    <a class="skip-link" id="skip-to-content" href=""><?php _e( 'Skip to main content', 'manduca' ); ?></a>
     
-    <a class="skip-link" id="skip-to-sidebar" href="#secondary"><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>        
+    <a class="skip-link" id="skip-to-sidebar" href=""><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>
+    
+    <a class="skip-link" id="skip-to-footer" href=""><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>        
     
     
     <?php if( defined( 'MANDUCA_ACCESS_KEYS') ) : ?>

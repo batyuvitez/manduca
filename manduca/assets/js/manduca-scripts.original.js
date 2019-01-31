@@ -724,6 +724,11 @@ function constrain(amt, low, high) {
        event.preventDefault();
        $('#secondary').find('h1').first().focus();    
      });
+	 
+	 $('#skip-to-footer').click(function() {
+       event.preventDefault();
+       $('#footer-wrapper').find('h1').first().focus();    
+     });
      
      $('#manduca-back-to-top').click(function(){
            event.preventDefault();

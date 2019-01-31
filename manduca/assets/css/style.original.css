@@ -1824,7 +1824,7 @@ svg.search-icon,
 
 
 
-/* 12 A.* accessibility toolbar 
+/* 12 A.* Reading options toolbar 
 -------------------------------------------------------------- */
 
 
@@ -2039,7 +2039,7 @@ high-contrast-3: high contrast: yellow background, dark letters.
 }
 
 
-/* Betűméret */
+/* Font size in reading option window */
 #toolbar-buttons button#font-size-0 {
     font-size: 2vw;
 }
