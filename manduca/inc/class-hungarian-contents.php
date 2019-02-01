@@ -71,7 +71,8 @@
         }
     
         $diff = (int) abs( $to - $from );
-        if ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
+		
+        if ( $diff < MONTH_IN_SECONDS  && $diff >= DAY_IN_SECONDS ) {
             $days = round( $diff / DAY_IN_SECONDS );
             if ( $days <= 1 )
                 $days = 1;

@@ -80,3 +80,11 @@ Version number
                               Upon auploading to repo, current language file copied here.
    
    31 Jan, 2019   'tiny fixings'
+   
+   1 Feb 2019     'Fix skiplink issues in Firefox'
+                              The current skiplink method worked on Voicover (which is not adapt the standards),
+                              but this version did not worke on firefox.
+                              
+   1 Feb, 2019    'Reading Options accessibility enhancement'
+                              Add focus to reading option button on quitng the modal window
+                              Escape key also quit the modal window

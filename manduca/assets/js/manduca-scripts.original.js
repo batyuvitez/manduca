@@ -1,8 +1,3 @@
-/*
- * Scripts of frontend
- * */
-
-
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2019 Zsolt Edelényi (ezs@web25.hu)
@@ -542,14 +537,19 @@ function constrain(amt, low, high) {
             toolbarButtonsOpen.removeClass( 'toggled-on');
             toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
             toolbarButtons.removeClass( 'toggled-on');
-            toolbarButtons.css( 'display', 'none' );
+            toolbarButtons.css( 'display', 'none' ); 
             
 
 			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 		});
 	})();
 
-	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	
+	
+	
+	/*
+	 *Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	 **/
 	(function() {
 		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
 			return;
@@ -591,6 +591,8 @@ function constrain(amt, low, high) {
 		});
 	})();
     
+	
+	
      /*
       * Accessibility/reading options TOOLBAR scripts
       *
@@ -631,8 +633,6 @@ function constrain(amt, low, high) {
       
       
       
-      
-      
    
       /*
        * Behaviour open toolbar button of reading options 
@@ -651,6 +651,7 @@ function constrain(amt, low, high) {
              $( ".toolbar-buttons" ).removeClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+			 $('#toolbar-buttons-open').focus();  
          }
          else {
              $( ".toolbar-buttons" ).addClass( "toggled-on" );
@@ -665,9 +666,28 @@ function constrain(amt, low, high) {
         $('#toolbar-buttons').slideUp();
         $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
         $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+		$( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+		$('#toolbar-buttons-open').focus();  
     });
     
-    
+	
+	
+    /*
+	 *Close toolbar for escape button and add focus back to the toolbar-button
+	 *
+	 *@since 19.2
+	 **/
+	$(document).on('keyup',function(evt) {
+		if (evt.key === 'Escape') {
+    		if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
+			    $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+			    $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+			    $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+				$('#toolbar-buttons-open').focus();
+				$( ".toolbar-buttons" ).css( 'display', 'none' ); 
+			}
+		}	
+    });
  
    /*
     *Toolbar-buttons behaviour
@@ -708,11 +728,14 @@ function constrain(amt, low, high) {
     });
     
    
+   
+   
     
     /*
     * Skiplinks 
-    * Because Voiceover  cannot handle the links,
+    * Because Voiceover cannot handle the internal links ( eg href='#content'),
     * necessary to apply javascripts to have jump links accessible
+    * This is tested with all kind of clients
     *
     * @since: 19.1
     * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
@@ -744,7 +767,7 @@ function constrain(amt, low, high) {
      $('#manduca-back-to-top').click(function(){
 		var pos = jQuery('#primary').position(); 
         var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 1600);
+        jQuery('html, body').animate({scrollTop : y}, 1200);
         jQuery('#primary').find('h1').first().focus();  
        });
 
