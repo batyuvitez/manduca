@@ -707,6 +707,8 @@ function constrain(amt, low, high) {
         document.cookie = 'fontType=' + fontType + '; expires=' + CookieDate.toGMTString() + '; path=/';
     });
     
+   
+    
     /*
     * Skiplinks 
     * Because Voiceover  cannot handle the links,
@@ -717,24 +719,33 @@ function constrain(amt, low, high) {
     **/
 	
      $('#skip-to-content').click(function() {
-       event.preventDefault();
-       $('#primary').find('h1').first().focus();    
+        event.preventDefault();
+       var pos = jQuery('#primary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#primary').find('h1').first().focus();  
      });
      $('#skip-to-sidebar').click(function() {
-       event.preventDefault();
-       $('#secondary').find('h1').first().focus();    
+        event.preventDefault();
+       var pos = jQuery('#secondary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#secondary').find('h1').first().focus();  
      });
 	 
 	 $('#skip-to-footer').click(function() {
-       event.preventDefault();
-       $('#footer-wrapper').find('h1').first().focus();    
+        event.preventDefault();
+		var pos = jQuery('#footer-wrapper').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#footer-wrapper').find('h1').first().focus();  
      });
      
      $('#manduca-back-to-top').click(function(){
-           event.preventDefault();
-           $('#primary').find('h1').first().focus();    
-           $('html, body').animate({scrollTop : 0},800);
-           return false;
+		var pos = jQuery('#primary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 1600);
+        jQuery('#primary').find('h1').first().focus();  
        });
 
         $(document).on( 'scroll', function(){
