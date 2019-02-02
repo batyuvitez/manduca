@@ -65,6 +65,9 @@ class Manduca_Setup {
 		// Az svg tábla beolvasása globális változóba
 			(new \Manduca\Define_Globals ) -> load_svg_to_global();
 				
+		// Accesssible widget archive
+		new \Manduca\Register_Widgets;
+		new \Manduca\Widget_Archives;
 		
 		// Functions of admin size
 		if ( is_admin() ){

@@ -88,3 +88,7 @@ Version number
    1 Feb, 2019    'Reading Options accessibility enhancement'
                               Add focus to reading option button on quitng the modal window
                               Escape key also quit the modal window
+                              
+   2 Feb, 2019    'User friendly archive widget state 1'
+                              Create Archive_Widget class to display two dropdown: month and year. 
+                              Create function for archive widget

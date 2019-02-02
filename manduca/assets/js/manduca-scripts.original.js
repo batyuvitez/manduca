@@ -781,6 +781,18 @@ function constrain(amt, low, high) {
 		});
     
     
+    /*
+     * Manduca archive widget submit button function
+     *
+     *@since 19.2
+     **/
+    $('#manduca-archive-widget-submit').click(function(){
+            var year = $( '#manduca-archive-year-dropdown' ).val();
+            var month = $( '#manduca-archive-month-dropdown' ).val();
+            var url = `/${year}/${month}/}`;
+            document.location.href=url;
+    });
+    
     
 //end of ($)functions
 })( jQuery ); 
