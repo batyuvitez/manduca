@@ -96,3 +96,6 @@ Version number
    4 Feb,2019     'Fix skiplink issues'
                               New skiplinks tested and some bugs are identified.
                               Now these are fixed.
+                              
+   44 Feb, 2019   'Add tooltips to accesskeys'
+                              Also, some access keys removed. (s and k)

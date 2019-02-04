@@ -104,5 +104,5 @@
 					
 					<?php get_template_part( '/template-parts/header/breadcrumb' , 'template' ); ?>
 					
-					<div id="primary" accesskey="s" class="site-content">
+					<div id="primary" class="site-content">
 						<main id="content">

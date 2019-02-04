@@ -3,7 +3,6 @@
  * Template of site title and blog description 
  *
  *
- * @Theme: Manduca - focus on accessibilits
  * @since 17.1
  * @last modification: 18.10.3
  *
@@ -15,6 +14,27 @@
     On the blog posts index, is_home() will always return TRUE, regardless of whether the blog posts index is displayed on the site front page or a separate page.
     
 */
+ 
+ 
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+ 
  ?>
 <?php
 $current_url = trim( '/', $_SERVER['REQUEST_URI'] ) ;
@@ -36,6 +56,7 @@ $home_url = trim( '/', get_home_url() );
         <a href="<?php echo home_url( '/' );  ?>" rel="home" accesskey="1">
             <span class="screen-reader-text"><?php _e( 'site title to jump homepage' , 'manduca' ) ; ?></span>
             <span class="display-site-title"><?php echo $site_title; ?></span>
+            <span class="tooltip" aria-hidden><?php _e( 'access key: 1', 'manduca' ); ?></span>
         </a>
     </div>
 
