@@ -66,7 +66,7 @@ class Widget_Archives extends \WP_Widget {
         $dropdown_html = $this->get_archives(  array('show_post_count'   => $c) ) ;
         ?>
         
-		<label class="screen-reader-text" for="<?php echo 'year-' .esc_attr( $dropdown_id ); ?>"><?php _e( 'Select Year' ) ; ?></label>
+		<label class="screen-reader-text" for="<?php echo 'year-' .esc_attr( $dropdown_id ); ?>"><?php _e( 'Select Year' ) ; ?>:</label>
 		<select id="manduca-archive-year-dropdown" name="manduca-archive-year-dropdown" >
         <?php
             foreach( $dropdown_html as $year => $months ) {
@@ -75,7 +75,7 @@ class Widget_Archives extends \WP_Widget {
         ?>
         </select>
         
-        <label class="screen-reader-text" for="<?php echo 'month-' .esc_attr( $dropdown_id ); ?>"><?php _e( 'Select Month' ) ; ?></label>
+        <label class="screen-reader-text" for="<?php echo 'month-' .esc_attr( $dropdown_id ); ?>"><?php _e( 'Select Month' ) ; ?>:</label>
 		<select id="manduca-archive-month-dropdown" name="manduca-archive-month-dropdown" >
 			<?php
             for( $month = 1; $month <= 12; $month ++ ) {
@@ -104,11 +104,9 @@ class Widget_Archives extends \WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '', 'count' => 0, 'dropdown' => '') );
+		$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '') );
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-		$instance['count'] = $new_instance['count'] ? 1 : 0;
-		$instance['dropdown'] = $new_instance['dropdown'] ? 1 : 0;
-
+		
 		return $instance;
 	}
 
@@ -124,9 +122,7 @@ class Widget_Archives extends \WP_Widget {
 		$title = sanitize_text_field( $instance['title'] );
 		?>
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
-		<p>
-			<input class="checkbox" type="checkbox"<?php checked( $instance['count'] ); ?> id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" /> <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Show post counts'); ?></label>
-		</p>
+		
 		<?php
 	}
     

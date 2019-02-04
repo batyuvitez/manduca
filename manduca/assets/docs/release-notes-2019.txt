@@ -92,3 +92,7 @@ Version number
    2 Feb, 2019    'User friendly archive widget state 1'
                               Create Archive_Widget class to display two dropdown: month and year. 
                               Create function for archive widget
+   
+   4 Feb,2019     'Fix skiplink issues'
+                              New skiplinks tested and some bugs are identified.
+                              Now these are fixed.

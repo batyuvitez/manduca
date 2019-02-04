@@ -13,7 +13,7 @@ while ( have_posts() ) :
 
 	echo '<article id="post-' .get_the_ID() .'" class="'. join( ' ', get_post_class( 'image-attachment' ) ) .'">';
 	echo '<header>';
-	echo '<h1>' .get_the_title() .'</h1>';
+	echo '<h1  tabindex="0">' .get_the_title() .'</h1>';
 	echo '</header>';
 	
 	echo '<div class="entry-content">';

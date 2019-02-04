@@ -30,7 +30,7 @@
 		<?php else : ?>
 
 			<article id="post-0" class="post no-results not-found">
-					<h1><?php _e( 'No matching result found.', 'manduca' ) ?></h1>
+					<h1 tabindex="0"><?php _e( 'No matching result found.', 'manduca' ) ?></h1>
 				</header>
 
 				<div class="entry-content">

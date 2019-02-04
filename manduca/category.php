@@ -12,7 +12,7 @@
 
 		<?php if ( have_posts() ) : ?>
 			<header>
-				<h1><?php echo single_cat_title( '', false ); ?></h1>
+				<h1 tabindex="0"><?php echo single_cat_title( '', false ); ?></h1>
 
 
 			<?php

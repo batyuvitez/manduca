@@ -47,7 +47,7 @@
 
 <article>
 	<header class="no-thumbnail">
-		<h1>
+		<h1  tabindex="0">
 			<?php echo $article[ 'title' ]; ?>
 		</h1>
 	</header>
