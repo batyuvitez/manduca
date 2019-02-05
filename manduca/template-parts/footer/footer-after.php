@@ -28,7 +28,7 @@
 
 ?>
 <div class="manduca-back-to-top-div">
-   <a id="manduca-back-to-top" >
+   <a id="manduca-back-to-top" href="javascript::" >
          <span class="screen-reader-text"><?php _e( 'Back to top', 'manduca' ); ?></span>
          <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
    </a>
