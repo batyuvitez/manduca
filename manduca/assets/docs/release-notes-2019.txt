@@ -101,5 +101,7 @@ Version number
                               Also, some access keys removed. (s and k)
                               
    5 feb, 2019    'Links tooltip'
-                              Added tooltips to link category 
+                              Added tooltips to link category
+                              
+   6 Feb, 2019    'Breadcrumb warning fix'
       

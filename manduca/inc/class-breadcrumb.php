@@ -2,15 +2,30 @@
 /**
  * WordPress breadcrumb navigation
  *
- * @author Dominik Schilling, Zsolt Edelényi
- * @license GPLv2
- * 
- * @ Aadopted version: 0.1.1 of Dominik Schilling's code
- *
- * @ Theme: Manduca - focus on accessibility
- * @ since 17.9.1
  * 
 **/
+
+
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Original work Copyright Dominik Schilling (version 0.1.1 )
+	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+ 
 
 abstract class Breadcrumb {
 	/**
@@ -189,26 +204,28 @@ abstract class Breadcrumb {
 					if ( ! empty( $taxonomies ) ) {
 						$taxonomy = $taxonomies[0]->name; // Get the first taxonomy
 						$terms = get_the_terms( $_id, $taxonomy );
+						if( is_array ( $terms ) ) {
 						$terms = array_values( $terms );
-						if ( ! empty( $terms ) ) {
-							$term = $terms[0];
-							
-							// Show the post's 'Primary' category, if this Yoast feature is available, & one is set
-							//since 18.10.17
-							if ( 'category' == $taxonomy && class_exists('WPSEO_Primary_Term') ) {
-								$wpseo_primary_term = new WPSEO_Primary_Term( $taxonomy , get_the_id() );
-								$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
-								if( $wpseo_primary_term ) { 
-									$term = get_term( $wpseo_primary_term );
+							if ( ! empty( $terms ) ) {
+								$term = $terms[0];
+								
+								// Show the post's 'Primary' category, if this Yoast feature is available, & one is set
+								//since 18.10.17
+								if ( 'category' == $taxonomy && class_exists('WPSEO_Primary_Term') ) {
+									$wpseo_primary_term = new WPSEO_Primary_Term( $taxonomy , get_the_id() );
+									$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+									if( $wpseo_primary_term ) { 
+										$term = get_term( $wpseo_primary_term );
+									}
 								}
+								if ( 0 != $term->parent ) {
+									$this->generate_tax_parents( $term->term_id, $taxonomy );
+								}
+								$this->breadcrumb["archive_{$taxonomy}"] = $this->template( array(
+									'link' => get_term_link( $term->slug, $taxonomy ),
+									'title' => $term->name
+								) );
 							}
-							if ( 0 != $term->parent ) {
-								$this->generate_tax_parents( $term->term_id, $taxonomy );
-							}
-							$this->breadcrumb["archive_{$taxonomy}"] = $this->template( array(
-								'link' => get_term_link( $term->slug, $taxonomy ),
-								'title' => $term->name
-							) );
 						}
 					}
 				}
