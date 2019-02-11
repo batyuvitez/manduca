@@ -741,16 +741,16 @@ function constrain(amt, low, high) {
     * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
     **/
 	
-     $('#skip-to-content').click(function() {
-        event.preventDefault();
+     $('#skip-to-content').click(function( event ) {
+        event.preventDefault( );
        var pos = jQuery('#primary').position(); 
         var y = parseInt(pos.top);
         jQuery('html, body').animate({scrollTop : y}, 800);
         jQuery('#primary').find('h1').first().focus();
 		return false;
      });
-     $('#skip-to-sidebar').click(function() {
-        event.preventDefault();
+     $('#skip-to-sidebar').click(function( event ) {
+        event.preventDefault( );
        var pos = jQuery('#secondary').position(); 
         var y = parseInt(pos.top);
         jQuery('html, body').animate({scrollTop : y}, 800);
@@ -758,8 +758,8 @@ function constrain(amt, low, high) {
 		return false;
      });
 	 
-	 $('#skip-to-footer').click(function() {
-        event.preventDefault();
+	 $('#skip-to-footer').click(function( event ) {
+        event.preventDefault( );
 		var pos = jQuery('#footer-wrapper').position(); 
         var y = parseInt(pos.top);
         jQuery('html, body').animate({scrollTop : y}, 800);
@@ -767,14 +767,15 @@ function constrain(amt, low, high) {
 		return false;
      });
      
-     $('#manduca-back-to-top').click(function(){
+     $('#manduca-back-to-top').click(function( event ){
+		event.preventDefault( );
 		var pos = jQuery('#primary').position(); 
         var y = parseInt(pos.top);
         jQuery('html, body').animate({scrollTop : y}, 1200);
 		return false;
        });
 
-        $(document).on( 'scroll', function(){
+        $(document).on( 'scroll', function( event ){
 			event.preventDefault();
 			if ($(window).scrollTop() > 100) {
 				$('.manduca-back-to-top-div').addClass('show');

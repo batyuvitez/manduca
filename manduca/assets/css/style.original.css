@@ -780,6 +780,7 @@ body .site,
 	clip: auto;
 	clip-path: none;
 	background-color: #f1f1f1;
+	color: #333;
 	display: block;
 	font-weight: 700;
 	outline: none;
@@ -793,9 +794,15 @@ body .site,
 	outline: 4px solid #9E430E;
 }
 #footer-wrapper .skip-link:focus,
-#footer-wrapper .site .skip-link:active {
+#footer-wrapper .skip-link:active {
 	top:auto;
 	bottom: 0;
+}
+
+#manduca-back-to-top:active,
+#manduca-back-to-top:focus {
+	right:0;
+	left: auto;
 }
 
 /* Page structure */

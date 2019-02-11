@@ -104,4 +104,7 @@ Version number
                               Added tooltips to link category
                               
    6 Feb, 2019    'Breadcrumb warning fix'
+   
+   11 Feb, 2019   'Skiplink fix'
+                              Now it is tested again in different browsers. 
       
