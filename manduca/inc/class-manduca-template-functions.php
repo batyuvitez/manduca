@@ -77,11 +77,11 @@ class Manduca_Template_Functions {
 				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden class="tooltip">%s</span>',
 												  manduca_get_svg( array( 'icon' => 'angle-left' ) ),
 												__( 'Newer posts', 'manduca' ),
-												__( 'access key: p', 'manduca' )
+												__( 'access key: P', 'manduca' )
 												);
 				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden class="tooltip">%s</span>%s',
 												__( 'Older posts', 'manduca' ),
-												__( 'access key: n', 'manduca' ),
+												__( 'access key: N', 'manduca' ),
 												manduca_get_svg( array( 'icon' => 'angle-right' ) ) 			  
 												);
 			
@@ -163,7 +163,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="prev page-numbers" href="%1$s" accesskey="p" >%2$s</a></h4>',
+								'<h4><a class="prev page-numbers" href="%1$s" accesskey="P" >%2$s</a></h4>',
 								$link,
 								$args['prev_text']
 					);
@@ -220,7 +220,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="next page-numbers" href="%1$s" accesskey="n" >%2$s</a></h4>',
+								'<h4><a class="next page-numbers" href="%1$s" accesskey="N" >%2$s</a></h4>',
 								$link,
 								$args['next_text']
 								);
@@ -355,7 +355,7 @@ class Manduca_Template_Functions {
 				if ( ! $post ) {
 					$output = '';
 				} else {
-						$output = sprintf( '<a href="%1$s" accesskey="p" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s</a>',
+						$output = sprintf( '<a href="%1$s" accesskey="P" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s</a>',
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
@@ -378,7 +378,7 @@ class Manduca_Template_Functions {
 				if ( ! $post ) {
 					$output = '';
 				} else {
-						$output = sprintf( '<a href="%1$s" accesskey="n" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s</a>',
+						$output = sprintf( '<a href="%1$s" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s</a>',
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),

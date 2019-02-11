@@ -106,5 +106,8 @@ Version number
    6 Feb, 2019    'Breadcrumb warning fix'
    
    11 Feb, 2019   'Skiplink fix'
-                              Now it is tested again in different browsers. 
+                              Now it is tested again in different browsers.
+   
+   11 feb, 2019   'Search result page fix'
+                              Screen-readers announced wrongly the widget-searchform. 
       
