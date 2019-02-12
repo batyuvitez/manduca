@@ -34,7 +34,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
-<!-- Manduca <?php echo ( is_child_theme() )? wp_get_theme()->parent()->Version : wp_get_theme()->Version ; ?> - focus on accessibility  -->
+<!-- Manduca <?php echo ( is_child_theme() )? wp_get_theme()->parent()->Version : wp_get_theme()->Version ; ?> - focus on accessibility -->
 </head>
 <?php
 	/*
@@ -56,10 +56,8 @@
 		$classes[] = 'single-author';
 	}
 	
-	//Detect visitors browser and add to body tag	
-	$browser_classes = new Browser_Type();
-	$classes		= array_merge( $classes , $browser_classes->classes() );
-	unset( $browser_classes );
+	//Detect visitors OS and browser and add to body tag	
+	$classes		= array_merge( $classes , (new User_Agent_Detect() )->get_classes() );
 ?>
 
 

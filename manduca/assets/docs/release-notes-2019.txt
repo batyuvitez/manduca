@@ -1,6 +1,6 @@
 This file is part of WordPress theme named Manduca - focus on accessibility.
 
-Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
 
 Manduca is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -109,5 +109,8 @@ Version number
                               Now it is tested again in different browsers.
    
    11 feb, 2019   'Search result page fix'
-                              Screen-readers announced wrongly the widget-searchform. 
+                              Screen-readers announced wrongly the widget-searchform.
+                              Addcapital letters to accesskeys. 
       
+   12 Feb, 2019   'Add user agent detect'
+                              Clarify os and browser detection. 
