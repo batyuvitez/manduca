@@ -660,6 +660,15 @@ function constrain(amt, low, high) {
          }
     });
       
+	// Set target selector value
+	var linkTarget=readCookie( "linkTarget" );
+	
+	if ( linkTarget == 'self' ) {
+          $( '#target-selector option[value="self"]').attr( 'selected', 'true');
+	}
+	if ( linkTarget == 'blank' ) {
+	   $( '#target-selector option[value="blank"]').attr( 'selected', 'true');
+	}
          
      //close toolbar with close button also    
     $( '#buttons-close' ).click(function() {
@@ -689,8 +698,11 @@ function constrain(amt, low, high) {
 		}	
     });
  
+   
+   
    /*
-    *Toolbar-buttons behaviour
+    * Toolbar settings
+    * set cookies based on toolbar-buttons clicks
     **/
     //change font size
     $('.change-font-size').click(function () {
@@ -725,6 +737,15 @@ function constrain(amt, low, high) {
         $('body').addClass(fontType);
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
         document.cookie = 'fontType=' + fontType + '; expires=' + CookieDate.toGMTString() + '; path=/';
+    });
+	
+	 
+    //change font family
+    $('#target-selector').on( 'change' ,function () {
+        var selectTarget= this.value;
+        var CookieDate = new Date();
+        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
+        document.cookie = 'linkTarget=' + selectTarget + '; expires=' + CookieDate.toGMTString() + '; path=/';
     });
     
    
@@ -775,17 +796,36 @@ function constrain(amt, low, high) {
 		return false;
        });
 
-        $(document).on( 'scroll', function( event ){
-			event.preventDefault();
-			if ($(window).scrollTop() > 100) {
-				$('.manduca-back-to-top-div').addClass('show');
-			} else {
-				$('.manduca-back-to-top-div').removeClass('show');
-			}
-			return false;
-		});
+	/*
+	 * Show button only when your below from the bove-folder area
+	 * */
+	$(document).on( 'scroll', function( event ){
+		event.preventDefault();
+		if ($(window).scrollTop() > 100) {
+			$('.manduca-back-to-top-div').addClass('show');
+		} else {
+			$('.manduca-back-to-top-div').removeClass('show');
+		}
+		return false;
+	});
     
     
+	/*
+	 *Change link target
+	 *based on cookie. 
+	 *@since 19.2
+	 **/
+	$('a.extlink').click(function(){
+		var linkTarget=readCookie( "linkTarget" );
+		if ( linkTarget == 'self' ) {
+          $(this).attr('target', '_self');
+       }
+	   if ( linkTarget == 'blank' ) {
+          $(this).attr('target', '_blank');
+       }
+	   
+    });
+	
     /*
      * Manduca archive widget submit button function
      *

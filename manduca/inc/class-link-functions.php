@@ -70,7 +70,7 @@ Class Link_Functions {
         $this->dom->encoding = 'utf-8'; //@see: https://stackoverflow.com/questions/6573258/domdocument-and-special-characters
         $this->dom->loadHTML( $content ); 
         libxml_use_internal_errors( false );
-                    
+            
         foreach ( $this->dom->getElementsByTagName('a') as $node) {
             
              /*If role="button", do not insert anything.
@@ -80,12 +80,28 @@ Class Link_Functions {
                 continue;
              }
              
-             $href		= 	$node->getAttribute( 'href' );
-            $link_text 	= $node->nodeValue;
-            $link_text= preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
-            $aria_labels = array();
-            $external_link = false;    
+            /*
+             *Set variables for the current cycle
+             **/
+            $href		    = $node->getAttribute( 'href' );
+            $link_text 	    = $node->nodeValue;
+            $link_text      = preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
+            $aria_labels    = array();
+            $external_link  = false;
+            if( empty( $node->getAttribute( 'class' ) ) ){
+                $classes        = array();    
+            }
+            else{
+                $classes = explode( ' ' , $node->getAttribute( 'class' ) ) ;
+            }
+            
+            
+           
+           
              
+            /*
+             * Start analyzation
+             **/
              if( ! $this->check_if_valid_link( $href ) ){
               continue;
              }
@@ -172,7 +188,9 @@ Class Link_Functions {
              * Different types of If external =(outgoing link)
               */
             elseif( !$this->check_if_internal_link( $href ) ) {
-                $external_link = true;    
+                $external_link = true;
+                $classes[] ='extlink';
+                
                 //Google map link
                     if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
                     
@@ -189,7 +207,8 @@ Class Link_Functions {
                     $aria_labels[] = __( 'external' , 'manduca' );
                     $node->appendChild( $this->create_svg_node( 'extlink') );
                     
-                 }   
+                 }
+                 
             } //end of external-link
                  
                  
@@ -213,6 +232,7 @@ Class Link_Functions {
                   //Translators: add screen-reader-text to target="'_blank". 
                   $aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
                   $node->appendChild( $this->create_svg_node( 'new-window') );
+                  $classes[] ='target-blank';
              } 
             
             if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
@@ -234,13 +254,12 @@ Class Link_Functions {
                                   );
                 }                  
                 $node->setAttribute( 'aria-label', $info_text);
-            
-                //tooltip introduced in 19.2
-                $node->setAttribute(
-                           'class',
-                           'use-tooltip'
-                        );
                 $node->appendChild( $this->create_tooltip_node( implode( ', ', $aria_labels ) ) );
+                $classes[] ='use-tooltip';
+            }
+                
+            if( !empty( $classes ) ) {                
+                $node->setAttribute( 'class', implode( ' ' , $classes ) ) ;
             }
         }
       

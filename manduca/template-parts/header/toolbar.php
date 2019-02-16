@@ -45,9 +45,8 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					  <tr>
 						   <td><span class="toolbar-label"><?php _e( 'Contrast:' , 'manduca' ); ?></span></td>
 						   <td><button class="high-contrast" id="high-contrast-0" aria-label="<?php _e( 'Original contrast' , 'manduca' ); ?>" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text">Eredeti</span></button></td>
-						   <td><button class="high-contrast" id="high-contrast-1" aria-label="<?php _e( 'Pastel background' , 'manduca' ); ?>" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text">Abc</span></button></td>
-						   <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Black background with yellow letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
-						   <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Yellow background with black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
+						   <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
+						   <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Light background black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
 					   </tr>
 					 
 					  <tr>
@@ -67,6 +66,13 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
              </tbody>
 	   </table>		
 	  
+	  <label for="target-selector"><?php _e( 'Choose link target', 'manduca' ); ?></label>
+	  <select name="target-selector" id="target-selector">
+		<option value="default"><?php _e( 'Leave as it is', 'manduca' );?></option>
+		<option value="self"><?php _e( "Don't open link in new window", 'manduca' ); ?></option>
+		<option value="blank"><?php _e( "Open links in new window", 'manduca' ); ?></option>
+	  </select>
+	  
 	  <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
 	  
 	  </ul>
@@ -74,9 +80,6 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
 	   </span>
 		
-		<span role="button" id="buttons-close" class="buttons-close" aria-label="<?php _e( 'Close' ) ; ?>">
-				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
-	   </span>
 </div>
 
 

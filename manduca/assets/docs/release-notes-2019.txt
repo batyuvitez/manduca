@@ -117,4 +117,9 @@ Version number
                               
    16 Feb,  2019  'Link function enhancement'
                               Announce opens in new window even if it is internal link.
-                              Other documentations in class Link_Function 
+                              Other documentations in class Link_Function
+                              
+   16 Feb, 2016   'User can select the link's target in Reading option'
+                           Need testing. 
+                              
+                              

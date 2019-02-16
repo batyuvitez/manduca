@@ -2,6 +2,15 @@ Az ISO/IEC 40500 szabványban (WCAG 2.0) az A szinthez tartozó 2.4.4 számú si
 
 A Manduca WordPress sablon ezért beépített linkkezelő modullal rendelkezik, amelyik további információkat árul el a linkről: 
 
+<h2>Képek kezelése</h2>
+
+<h3>Az alt attribútum nélküli képeket nem olvassa fel a képernyőolvasó. </h3>
+<img src="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail" />
+
+
+<h3>Ha kép van a linkben, akkor a helyettesítő szöveget olvassa fel, mint a link szövegét</h3>
+<a href="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg"><img src="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg" alt="A link szövege" width="150" height="150" class="alignnone size-thumbnail" /></a>
+
 <h2 id="examples" >Példák akadálymentes linkekre</h2>
 <h3>Statikus fájlokra mutató linkek</h3>
 <ul>
@@ -37,7 +46,7 @@ A Manduca WordPress sablon ezért beépített linkkezelő modullal rendelkezik, 
         <a href="./" target="_blank">Relatív hivatkozás - magasabb szintű könyvtárra mutat</a>
 	</li>
     <li>
-		<a href="../'>Relatív hivatkozás - kettővel magasabb szintű könyvtárra mutat</a>
+		<a href="../">Relatív hivatkozás - kettővel magasabb szintű könyvtárra mutat</a>
 	</li>
 </ul>
 <h3>Egyéb linkek</h3>
@@ -49,7 +58,7 @@ A Manduca WordPress sablon ezért beépített linkkezelő modullal rendelkezik, 
         <a href="http://localhost/unit-test-1/let%C3%B6lthet%C5%91-dokumentumok/">Saját magára mutató link </a>
     </li>
     <li>
-        <a href="http://localhost/unit-test-1/letölthető-dokumentumok/">Saját magára mutató link </a>
+        <a href="http://localhost/unit-test-1/letölthető-dokumentumok/" target="_blank">Új ablakban nyílik meg belső link</a>
         </li>
 </ul>
 <h2> Sémák</h2>
