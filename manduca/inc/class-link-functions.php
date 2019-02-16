@@ -28,31 +28,32 @@
 
 namespace Manduca;
 
+
   
- Class Link_Functions {
+Class Link_Functions {
 	
    protected $dom;
    
    public function __construct () {
-      // filters have high (late) priority to make sure that any markup plugins have done their HTML. 
-      add_filter( 'the_content', array( $this , 'filter_links' ) , 999 );
-      add_filter( 'the_excerpt', array( $this , 'filter_links' ) , 999 );
-      add_filter( 'comment_text', array( $this , 'filter_links' ) , 999 );
-      add_filter( 'widget_text', array( $this , 'filter_links' ) , 999 );
+         // filters have high (late) priority to make sure that any markup plugins have done their HTML. 
+         add_filter( 'the_content', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'the_excerpt', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'comment_text', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'widget_text', array( $this , 'filter_links' ) , 999 );
    }
    
-   /*
-    * Filter the content of different parts of webpage (main,widget etc. )
-    *
-    * Comments:
-    *     None of any Firefox version reads the aria-label attribute in Windows/JAWS. Therefore I still apply screen-reader text.
-    *     Other browser sometimes read aria-label before the value of element, which is not satisfactory. 
-    * 
-    * @param string $content : HTMl markup of content to be modified. 
-    * @return $string : modified HTML markup
-    * 
-   */
-   public function filter_links( $content ) {
+    /*
+     * Filter the content of different parts of webpage (main,widget etc. )
+     *
+     * Comments:
+     *     None of any Firefox version reads the aria-label attribute in Windows/JAWS. Therefore I still apply screen-reader text.
+     *     Other browser sometimes read aria-label before the value of element, which is not satisfactory. 
+     * 
+     * @param string $content : HTMl markup of content to be modified. 
+     * @return $string : modified HTML markup
+     * 
+    */
+    public function filter_links( $content ) {
         libxml_use_internal_errors( true );
         $this->dom = new \DOMDocument;
         $content = mb_convert_encoding (
@@ -69,9 +70,9 @@ namespace Manduca;
         $this->dom->encoding = 'utf-8'; //@see: https://stackoverflow.com/questions/6573258/domdocument-and-special-characters
         $this->dom->loadHTML( $content ); 
         libxml_use_internal_errors( false );
-        
+                    
         foreach ( $this->dom->getElementsByTagName('a') as $node) {
-        
+            
              /*If role="button", do not insert anything.
               *@since 19.1
               ***/
@@ -80,15 +81,21 @@ namespace Manduca;
              }
              
              $href		= 	$node->getAttribute( 'href' );
-             $link_text 	= $node->nodeValue;
-             $link_text= preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
-             
+            $link_text 	= $node->nodeValue;
+            $link_text= preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
+            $aria_labels = array();
+            $external_link = false;    
              
              if( ! $this->check_if_valid_link( $href ) ){
               continue;
              }
+
              
-             // Search for img child-node
+             
+             /* Search for img child-node
+              * and add role="presentation to it
+              * The necessary text will be in aria-label
+              * */
              $has_img_child = false;
              $child_nodes = $node->childNodes;
              foreach( $child_nodes as $child_node) {
@@ -103,66 +110,74 @@ namespace Manduca;
                     }
                 }
             }
+            
+            
+            
              if( $has_img_child ) {
                 if( !isset( $alt_text ) || '' == $alt_text ) {
                     $post_title= get_the_title();
                     
                     if( ! empty( $post_title) ) {
                      //Translators: %s = title of post. This is an aria-label to a link  which has a children of an image, and image has no alt text. 
-                     $aria_label = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
+                     $aria_labels[] = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
                             $post_title
                            );
-                     $node->setAttribute( 'aria-label', $aria_label );
+                    
                  } 
                 unset( $post_title );
                 }
                 else{
                     //Translators: %s = alt text of image. This is an aria label to a link which has a children of an image.
-                    $aria_label = sprintf( __( 'Image: %s' , 'manduca' ),
-                            $alt_text
-                            );
-                    $node->setAttribute( 'aria-label', $aria_label) ;					
+                    $aria_labels[] = $alt_text;
+                    
                     unset( $alt_text);
                 }
             }
              
-             // Looking for url_scheme
+            /*
+             * URL schemes (eg. mailto, tel etc.)
+            /* */
              elseif( false !== strpos( $href, ':' ) && 4 < strlen( $href ) && false === strpos( $href , 'http' ) ) {
                 $node = $this->add_icon_to_url_schemes( $node, $href );
              }
-          
+        
+        
+            /*
+             *Change self-link to <span>
+             **/          
              elseif( $this->check_if_self_link( $href ) ) {
-               $parent_node = 	$node->parentNode;
-               $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
-               $span_element->setAttribute(
-                'class',
-                'self-link'
-               );
-               
-               $screen_reader_text = $this->dom->createElement(
-                   'span',
-                    // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
-                    $screen_reader_text =  __( 'Current page', 'manduca' )  
-                   );
-               $screen_reader_text->setAttribute(
-                   'class',
-                   'screen-reader-text'
+                $parent_node = 	$node->parentNode;
+                $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
+                $span_element->setAttribute(
+                 'class',
+                 'self-link'
                 );
-               $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
-               $parent_node->insertBefore( $screen_reader_text, $node);
-               $parent_node->insertBefore( $span_element, $node );
-               $parent_node->removeChild( $node );
-               
-               
-              }
-              
-             elseif( !$this->check_if_internal_link( $href ) ) {
-                $aria_label = array();
+                
+                $screen_reader_text = $this->dom->createElement(
+                    'span',
+                     // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
+                     $screen_reader_text =  __( 'Current page', 'manduca' )  
+                    );
+                $screen_reader_text->setAttribute(
+                    'class',
+                    'screen-reader-text'
+                 );
+                $span_element 	= $this->dom->createElement( 'span', $node->nodeValue );
+                $parent_node->insertBefore( $screen_reader_text, $node);
+                $parent_node->insertBefore( $span_element, $node );
+                $parent_node->removeChild( $node );
+            }
+            
+            /*
+             * Different types of If external =(outgoing link)
+              */
+            elseif( !$this->check_if_internal_link( $href ) ) {
+                $external_link = true;    
                 //Google map link
                     if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
                     
                     //Translatos: add aria label to links to google maps. 
-                    $aria_label[] = __( 'open map', 'manduca' );
+                    $aria_labels[] = __( 'open map', 'manduca' );
                     
                     $svg_node = $this->create_svg_node( 'map-marker' );
                     $node->appendChild( $svg_node ) ; 
@@ -171,62 +186,69 @@ namespace Manduca;
                  //all other external link
                  else{
                     //Translators: add screen-reader-text to external link. 
-                    $aria_label[] = __( 'external' , 'manduca' );
-                    $svg_node = $this->create_svg_node( 'extlink' );
-                    $node->appendChild( $svg_node ) ; 
-                    $external_link = true;
-                 }
-                 
-                 //open in new window
-                   if( '_blank' == $node->getAttribute( 'target' ) ) {
-                         /*
-                          *Add rel=noopener to links open in new window
-                          *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
-                          @since 18.11, filter: 19.1
-                          */
-                         $rel = apply_filters( 'manduca_link_rel' , 'noopener noreferrer' );
-                         if( ! empty( $rel ) ){ 
-                            $node->setAttribute(
-                               'rel',
-                               $rel
-                            );
-                            
-                         }
-                         //Translators: add screen-reader-text to target="'_blank". 
-                         $aria_label[] = __( 'opens a new window' , 'manduca' ) ;
-                         
-                         $svg_node = $this->create_svg_node( 'new-window' );
-                         $node->appendChild( $svg_node ) ; 
-                    }
-                    $info_text = sprintf( '%s (%s)',
-                                     $link_text,
-                                     implode( ', ', $aria_label)
-                                     );
-                                     
-                    $node->setAttribute( 'aria-label', $info_text);
+                    $aria_labels[] = __( 'external' , 'manduca' );
+                    $node->appendChild( $this->create_svg_node( 'extlink') );
                     
-                    //tooltip introduced in 19.2
-                    $node->setAttribute(
-                               'class',
-                               'use-tooltip'
-                            );
-                    $node->appendChild( $this->create_tooltip_node( implode( ', ', $aria_label ) ) );
-                } //end of external-link
-                  
-                if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
+                 }   
+            } //end of external-link
+                 
+                 
+            /*
+             * Opens in new window (target="_blank")
+             **/
+            if( '_blank' == $node->getAttribute( 'target' ) ) {
+                  /*
+                   *Add rel=noopener to links open in new window
+                   *@see: https://dev.to/ben/the-targetblank-vulnerability-by-example
+                   @since 18.11, filter: 19.1
+                   */
+                  $rel = apply_filters( 'manduca_link_rel' , 'noopener noreferrer' );
+                  if( ! empty( $rel ) && $external_link ){ 
+                     $node->setAttribute(
+                        'rel',
+                        $rel
+                     );
+                     
+                  }
+                  //Translators: add screen-reader-text to target="'_blank". 
+                  $aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
+                  $node->appendChild( $this->create_svg_node( 'new-window') );
+             } 
+            
+            if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
                    $node = $this->add_icon_to_static_files( $node, $href );
+            }
+            
+            /*
+             *Add children to nodes (aria-label, tooltip)
+             **/
+                    
+            if( !empty( $aria_labels ) ) {
+                if( empty( $link_text ) ){
+                    $info_text = implode( ', ', $aria_labels);
+                }
+                else{
+                    $info_text = sprintf( '%s (%s)',
+                                  $link_text,
+                                  implode( ', ', $aria_labels)
+                                  );
+                }                  
+                $node->setAttribute( 'aria-label', $info_text);
+            
+                //tooltip introduced in 19.2
+                $node->setAttribute(
+                           'class',
+                           'use-tooltip'
+                        );
+                $node->appendChild( $this->create_tooltip_node( implode( ', ', $aria_labels ) ) );
             }
         }
       
-      /* Add role="presentation" to images without alt-text
-      * @since 18.10
-      */
-        foreach ( $this->dom->getElementsByTagName('img') as $node) {
-          $alt= 	$node->getAttribute( 'alt' );
-          if( empty( $alt ) || '' == $alt ) {
-           $node->setAttribute( 'role', 'presentation' );
-          }
-        }  
+        $this->modify_img_without_alt();
+        
+        /*
+         *End the process:  add aria-label, save Html and exit
+         **/        
         $final_html 	= $this->dom->saveHtml();
         $search			= array(
                    '<html>',
@@ -248,10 +270,13 @@ namespace Manduca;
         *@sicne 19.2
         **/
         return html_entity_decode( $final_html ) ;
+   }
     
-    }
-   
-   protected function add_icon_to_static_files( $node, $href ) {
+    
+    /*
+     *Add svg icon to nodes
+    */
+    protected function add_icon_to_static_files( $node, $href ) {
         $file_extension_array 	= $this->get_file_extensions_array();
         foreach( $file_extension_array as $extension => $data ) {	
             $needle 	= sprintf( '.%s' ,$extension );
@@ -272,15 +297,16 @@ namespace Manduca;
         }
       
       return $node;
-   }
+    }
+       
    
-   /*
-    *Add icon and tooltip to node
-    *
-    *@param (object) $node
-    *@param (string)
-    **/
-   protected function add_icon_to_url_schemes( $node, $href ) {
+    /*
+     *Add icon and tooltip to node
+     *
+     *@param (object) $node
+     *@param (string)
+     **/
+    protected function add_icon_to_url_schemes( $node, $href ) {
         $url_scheme_array 	= $this->get_url_scheme();
         foreach( $url_scheme_array as $scheme => $data ) {	
             $needle 	= sprintf( '%s:' ,$scheme );
@@ -296,19 +322,22 @@ namespace Manduca;
    }
    
    
-   protected function check_if_valid_link( $url ) {
-    if( 0 == strlen( $url ) )  {
-     return false;
-    }
-    
-    if( 1 == strlen( $url )) {
-       if( '/' != $url[0] )  {
+    protected function check_if_valid_link( $url ) {
+     if( 0 == strlen( $url ) )  {
       return false;
-       }
+     }
+     
+     if( 1 == strlen( $url )) {
+        if( '/' != $url[0] )  {
+       return false;
+        }
+     }
+     
+     return true;
     }
-    
-    return true;
-   }
+   
+   
+   
    
    /*
     *Check if url is internal link
@@ -412,6 +441,12 @@ namespace Manduca;
     return false;
    }
    
+   
+   /*
+    *Returns the available extensions (doc, xls, etc.
+    *
+    *@return array : data ofextensions
+   */
    protected function get_file_extensions_array() {
     $extenstion_array = array(
       'docx'		=> array(
@@ -458,6 +493,9 @@ namespace Manduca;
    }
    
    
+   
+   
+   
    protected function get_url_scheme(){
     $url_schemes = array(
      'mailto'	=> array(
@@ -477,6 +515,9 @@ namespace Manduca;
      **/    
     return apply_filters( 'manduca_url_scheme_array' , $url_schemes );
    }
+   
+   
+   
    
    
    /*
@@ -509,7 +550,7 @@ namespace Manduca;
     *
     * @return domNode class;
     **/
-   protected function create_tooltip_node ( string  $tooltip) {
+    protected function create_tooltip_node ( string  $tooltip) {
          $node = $this->dom->createElement(
              'span',
               $tooltip
@@ -520,5 +561,21 @@ namespace Manduca;
           );
               
        return $node;
-   }
+    }
+    
+    
+    
+    /*
+     * Add role="presentation" to images without alt-text
+    * @since 18.10
+    */
+    protected function modify_img_without_alt(){
+        foreach ( $this->dom->getElementsByTagName('img') as $node) {
+            $alt= 	$node->getAttribute( 'alt' );
+            if( empty( $alt ) || '' == $alt ) {
+             $node->setAttribute( 'role', 'presentation' );
+            }
+        }
+    }
+    
  }

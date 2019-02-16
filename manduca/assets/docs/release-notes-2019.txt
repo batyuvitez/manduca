@@ -113,4 +113,8 @@ Version number
                               Addcapital letters to accesskeys. 
       
    12 Feb, 2019   'Add user agent detect'
-                              Clarify os and browser detection. 
+                              Clarify os and browser detection.
+                              
+   16 Feb,  2019  'Link function enhancement'
+                              Announce opens in new window even if it is internal link.
+                              Other documentations in class Link_Function 
