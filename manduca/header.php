@@ -67,10 +67,7 @@
 		
 		<div id="page" class="hfeed site">
 			
-			<noscript>
-				<div id="no-javascript">
-					<?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?></div>
-			</noscript>
+			<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
 			
 			<div  id="top-bar" class="top-bar"></div>
 			
