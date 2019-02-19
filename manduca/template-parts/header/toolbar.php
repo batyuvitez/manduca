@@ -27,7 +27,7 @@
 
 <?php
 
-printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open color-3" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button></td>',
+printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open color-3" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
 		   manduca_get_svg( array( 'icon' => 'eye' ) ),
 		   manduca_get_svg( array( 'icon' => 'close' ) ),
 		   __( 'Display options', 'manduca' )
@@ -75,7 +75,6 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 	  
 	  <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
 	  
-	  </ul>
 		<span role="button" id="buttons-close" class="buttons-close" aria-label="<?php _e( 'Close' ) ; ?>">
 				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
 	   </span>

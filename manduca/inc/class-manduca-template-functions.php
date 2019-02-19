@@ -74,12 +74,12 @@ class Manduca_Template_Functions {
 						return '';
 				}
 				$args						= array();
-				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden class="tooltip">%s</span>',
+				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>',
 												  manduca_get_svg( array( 'icon' => 'angle-left' ) ),
 												__( 'Newer posts', 'manduca' ),
 												__( 'access key: P', 'manduca' )
 												);
-				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden class="tooltip">%s</span>%s',
+				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>%s',
 												__( 'Older posts', 'manduca' ),
 												__( 'access key: N', 'manduca' ),
 												manduca_get_svg( array( 'icon' => 'angle-right' ) ) 			  
