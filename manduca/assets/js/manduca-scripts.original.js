@@ -790,9 +790,8 @@ function constrain(amt, low, high) {
      
      $('#manduca-back-to-top').click(function( event ){
 		event.preventDefault( );
-		var pos = jQuery('#primary').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 1200);
+        jQuery('html, body').animate({scrollTop : 0}, 800);
+		jQuery('#skip-to-content').focus();
 		return false;
        });
 

@@ -123,5 +123,7 @@ Version number
                            Need testing.
    
    19 Feb, 2019   'no-javascript message moved to template'
+   
+   19 Feb, 2019   'set focus of back-to-top link'
                               
                               

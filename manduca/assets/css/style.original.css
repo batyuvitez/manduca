@@ -623,6 +623,7 @@ a.use-tooltip:focus .tooltip{
     text-align: center;
 	font-size: 0.8rem;
 	color: black;
+	text-shadow: none;
     padding: 2px 5px;
 	background-color: #DAF2FF;
     position: absolute;
