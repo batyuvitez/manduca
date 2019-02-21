@@ -68,6 +68,7 @@ class Manduca_Setup {
 		// Accesssible widget archive
 		new \Manduca\Register_Widgets;
 		new \Manduca\Widget_Archives;
+		new \Manduca\Ajax_Call_Handler;
 		
 		// Functions of admin size
 		if ( is_admin() ){
@@ -240,12 +241,15 @@ class Manduca_Setup {
 		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
 		
 		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
-					
-			$manduca_l10n['expand']         = __( 'expand child menu', 'manduca' );
-			$manduca_l10n['collapse']       = __( 'collapse child menu', 'manduca' );
-			$manduca_l10n['icon']           = manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) );
-			wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $manduca_l10n );
-	
+			
+			$js_variable['expand']         = __( 'expand child menu', 'manduca' );
+			$js_variable['collapse']       = __( 'collapse child menu', 'manduca' );
+			$js_variable['icon']           = manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) );
+			if( \Manduca\Widget_Archives::is_this_widget_active() ) {
+				$js_variable['hash']       	= wp_create_nonce( 'manduca-ajax' );
+			}
+			wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $js_variable );
+			
 			$focus_snail_color = array (
 								'red'		=>22,
 								'green'		=>78,

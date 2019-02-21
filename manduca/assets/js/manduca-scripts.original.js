@@ -316,7 +316,7 @@ function onEnd() {
 
 
 function isJustPressed() {
-	return Date.now() - keyDownTime < 42
+	return Date.now() - keyDownTime < 42;
 }
 
 
@@ -825,17 +825,41 @@ function constrain(amt, low, high) {
 	   
     });
 	
+	
+	
+	
     /*
-     * Manduca archive widget submit button function
+     * Manduca's user-friendly archive widget function 
      *
      *@since 19.2
      **/
-    $('#manduca-archive-widget-submit').click(function(){
+    $('#manduca_archive-month-submit').click(function(){
             var year = $( '#manduca-archive-year-dropdown' ).val();
             var month = $( '#manduca-archive-month-dropdown' ).val();
-            var url = `/${year}/${month}/}`;
-            document.location.href=url;
+            //var url = "/${year}/${month}/}";
+			var url = window.location.protocol + "//" + window.location.host + "/" + year + "/" + month + "/";
+			document.location.href=url;
     });
+	$( '#manduca-archive-year-dropdown' ).change(function(){
+		var year = $( '#manduca-archive-year-dropdown' ).val();
+		var url = window.location.protocol + "//" + window.location.host +'/?manduca=ajax';
+		jQuery.ajax({
+		url: url,
+		type : 'post',
+		data : {
+			action : 'archives',
+			year: year,
+			hash: manducaScreenReaderText.hash
+		},
+		success : function( response ) {
+				$( '#manduca-archive-month-dropdown option').remove();
+				$( '#manduca-archive-month-dropdown').append( response ).focus();
+				
+			}
+		});
+		
+	});
+	
     
     
 //end of ($)functions

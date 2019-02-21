@@ -15,6 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 
+Following is the commits to Manduca repo https://github.com/batyuvitez/manduca. 
+
 ............................................................................
 
 Version number
@@ -120,12 +122,23 @@ Version number
                               Other documentations in class Link_Function
                               
    16 Feb, 2019   'User can select the link's target in Reading option'
-                           Need testing.
+                           This is an experimental function. You can choose to override the editor's setup of lin's target.
+                           Based on user's experience everybody has its own preference, how to open the links. 
+                           With this function, you can choose from 3 alternatives:
+                              1. leave as it is,
+                              2. the content's link will be open in new windows,
+                              3. all links will be open in the same window. 
    
    19 Feb, 2019   'no-javascript message moved to template'
+                           tempalte is located: tempalates/header/nojavascript.php
+                           Now it can be altered without editing header.php
    
    19 Feb, 2019   'set focus of back-to-top link'
+                           Reading with screen-reader, the focus did not moved back to the top of the page. 
    
    19 Feb, 2019   'fix HTML errors'
+                           I checked the theme with W3C validator. I have found errors, and I fixed ig. 
                               
-                              
+   21 Feb 2019    'Enhanced archive widget'
+                           The archive widget (archive by months) may have very long: more hundreds item in select menu.
+                           This is reduced significantly with 2 select menus: year and months. 
