@@ -45,7 +45,7 @@ class Widget_Archives extends \WP_Widget {
 		$widget_ops = array(
 			'classname' => 'widget_archive',
 			// translators: description of Manduca's accessible archive widget
-			'description' => __( 'More user-friendly archive of your site&#8217;s Posts.', 'manduca' ),
+			'description' => __( 'You have two dropdown: one for years and one for months. This is easy-to use.', 'manduca' ),
 			'customize_selective_refresh' => true,
 		);
 		// translators: name of Manduca's accessible archive widget
@@ -72,7 +72,7 @@ class Widget_Archives extends \WP_Widget {
 	public function widget( $args, $instance ) {
 		global $wp_locale;
 				
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Archives' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'User friendy archives', 'manduca' );
 		
 		$c = ! empty( $instance['count'] ) ? '1' : '0';
 		
@@ -86,10 +86,10 @@ class Widget_Archives extends \WP_Widget {
 		$dropdown_html = $this->get_archives(  array('show_post_count'   => $c) ) ;
 		
 				
-		// translators: first select menu's text in archive widget
+		// translators: first (year) select menu's text in archive widget
 		$year_select_text = __( 'Select year', 'manduca' );
 		
-		// translators: second select menus's text in archive widget if no year selected.
+		// translators: second (month) select menus's text in archive widget until no year selected.
 		$month_select_text = __( 'First select year', 'manduca' );
 				
 		?>
@@ -145,7 +145,10 @@ class Widget_Archives extends \WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'count' => 0 ) );
 		$title = sanitize_text_field( $instance['title'] );
 		?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+		<p>
+         <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'manduca' ); ?></label>
+         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+      </p>
 		
 		<?php
 	}

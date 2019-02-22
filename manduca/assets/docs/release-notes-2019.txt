@@ -76,7 +76,7 @@ Version number
                               Double arrow-up svg icon included.
                               In order to give focus to header, tabindex attribute introduced.
 
-............................................................................
+............................................................................ 
 
    28 Jan, 2019  'language file from repository'
                               Upon auploading to repo, current language file copied here.
@@ -147,3 +147,18 @@ Version number
                            Based on testing, errors are fixed.
                            
    22 Feb, 2019   'last review before upload to repository'
+   
+   
+            _.-/`)
+         // / / )
+      .=// / / / )
+     //`/ / / / /
+    // /     ` /
+   ||         /                      VERSION 19.2 HAVE BEEN UPLOADED
+    \\       /
+     ))    .'
+jgs //    /
+         /
+         
+
+22 Feb 2019.   'translations are added'
