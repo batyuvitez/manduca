@@ -43,10 +43,11 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 			<tbody>
 				  
 					  <tr>
-						   <td><span class="toolbar-label"><?php _e( 'Contrast:' , 'manduca' ); ?></span></td>
-						   <td><button class="high-contrast" id="high-contrast-0" aria-label="<?php _e( 'Original contrast' , 'manduca' ); ?>" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text">Eredeti</span></button></td>
+						   <td><span class="toolbar-label"><?php _e( 'Color scheme:' , 'manduca' ); ?></span></td>
+						   <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
+									<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
 						   <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
-						   <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Light background black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
+						   <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Light background, black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
 					   </tr>
 					 
 					  <tr>

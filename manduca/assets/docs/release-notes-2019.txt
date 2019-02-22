@@ -165,3 +165,7 @@ jgs //    /
 
 22 Feb 2019.   'Hungarian content problem fixed'
                      there was no output in case of published is less than 1 day.
+                     
+22 Feb, 2019   'Toolbar experience'
+                     - Added the fourth color scheme to toolbar
+                     - Change labels for better understanding. 
