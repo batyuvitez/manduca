@@ -162,3 +162,6 @@ jgs //    /
          
 
 22 Feb 2019.   'translations are added'
+
+22 Feb 2019.   'Hungarian content problem fixed'
+                     there was no output in case of published is less than 1 day.

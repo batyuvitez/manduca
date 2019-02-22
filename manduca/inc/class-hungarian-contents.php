@@ -72,7 +72,10 @@
     
         $diff = (int) abs( $to - $from );
 		
-        if ( $diff < MONTH_IN_SECONDS  && $diff >= DAY_IN_SECONDS ) {
+        if ( $diff < DAY_IN_SECONDS ) {
+            $minutes = round( $diff / 60 );
+            $since = sprintf( _n( '%s minute', '%s minutes', $minutes, 'manduca' ), $minutes);
+        } elseif ( $diff < MONTH_IN_SECONDS  && $diff >= DAY_IN_SECONDS ) {
             $days = round( $diff / DAY_IN_SECONDS );
             if ( $days <= 1 )
                 $days = 1;
