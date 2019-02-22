@@ -4,19 +4,19 @@ Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: http://www.web25.hu
-Version: 19.2 beta
+Version: 19.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: New generation theme to start build an ISO/IEC 40500:2012 ( i.e. WCAG 2.0 )  compliant accessible website. Add child theme with individual design. Special features for Hungarian users. PHP 7 compatible.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
-Github: https://github.com/batyuvitez/manduca
 Commented css: /assets/css/style.original.css
 */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Source code is available at https://github.com/batyuvitez/manduca
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

@@ -9,6 +9,7 @@
  *
 	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
 
+    Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or

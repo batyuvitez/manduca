@@ -141,4 +141,7 @@ Version number
                               
    21 Feb 2019    'Enhanced archive widget'
                            The archive widget (archive by months) may have very long: more hundreds item in select menu.
-                           This is reduced significantly with 2 select menus: year and months. 
+                           This is reduced significantly with 2 select menus: year and months.
+                           
+   22 Feb, 2019   'Fix errors in archive widget'
+                           Based on testing, errors are fixed. 

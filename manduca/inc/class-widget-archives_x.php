@@ -83,8 +83,8 @@ class Widget_Archives extends \WP_Widget {
 		}
 		
 		$dropdown_id = "{$this->id_base}-dropdown-{$this->number}";
-		$dropdown_html = $this->get_archives(  array('show_post_count'   => $c) ) ;
-		
+		//$dropdown_html = $this->get_archives(  array('show_post_count'   => $c) ) ;
+		$years = $this->get_years();
 				
 		// translators: first select menu's text in archive widget
 		$year_select_text = __( 'Select year', 'manduca' );
@@ -93,30 +93,35 @@ class Widget_Archives extends \WP_Widget {
 		$month_select_text = __( 'First select year', 'manduca' );
 				
 		?>
-		
 		<select id="manduca-archive-year-dropdown" name="manduca-archive-year-dropdown" >
 		 <option value="" disabled selected><?php echo $year_select_text; ?></option>
 		<?php
-			foreach( $dropdown_html as $year => $months ) {
-				printf( '<option value ="%1$s">%1$s</option>', $year );
+			foreach( $years as $year => $count  ) {
+			   if( 1 === $c ) {
+				printf( '<option value ="%1$s">%1$s ( %2$s) </option>', $year, $count );
+			   }
+			   else {
+				  printf( '<option value ="%1$s">%1$s</option>', $year );
+			   }
 			}
 		?>
 		</select>
 		
-		
 		<select id="manduca-archive-month-dropdown" name="manduca-archive-month-dropdown" >
 			<option disabled selected><?php echo $month_select_text; ?></option>
 		</select>
-		<button id="manduca_archive-month-submit"><?php _e( 'Filter posts', 'manduca' ) ?></button>
+		<button id="manduca_archive-month-submit"><?php _e( 'Submit' ) ?></button>
 		
 		<?php
 		echo $args['after_widget'];
 	}
 
+	
+	
 	/**
 	 * Handles updating settings for the current Archives widget instance.
+	 * Copied from Wordpress widget
 	 *
-	 * @since 2.8.0
 	 *
 	 * @param array $new_instance New settings for this instance as input by the user via
 	 *                            WP_Widget_Archives::form().
@@ -131,13 +136,11 @@ class Widget_Archives extends \WP_Widget {
 		return $instance;
 	}
 
-	
-	
 	/**
 	 * Outputs the settings form for the Archives widget.
-	 * Copied from WordPress' archive widget
 	 * 
 	 *
+	 * @since 2.8.0
 	 *
 	 * @param array $instance Current settings.
 	 */
@@ -153,122 +156,39 @@ class Widget_Archives extends \WP_Widget {
     
     
     /**
-     * Return archive links based on type and format.
-     * Copy of wp_get_archives in general-template.php and modified.  
+     * Return years of archive links 
      *
-     * @see get_archives_link()
-     * @global wpdb     
-     * @global wp_locale
-     *
-     * @param string|array $args {
-     *     Default archive links arguments. Optional.
-     *
-     *     @type string|int $limit           Number of links to limit the query to. Default empty (no limit).
-     *     @type string     $before          Markup to prepend to the beginning of each link. Default empty.
-     *     @type string     $after           Markup to append to the end of each link. Default empty.
-     *     @type bool       $show_post_count Whether to display the post count alongside the link. Default false.
-     *     @type string     $order           Whether to use ascending or descending order. Accepts 'ASC', or 'DESC'.
-     *                                       Default 'DESC'.
-     *     @type string     $post_type       Post type. Default 'post'.
-     * }
-     * @return string|void String when retrieving.
+     * @return array {year=>count}
      */
-    public function get_archives( $args = '' ) {
-        global $wpdb, $wp_locale;
-    
-        $defaults = array(
-            'limit' => '',
-            'order' => 'DESC',
-            'post_type' => 'post'
-        );
-    
-        $r = wp_parse_args( $args, $defaults );
-    
-        $post_type_object = get_post_type_object( $r['post_type'] );
-        if ( ! is_post_type_viewable( $post_type_object ) ) {
-            return;
-        }
-        $r['post_type'] = $post_type_object->name;
-    
-        if ( ! empty( $r['limit'] ) ) {
-            $r['limit'] = absint( $r['limit'] );
-            $r['limit'] = ' LIMIT ' . $r['limit'];
-        }
-    
-        $order = strtoupper( $r['order'] );
-        if ( $order !== 'ASC' ) {
-            $order = 'DESC';
-        }
-    
-        $where = $wpdb->prepare( "WHERE post_type = %s AND post_status = 'publish'", $r['post_type'] );
-    
-    
-        $output = array();
-        $last_changed = wp_cache_get_last_changed( 'posts' );
-    
-        $limit = $r['limit'];
-        
+    public function get_years() {
+        global $wpdb;
         $query = "
                 SELECT
-                    YEAR(post_date) AS `year`,
-                    MONTH(post_date) AS `month`,
-                    count(ID) as posts
+                    YEAR(post_date) AS 'year',        
+                    count(ID) as count
                 FROM $wpdb->posts
-                $where
-                GROUP BY YEAR(post_date),
-                MONTH(post_date)
-                ORDER BY post_date $order $limit";
-        $key = md5( $query );
-        $key = "wp_get_archives:$key:$last_changed";
-        if ( ! $results = wp_cache_get( $key, 'posts' ) ) {
-            $results = $wpdb->get_results( $query );
-            wp_cache_set( $key, $results, 'posts' );
-        }
+                WHERE post_type = 'post' AND post_status = 'publish'
+                GROUP BY YEAR(post_date)
+                ORDER BY post_date";
+		 $results = $wpdb->get_results( $query );
         
+		$years = array();
         if ( $results ) {    
             $years = array();
             foreach ( (array) $results as $result ) {
-                $year = $result->year;
-                if( !in_array( $year, $years ) ){
-                    $years[] = $year;
-                }
+			   $years[ $result->year ] = $result->count;
             }
-			
-		 //translators: second select menu's text in archive widget is year is selected:
-		$month_text_year_selected = __( 'Months in %s', 'manduca' );
-            foreach( $years as $year ){
-               $current_year = array();
-               foreach ( (array) $results as $result ) {
-                    if( $result->year ===$year ) {                
-                        $url = get_month_link( $year, $result->month );
-                        if ( 'post' !== $r['post_type'] ) {
-                            $url = add_query_arg( 'post_type', $r['post_type'], $url );
-                        }
-                        /* translators: 1: month name, 2: 4-digit year */
-                        $text = $wp_locale->get_month( $result->month );
-                        //$output[ $year ][] = get_archives_link( $url, $text, 'option', $r['before'], $r['after'] );
-						$current_year[] = sprintf( '<option value="%1$s">%2$s</option>', $result->month, $text );
-                    }
-                }
-				$current_year[] = sprintf( '<option value="" disabled selected>%s</option>',
-										  sprintf( $month_text_year_selected, $year )
-									);
-				$output[ $year ] = array_reverse( $current_year );
-            }
-        }
-                    
-        return $output;
+		}
+        return $years;
     
     }
-	
-	
-	
 	
 	/*
 	 *This method is called with ajax
 	 *displays the html of the month select menu
 	 */
-	public function get_archive_months(){  
+	
+	public function get_archive_months(){
 		check_ajax_referer( 'manduca-ajax', 'hash', false );
 		global $wpdb, $wp_locale;
     
@@ -346,7 +266,7 @@ class Widget_Archives extends \WP_Widget {
 						$current_year[] = sprintf( '<option value="%1$s">%2$s</option>', $result->month, $text );
                     }
                 }
-				$current_year[] = sprintf( '<option value="" disabled selected>%s</option>',
+				$current_year[] = sprintf( '<option value="" disabled="disabled" selected >%s</option>',
 										  sprintf( $month_text_year_selected, $year )
 									);
 				$output[ $year ] = array_reverse( $current_year );
@@ -362,6 +282,10 @@ class Widget_Archives extends \WP_Widget {
 		die();
 	}
 
+   
+   
+   
+   
    /*
     * The is_active_widget has bugs, this should be used instead.
     *

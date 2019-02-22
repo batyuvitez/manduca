@@ -30,12 +30,5 @@
     <a class="skip-link" id="skip-to-sidebar" href="javascript::"><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>
     
     <a class="skip-link" id="skip-to-footer" href="javascript::"><?php _e( 'Skip to footer', 'manduca' ); ?></a>        
-    
-    
-    <?php if( defined( 'MANDUCA_ACCESS_KEYS') ) : ?>
         
-        <a class="skip-link" href="<?php echo MANDUCA_ACCESS_KEYS; ?>" accesskey="0"><?php _e( 'Jump to access key details', 'manduca' ); ?></a>    
-            
-    <?php endif; ?>
-
 </nav>
