@@ -8,7 +8,7 @@ A Manduca WordPress sablon ezért beépített linkkezelő modullal rendelkezik, 
 <img src="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail" />
 
 
-<h3>Ha kép van a linkben, akkor a helyettesítő szöveget olvassa fel, mint a link szövegét</h3>
+<h3>Ha egy linkben van kép, akkor a helyettesítő szöveget olvassa fel, mint a link szövegét</h3>
 <a href="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg"><img src="http://localhost/wp-content/uploads/2018/11/facebook-nyugdíjba-vonult.jpg" alt="A link szövege" width="150" height="150" class="alignnone size-thumbnail" /></a>
 
 <h2 id="examples" >Példák akadálymentes linkekre</h2>
@@ -63,13 +63,14 @@ A Manduca WordPress sablon ezért beépített linkkezelő modullal rendelkezik, 
 </ul>
 <h2> Sémák</h2>
 <ul>
-<li>[tel szam="203933223"]</li>
 <li><a href="tel:+36205617144">20/56 17 144</a></li>
-<li><a href="mailto:tibor.kovacs@t-email.hu">tibor.kovacs@t-email.hu</a></li>
+<li><a href="mailto:ezs@web25.hu">ezs@web25.hu</a></li>
+<li><a href="https://goo.gl/maps/v8fES9SsSzK2">Link Google térképhez </a></li>
 </ul>
 
 
-<h2><q>Tovább olvasom</h2> gomb szabványosítása</h2>
-Egy oldalon több <q>tovább<\q>, <q>Tovább olvasom</q> és ehhez hasonló szövegű gomb  lehet. Mivel a 4.4.9 akadálymentességi sikerkriérium szerint minden egyes link szövegéből ki kell derülni a céljának, ezért a Manduca a képernyőolvasók (és a Google) számára kiegészíti <code>aria-labelby</code> elemmel a linket, így már megfelel a szabványnak. 
+<h2><q>Tovább olvasom</q> gomb szabványosítása</h2>
+Egy oldalon sok <q>Tovább olvasom</q> vagy hasonló szövegű gomb  lehet. Mivel a 4.4.9 akadálymentességi sikerkriérium szerint minden egyes link szövegéből ki kell derülni a céljának, ezért a Manduca a képernyőolvasók (és a Google) számára kiegészíti <code>aria-labelby</code> elemmel a linket, így már megfelel a szabványnak.
+<h3 id="read-more-example">Ez az aria-labelledby attribútummal hivatkozott elem.</h3>
 
-<a href="#" class="more-link color-2" style="color: white; text-decoration: none;" >Tovább olvasom <svg  class="icon-angle-right" aria-hidden="true" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></a>
+<a href="#" class="more-link color-2" style="color: white; text-decoration: none;" >Tovább olvasom <svg  class="icon-angle-right" aria-labeledby="read-more-example"viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></a>

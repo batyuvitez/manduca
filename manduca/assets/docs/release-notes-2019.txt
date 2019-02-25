@@ -168,4 +168,11 @@ jgs //    /
                      
 22 Feb, 2019   'display options experience'
                      - Added the fourth color scheme to toolbar
-                     - Change labels for better understanding. 
+                     - Change labels for better understanding.
+22 Feb, 2019   'translations'
+                     - https://translate.wordpress.org/projects/wp-themes/manduca/ : some strings are ignored I had to correct it manually.
+                     
+25 Feb, 2019   'new tooltip and translation corrections'
+               - Added new tranlsation to the po file
+               - Some translations are corrected (in po file and in Repository)
+

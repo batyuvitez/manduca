@@ -77,11 +77,11 @@ class Manduca_Template_Functions {
 				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>',
 												  manduca_get_svg( array( 'icon' => 'angle-left' ) ),
 												__( 'Newer posts', 'manduca' ),
-												__( 'access key: P', 'manduca' )
+												__( 'Access key: P', 'manduca' )
 												);
 				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>%s',
 												__( 'Older posts', 'manduca' ),
-												__( 'access key: N', 'manduca' ),
+												__( 'Access key: N', 'manduca' ),
 												manduca_get_svg( array( 'icon' => 'angle-right' ) ) 			  
 												);
 			
@@ -355,11 +355,12 @@ class Manduca_Template_Functions {
 				if ( ! $post ) {
 					$output = '';
 				} else {
-						$output = sprintf( '<a href="%1$s" accesskey="P" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s</a>',
+						$output = sprintf( '<a href="%1$s" accesskey="P" class="use-tooltip" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
-							   __( 'Previous post', 'manduca' )
+							   __( 'Previous post', 'manduca' ),
+							   __( 'Access key: P', 'manduca' )
 							   );
 				}
 				return $output;
@@ -378,11 +379,12 @@ class Manduca_Template_Functions {
 				if ( ! $post ) {
 					$output = '';
 				} else {
-						$output = sprintf( '<a href="%1$s" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s</a>',
+						$output = sprintf( '<a href="%1$s" class="use-tooltip" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
-								__( 'Next post', 'manduca' )
+								__( 'Next post', 'manduca' ),
+								__( 'Access key: N', 'manduca' )
 							   );
 				}
 				return $output;
