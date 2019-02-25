@@ -88,11 +88,12 @@ Class Link_Functions {
             $link_text      = preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
             $aria_labels    = array();
             $external_link  = false;
-            if( empty( $node->getAttribute( 'class' ) ) ){
-                $classes        = array();    
+            // some people uses PHP < 5.6
+            if( $node->getAttribute( 'class' ) )   {
+                $classes = explode( ' ' , $node->getAttribute( 'class' ) ) ;
             }
             else{
-                $classes = explode( ' ' , $node->getAttribute( 'class' ) ) ;
+                $classes        = array();    
             }
             
             

@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-25 11:07+0100\n"
+"PO-Revision-Date: 2019-02-25 14:27+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,6 +190,10 @@ msgstr "Írógép"
 #: template-parts/header/toolbar.php:54
 msgid "Sans serif"
 msgstr "Talpatlan"
+
+#: template-parts/header/toolbar.php # a wp nem vette észre
+msgid "For night"
+msgstr "Éjszakai"
 
 #. Translators: %s = title of post. This is an aria-label to a link  which has
 #. a children of an image, and image has no alt text.
