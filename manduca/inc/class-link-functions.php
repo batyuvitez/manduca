@@ -570,7 +570,7 @@ Class Link_Functions {
     *
     * @return domNode class;
     **/
-    protected function create_tooltip_node ( string  $tooltip) {
+    protected function create_tooltip_node ($tooltip) {
          $node = $this->dom->createElement(
              'span',
               $tooltip
