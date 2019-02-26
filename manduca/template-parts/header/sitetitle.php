@@ -56,7 +56,7 @@ $home_url = trim( '/', get_home_url() );
         <a href="<?php echo home_url( '/' );  ?>" rel="home" accesskey="1">
             <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
             <span class="display-site-title"><?php echo $site_title; ?></span>
-            <span class="tooltip" aria-hidden="true"><?php _e( 'Access key: 1', 'manduca' ); ?></span>
+            <span class="tooltip" aria-hidden="true"><?php _e( 'Access key', 'manduca' ); ?>: 1</span>
         </a>
     </div>
 

@@ -77,11 +77,11 @@ class Manduca_Template_Functions {
 				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>',
 												  manduca_get_svg( array( 'icon' => 'angle-left' ) ),
 												__( 'Newer posts', 'manduca' ),
-												__( 'Access key: P', 'manduca' )
+												__( 'Access key', 'manduca' ).': P'
 												);
 				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>%s',
 												__( 'Older posts', 'manduca' ),
-												__( 'Access key: N', 'manduca' ),
+												__( 'Access key', 'manduca' ) .': N',
 												manduca_get_svg( array( 'icon' => 'angle-right' ) ) 			  
 												);
 			
@@ -360,7 +360,7 @@ class Manduca_Template_Functions {
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
 							   __( 'Previous post', 'manduca' ),
-							   __( 'Access key: P', 'manduca' )
+							   __( 'Access key', 'manduca' ) .': P'
 							   );
 				}
 				return $output;
@@ -384,7 +384,7 @@ class Manduca_Template_Functions {
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
 								__( 'Next post', 'manduca' ),
-								__( 'Access key: N', 'manduca' )
+								__( 'Access key', 'manduca' ) .': N'
 							   );
 				}
 				return $output;

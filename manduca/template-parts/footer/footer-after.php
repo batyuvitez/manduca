@@ -31,6 +31,6 @@
    <a id="manduca-back-to-top" accesskey="T" class="use-tooltip" href="javascript::" >
          <span class="screen-reader-text"><?php _e( 'Back to top', 'manduca' ); ?></span>
          <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
-         <span class="tooltip"><?php _e( 'Access key: T', 'manduca') ; ?></span>
+         <span class="tooltip"><?php _e( 'Access key', 'manduca') ; ?>: T</span>
    </a>
 </div>

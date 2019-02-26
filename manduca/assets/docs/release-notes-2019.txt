@@ -171,10 +171,13 @@ jgs //    /
                      - Change labels for better understanding.
 22 Feb, 2019   'translations'
                      - https://translate.wordpress.org/projects/wp-themes/manduca/ : some strings are ignored I had to correct it manually.
+                     - more commits fixing translation bugs. 
                      
 25 Feb, 2019   'new tooltip and translation corrections'
                - Added new tranlsation to the po file
                - Some translations are corrected (in po file and in Repository)
 25 Feb, 2019   'testing in PHP 5.5'
-               - empty function does not work in old PHP. I changed to a more stable function. 
-   
+               - more commit 
+               - empty function does not work in old PHP. I changed to a more stable function.
+               - Change theme description and add PHP 5.5. compatibility 
+
