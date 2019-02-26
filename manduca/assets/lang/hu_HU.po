@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-26 08:47+0100\n"
+"PO-Revision-Date: 2019-02-26 10:49+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -717,3 +717,56 @@ msgstr "http://akadálymentes-wordpress-sablon.hu/"
 #. Author of the theme
 msgid "Zsolt Edelényi"
 msgstr "Edelényi Zsolt"
+
+#: template-parts/header/new.php:50
+msgid "Biggest"
+msgstr "Legnagyobb"
+
+#: template-parts/header/new.php:49
+msgid "Bigger"
+msgstr "Nagyobb"
+
+#: template-parts/header/new.php:47 template-parts/header/toolbar.php:60
+msgid "Font size:"
+msgstr "Betűméret:"
+
+#: template-parts/header/new.php:43 template-parts/header/toolbar.php:55
+msgid "Serif"
+msgstr "Könyv"
+
+#: template-parts/header/new.php:42
+msgid "Fixed with"
+msgstr "Írógép"
+
+#: template-parts/header/new.php:41 template-parts/header/new.php:48
+msgid "Original"
+msgstr "Eredeti"
+
+#: template-parts/header/new.php:40 template-parts/header/toolbar.php:53
+msgid "Font type:"
+msgstr "Betűtípus:"
+
+#: template-parts/header/new.php:36
+msgid "Yellow background with black letters"
+msgstr "Fekete betűk sárga háttéren"
+
+#: template-parts/header/new.php:35
+msgid "Black background with yellow letters"
+msgstr "Sárga betűk fekete háttéren"
+
+#: template-parts/header/new.php:34
+msgid "Pastel background"
+msgstr "Pasztell színű háttér"
+
+#: template-parts/header/new.php:33 template-parts/header/toolbar.php:47
+msgid "Original contrast"
+msgstr "Eredeti színséma"
+
+#: template-parts/header/new.php:32 template-parts/header/toolbar.php:46
+msgid "Contrast:"
+msgstr "Színséma:"
+
+#: template-parts/header/new.php:15 template-parts/header/new.php:21
+#: template-parts/header/toolbar.php:33 template-parts/header/toolbar.php:40
+msgid "Display options"
+msgstr "Olvasási beállítások"

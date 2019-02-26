@@ -176,8 +176,11 @@ jgs //    /
 25 Feb, 2019   'new tooltip and translation corrections'
                - Added new tranlsation to the po file
                - Some translations are corrected (in po file and in Repository)
+
 25 Feb, 2019   'testing in PHP 5.5'
                - more commit 
                - empty function does not work in old PHP. I changed to a more stable function.
                - Change theme description and add PHP 5.5. compatibility 
 
+26 Feb, 2019   'deletions'
+               - delete unused files in more commits. 
