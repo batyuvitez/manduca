@@ -1854,7 +1854,8 @@ svg.search-icon,
 
 
 
-/* 12 A.* Reading options toolbar 
+/* 12 A.* Reading options toolbar
+ * @since 19.12
 -------------------------------------------------------------- */
 
 
@@ -2187,7 +2188,7 @@ body.font-size-2 #font-size-2{
 
 /* accessible back-to-top function
  * @since 19.1
- * */
+ * *****************************************************/
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;

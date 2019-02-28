@@ -183,4 +183,7 @@ jgs //    /
                - Change theme description and add PHP 5.5. compatibility 
 
 26 Feb, 2019   'deletions'
-               - delete unused files in more commits. 
+               - delete unused files in more commits.
+               
+28 Feb, 2019   'depretiate smart underline'
+                  - browsers now support nice underline. This script is not necessary any longer.
