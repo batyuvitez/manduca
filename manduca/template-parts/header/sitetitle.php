@@ -36,15 +36,10 @@
 
  
  ?>
-<?php
-$current_url = trim( '/', $_SERVER['REQUEST_URI'] ) ;
-$home_url = trim( '/', get_home_url() );
-?>
 
  
 <?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
- <?php echo $current_url ;?>
- <?php echo $home_url ;?>
+ 
 <?php if( is_front_page() ) : ?>
     
         <div class="site-title">

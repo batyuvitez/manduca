@@ -185,5 +185,7 @@ jgs //    /
 26 Feb, 2019   'deletions'
                - delete unused files in more commits.
                
-28 Feb, 2019   'depretiate smart underline'
+28 Feb, 2019   'depreciate smart underline'
                   - browsers now support nice underline. This script is not necessary any longer.
+                  
+1 Mar, 2019    'delete debug codes'

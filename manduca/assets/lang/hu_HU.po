@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-26 10:49+0100\n"
+"PO-Revision-Date: 2019-03-01 10:34+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -770,3 +770,7 @@ msgstr "Színséma:"
 #: template-parts/header/toolbar.php:33 template-parts/header/toolbar.php:40
 msgid "Display options"
 msgstr "Olvasási beállítások"
+
+# nojavascriopt.php new in 19.3 ***
+msgid "Ok, I enabled javascript"
+msgstr "Rendben, a Javascriptet bekapcsoltam."

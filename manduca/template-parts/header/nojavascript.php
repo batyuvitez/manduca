@@ -31,5 +31,6 @@
 <noscript>
 				<div id="no-javascript">
 					<?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?></div>
+    <a href="/"><?php e_( 'Ok, I enabled javascript', 'manduca'); ?></a>
 </noscript>
 			
