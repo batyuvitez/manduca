@@ -65,7 +65,7 @@
  *
  * @modified 19.1
  */
-	public static function get_date_difference( int $from, int $to = NULL ){
+	public static function get_date_difference( $from, $to = NULL ){
         if ( empty( $to ) ) {
             $to = time();
         }
