@@ -32,7 +32,7 @@ namespace Manduca;
   
 Class Link_Functions {
 	
-   protected $dom;
+   protected $dom, $aria_labels;
    
    public function __construct () {
          // filters have high (late) priority to make sure that any markup plugins have done their HTML. 
@@ -70,9 +70,9 @@ Class Link_Functions {
         $this->dom->encoding = 'utf-8'; //@see: https://stackoverflow.com/questions/6573258/domdocument-and-special-characters
         $this->dom->loadHTML( $content ); 
         libxml_use_internal_errors( false );
-            
+                            
         foreach ( $this->dom->getElementsByTagName('a') as $node) {
-            
+        
              /*If role="button", do not insert anything.
               *@since 19.1
               ***/
@@ -86,7 +86,7 @@ Class Link_Functions {
             $href		    = $node->getAttribute( 'href' );
             $link_text 	    = $node->nodeValue;
             $link_text      = preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
-            $aria_labels    = array();
+            $this->aria_labels = array();
             $external_link  = false;
             // some people uses PHP < 5.6
             if( $node->getAttribute( 'class' ) )   {
@@ -136,7 +136,7 @@ Class Link_Functions {
                     
                     if( ! empty( $post_title) ) {
                      //Translators: %s = title of post. This is an aria-label to a link  which has a children of an image, and image has no alt text. 
-                     $aria_labels[] = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
+                     $this->aria_labels[] = sprintf( __( 'Image to the post titled: %s' , 'manduca' ),
                             $post_title
                            );
                     
@@ -145,7 +145,7 @@ Class Link_Functions {
                 }
                 else{
                     //Translators: %s = alt text of image. This is an aria label to a link which has a children of an image.
-                    $aria_labels[] = $alt_text;
+                    $this->aria_labels[] = $alt_text;
                     
                     unset( $alt_text);
                 }
@@ -196,7 +196,7 @@ Class Link_Functions {
                     if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
                     
                     //Translatos: add aria label to links to google maps. 
-                    $aria_labels[] = __( 'open map', 'manduca' );
+                    $this->aria_labels[] = __( 'open map', 'manduca' );
                     
                     $svg_node = $this->create_svg_node( 'map-marker' );
                     $node->appendChild( $svg_node ) ; 
@@ -205,7 +205,7 @@ Class Link_Functions {
                  //all other external link
                  else{
                     //Translators: add screen-reader-text to external link. 
-                    $aria_labels[] = __( 'external' , 'manduca' );
+                    $this->aria_labels[] = __( 'external' , 'manduca' );
                     $node->appendChild( $this->create_svg_node( 'extlink') );
                     
                  }
@@ -231,7 +231,7 @@ Class Link_Functions {
                      
                   }
                   //Translators: add screen-reader-text to target="'_blank". 
-                  $aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
+                  $this->aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
                   $node->appendChild( $this->create_svg_node( 'new-window') );
                   $classes[] ='target-blank';
              } 
@@ -240,35 +240,42 @@ Class Link_Functions {
                    $node = $this->add_icon_to_static_files( $node, $href );
             }
             
+            
+            
             /*
-             *Add children to nodes (aria-label, tooltip)
+             * End process of one link.
+             * Add children to nodes (aria-label, tooltip)
              **/
                     
-            if( !empty( $aria_labels ) ) {
+            if( !empty( $this->aria_labels ) ) {
+               
                 if( empty( $link_text ) ){
-                    $info_text = implode( ', ', $aria_labels);
+                    $info_text = implode( ', ', $this->aria_labels);
                 }
                 else{
                     $info_text = sprintf( '%s (%s)',
                                   $link_text,
-                                  implode( ', ', $aria_labels)
+                                  implode( ', ', $this->aria_labels)
                                   );
-                }                  
+                }
+                
+                        
                 $node->setAttribute( 'aria-label', $info_text);
-                $node->appendChild( $this->create_tooltip_node( implode( ', ', $aria_labels ) ) );
+                $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
                 $classes[] ='use-tooltip';
             }
                 
             if( !empty( $classes ) ) {                
                 $node->setAttribute( 'class', implode( ' ' , $classes ) ) ;
             }
-        }
+      }
       
         $this->modify_img_without_alt();
         
         /*
-         *End the process:  add aria-label, save Html and exit
-         **/        
+         *End the process.
+         *save Html and exit
+         **/
         $final_html 	= $this->dom->saveHtml();
         $search			= array(
                    '<html>',
@@ -303,9 +310,7 @@ Class Link_Functions {
             $needle_len	= strlen( $needle );
             $href_part	= substr( $href, - $needle_len, $needle_len );
             if( $href_part == $needle ) {
-                $node->setAttribute( 	'aria-label',
-                    $data[ 'text' ] .': ' . $node->nodeValue
-                      );
+                $this->aria_labels[] = $data[ 'text' ];
                 $node->appendChild( $this->create_svg_node( $data[ 'icon' ] ) ) ;
                 //tooltip introduced in 19.2
                 $node->setAttribute(
@@ -333,9 +338,7 @@ Class Link_Functions {
             $needle_len	= strlen( $needle );
             $href_part	= substr( $href, 0, $needle_len );
             if( $href_part == $needle ) {
-                $node->setAttribute( 	'aria-label',
-                  $data[ 'text' ]
-                 );
+                $this->aria_labels[] = $data[ 'text' ];
             }
         }
         return $node;

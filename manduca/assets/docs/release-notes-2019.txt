@@ -189,3 +189,7 @@ jgs //    /
                   - browsers now support nice underline. This script is not necessary any longer.
                   
 1 Mar, 2019    'delete debug codes'
+
+5 Mar, 2019    'link functions enhancement'
+                  - in case of pdf etc file types, external link not indicated. Corrected
+                  - Also inlcluded external pdf link in link sample.
