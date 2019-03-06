@@ -208,5 +208,8 @@ jgs //    /
 6 Mar, 2019    'link target indication enhancement'
                   - If you choose link target self, then the links should not be signed as open in new window
                   - if you choose blank, then each link should be indicated as open in new window.
-                  - This is php development, so next pageload will takes effect. 
+                  - This is php development, so next pageload will takes effect.
+                  
+6 mar, 2019    'links use not-signed class are ignored'
+                  Link Function now has this escape if you want something to ignore. 
 

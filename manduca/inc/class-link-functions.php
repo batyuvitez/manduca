@@ -31,7 +31,10 @@ namespace Manduca;
 
   
 Class Link_Functions {
-	
+   
+   // The links use this class are ignored
+   const NOT_SIGNED = 'not-signed';
+   
    protected $dom, $aria_labels, $classes;
    
    public function __construct () {
@@ -95,7 +98,9 @@ Class Link_Functions {
             else{
                 $this->classes        = array();    
             }
-            
+            if( in_array( self::NOT_SIGNED , $this->classes) ) {
+               continue;
+            }
             
            
            
