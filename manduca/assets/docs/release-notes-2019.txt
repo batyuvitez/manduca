@@ -198,4 +198,7 @@ jgs //    /
                   - Manduca does not use cookies, except when you set non-default reading options.
                   - This fact is written below reading options.
                   - Reading options heading1 also hidden from screen-reader users.
-                  - Translations added. 
+                  - Translations added.
+
+6 Mar, 2019    'Css and translations fixings'
+
