@@ -62,7 +62,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td><button class="change-font-size"  id ="font-size-0" aria-label="<?php _e( 'Small' , 'manduca' ); ?>" data-zoom="font-size-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Small', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-1" aria-label="<?php _e( 'Normal' , 'manduca' ); ?>" data-zoom="font-size-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Normal', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
-						 <td><button class="change-font-size" id ="font-size-3" aria-label="<?php _e( 'Extra large' , 'manduca' ); ?>" data-zoom="font-size-3"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Extra Large', 'manduca' ); ?></span></button></td>
+						 <td><button class="change-font-size" id ="font-size-3" aria-label="<?php _e( 'Extra large' , 'manduca' ); ?>" data-zoom="font-size-3"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Extra large', 'manduca' ); ?></span></button></td>
 					 </tr>
 		   </tbody>
 	 </table>		

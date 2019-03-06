@@ -32,7 +32,7 @@ namespace Manduca;
   
 Class Link_Functions {
 	
-   protected $dom, $aria_labels;
+   protected $dom, $aria_labels, $classes;
    
    public function __construct () {
          // filters have high (late) priority to make sure that any markup plugins have done their HTML. 
@@ -90,10 +90,10 @@ Class Link_Functions {
             $external_link  = false;
             // some people uses PHP < 5.6
             if( $node->getAttribute( 'class' ) )   {
-                $classes = explode( ' ' , $node->getAttribute( 'class' ) ) ;
+                $this->classes = explode( ' ' , $node->getAttribute( 'class' ) ) ;
             }
             else{
-                $classes        = array();    
+                $this->classes        = array();    
             }
             
             
@@ -190,7 +190,7 @@ Class Link_Functions {
               */
             elseif( !$this->check_if_internal_link( $href ) ) {
                 $external_link = true;
-                $classes[] ='extlink';
+                $this->classes[] ='extlink';
                 
                 //Google map link
                     if( false !== strpos( $href, 'goo.gl/maps' ) || false !== strpos( $href, 'google.hu/maps' ) ) {
@@ -204,10 +204,10 @@ Class Link_Functions {
                 
                  //all other external link
                  else{
-                    //Translators: add screen-reader-text to external link. 
-                    $this->aria_labels[] = __( 'external' , 'manduca' );
-                    $node->appendChild( $this->create_svg_node( 'extlink') );
-                    
+                     //Translators: add screen-reader-text to external link.  
+                     $this->aria_labels[] = __( 'external' , 'manduca' );
+                     $node->appendChild( $this->create_svg_node( 'extlink') );
+                     
                  }
                  
             } //end of external-link
@@ -230,10 +230,8 @@ Class Link_Functions {
                      );
                      
                   }
-                  //Translators: add screen-reader-text to target="'_blank". 
-                  $this->aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
-                  $node->appendChild( $this->create_svg_node( 'new-window') );
-                  $classes[] ='target-blank';
+               
+                  $this->classes[] ='target-blank';
              } 
             
             if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
@@ -246,7 +244,7 @@ Class Link_Functions {
              * End process of one link.
              * Add children to nodes (aria-label, tooltip)
              **/
-                    
+            $this->add_new_window_signs( $node );
             if( !empty( $this->aria_labels ) ) {
                
                 if( empty( $link_text ) ){
@@ -262,11 +260,11 @@ Class Link_Functions {
                         
                 $node->setAttribute( 'aria-label', $info_text);
                 $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
-                $classes[] ='use-tooltip';
+                $this->classes[] ='use-tooltip';
             }
                 
-            if( !empty( $classes ) ) {                
-                $node->setAttribute( 'class', implode( ' ' , $classes ) ) ;
+            if( !empty( $this->classes ) ) {                
+                $node->setAttribute( 'class', implode( ' ' , $this->classes ) ) ;
             }
       }
       
@@ -601,4 +599,28 @@ Class Link_Functions {
         }
     }
     
+    
+    /*
+     *Add new windows icon and aria-label
+     *@since 19.3
+     **/
+      protected function add_new_window_signs( $node ) {
+         $needed = false;
+         if( in_array( 'target-blank', $this->classes) ) {
+               $needed = true;   
+         }
+         if( isset( $_COOKIE[ 'linkTarget'] ) && 'self' === $_COOKIE[ 'linkTarget'] ) {
+               $needed = false;
+         }
+         if( isset( $_COOKIE[ 'linkTarget'] ) && 'blank' === $_COOKIE[ 'linkTarget'] ) {
+               $needed = true;
+         }
+         
+         if( $needed ) {   
+            //Translators: add screen-reader-text if links open in new window. 
+            $this->aria_labels[] = __( 'opens a new window' , 'manduca' ) ;
+            $node->appendChild( $this->create_svg_node( 'new-window') );
+         }
+         return $node;
+      }
  }
