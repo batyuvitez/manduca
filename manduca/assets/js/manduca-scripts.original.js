@@ -692,8 +692,8 @@ function constrain(amt, low, high) {
 			    $( ".toolbar-buttons" ).removeClass( "toggled-on" );
 			    $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
 			    $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-				$('#toolbar-buttons-open').focus();
-				$( ".toolbar-buttons" ).css( 'display', 'none' ); 
+				$( ".toolbar-buttons" ).css( 'display', 'none' );
+                $('#toolbar-buttons-open').focus();
 			}
 		}	
     });
@@ -707,6 +707,8 @@ function constrain(amt, low, high) {
     //change font size
     $('.change-font-size').click(function () {
          var fontSize = $(this).attr('data-zoom');
+         $( '.change-font-size').removeAttr( 'aria-selected' );
+        $(this).attr('aria-selected' , 'true' );
          var CookieDate = new Date;
 
          $('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');
@@ -720,8 +722,9 @@ function constrain(amt, low, high) {
     ///change contrast
     $('.high-contrast').click(function () {
         var contrastType = $(this).attr('data-contrast-type');
+        $( '.high-contrast').removeAttr( 'aria-selected' );
+        $(this).attr('aria-selected' , 'true' );
         var CookieDate = new Date;
-
         $('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');
         $('body').addClass(contrastType);
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
@@ -731,6 +734,8 @@ function constrain(amt, low, high) {
     //change font family
     $('.change-font-type').click(function () {
         var fontType= $(this).attr('data-font-type');
+        $( '.change-font-type').removeAttr( 'aria-selected' );
+        $(this).attr('aria-selected' , 'true' );
         var CookieDate = new Date;
 
         $('body').removeClass('font-type-1 font-type-2 font-type-0');

@@ -201,4 +201,7 @@ jgs //    /
                   - Translations added.
 
 6 Mar, 2019    'Css and translations fixings'
+6 Mar, 2019    'aria-selected to reading options'
+               - in order to announce the selected reading option to screen reader users. 
+
 
