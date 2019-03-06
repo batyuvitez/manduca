@@ -193,3 +193,9 @@ jgs //    /
 5 Mar, 2019    'link functions enhancement'
                   - in case of pdf etc file types, external link not indicated. Corrected
                   - Also inlcluded external pdf link in link sample.
+
+6 Mar, 2019    'Add cookie consent to reading option'
+                  - Manduca does not use cookies, except when you set non-default reading options.
+                  - This fact is written below reading options.
+                  - Reading options heading1 also hidden from screen-reader users.
+                  - Translations added. 
