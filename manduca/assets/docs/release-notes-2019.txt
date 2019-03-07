@@ -215,4 +215,7 @@ jgs //    /
 
 7 Mar, 2019    'add aria-selected to reading options'
                   There was missing the aria selected when opening the reading option.
-                  Now aria selected is alwasys there. 
+                  Now aria selected is alwasys there.
+                  
+7 Mar, 2019    'clean theme setup'
+                  In order to develop a the hide-show system, enque is moved to an independent class. 

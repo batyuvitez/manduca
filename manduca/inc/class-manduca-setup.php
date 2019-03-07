@@ -32,8 +32,11 @@ class Manduca_Setup {
 		
 	public function init () {
 		
+		new \Manduca\Enqueue;
+		
 		// Open the files which ara not classes.
 		$this->load_notclasses();
+		
 		//scale oEmbed code to a specific width, and insert large images without breaking the main content area. 
 		if ( ! isset( $content_width ) ) {
 			$content_width = 625;
@@ -46,7 +49,8 @@ class Manduca_Setup {
 		$this->image_settings();
 		
 		/* Link function (add svg, aria etc. )
-		 * Filter to disable link function in child theme since@18.10.6
+		 * Filter to disable link function in child theme
+		 *@since@18.10.6
 		 * */
 		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
 		if( $link_function_enable ) {	
@@ -81,8 +85,6 @@ class Manduca_Setup {
 			$tinimce = new Tiny_Mce;
 			$tinimce->add_hooks_to_wp();
 			
-			// Add admin css  in order to properly display outgoing link icons.
-			add_action('admin_enqueue_scripts', array( $this, 'admin_stylesheet' ) );
 			
 			// Change jpg quality to best
 			add_filter('jpeg_quality', array( $this, 'set_jpg_quality' ) );
@@ -93,17 +95,12 @@ class Manduca_Setup {
 		 * Hooks needed only frontend
 		 **/
 		else {
-			
-			
 			// Add accessible more-links Need svg to be loaded. 
 			$more_links = new More_Links;
 		
 			// Remove gallery inline style
 			add_filter( 'use_default_gallery_style', '__return_false' );
 		
-			// Add frontend scripts and files
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-			
 			
 			// Add anchor to image anchor insert in post content @ Since 16.10
 			add_filter('image_send_to_editor',array( $this, 'add_class_image_anchor' ) ,10,8);
@@ -118,22 +115,24 @@ class Manduca_Setup {
 			add_filter( 'wp_page_menu_args', array( $this, 'add_home_to_page_menu' ) );
 			
 			//add aria-current="page to the current menu item. 
-			$accessible_menu = new Accessible_Menu;
+			new Accessible_Menu;
 			
 			
 			// Eliminate W3Cvalidation warnings and shorten html file. 
 			add_filter('style_loader_tag', array( $this, 'codeless_remove_type_attr' ) , 10, 2);
 			add_filter('script_loader_tag', array( $this, 'codeless_remove_type_attr' ) , 10, 2);
 			
-			$remove_attributes_from_scripts = new Remove_Attributes_From_Scripts;
+			new Remove_Attributes_From_Scripts;
 			
-			$search_excerpt = new Search_Functions;
+			new Search_Functions;
 			
 		}
 		
-		
-		
 	}
+	
+	
+	
+	
 
  
 	public function theme_supports() {
@@ -167,6 +166,9 @@ class Manduca_Setup {
 		) );
 		
 	}
+	
+	
+	
 	
 	
 	public function image_size_settings() {
@@ -213,6 +215,7 @@ class Manduca_Setup {
 	   return $new_sizes;
 	}
 	
+	
 	public function image_settings() {
 		//3 images sizes needed
 		add_action( 'after_setup_theme', array($this, 'image_size_settings' ) );
@@ -226,40 +229,7 @@ class Manduca_Setup {
 		
 	}
 	
-	function enqueue() {
-		global $wp_styles;
 	
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-	
-		// Loads stylesheets.
-		wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri(), false, false, 'all' );
-			
-		// Loads the Internet Explorer specific stylesheet.
-		wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'manduca-style' ) );
-		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
-		
-		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
-			
-			$js_variable['expand']         = __( 'expand child menu', 'manduca' );
-			$js_variable['collapse']       = __( 'collapse child menu', 'manduca' );
-			$js_variable['icon']           = manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) );
-			if( \Manduca\Widget_Archives::is_this_widget_active() ) {
-				$js_variable['hash']       	= wp_create_nonce( 'manduca-ajax' );
-			}
-			wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $js_variable );
-			
-			$focus_snail_color = array (
-								'red'		=>22,
-								'green'		=>78,
-								'blue'		=>104
-				);
-
-			$focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
-				
-			wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
-	}
 	
 	function sidebar () {
 		register_sidebar( array(
@@ -304,9 +274,6 @@ class Manduca_Setup {
 		return $text;
 	}
 	
-	function admin_stylesheet() {
-		wp_enqueue_style( 'admin-styles', get_template_directory_uri() .'/assets/css/admin.css') ;
-	}
 	
 	function add_home_to_page_menu( $args ) {
 		if ( ! isset( $args['show_home'] ) ) {
