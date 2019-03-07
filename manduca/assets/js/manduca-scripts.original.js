@@ -605,30 +605,36 @@ function constrain(amt, low, high) {
        * Read cookies to set user's preferences
        * */
       
-      var contrastType=readCookie( "contrastType" )
+      var contrastType=readCookie( "contrastType" );
       if ( contrastType ) {
           $('body').addClass( contrastType );
+		  $( '#' + contrastType ).attr( 'aria-selected' , 'true' );
        }
        else {
           $('body').addClass( "high-contrast-0" );
+		  $( '#high-contrast-0').attr( 'aria-selected', 'true' );
        }
    
       
-      var fontType=readCookie( "fontType" )
+      var fontType=readCookie( "fontType" );
          if ( fontType ) {
              $('body').addClass( fontType );
+			 $( '#' + fontType ).attr( 'aria-selected' , 'true' );
           }
           else {
              $('body').addClass( "font-type-0" );
+			 $( '#font-type-0').attr( 'aria-selected', 'true' );
           }
           
               
-      var fontSize=readCookie( "fontSize" )
+      var fontSize=readCookie( "fontSize" );
          if ( fontSize ) {
              $('body').addClass( fontSize );
+			 $( '#' + fontSize ).attr( 'aria-selected' , 'true' );
           }
           else {
              $('body').addClass( "font-size-0" );
+			 $( '#font-size-0').attr( 'aria-selected', 'true' );
           }
       
       

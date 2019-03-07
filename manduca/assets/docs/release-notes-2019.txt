@@ -213,3 +213,6 @@ jgs //    /
 6 mar, 2019    'links use not-signed class are ignored'
                   Link Function now has this escape if you want something to ignore. 
 
+7 Mar, 2019    'add aria-selected to reading options'
+                  There was missing the aria selected when opening the reading option.
+                  Now aria selected is alwasys there. 
