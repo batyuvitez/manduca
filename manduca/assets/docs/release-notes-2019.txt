@@ -224,3 +224,8 @@ jgs //    /
                   -original: https://a11y.nicolas-hoffmann.net/hide-show/
                   - adopted to Manduca
                   - Add escape button to hide (thanks for Endre Nagy)
+                  
+7 Mar, 2019    'sitemap refactoring'
+                  - New sitemap template is easier to modify
+                  - uses the new hide-show system instead of accessible tabs.
+                  - accessible tabs will be depretiated, since I have found better alternative. 

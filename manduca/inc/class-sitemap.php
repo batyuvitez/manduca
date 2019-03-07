@@ -1,59 +1,45 @@
 <?php
 /*
  * This class provide the sitemap to Manduca sitemap page
+ *@since 17.9.17
  *
- * @ Theme: Manduca - focus on accessibility
- * @ since 17.9.17
- *
- * @ parameter array $args sitemap lis
- * 					options: author, pages, posts, images, pdfs. 
  **/
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+
+    Source code is available at https://github.com/batyuvitez/manduca
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+namespace Manduca;
+
 
 Class Sitemap {
 	
-		public $html ;
-		protected $tabs ;
-	
-	function __construct( $args ) {
-		$this->tabs =  $args ;
-		$this->html = '<div class="tabs sitemap">';
-		$this->go_through_tabs();
-	}
-	
-	function __destruct() {
-		$this->html .= '</div>';
-	}
-	
-	
-	function go_through_tabs() {
-		foreach ( $this->tabs as $method =>$header ){
-				$tabbody = $this->$method();
-				if ( !empty( $tabbody ) ) {
-						$this->html .= $this->retreive_tab( $header, $tabbody  );		
-				}
-		}
-	}
-	
-	
-	function retreive_tab( $header, $tabbody ) {
-		$html   = '<h2>' .$header .'</h2>';
-		$html   .= '<div class="tabbody">';
-		$html   .= $tabbody; 
-		$html   .= '</div>';
-		return $html;
-	}
-	
-	function authors() {
+		
+	public function authors() {
 		$args = array(
 					  'exclude_admin' 	=> true,
 					  'echo'			=> false
 					  ); 
 	
 		return '<ol>' .wp_list_authors( $args ) .'</ol>';
-		
 	}
 	
-	function pages() {
+	public function pages() {
 		$args = array(
 						'exclude'        => '',
 						'title_li'     => '',
@@ -63,33 +49,35 @@ Class Sitemap {
 		return '<ol>' .wp_list_pages( $args ) .'</ol>';
 	}
  
-		function posts_by_category(){
-				$html = '<ol>';
-				$cats = get_categories();
-				foreach ( $cats as $cat ) {
-						$html .= '<h3>' .esc_html( $cat->cat_name ) .'</h3>';
-						$html .= '<ul>';
-						query_posts('posts_per_page=-1&cat='.$cat->cat_ID);
-						
-						while ( have_posts() ) {
-								the_post();
-								$category = get_the_category();
-								
-								if ( $category[0] -> cat_ID == $cat->cat_ID ) {
-									$html .= '<li><a href="'.get_permalink() .'">' .get_the_title() .'</a></li>';
-								}
-						}
-						$html .=  '</ul>';
-						$html .= '</li>';
-				}
-				$html .= '</ol>';
-				return $html;
-		}	
+	public function posts_by_category(){
 		
-		function posts_in_abc() {
 		$html = '<ol>';
+		$cats = get_categories();
+		foreach ( $cats as $cat ) {
+			$html .= '<h3 class="js-expandmore">' .esc_html( $cat->cat_name ) .'</h3>';
+			$html .= '<ul class="js-to_expand">';
+			
+			$posts  = new  \WP_Query( [
+					'cat' => $cat->cat_ID, // Just in case Yoast data corrupted & post no longer attached to X term but primary meta remains
+					'meta_query' => [
+						[
+							'key' => '_yoast_wpseo_primary_category',
+							'value' => $cat->cat_ID,
+						]
+					],
+				]);
+			
+			$html .= $this->create_list_elements( $posts );
+			$html .=  '</ul>';
+			$html .= '</li>';
+		}
+		$html .= '</ol>';
+		return $html;
+	}	
 		
-		$list_posts = new WP_Query( array( 
+	public function posts_in_abc() {
+		$html = '<ol>';	
+		$list_posts = new \WP_Query( array( 
 			'post_type'       => 'post', 
 			'posts_per_page'  => -1, 
 			'post_status'     => 'publish',
@@ -97,22 +85,13 @@ Class Sitemap {
 			'orderby'         => 'title'
 			) );
 	
-		while ( $list_posts->have_posts() ) : $list_posts->the_post(); 
-		  
-			
-			$html .= sprintf( '<li><a href="%1$s">%2$s</a></li>',
-				   get_permalink(),
-				   get_the_title()
-				  );
-		endwhile;
-			
+		$html .= $this->create_list_elements( $list_posts );
 		$html .= '</ol>';
 		return $html;
 	}
 	
 	
-	function images() {
-		
+	public function images() {
 		$html = '<ol>';
 		$query_images_args = array(
 		  'post_type' => 'attachment',
@@ -123,7 +102,7 @@ Class Sitemap {
 		  'orderby'         => 'title'
 	  );
 			  
-		$query_images = new WP_Query( $query_images_args );
+		$query_images = new \WP_Query( $query_images_args );
 		$images = array();
 		foreach ( $query_images->posts as $image) {
 			setup_postdata( $image );
@@ -146,8 +125,10 @@ Class Sitemap {
 		return $html;
 	}
 
-	function pdfs(){
-		$query_pdf = new WP_Query( array(
+	
+	
+	public function pdfs(){
+		$query_pdf = new \WP_Query( array(
 				'post_type' => 'attachment',
 				'post_mime_type' =>'application/pdf',
 				'post_status' => 'inherit',
@@ -159,7 +140,7 @@ Class Sitemap {
 		
 		$pdf = array();
 	   
-	  //If is there any PDF? 
+		//If is there any PDF? 
 		If( $query_pdf->post_count  > 0 ) {
 				$html = '<ol>';
 		 
@@ -179,7 +160,20 @@ Class Sitemap {
 		}
 	  
 	}
-
 	
+	
+	/*
+	 * Create list elements from query
+	 * */
+	protected function create_list_elements( $query ) {
+		$html = '';
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$html .= sprintf( '<li><a href="%1$s">%2$s</a></li>',
+				   get_permalink(),
+				   get_the_title()
+				  );
+		}
+		return $html;
+	}
 }
-?>
