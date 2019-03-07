@@ -37,3 +37,12 @@ How to ...
       
 ... add namespace in child theme in order to avoid nam confusions::
       add the namsepace as a key to Manduca_Classloader. e.g 'Web25\\childtheme' => get_stylesheet_directory() .'/inc/'
+
+... add hide-show parts. Use the following classes:
+            js-expandmore-all : this is a button to hide all and show all. 
+            js-to_expand      : this is the hide/show part (div)
+            js-to_expandmore  : this is the header (e.g. h2) which is the title of the collapsable part.
+            Use keys: space or enter to hide/show,
+            Use escape to hide actual part.
+            
+            
