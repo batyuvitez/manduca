@@ -2188,7 +2188,7 @@ body.font-size-2 #font-size-2{
 
 /* accessible back-to-top function
  * @since 19.1
- * *****************************************************/
+ -------------------------------------------------------------- */
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;
@@ -2220,6 +2220,31 @@ body.font-size-2 #font-size-2{
     cursor: pointer;
     opacity: 1.0;
 }
+
+/* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
+ * * @since 19.3
+ ---------------------------------------------------------------------------------- */
+.js-to_expand[aria-hidden=true],
+.js-to_expand[data-hidden=true] {
+  display: none;
+}
+/* optionnal or prefix with .js with modernizr */
+.expandmore__button[aria-expanded=false] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=false] > .expandmore__symbol:before {
+  content : '+ ';
+}
+.expandmore__button[aria-expanded=true] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=true] > .expandmore__symbol:before {
+  content : '− ';
+}
+
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+
  
 /* 13. Media queries
 -------------------------------------------------------------- */

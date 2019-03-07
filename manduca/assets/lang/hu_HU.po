@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-06 06:35+0100\n"
+"PO-Revision-Date: 2019-03-07 09:16+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -782,3 +782,11 @@ msgstr "Az alapbeállítástól eltérő beállítást sütiben tároljuk."
 # reading options new in 19.3 ***
 msgid "Color scheme:"
 msgstr "Színséma:"
+
+# accessible hide-show system new in 19.3 ***
+msgid "Expand all"
+msgstr "Az összes kinyitása"
+
+# accessible hide-show system new in 19.3 ***
+msgid "Collapse all"
+msgstr "Az összes bezárása"

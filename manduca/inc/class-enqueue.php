@@ -55,23 +55,33 @@ class Enqueue{
 		
 		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
 			
-			$js_variable['expand']         = __( 'expand child menu', 'manduca' );
-			$js_variable['collapse']       = __( 'collapse child menu', 'manduca' );
-			$js_variable['icon']           = manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) );
-			if( \Manduca\Widget_Archives::is_this_widget_active() ) {
-				$js_variable['hash']       	= wp_create_nonce( 'manduca-ajax' );
-			}
-			wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $js_variable );
+      $js_variables = array(
+                        // Translators: Accessible megamenu: expand child menu button 
+                        'expand'        => __( 'expand child menu', 'manduca' ),
+                        // Translators: Accessible megamenu: collapse child menu button 
+                        'collapse'      => __( 'collapse child menu', 'manduca' ),
+                        'icon'          => manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) ),
+                        // Translators: Accessible show-hide system: expand all button 
+                        'expand_all'        => __( 'Expand all', 'manduca' ),
+                        // Translators: Accessible show-hide system: collapse all button 
+                        'collapse_all'      => __( 'Collapse all', 'manduca' ),
+                  );               
 			
-			$focus_snail_color = array (
-								'red'		=>22,
-								'green'		=>78,
-								'blue'		=>104
-				);
+      if( \Manduca\Widget_Archives::is_this_widget_active() ) {
+         $js_variables['hash']       	= wp_create_nonce( 'manduca-ajax' );
+      }
+         
+         
+      wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $js_variables );
+      
+      $focus_snail_color = array (
+                     'red'		=>22,
+                     'green'		=>78,
+                     'blue'		=>104
+         );
 
-			$focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
-				
-			wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
+      $focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
+      wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
 	}
    
    

@@ -23,8 +23,8 @@ Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
 This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
 * Focus Snake <https://github.com/NV/focus-snail> : licence: MIT 
 * Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 
-* Smart underline <https://github.com/EagerIO/SmartUnderline> licence: MIT
 * Accessible tabs <http://github.com/ginader/Accessible-Tabs>  Licence: MIT & GPL
+* jQuery simple and accessible hide-show system (collapsible regions), using ARIA | License MIT
 
 ## FAQ
 ### Why you developed a new theme if there is so many professional ones on the web?
@@ -53,7 +53,8 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * Thanks for János Hosszú, who is supporting this project from the very beginnig.
 * Thanks for Áron Ócsváry, who had also contributed to the development. 
 * I have to express my appreciation to Blair in Cameroon, who reviewed my theme so many times.
-* Special Thanks to Gábor Hegedűs and his friends, who is my most sensitive and very patient tester. 
+* Special Thanks to Gábor Hegedűs and his friends, who is my most sensitive and very patient tester.
+* Thanks to Endre Nagy who always ready to help me. 
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
 ## Demo 

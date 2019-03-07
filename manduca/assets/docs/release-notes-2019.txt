@@ -218,4 +218,9 @@ jgs //    /
                   Now aria selected is alwasys there.
                   
 7 Mar, 2019    'clean theme setup'
-                  In order to develop a the hide-show system, enque is moved to an independent class. 
+                  In order to develop a the hide-show system, enque is moved to an independent class.
+                  
+7 Mar, 2019    'introduce accessible show-hide system'
+                  -original: https://a11y.nicolas-hoffmann.net/hide-show/
+                  - adopted to Manduca
+                  - Add escape button to hide (thanks for Endre Nagy)
