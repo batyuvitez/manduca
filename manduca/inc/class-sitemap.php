@@ -27,7 +27,7 @@
 namespace Manduca;
 
 
-Class Sitemap {
+class Sitemap {
 	
 		
 	public function authors() {
@@ -49,32 +49,43 @@ Class Sitemap {
 		return '<ol>' .wp_list_pages( $args ) .'</ol>';
 	}
  
+ 
+	 
 	public function posts_by_category(){
+		$defaults = array(
+		'child_of'            => 0,
+		'current_category'    => 0,
+		'depth'               => 0,
+		'echo'                => 1,
+		'exclude'             => '',
+		'exclude_tree'        => '',
+		'hide_empty'          => 1,
+		'hide_title_if_empty' => false,
+		'hierarchical'        => true,
+		'order'               => 'ASC',
+		'orderby'             => 'name',
+		'separator'           => '<br />',
+		'show_count'          => 0,
+		'show_option_all'     => '',
+		'show_option_none'    => __( 'No categories' ),
+		'style'               => 'list',
+		'taxonomy'            => 'category',
+		'title_li'            => __( 'Categories' ),
+		'use_desc_for_title'  => 1,
+		);
 		
-		$html = '<ol>';
-		$cats = get_categories();
-		foreach ( $cats as $cat ) {
-			$html .= '<h3 class="js-expandmore">' .esc_html( $cat->cat_name ) .'</h3>';
-			$html .= '<ul class="js-to_expand">';
-			
-			$posts  = new  \WP_Query( [
-					'cat' => $cat->cat_ID, // Just in case Yoast data corrupted & post no longer attached to X term but primary meta remains
-					'meta_query' => [
-						[
-							'key' => '_yoast_wpseo_primary_category',
-							'value' => $cat->cat_ID,
-						]
-					],
-				]);
-			
-			$html .= $this->create_list_elements( $posts );
-			$html .=  '</ul>';
-			$html .= '</li>';
-		}
-		$html .= '</ol>';
-		return $html;
-	}	
 		
+		$cats = get_categories( $defaults );
+		$args = array( $cats, '', $defaults );
+		$walker = new Sitemap_Category_Walker;
+		echo call_user_func_array( array( $walker, 'walk' ), $args );		
+				
+	}
+ 
+ 
+ 
+ 
+	
 	public function posts_in_abc() {
 		$html = '<ol>';	
 		$list_posts = new \WP_Query( array( 

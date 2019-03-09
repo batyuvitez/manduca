@@ -232,4 +232,10 @@ jgs //    /
 9 Mar, 2019    'fixings'
                - reading options: add focus when press escape keys
                - reading options: add disabled attribute
-               - documentation added. 
+               - documentation added.
+               
+9 Mar, 2019    'sitemap by category walker'
+                  - Add category tree on sitemap page.
+                  - Walk through the category hierarchy and show post links extending Walker_Category class
+                  
+                  
