@@ -228,4 +228,8 @@ jgs //    /
 7 Mar, 2019    'sitemap refactoring'
                   - New sitemap template is easier to modify
                   - uses the new hide-show system instead of accessible tabs.
-                  - accessible tabs will be depretiated, since I have found better alternative. 
+                  - accessible tabs will be depretiated, since I have found better alternative.
+9 Mar, 2019    'fixings'
+               - reading options: add focus when press escape keys
+               - reading options: add disabled attribute
+               - documentation added. 

@@ -608,33 +608,33 @@ function constrain(amt, low, high) {
       var contrastType=readCookie( "contrastType" );
       if ( contrastType ) {
           $('body').addClass( contrastType );
-		  $( '#' + contrastType ).attr( 'aria-selected' , 'true' );
+		  $( '#' + contrastType ).attr( 'disabled' , 'true' );
        }
        else {
           $('body').addClass( "high-contrast-0" );
-		  $( '#high-contrast-0').attr( 'aria-selected', 'true' );
+		  $( '#high-contrast-0').attr( 'disabled', 'true' );
        }
    
       
       var fontType=readCookie( "fontType" );
          if ( fontType ) {
              $('body').addClass( fontType );
-			 $( '#' + fontType ).attr( 'aria-selected' , 'true' );
+			 $( '#' + fontType ).attr( 'disabled' , 'true' );
           }
           else {
              $('body').addClass( "font-type-0" );
-			 $( '#font-type-0').attr( 'aria-selected', 'true' );
+			 $( '#font-type-0').attr( 'disabled', 'true' );
           }
           
               
       var fontSize=readCookie( "fontSize" );
          if ( fontSize ) {
              $('body').addClass( fontSize );
-			 $( '#' + fontSize ).attr( 'aria-selected' , 'true' );
+			 $( '#' + fontSize ).attr( 'disabled' , 'true' );
           }
           else {
              $('body').addClass( "font-size-0" );
-			 $( '#font-size-0').attr( 'aria-selected', 'true' );
+			 $( '#font-size-0').attr( 'disabled', 'true' );
           }
       
       
@@ -713,8 +713,8 @@ function constrain(amt, low, high) {
     //change font size
     $('.change-font-size').click(function () {
          var fontSize = $(this).attr('data-zoom');
-         $( '.change-font-size').removeAttr( 'aria-selected' );
-        $(this).attr('aria-selected' , 'true' );
+         $( '.change-font-size').removeAttr( 'disabled' );
+        $(this).attr('disabled' , 'true' );
          var CookieDate = new Date;
 
          $('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');
@@ -728,8 +728,8 @@ function constrain(amt, low, high) {
     ///change contrast
     $('.high-contrast').click(function () {
         var contrastType = $(this).attr('data-contrast-type');
-        $( '.high-contrast').removeAttr( 'aria-selected' );
-        $(this).attr('aria-selected' , 'true' );
+        $( '.high-contrast').removeAttr( 'disabled' );
+        $(this).attr('disabled' , 'true' );
         var CookieDate = new Date;
         $('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');
         $('body').addClass(contrastType);
@@ -740,8 +740,8 @@ function constrain(amt, low, high) {
     //change font family
     $('.change-font-type').click(function () {
         var fontType= $(this).attr('data-font-type');
-        $( '.change-font-type').removeAttr( 'aria-selected' );
-        $(this).attr('aria-selected' , 'true' );
+        $( '.change-font-type').removeAttr( 'disabled' );
+        $(this).attr('disabled' , 'true' );
         var CookieDate = new Date;
 
         $('body').removeClass('font-type-1 font-type-2 font-type-0');
@@ -973,7 +973,8 @@ jQuery(document).ready(function($) {
           $destination = $('#' + $this.attr(attr_control));
       if (event.keyCode === 27 && $this.attr(attr_expanded) === 'true') {
         $this.removeClass('is-opened').attr(attr_expanded, 'false');
-            $destination.attr(attr_hidden, 'true');
+        $destination.attr(attr_hidden, 'true');
+		$this.focus();
       }
     });
 
