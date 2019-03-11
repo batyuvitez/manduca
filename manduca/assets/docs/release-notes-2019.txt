@@ -238,4 +238,6 @@ jgs //    /
                   - Add category tree on sitemap page.
                   - Walk through the category hierarchy and show post links extending Walker_Category class
                   
-                  
+11 Mar, 2019   'reload after target select'
+                  - If you choose  different target for link, reload it.
+                  - also svgs are positioned better. 

@@ -757,8 +757,10 @@ function constrain(amt, low, high) {
         var CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
         document.cookie = 'linkTarget=' + selectTarget + '; expires=' + CookieDate.toGMTString() + '; path=/';
+		location.reload();
     });
     
+   
    
    
    
@@ -839,6 +841,8 @@ function constrain(amt, low, high) {
 	
 	
 	
+	
+	
     /*
      * Manduca's user-friendly archive widget function 
      *
@@ -884,6 +888,11 @@ jQuery(document).ready(function($) {
      * @version v1.9.0   
      * Website: https://a11y.nicolas-hoffmann.net/hide-show/
      * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
+     *
+     *
+     *@package Manduca
+     *@copyright Zsolt Edelényi
+     *@since 19.3
      */
     // loading expand paragraphs
     // these are recommended settings by a11y experts. You may update to fulfill your needs, but be sure of what you’re doing.
