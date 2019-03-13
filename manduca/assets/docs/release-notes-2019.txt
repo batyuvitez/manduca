@@ -243,3 +243,5 @@ jgs //    /
                   - also svgs are positioned better.
                   
 13 Mar, 2019   'sitemap corrections after testing"
+
+13 Mar, 2019   'correct OS detection'
