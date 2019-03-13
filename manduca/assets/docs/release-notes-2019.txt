@@ -240,4 +240,6 @@ jgs //    /
                   
 11 Mar, 2019   'reload after target select'
                   - If you choose  different target for link, reload it.
-                  - also svgs are positioned better. 
+                  - also svgs are positioned better.
+                  
+13 Mar, 2019   'sitemap corrections after testing"

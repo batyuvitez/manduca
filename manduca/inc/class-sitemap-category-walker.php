@@ -45,7 +45,7 @@ class Sitemap_Category_Walker extends \Walker_Category {
 		}
 
 		if ( !$depth ) {
-         $output .= '<h2 class="expandmore is_opened">';
+         $output .= '<h2 class="js-expandmore">';
          $heading = 2;
       }
       else{
