@@ -66,15 +66,15 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					 </tr>
 		   </tbody>
 	 </table>		
-	  
-	  <label for="target-selector"><?php _e( 'Choose link target', 'manduca' ); ?></label>
-	  <select name="target-selector" id="target-selector">
-		<option value="default"><?php _e( 'Leave as it is', 'manduca' );?></option>
-		<option value="self"><?php _e( "Don't open link in new window", 'manduca' ); ?></option>
-		<option value="blank"><?php _e( "Open links in new window", 'manduca' ); ?></option>
-	  </select>
-	  
-	  <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
+	  <label for="target-selector"><?php _e( 'Choose link target', 'manduca' ); ?>
+					<select name="target-selector" id="target-selector">
+					<option value="default"><?php _e( 'Leave as it is', 'manduca' );?></option>
+					<option value="self"><?php _e( "Don't open link in new window", 'manduca' ); ?></option>
+					<option value="blank"><?php _e( "Open links in new window", 'manduca' ); ?></option>
+				</select>
+	  </label>
+	 
+		 <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
 	  
 		<span role="button" id="buttons-close" class="buttons-close" aria-label="<?php _e( 'Close' ) ; ?>">
 				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>

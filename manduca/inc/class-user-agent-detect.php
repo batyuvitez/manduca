@@ -96,7 +96,7 @@
                               '/blackberry/i'         =>  'blackBerry',
                               '/webos/i'              =>  'mobile'
                         );
-    z
+    
         foreach ( $os_array as $regex => $value)
             if ( preg_match($regex, $this->user_agent) ) {
                 $os_platform = $value;

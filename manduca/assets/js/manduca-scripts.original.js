@@ -742,7 +742,7 @@ function constrain(amt, low, high) {
         var fontType= $(this).attr('data-font-type');
         $( '.change-font-type').removeAttr( 'disabled' );
         $(this).attr('disabled' , 'true' );
-        var CookieDate = new Date;
+        var CookieDate = new Date();
 
         $('body').removeClass('font-type-1 font-type-2 font-type-0');
         $('body').addClass(fontType);
@@ -757,10 +757,13 @@ function constrain(amt, low, high) {
         var CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
         document.cookie = 'linkTarget=' + selectTarget + '; expires=' + CookieDate.toGMTString() + '; path=/';
-		location.reload();
     });
     
-   
+    $('#target-selector').on('keydown', function(event) {
+      if (event.keyCode === 13 ) {
+		location.reload();
+      }
+    });
    
    
    
