@@ -249,4 +249,7 @@ jgs //    /
 14 Mar, 2019   'checkbox firefox bug'
                   - firefox reads twice the label of checkbox if label is not wrapped the selection tag.
                   - also: if you choose link target (in reading options) and press enter key (as screen readers often do ) reload the page.
-                  - but if you change link target with mouse, there is no reload. 
+                  - but if you change link target with mouse, there is no reload.
+                  
+18 Mar, 2019   'sitemap fixings'
+                  -based on testing, some fixings are done.

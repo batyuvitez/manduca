@@ -46,7 +46,7 @@ class Sitemap {
 						'sort_column'  => 'post_title',
 						'echo'			=> false
 						);
-		return '<ol>' .wp_list_pages( $args ) .'</ol>';
+		return '<ul>' .wp_list_pages( $args ) .'</ul>';
 	}
  
  
