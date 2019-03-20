@@ -29,7 +29,7 @@ namespace Manduca;
 
 class Sitemap {
 	
-		
+	
 	public function authors() {
 		$args = array(
 					  'exclude_admin' 	=> true,
@@ -39,7 +39,10 @@ class Sitemap {
 		return '<ol>' .wp_list_authors( $args ) .'</ol>';
 	}
 	
-		public function pages() {
+	/*
+	 *@param: $excludes (array): Contains the post_id of the pages to exclude from sitemap
+	 **/
+	public function pages( $excludes = NULL) {
 		$args = array(
 			'depth'        => 0,
 			'show_date'    => '',
@@ -55,11 +58,13 @@ class Sitemap {
 			'item_spacing' => 'preserve',
 			'walker'       => '',
 		);
-		
 		$pages = get_pages( $args );
 		$current_page = get_queried_object_id();
 		$output = '';
 		foreach( $pages as $page ) {
+			if( $excludes && in_array( $page->ID, $excludes ) ) {
+				continue;
+			}
 			if( $page->ID == $current_page ) {
 				$item = sprintf( '<span class="screen-reader-text">%1$s</span><span>%2$s',
 								   __( 'Current page', 'manduca' ),

@@ -258,4 +258,7 @@ jgs //    /
                   - current page is not link any longer
 
 20 Mar, 2019   'handles yoast seo primary category in sitemap'
-                  - When one post has more categories, sitemap lists only in its Yoast primary category. 
+                  - When one post has more categories, sitemap lists only in its Yoast primary category.
+                  
+20 Mar, 2019   'exclude pages from sitemap'
+                  Add parameter to the Sitemap->pages() method to exclude pages from sitemap
