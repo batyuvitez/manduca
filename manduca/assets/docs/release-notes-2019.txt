@@ -262,3 +262,4 @@ jgs //    /
                   
 20 Mar, 2019   'exclude pages from sitemap'
                   Add parameter to the Sitemap->pages() method to exclude pages from sitemap
+                  

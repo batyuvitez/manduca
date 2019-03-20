@@ -1,7 +1,7 @@
 <?php
 /*
  * This class provide the sitemap to Manduca sitemap page
- *@since 17.9.17
+ *@since 17.10
  *
  **/
 
