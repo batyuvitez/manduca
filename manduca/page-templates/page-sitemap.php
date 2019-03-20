@@ -62,8 +62,8 @@
         <h2 class="js-expandmore"><?php _e( 'Pages', 'manduca' ); ?></h2>
         <div class="js-to_expand"><?php echo $sitemap->pages(); ?></div>
         
-        <h2 class="js-expandmorex"><?php _e( 'Posts by category', 'manduca' ); ?></h2>
-        <div class="js-to_expandx"><?php echo $sitemap->posts_by_category(); ?></div>
+        <h2 class="js-expandmore"><?php _e( 'Posts by category', 'manduca' ); ?></h2>
+        <div class="js-to_expand"><?php echo $sitemap->posts_by_category(); ?></div>
         
         <h2 class="js-expandmore"><?php _e( 'Posts in alphabetical', 'manduca' ); ?></h2>
         <div class="js-to_expand"><?php echo $sitemap->posts_in_abc(); ?></div>
