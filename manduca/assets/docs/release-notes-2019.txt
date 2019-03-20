@@ -252,4 +252,7 @@ jgs //    /
                   - but if you change link target with mouse, there is no reload.
                   
 18 Mar, 2019   'sitemap fixings'
-                  -based on testing, some fixings are done.
+                  - pages are in unordered list instead of ordered list
+                  
+20 Mar, 2019   'sitmap current page indicator'
+                  - current page is not link any longer

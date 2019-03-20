@@ -39,14 +39,53 @@ class Sitemap {
 		return '<ol>' .wp_list_authors( $args ) .'</ol>';
 	}
 	
-	public function pages() {
+	public function pages_x() {
 		$args = array(
 						'exclude'        => '',
 						'title_li'     => '',
 						'sort_column'  => 'post_title',
-						'echo'			=> false
+						'echo'			=> false,
+						'walker'		=> new \Manduca\Sitemap_Page_Walker
 						);
-		return '<ul>' .wp_list_pages( $args ) .'</ul>';
+		return '<ol>' .wp_list_pages( $args ) .'</ol>';
+	}
+ 
+	public function pages() {
+		$args = array(
+			'depth'        => 0,
+			'show_date'    => '',
+			'date_format'  => get_option( 'date_format' ),
+			'child_of'     => 0,
+			'exclude'      => '',
+			'title_li'     => '',
+			'echo'         => false,
+			'authors'      => '',
+			'sort_column'  => 'post_title',
+			'link_before'  => '',
+			'link_after'   => '',
+			'item_spacing' => 'preserve',
+			'walker'       => '',
+		);
+		
+		$pages = get_pages( $args );
+		$current_page = get_queried_object_id();
+		$output = '';
+		foreach( $pages as $page ) {
+			if( $page->ID == $current_page ) {
+				$item = sprintf( '<span class="screen-reader-text">%1$s</span><span>%2$s',
+								   __( 'Current page', 'manduca' ),
+								   $page->post_title 
+				);
+			}
+			else{
+				$item = sprintf( '<a href="%1$s">%2$s</a>',
+								   get_permalink( $page->ID ),
+								   $page->post_title );
+			}
+			$output .= sprintf( '<li>%s</li>', $item );
+			
+		}
+		return sprintf( '<ul>%s</ul>', $output );
 	}
  
  
