@@ -27,41 +27,56 @@
  
 <?php get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php $title = str_replace(' | ', '<br />', get_the_title() ); // Change | to line break ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+		<header>
+				<h1><?php echo $title ; ?></h1>
+						
+			
+				<?php if ( has_post_thumbnail() ) :  ?>
+				
+					<div>
+						<?php the_post_thumbnail( 'post-size' ); ?>
+					</div>
+		
+				<?php endif; ?>
+			
+		</header>
+			
+				
+	<?php get_template_part( '/template-parts/postlink', 'edit' ) ;?>
+	
+	<div class="entry-content">
+		
+    <?php $sitemap = new \Manduca\Sitemap;	?>
     
-    <?php  get_template_part( 'template-parts/pages/content', 'page' ); ?>
-                
-    <?php  do_action( 'manduca_after_single_page' ); ?>
-                
+    <button class="js-expandmore-all"><?php _e( 'Expand all', 'manduca' ) ; ?></button>
+    
+    <div id="sitemap-wrapper">
         
-<?php endwhile; ?>
-
-<?php $sitemap = new \Manduca\Sitemap;	?>
-
-<button class="js-expandmore-all"><?php _e( 'Expand all', 'manduca' ) ; ?></button>
-
-<div id="sitemap-wrapper">
-    
-    <h2 class="js-expandmore"><?php _e( 'Authors', 'manduca' ); ?></h2>
-    <div class="js-to_expand"><?php echo $sitemap->authors(); ?></div>
-    
-    <h2 class="js-expandmore"><?php _e( 'Pages', 'manduca' ); ?></h2>
-    <div class="js-to_expand"><?php echo $sitemap->pages(); ?></div>
-    
-    <h2 class="js-expandmore"><?php _e( 'Posts by category', 'manduca' ); ?></h2>
-    <div class="js-to_expand"><?php echo $sitemap->posts_by_category(); ?></div>
-    
-    <h2 class="js-expandmore"><?php _e( 'Posts in alphabetical', 'manduca' ); ?></h2>
-    <div class="js-to_expand"><?php echo $sitemap->posts_in_abc(); ?></div>
-    
-    <h2 class="js-expandmore"><?php _e( 'Images', 'manduca' ); ?></h2>
-    <div class="js-to_expand"><?php echo $sitemap->images(); ?></div>
-    
-    <?php $pdfs = $sitemap->pdfs(); ?>
-    <?php if( $pdfs ) : ?>
-        <h2 class="js-expandmore"><?php _e( 'PDFs', 'manduca' ); ?></h2>
-        <div class="js-to_expand"><?php echo $pdfs; ?></div>
-    <?php endif; ?>
-</div>
-
+        <h2 class="js-expandmore"><?php _e( 'Authors', 'manduca' ); ?></h2>
+        <div class="js-to_expand"><?php echo $sitemap->authors(); ?></div>
+        
+        <h2 class="js-expandmore"><?php _e( 'Pages', 'manduca' ); ?></h2>
+        <div class="js-to_expand"><?php echo $sitemap->pages(); ?></div>
+        
+        <h2 class="js-expandmorex"><?php _e( 'Posts by category', 'manduca' ); ?></h2>
+        <div class="js-to_expandx"><?php echo $sitemap->posts_by_category(); ?></div>
+        
+        <h2 class="js-expandmore"><?php _e( 'Posts in alphabetical', 'manduca' ); ?></h2>
+        <div class="js-to_expand"><?php echo $sitemap->posts_in_abc(); ?></div>
+        
+        <h2 class="js-expandmore"><?php _e( 'Images', 'manduca' ); ?></h2>
+        <div class="js-to_expand"><?php echo $sitemap->images(); ?></div>
+        
+        <?php $pdfs = $sitemap->pdfs(); ?>
+        <?php if( $pdfs ) : ?>
+            <h2 class="js-expandmore"><?php _e( 'PDFs', 'manduca' ); ?></h2>
+            <div class="js-to_expand"><?php echo $pdfs; ?></div>
+        <?php endif; ?>
+    </div>
+	
+</article>
 <?php get_footer(); ?>

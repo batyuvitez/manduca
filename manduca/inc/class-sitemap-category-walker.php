@@ -1,6 +1,11 @@
 <?php
 
- /*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ /* Used by Sitemap class to display posts by categories in hidable headings 
+  *
+  *@since 19.3
+  **/
+  
+  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
 
@@ -23,11 +28,9 @@ namespace Manduca;
 
 class Sitemap_Category_Walker extends \Walker_Category {
    	/**
-	 * 
+	 * This walker returns the post links to the current category.
+	 * If there is Yoast Seo, post inlcudes only in the primary category. 
 	 *
-	 * @since 2.1.0
-	 *
-	 * @see Walker::start_el()
 	 *
 	 * @param string $output   Used to append additional content (passed by reference).
 	 * @param object $category Category data object.
@@ -56,16 +59,18 @@ class Sitemap_Category_Walker extends \Walker_Category {
       
       $posts  = new  \WP_Query( [
 					'cat' => $category->cat_ID, // Just in case Yoast data corrupted & post no longer attached to X term but primary meta remains
-					'meta_query' => [
-						[
-							'key' => '_yoast_wpseo_primary_category',
-							'value' => $category->cat_ID,
-						]
-					],
 				]);
+	  
       $output .= '<ul class="js-to_expand">';
       while ( $posts->have_posts() ) {
 			$posts->the_post();
+			// If the post has more than 1 categories, check yoast for primary
+			if( count(get_the_category() )!== 1 ){
+				$yoast_primary_cat = (int) get_post_meta( get_the_ID(), '_yoast_wpseo_primary_category', true );
+				if( $yoast_primary_cat && $yoast_primary_cat !== $category->cat_ID  ) {
+						continue;
+				}
+			}
 			$output.= sprintf( '<li><a href="%1$s">%2$s</a></li>',
 				   get_permalink(),
 				   get_the_title()

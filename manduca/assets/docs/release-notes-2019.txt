@@ -256,3 +256,6 @@ jgs //    /
                   
 20 Mar, 2019   'sitmap current page indicator'
                   - current page is not link any longer
+
+20 Mar, 2019   'handles yoast seo primary category in sitemap'
+                  - When one post has more categories, sitemap lists only in its Yoast primary category. 

@@ -39,18 +39,7 @@ class Sitemap {
 		return '<ol>' .wp_list_authors( $args ) .'</ol>';
 	}
 	
-	public function pages_x() {
-		$args = array(
-						'exclude'        => '',
-						'title_li'     => '',
-						'sort_column'  => 'post_title',
-						'echo'			=> false,
-						'walker'		=> new \Manduca\Sitemap_Page_Walker
-						);
-		return '<ol>' .wp_list_pages( $args ) .'</ol>';
-	}
- 
-	public function pages() {
+		public function pages() {
 		$args = array(
 			'depth'        => 0,
 			'show_date'    => '',
@@ -92,32 +81,32 @@ class Sitemap {
 	 
 	public function posts_by_category(){
 		$defaults = array(
-		'child_of'            => 0,
-		'current_category'    => 0,
-		'depth'               => 0,
-		'echo'                => 1,
-		'exclude'             => '',
-		'exclude_tree'        => '',
-		'hide_empty'          => 1,
-		'hide_title_if_empty' => false,
-		'hierarchical'        => true,
-		'order'               => 'ASC',
-		'orderby'             => 'name',
-		'separator'           => '<br />',
-		'show_count'          => 0,
-		'show_option_all'     => '',
-		'show_option_none'    => __( 'No categories' ),
-		'style'               => 'list',
-		'taxonomy'            => 'category',
-		'title_li'            => __( 'Categories' ),
-		'use_desc_for_title'  => 1,
+			'child_of'            => 0,
+			'current_category'    => 0,
+			'depth'               => 0,
+			'echo'                => false,
+			'exclude'             => '',
+			'exclude_tree'        => '',
+			'hide_empty'          => 1,
+			'hide_title_if_empty' => false,
+			'hierarchical'        => true,
+			'order'               => 'ASC',
+			'orderby'             => 'name',
+			'separator'           => '<br />',
+			'show_count'          => 0,
+			'show_option_all'     => '',
+			'show_option_none'    => __( 'No categories' ),
+			'style'               => 'list',
+			'taxonomy'            => 'category',
+			'title_li'            => __( 'Categories' ),
+			'use_desc_for_title'  => 1,
 		);
 		
 		
 		$cats = get_categories( $defaults );
 		$args = array( $cats, '', $defaults );
 		$walker = new Sitemap_Category_Walker;
-		echo call_user_func_array( array( $walker, 'walk' ), $args );		
+		return  call_user_func_array( array( $walker, 'walk' ), $args );		
 				
 	}
  
