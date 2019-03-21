@@ -45,7 +45,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					<tr>
 						 <td><span class="toolbar-label"><?php _e( 'Color scheme:' , 'manduca' ); ?></span></td>
 						 <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
-								  <td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
+						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
 						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
 						 <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Light background, black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
 					 </tr>
@@ -64,15 +64,35 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-3" aria-label="<?php _e( 'Extra large' , 'manduca' ); ?>" data-zoom="font-size-3"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Extra large', 'manduca' ); ?></span></button></td>
 					 </tr>
+						
+						<tr>
+						 <td>
+							<span class="toolbar-label"><?php _e( 'Choose link target', 'manduca' ); ?></span>
+						 </td>
+						 <td>
+							<button class="target-selector" id ="target-default" aria-label="<?php _e( 'Leave as it is', 'manduca' );?>" data-target="default">
+								<span class="phone-text" aria-hidden="true"><?php _e( 'Default', 'manduca' ); ?></span>
+								<span class="desktop-text"><?php _e( 'Default', 'manduca' ); ?></span>
+							</button>
+						 </td>
+						 <td>
+							<button class="target-selector" id ="target-self" aria-label="<?php _e( "Don't open link in new window", 'manduca' ); ?>" data-target="self">
+								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg( array ( 'icon'=>'target' ) ) ;?></span>
+								<span class="desktop-text"><?php _e( "Same window", 'manduca' ); ?></span>
+							</button>
+						 </td>
+						 <td>
+							<button class="target-selector" id ="target-blank" aria-label="<?php _e( "Open links in new window", 'manduca' ); ?>" data-target="blank">
+								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg( array ( 'icon'=>'extlink' ) ) ;?></span>
+								<span class="desktop-text"><?php _e( "New window", 'manduca' ); ?></span>
+							</button>
+						 </td>
+						 
+						 
+					 </tr>
 		   </tbody>
 	 </table>		
-	  <label for="target-selector"><?php _e( 'Choose link target', 'manduca' ); ?>
-					<select name="target-selector" id="target-selector">
-					<option value="default"><?php _e( 'Leave as it is', 'manduca' );?></option>
-					<option value="self"><?php _e( "Don't open link in new window", 'manduca' ); ?></option>
-					<option value="blank"><?php _e( "Open links in new window", 'manduca' ); ?></option>
-				</select>
-	  </label>
+	  
 	 
 		 <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
 	  

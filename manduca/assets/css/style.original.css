@@ -2139,18 +2139,13 @@ body.font-size-3 .toolbar-label {
 }
 
     
-/*shadow of active buttons*/
-body.font-type-0 #font-type-0,
-body.font-type-1 #font-type-1,
-body.font-type-2 #font-type-2,
-body.high-contrast-0 #high-contrast-0,
-body.high-contrast-1 #high-contrast-1,
-body.high-contrast-2 #high-contrast-2,
-body.high-contrast-3 #high-contrast-3,
-body.font-size-0 #font-size-0,
-body.font-size-1 #font-size-1,
-body.font-size-2 #font-size-2{
-    border: 5px #333333 solid;  /* since @18.8.2 */
+/*shadow of active buttons
+* @since 19.3 */
+#toolbar-buttons button[disabled]{
+		border: 4px red solid;
+		color: #444; 
+}
+	
 }
 
 /*mobil appearance */

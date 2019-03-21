@@ -638,7 +638,11 @@ function constrain(amt, low, high) {
           }
       
       
-      
+		// Set target selector value
+		var linkTarget=readCookie( "linkTarget" );
+		$( '#target-' + linkTarget ).attr( 'disabled', 'true');
+	     
+	  
    
       /*
        * Behaviour open toolbar button of reading options 
@@ -666,16 +670,7 @@ function constrain(amt, low, high) {
          }
     });
       
-	// Set target selector value
-	var linkTarget=readCookie( "linkTarget" );
 	
-	if ( linkTarget == 'self' ) {
-          $( '#target-selector option[value="self"]').attr( 'selected', 'true');
-	}
-	if ( linkTarget == 'blank' ) {
-	   $( '#target-selector option[value="blank"]').attr( 'selected', 'true');
-	}
-         
      //close toolbar with close button also    
     $( '#buttons-close' ).click(function() {
         $('#toolbar-buttons').slideUp();
@@ -715,7 +710,7 @@ function constrain(amt, low, high) {
          var fontSize = $(this).attr('data-zoom');
          $( '.change-font-size').removeAttr( 'disabled' );
         $(this).attr('disabled' , 'true' );
-         var CookieDate = new Date;
+         var CookieDate = new Date();
 
          $('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');
          $('body').addClass(fontSize);
@@ -730,7 +725,7 @@ function constrain(amt, low, high) {
         var contrastType = $(this).attr('data-contrast-type');
         $( '.high-contrast').removeAttr( 'disabled' );
         $(this).attr('disabled' , 'true' );
-        var CookieDate = new Date;
+        var CookieDate = new Date();
         $('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');
         $('body').addClass(contrastType);
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
@@ -751,18 +746,16 @@ function constrain(amt, low, high) {
     });
 	
 	 
-    //change font family
-    $('#target-selector').on( 'change' ,function () {
-        var selectTarget= this.value;
-        var CookieDate = new Date();
+    //change target
+    $('.target-selector').on( 'click' ,function () {
+        var selectTarget= $(this).attr( 'data-target' ) ;
+        $( '.target-selector' ).removeAttr( 'disabled');
+		$(this).attr( 'disabled', 'true');
+		var CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
         document.cookie = 'linkTarget=' + selectTarget + '; expires=' + CookieDate.toGMTString() + '; path=/';
-    });
-    
-    $('#target-selector').on('keydown', function(event) {
-      if (event.keyCode === 13 ) {
-		location.reload();
-      }
+    	location.reload();
+      
     });
    
    

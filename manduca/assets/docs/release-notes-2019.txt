@@ -263,3 +263,7 @@ jgs //    /
 20 Mar, 2019   'exclude pages from sitemap'
                   Add parameter to the Sitemap->pages() method to exclude pages from sitemap
                   
+21 Mar, 2019   'toolbar target selector as buttons'
+                  Durintg testing, we have found different bug in Firefox: dropdown list did not worked there.
+                  We changed target selector dropdown list to button.
+                  
