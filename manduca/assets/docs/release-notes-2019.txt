@@ -274,3 +274,4 @@ jgs //    /
                   Avatar alt text missed the quotation mark - fixed
                   Avatar HTML markup is more clean now
                   
+21 Mar, 2019   'add hours to Hungarian contents'

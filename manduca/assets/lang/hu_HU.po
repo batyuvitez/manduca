@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-21 13:11+0100\n"
+"PO-Revision-Date: 2019-03-21 14:24+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,6 +130,12 @@ msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "ebben a percben"
 msgstr[1] "%s perccel ezelőtt"
+
+# new in  19.3 v
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] "ebben az órában"
+msgstr[1] "%s órával ezelőtt"
 
 #. translators: Time difference between two dates, in days. 1: Number of days
 #: inc/class-hungarian-contents.php:80

@@ -72,10 +72,14 @@
     
         $diff = (int) abs( $to - $from );
 		
-        if ( $diff < DAY_IN_SECONDS ) {
+        if ( $diff < HOUR_IN_SECONDS ) {
             $minutes = round( $diff / 60 );
             $since = sprintf( _n( '%s minute', '%s minutes', $minutes, 'manduca' ), $minutes);
-        } elseif ( $diff < MONTH_IN_SECONDS  && $diff >= DAY_IN_SECONDS ) {
+        }elseif ( $diff < DAY_IN_SECONDS ) {
+            $hours= round( $diff / HOUR_IN_SECONDS );
+            $since = sprintf( _n( '%s hour', '%s hours', $hours, 'manduca' ), $hours );
+        }
+        elseif ( $diff < MONTH_IN_SECONDS  && $diff >= DAY_IN_SECONDS ) {
             $days = round( $diff / DAY_IN_SECONDS );
             if ( $days <= 1 )
                 $days = 1;
