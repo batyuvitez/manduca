@@ -52,17 +52,20 @@ class Sitemap_Category_Walker extends \Walker_Category {
          $heading = 2;
       }
       else{
-         $heading = $depth +3;
+         $heading = $depth +2;
          $output    .= "\t<h". $heading .' class="js-expandmore">';
       }
       $output     .= $category->name .'</h' .$heading .">\n";
       
       $posts  = new  \WP_Query( [
-					'cat' => $category->cat_ID, // Just in case Yoast data corrupted & post no longer attached to X term but primary meta remains
+					'category__in' 			=> $category->cat_ID, 
+					'posts_per_page' => -1
 				]);
 	  
-      $output .= '<ul class="js-to_expand">';
-      while ( $posts->have_posts() ) {
+      
+	  if( $posts->have_posts() ) {
+		$list_html = '';
+		while ( $posts->have_posts() ) {
 			$posts->the_post();
 			// If the post has more than 1 categories, check yoast for primary
 			if( count(get_the_category() )!== 1 ){
@@ -71,12 +74,14 @@ class Sitemap_Category_Walker extends \Walker_Category {
 						continue;
 				}
 			}
-			$output.= sprintf( '<li><a href="%1$s">%2$s</a></li>',
+			$list_html.= sprintf( '<li><a href="%1$s">%2$s</a></li>',
 				   get_permalink(),
 				   get_the_title()
 				  );
 		}
-      $output .= '</ul>';
+		$output .= sprintf( '<ul class="js-to_expand">%s</ul>', $list_html ) ;
+      
+	  }
       
 	}
 

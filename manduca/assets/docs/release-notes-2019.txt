@@ -275,3 +275,8 @@ jgs //    /
                   Avatar HTML markup is more clean now
                   
 21 Mar, 2019   'add hours to Hungarian contents'
+
+21 mar, 2019   'sitemap query fixings'
+                  - parent category included children, but we do not need
+                  - space after current page
+                  - fix headings (not h4, but h3)

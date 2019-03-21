@@ -67,7 +67,7 @@ class Sitemap {
 				continue;
 			}
 			if( $page->ID == $current_page ) {
-				$item = sprintf( '<span class="screen-reader-text">%1$s</span><span>%2$s',
+				$item = sprintf( '<span class="screen-reader-text">%1$s </span><span>%2$s</span>',
 								   __( 'Current page', 'manduca' ),
 								   $page->post_title 
 				);
