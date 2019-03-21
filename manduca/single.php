@@ -6,7 +6,6 @@
  * @ Since 1.0
  **/
 ?>
-
 <?php get_header(); ?>
 				
 <?php while ( have_posts() ) : the_post(); ?>

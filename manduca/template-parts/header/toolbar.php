@@ -78,12 +78,14 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td>
 							<button class="target-selector" id ="target-self" aria-label="<?php _e( "Don't open link in new window", 'manduca' ); ?>" data-target="self">
 								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg( array ( 'icon'=>'target' ) ) ;?></span>
+								<?php // translators: Button text in reading options: links are always never open in window ?>
 								<span class="desktop-text"><?php _e( "Same window", 'manduca' ); ?></span>
 							</button>
 						 </td>
 						 <td>
 							<button class="target-selector" id ="target-blank" aria-label="<?php _e( "Open links in new window", 'manduca' ); ?>" data-target="blank">
 								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg( array ( 'icon'=>'extlink' ) ) ;?></span>
+								<?php // translators: Button text in reading options: links are always open in new window ?>
 								<span class="desktop-text"><?php _e( "New window", 'manduca' ); ?></span>
 							</button>
 						 </td>

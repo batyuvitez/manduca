@@ -267,3 +267,6 @@ jgs //    /
                   Durintg testing, we have found different bug in Firefox: dropdown list did not worked there.
                   We changed target selector dropdown list to button.
                   
+21 Mar, 2019   'toolbar design'
+                  Same size buttons and corrections of design. 
+                  

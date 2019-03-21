@@ -2072,17 +2072,17 @@ high-contrast-3: high contrast: yellow background, dark letters.
 
 
 /* Font size in reading option window */
-#toolbar-buttons button#font-size-0 {
+#toolbar-buttons button#font-size-0 span{
     font-size: 2vw;
 }
-#toolbar-buttons button#font-size-1 {
+#toolbar-buttons button#font-size-1 span{
     font-size: 2.5vw;
 }
 
-#toolbar-buttons button#font-size-2 {
+#toolbar-buttons button#font-size-2 span{
     font-size: calc(0.1em + 3vw);
 }
-#toolbar-buttons button#font-size-3 {
+#toolbar-buttons button#font-size-3 span {
     font-size: calc(0.5em + 4vw);
 }
 
@@ -2146,24 +2146,18 @@ body.font-size-3 .toolbar-label {
 		color: #444; 
 }
 	
-}
 
 /*mobil appearance */
  .buttons-close {
         display: block;
-		position: absolute;
-        right: 5px;
-        top: 5px;
-        background-color: white;
+								position: absolute;
+        right: 0.4em;
+        top: 0.4em;
+        border: 1px solid white;
         padding: 1px;
         cursor: pointer
     }
-    #buttons-close svg {
-        position: relative;
-        top: 2px;
-		fill: black;
-    }
-
+    
 .desktop-text {
     display: none;
 }
@@ -2557,12 +2551,12 @@ body.font-size-3 .toolbar-label {
     
     .toolbar-buttons {
         position: absolute;
-		padding: 1rem;
-        top: 105px;
+								padding: 1em;
+        top: 7.5em;
         right: 0;
-		left: auto;
+								left: auto;
         z-index: 100;
-        max-width: 612px;
+        max-width: 57em;
     }
     li.button-container {
         padding-left: 1rem;
@@ -2571,24 +2565,29 @@ body.font-size-3 .toolbar-label {
 
 	#toolbar-buttons button {
 		font-size: 1.1em;
+		width: 9em;
+		height: 3em;
 	}
 	#toolbar-buttons span {
 		font-size: 1.3em;
 	}
-	#toolbar-buttons button#font-size-0 {
+	#toolbar-buttons button#font-size-0 span{
     font-size: 0.8em;
 	}
-	#toolbar-buttons button#font-size-1 {
+	#toolbar-buttons button#font-size-1 span {
 		font-size: 0.9em;
 	}
 	
-	#toolbar-buttons button#font-size-2 {
+	#toolbar-buttons button#font-size-2 span{
 		font-size: 1.1em;
 	}
-	#toolbar-buttons button#font-size-3 {
+	#toolbar-buttons button#font-size-3 span{
 		font-size: 1.3em;
 	}
 
+	#toolbar-buttons button#target-self span{
+		font-size: 0.8em;
+	}
 
 	
 	.site .toolbar-buttons .info-container {
