@@ -1,17 +1,16 @@
 <?php
-/**
- * Message in case of no javascript
+/*
+ * This class provides alt text for avatar images
  *
+ *@since 19.3
  *
- * @since 19.2
- * */
+ **/
 
- 
- 
-/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
 
+    Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -26,13 +25,26 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- 
- ?>
-<noscript>
-				<div id="no-javascript">
-					<?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?></div>
-    <a href="/">
-      <button><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></button>
-    </a>
-</noscript>
-			
+namespace Manduca;
+
+
+class Avatar_Alt_Text {
+	
+	public function __construct(){
+		add_filter( 'get_avatar',
+				   array( $this, 'add_alt_to_avatar' )
+				   );
+		
+	}
+	
+	public function add_alt_to_avatar( $text ) {
+		$alt_text = sprintf( __( 'Avatar of %s', 'manduca' ),
+								get_the_author_meta( 'display_name' )
+								);
+		$text = str_replace( 'alt=""', sprintf('alt="%s"', $alt_text) , $text );
+		return $text;
+	}
+	
+	
+	
+}

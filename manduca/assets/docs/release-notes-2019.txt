@@ -268,5 +268,9 @@ jgs //    /
                   We changed target selector dropdown list to button.
                   
 21 Mar, 2019   'toolbar design'
-                  Same size buttons and corrections of design. 
+                  Same size buttons and corrections of design.
+                  
+21 Mar, 2019   'avatar handling enhancement'
+                  Avatar alt text missed the quotation mark - fixed
+                  Avatar HTML markup is more clean now
                   

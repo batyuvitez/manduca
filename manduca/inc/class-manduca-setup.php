@@ -109,8 +109,8 @@ class Manduca_Setup {
 			add_filter( 'the_content', array( $this, 'correct_headings' ) );
 			
 			// add alt tag to avatar
-			add_filter( 'get_avatar', array( $this, 'add_alt_to_avatar' ) );
-		
+			new \Manduca\Avatar_Alt_Text;
+			
 			// Add homepage when listing page anywhere (e.g. in menu or widget )
 			add_filter( 'wp_page_menu_args', array( $this, 'add_home_to_page_menu' ) );
 			
@@ -268,12 +268,7 @@ class Manduca_Setup {
 		return $content;
 	}
 	
-	function add_alt_to_avatar( $text ) {
-		$alt = get_the_author_meta( 'display_name' );
-		$text = str_replace( 'alt=""', 'alt="'.$alt . __( 'avatar', 'manduca' ) , $text );
-		return $text;
-	}
-	
+
 	
 	function add_home_to_page_menu( $args ) {
 		if ( ! isset( $args['show_home'] ) ) {
