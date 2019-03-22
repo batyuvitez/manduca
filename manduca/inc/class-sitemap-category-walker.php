@@ -48,11 +48,11 @@ class Sitemap_Category_Walker extends \Walker_Category {
 		}
 
 		if ( !$depth ) {
-         $output .= '<h2 class="js-expandmore">';
-         $heading = 2;
+         $output .= '<h3 class="js-expandmore">';
+         $heading = 3;
 		}
 		else{
-		   $heading = $depth +2;
+		   $heading = $depth +3;
 		   $output .= "\t<h". $heading .' class="js-expandmore">';
 		}
 		$output.= $category->name .'</h' .$heading .">\n";
