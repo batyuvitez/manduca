@@ -48,41 +48,48 @@ class Sitemap_Category_Walker extends \Walker_Category {
 		}
 
 		if ( !$depth ) {
-         $output .= '<h2 class="js-expandmore">';
+         $header_html = '<h2 class="js-expandmore">';
          $heading = 2;
-      }
-      else{
-         $heading = $depth +2;
-         $output    .= "\t<h". $heading .' class="js-expandmore">';
-      }
-      $output     .= $category->name .'</h' .$heading .">\n";
-      
-      $posts  = new  \WP_Query( [
-					'category__in' 			=> $category->cat_ID, 
-					'posts_per_page' => -1
-				]);
-	  
-      
-	  if( $posts->have_posts() ) {
-		$list_html = '';
-		while ( $posts->have_posts() ) {
-			$posts->the_post();
-			// If the post has more than 1 categories, check yoast for primary
-			if( count(get_the_category() )!== 1 ){
-				$yoast_primary_cat = (int) get_post_meta( get_the_ID(), '_yoast_wpseo_primary_category', true );
-				if( $yoast_primary_cat && $yoast_primary_cat !== $category->cat_ID  ) {
-						continue;
-				}
-			}
-			$list_html.= sprintf( '<li><a href="%1$s">%2$s</a></li>',
-				   get_permalink(),
-				   get_the_title()
-				  );
 		}
-		$output .= sprintf( '<ul class="js-to_expand">%s</ul>', $list_html ) ;
-      
-	  }
-      
+		else{
+		   $heading = $depth +2;
+		   $header_html    = "\t<h". $heading .' class="js-expandmore">';
+		}
+		$header_html .= $category->name .'</h' .$heading .">\n";
+		
+		$posts  = new  \WP_Query( [
+					  'category__in' 			=> $category->cat_ID, 
+					  'posts_per_page' => -1
+				  ]);
+		
+			
+		if( $posts->have_posts() ) {
+			$list_html = '';
+			while ( $posts->have_posts() ) {
+				$posts->the_post();
+				// If the post has more than 1 categories, check yoast for primary
+				if( count(get_the_category() )!== 1 ){
+					$yoast_primary_cat = (int) get_post_meta( get_the_ID(), '_yoast_wpseo_primary_category', true );
+					if( $yoast_primary_cat && $yoast_primary_cat !== $category->cat_ID  ) {
+							continue;
+					}
+				}
+				$list_html.= sprintf( '<li><a href="%1$s">%2$s</a></li>',
+					   get_permalink(),
+					   get_the_title()
+					  );
+			}
+			
+			if( $list_html ){
+				$output .= sprintf( '%1$s<ul class="js-to_expand">%2$s</ul>',
+								   $header_html,
+									   $list_html
+					) ;	
+			}
+			
+		}
+		
+		
 	}
 
 }
