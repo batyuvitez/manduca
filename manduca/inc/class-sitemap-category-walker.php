@@ -48,14 +48,14 @@ class Sitemap_Category_Walker extends \Walker_Category {
 		}
 
 		if ( !$depth ) {
-         $header_html = '<h2 class="js-expandmore">';
+         $output .= '<h2 class="js-expandmore">';
          $heading = 2;
 		}
 		else{
 		   $heading = $depth +2;
-		   $header_html    = "\t<h". $heading .' class="js-expandmore">';
+		   $output .= "\t<h". $heading .' class="js-expandmore">';
 		}
-		$header_html .= $category->name .'</h' .$heading .">\n";
+		$output.= $category->name .'</h' .$heading .">\n";
 		
 		$posts  = new  \WP_Query( [
 					  'category__in' 			=> $category->cat_ID, 
@@ -81,15 +81,34 @@ class Sitemap_Category_Walker extends \Walker_Category {
 			}
 			
 			if( $list_html ){
-				$output .= sprintf( '%1$s<ul class="js-to_expand">%2$s</ul>',
-								   $header_html,
-									   $list_html
+				$output .= sprintf( '<ul class="js-to_expand">%s</ul>',
+								   $list_html
 					) ;	
 			}
 			
 		}
 		
-		
+	}
+	
+	
+	
+	
+	/**
+	 * Starts the list before the elements are added.
+	 *
+	 *
+	 * @param string $output Used to append additional content. Passed by reference.
+	 * @param int    $depth  Optional. Depth of category. Used for tab indentation. Default 0.
+	 * @param array  $args   Optional. An array of arguments. Will only append content if style argument
+	 *                       value is 'list'. See wp_list_categories(). Default empty array.
+	 */
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		if ( 'list' != $args['style'] ) {
+			return;
+		}
+
+		$indent  = str_repeat( "\t", $depth );
+		$output .= "$indent<ul class='js-to_expand is-opened children'>\n";
 	}
 
 }
