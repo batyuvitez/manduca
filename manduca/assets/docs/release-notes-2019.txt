@@ -281,4 +281,7 @@ jgs //    /
                   - space after current page
                   - fix headings (not h4, but h3)
 22 Mar, 2019   'empty category not listed in sitemap'
-                  -if a category is empty, do not display in sitemap. 
+                  -if a category is empty, do not display in sitemap.
+                  
+22 mar, 2019   'self link elimination in widgets'
+                  - category and page widgets now filtered by Link_Function class.

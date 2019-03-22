@@ -43,6 +43,10 @@ Class Link_Functions {
          add_filter( 'the_excerpt', array( $this , 'filter_links' ) , 999 );
          add_filter( 'comment_text', array( $this , 'filter_links' ) , 999 );
          add_filter( 'widget_text', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'wp_list_pages', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'wp_list_categories', array( $this , 'filter_links' ) , 999 );
+         add_filter( 'wp_tag_cloud', array( $this , 'filter_links' ) , 999 );
+         //wp-archive has no filter, but Manduca has its own accessible widget for it.
    }
    
     /*
@@ -178,7 +182,7 @@ Class Link_Functions {
                 $screen_reader_text = $this->dom->createElement(
                     'span',
                      // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
-                     $screen_reader_text =  __( 'Current page', 'manduca' )  
+                     $screen_reader_text =  __( 'Current page', 'manduca' ). ' '
                     );
                 $screen_reader_text->setAttribute(
                     'class',
