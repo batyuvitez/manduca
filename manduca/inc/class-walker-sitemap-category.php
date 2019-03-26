@@ -26,7 +26,7 @@
 
 namespace Manduca;
 
-class Sitemap_Category_Walker extends \Walker_Category {
+class Walker_Sitemap_Category extends \Walker_Category {
    	/**
 	 * This walker returns the post links to the current category.
 	 * If there is Yoast Seo, post inlcudes only in the primary category. 

@@ -15,7 +15,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-21 14:24+0100\n"
+"PO-Revision-Date: 2019-03-25 15:01+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,15 +80,15 @@ msgstr "Nincs találat a %s keresőkifejezésre."
 
 #: template-parts/header/toolbar.php:73
 msgid "Open links in new window"
-msgstr "Új ablakban nyílik meg."
+msgstr "Új ablakban nyílik meg"
 
 #: template-parts/header/toolbar.php:72
 msgid "Don't open link in new window"
-msgstr "Soha nem nyílik meg új ablakban."
+msgstr "Soha nem nyílik meg új ablakban"
 
 #: template-parts/header/toolbar.php:71
 msgid "Leave as it is"
-msgstr "Az alapbeállítások maradnak. "
+msgstr "Alapbeállítás "
 
 #: template-parts/header/toolbar.php:69
 msgid "Choose link target"

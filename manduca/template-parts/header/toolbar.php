@@ -72,7 +72,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td>
 							<button class="target-selector" id ="target-default" aria-label="<?php _e( 'Leave as it is', 'manduca' );?>" data-target="default">
 								<span class="phone-text" aria-hidden="true"><?php _e( 'Default', 'manduca' ); ?></span>
-								<span class="desktop-text"><?php _e( 'Default', 'manduca' ); ?></span>
+								<span class="desktop-text"><?php _e( 'Leave as it is', 'manduca' ); ?></span>
 							</button>
 						 </td>
 						 <td>
@@ -89,8 +89,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 								<span class="desktop-text"><?php _e( "New window", 'manduca' ); ?></span>
 							</button>
 						 </td>
-						 
-						 
+						 			 
 					 </tr>
 		   </tbody>
 	 </table>		

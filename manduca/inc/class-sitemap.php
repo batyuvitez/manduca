@@ -111,7 +111,7 @@ class Sitemap {
 		
 		$cats = get_categories( $defaults );
 		$args = array( $cats, '', $defaults );
-		$walker = new Sitemap_Category_Walker;
+		$walker = new Walker_Sitemap_Category;
 		return  call_user_func_array( array( $walker, 'walk' ), $args );		
 				
 	}
