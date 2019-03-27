@@ -40,10 +40,10 @@
 	   if ( get_locale() ==='hu_HU' ) {
 		   $hungarian_regex = '/^[aáeéiíoóöőuúüű]/i';
 		   if (preg_match ( $hungarian_regex, $word ) ) {
-			   $article = 'az';	
+			   $article = ' az ';	
 		   }
 		   else {
-			   $article = 'a';
+			   $article = ' a ';
 		   }
 	   }
 	   return $article;
