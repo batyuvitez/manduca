@@ -54,7 +54,13 @@ class Enqueue{
 		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
 		
 		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
-			
+		
+      
+      	
+      /*
+       *Add variables to jQuery scripts (manduca-scripts.js)
+       **/
+      
       $js_variables = array(
                         // Translators: Accessible megamenu: expand child menu button 
                         'expand'        => __( 'expand child menu', 'manduca' ),
@@ -72,17 +78,29 @@ class Enqueue{
       }
          
          
-      wp_localize_script( 'manduca-scripts', 'manducaScreenReaderText', $js_variables );
+         
       
+      /*
+       * Define focus snail color
+       * */
       $focus_snail_color = array (
                      'red'		=>22,
                      'green'		=>78,
                      'blue'		=>104
          );
-
+         /**
+			 * Filters the focus snail color.
+			 *
+			 * @param array  RGB color of focus snail
+			 */
       $focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
+      
+      
+      $js_variables = $js_variables + $focus_snail_color;
+      wp_localize_script( 'manduca-scripts', 'manducaVariables', $js_variables );
       wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
 	}
+   
    
    
    

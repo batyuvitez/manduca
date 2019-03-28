@@ -85,7 +85,7 @@ class Sitemap {
  
  
 	 
-	public function posts_by_category( $exclude_categories = array( ) ){
+	public function posts_by_category( $exclude_categories = array() ){
 		$defaults = array(
 			'child_of'            => 0,
 			'current_category'    => 0,
