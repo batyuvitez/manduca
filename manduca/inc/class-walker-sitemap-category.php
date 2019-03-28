@@ -94,10 +94,6 @@ class Walker_Sitemap_Category extends \Walker_Category {
 	/**
 	 * Ends the list of after the elements are added.
 	 *
-	 * @since 2.1.0
-	 *
-	 * @see Walker::end_lvl()
-	 *
 	 * @param string $output Used to append additional content. Passed by reference.
 	 * @param int    $depth  Optional. Depth of category. Used for tab indentation. Default 0.
 	 * @param array  $args   Optional. An array of arguments. Will only append content if style argument
@@ -135,9 +131,6 @@ class Walker_Sitemap_Category extends \Walker_Category {
 	/**
 	 * Ends the element output, if needed.
 	 *
-	 * @since 2.1.0
-	 *
-	 * @see Walker::end_el()
 	 *
 	 * @param string $output Used to append additional content (passed by reference).
 	 * @param object $page   Not used.
@@ -146,11 +139,7 @@ class Walker_Sitemap_Category extends \Walker_Category {
 	 *                       to output. See wp_list_categories(). Default empty array.
 	 */
 	public function end_el( &$output, $page, $depth = 0, $args = array() ) {
-		if ( 'list' != $args['style'] ) {
-			return;
-		}
-
-		//$output .= "</li>\n";
+		return ;
 	}
 
 }
