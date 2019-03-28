@@ -48,13 +48,12 @@
 				
 	<?php get_template_part( '/template-parts/postlink', 'edit' ) ;?>
 	
-	<div class="entry-content">
+	<div class="entry-content" id="sitemap-wrapper">
 		
     <?php $sitemap = new \Manduca\Sitemap;	?>
     
     <button class="js-expandmore-all"><?php _e( 'Expand all', 'manduca' ) ; ?></button>
     
-    <div id="sitemap-wrapper">
         
         <h2 class="js-expandmore"><?php _e( 'Authors', 'manduca' ); ?></h2>
         <div class="js-to_expand"><?php echo $sitemap->authors(); ?></div>

@@ -285,3 +285,19 @@ jgs //    /
                   
 22 mar, 2019   'self link elimination in widgets'
                   - category and page widgets now filtered by Link_Function class.
+                  
+                  
+      |V|
+   .::| |::.
+  ::__| |__::
+ >____   ____<                     VERSION 19.3 UPLOADED TO REPOSITORY
+  ::  | |  ::                              Thank you Jesus. 
+   '::| |::'
+      | |
+      | |
+jgs   |A|
+
+
+
+From now on, the release notes and development log will be found in /assets/docs/manduca.odt file.
+
