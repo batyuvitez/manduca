@@ -43,7 +43,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 		  <tbody>
 				
 					<tr>
-						 <td><span class="toolbar-label"><?php _e( 'Color scheme:' , 'manduca' ); ?></span></td>
+						 <td><span class="toolbar-label"><?php _e( 'Color scheme' , 'manduca' ); ?>:</span></td>
 						 <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
 						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
 						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
@@ -71,7 +71,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 </td>
 						 <td>
 							<button class="target-selector" id ="target-default" aria-label="<?php _e( 'Leave as it is', 'manduca' );?>" data-target="default">
-								<span class="phone-text" aria-hidden="true"><?php _e( 'Default', 'manduca' ); ?></span>
+								<span class="phone-text" aria-hidden="true"><?php _e( 'Leave as it is', 'manduca' ); ?></span>
 								<span class="desktop-text"><?php _e( 'Leave as it is', 'manduca' ); ?></span>
 							</button>
 						 </td>
