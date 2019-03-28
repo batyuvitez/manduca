@@ -85,7 +85,7 @@ class Sitemap {
  
  
 	 
-	public function posts_by_category(){
+	public function posts_by_category( $exclude_categories = array( 255 ) ){
 		$defaults = array(
 			'child_of'            => 0,
 			'current_category'    => 0,
@@ -108,9 +108,13 @@ class Sitemap {
 			'use_desc_for_title'  => 1,
 		);
 		
-		
-		$cats = get_categories( $defaults );
-		$args = array( $cats, '', $defaults );
+		$categories = get_categories( $defaults );
+		foreach( $categories as $key => $category){
+				if( in_array( $category->term_id, $exclude_categories )  ) {
+					unset( $categories[ $key ] );
+				}
+		}
+		$args = array( $categories, '', $defaults);
 		$walker = new Walker_Sitemap_Category;
 		return  call_user_func_array( array( $walker, 'walk' ), $args );		
 				
