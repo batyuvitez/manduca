@@ -182,7 +182,7 @@ Class Link_Functions {
                 $screen_reader_text = $this->dom->createElement(
                     'span',
                      // translators: this is the text read by screen readers only in case of you are in a html element referring to current page. 
-                     $screen_reader_text =  __( 'Current page', 'manduca' ). ': '
+                     $screen_reader_text =  __( 'Current page', 'manduca' ). ' '
                     );
                 $screen_reader_text->setAttribute(
                     'class',
