@@ -1,22 +1,22 @@
 # Translation of Themes - Manduca in Hungarian
 # This file is distributed under the same license as the Themes - Manduca package.
 #
-#   Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)	
-#   Source code is available at https://github.com/batyuvitez/manduca	
-#	
-#    Manduca is free software: you can redistribute it and/or modify	
-#    it under the terms of the GNU General Public License as published by	
-#    the Free Software Foundation, either version 3 of the License, or	
-#    (at your option) any later version.	
-#    This program is distributed in the hope that it will be useful,	
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of	
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	
-#    GNU General Public License for more details.	
-#    You should have received a copy of the GNU General Public License	
+#   Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+#   Source code is available at https://github.com/batyuvitez/manduca
+#
+#    Manduca is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#    You should have received a copy of the GNU General Public License
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-28 07:26+0100\n"
+"PO-Revision-Date: 2019-03-30 07:58+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: hu\n"
 "Project-Id-Version: Themes - Manduca\n"
 "POT-Creation-Date: \n"
-"Last-Translator: Zsolt Edelényi(ezs@web25.hu) \n"
+"Last-Translator: Zsolt Edelényi(ezs@web25.hu)\n"
 "Language-Team: \n"
 
 #. Description of the theme
@@ -343,11 +343,11 @@ msgstr "PDF fájlok"
 
 #: page-templates/page-sitemap.php:67
 msgid "Posts in alphabetical"
-msgstr "A bejegyzések abc sorrendben"
+msgstr "Bejegyzések abc sorrendben"
 
 #: page-templates/page-sitemap.php:64
 msgid "Posts by category"
-msgstr "A bejegyzések kategóriánként"
+msgstr "Bejegyzések kategóriánként"
 
 #. translators: When image has no title, indicated with this text in sitemap.
 #: inc/class-sitemap.php:159
@@ -683,7 +683,7 @@ msgstr "Címkék"
 #. translators: Category of post - in the post meta
 #: template-parts/posts/content-meta.php:46
 msgid "Category"
-msgstr "Kategória"
+msgstr "Kategóriák"
 
 #. translators: Last modification of post - in the post meta
 #: template-parts/posts/content-meta.php:26
@@ -765,7 +765,7 @@ msgstr "Szerkesztés"
 #: page-templates/page-sitemap.php:61 image.php:51
 #: template-parts/pages/content-page.php:32
 msgid "Pages"
-msgstr "Oldal"
+msgstr "Oldalak"
 
 #: template-parts/content-none.php:16
 msgid "Sitemap"
