@@ -359,7 +359,7 @@ class Manduca_Template_Functions {
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
-							   __( 'Previous post', 'manduca' ),
+							   __( 'Previous post', 'manduca' ) .' ',
 							   __( 'Access key', 'manduca' ) .': P'
 							   );
 				}
@@ -383,7 +383,7 @@ class Manduca_Template_Functions {
 							   get_permalink( $post ),
 							   $post->post_title,
 							   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
-								__( 'Next post', 'manduca' ),
+								__( 'Next post', 'manduca' ) .' ',
 								__( 'Access key', 'manduca' ) .': N'
 							   );
 				}
