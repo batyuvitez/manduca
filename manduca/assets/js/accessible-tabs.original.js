@@ -1,3 +1,21 @@
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 /**
  * Accessible Tabs - jQuery plugin for accessible, unobtrusive tabs
  * Build to seemlessly work with the CCS-Framework YAML (yaml.de) not depending on YAML though
@@ -18,7 +36,6 @@
 
 
 (function($) {
-    var debugMode = true;
     $.fn.extend({
         // We assume there could be multiple sets of tabs on a page, so,
         // the unique id for each invididual tab's heading is identified with params q and r (e.g., id="accessibletabscontent0-2")
@@ -179,7 +196,7 @@
 
                 if(o.options.saveState && $.cookie){
                     var savedState = $.cookie('accessibletab_'+el.attr('id')+'_active');
-                    debug($.cookie('accessibletab_'+el.attr('id')+'_active'));
+                    
                     if(savedState !== null){
                         o.showAccessibleTab(savedState,el.attr('id'));
                     }
@@ -225,7 +242,7 @@
             });
         },
         showAccessibleTab: function(index,id){
-            debug('showAccessibleTab');
+            
             var o = this;
             if(id) {
                 var el = $('#'+id);
@@ -243,27 +260,15 @@
             }
         },
         showAccessibleTabSelector: function(selector){
-            debug('showAccessibleTabSelector');
             var el = $(selector);
             if(el){
                 if(el.get(0).nodeName.toLowerCase() === 'a'){
                     el.click();
-                }else{
-                    debug('the selector of a showAccessibleTabSelector() call needs to point to a tabs headline!');
                 }
             }
         }
     });
-    // private Methods
-    function debug(msg,info){
-        if(debugMode && window.console && window.console.log){
-            if(info){
-                window.console.log(info+': ',msg);
-            }else{
-                window.console.log(msg);
-            }
-        }
-    }
+    
 
   
 })(jQuery);
