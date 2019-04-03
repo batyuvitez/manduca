@@ -16,7 +16,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-03-30 07:58+0100\n"
+"PO-Revision-Date: 2019-04-03 20:51+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,10 +59,6 @@ msgstr "Alapbeállítás"
 #: template-parts/header/toolbar.php:48
 msgid "For night"
 msgstr "Éjszakai"
-
-#: template-parts/header/toolbar.php:46
-msgid "Color scheme:"
-msgstr "Színséma:"
 
 #: template-parts/header/toolbar.php:41
 msgid "When using non-default reading options you accept that cookies will be saved in your browser."
@@ -416,10 +412,6 @@ msgstr "Az éppen nyitott fül"
 msgid "Missing alternative text"
 msgstr "Hiányzik a helyettesítő szöveg. Kérlem pótolni!"
 
-#: template-parts/header/toolbar.php:61
-msgid "Font size:"
-msgstr "Betűméret:"
-
 #: template-parts/header/toolbar.php:56
 msgid "Serif"
 msgstr "Könyv"
@@ -427,10 +419,6 @@ msgstr "Könyv"
 #: template-parts/header/toolbar.php:47
 msgid "Original"
 msgstr "Eredeti"
-
-#: template-parts/header/toolbar.php:54
-msgid "Font type:"
-msgstr "Betűtípus:"
 
 #: template-parts/header/toolbar.php:33 template-parts/header/toolbar.php:40
 msgid "Display options"
@@ -807,3 +795,15 @@ msgstr "http://akadálymentes-wordpress-sablon.hu/"
 #. Author of the theme
 msgid "Zsolt Edelényi"
 msgstr "Edelényi Zsolt"
+
+#: template-parts/header/toolbar.php:46 javíta a 19.4-hez:
+msgid "Color scheme"
+msgstr "Színséma"
+
+#: template-parts/header/toolbar.php:61 javíta a 19.4-hez:
+msgid "Font size"
+msgstr "Betűméret"
+
+#: template-parts/header/toolbar.php:54 javíta a 19.4-hez:
+msgid "Font type"
+msgstr "Betűtípus"

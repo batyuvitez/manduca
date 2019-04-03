@@ -51,14 +51,14 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					 </tr>
 				   
 					<tr>
-						 <td><span class="toolbar-label"><?php _e( 'Font type:' , 'manduca' ); ?></span></td>
+						 <td><span class="toolbar-label"><?php _e( 'Font type' , 'manduca' ); ?>:</span></td>
 						 <td><button class="change-font-type" id="font-type-0" aria-label="<?php _e( 'Sans serif' , 'manduca' ); ?>" data-font-type="font-type-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Sans serif' , 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-type" id="font-type-1" aria-label="<?php _e( 'Serif' , 'manduca' ); ?>" data-font-type="font-type-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Serif' , 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-type"  id="font-type-2" aria-label="<?php _e( 'Monotype' , 'manduca' ); ?>" data-font-type="font-type-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Monotype' , 'manduca' ); ?></span></button></td>
 					 </tr>
 				   
 					 <tr>
-						 <td><span class="toolbar-label"><?php _e( 'Font size:' , 'manduca' ); ?></span></td>
+						 <td><span class="toolbar-label"><?php _e( 'Font size' , 'manduca' ); ?>:</span></td>
 						 <td><button class="change-font-size"  id ="font-size-0" aria-label="<?php _e( 'Small' , 'manduca' ); ?>" data-zoom="font-size-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Small', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-1" aria-label="<?php _e( 'Normal' , 'manduca' ); ?>" data-zoom="font-size-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Normal', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
