@@ -16,7 +16,7 @@
 #    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-04-03 20:51+0200\n"
+"PO-Revision-Date: 2019-04-12 05:55+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -143,7 +143,7 @@ msgstr "Szűrés"
 #. year selected.
 #: inc/class-widget-archives.php:94
 msgid "First select year"
-msgstr "Előszőr az évet kell kiválasztani."
+msgstr "Először az évet kell kiválasztani."
 
 #. translators: first (year) select menu's text in archive widget
 #: inc/class-widget-archives.php:91
