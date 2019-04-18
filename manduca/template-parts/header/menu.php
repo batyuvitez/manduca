@@ -31,7 +31,7 @@
 	// Translators: name of the main menu for screen reader users. 
 	$menu_name = __( 'Main navigation', 'manduca' ) ;
 	
-	printf( '<button id="menu-toggle" class="menu-toggle" aria-label="%3$s" aria-expanded="false">%1$s%2$s<span>%3$s</span></button>',
+	printf( '<button id="menu-toggle" class="menu-toggle inverse2" aria-label="%3$s" aria-expanded="false">%1$s%2$s<span>%3$s</span></button>',
 		   manduca_get_svg( array( 'icon' => 'bars' ) ),
 		   manduca_get_svg( array( 'icon' => 'close' ) ),
 		   $menu_name
@@ -44,7 +44,7 @@
 	
 		<div id="site-navigation" class="main-navigation">
 			
-			<nav id="megamenu" class="megamenu" aria-label="<?php echo $menu_name; ?>">
+			<nav id="megamenu" class="megamenu lighter-scheme" aria-label="<?php echo $menu_name; ?>">
 				<?php
 					$args = array(
 					   'theme_location'  => 'primary',

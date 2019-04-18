@@ -79,7 +79,8 @@ if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() 
 			<p><?php the_author_meta( 'description' ); ?></p>
 			<div class="author-link">
 				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-					<?php printf( __( 'All posts by %s', 'manduca' ) . manduca_get_svg( array( 'icon' => 'icon-arrow-right' ) , get_the_author() ) ); ?>
+					<?php printf( __( 'All posts by %s', 'manduca' ) , get_the_author() ) ; ?>
+					<?php echo manduca_get_svg( array( 'icon' => 'angle-circle-right' ) ) ?>
 				</a>
 			</div>
 		</div>

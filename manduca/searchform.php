@@ -32,7 +32,7 @@
 	<div role="search" >
 		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label><label class="screen-reader-text" for="ws" ><?php _e( 'Search', 'manduca' ) ?></label>
 		<input type="text" placeholder="<?php echo esc_attr_e( 'Search', 'manduca' ) ?>"  name="ws"  id="ws" />
-		<button type="submit" class="search-submit" id="widget-search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
+		<button type="submit" class="search-submit inverse2" id="widget-search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
 			<span class="screen-reader-text">
 				<?php _e( 'Search', 'manduca' ) ?>
 			</span>

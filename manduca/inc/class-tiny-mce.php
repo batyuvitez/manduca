@@ -30,14 +30,14 @@ class Tiny_Mce {
 		   array(  
 			   'title' => __( 'Highlight-2' , 'manduca' ) ,
 			   'block' => 'div',  
-			   'classes' => 'highlight-1',
+			   'classes' => 'highlight-1 inverse2',
 			   'wrapper' => true,
 			   
 		   ),  
 		   array(  
 			   'title' => __( 'Highlight-1' , 'manduca' ) ,  
 			   'block' => 'div',  
-			   'classes' => 'highlight-2',
+			   'classes' => 'highlight-2 inverse3',
 			   'wrapper' => true,
 		   ),
 		   array(  

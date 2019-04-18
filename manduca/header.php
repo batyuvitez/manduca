@@ -67,7 +67,7 @@
 			
 			<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
 			
-			<div  id="top-bar" class="top-bar"></div>
+			<div  id="top-bar" class="top-bar inverse1"></div>
 			
 			<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 			

@@ -53,7 +53,7 @@
 		do_action( 'manduca_after_entry_content' );
 	?>
 
-	<footer>
+	<footer class="lighter-scheme">
 		<?php get_template_part( 'template-parts/posts/content', 'meta' ); ?>
 	</footer>
 

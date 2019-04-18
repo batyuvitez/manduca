@@ -27,7 +27,7 @@
 
 <?php
 
-printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open color-3" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
+printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open inverse2" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
 		   manduca_get_svg( array( 'icon' => 'eye' ) ),
 		   manduca_get_svg( array( 'icon' => 'close' ) ),
 		   __( 'Display options', 'manduca' )
@@ -36,7 +36,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 
 
  
- <div id="toolbar-buttons" class="toolbar-buttons">
+ <div id="toolbar-buttons" class="toolbar-buttons inverse2">
 	<h1 aria-hidden="true"><?php _e( 'Display options', 'manduca' ); ?></h1>
 	<p><?php _e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?> </p>
 	 <table role="presentation">
@@ -47,7 +47,6 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
 						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
 						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
-						 <td><button class="high-contrast" id="high-contrast-3" aria-label="<?php _e( 'Light background, black letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-3"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
 					 </tr>
 				   
 					<tr>
@@ -62,7 +61,6 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td><button class="change-font-size"  id ="font-size-0" aria-label="<?php _e( 'Small' , 'manduca' ); ?>" data-zoom="font-size-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Small', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-1" aria-label="<?php _e( 'Normal' , 'manduca' ); ?>" data-zoom="font-size-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Normal', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
-						 <td><button class="change-font-size" id ="font-size-3" aria-label="<?php _e( 'Extra large' , 'manduca' ); ?>" data-zoom="font-size-3"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Extra large', 'manduca' ); ?></span></button></td>
 					 </tr>
 						
 						<tr>
@@ -95,7 +93,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 	 </table>		
 	  
 	 
-		 <?php echo Manduca_Template_Functions::get_info_button_html(); ?>
+		 <?php echo Manduca_Template_Functions::get_info_button_html( 'inverse3' ); ?>
 	  
 		<span role="button" id="buttons-close" class="buttons-close" aria-label="<?php _e( 'Close' ) ; ?>">
 				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>

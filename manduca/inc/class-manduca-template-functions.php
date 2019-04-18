@@ -163,7 +163,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="prev page-numbers" href="%1$s" accesskey="P" >%2$s</a></h4>',
+								'<h4><a class="prev page-numbers use-tooltip inverse3" href="%1$s" accesskey="P" >%2$s</a></h4>',
 								$link,
 								$args['prev_text']
 					);
@@ -220,7 +220,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="next page-numbers" href="%1$s" accesskey="N" >%2$s</a></h4>',
+								'<h4><a class="next page-numbers use-tooltip inverse3" href="%1$s" accesskey="N" >%2$s</a></h4>',
 								$link,
 								$args['next_text']
 								);
@@ -244,7 +244,7 @@ class Manduca_Template_Functions {
 
 		}
 	
-		public static function get_info_button_html() {
+		public static function get_info_button_html( $class = NULL ) {
 				/* Add information button, if there is a link to it.
 				*
 				* Return @array: 'url' :		the url of the info page
@@ -258,11 +258,14 @@ class Manduca_Template_Functions {
 						return null;
 				}
 		
-				return sprintf( '<div class="more-link">	<a href="%1$s" class="info-button" accesskey="0" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
+				$class = $class ? ' '.$class : '';
+				
+				return sprintf( '<div class="more-link link-button %5$s">	<a href="%1$s" class="info-button" accesskey="0" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
 				   esc_html( $info_button_data[ 'url' ] ), 
 				   esc_html( $info_button_data[ 'title' ] ),
 				   manduca_get_svg( array( 'icon' => 'info' ) ),
-				   esc_html( $info_button_data[ 'anchor-text' ] )
+				   esc_html( $info_button_data[ 'anchor-text' ] ),
+				   $class
 				   );
 	}
 	
@@ -275,9 +278,12 @@ class Manduca_Template_Functions {
 	public static function get_the_excerpt(){
 		$post 		= get_post();
 		$post_content = $post->post_content;
+		$morelink_flag = true;
+		
 		if( has_excerpt() === true ) {
 				$html 		= $post->post_excerpt; 		
 		}
+		
 		elseif( false !==  strpos( $post_content, '<!--more-->' ) ) {
 				$paragpraphs = 	explode( '<!--more-->', $post_content ) ;
 				if( isset( $paragpraphs[0] ) ) {
@@ -286,12 +292,21 @@ class Manduca_Template_Functions {
 		}
 		else {
 				$html = self::trim_excerpt( $post_content );
+				
+				/* This is an estimation, if there is a very short post content, the readmore link unnecessary.
+				*@since 19.4
+				* */
+				if( 70 > strlen( $html ) ) {
+					$morelink_flag = false;
+				}
 		}
 		if( !isset( $html) ) {
 				$html = $post_content;
 		}
-		$more_link 	= new More_Links;
-		$html 		.=$more_link->more_link_create_html();
+		if( $morelink_flag ) {
+			$more_link 	= new More_Links;
+			$html 		.=$more_link->more_link_create_html();
+		}
 		return $html;
 	}
 	

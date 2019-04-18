@@ -48,7 +48,7 @@
         
 <?php else :  ?>
     <div class="site-title">
-        <a href="<?php echo home_url( '/' );  ?>" rel="home" accesskey="1">
+        <a href="<?php echo home_url( '/' );  ?>" rel="home" accesskey="1" class="use-tooltip">
             <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
             <span class="display-site-title"><?php echo $site_title; ?></span>
             <span class="tooltip" aria-hidden="true"><?php _e( 'Access key', 'manduca' ); ?>: 1</span>

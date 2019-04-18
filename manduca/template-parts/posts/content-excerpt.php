@@ -18,7 +18,10 @@
 <div class="excerpt-wrapper">
 
 	<?php while ( have_posts() ) : the_post();  ?>
-		<article id="post-<?php echo the_ID(); ?>" <?php post_class( 'excerpt' ); ?>>
+		
+		<?php $extra_classes = is_sticky() ? 'excerpt featured-scheme' : 'excerpt' ; ?>
+		
+		<article id="post-<?php echo the_ID(); ?>" <?php post_class( $extra_classes ); ?>>
 		 
 			<header class="excerpt-header">
 				<?php get_template_part( 'template-parts/posts/entry-header' ); ?>

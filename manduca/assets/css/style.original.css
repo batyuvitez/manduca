@@ -3,7 +3,7 @@ Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: http://www.web25.hu
-Version: 19.3
+Version: 19.4 beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians. For PHP 5.5-7.3. for Hungarians. For PHP 5.5-7.3.
@@ -219,6 +219,7 @@ a.page-numbers.prev,
 .toolbar-buttons-open {
 	margin: 0;
 	padding: 3.5px;
+	height: 2.2em;
 }
 
 .entry-content .search-submit {  /* This is not inline, need correction */
@@ -242,26 +243,14 @@ a.page-numbers.prev,
 
 
 
-/* More-links */
-.reply,
-.more-link,
-.search-submit,
-.menu-toggle {
-	background-color: #ab490f;
-}
 
 .reply {
 	display: inline-block;
-	padding: 3px 7px;
-	box-shadow: 2px 2px 6px 2px #d9d9d9;
 }
 
 .more-link {
-	padding: 5px 10px;
-	max-width: 280px;
+	max-width: 12em;
 	float: right;
-	border: white solid 1px ;
-	box-shadow: 2px 2px 6px 2px #d9d9d9;
 }
 .reply a, 
 .more-link a {
@@ -278,42 +267,6 @@ a.page-numbers.prev,
 
 
 
-.toolbar-buttons-open,
-.toolbar-buttons { 
-	background-color: #358219;
-	color: white;
-	font-size: inherit;
-}
-
-/* New window alert in case of target="_blank" @since 17.12.3  WCAG technik 201.*/
-a.new-window {
-	position: relative;
-	z-index: 24;
-}
-a.new-windos:hover,
-a.new-windos:focus,
-a.new-window:active {
-	z-index:25;
-	background-color:#ff0
-}
-
-a.new-window span {
-	position: absolute;
-	left: -9000px;
-	width: 0;
-	overflow: hidden;
-}
-a.new-window:hover span,
-a.new-window:focus span,
-a.new-window:active span {
-	display:block;
-	position:absolute;
-	top:1em; left:1em; width:12em;
-	border:1px solid #0cf;
-	background-color:#cff;
-	color:#000;
-	text-align: center
-}
 
 
 
@@ -332,10 +285,6 @@ input {
 	background-color: #f1f1f1;
 }
 
-.sticky {  /*light, not white background*/
-	background-color: #DAF2FF;
-	color: black;
-}
 
 
 .footer-wrapper,
@@ -343,24 +292,10 @@ input {
 .info-button,
 .content-date, 
 .content-date span{ 
-	background-color: #164e68; 
-	color: #daf3ff;
-	text-align: center;
-}
-.footer-wrapper a,
-.top-bar {
-	color: #daf3ff;
+		text-align: center;
 }
 
-.footer-wrapper svg,
-.top-bar svg,
-.info-button svg {
-	fill: white;
-}
 
-.site-content article footer {
-	color: #565656;
-}
 
 
 
@@ -506,10 +441,6 @@ video {
 	line-height: 2;
 	color: #000;
 }
-.entry-content figure.wp-caption{
-	background-color: #DAF2FF;
-	
-}
 
 
 /* galleries*/ 
@@ -607,26 +538,17 @@ a.page-numbers.prev {
 
 .tooltip:hover,
 .tooltip:focus, 
-a.page-numbers.prev:hover .tooltip,
-a.page-numbers.prev:focus .tooltip,
-a.page-numbers.next:hover .tooltip,
-a.page-numbers.next:focus .tooltip,
-#header-searchform:focus .tooltip,
-#header-searchform:hover .tooltip,
-.site-title:focus .tooltip,
-.site-title:hover .tooltip,
-a.use-tooltip:hover .tooltip,
-a.use-tooltip:focus .tooltip{
+.site .use-tooltip:hover .tooltip,
+.site .use-tooltip:focus .tooltip{
     display: inline-block;
-	white-space: nowrap;
+				white-space: nowrap;
     text-align: center;
-	font-size: 0.8rem;
-	color: black;
-	text-shadow: none;
-    padding: 2px 5px;
-	background-color: #DAF2FF;
+				font-size: 0.8rem;
+				z-index: 100;
+				text-shadow: none;
+    padding: 0.1em 0.3em;
     position: absolute;
-	top: -96%;
+				top: -96%;
     left: 0;
 }
 #header-searchform:focus .tooltip,
@@ -810,8 +732,6 @@ body .site,
 
 /* Header */
 #no-javascript {
-	background-color: red;
-	color: white;
 	text-align: center;
 	font-size: 200%;
 	padding: 3rem;
@@ -880,6 +800,7 @@ body .site,
 }
 .header-bar .site-title > a {
 	text-decoration: none;
+	position: relative;  /* Need because of tooltip*/
 }
 
 /* Breadcrumb */
@@ -929,10 +850,6 @@ body .site,
 
 
 
-.megamenu.toggled-on ul.nav-menu li:nth-child(odd){
-	background-color: #c9ecff;
-}
-
 .dropdown-toggle.toggled-on {
 transform: rotate(180deg);
 }
@@ -946,7 +863,6 @@ transform: rotate(180deg);
 
 .megamenu.toggled-on {
 	text-align: left;
-	background-color: #daf2ff;
 	position: absolute;
 	top: 60px;
 	z-index: 100;
@@ -994,13 +910,7 @@ transform: rotate(180deg);
 
 
 
-/* open state of first descendant link within a top level 
-   navigation item */
-.menu-item> a.open {
-	background-color: #fff;
-	text-decoration: none;
-	z-index: 1;
-}
+/* open state of first descendant link
 
 /* Menu item has children*/
 .megamenu ul.nav-menu  > li.menu-item-has-children > a {  
@@ -1014,7 +924,6 @@ transform: rotate(180deg);
 		top: 37px;
 		right: 0;
 		padding: 0;
-		background-color: #f5f5f5;
 		border: 1px solid #c0c0c0;
 	}
 
@@ -1059,7 +968,6 @@ transform: rotate(180deg);
 	margin-bottom: 1rem;
 	padding: 0 0.5rem 1rem;
 	word-wrap: break-word;
-	background-color: #fff;
 	
 }
 
@@ -1133,14 +1041,6 @@ transform: rotate(180deg);
 	        hyphens: auto;
 }
 
-.site del {
-	color: #333;
-}
-.site ins {
-	background-color: #fcf8e3;   /* @since 17.8.10 Copied from Bootstrap typography  */
-	/* leave underline. This is the browsers' default */
-	
-}
 .site q:before {
 	content: "„";
 }
@@ -1148,7 +1048,6 @@ transform: rotate(180deg);
 	content: "”";
 }
 .site hr {
-	background-color: #DAF2FF;
 	border: 0;
 	height: 1px;
 	margin: 24px;
@@ -1179,7 +1078,7 @@ transform: rotate(180deg);
 	padding: 1.5rem;
 	border-left: 7px #DAF2FF solid;	
 	quotes: none;
-	/* background-color: #f9f9f9;not set because high-contrast settings */
+	
 	quotes: none;
 }
 .site blockquote:before {
@@ -1248,7 +1147,6 @@ transform: rotate(180deg);
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 	overflow: auto;
-	background-color: #e3e6e8;
 }
 .site pre {
 	white-space: pre-wrap;       /* css-3 */
@@ -1276,17 +1174,7 @@ transform: rotate(180deg);
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
-    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-    box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-    background-color: #f9f9f9;
-    background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
-    background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
-    background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
-    background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
-    color: #000;
-    padding: 0.1em 0.3em;
-    font-family: inherit;
+    
     font-size: 0.85em;
 }
 
@@ -1408,27 +1296,20 @@ transform: rotate(180deg);
 }
 
 .highlight-1{
-	background-color: #ab490f;
-	color: white;
-	width:  98%;
+	width:  90%;
 	font-size: 1.3em;
 	text-align: center;
-	line-height: 1.5;
+	line-height: 1.8;
 	border-bottom: 2px solid #e6e6e6;
 	border-top: 2px solid #e6e6e6;
 	font-weight: bolder;
-	margin: 20px 0;
 	margin: 1.428rem 0;
-	padding: 10px;
 	padding: 0.714rem;
 }
 
 .highlight-2 {
-	background-color: #531fff;
-	padding: 10px;
 	padding: 0.714rem;	
 	font-size: 1.2em;
-	color: #fff;
 	width:  98%;
 	line-height: 1.5;
 }
@@ -1627,19 +1508,6 @@ img.aligncenter,
 }
 
 
-.comments-area article header h4 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 6px 12px;
-	padding: 0.428571429rem 0.857142857rem;
-	font-size: small;
-
-	font-weight: normal;
-	color: #fff;
-	background-color: #0088d0;
-	border: 1px solid #007cbd;
-}
 .comments-area .bypostauthor cite span {
 	margin-left: 5px;
 	margin-left: 0.357142857rem;
@@ -1830,10 +1698,9 @@ svg.search-icon,
 }
 .page-numbers.prev svg,
 .page-numbers.next svg{
-	background-color: #164e68;
 	width: 28px;
 	height: 28px;
-	fill: white;	
+	
 }
 
 
@@ -1848,9 +1715,56 @@ svg.search-icon,
 }
 
 
+/* 12 1.* Basic color scheme
+ * @since 19.4
+-------------------------------------------------------------- */
+
+.link-button {
+				padding: 0.3em 0.6em;
+}
+.featured-scheme,
+.tooltip {
+				background-color: #DAF2FF;
+				color: #000;
+}
+.lighter-scheme{
+					color: #565656;
+					background-color: white;
+}
 
 
-/* 12 A.* Reading options toolbar
+.inverse1,
+.inverse1 a,
+.invers1 table{
+				background-color: #164e68; 
+				color: #daf3ff;
+}
+.inverse1 svg {
+				fill: #daf3ff;
+}
+
+.inverse2,
+.inverse2 a,
+.inverse2 table {  
+				background-color: #358219; 
+				color: white;
+}
+.inverse2 svg {
+				fill: white;
+}
+
+.inverse3,
+.inverse3 a,
+.inverse1 table {
+				background-color: #ab490f; 
+				color: #daf3ff;
+}
+
+.inverse3 svg {
+				fill: #daf3ff;
+}
+
+/* 12 b.* Reading options toolbar (different colours, fonts, font-sizes)
  * @since 19.12
 -------------------------------------------------------------- */
 
@@ -2580,9 +2494,16 @@ body.font-size-3 .toolbar-label {
 		font-size: 1.3em;
 	}
 
-	#toolbar-buttons button#target-self span{
+	#toolbar-buttons button#target-self span,
+	#toolbar-buttons button#target-default span{
 		font-size: 0.8em;
 	}
+	/*i don't know why I have to positionit'*/
+	#toolbar-buttons button#target-default {
+				position: relative;
+				top: 6px;
+	}
+
 
 	
 	.site .toolbar-buttons .info-container {

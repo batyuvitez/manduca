@@ -61,6 +61,7 @@ Class Link_Functions {
      * 
     */
     public function filter_links( $content ) {
+      
         libxml_use_internal_errors( true );
         $this->dom = new \DOMDocument;
         $content = mb_convert_encoding (
@@ -79,6 +80,7 @@ Class Link_Functions {
         libxml_use_internal_errors( false );
                             
         foreach ( $this->dom->getElementsByTagName('a') as $node) {
+         
         
              /*If role="button", do not insert anything.
               *@since 19.1
@@ -303,6 +305,7 @@ Class Link_Functions {
         /* DomDocument needed html_entity_decode
         *@sicne 19.2
         **/
+        
         return html_entity_decode( $final_html ) ;
    }
     
@@ -324,7 +327,7 @@ Class Link_Functions {
                            'class',
                            'use-tooltip'
                         );
-                $node->appendChild( $this->create_tooltip_node( $data[ 'text' ] ) );
+                $this->create_tooltip_node( $data[ 'text' ] );
             }
         }
       

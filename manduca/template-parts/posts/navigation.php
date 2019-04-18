@@ -14,11 +14,11 @@
 	$previous_post = Manduca_Template_Functions::previous_post_link_html();
 	$next_post = Manduca_Template_Functions::next_post_link_html();
 ?>
-	
+
 <nav class="nav-single">
 <h3 class="screen-reader-text"><?php _e( 'Post navigation', 'manduca' ); ?></h3>
 
-	<?php if( !$previous_post ) : ?>
+	<?php if( !empty ( $previous_post ) ) : ?>
 		<h4 class="nav-previous">
 			<?php echo $previous_post?>  
 			<?php paginate_links();  //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
@@ -26,7 +26,7 @@
 	<?php endif; ?>
 	
 	
-	<?php if( !$next_post ) : ?>
+	<?php if( !empty ( $next_post ) ) : ?>
 		<h4 class="nav-next">
 			<?php echo $next_post; ?> 
 		</h4>

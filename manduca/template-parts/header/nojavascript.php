@@ -2,7 +2,6 @@
 /**
  * Message in case of no javascript
  *
- *
  * @since 19.2
  * */
 
@@ -29,10 +28,13 @@
  
  ?>
 <noscript>
-				<div id="no-javascript">
-					<?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?></div>
-    <a href="/">
-      <button><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></button>
-    </a>
+				<div id="no-javascript" class="inverse3">
+      <?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?>
+     <div>
+      <a href="/">
+        <button><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></button>
+      </a>
+     </div>
+     </div>
 </noscript>
 			

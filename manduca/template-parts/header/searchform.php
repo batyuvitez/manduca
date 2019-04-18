@@ -26,12 +26,12 @@
  
 
 ?>
-<form method="get" id="header-searchform" class="header-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form method="get" id="header-searchform" class=" use-tooltip header-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div role="search" >
 		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
 		<input type="text" placeholder="<?php _e( 'Search', 'manduca' ); ?>" value="<?php echo get_search_query(); ?>" name="s"  id="s" accesskey="4"/>
 		<span class="tooltip" aria-hidden="true"><?php _e( 'Access key', 'manduca' ); ?>: 4</span>
-		<button type="submit" class="search-submit" id="search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
+		<button type="submit" class="search-submit inverse2" id="search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
 		   <span class="screen-reader-text">
 			   <?php _e( 'Search', 'manduca' ) ?>
 		   </span>
