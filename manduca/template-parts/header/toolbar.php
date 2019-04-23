@@ -27,7 +27,7 @@
 
 <?php
 
-printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open inverse2" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
+printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open link-button" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
 		   manduca_get_svg( array( 'icon' => 'eye' ) ),
 		   manduca_get_svg( array( 'icon' => 'close' ) ),
 		   __( 'Display options', 'manduca' )
@@ -36,10 +36,10 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 
 
  
- <div id="toolbar-buttons" class="toolbar-buttons inverse2">
+ <div id="toolbar-buttons" class="toolbar-buttons featured-scheme">
 	<h1 aria-hidden="true"><?php _e( 'Display options', 'manduca' ); ?></h1>
 	<p><?php _e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?> </p>
-	 <table role="presentation">
+	 <table role="presentation" class= "featured-scheme">
 		  <tbody>
 				
 					<tr>
@@ -95,7 +95,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 	 
 		 <?php echo Manduca_Template_Functions::get_info_button_html( 'inverse3' ); ?>
 	  
-		<span role="button" id="buttons-close" class="buttons-close" aria-label="<?php _e( 'Close' ) ; ?>">
+		<span role="button" id="buttons-close" class="buttons-close featured-scheme" aria-label="<?php _e( 'Close' ) ; ?>">
 				<?php echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
 	   </span>
 		

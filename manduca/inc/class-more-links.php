@@ -35,7 +35,7 @@ Class More_Links {
 	  //Translators: text of the read more and excerpt more buttons
 		$args[ "text" ] 			= __( 'Continue reading', 'manduca' );
 		$args[ 'icon' ] 			= manduca_get_svg( array( 'icon' => 'angle-right' ) ) ;
-		$args[ 'classes']			= 'more-link inverse3 link-button';
+		$args[ 'classes']			= 'more-link link-button';
 		$this->args = apply_filters(
 									'manduca_more_links' ,
 									$args );
