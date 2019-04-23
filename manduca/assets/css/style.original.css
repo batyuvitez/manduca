@@ -157,18 +157,92 @@ img {
     margin: 28px auto;
 }
 
-/* Links and buttons
--------------------------------------------------------------- */
 
-/* All about Links*/
-body a{
-	/*From @17.9.5 the color of link is a litle bit ligher. Before: #164e68; */
-	color: #1f6c91;
-	padding-bottom: 2px; /*distance of the underline
-	/* This is not needed any longer. Smart underline is installed @17.9.4
-	 *text-decoration: none;
-	border-bottom: 0.08em solid #2077a0;*/
+/* 12 1.* Basic color scheme
+ * 
+ * @since 19.4
+-------------------------------------------------------------- */
+body .site,
+textarea,
+input, 
+body .site .basic-scheme{
+	background-color: #f9f9f9;
+	color: #222	
 }
+svg{
+	fill: #111;	
+}
+
+body a{
+	color: #1f6c91;
+	
+}
+
+
+.site a:focus,
+.site a:active,
+.site button:focus,
+.site button:active,
+.site select:focus,
+.site select:active,
+button[disabled],
+input[disabled],
+textarea[disabled]
+{
+	outline: 4px solid #9E430E;
+	outline-offset: 2px 
+}
+
+
+.site a:hover,
+.site button:hover,
+.site select:hover {
+	outline: 1px dotted #9E430E; 	
+}
+
+
+.link-button,
+.link-button a{
+	background-color: #ab490f; 
+	color: #daf3ff;
+	padding: 0.3em 0.6em;
+	text-decoration: none;
+				
+}
+.link-button svg {
+	fill: #daf3ff;
+}
+.featured-scheme,
+.tooltip{
+	background-color: #DAF2FF;
+	color: #000;
+}
+.featured-scheme svg {
+	fill: #222;
+}
+.lighter-scheme {
+			color: #565656;
+			background-color: white;
+}
+
+
+.inverse-scheme {
+				background-color: #164e68; 
+				color: #daf3ff;
+}
+.inverse-scheme svg {
+				fill: #daf3ff;
+}
+
+.inverse-scheme a {
+	color: #ffffff;
+}
+
+
+
+
+
+/* end colors ----------------------------------*/
 
 body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	text-decoration: none;
@@ -187,23 +261,9 @@ a.page-numbers.prev,
 
 /* All about the status of control elements */
 
-.site a:focus,
-.site a:active,
-.site button:focus,
-.site button:active,
-.site select:focus,
-.site select:active {
-	outline: 4px solid #9E430E;
-	outline-offset: 2px 
-}
+
 .header-bar .site-title > a:focus {
 	margin-left: 7px;  /* TO DISPLAY THE LEFT SIDE OF OUTLINE. &SINCE 18.10.3*/
-}
-/* Hover needs lighter sign. since &17.9.3 */
-.site a:hover,
-.site button:hover,
-.site select:hover {
-	outline: 1px dotted #9E430E; 	
 }
 
 .footer-navigation a:hover,
@@ -249,21 +309,10 @@ a.page-numbers.prev,
 }
 
 .more-link {
-	max-width: 12em;
+	max-width: 13em;
 	float: right;
 }
-.reply a, 
-.more-link a {
-	border-bottom: none;
-	color: white;
-	text-decoration: none;
-	}
 
-.more-link svg,
-.search-submit svg,
-.menu-toggle svg {
-	fill: white;	
-}
 
 
 
@@ -361,7 +410,6 @@ input {
 .site input[disabled],
 .site textarea[disabled] {
 	cursor: default;
-	background-color: #ccc;
 }
 
 
@@ -659,7 +707,6 @@ body .site,
 				 "Segoe UI",
 				 Roboto,sans-serif;   /* Keep original Manduca fonts, but inlclude the wfollowing: https://github.com/necolas/normalize.css/issues/665 */ 
 	text-rendering: optimizeLegibility;
-	color: #222;
 	position: relative;
 	overflow: hidden;
 }
@@ -1236,7 +1283,6 @@ transform: rotate(180deg);
 }
 
 .site table {
-	border-bottom: 1px solid #ededed;
 	font-size: smaller;
 	line-height: 2;
 	margin: 0 0 1.33rem;
@@ -1654,9 +1700,9 @@ a.comment-edit-link {
 
 /* Shortcodes formating @since 17.9.7 */
 .site svg {
-	width: 16px;
-	height: 16px;
-	margin: 0 6px;
+	width: 1.12em;
+	height: 1.12em;
+	margin: 0 0.37em;
 	vertical-align: text-bottom;
 }
 
@@ -1669,11 +1715,7 @@ svg.search-icon {
 	right: 6px;
 }
 
-.megamenu li.menu-item svg {
-	width: 1.3rem;
-	height: 1.3rem;
-	top: 3px;
-}
+
 svg.icon-extlink {
 	position: relative;
 	left: 3px;
@@ -1686,16 +1728,6 @@ svg.icon-extlink {
 	left: 1px;
 }
 
-.reply svg,
-.menu-toggle svg,
-.more-link svg,
-svg.search-icon,
-.toolbar-buttons-open svg,
-.buttons-close svg,
-.toolbar-buttons-close svg,
-.info-container svg{
-	fill: white;	
-}
 .page-numbers.prev svg,
 .page-numbers.next svg{
 	width: 28px;
@@ -1715,223 +1747,145 @@ svg.search-icon,
 }
 
 
-/* 12 1.* Basic color scheme
- * @since 19.4
--------------------------------------------------------------- */
 
-.link-button {
-				padding: 0.3em 0.6em;
-}
-.featured-scheme,
-.tooltip {
-				background-color: #DAF2FF;
-				color: #000;
-}
-.lighter-scheme{
-					color: #565656;
-					background-color: white;
-}
-
-
-.inverse1,
-.inverse1 a,
-.invers1 table{
-				background-color: #164e68; 
-				color: #daf3ff;
-}
-.inverse1 svg {
-				fill: #daf3ff;
-}
-
-.inverse2,
-.inverse2 a,
-.inverse2 table {  
-				background-color: #358219; 
-				color: white;
-}
-.inverse2 svg {
-				fill: white;
-}
-
-.inverse3,
-.inverse3 a,
-.inverse1 table {
-				background-color: #ab490f; 
-				color: #daf3ff;
-}
-
-.inverse3 svg {
-				fill: #daf3ff;
-}
 
 /* 12 b.* Reading options toolbar (different colours, fonts, font-sizes)
  * @since 19.12
 -------------------------------------------------------------- */
 
-
-
-/*high-cont	rast-1: low contrast pastel background easy to read in midnight*/
 .high-contrast-1,
+.high-contrast-2 {
+	background-image: none;
+}
+
+/*
+ * high-cont	rast-1: low contrast pastel background easy to read in midnight
+ */
+
+.high-contrast-1 a {
+	background-color: #c6d17e ;
+	color: #4d99ff ;
+}
+
 .high-contrast-1 .site,
-.high-contrast-1 .nav-single div,
-.high-contrast-1 .site article,
-.high-contrast-1 .widget-area section,
-.high-contrast-1 .toolbar-buttons,
-.high-contrast-1 .more-link,
-.toolbar-buttons #high-contrast-1{
-    background-color: #c6d17e !important;
-    background-image: none;
-    color: #808067 !important;
-	
+#high-contrast-1{
+    background-color: #c6d17e;
+    color: #808067 ;
 }
-/* Links */
-.high-contrast-1 .site a:link,
-.high-contrast-1 .site a:visited,
-.high-contrast-1 .site a:visited:hover,
-.high-contrast-1 .site a:visited:focus,
-.high-contrast-1 .site a:visited:active,
-.high-contrast-1 .site a:link:hover,
-.high-contrast-1 .site a:link:focus,
-.high-contrast-1 .site a:link:active {
-	background-color: #c6d17e !important;
-    background-image: none;
-	color: #4d99ff !important;
-	text-decoration: underline;
-	text-shadow: none !important;
+
+.high-contrast-1 svg {
+	fill: #808067 ;
 }
+.high-contrast-1 textarea,
+.high-contrast-1 input,
+.high-contrast-1 select,
+.high-contrast-1 button {
+	background-color: #dde98e;
+	color: #808067 ;
+}
+
+.high-contrast-1 .link-button,
+.high-contrast-1 .link-button a {
+	background-color: #c67254;
+	color: #eee; 
+}
+.high-contrast-1 .link-button svg{
+	fill: #eee;
+}
+
+.high-contrast-1 .lighter-scheme {
+	background-color: #98a05f;
+}
+
+.high-contrast-1 .featured-scheme {
+	border: 2px solid #98a05f;
+	background-color: #dde98e;
+}
+
+.high-contrast-1 .inverse-scheme {
+	color: #c6d17e;
+    background-color: #808067 ;
+}
+.high-contrast-1 .inverse-scheme a  {
+	color: #c0d4f0 ;
+    background-color: #808067 ;
+}
+
+.high-contrast-1 .inverse-scheme svg {
+	fill: #c6d17e;
+	}
 
 
 
-/* The footer and site-header menu is not inversed*/
-.high-contrast-1 .footer-wrapper,
-.high-contrast-1 .footer-wrapper a,
-.high-contrast-1 .site-header-menu,
-.high-contrast-1 .site-header-menu li,
-.high-contrast-1 .site-header-menu li a {
-    background-color: #c6d17e !important;
-    background-image: none;
-    color: #666652 !important;
-}
-
-.high-contrast-1 .footer-navigation a:visited:hover,
-.high-contrast-1 .footer-navigation a:visited:focus,
-.high-contrast-1 .footer-navigation a:visited:active {
-    outline: 4px solid #9E430E !important;
-}
 
 
 
 /*
-high-contrast-2: High contrast black background and yellow letters, blue links
+ * high-contrast-2: High contrast black background and yellow letters, blue links
 */
-.high-contrast-2,
+
+.
+.high-contrast-2 a {
+	background-color: #00000 ;
+	color: #15c6ec;
+}
+
 .high-contrast-2 .site,
-.high-contrast-2 .color-2,
-.high-contrast-2 .color-3,
-.high-contrast-2 .color-4,
-.high-contrast-2 .nav-single div,
-.high-contrast-2 .site article,
-.high-contrast-2 .widget-area section,
-.high-contrast-2 .toolbar-buttons,
-.high-contrast-2 .more-link,
-.toolbar-buttons #high-contrast-2 {
-    background: #000  !important;
-    color: #fff  !important;
-    background-image: none !important;
+#high-contrast-2{
+    background-color: #000;
+    color: #fff ;
 }
 
-
-/* Links */
-.high-contrast-2 .site a:link,
-.high-contrast-2 .site a:visited {
-	background: #000  !important;
-    background-image: none;
-	color: #33dddd !important;
-	text-decoration: underline;
-	text-shadow: none !important;
+.high-contrast-2 svg {
+	fill: #fff;
+}
+.high-contrast-2 textarea,
+.high-contrast-2 input,
+.high-contrast-2 select,
+.high-contrast-2 button {
+	background-color: #000;
+	color: #fff ;
 }
 
-.high-contrast-2 .site a:visited:hover,
-.high-contrast-2 .site a:visited:focus,
-.high-contrast-2 .site a:visited:active,
-.high-contrast-2 .site a:link:hover,
-.high-contrast-2 .site a:link:focus,
-.high-contrast-2 .site a:link:active,
-.high-contrast-2 .site button:focus,
-.high-contrast-2 .site button:active,
-.high-contrast-2 .site button:hover,
-.high-contrast-2 .site select:focus,
-.high-contrast-2 .site select:active,
-.high-contrast-2 .site select:hover {
-	outline: 4px dotted #ffff00;
-	outline-offset: 4px 
+.high-contrast-2 .link-button,
+.high-contrast-2 .link-button a {
+	background-color: #fff;
+	color: #000; 
+}
+.high-contrast-2 .link-button svg{
+	fill: #000000;
 }
 
-.high-contrast-2 .toolbar-buttons,
-.high-contrast-2 .widget-area .widget {
-	border: 3px #33aaaa solid;
-	padding: 0 7px;
+.high-contrast-2 .lighter-scheme {
+	background-color: #222;
 }
 
-/*
-high-contrast-3: high contrast: yellow background, dark letters. 
-*/
-
-
-.high-contrast-3,
-.high-contrast-3 .site,
-.high-contrast-3 .color-2,
-.high-contrast-3 .color-3,
-.high-contrast-3 .color-4,
-.high-contrast-3 .site-header-menu,
-.high-contrast-3 .site-header-menu li a,
-.high-contrast-3 .site-header-menu li,
-.high-contrast-3 .nav-single div,
-.high-contrast-3 .site article,
-.high-contrast-3 .widget-area section,
-.high-contrast-3 .footer-wrapper,
-.high-contrast-3 .toolbar-buttons,
-.high-contrast-3 .more-link,
-.high-contrast-3 .next.page-numbers svg,
-.high-contrast-3 .prev.page-numbers svg,
-.high-contrast-3 .toolbar-label,
-.toolbar-buttons #high-contrast-3 {
-    background: #fff !important;
-    color: #000 !important;
-    background-image: none !important;
+.high-contrast-2 .featured-scheme {
+	border: 2px solid #c1ec15;
+	background-color: #111;
+	color: #fff;
 }
 
-/* Links */
-.high-contrast-3 .site a:link,
-.high-contrast-3 .site a:visited {
-	background: #fff !important;
-    color: blue !important;
-	font-weight: bolder;
-    background-image: none !important;
-	text-decoration: underline;
-	text-shadow: none !important;
+.high-contrast-2 .inverse-scheme {
+	color: #fff;
+    background-color: #000;
+}
+.high-contrast-2 .inverse-scheme a  {
+	color: #15c6ec ;
+    background-color: #000;
 }
 
-.high-contrast-3 .toolbar-buttons,
-.high-contrast-3 .widget-area .widget {
-	border: 3px black solid;
-	padding: 0 7px;
-}
+.high-contrast-2 .inverse-scheme svg {
+	fill: #000;
+	}
 
-.high-contrast-3 .page-numbers svg,
-.high-contrast-3 .menu-toggle svg,
-.high-contrast-3 .more-link svg,
-.high-contrast-3 svg.search-icon,
-.high-contrast-3 .buttons-close svg,
-.high-contrast-3 .buttons-close svg,
-.high-contrast-3 .info-container svg,
-.high-contrast-3 .toolbar-buttons-close svg a,
-.high-contrast-3 .toolbar-buttons-open svg {
-	fill: black !important;
-}
+
+
 
  
-/* FONT-TYPE-1: Fix szélességű*/
+/*
+ * FONT-TYPE-1: Fix width
+ */
 
 .font-type-1 .site #menu,
 .font-type-1 .site .site-header-menu,
@@ -2044,16 +1998,10 @@ body.font-size-3 .toolbar-label {
  
 #toolbar-buttons td {
 	border: none;
-	padding: 3px;
+	padding: 0.7em;
 }
 
     
-/*shadow of active buttons
-* @since 19.3 */
-#toolbar-buttons button[disabled]{
-		border: 4px red solid;
-		color: #444; 
-}
 	
 
 /*mobil appearance */
@@ -2069,10 +2017,6 @@ body.font-size-3 .toolbar-label {
     
 .desktop-text {
     display: none;
-}
-.toolbar-buttons-open svg {
-	width: 17px;
-	height: 17px;
 }
 
 .phone-text {
@@ -2325,7 +2269,7 @@ body.font-size-3 .toolbar-label {
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt .content-date {
-			width: 5.7rem;
+			width: 5.7em;
 			font-weight: 300;
 			text-align: center;
 			font-size: 1.25em;
@@ -2416,7 +2360,7 @@ body.font-size-3 .toolbar-label {
 
 	.footer-navigation{
 		/* @since 19.3. Not to overlap the back-to-top */
-		margin-right: 6rem;
+		margin-right: 6em;
 		float: right;
 		max-width: 50%;
 	}
@@ -2460,10 +2404,10 @@ body.font-size-3 .toolbar-label {
     
     .toolbar-buttons {
         position: absolute;
-								padding: 1em;
+		padding: 2em;
         top: 7.5em;
         right: 0;
-								left: auto;
+		left: auto;
         z-index: 100;
         max-width: 57em;
     }
@@ -2551,11 +2495,7 @@ body.font-size-3 .toolbar-label {
 	body .site {
 		background-color: #ffffff;
 	}
-	.nav-single div,
-	textarea,
-	input {
-		background-color: #f9f9f9;
-}
+	
 	
 	/* toolbars 784-1360px */
 	.toolbar-buttons-open {
@@ -2677,15 +2617,6 @@ body.font-size-3 .toolbar-label {
 	.sub-nav ul li a {
 		white-space: nowrap;
 }
-	/* removed in 18.7. i do not know its function, but need to show current icon. 
-	 *.main-navigation li:not(.menu-item-has-children) svg {
-		display: none;
-	}*/
-	.megamenu ul.nav-menu li svg {
-		width: 1.357rem;
-		height: 1.357rem;
-		margin: 0;
-		}
 
 
 	.main-navigation ul ul .menu-item-has-children > a {
@@ -2824,7 +2755,7 @@ body.font-size-3 .toolbar-label {
 		margin-bottom: 20px;
 	}
 	.toolbar-buttons {
-		top:65px;
+		top:4.5em;
 	}
 	.toolbar-buttons-open {
         right: 327px;
@@ -2872,10 +2803,10 @@ body.font-size-3 .toolbar-label {
 		border-left: 1px solid #DAF2FF;
 		padding-left: 1em;
     }
-    	#toolbar-buttons-open {
+    .toolbar-buttons-open {
 		top: 10px;
 		left: auto;
-		right: 320px;
+		right: 22.85em;
 	}
 	#header-searchform {
 		top: 10px;

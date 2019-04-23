@@ -62,11 +62,6 @@ class Enqueue{
        **/
       
       $js_variables = array(
-                        // Translators: Accessible megamenu: expand child menu button 
-                        'expand'        => __( 'expand child menu', 'manduca' ),
-                        // Translators: Accessible megamenu: collapse child menu button 
-                        'collapse'      => __( 'collapse child menu', 'manduca' ),
-                        'icon'          => manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) ),
                         // Translators: Accessible show-hide system: expand all button 
                         'expand_all'        => __( 'Expand all', 'manduca' ),
                         // Translators: Accessible show-hide system: collapse all button 
