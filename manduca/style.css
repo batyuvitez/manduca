@@ -581,10 +581,20 @@ a.page-numbers.next {
 a.page-numbers.prev {
 	margin-right: 2rem;
 }
-/* Tooltip  @since 18.10.11 */
+
+
+/* Tooltip
+* @since 18.11
+*/
+
+.site .use-tooltip{
+	position: relative;
+}
 .site .tooltip{
 	display: none;
 }
+
+
 
 .tooltip:hover,
 .tooltip:focus, 
@@ -1703,16 +1713,16 @@ a.comment-edit-link {
 
 /* Shortcodes formating @since 17.9.7 */
 .site svg {
-	width: 1.12em;
-	height: 1.12em;
-	margin: 0 0.37em;
+	width: 1em;
+	height: 1em;
+	margin: 0 0.33em;
 	vertical-align: text-bottom;
 }
 
 
 svg.search-icon {
-	width: 23px;
-	height: 23px;
+	width: 1.65em;
+	height: 1.65em;
 	position:relative;
 	top: 1px;
 	right: 6px;
