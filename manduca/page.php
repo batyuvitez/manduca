@@ -18,19 +18,19 @@
     You should have received a copy of the GNU General Public License
     along with this program in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-
-get_header();
-
-	while ( have_posts() ) : the_post(); 
-		
-        get_template_part( 'template-parts/pages/content', 'page' ); 
-					
-			//Add content after each page					
-			do_action( 'manduca_after_single_page' );
-					
-			comments_template(); 
-			
-	endwhile; // end of the loop.
-				
-get_footer();
 ?>
+
+
+<?php get_header();?>
+
+	<?php while ( have_posts() ) : the_post(); ?>
+		
+        <?php get_template_part( 'template-parts/pages/content', 'page' ); ?>
+					
+			<?php do_action( 'manduca_after_single_page' );?>
+					
+			<?php comments_template(); ?>
+			
+	<?php endwhile; // end of the loop.?>
+				
+<?php get_footer(); ?>
