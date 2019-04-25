@@ -44,7 +44,7 @@
 	
 		<div id="site-navigation" class="main-navigation">
 			
-			<nav id="megamenu" class="megamenu lighter-scheme" aria-label="<?php echo $menu_name; ?>">
+			<nav id="megamenu" class="megamenu" aria-label="<?php echo $menu_name; ?>">
 				<?php
 					$args = array(
 					   'theme_location'  => 'primary',

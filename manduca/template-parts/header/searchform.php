@@ -31,7 +31,7 @@
 		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
 		<input type="text" placeholder="<?php _e( 'Search', 'manduca' ); ?>" value="<?php echo get_search_query(); ?>" name="s"  id="s" accesskey="4"/>
 		<span class="tooltip" aria-hidden="true"><?php _e( 'Access key', 'manduca' ); ?>: 4</span>
-		<button type="submit" class="search-submit kvazi-button" id="search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
+		<button type="submit" class="search-submit basic-scheme" id="search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
 		   <span class="screen-reader-text">
 			   <?php _e( 'Search', 'manduca' ) ?>
 		   </span>

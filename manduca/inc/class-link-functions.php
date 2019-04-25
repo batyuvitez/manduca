@@ -208,9 +208,7 @@ Class Link_Functions {
                     
                     //Translatos: add aria label to links to google maps. 
                     $this->aria_labels[] = __( 'open map', 'manduca' );
-                    
-                    $svg_node = $this->create_svg_node( 'map-marker' );
-                    $node->appendChild( $svg_node ) ; 
+                                        
                  }
                 
                  //all other external link
@@ -483,38 +481,31 @@ Class Link_Functions {
    protected function get_file_extensions_array() {
     $extenstion_array = array(
       'docx'		=> array(
-       //Translatos: add aria label to links to google maps. 
        'text' 	=> __( 'MS Word document', 'manduca' ),
        'icon'	=> 'word'
        ),
       'doc'		=> array(
-       //Translatos: add aria label to links to google maps. 
        'text' 	=> __( 'MS Word document', 'manduca' ),
        'icon'	=> 'word'
        ),
       'odt'		=> array(
-       //Translatos: add aria label to links to google maps. 
        'text' 	=> __( 'MS Word document', 'manduca' ),
        'icon'	=> 'word'
        ),
       'xls'		=> array(
-       //translators: Aria label for xls and xlsx links. 
        'text'		=> __( 'MS Excel document', 'manduca' ),
        'icon'		=> 'excel'
        ),
       'xlsx'		=> array(
-       //translators: Aria label for xls and xlsx links. 
        'text'		=> __( 'MS Excel document', 'manduca' ),
        'icon'		=> 'excel'
        ),
       
       'pdf'		=> array(
-       //translators: Aria label for pdf links. 
        'text'		=> __( 'PDF document', 'manduca' ),
        'icon'		=> 'pdf'
        ),
       'epub'	=> array(
-       //translator aria label for epub and other electronic book type link
        'text'		=> __( 'Electronic book' , 'manduca' ),
        'icon'		=> 'epub'
        )
