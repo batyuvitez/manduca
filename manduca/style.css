@@ -820,7 +820,8 @@ body .site,
 	font-size: 148%;
 	padding: 0.214rem;
 }
-.header-searchform {
+
+#header-searchform {  /* using ID is important, because use-tooltip would override it */
 	position: absolute;
 	top: 9px;
 	right: 18px;
@@ -1837,9 +1838,8 @@ svg.icon-extlink {
  * high-contrast-2: High contrast black background and yellow letters, blue links
 */
 
-.
 .high-contrast-2 a {
-	background-color: #00000 ;
+	background-color: #000 ;
 	color: #15c6ec;
 }
 
@@ -2124,7 +2124,7 @@ body.font-size-3 .toolbar-label {
 
 /*  Minimum width of 370 pixels. */
 @media screen and (min-width: 370px) {
-	.header-searchform,
+	#header-searchform,   /* using ID is important, because use-tooltip would override it */
 	.header-searchform #s {
 		width: auto;
 	}
@@ -2191,6 +2191,8 @@ body.font-size-3 .toolbar-label {
 	font-size: 0.6553em;
 	margin: 1.31072rem 0 0.65536rem;	
 	}
+	
+	
 	.site h1 + h2,
 	.site h2 + h3,
 	.site h3 + h4,
