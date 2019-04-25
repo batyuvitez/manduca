@@ -2169,13 +2169,16 @@ body.font-size-3 .toolbar-label {
 	/* Font size */ 
 	.site h2 {
 		font-size: 1.6em;
-		margin: 28px 0 14px;
+		margin: 3em 0 1em;
 	}
+	
 	
 	.site h3 {
 		font-size: 1.28em;
-		margin: 2.56rem 0 0.853rem ;
+		margin: 2em 0 0.6666em;
 	}
+	
+	
 	.site h4 {
 	font-size: 1.024em;
 	margin: 2.048rem 0 0.686rem 2.048rem;
@@ -2188,7 +2191,13 @@ body.font-size-3 .toolbar-label {
 	font-size: 0.6553em;
 	margin: 1.31072rem 0 0.65536rem;	
 	}
-
+	.site h1 + h2,
+	.site h2 + h3,
+	.site h3 + h4,
+	.site h4 + h5,
+	.site h5 + h6 {
+		margin-top:  0 ;
+	}
 	
 	.author-avatar {
 		float: left;
