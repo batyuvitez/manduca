@@ -100,5 +100,14 @@
         }
         return $since;
     }
+    
+    
+    public static function hege_style_post_date() {
+          return sprintf( '<abbr title="%s">%s</abbr>',
+                  esc_attr( get_the_date( 'Y. F j. H:i, l' ) ),
+                 self::get_date_difference( get_the_date( 'U' ) )
+                );	
+       
+      }
 	
  }
