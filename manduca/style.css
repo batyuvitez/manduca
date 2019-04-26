@@ -1259,6 +1259,7 @@ transform: rotate(180deg);
 	clear: both;
 }
 
+
 .site h3 {
 	font-size: 1.125em;
 	line-height: 1.352;
@@ -1655,6 +1656,13 @@ a.comment-edit-link {
 /* 11. Widgets
 -------------------------------------------------------------- */
 
+.site h2.widget-title {  
+	margin-top: 1em;
+}
+
+.widget-content {
+	padding: 1em 0;
+}
 
 .widget-area .widget ul ul {
 	margin-left: 12px;
@@ -2173,9 +2181,7 @@ body.font-size-3 .toolbar-label {
 		margin: 3em 0 1em;
 	}
 	
-	.site h2.widget-title {
-		margin-top: 1em;
-	}
+	
 	
 	.site h3 {
 		font-size: 1.28em;
