@@ -311,7 +311,7 @@ a.page-numbers.prev,
 }
 
 .more-link {
-	max-width: 13em;
+	max-width: 15em;
 	float: right;
 	margin: 2em 0 0;
 }
@@ -1347,8 +1347,9 @@ transform: rotate(180deg);
 	padding: 0;
 }
 
-
-
+.site .column-right h2.entry-title {
+	margin-top: 0.5em;
+}
 
 
 /* Manduca special typography elements */

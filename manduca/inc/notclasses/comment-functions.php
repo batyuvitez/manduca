@@ -63,7 +63,7 @@ function manduca_comment( $comment, $args, $depth ) {
 				<?php edit_comment_link( __( 'Edit', 'manduca' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
 
-			<div class="reply inverse2 link-button">
+			<div class="reply more-link link-button">
 				<?php comment_reply_link( array_merge(
 									$args,
 									array(
