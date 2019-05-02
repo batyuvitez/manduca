@@ -179,9 +179,6 @@ svg {
 body a{
 	color: #1f6c91;
 }
-.menu-item a {
-	text-decoration: none;
-}
 
 
 .site a:focus,
@@ -330,14 +327,7 @@ a.page-numbers.prev,
 /* All about colors @since 17.8 */
 
 /*mobil background a little bit darker since @17.9.1 */
-body .site {
-	background-color: #f5f5f5;
-}
-.nav-single div,
-textarea,
-input {
-	background-color: #f1f1f1;
-}
+
 
 
 
@@ -1271,6 +1261,16 @@ transform: rotate(180deg);
 }
 
 
+	
+.site h1 + h2,
+.site h2 + h3,
+.site h3 + h4,
+.site h4 + h5,
+.site h5 + h6,
+div.entry-content > h2:first-child{
+		margin-top:  0 ;
+	}
+	
 .site p {
 	margin-bottom: 0.5rem; /* ratio: 1:2	 */
 }
@@ -2191,9 +2191,7 @@ body.font-size-3 .toolbar-label {
 	/* Font size */ 
 	.site h2 {
 		font-size: 1.6em;
-		margin: 3em 0 1em;
 	}
-	
 	
 	
 	.site h3 {
@@ -2215,14 +2213,6 @@ body.font-size-3 .toolbar-label {
 	margin: 1.31072rem 0 0.65536rem;	
 	}
 	
-	
-	.site h1 + h2,
-	.site h2 + h3,
-	.site h3 + h4,
-	.site h4 + h5,
-	.site h5 + h6 {
-		margin-top:  0 ;
-	}
 	
 	.author-avatar {
 		float: left;
@@ -2825,7 +2815,7 @@ body.font-size-3 .toolbar-label {
         max-width: none;
 		padding: 1em;
     }
-	#masthead {
+	.site-header {
 		width: 1280px;
 		margin: 1em auto;
 	}
@@ -2854,7 +2844,7 @@ body.font-size-3 .toolbar-label {
 		left: auto;
 		right: 22.85em;
 	}
-	#header-searchform {
+	.header-searchform {
 		top: 10px;
 		right: 10px;
 		left: auto;
