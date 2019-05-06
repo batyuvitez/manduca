@@ -1801,7 +1801,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-1 .site,
-.megamenu.toggled-on,
+.high-contrast-2 .megamenu.toggled-on,
 #high-contrast-1{
     background-color: #c6d17e;
     color: #808067 ;
@@ -1866,7 +1866,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-2 .site,
-.megamenu.toggled-on,
+.high-contrast-2 .megamenu.toggled-on,
 #high-contrast-2{
     background-color: #000;
     color: #fff ;
