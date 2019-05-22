@@ -425,7 +425,14 @@ Class Link_Functions {
    }
    
    /*
-    *close is the default icon if it is empty
+    *Create svg node to the dom document.
+    *
+    *@uses $GLOBALS[ 'svg_icons' ]
+    *
+    *@param (string) name of svg icon close is the default icon if it is empty
+    *
+    *@return false 
+    *
     **/
    protected function create_svg_node( $svg = 'close' ) {
     if( !isset( $GLOBALS[ 'svg_icons' ][ $svg ] ) ) {

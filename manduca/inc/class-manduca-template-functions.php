@@ -255,7 +255,7 @@ class Manduca_Template_Functions {
 				$info_button_data = apply_filters ( 'manduca_toolbar_info_button' , false );
 				
 				if( $info_button_data === false ) {
-						return null;
+						return '';
 				}
 		
 				$class = $class ? ' '.$class : '';

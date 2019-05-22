@@ -225,6 +225,7 @@ textarea[disabled]{
 	background-color: #DAF2FF;
 	color: #000;
 }
+
 .featured-scheme svg {
 	fill: #222;
 }
@@ -590,7 +591,9 @@ a.page-numbers.prev {
 .site .use-tooltip{
 	position: relative;
 }
-.site .tooltip{
+
+
+.site .tooltip {
 	display: none;
 }
 
@@ -927,7 +930,7 @@ transform: rotate(180deg);
 .megamenu.toggled-on {
 	text-align: left;
 	position: absolute;
-	top: 60px;
+	top: 4em;
 	z-index: 100;
 	padding: 1rem;
 }
@@ -2082,12 +2085,10 @@ body.font-size-3 .toolbar-label {
     overflow: hidden;
     text-align: center;
     z-index: 99999999;
-    color: #ffffff;
     right: 2em;
     bottom: 2em;
     padding: 0.4em;
-	border: 2px solid #21759B;
-	background-color: white;
+		border: 2px solid #21759B;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
