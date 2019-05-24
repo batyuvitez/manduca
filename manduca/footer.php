@@ -31,6 +31,8 @@
 							 
 						 <?php get_sidebar(); ?>
 			 
+						</div> <?php // END #inner-wrapper?>
+						
 					</div> <?php // END .wrapper ?>
 					
 					<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>

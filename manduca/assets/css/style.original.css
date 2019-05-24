@@ -3,7 +3,7 @@ Theme Name: Manduca
 Theme URI: http://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: http://www.web25.hu
-Version: 19.4 beta
+Version: 19.5 beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians. For PHP 5.5-7.3. for Hungarians. For PHP 5.5-7.3.
@@ -53,6 +53,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-style: normal;   /* @ since 17.8.10  */
 	vertical-align: baseline;
     box-sizing: border-box;
+}
+
+/*/li and ul would not reset above, because that leaded to errorneous dipslay on iPhone.*/
+ul, ol  {
+	margin: 0;
+	padding: 0;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -165,17 +171,20 @@ img {
 body .site,
 textarea,
 input, 
-body .site .basic-scheme{
+body .site .basic-scheme,
+.megamenu.toggled-on {
 	background-color: #f9f9f9;
 	color: #222	
 }
-svg{
-	fill: #111;	
+.basic-scheme svg {
+	fill: #222;
+}
+svg {
+	fill: #164e68;	
 }
 
 body a{
 	color: #1f6c91;
-	
 }
 
 
@@ -187,8 +196,7 @@ body a{
 .site select:active,
 button[disabled],
 input[disabled],
-textarea[disabled]
-{
+textarea[disabled]{
 	outline: 4px solid #9E430E;
 	outline-offset: 2px 
 }
@@ -217,6 +225,7 @@ textarea[disabled]
 	background-color: #DAF2FF;
 	color: #000;
 }
+
 .featured-scheme svg {
 	fill: #222;
 }
@@ -309,8 +318,9 @@ a.page-numbers.prev,
 }
 
 .more-link {
-	max-width: 13em;
+	max-width: 15em;
 	float: right;
+	margin: 2em 0 0;
 }
 
 
@@ -325,14 +335,7 @@ a.page-numbers.prev,
 /* All about colors @since 17.8 */
 
 /*mobil background a little bit darker since @17.9.1 */
-body .site {
-	background-color: #f5f5f5;
-}
-.nav-single div,
-textarea,
-input {
-	background-color: #f1f1f1;
-}
+
 
 
 
@@ -579,10 +582,22 @@ a.page-numbers.next {
 a.page-numbers.prev {
 	margin-right: 2rem;
 }
-/* Tooltip  @since 18.10.11 */
-.site .tooltip{
+
+
+/* Tooltip
+* @since 18.11
+*/
+
+.site .use-tooltip{
+	position: relative;
+}
+
+
+.site .tooltip {
 	display: none;
 }
+
+
 
 .tooltip:hover,
 .tooltip:focus, 
@@ -808,7 +823,8 @@ body .site,
 	font-size: 148%;
 	padding: 0.214rem;
 }
-.header-searchform {
+
+#header-searchform {  /* using ID is important, because use-tooltip would override it */
 	position: absolute;
 	top: 9px;
 	right: 18px;
@@ -852,7 +868,7 @@ body .site,
 
 /* Breadcrumb */
 .breadcrumb {
-	margin-bottom: 28px;
+	margin: 0 0 2em 1em;
 }
 
 .breadcrumb > ul >li,
@@ -861,6 +877,9 @@ body .site,
 	display: inline-block;
 }
 
+.breadcrumb > ul {
+	padding: 0; /* reset browser's default */
+}
 .breadcrumb > span {
 	margin-right: 1em;
 }
@@ -911,7 +930,7 @@ transform: rotate(180deg);
 .megamenu.toggled-on {
 	text-align: left;
 	position: absolute;
-	top: 60px;
+	top: 4em;
 	z-index: 100;
 	padding: 1rem;
 }
@@ -949,9 +968,7 @@ transform: rotate(180deg);
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 1em;
-	text-decoration: none;
 	font-size: 1.5em;
-	color: #1a1a1a;
 }
 
 
@@ -1215,6 +1232,7 @@ transform: rotate(180deg);
 .site address {
 	font-weight: bolder;
 	line-height: 1.2;
+	display: inline;
 }
 .site kbd {   /* since @18.10.4 from wikipedia css */
 	    border: 1px solid #aaa;
@@ -1244,6 +1262,7 @@ transform: rotate(180deg);
 	clear: both;
 }
 
+
 .site h3 {
 	font-size: 1.125em;
 	line-height: 1.352;
@@ -1252,6 +1271,16 @@ transform: rotate(180deg);
 }
 
 
+	
+.site h1 + h2,
+.site h2 + h3,
+.site h3 + h4,
+.site h4 + h5,
+.site h5 + h6,
+div.entry-content > h2:first-child{
+		margin-top:  0 ;
+	}
+	
 .site p {
 	margin-bottom: 0.5rem; /* ratio: 1:2	 */
 }
@@ -1331,8 +1360,9 @@ transform: rotate(180deg);
 	padding: 0;
 }
 
-
-
+.site .column-right h2.entry-title {
+	margin-top: 0.5em;
+}
 
 
 /* Manduca special typography elements */
@@ -1640,6 +1670,13 @@ a.comment-edit-link {
 /* 11. Widgets
 -------------------------------------------------------------- */
 
+.site h2.widget-title {  
+	margin-top: 1em;
+}
+
+.widget-content {
+	padding: 1em 0;
+}
 
 .widget-area .widget ul ul {
 	margin-left: 12px;
@@ -1700,16 +1737,16 @@ a.comment-edit-link {
 
 /* Shortcodes formating @since 17.9.7 */
 .site svg {
-	width: 1.12em;
-	height: 1.12em;
-	margin: 0 0.37em;
+	width: 1em;
+	height: 1em;
+	margin: 0 0.33em;
 	vertical-align: text-bottom;
 }
 
 
 svg.search-icon {
-	width: 23px;
-	height: 23px;
+	width: 1.65em;
+	height: 1.65em;
 	position:relative;
 	top: 1px;
 	right: 6px;
@@ -1763,11 +1800,11 @@ svg.icon-extlink {
  */
 
 .high-contrast-1 a {
-	background-color: #c6d17e ;
 	color: #4d99ff ;
 }
 
 .high-contrast-1 .site,
+.high-contrast-2 .megamenu.toggled-on,
 #high-contrast-1{
     background-color: #c6d17e;
     color: #808067 ;
@@ -1779,7 +1816,8 @@ svg.icon-extlink {
 .high-contrast-1 textarea,
 .high-contrast-1 input,
 .high-contrast-1 select,
-.high-contrast-1 button {
+.high-contrast-1 button,
+.high-contrast-1 .site .basic-scheme {
 	background-color: #dde98e;
 	color: #808067 ;
 }
@@ -1794,7 +1832,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-1 .lighter-scheme {
-	background-color: #98a05f;
+	background-color: #dde98e;
 }
 
 .high-contrast-1 .featured-scheme {
@@ -1824,13 +1862,14 @@ svg.icon-extlink {
  * high-contrast-2: High contrast black background and yellow letters, blue links
 */
 
-.
 .high-contrast-2 a {
-	background-color: #00000 ;
-	color: #15c6ec;
+	background-color: #000 ;
+	color: #A5E9F8;
+	text-decoration: underline;
 }
 
 .high-contrast-2 .site,
+.high-contrast-2 .megamenu.toggled-on,
 #high-contrast-2{
     background-color: #000;
     color: #fff ;
@@ -1845,6 +1884,10 @@ svg.icon-extlink {
 .high-contrast-2 button {
 	background-color: #000;
 	color: #fff ;
+}
+
+.high-contrast-2 .basic-scheme svg {
+	fill: #000;
 }
 
 .high-contrast-2 .link-button,
@@ -1864,6 +1907,10 @@ svg.icon-extlink {
 	border: 2px solid #c1ec15;
 	background-color: #111;
 	color: #fff;
+}
+
+.high-contrast-2 .featured-scheme svg {
+	fill: #fff;
 }
 
 .high-contrast-2 .inverse-scheme {
@@ -2038,12 +2085,10 @@ body.font-size-3 .toolbar-label {
     overflow: hidden;
     text-align: center;
     z-index: 99999999;
-    color: #ffffff;
     right: 2em;
     bottom: 2em;
     padding: 0.4em;
-	border: 2px solid #21759B;
-	background-color: white;
+		border: 2px solid #21759B;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -2111,7 +2156,7 @@ body.font-size-3 .toolbar-label {
 
 /*  Minimum width of 370 pixels. */
 @media screen and (min-width: 370px) {
-	.header-searchform,
+	#header-searchform,   /* using ID is important, because use-tooltip would override it */
 	.header-searchform #s {
 		width: auto;
 	}
@@ -2156,13 +2201,15 @@ body.font-size-3 .toolbar-label {
 	/* Font size */ 
 	.site h2 {
 		font-size: 1.6em;
-		margin: 28px 0 14px;
 	}
+	
 	
 	.site h3 {
 		font-size: 1.28em;
-		margin: 2.56rem 0 0.853rem ;
+		margin: 2em 0 0.6666em;
 	}
+	
+	
 	.site h4 {
 	font-size: 1.024em;
 	margin: 2.048rem 0 0.686rem 2.048rem;
@@ -2175,7 +2222,7 @@ body.font-size-3 .toolbar-label {
 	font-size: 0.6553em;
 	margin: 1.31072rem 0 0.65536rem;	
 	}
-
+	
 	
 	.author-avatar {
 		float: left;
@@ -2667,7 +2714,6 @@ body.font-size-3 .toolbar-label {
 	/* top level navigation item */
 		.megamenu ul.nav-menu > li.menu-item > a {
 		font-size: 1.5em;
-		color: #1f6c91;
 	}
 	.megamenu ul.nav-menu > li.menu-item > span {  /* @18.7 */
 		font-size: 1.4em;
@@ -2733,6 +2779,12 @@ body.font-size-3 .toolbar-label {
 		padding: 0;
 	}
 	
+	/* since 19.5 */
+	.inner-wrapper{
+			margin: 0 auto;
+	}
+	
+	
 	/* toolbars */
 
 
@@ -2772,6 +2824,9 @@ body.font-size-3 .toolbar-label {
 
 
 @media screen and (min-width: 1590px ){
+	
+	
+	
 	/*@since 18.9 */
 	#page {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
@@ -2779,7 +2834,7 @@ body.font-size-3 .toolbar-label {
         max-width: none;
 		padding: 1em;
     }
-	#masthead {
+	.site-header {
 		width: 1280px;
 		margin: 1em auto;
 	}
@@ -2804,11 +2859,11 @@ body.font-size-3 .toolbar-label {
 		padding-left: 1em;
     }
     .toolbar-buttons-open {
-		top: 10px;
+		top: 0;
 		left: auto;
 		right: 22.85em;
 	}
-	#header-searchform {
+	.header-searchform {
 		top: 10px;
 		right: 10px;
 		left: auto;
