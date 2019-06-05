@@ -77,12 +77,18 @@ class Manduca_Classloader {
      *@return boolean
      */
     public static function autoLoad( $class ) {
+
         $success = FALSE;
 
-        // Check if it has namespace prefix
+        /*
+         * Has namespace
+         **/
         if( false !== strpos( $class , '\\' ) ) {
-            $prefixes = array( 'Web25', 'Manduca' ); // autoload only this two namespaces.
+            
+            // autoload only this two namespaces.
+            $prefixes = array( 'Web25', 'Manduca' ); 
             $catched = false;
+            
             foreach( $prefixes as $prefix ) {
                 $len = strlen($prefix);
                 if ( strncmp( $prefix, $class, $len) === 0) {
@@ -90,57 +96,47 @@ class Manduca_Classloader {
                     break; 
                 }
             }
+            
             if( !$catched ) {
                 return ; // no, move to the next registered autoloader
             }
+            
             $namespaces = explode( '\\' , $class );
+            
             $class_name_wo_namespace   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
+            
             $class_namespace = str_ireplace( $class_name_wo_namespace, '',  $class );
             $class_namespace = untrailingslashit( $class_namespace );
+            
+            $filename = self::create_filename( $class_name_wo_namespace ) ;
+            
+            $success = self::loadFile( self::$lookup_directories[ $class_namespace ]. $filename);
                         
         }
-        else{
-                $class_name_wo_namespace = $class;
-        }
-        $filename = str_replace( '_', '-' , $class_name_wo_namespace );
-        $filename   =sprintf( 'class-%s.php',
-                              strtolower( $filename )
-                );
-        foreach (self::$lookup_directories as $namespace => $directory) {
-            
-            /*
-             *Ha megadunk egy névmezőt is, akkor csak az ahhoz rendelt könyvtárban keres
-             *@since 19.1
-             **/
+        
+        
+        else {
+        
+            $filename = self::create_filename( $class ) ;
+        
+            foreach (self::$lookup_directories as $namespace => $directory) {
                     
-            $aplicable_dir = false;
-            if( isset ($class_namespace ) ) {
-               if( $namespace === $class_namespace ) {
-                    $aplicable_dir = true;
-                }
-            }
-            elseif( is_integer( $namespace ) ) {
-                    $aplicable_dir = true;
-                }
-            
-            if( $aplicable_dir ){
-                $file = $directory . $filename;
-                if (self::loadFile( $file ) ) {
-                    
+                if( is_integer( $namespace ) && self::loadFile( $directory . $filename) ) {
+                
                     $success = TRUE;
+                
                     break;
+                
                 }
+                
             }
         }
         
-        if (!$success) {
-            if (!self::loadFile(__DIR__ . DIRECTORY_SEPARATOR . $filename)) {
-                //Should not do anything in case unseccessful loading
-                // The plugins may use class_exist with autoload=true. 
-            }
-        }
         return $success;
     }
+ 
+ 
+ 
  
     /**
      * Loads a file
@@ -161,5 +157,17 @@ class Manduca_Classloader {
      public static function add_dir_and_subdirs( $directory ) {
         
         self::collect_subdirectories( $directory );
+    }
+    
+    
+    protected static function create_filename( $filename ) {
+        
+        $filename   = str_replace( '_', '-' , $filename );
+        
+        $filename   = sprintf( 'class-%s.php',
+                              strtolower( $filename )
+                );
+        
+        return $filename;
     }
 }

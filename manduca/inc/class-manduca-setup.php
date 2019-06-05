@@ -30,7 +30,7 @@
 class Manduca_Setup {
 		
 		
-	public function init () {
+	public function init() {
 		
 		new \Manduca\Enqueue;
 		
@@ -54,11 +54,11 @@ class Manduca_Setup {
 		 * */
 		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
 		if( $link_function_enable ) {	
-			$link_function = new \Manduca\Link_Functions();
+			new \Manduca\Link_Functions();
 		}
 		
 		// Link function (add svg, aria etc. )
-		$template_functions= new Manduca_Template_Functions();
+		new Manduca_Template_Functions();
 		
 		//Filter page title
 		new \Manduca\Filter_Title;

@@ -47,10 +47,13 @@ class SVG_Functions {
 	 function SVG_Markup( ) {
 			  // Make sure $this->svg_name are an array.
 			  if ( empty( $this->svg_name ) ) {
+						
 				  /* translators: Error message if there no array in the parameter */
 				  trigger_error ( __( 'Please define default parameters in the form of an array.', 'manduca' ) , E_USER_WARNING ) ;
-				  return;
-			  }
+				  
+						return;
+			  
+					}
 		  
 			  // Define an icon.
 			  if ( false === array_key_exists( 'icon', $this->svg_name ) ) {
@@ -157,6 +160,13 @@ class SVG_Functions {
 	 }
 	 
 	
+	
+	/*
+	 *Call method
+	 *Invoke the SVG complier and  return HTML code of accessible icon
+	 *
+	 *@return string: HTML code
+	 **/
 	public function Return_HTML() {
 			   return $this->SVG_Markup();
 	}
