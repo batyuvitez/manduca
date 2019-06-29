@@ -27,9 +27,17 @@
 */
 
 class Manduca_Classloader {
+    
     const UNABLE_TO_LOAD = 'Unable to load class';
+    
     protected static $lookup_directories = array();
+    
     protected static $registered = 0;
+
+
+
+
+
  
     /**
      * Initializes directories array
@@ -40,19 +48,24 @@ class Manduca_Classloader {
         self::init($dirs);
     }
  
+    
+    
+    
     /**
      * Adds directories to the existing array of directories
      * 
      *@param array | string $dirs
      */
-    public static function add_dirs($dirs)
-    {
+    public static function add_dirs($dirs)    {
         if (is_array( $dirs ) ) {
             self::$lookup_directories = array_merge(self::$lookup_directories, $dirs);
         } else {
             self::$lookup_directories[] = $dirs;
         }
     }
+ 
+ 
+ 
  
     /**
      * Adds a directory to the list of supported directories
@@ -70,6 +83,10 @@ class Manduca_Classloader {
         }
     }
  
+    
+    
+    
+    
     /**
      * Locates a class file 
      * 
@@ -97,24 +114,24 @@ class Manduca_Classloader {
                 }
             }
             
-            if( !$catched ) {
-                return ; // no, move to the next registered autoloader
+            if( $catched ) {
+                
+                $namespaces = explode( '\\' , $class );
+                
+                $class_name_wo_namespace   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
+                
+                $class_namespace = str_ireplace( $class_name_wo_namespace, '',  $class );
+                $class_namespace = untrailingslashit( $class_namespace );
+                
+                $filename = self::create_filename( $class_name_wo_namespace ) ;
+                
+                $success = self::loadFile( self::$lookup_directories[ $class_namespace ]. $filename);
+
             }
-            
-            $namespaces = explode( '\\' , $class );
-            
-            $class_name_wo_namespace   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
-            
-            $class_namespace = str_ireplace( $class_name_wo_namespace, '',  $class );
-            $class_namespace = untrailingslashit( $class_namespace );
-            
-            $filename = self::create_filename( $class_name_wo_namespace ) ;
-            
-            $success = self::loadFile( self::$lookup_directories[ $class_namespace ]. $filename);
-                        
+
         }
         
-        
+        // No namespace
         else {
         
             $filename = self::create_filename( $class ) ;
@@ -131,9 +148,11 @@ class Manduca_Classloader {
                 
             }
         }
-        
+                
         return $success;
     }
+ 
+ 
  
  
  
