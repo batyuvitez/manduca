@@ -31,7 +31,7 @@
 <form role="search" method="get" class="widget-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div role="search" >
 		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label><label class="screen-reader-text" for="ws" ><?php _e( 'Search', 'manduca' ) ?></label>
-		<input type="text" placeholder="<?php echo esc_attr_e( 'Search', 'manduca' ) ?>"  name="ws"  id="ws" />
+		<input type="text" placeholder="<?php echo esc_attr_e( 'Search', 'manduca' ) ?>"  name="s"  id="s" />
 		<button type="submit" class="search-submit inverse2" id="widget-search-submit" aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
 			<span class="screen-reader-text">
 				<?php _e( 'Search', 'manduca' ) ?>
