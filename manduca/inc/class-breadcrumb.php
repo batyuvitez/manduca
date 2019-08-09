@@ -194,28 +194,28 @@ abstract class Breadcrumb {
 		// Show taxonomy
 		if ( $this->options['show_tax'] ) {
 			
-			if ( is_singular() || ( is_archive() && ! is_post_type_archive() ) || is_search() || $this->options['show_pagenum'] ) {
+			if ( is_singular() ) {
 			
 				$taxonomy = $this->options['show_tax'];
 				$term = get_the_terms( get_the_id(), $taxonomy );
-				
+							
 				if( $term ) {
 				 
 				 	// Only the first term's parents. If Yoast Seo is active, you can check for the primary term. 
 					$parents = get_ancestors( $term[0]->term_id, $taxonomy, 'taxonomy' );
-		 
+								
 					foreach ( array_reverse( $parents ) as $parent ) {
-							$parent = get_term( $parent, $taxonomy );
+						
+						$parent = get_term( $parent, $taxonomy );
 				
 						$link = esc_url( get_term_link( $parent->term_id, $taxonomy ) ); 
 						
-						$this->breadcrumb["archive_{$post_type}"] = $this->template(
+						$this->breadcrumb["archive_{$parent->term_id}"] = $this->template(
 							array(
 							'link' => $link, 
 							'title' => $parent->name
 						) );
 					}
-							
 				}
 			}
 		}
