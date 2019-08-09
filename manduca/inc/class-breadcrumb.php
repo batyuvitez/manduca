@@ -173,13 +173,49 @@ abstract class Breadcrumb {
 		// Post Type Archive as index
 		if ( $this->options['show_pta'] ) {
 			if ( is_singular() || ( is_archive() && ! is_post_type_archive() ) || is_search() || $this->options['show_pagenum'] ) {
-				if ( $post_type_link = get_post_type_archive_link( $post_type ) ) {
+				
+				$post_type_link = get_post_type_archive_link( $post_type );
+				if ( $post_type_link  ) {
+						
 					$post_type_label = get_post_type_object( $post_type )->labels->name;
+					
 					$this->breadcrumb["archive_{$post_type}"] = $this->template(
 						array(
 						'link' => $post_type_link, 
 						'title' => $post_type_label
 					) );
+				}
+				
+			}
+			
+		}
+		
+		
+		// Show taxonomy
+		if ( $this->options['show_tax'] ) {
+			
+			if ( is_singular() || ( is_archive() && ! is_post_type_archive() ) || is_search() || $this->options['show_pagenum'] ) {
+			
+				$taxonomy = $this->options['show_tax'];
+				$term = get_the_terms( get_the_id(), $taxonomy );
+				
+				if( $term ) {
+				 
+				 	// Only the first term's parents. If Yoast Seo is active, you can check for the primary term. 
+					$parents = get_ancestors( $term[0]->term_id, $taxonomy, 'taxonomy' );
+		 
+					foreach ( array_reverse( $parents ) as $parent ) {
+							$parent = get_term( $parent, $taxonomy );
+				
+						$link = esc_url( get_term_link( $parent->term_id, $taxonomy ) ); 
+						
+						$this->breadcrumb["archive_{$post_type}"] = $this->template(
+							array(
+							'link' => $link, 
+							'title' => $parent->name
+						) );
+					}
+							
 				}
 			}
 		}
@@ -333,5 +369,5 @@ abstract class Breadcrumb {
 				'current'
 			);
 	}
+	
 }
-?>

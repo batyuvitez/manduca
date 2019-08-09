@@ -24,7 +24,8 @@
 			'link' 			=> '<a href="%s"><span >%s</span></a>'
 		);
 		$this->options = array(
-		 	'show_pta'		=>false,						//Post Type Archive as index
+		 	'show_pta'		=>false,						//Post Type term as index
+    'show_tax'   => 'category', 							// which taxonomy to show
 			'show_htfpt' => true, 							// show hierarchical terms for post types
 			'separator'		=> manduca_get_svg( array( 'icon' => 'arrow-right-double' ) ) ,
 			'posts_on_front' => 'posts' == get_option( 'show_on_front' ) ? true : false,
