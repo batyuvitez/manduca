@@ -1,5 +1,6 @@
 <?php
 /*
+ * Functions using in template files
  *@Since 18.9
  **/
 
@@ -275,10 +276,17 @@ class Manduca_Template_Functions {
 		return $html;
 	}
 	
-	public static function get_the_excerpt(){
+	
+	/*
+	 * Creating the excerpt
+	 *
+	 *@param (bool) $morelink_flag = if false (default), only excerpt with min 70 character shows the readmore button.
+	 *
+	 * */
+	
+	public static function get_the_excerpt( $morelink_flag = false ){
 		$post 		= get_post();
 		$post_content = $post->post_content;
-		$morelink_flag = true;
 		
 		if( has_excerpt() === true ) {
 				$html 		= $post->post_excerpt; 		
@@ -290,7 +298,7 @@ class Manduca_Template_Functions {
 					$html = $paragpraphs[ 0 ];
 				}
 		}
-		else {
+		elseif( ! $morelink_flag )  {
 				$html = self::trim_excerpt( $post_content );
 				
 				/* This is an estimation, if there is a very short post content, the readmore link unnecessary.
