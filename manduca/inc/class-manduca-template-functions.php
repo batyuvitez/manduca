@@ -311,10 +311,14 @@ class Manduca_Template_Functions {
 		if( !isset( $html) ) {
 				$html = $post_content;
 		}
+		
+		$html = strip_shortcodes( $html);
+		
 		if( $morelink_flag ) {
 			$more_link 	= new More_Links;
 			$html 		.=$more_link->more_link_create_html();
 		}
+		
 		return $html;
 	}
 	
