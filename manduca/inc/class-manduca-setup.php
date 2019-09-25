@@ -239,7 +239,7 @@ class Manduca_Setup {
 			// translators: sidebar description
 			'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div></section>',
+			'after_widget' => '</section>',
 			'before_title' => '<h2 class="widget-title">',
 			'after_title' =>'</h2><div class="widget-content">',
 		) );
