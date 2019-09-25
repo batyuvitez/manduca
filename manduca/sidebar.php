@@ -30,7 +30,6 @@
 		<h1 class="skip-link" tabindex="0" ><?php _e( 'Sidebar area' , 'manduca' ); ?></h1>
 			
 		<?php dynamic_sidebar( 'main_sidebar' ); ?>
-		<div>Ez itt az oldalsáv vége</div>
 	</aside>
 
 <?php endif; ?>
