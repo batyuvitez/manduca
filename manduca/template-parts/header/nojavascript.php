@@ -2,7 +2,10 @@
 /**
  * Message in case of no javascript
  *
- * @since 19.2
+ * <button> is removed from <a>
+ *@see: https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5
+ *
+ *@since 19.2
  * */
 
  
@@ -31,10 +34,8 @@
 				<div id="no-javascript" class="inverse3">
       <?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?>
      <div>
-      <a href="/">
-        <button><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></button>
-      </a>
+      <a href="/" role="button"><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></a>
      </div>
-     </div>
+    </div>
 </noscript>
 			

@@ -241,7 +241,7 @@ class Manduca_Setup {
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget' => '</section>',
 			'before_title' => '<h2 class="widget-title">',
-			'after_title' =>'</h2><div class="widget-content">',
+			'after_title' =>'</h2>',
 		) );
 	}
 	

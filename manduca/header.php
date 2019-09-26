@@ -6,7 +6,6 @@
  * @since 1.0
  * @last mod 17.11
  **/
-
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
@@ -97,4 +96,4 @@
 					<div id="inner-wrapper" class="inner-wrapper">
 					
 					<div id="primary" class="site-content">
-						<main id="content">
+						<main id="content" class="main-content">

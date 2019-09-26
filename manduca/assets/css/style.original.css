@@ -1,16 +1,15 @@
 /*
 Theme Name: Manduca
-Theme URI: http://akadálymentes-wordpress-sablon.hu
+Theme URI: https://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
-Author URI: http://www.web25.hu
-Version: 19.5 beta
+Author URI: https://akadálymnentes-honlap.hu
+Version: 19.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians. For PHP 5.5-7.3. for Hungarians. For PHP 5.5-7.3.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
 Github: https://github.com/batyuvitez/manduca
-Commented css: /assets/css/style.original.css
 */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -173,8 +172,8 @@ textarea,
 input, 
 body .site .basic-scheme,
 .megamenu.toggled-on {
-	background-color: #f9f9f9;
-	color: #222	
+	background-color: #f7f7f7;
+	color: #232323	
 }
 .basic-scheme svg {
 	fill: #222;
@@ -221,6 +220,7 @@ textarea[disabled]{
 	fill: #daf3ff;
 }
 .featured-scheme,
+.sticky 		/* sticky is not used in theme, but theme check requires it */
 .tooltip{
 	background-color: #DAF2FF;
 	color: #000;
@@ -336,9 +336,6 @@ a.page-numbers.prev,
 
 /*mobil background a little bit darker since @17.9.1 */
 
-
-
-
 .footer-wrapper,
 .top-bar,
 .info-button,
@@ -447,7 +444,8 @@ img.size-full,
 img.size-large,
 img.header-image,
 img.wp-post-image {
-	max-width: 100%;
+	max-width: 1267px;
+	margin: 0 auto;
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 img.wp-post-image {
@@ -789,7 +787,35 @@ body .site,
 	left: auto;
 }
 
-/* Page structure */
+
+/*
+ * Page structure
+*/
+
+/* two columns layout */
+.inner-wrapper {
+		display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;
+		max-width: 180em;
+		margin: 0 auto;
+		
+	}
+	
+	
+	body:not( .page-template-full-width) .site-content {
+		width: 75%;
+		max-width: 180em;
+		
+	}
+	.widget-area {
+		width: 25%;
+		max-width: 60em;
+		
+}
+
 
 
 /* Header */
@@ -800,7 +826,7 @@ body .site,
 	
 }
 
-#top-bar {
+.top-bar {
 	height: 4.142rem;
 	width: 100%;
 }
@@ -1982,17 +2008,17 @@ svg.icon-extlink {
 
 
 /* Font size in reading option window */
-#toolbar-buttons button#font-size-0 span{
+.toolbar-buttons button#font-size-0 span{
     font-size: 2vw;
 }
-#toolbar-buttons button#font-size-1 span{
+.toolbar-buttons button#font-size-1 span{
     font-size: 2.5vw;
 }
 
-#toolbar-buttons button#font-size-2 span{
+.toolbar-buttons button#font-size-2 span{
     font-size: calc(0.1em + 3vw);
 }
-#toolbar-buttons button#font-size-3 span {
+.toolbar-buttons button#font-size-3 span {
     font-size: calc(0.5em + 4vw);
 }
 
@@ -2013,7 +2039,7 @@ svg.icon-extlink {
 .font-size-3 #s {
 	font-size: 25px; /* If bigger, hide the other buttons*/
 }
-.font-size-3 #top-bar {
+.font-size-3 .top-bar {
 	height: 5rem;
 }
 
@@ -2029,7 +2055,7 @@ svg.icon-extlink {
     z-index: 100;
 	display: none;
 }
-#toolbar-buttons > tr {
+.toolbar-buttons > tr {
 	margin: 0 7px;
 }
 
@@ -2037,13 +2063,13 @@ body.font-size-2 .toolbar-label,
 body.font-size-3 .toolbar-label {
  display: none;
  }
-#toolbar-buttons button {
+.toolbar-buttons button {
     margin-left: 3px;
     padding: 7px 3px;
 	font-size: 0.8em;
 }
  
-#toolbar-buttons td {
+.toolbar-buttons td {
 	border: none;
 	padding: 0.7em;
 }
@@ -2234,7 +2260,7 @@ body.font-size-3 .toolbar-label {
 		width: 80%;
 	}
 	.site-title {
-		font-size: 1.618em;
+		font-size: 2.1em;
 		border-bottom: none;
 		padding: 1.5rem 0;
 		margin-bottom: 0;
@@ -2463,34 +2489,34 @@ body.font-size-3 .toolbar-label {
 		margin: 1rem 0;
     }
 
-	#toolbar-buttons button {
+	.toolbar-buttons button {
 		font-size: 1.1em;
 		width: 9em;
 		height: 3em;
 	}
-	#toolbar-buttons span {
+	.toolbar-buttons span {
 		font-size: 1.3em;
 	}
-	#toolbar-buttons button#font-size-0 span{
+	.toolbar-buttons button#font-size-0 span{
     font-size: 0.8em;
 	}
-	#toolbar-buttons button#font-size-1 span {
+	.toolbar-buttons button#font-size-1 span {
 		font-size: 0.9em;
 	}
 	
-	#toolbar-buttons button#font-size-2 span{
+	.toolbar-buttons button#font-size-2 span{
 		font-size: 1.1em;
 	}
-	#toolbar-buttons button#font-size-3 span{
+	.toolbar-buttons button#font-size-3 span{
 		font-size: 1.3em;
 	}
 
-	#toolbar-buttons button#target-self span,
-	#toolbar-buttons button#target-default span{
+	.toolbar-buttons button#target-self span,
+	.toolbar-buttons button#target-default span{
 		font-size: 0.8em;
 	}
 	/*i don't know why I have to positionit'*/
-	#toolbar-buttons button#target-default {
+	.toolbar-buttons button#target-default {
 				position: relative;
 				top: 6px;
 	}
@@ -2551,24 +2577,7 @@ body.font-size-3 .toolbar-label {
 		left: auto;
     }
 		
-	/* Two-column Layout */
-	
-	body:not( .page-template-full-width) .site-content,
-	.widget-area 	{
-		display: inline-block;
-		position: relative;
-		vertical-align: top;
-		
-	}
 
-	body:not( .page-template-full-width) .site-content {
-		width: 65%;
-	}
-	
-	.widget-area	{
-		width: 32%;
-		margin-left: 2%;
-	}
 	
 	
 	/* One column layout sincd @17.8.9*/
@@ -2759,18 +2768,11 @@ body.font-size-3 .toolbar-label {
 /* min width: 1360px */
 @media screen and (min-width: 1360px) {
 	
-	body .site {
-		max-width: 1280px;
-		margin: 0 auto;
-	}
+	
 	.widget-searchform #s {
 		width: 17rem;
 	}
 	
-	body:not( .page-template-full-width) .site-content {
-		width: 700px;
-		margin: 0 2.5rem; 
-	}
 	
 		/* Paddings on wider screens */
 	.header-bar,
@@ -2779,19 +2781,10 @@ body.font-size-3 .toolbar-label {
 		padding: 0;
 	}
 	
-	/* since 19.5 */
-	.inner-wrapper{
-			margin: 0 auto;
-	}
 	
 	
 	/* toolbars */
 
-
-	.widget-area {
-		width: 406px;
-		margin: 0 1.56448rem;
-	}
 	
 	.page-template-full-width article .entry-content {
 		columns: 2;
@@ -2828,38 +2821,24 @@ body.font-size-3 .toolbar-label {
 	
 	
 	/*@since 18.9 */
-	#page {
+	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
-	    min-width: 1590px;
-        max-width: none;
+		max-width: none;
 		padding: 1em;
     }
-	.site-header {
-		width: 1280px;
-		margin: 1em auto;
-	}
-    #primary {
-        width: 1206px;
-        margin: 0;
-		padding: 0;
-    }
+	 
 	.excerpt-wrapper,
-	.single #content .entry-content,
-	.page #content .entry-content{
+	.single .main-content .entry-content,
+	.page .main-content .entry-content{
 		column-count: 2;
-        column-rule: 1px dotted #505050;
+    column-rule: 1px dotted #505050;
 		column-gap: 56px;
 	}
 	article > header {
 		text-align: center;
 	}
-    #secondary {
-        width: 315px;
-		border-left: 1px solid #DAF2FF;
-		padding-left: 1em;
-    }
     .toolbar-buttons-open {
-		top: 0;
+		top: 6px;
 		left: auto;
 		right: 22.85em;
 	}
@@ -2872,6 +2851,11 @@ body.font-size-3 .toolbar-label {
 }
 
 
+
+
+/*
+ *Accessible print
+ **/
 @media print {
 	
 	body {

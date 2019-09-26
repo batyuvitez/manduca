@@ -444,6 +444,7 @@ Class Link_Functions {
         
     //aria-hidden attributum
     $svg_attr = $this->dom->createAttribute( 'aria-hidden' );
+    $svg_attr->value = 'true' ;
     $svg_node->appendChild( $svg_attr ) ; 
     $svg_attr = $this->dom->createAttribute( 'class' );
     $svg_attr->value = sprintf( 'icon-%s',
