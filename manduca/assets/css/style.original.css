@@ -1813,12 +1813,12 @@ svg.icon-extlink {
 
 
 /* 12 b.* Reading options toolbar (different colours, fonts, font-sizes)
- * @since 19.12
+ * @since 18.12
 -------------------------------------------------------------- */
 
 .high-contrast-1,
 .high-contrast-2 {
-	background-image: none;
+	background-image: none;  /* cannot reset all background, since it removes background-colors too */
 }
 
 /*
@@ -1830,7 +1830,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-1 .site,
-.high-contrast-2 .megamenu.toggled-on,
+.high-contrast-1 .megamenu.toggled-on,
 #high-contrast-1{
     background-color: #c6d17e;
     color: #808067 ;

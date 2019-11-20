@@ -192,7 +192,7 @@ abstract class Breadcrumb {
 		
 		
 		// Show taxonomy
-		if ( $this->options['show_tax'] ) {
+		if ( isset( $this->options['show_tax'] ) && $this->options['show_tax'] ) {
 			
 			if ( is_singular() ) {
 			

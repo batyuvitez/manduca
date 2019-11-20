@@ -40,7 +40,7 @@
  
 <?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
  
-<?php if( is_front_page() ) : ?>
+<?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
     
         <div class="site-title">
             <span class="display-site-title"><?php echo $site_title; ?> </span>
