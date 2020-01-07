@@ -625,6 +625,7 @@ a.use-tooltip:focus .tooltip {
 	left: auto;
 }
 
+/* End tooltip */
 
 .site-content nav {
 	clear: both;
@@ -1809,10 +1810,12 @@ svg.icon-extlink {
 	display: none;
 }
 
+/* End of svg formatting */
 
 
 
-/* 12 b.* Reading options toolbar (different colours, fonts, font-sizes)
+
+/* 12 b.* Accessibility toolbar (Reading options) (different colours, fonts, font-sizes)
  * @since 18.12
 -------------------------------------------------------------- */
 
@@ -2044,7 +2047,7 @@ svg.icon-extlink {
 }
 
 
- /* Buttons design*/
+ /* Reading options modal window buttons design*/
  
 .toolbar-buttons {
     padding: 2.5em 1em 1em ;
@@ -2101,6 +2104,8 @@ body.font-size-3 .toolbar-label {
     list-style: none;
 }
 
+
+/* end of accessibility toolbar */
 
 /* accessible back-to-top function
  * @since 19.1

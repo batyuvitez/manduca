@@ -69,7 +69,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 </td>
 						 <td>
 							<button class="target-selector" id ="target-default" aria-label="<?php _e( 'Leave as it is', 'manduca' );?>" data-target="default">
-								<span class="phone-text" aria-hidden="true"><?php _e( 'Leave as it is', 'manduca' ); ?></span>
+								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg (array ('icon'=>'minus'));?></span>
 								<span class="desktop-text"><?php _e( 'Leave as it is', 'manduca' ); ?></span>
 							</button>
 						 </td>
