@@ -45,8 +45,8 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					<tr>
 						 <td><span class="toolbar-label"><?php _e( 'Color scheme' , 'manduca' ); ?>:</span></td>
 						 <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
-						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'For night' , 'manduca' ); ?></span></button></td>
-						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text">Abc</span></button></td>
+						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Pastel' , 'manduca' ); ?></span></button></td>
+						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text"><?php _e( 'Inverse' , 'manduca' ); ?></span></button></td>
 					 </tr>
 				   
 					<tr>

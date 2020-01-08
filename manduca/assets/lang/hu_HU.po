@@ -807,3 +807,11 @@ msgstr "Betűméret"
 #: template-parts/header/toolbar.php:54 javíta a 19.4-hez:
 msgid "Font type"
 msgstr "Betűtípus"
+
+# toolbar 20.1-hez
+msgid "Pastel"
+msgstr "Pasztell"
+
+# toolbar 20-1-hez.
+msgid "Inverse"
+msgstr "Inverz"
