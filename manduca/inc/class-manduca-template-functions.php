@@ -290,11 +290,13 @@ class Manduca_Template_Functions {
 		$post_content = $post->post_content;
 		
 		if( has_excerpt() === true ) {
-				$html 		= $post->post_excerpt; 		
+				$html 		= $post->post_excerpt;
+				$morelink_flag=TRUE;
 		}
 		
 		elseif( false !==  strpos( $post_content, '<!--more-->' ) ) {
 				$paragpraphs = 	explode( '<!--more-->', $post_content ) ;
+				$morelink_flag=TRUE;
 				if( isset( $paragpraphs[0] ) ) {
 					$html = $paragpraphs[ 0 ];
 				}
@@ -303,11 +305,8 @@ class Manduca_Template_Functions {
 				$html = self::trim_excerpt( $post_content );
 		}
 		$html = strip_shortcodes( $html);
-		if( $morelink_flag ) {
-			$more_link 	= new More_Links;
-			$html 		.=$more_link->more_link_create_html();
-		}
-		
+		if( $morelink_flag )
+			$html=self::add_morelink ($html);
 		return $html;
 	}
 	
@@ -352,13 +351,24 @@ class Manduca_Template_Functions {
                     $excerptOutput .= $token;// Append what's left of the token
                 }
 				$excerpt = trim(force_balance_tags($excerptOutput));
-				if( $morelink_flag ) {
-					$more_link = new More_Links;
-					$excerpt .=$more_link->more_link_create_html();
-				}
-		
+				if( $morelink_flag )
+					$excerpt=self::add_morelink ($excerpt);
             return $excerpt;   
 		}
+		
+		
+		/*
+		 *Add morelink to the end of HTML
+		 *
+		 *@param string $html HTML code
+		 *@return string HTML code with morelink
+		 **/
+		protected static function add_morelink ($html)
+		{
+			$more_link = new More_Links;
+			return $html.$more_link->more_link_create_html();
+		}
+		
 		
 		
 		/*
