@@ -280,7 +280,8 @@ class Manduca_Template_Functions {
 	/*
 	 * Creating the excerpt
 	 *
-	 *@param (bool) $morelink_flag = if false (default), only excerpt with min 70 character shows the readmore button.
+	 * @param $morelink_flag : depretiated in #20.1
+	 * @return (string): HTML content of excerpt with readmore link. 
 	 *
 	 * */
 	
@@ -298,22 +299,10 @@ class Manduca_Template_Functions {
 					$html = $paragpraphs[ 0 ];
 				}
 		}
-		elseif( ! $morelink_flag )  {
+		else {
 				$html = self::trim_excerpt( $post_content );
-				
-				/* This is an estimation, if there is a very short post content, the readmore link unnecessary.
-				*@since 19.4
-				* */
-				if( 70 > strlen( $html ) ) {
-					$morelink_flag = false;
-				}
 		}
-		if( !isset( $html) ) {
-				$html = $post_content;
-		}
-		
 		$html = strip_shortcodes( $html);
-		
 		if( $morelink_flag ) {
 			$more_link 	= new More_Links;
 			$html 		.=$more_link->more_link_create_html();
@@ -322,12 +311,20 @@ class Manduca_Template_Functions {
 		return $html;
 	}
 	
+	
+	
+	
+	
+	
 	/*
-	 * Create excerpt from the content. 
-	 *original. https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
+	 * Create Human readable excerpt from the content.
+	 *
+	 * @param (string) HTML content
+	 * @return (string) excerpt in HTML 
+	 * @see: https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
 	 */
     protected static function trim_excerpt( $content ) {
-				$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>'; 
+			$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>'; 
             $excerpt = strip_shortcodes( $content );
             $excerpt = apply_filters('the_content', $excerpt);
             $excerpt = str_replace(']]>', ']]&gt;', $excerpt);
@@ -343,22 +340,23 @@ class Manduca_Template_Functions {
                 // Divide the string into tokens; HTML tags, or words, followed by any whitespace
                 preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $excerpt, $tokens);
 
+				$morelink_flag =FALSE;
                 foreach ($tokens[0] as $token) { 
-
                     if ($count >= $excerpt_length && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) { 
                     // Limit reached, continue until , ; ? . or ! occur at the end
                         $excerptOutput .= trim($token);
-                        break;
+                        $morelink_flag =TRUE;
+						break;
                     }
-
-                    // Add words to complete sentence
-                    $count++;
-
-                    // Append what's left of the token
-                    $excerptOutput .= $token;
+                    $count++;// Add words to complete sentence
+                    $excerptOutput .= $token;// Append what's left of the token
                 }
-
-            $excerpt = trim(force_balance_tags($excerptOutput));
+				$excerpt = trim(force_balance_tags($excerptOutput));
+				if( $morelink_flag ) {
+					$more_link = new More_Links;
+					$excerpt .=$more_link->more_link_create_html();
+				}
+		
             return $excerpt;   
 		}
 		
