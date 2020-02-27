@@ -22,44 +22,23 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-
-
 ?>
-						
-								</main>
-							</div> <?php // END #primary .site-content ?>
-							 
-						 <?php get_sidebar(); ?>
-			 
-						</div> <?php // END #inner-wrapper?>
-						
-					</div> <?php // END .wrapper ?>
-					
-					<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>
-						   
-				<div id="footer-wrapper" class="footer-wrapper inverse-scheme">
-					
-					<h1 class="skip-link" tabindex="0" ><?php _e( 'Footer area' , 'manduca' ); ?></h1>
-					
-					<footer id="colophon" >
-						
-						<div class="site-info">
-						
-						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
-						
-						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>
-						
-						</div>
-											
-						
-					</footer>
-					<div class="clearfix"></div>
-				</div>
+			<?php get_template_part ('template-parts/wrapper/wrapper','bottom'); ?>					
+			<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>
 
+			<div id="footer-wrapper" class="footer-wrapper inverse-scheme">
+				<h1 class="skip-link" tabindex="0" ><?php _e( 'Footer area' , 'manduca' ); ?></h1>
+				<footer id="colophon" >
+					<div class="site-info">
+						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
+						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>
+					</div>
+				</footer>
+				<div class="clearfix"></div>
+			</div>
+			
 			<?php get_template_part( 'template-parts/footer/footer', 'after' ); ?>
-			
 			<?php wp_footer(); ?>
-			
 		</div> <?php // closing tag of  .site #page  ?>
 	</body>
 </html>

@@ -323,108 +323,135 @@ class Manduca_Template_Functions {
 	 * @see: https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
 	 */
     protected static function trim_excerpt( $content ) {
-			$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>'; 
-            $excerpt = strip_shortcodes( $content );
-            $excerpt = apply_filters('the_content', $excerpt);
-            $excerpt = str_replace(']]>', ']]&gt;', $excerpt);
-            $excerpt = strip_tags( $excerpt, $allowed_tags ); 
+		$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>'; 
+		$excerpt = strip_shortcodes( $content );
+		$excerpt = apply_filters('the_content', $excerpt);
+		$excerpt = str_replace(']]>', ']]&gt;', $excerpt);
+		$excerpt = strip_tags( $excerpt, $allowed_tags ); 
 
-            //Set the excerpt word count and only break after sentence is complete.
-                $excerpt_word_count = 45;
-                $excerpt_length = apply_filters('excerpt_length', $excerpt_word_count); 
-                $tokens = array();
-                $excerptOutput = '';
-                $count = 0;
+		//Set the excerpt word count and only break after sentence is complete.
+			$excerpt_word_count = 45;
+			$excerpt_length = apply_filters('excerpt_length', $excerpt_word_count); 
+			$tokens = array();
+			$excerptOutput = '';
+			$count = 0;
 
-                // Divide the string into tokens; HTML tags, or words, followed by any whitespace
-                preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $excerpt, $tokens);
+			// Divide the string into tokens; HTML tags, or words, followed by any whitespace
+			preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $excerpt, $tokens);
 
-				$morelink_flag =FALSE;
-                foreach ($tokens[0] as $token) { 
-                    if ($count >= $excerpt_length && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) { 
-                    // Limit reached, continue until , ; ? . or ! occur at the end
-                        $excerptOutput .= trim($token);
-                        $morelink_flag =TRUE;
-						break;
-                    }
-                    $count++;// Add words to complete sentence
-                    $excerptOutput .= $token;// Append what's left of the token
-                }
-				$excerpt = trim(force_balance_tags($excerptOutput));
-				if( $morelink_flag )
-					$excerpt=self::add_morelink ($excerpt);
-            return $excerpt;   
+			$morelink_flag =FALSE;
+			foreach ($tokens[0] as $token) { 
+				if ($count >= $excerpt_length && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) { 
+				// Limit reached, continue until , ; ? . or ! occur at the end
+					$excerptOutput .= trim($token);
+					$morelink_flag =TRUE;
+					break;
+				}
+				$count++;// Add words to complete sentence
+				$excerptOutput .= $token;// Append what's left of the token
+			}
+			$excerpt = trim(force_balance_tags($excerptOutput));
+			if( $morelink_flag )
+				$excerpt=self::add_morelink ($excerpt);
+		return $excerpt;   
+	}
+	
+	
+	/*
+	 *Add morelink to the end of HTML
+	 *
+	 *@param string $html HTML code
+	 *@return string HTML code with morelink
+	 **/
+	protected static function add_morelink ($html)
+	{
+		$more_link = new More_Links;
+		return $html.$more_link->more_link_create_html();
+	}
+	
+	
+	
+	/*
+	 * Link html provided to previous post in the same category of single post
+	 * Replacement of Wp get_previous_post_link() method
+	 *
+	 * @return  string HTMl markup of <a> element
+	 * @see template-parts/posts/navigation
+	 * @since 18.10.8
+	 **/
+	public static function previous_post_link_html() {
+			if ( is_attachment() ){
+					$post = get_post( get_post()->post_parent );
+			}
+			else {
+					$post = get_adjacent_post( false , '' , true , 'category' );
+			}
+
+			if ( ! $post ) {
+				$output = '';
+			} else {
+					$output = sprintf( '<a href="%1$s" accesskey="P" class="use-tooltip" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
+						   get_permalink( $post ),
+						   $post->post_title,
+						   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
+						   __( 'Previous post', 'manduca' ) .' ',
+						   __( 'Access key', 'manduca' ) .': P'
+						   );
+			}
+			return $output;
+	}
+	
+	/*
+	 * Link html provided to next post in the same category of single post
+	 * Replacement of Wp get_next_post_link() method
+	 *
+	 * @return  string HTMl markup of <a> element
+	 * @see template-parts/posts/navigation
+	 * @since 18.10.8
+	 **/
+	public static function next_post_link_html() {
+			$post = get_adjacent_post( false , '' , false , 'category' );
+			if ( ! $post ) {
+				$output = '';
+			} else {
+					$output = sprintf( '<a href="%1$s" class="use-tooltip" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
+						   get_permalink( $post ),
+						   $post->post_title,
+						   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
+							__( 'Next post', 'manduca' ) .' ',
+							__( 'Access key', 'manduca' ) .': N'
+						   );
+			}
+			return $output;
+	}
+		
+		
+		
+	/*
+	 *Additional classes for header
+	 *
+	 *@since 20.2.
+	 **/
+	public static function body_classes() {
+		$background_color 	= get_background_color();
+		$background_image 	= get_background_image();
+		$classes			= array();
+		if ( empty( $background_image ) ) {
+			if ( empty( $background_color ) ) {
+				$classes[] = 'custom-background-empty';
+			}
+			elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) ) {
+				$classes[] = 'custom-background-white';
+			}
 		}
 		
-		
-		/*
-		 *Add morelink to the end of HTML
-		 *
-		 *@param string $html HTML code
-		 *@return string HTML code with morelink
-		 **/
-		protected static function add_morelink ($html)
-		{
-			$more_link = new More_Links;
-			return $html.$more_link->more_link_create_html();
+		if ( ! is_multi_author() ) {
+			$classes[] = 'single-author';
 		}
 		
-		
-		
-		/*
-		 * Link html provided to previous post in the same category of single post
-		 * Replacement of Wp get_previous_post_link() method
-		 *
-		 * @return  string HTMl markup of <a> element
-		 * @see template-parts/posts/navigation
-		 * @since 18.10.8
-		 **/
-		public static function previous_post_link_html() {
-				if ( is_attachment() ){
-						$post = get_post( get_post()->post_parent );
-				}
-				else {
-						$post = get_adjacent_post( false , '' , true , 'category' );
-				}
-
-				if ( ! $post ) {
-					$output = '';
-				} else {
-						$output = sprintf( '<a href="%1$s" accesskey="P" class="use-tooltip" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
-							   get_permalink( $post ),
-							   $post->post_title,
-							   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
-							   __( 'Previous post', 'manduca' ) .' ',
-							   __( 'Access key', 'manduca' ) .': P'
-							   );
-				}
-				return $output;
-		}
-		
-		/*
-		 * Link html provided to next post in the same category of single post
-		 * Replacement of Wp get_next_post_link() method
-		 *
-		 * @return  string HTMl markup of <a> element
-		 * @see template-parts/posts/navigation
-		 * @since 18.10.8
-		 **/
-		public static function next_post_link_html() {
-				$post = get_adjacent_post( false , '' , false , 'category' );
-				if ( ! $post ) {
-					$output = '';
-				} else {
-						$output = sprintf( '<a href="%1$s" class="use-tooltip" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
-							   get_permalink( $post ),
-							   $post->post_title,
-							   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
-								__( 'Next post', 'manduca' ) .' ',
-								__( 'Access key', 'manduca' ) .': N'
-							   );
-				}
-				return $output;
-		
-		}
-
+		//Detect visitors OS and browser and add to body tag	
+		$classes=array_merge( $classes , (new User_Agent_Detect() )->get_classes() );
+		return $classes;
+	}
 }
 

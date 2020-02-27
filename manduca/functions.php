@@ -69,7 +69,7 @@ else {
 	  
    require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );
 	  
-   $autoload = new Manduca_Classloader( $dirs );		
+   new Manduca_Classloader( $dirs );		
 }
 
 ( new Manduca_Setup )-> init();

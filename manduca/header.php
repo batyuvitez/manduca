@@ -26,74 +26,30 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<?php wp_head(); ?>
-</head>
-<?php
-	/*
-	 * Additional body classes
-	 **/
-	$background_color 	= get_background_color();
-	$background_image 	= get_background_image();
-	$classes			= array();
-	if ( empty( $background_image ) ) {
-		if ( empty( $background_color ) ) {
-			$classes[] = 'custom-background-empty';
-		}
-		elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) ) {
-			$classes[] = 'custom-background-white';
-		}
-	}
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<?php wp_head(); ?>
+	</head>
 	
-	if ( ! is_multi_author() ) {
-		$classes[] = 'single-author';
-	}
-	
-	//Detect visitors OS and browser and add to body tag	
-	$classes		= array_merge( $classes , (new User_Agent_Detect() )->get_classes() );
-?>
 
-
-<body id="total" <?php body_class( $classes ); ?>>
-		
+	<body id="total" <?php body_class(Manduca_Template_Functions::body_classes()); ?>>
 		<?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
-		
 		<div id="page" class="hfeed site">
-			
 			<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
-			
 			<div  id="top-bar" class="top-bar inverse-scheme"></div>
-			
 			<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
-			
 			<div id="masthead" class="site-header megamenu-parent" >
-			
 				<div id="header-bar" class="header-bar">
 					<header>											
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
-						
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
-						
 					</header>
-				</div>
-						
-					<?php get_template_part( '/template-parts/header/headerimage' ); ?>
-					
-					<?php get_template_part( '/template-parts/header/menu' ); ?>
-					
-					<?php get_template_part( '/template-parts/header/searchform' ); ?>
-				
-					
+				</div>			
+				<?php get_template_part( '/template-parts/header/headerimage' ); ?>
+				<?php get_template_part( '/template-parts/header/menu' ); ?>
+				<?php get_template_part( '/template-parts/header/searchform' ); ?>					
 			</div>
-			
-				<div id="wrapper" class="wrapper">
-					
-					<?php get_template_part( '/template-parts/header/breadcrumb' , 'template' ); ?>
-					
-					<div id="inner-wrapper" class="inner-wrapper">
-					
-					<div id="primary" class="site-content">
-						<main id="content" class="main-content">
+			<?php get_template_part( '/template-parts/wrapper/wrapper', 'top' ); ?>
+				
