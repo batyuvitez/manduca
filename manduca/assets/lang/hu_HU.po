@@ -129,13 +129,13 @@ msgstr "Szűrés"
 #. translators: second (month) select menus's text in archive widget until no
 #. year selected.
 #: inc/class-widget-archives.php:94
-msgid "First select year"
-msgstr "Először az évet kell kiválasztani."
+msgid "Select year"
+msgstr "Hónap"
 
 #. translators: first (year) select menu's text in archive widget
 #: inc/class-widget-archives.php:91
 msgid "Select year"
-msgstr "Év kiválasztása"
+msgstr "Év"
 
 #. translators: name of Manduca's accessible archive widget
 #: inc/class-widget-archives.php:53

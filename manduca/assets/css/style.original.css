@@ -3,10 +3,10 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-wordpress-sablon.hu
 Author: Zsolt Edelényi 
 Author URI: https://akadálymnentes-honlap.hu
-Version: 19.12
+Version: 20.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Description: Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
+Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
 Github: https://github.com/batyuvitez/manduca
@@ -2220,9 +2220,7 @@ body.font-size-3 .toolbar-label {
 	
 	/* Colors */
 	
-	body .site {
-		background-color: #ffffff;
-	}
+
 	.nav-single div,
 	textarea,
 	input {
@@ -2828,17 +2826,12 @@ body.font-size-3 .toolbar-label {
 	/*@since 18.9 */
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
-		max-width: none;
+		max-width: 1267px;
+		margin: 0 auto;
 		padding: 1em;
     }
 	 
-	.excerpt-wrapper,
-	.single .main-content .entry-content,
-	.page .main-content .entry-content{
-		column-count: 2;
-    column-rule: 1px dotted #505050;
-		column-gap: 56px;
-	}
+
 	article > header {
 		text-align: center;
 	}

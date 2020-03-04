@@ -91,7 +91,7 @@ class Widget_Archives extends \WP_Widget {
 		$year_select_text = __( 'Select year', 'manduca' );
 		
 		// translators: second (month) select menus's text in archive widget until no year selected.
-		$month_select_text = __( 'First select year', 'manduca' );
+		$month_select_text = __( 'Select year', 'manduca' );
 				
 		?>
 		
