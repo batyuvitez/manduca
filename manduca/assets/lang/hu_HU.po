@@ -116,7 +116,7 @@ msgstr "Lábrész"
 #. selected:
 #: inc/class-widget-archives.php:242 inc/class-widget-archives.php:338
 msgid "Months in %s"
-msgstr "archívum %s. évben"
+msgstr "Hónapok %s."
 
 #: inc/class-widget-archives.php:150
 msgid "Title:"
@@ -129,7 +129,7 @@ msgstr "Szűrés"
 #. translators: second (month) select menus's text in archive widget until no
 #. year selected.
 #: inc/class-widget-archives.php:94
-msgid "Select year"
+msgid "Select month"
 msgstr "Hónap"
 
 #. translators: first (year) select menu's text in archive widget

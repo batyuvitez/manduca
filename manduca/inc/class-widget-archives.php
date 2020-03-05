@@ -91,8 +91,7 @@ class Widget_Archives extends \WP_Widget {
 		$year_select_text = __( 'Select year', 'manduca' );
 		
 		// translators: second (month) select menus's text in archive widget until no year selected.
-		$month_select_text = __( 'Select year', 'manduca' );
-				
+		$month_select_text = __( 'First select year', 'manduca');
 		?>
 		
 		<select id="manduca-archive-year-dropdown" name="manduca-archive-year-dropdown" >
@@ -239,7 +238,7 @@ class Widget_Archives extends \WP_Widget {
             }
 			
 		 //translators: second select menu's text in archive widget is year is selected:
-		$month_text_year_selected = __( 'Months in %s', 'manduca' );
+		$month_text_year_selected = __( 'Select month', 'manduca' );
             foreach( $years as $year ){
                $current_year = array();
                foreach ( (array) $results as $result ) {
