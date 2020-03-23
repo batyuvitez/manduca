@@ -134,7 +134,6 @@ Class Link_Functions {
                    foreach( $attrs  as $attr ) {
                       if( 'alt' == $attr->name) {
                          $alt_text = $attr->value ;
-                         $child_node->setAttribute( 'role', 'presentation' );
                         }
                     }
                 }
