@@ -278,8 +278,7 @@ Class Link_Functions {
             }
       }
       
-        $this->modify_img_without_alt();
-        
+                
         /*
          *End the process.
          *save Html and exit
@@ -598,18 +597,6 @@ Class Link_Functions {
     
     
     
-    /*
-     * Add role="presentation" to images without alt-text
-    * @since 18.10
-    */
-    protected function modify_img_without_alt(){
-        foreach ( $this->dom->getElementsByTagName('img') as $node) {
-            $alt= 	$node->getAttribute( 'alt' );
-            if( empty( $alt ) || '' == $alt ) {
-             $node->setAttribute( 'role', 'presentation' );
-            }
-        }
-    }
     
     
     /*
