@@ -75,9 +75,6 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 		$item_output  = $args->before;
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $item->title . $args->link_after;
-		if(  in_array( 'menu-item-has-children', $item->classes, true ) ) {
-			$item_output .= manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) );
-		}
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 

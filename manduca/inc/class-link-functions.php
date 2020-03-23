@@ -49,6 +49,8 @@ Class Link_Functions {
          //wp-archive has no filter, but Manduca has its own accessible widget for it.
    }
    
+ 
+   
     /*
      * Filter the content of different parts of webpage (main,widget etc. )
      *
@@ -61,7 +63,6 @@ Class Link_Functions {
      * 
     */
     public function filter_links( $content ) {
-      
         libxml_use_internal_errors( true );
         $this->dom = new \DOMDocument;
         $content = mb_convert_encoding (

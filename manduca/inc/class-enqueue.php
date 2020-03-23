@@ -63,10 +63,14 @@ class Enqueue{
       
       $js_variables = array(
                         // Translators: Accessible show-hide system: expand all button 
-                        'expand_all'        => __( 'Expand all', 'manduca' ),
+                        'expand_all'=> __( 'Expand all', 'manduca' ),
                         // Translators: Accessible show-hide system: collapse all button 
-                        'collapse_all'      => __( 'Collapse all', 'manduca' ),
-                  );               
+                        'collapse_all'=> __( 'Collapse all', 'manduca' ),
+                        //Translators: submenu expand
+                        'expand'=>__( 'expand child menu', 'manduca' ),
+                        //Translators: submenu collapse
+                        'collapse'=>__( 'collapse child menu', 'manduca' ),
+                        'icon'=>manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true )));
 			
       if( \Manduca\Widget_Archives::is_this_widget_active() ) {
          $js_variables['hash']       	= wp_create_nonce( 'manduca-ajax' );
@@ -94,6 +98,7 @@ class Enqueue{
       $js_variables = $js_variables + $focus_snail_color;
       wp_localize_script( 'manduca-scripts', 'manducaVariables', $js_variables );
       wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
+      
 	}
    
    

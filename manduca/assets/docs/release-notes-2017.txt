@@ -250,12 +250,12 @@ This version is a major upgrade. Developed and tested for 3 months. The subversi
         ==design bug ==
             -did not show galery grid
             
-    7.4.13
+    17.4.13
         8 May, 2017
         ==code optimization  ==
             - add different page template for footer menu and footer siteinfo. 
     
-    7.4.14
+    17.4.14
     9 May, 2017        
         ==theme flexibility ==
             -allow mobile menu JS to work if button is in different block element. (i.e. instead of #masthead > .megamenu-parent )
@@ -265,17 +265,17 @@ This version is a major upgrade. Developed and tested for 3 months. The subversi
             -comments h1 had no margin-left,
             -comments meta has no nics tipography
             
-    7.4.15
+    17.4.15
         15 May, 2017
         - backup just for 
     
-    7.4.16
+    17.4.16
         22 May. 2017
         ==bug and optimization ==
             - do not add .nav-item to menu-item because it useless.
             -Change css too
     
-    7.4.17
+    17.4.17
         7 June, 2017
         ==bugs==
         - comments aside open tag missing
@@ -285,59 +285,59 @@ This version is a major upgrade. Developed and tested for 3 months. The subversi
         - svg format in admin.
         -move editor.css to /assets/css/ library
         
-    7.4.18
+    17.4.18
         12 June, 2017 
         - only one columns if no thumbnail
         -load print.css from root of  child theme if there is.
         - ==bug== if there is custom post type check if single only 'post' post-type.
         - Nothing shown until css is loaded. 
     
-    7.4.20
+    17.4.20
         19 June, 2017
         -design problem: submenu
         
-    7.4.21
+    17.4.21
         21 June 2017
         -Add new template parts/main/webpage-top and webpage-bottom. This is only one file to effective control the HTML structure of each type of webpage. 
     
-    7.4.22
+    17.4.22
         23 June, 2017
         - design enhancament:
                 -small post-image 
                 - serach-submit positioning, design.
                 -responsive top bar
         
-    7.4.23
+    17.4.23
         1 July,
         - felxibility: add template part for skiplinks.
         - usability: add show submenu on hover.
         - bug: full page template did not worked.
         
-    7.4.24
+    17.4.24
         10 July, 2017
         bug: on single page post navigation did not worked
         code style: introduce inc/template-functions.php to clarify coding
         -code enhancement: add scg function to post navigation.
-    7.4.25
+    17.4.25
         12 July, 2017.
         design bug: excerpt iamge width 50% deleted.
     
-    7.4.26
+    17.4.26
         16, July, 2017
         - design bug: post navigation border was dark.
         - design bug: excerpt image was overwlowed.
         
-    7.4.27
+    17.4.27
         17 July, 2017
         -design bug: search field padding.
         -code optimization  and documentation: functions.php splitted into more files in /inc/ folder.
         
-    7.4.28
+    17.4.28
         19 July, 2017
         - design bug: post-image float only in excerpt.
         - design bug: crop-image sizing.
         
-    7.4.29
+    17.4.29
         20 July, 2017
         Uploaded as 17.7 to repository. 
         design corrections. 
