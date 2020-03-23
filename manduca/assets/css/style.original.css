@@ -782,6 +782,10 @@ body .site,
 	bottom: 0;
 }
 
+#manduca-back-to-top {
+	display: block;
+}
+
 #manduca-back-to-top:active,
 #manduca-back-to-top:focus {
 	right:0;
