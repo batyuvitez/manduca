@@ -15,6 +15,7 @@ manduca_svg_icons               : Filter svg icon array before put it into globa
 manduca_extension_array         : Filter the aria label texts and icons added to the links | located: class-link-functions.php
 manduca_url_scheme_array        : Filter the aria label texts and icons added to the links | located: class-link-functions.php
 manduca_link_rel                : Filter the rel attributes of external links. | since 19.1 | located: class-add-nofollow-to-links.php
+excerpt_length                  : Depretiated, instead use function variable of Manduca_Template_Function::get_the_excerpt () 
 
 
 Boolean filters:
