@@ -14,7 +14,7 @@
 				$class = 'no-thumbnail';
 			}
 			//display header tag
-			printf( '<header class="%1$s">',
+			printf( '<header class="content %s">',
 				   $class
 				   );
 	?>
