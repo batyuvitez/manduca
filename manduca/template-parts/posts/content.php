@@ -14,7 +14,7 @@
 				$class = 'no-thumbnail';
 			}
 			//display header tag
-			printf( '<header class="content %s">',
+			printf( '<header class="content-header %s">',
 				   $class
 				   );
 	?>
@@ -23,7 +23,7 @@
 
 		<?php if ( has_post_thumbnail() ) : ?>
 			
-			<div>
+			<div class="content-thumbnail">
 				<?php the_post_thumbnail( 'post-size' ); ?> 
 			</div>
 
