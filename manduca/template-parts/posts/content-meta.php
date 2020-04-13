@@ -8,7 +8,7 @@
 
 
 $meta_generator = new Meta_Tag_Generators;
-$list_item_mask 	= '<li>%s<span>%s : </span>%s</li>';
+$list_item_mask 	= '<li>%s<span class=metaBlock><span>%s : </span>%s</span></li>';
 
 $utility_text 	= sprintf(
 							$list_item_mask,

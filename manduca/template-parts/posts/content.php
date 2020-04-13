@@ -32,7 +32,6 @@
 		<?php //deprecated_after_title_function(); ?>
 		
 	</header>
-			
 	<?php get_template_part( '/template-parts/postlink', 'edit' ) ; ?>
 	
 
