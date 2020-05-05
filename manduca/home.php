@@ -25,7 +25,7 @@
 
 	<?php if ( have_posts() ) : ?>
 	
-		<header>
+		<header>home
 			<h1 id="homepage" tabindex="0"><?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?></h1>
 		</header>
 	

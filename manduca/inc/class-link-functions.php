@@ -160,6 +160,7 @@ Class Link_Functions {
                     
                     unset( $alt_text);
                 }
+                $this->classes[] ='attachment-link';
             }
              
             /*
