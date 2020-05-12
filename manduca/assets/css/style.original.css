@@ -1,15 +1,16 @@
+@charset "UTF-8";
 /*
 Theme Name: Manduca
-Theme URI: https://akadálymentes-wordpress-sablon.hu
+Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
-Author URI: https://akadálymnentes-honlap.hu
-Version: 20.2
+Author URI: https://akadálymnentes-honlap.hu/
+Version: 20.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
 Text Domain: manduca
-Github: https://github.com/batyuvitez/manduca
+Github: https://github.com/batyuvitez/manduca/
 */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -43,7 +44,6 @@ Github: https://github.com/batyuvitez/manduca
 
 /* Reset and set defaults
 -------------------------------------------------------------- */
-@charset "UTF-8";
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -462,13 +462,14 @@ video {
 }
 
 /* Images */
-.post-thumbnail{
-	/*max-height: 196px;
-	max-height: 14rem; deleted in 17.3.1*/	
+.post-thumbnail .wp-caption{
+	text-align: center;
+}
+.excerpt-thumbnail{  
 	margin: 1.07rem auto;
 	overflow: hidden;
 }
-.post-thumbnail>img{
+.excerpt-thumbnail>img{
 	display: block;
 	max-width: 100%;
 	height: auto!important;
@@ -2394,13 +2395,13 @@ body.font-size-3 .toolbar-label {
 	}
 	
 	/* excerpt */
-	.post-thumbnail {
+	.excerpt-thumbnail {
 		float: left;
 		margin: 4px 7px 7px 0;
 		width: 35%;
 		max-height: 210px;
 	}
-	.post-thumbnail  img {
+	.excerpt-thumbnail  img {
 		max-width: 100%;
 		width: auto;
 		height: auto
@@ -2423,7 +2424,7 @@ body.font-size-3 .toolbar-label {
 	.page-template-full-width img.wp-post-image { /* Full width page*/
 		margin: 42px auto;
 	}
-	.post-thumbnail img.wp-post-image {
+	.excerpt-thumbnail img.wp-post-image {
 		float: left				
 	}
 	
