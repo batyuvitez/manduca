@@ -1,9 +1,22 @@
 <?php
-/**
- * Manduca
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
- * @since 1.0 */
- 
+	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+
+    Source code is available at https://github.com/batyuvitez/manduca
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/ 
 ?>
 <?php $title = str_replace(' | ', '<br />', get_the_title() ); // Change | to line break ?>
 
@@ -11,16 +24,7 @@
 		
 		<header>
 				<h1><?php echo $title ; ?></h1>
-						
-			
-				<?php if ( has_post_thumbnail() ) :  ?>
-				
-					<div>
-						<?php the_post_thumbnail( 'post-size' ); ?>
-					</div>
-		
-				<?php endif; ?>
-			
+				<?php get_template_part( 'template-parts/posts/featured-image' ); ?>
 		</header>
 			
 				
