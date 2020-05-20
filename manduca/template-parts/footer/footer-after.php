@@ -10,7 +10,7 @@
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,9 +28,10 @@
 
 ?>
 <div class="manduca-back-to-top-div featured-scheme">
-   <a id="manduca-back-to-top" accesskey="T" class="use-tooltip" href="javascript::" >
-         <span class="screen-reader-text"><?php _e( 'Back to top', 'manduca' ); ?></span>
-         <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
-         <span class="tooltip"><?php _e( 'Access key', 'manduca') ; ?>: T</span>
+   <a id="manduca-back-to-top"
+      aria-label="<?php _e( 'Back to top', 'manduca' ); ?>"
+      class="use-tooltip"
+      href="javascript::" >
+      <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
    </a>
 </div>
