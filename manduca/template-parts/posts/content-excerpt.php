@@ -58,4 +58,4 @@
 
 </div>
 
-<?php echo Manduca_Template_Functions::post_navigation(); ?>
+<?php get_template_part ('/template-parts/posts/excerpt', 'navigation'); ?>

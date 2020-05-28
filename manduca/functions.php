@@ -58,18 +58,11 @@ if( !empty ($files ) ) {
 
  
 // If child_theme exists, it may opened Manduca_Classloader
-if( class_exists( 'Manduca_Classloader' ) ) {
-    
+if( class_exists( 'Manduca_Classloader' ) )     
     Manduca_Classloader::add_dirs( $dirs );
-
-}
-
-
-else {
-	  
-   require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );
-	  
+else
+{	  
+   require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );  
    new Manduca_Classloader( $dirs );		
 }
-
 ( new Manduca_Setup )-> init();
