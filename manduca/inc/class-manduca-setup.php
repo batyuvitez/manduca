@@ -11,7 +11,7 @@
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -165,6 +165,7 @@ class Manduca_Setup {
 			'default-color' => 'f3f3f5',
 		) );
 		
+		new Custom_Header_Image;
 	}
 	
 	
