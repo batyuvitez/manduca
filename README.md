@@ -6,9 +6,10 @@ There is only a very basic customizer in this theme. You are encouraged to use M
 
 ## Key features
 * This is suitable for **Hungarian language sites**: it has special Hungarian functions and the translation is kept up-to-date.
-* Suitable for sites want to comply with **ISO/IEC 40500:2012 (WCAG)**.
+* Suitable for sites want to comply with **WCAG 2.1**.
 * Tested in comprehensive manner: very differnt OS, browsers and assistive technologies.
-* Focus snail to improve focus changes for people uses keyboard rather than mouse.
+* Many accessibility and UX feature built in.
+* Recommended for individually designed websites
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
@@ -19,7 +20,7 @@ There is only a very basic customizer in this theme. You are encouraged to use M
 In case of notice any bugs or failure, please contact me: Zsolt Edelényi (ezs@web25.hu).
 
 ## Copyright and licencing information
-Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+Copyright 2015-2020 Zsolt Edelényi (ezs@web25.hu)
 This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
 * Focus Snake <https://github.com/NV/focus-snail> : licence: MIT 
 * Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 
@@ -57,5 +58,5 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * Thanks to Endre Nagy who always ready to help me. 
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
-## Demo 
-* [https://akadálymentes-wordpress-sablon.hu](https://www.xn--akadlymentes-wordpress-sablon-jnc.hu)
+## Manduca used with individual design:
+* [https://web25.hu](https://xn--akadlymentes-honlap-tub.hu/cikkek/akadalymentes-wordpress-sablon/)

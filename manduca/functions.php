@@ -25,39 +25,11 @@
 */
 
  
- // Load files
- 
  $dirs = array( get_template_directory() .'/inc/',
                'Manduca' => get_template_directory() .'/inc/' ) ;
-		
   
-  
-// Open the files which ara not classes. 
-$dir 			= get_template_directory() .'/inc/notclasses/' ;
-$files 		= scandir( $dir );
 
-
-
-//Get rid of points (libraries )
-$files 		= array_diff( $files, array('..', '.') ) ;
-
-
-// Open all files in it
-if( !empty ($files ) ) {
-    
-    foreach( $files as $file ) {
-    
-        if( strpos( $file , '.php' ) !== false ) {
-    
-         require_once( $dir .$file );
-    
-        }
-    
-    }
-}
-
- 
-// If child_theme exists, it may opened Manduca_Classloader
+ // If child_theme exists, it may opened Manduca_Classloader
 if( class_exists( 'Manduca_Classloader' ) )     
     Manduca_Classloader::add_dirs( $dirs );
 else
