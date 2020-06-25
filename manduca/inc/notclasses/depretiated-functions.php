@@ -14,5 +14,13 @@
 	  $svg= new SVG_Functions( $args ) ;
 	  return $svg->Return_HTML();
 	  
-	  
  }
+ 
+ /*
+  * Since WP 5.2 it needed for backwards compatibility
+  * */
+ if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
