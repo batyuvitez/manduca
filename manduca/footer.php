@@ -1,8 +1,7 @@
 <?php
 /**
- * Display end of the page 
+ * Display the bottom of the page 
  *
- * @ since 1.0
  **/
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -28,7 +27,7 @@
 
 			<div id="footer-wrapper" class="footer-wrapper inverse-scheme">
 				<h1 class="skip-link" tabindex="0" ><?php _e( 'Footer area' , 'manduca' ); ?></h1>
-				<footer id="colophon" >
+				<footer id="colophon" role="contentinfo" >
 					<div class="site-info">
 						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
 						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>

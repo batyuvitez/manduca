@@ -3,8 +3,6 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @since 1.0
- * @last mod 17.11
  **/
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
@@ -43,7 +41,7 @@
 			<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 			<div id="masthead" class="site-header megamenu-parent" >
 				<div id="header-bar" class="header-bar">
-					<header>											
+					<header role="banner">											
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 					</header>

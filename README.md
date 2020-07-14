@@ -2,14 +2,14 @@
 
 
 ## Important
-There is only a very basic customizer in this theme. You are encouraged to use Manduca with child theme in order to create individual design and setup accessibility features. 
+You are encouraged to use Manduca with child theme in order to create individual design. 
 
 ## Key features
 * This is suitable for **Hungarian language sites**: it has special Hungarian functions and the translation is kept up-to-date.
 * Suitable for sites want to comply with **WCAG 2.1**.
 * Tested in comprehensive manner: very differnt OS, browsers and assistive technologies.
 * Many accessibility and UX feature built in.
-* Recommended for individually designed websites
+* Recommended for individually designed websites.
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
