@@ -5,6 +5,8 @@
  * @ Theme: Manduca - focus on accessibility
  * @ since 17.7
  *
+ * depretiatied as of 20.7
+ * @see \Manduca\Walker_Navmenu
  **/
 
 class Manduca_accessible_walker extends Walker_Nav_Menu  {

@@ -30,6 +30,7 @@ Please note, that the listed feature is not definately a success criterion for c
         - Keyboard accessibility ( A 2.1.1, 2.1.2 )
         - Support correct headings ( AA 2.4.6, AAA 2.4.8 )
         - Focus visible ( AA 2.4.7)
+        - WAI menubar
 
 3. Understandable
         - Hungarian language support
@@ -42,19 +43,3 @@ Please note, that the listed feature is not definately a success criterion for c
 
 
 
-
-
-Template-parts
---------------
-Located: manduca/template-parts/
-
-
-Header
-        /header/backgroundimage.php     : Add template part (background, GA scripts etc) just after the <body> tag.
-        /header/breadcrumb-template.php : Breadcrumb template use the Manduca's breadcrumb class. (important: Breadcrumb is effective not part of the header! )
-        
-Footer
-        /footer/footer-before.php       : Add something to html before the <main> tag. | located: footer.php
-        /footer/footer-after.php        : Add something to html just before closing div.site  tag. | located: footer.php | since 18.7
-        
-Posts   /posts/conent-search.php        : Add special template search. 

@@ -4,7 +4,7 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
 Author URI: https://akadálymnentes-honlap.hu/
-Version: 20.4
+Version: 20.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
@@ -171,7 +171,7 @@ body .site,
 textarea,
 input, 
 body .site .basic-scheme,
-.megamenu.toggled-on {
+.site-header-menu.toggled-on {
 	background-color: #f7f7f7;
 	color: #232323	
 }
@@ -264,7 +264,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 a.page-numbers.next,
 a.page-numbers.prev,
 .main-navigation ul li a,
-.megamenu .sub-nav ul li {
+.site-header-menu .sub-nav ul li {
 	border-bottom: none;
 }
 
@@ -798,30 +798,6 @@ body .site,
  * Page structure
 */
 
-/* two columns layout */
-.inner-wrapper {
-		display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:stretch;
-		max-width: 180em;
-		margin: 0 auto;
-		
-	}
-	
-	
-	body:not( .page-template-full-width) .site-content {
-		width: 75%;
-		max-width: 180em;
-		
-	}
-	.widget-area {
-		width: 25%;
-		max-width: 60em;
-		
-}
-
 
 
 /* Header */
@@ -953,7 +929,10 @@ transform: rotate(180deg);
 }
 
 
-/* Navigation Menu */
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            Menu toggle                        +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
 
 .megamenu:not(.toggled-on) {
 	display: none;
@@ -978,7 +957,15 @@ transform: rotate(180deg);
 	display: block;
 }
 
-/* Accessible mega menu list &since 17.4 */
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            Adobe Accessible mega menu list           +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+
+@(ul.nav-menu)
+@since 17.4
+*/
+
 .site ul.nav-menu {
 	display: block;
 	position: relative;
@@ -989,27 +976,28 @@ transform: rotate(180deg);
 	
 }
 
-/* a top level navigation item in the mega menu */
-.megamenu ul.nav-menu > li.menu-item  {
+.site-header-menu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
 }
 
-.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+.site-header-menu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 1em;
 	font-size: 1.5em;
 }
 
-
+.site-header-menu nav ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+		font-size: 1.35em;
+	}
 
 
 /* open state of first descendant link
 
 /* Menu item has children*/
-.megamenu ul.nav-menu  > li.menu-item-has-children > a {  
+.site-header-menu ul.nav-menu  > li.menu-item-has-children > a {  
     padding-right: 3rem;
 	width: 100%;
 }
@@ -1056,7 +1044,88 @@ transform: rotate(180deg);
 
 
 
-/* Sidebar */
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+              WAI NAVIGATION MENUBAR  						     +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
+
+ul[role="menubar"] .menu-item  [role="menuitem"]{
+  font-size: 1.5em;
+	padding: 0.33em 1em;
+}
+
+ul[role="menubar"] .wai-submenu  [role="menuitem"]{
+  font-size: 1.2em;
+	text-decoration: none;
+	padding: 0.2em 0.6em;
+	border-bottom: 1px dotted #c0c0c0;
+}
+
+ul[role="menubar"] [role="separator"] {
+  padding-top: 0.15em;
+  background-image: url('../images/separator.png');
+  background-position: center;
+  background-repeat: repeat-x;
+}
+li.menu-item-has-children li.menu-item {
+	text-align: left;
+}
+
+li.menu-item-has-children ul {
+	background-color: white;
+	border: 1px solid #c0c0c0;
+}
+
+ul[role="menubar"] [role="menuitem"]:focus,
+ul[role="menubar"] [role="menuitem"]:hover  {
+  background-color: #1f6c91;
+  color: white;
+}
+
+[role="menuitem"] svg {
+	fill: #1f6c91;
+}
+ul[role="menubar"] li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="menubar"] > li {
+  display: inline;
+  position: relative;
+}
+
+
+ul[role="menubar"] ul[role="menu"] {
+  display: none;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="menubar"] ul[role="menu"] li a {
+  display: block;
+  max-width: 15em;
+}
+
+
+
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+                          Sidebar                    +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
 .widget-searchform ws {
 	margin-top: 0;
 }
@@ -1765,7 +1834,16 @@ a.comment-edit-link {
 	stroke-width: 0;
 }
 
-/*15. SVG formating*/
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+             SVG FORMATTING                          +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
 
 /* Shortcodes formating @since 17.9.7 */
 .site svg {
@@ -1820,9 +1898,24 @@ svg.icon-extlink {
 
 
 
-/* 12 b.* Accessibility toolbar (Reading options) (different colours, fonts, font-sizes)
- * @since 18.12
--------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            READING OPTIONS                          +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
 
 .high-contrast-1,
 .high-contrast-2 {
@@ -1989,7 +2082,7 @@ svg.icon-extlink {
 }
 
 
-/* font-type-2: Talpas*/
+/* font-type-2: Seriff */
 
 .font-type-2 .site,
 .font-type-2 .site,
@@ -2110,13 +2203,21 @@ body.font-size-3 .toolbar-label {
 }
 
 
-/* end of accessibility toolbar */
 
-/* accessible back-to-top function
- * @since 19.1
- -------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            Accessible back-to-top function          +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
 .manduca-back-to-top-div {
-	position: fixed;
+		position: fixed;
     opacity: 0;
     overflow: hidden;
     text-align: center;
@@ -2145,9 +2246,18 @@ body.font-size-3 .toolbar-label {
     opacity: 1.0;
 }
 
-/* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
- * * @since 19.3
- ---------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            Accessible hide-show system               +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
 .js-to_expand[aria-hidden=true],
 .js-to_expand[data-hidden=true] {
   display: none;
@@ -2169,15 +2279,47 @@ body.font-size-3 .toolbar-label {
 }
 
 
- 
-/* 13. Media queries
--------------------------------------------------------------- */
 
-/* Does the same thing as <meta name="viewport" content="width=device-width">,
- * but in the future W3C standard way. -ms- prefix is required for IE10+ to
- * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. Sg500ee https://core.trac.wordpress.org/ticket/25888.
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+                    13. Media queries						     +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+
+
 @-ms-viewport {
 	width: device-width;
 }
@@ -2206,6 +2348,32 @@ body.font-size-3 .toolbar-label {
 
 /*  Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
+	
+	
+	/* two columns layout */
+	.inner-wrapper {
+			display:flex;
+			flex-wrap:wrap;
+			flex-direction:row;
+			justify-content:flex-start;
+			align-items:stretch;
+			max-width: 180em;
+			margin: 0 auto;
+			
+		}
+		
+		
+		body:not( .page-template-full-width) .site-content {
+			width: 75%;
+			max-width: 180em;
+			
+		}
+		.widget-area {
+			width: 25%;
+			max-width: 60em;
+			
+}
+
 	
 	/*
 	 *TYPOGRAPHY
@@ -2287,10 +2455,7 @@ body.font-size-3 .toolbar-label {
 		float: left;
 	}
 	
-	.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
-		font-size: 1.35em;
-	}
-
+	
 	
 	.alignright {
 		float: right;
@@ -2630,7 +2795,7 @@ body.font-size-3 .toolbar-label {
 		display: block;
 	}
 
-	.site-header-menu .megamenu {
+	.site-header-menu > div{
 		display: block;
 		margin: 0;
 		text-align: center;
@@ -2638,7 +2803,7 @@ body.font-size-3 .toolbar-label {
 	 	
 	
 
-	.megamenu ul.nav-menu > li.menu-item {
+	.site-header-menu ul.nav-menu > li.menu-item {
 		margin-top: 1.714285714rem;
 		display: inline-block;
 	}
@@ -2654,7 +2819,7 @@ body.font-size-3 .toolbar-label {
 		text-align: center;
 	}
 	
-	.megamenu ul.nav-menu > li > a {
+	.site-header-menu ul.nav-menu > li > a {
 		padding: 7px 14px;
 		white-space: nowrap;
 		font-weight: 500;
@@ -2670,7 +2835,7 @@ body.font-size-3 .toolbar-label {
 	}
 
 
-	.megamenu li.menu-item-has-children {
+	.site-header-menu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0rem;
 	}
@@ -2729,10 +2894,10 @@ body.font-size-3 .toolbar-label {
 		box-shadow: none;
 	}
 	/* top level navigation item */
-		.megamenu ul.nav-menu > li.menu-item > a {
+		.site-header-menu ul.nav-menu > li.menu-item > a {
 		font-size: 1.5em;
 	}
-	.megamenu ul.nav-menu > li.menu-item > span {  /* @18.7 */
+	.site-header-menu ul.nav-menu > li.menu-item > span {  /* @18.7 */
 		font-size: 1.4em;
 		
 	}

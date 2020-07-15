@@ -2,13 +2,14 @@
 
 
 ## Important
-There is only a very basic customizer in this theme. You are encouraged to use Manduca with child theme in order to create individual design and setup accessibility features. 
+You are encouraged to use Manduca with child theme in order to create individual design. 
 
 ## Key features
 * This is suitable for **Hungarian language sites**: it has special Hungarian functions and the translation is kept up-to-date.
-* Suitable for sites want to comply with **ISO/IEC 40500:2012 (WCAG)**.
+* Suitable for sites want to comply with **WCAG 2.1**.
 * Tested in comprehensive manner: very differnt OS, browsers and assistive technologies.
-* Focus snail to improve focus changes for people uses keyboard rather than mouse.
+* Many accessibility and UX feature built in.
+* Recommended for individually designed websites.
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
@@ -19,12 +20,13 @@ There is only a very basic customizer in this theme. You are encouraged to use M
 In case of notice any bugs or failure, please contact me: Zsolt Edelényi (ezs@web25.hu).
 
 ## Copyright and licencing information
-Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+Copyright 2015-2020 Zsolt Edelényi (ezs@web25.hu)
 This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
 * Focus Snake <https://github.com/NV/focus-snail> : licence: MIT 
 * Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 
 * Accessible tabs <http://github.com/ginader/Accessible-Tabs>  Licence: MIT & GPL
 * jQuery simple and accessible hide-show system (collapsible regions), using ARIA | License MIT
+* WAI accessible menubar: <https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>
 
 ## FAQ
 ### Why you developed a new theme if there is so many professional ones on the web?
@@ -43,10 +45,11 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  
 ### 2.0
  Released November 26, 2015.
- Comply with WordPress Theme Development and Accessibility Standards. 
+ Comply with WordPress Theme Development and Accessibility Standards.
+ 
  
 ### Further development
- See release-notes in 'assets/docs/' library.
+ See release-notes in [assets/docs](tree/master/manduca/assets/docs) library.
  
 ## Credits and acknowledgement
 * I wish to convey special thanks to my wife: Nóra.
@@ -57,8 +60,9 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * Thanks to Endre Nagy who always ready to help me. 
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
-## Demo 
-* [http://akadálymentes-wordpress-sablon.hu](http://www.xn--akadlymentes-wordpress-sablon-jnc.hu)
+## Manduca used with individual design:
+* <https://xn--akadlymentes-honlap-tub.hu/elkeszult-munkak-velemenyek/>
+
 
  
  

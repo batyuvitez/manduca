@@ -48,4 +48,6 @@ How to ...
             Use keys: space or enter to hide/show,
             Use escape to hide actual part.
             
-            
+
+...Use Adobe megamenu (default until 20.7) instead of WAI menubar (since 20.7):
+      copy with overwrite the template-parts/header/adobe-megamenu.php to template-parts/header/menu.php

@@ -26,6 +26,7 @@ This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Othe
 * Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 
 * Accessible tabs <http://github.com/ginader/Accessible-Tabs>  Licence: MIT & GPL
 * jQuery simple and accessible hide-show system (collapsible regions), using ARIA | License MIT
+* WAI accessible menubar: <https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document>
 
 ## FAQ
 ### Why you developed a new theme if there is so many professional ones on the web?
@@ -44,7 +45,8 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  
 ### 2.0
  Released November 26, 2015.
- Comply with WordPress Theme Development and Accessibility Standards. 
+ Comply with WordPress Theme Development and Accessibility Standards.
+ 
  
 ### Further development
  See release-notes in [assets/docs](tree/master/manduca/assets/docs) library.
@@ -59,4 +61,4 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
 ## Manduca used with individual design:
-* [https://web25.hu](https://xn--akadlymentes-honlap-tub.hu/cikkek/akadalymentes-wordpress-sablon/)
+* <https://xn--akadlymentes-honlap-tub.hu/elkeszult-munkak-velemenyek/>

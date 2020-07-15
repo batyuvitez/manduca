@@ -1,9 +1,13 @@
 <?php
 /**
  * Displays top navigation
+ *
+ * @since 17.4
+ * @unitl 20.7
  * 
- * @ since 17.4
- * @last modification: 18.10.16
+ * 
+ * Teplaced by wai menubar
+ *@see: https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-1/menubar-1.html)
  */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -40,35 +44,25 @@
 
 <div id="site-header-menu" class="site-header-menu">
 	
-	<?php if ( has_nav_menu( 'primary' ) ) :
-	$aria_label='aria-label="'.$menu_name.'"';
-	$items_wrap='<ul ';
-	$items_wrap.='id="%2$s" ';
-	$items_wrap.='role="menubar"';
-	$items_wrap.=$aria_label;
-	$items_wrap.='>%3$s</ul>';
-	?>
+	<?php if ( has_nav_menu( 'primary' ) ) : ?>
 	
 		<div id="site-navigation" class="main-navigation">
 			
-			<nav <?php echo $aria_label; ?>>
+			<nav id="megamenu" class="megamenu" aria-label="<?php echo $menu_name; ?>">
 				<?php
 					$args = array(
 					   'theme_location'  => 'primary',
 					   'menu'            => 'primary Menu',
-					   'menu_class'      => 'wai-nav-menu',
+					   'menu_class'      => 'nav-menu',
 					   'container'       => false,
-					   'items_wrap'      => $items_wrap,
+					   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
 					   'depth'           => 3,
-					   'walker'          => new \Manduca\Walker_Wai_Navmenu
+					   'walker'          => new Manduca_accessible_walker() 
 					   );
 					wp_nav_menu( $args );
 				?>
-				</nav>
-			<script type="text/javascript">
-				var menubar = new Menubar(document.getElementById('wai-nav-menu'));
-				menubar.init();
-			</script>	
+			</nav>
+			
 		</div>
 		
 	<?php endif; ?>
