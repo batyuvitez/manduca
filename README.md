@@ -62,3 +62,17 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 
 ## Manduca used with individual design:
 * <https://xn--akadlymentes-honlap-tub.hu/elkeszult-munkak-velemenyek/>
+
+
+ 
+ 
+      |V|
+   .::| |::.
+  ::__| |__::
+ >____   ____<
+  ::  | |  ::
+   '::| |::'
+      | |
+      | |
+jgs   |A|
+(This art usage is based on: https://www.asciiart.eu/terms-of-use )
