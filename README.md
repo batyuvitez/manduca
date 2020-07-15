@@ -48,8 +48,13 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  Comply with WordPress Theme Development and Accessibility Standards.
  
  
-### Further development
- See release-notes in [assets/docs](tree/master/manduca/assets/docs) library.
+### Major developments
+ * 2016: Speed boost, accessible typography, HTML sitemap.
+ * 2017: Adobe accessible megamenu, link functions, accessible tabs, reading options.
+ * 2018: Sophisticated breadcrumb, refactoring, exhausting tests.
+ * 2019: Accessible archive widget, access keys and tooltips, accessible show-hide system.
+ * 2020: WAI accessible menubar.
+ 
  
 ## Credits and acknowledgement
 * I wish to convey special thanks to my wife: Nóra.
@@ -60,19 +65,5 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * Thanks to Endre Nagy who always ready to help me. 
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
-## Manduca used with individual design:
+## Manduca examples using childthemes:
 * <https://xn--akadlymentes-honlap-tub.hu/elkeszult-munkak-velemenyek/>
-
-
- 
- 
-      |V|
-   .::| |::.
-  ::__| |__::
- >____   ____<
-  ::  | |  ::
-   '::| |::'
-      | |
-      | |
-jgs   |A|
-(This art usage is based on: https://www.asciiart.eu/terms-of-use )

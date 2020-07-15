@@ -930,15 +930,15 @@ transform: rotate(180deg);
 
 
 /* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Menu toggle                        +---+
++---+                  Menu toggle                        +---+
 --++---++---++---++---++---++---++---++---++---++---++---++---+*/
 
 
-.megamenu:not(.toggled-on) {
+#navigation-bar:not(.toggled-on) ul {
 	display: none;
 }
 
-.megamenu.toggled-on {
+#navigation-bar.toggled-on {
 	text-align: left;
 	position: absolute;
 	top: 4em;
@@ -947,40 +947,41 @@ transform: rotate(180deg);
 }
 
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
-	font-weight: 700;
-}
-
-
-.no-js .main-navigation ul-sub-menu {
-	display: block;
-}
-
-
 
 /* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Adobe Accessible mega menu list           +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+
-@(ul.nav-menu)
-@since 17.4
-*/
-
-.site ul.nav-menu {
++---+            Main navigation bar common               +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+*/
+#navigation-bar.toggled-on ul {
 	display: block;
 	position: relative;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 1em;
 	z-index: 15;
-	
+	background-color: #e6e6e6;
 }
 
-.site-header-menu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
-	list-style: none;
+#navigation-bar ul > li.menu-item  { /* a top level navigation item in the mega menu */
+	display: block;list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
 }
+
+#navigation-bar .menu-item-has-children ul {
+	margin-left: 1em;
+	padding: 0.33em;
+}
+
+
+
+
+
+/* +---++---++---++---++---++---++---++---++---++---++---++---+
++---+            Adobe Accessible megamenu                +---+
+--++---++---++---++---++---++---++---++---++---++---++---++---+
+@(ul.nav-menu)
+@since 17.4
+*/
 
 .site-header-menu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
@@ -1043,6 +1044,17 @@ transform: rotate(180deg);
 }
 
 
+#navigation-bar .current-menu-item > a,
+#navigation-bar .current-menu-ancestor > a {
+	font-weight: 700;
+}
+
+
+.no-js #navigation-bar ul.sub-menu {
+	display: block;
+}
+
+
 
 
 
@@ -1056,11 +1068,14 @@ ul[role="menubar"] .menu-item  [role="menuitem"]{
 	padding: 0.33em 1em;
 }
 
-ul[role="menubar"] .wai-submenu  [role="menuitem"]{
+ul[role="menubar"] .wai-submenu  [role="menuitem"] {
   font-size: 1.2em;
 	text-decoration: none;
 	padding: 0.2em 0.6em;
 	border-bottom: 1px dotted #c0c0c0;
+}
+ul[role="menubar"] .wai-submenu .menu-item:last-child [role="menuitem"] {
+	border-bottom: none;
 }
 
 ul[role="menubar"] [role="separator"] {
@@ -1094,7 +1109,6 @@ ul[role="menubar"] li {
 }
 
 ul[role="menubar"] > li {
-  display: inline;
   position: relative;
 }
 
@@ -1913,7 +1927,7 @@ svg.icon-extlink {
 
 
 /* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            READING OPTIONS                          +---+
++---+            READING OPTIONS toolbar                  +---+
 --++---++---++---++---++---++---++---++---++---++---++---++---+*/
 
 
@@ -2195,8 +2209,12 @@ body.font-size-3 .toolbar-label {
 
 .phone-text {
     display: inline;
+		color: #111;
 }
- 
+
+#high-contrast-2 > span.phone-text 	{
+		color: #fff;
+}
 
 .button-container li {
     list-style: none;

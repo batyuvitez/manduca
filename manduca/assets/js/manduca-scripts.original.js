@@ -1,6 +1,6 @@
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020 Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ jQuery.noConflict();
 
 
 
-
+/*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*/
 /*
  * Focus snail  applied to Manduca
  *
@@ -476,21 +476,19 @@ function constrain(amt, low, high) {
 
 
 
-
+/*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*/
 /*
  * Contains handlers for navigation and widget area.
  * based on the script in theme twenty seventeen.
  */
 
-(function( $ ) {
+jQuery(document).ready(function($) {
 	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
 
-  
-
-	masthead       = $( '.megamenu-parent' );
-	menuToggle     = masthead.find( '.menu-toggle' );
-	siteNavContain = masthead.find( '.megamenu' );   
-	siteNavigation = masthead.find( '.megamenu > ul' );
+	masthead       = $( '#masthead' );
+	menuToggle     = masthead.find( '#menu-toggle' );
+	siteNavContain = masthead.find( '#navigation-bar' );   
+	siteNavigation = masthead.find( '#navigation-bar > ul' );
     toolbarButtons = $( '.toolbar-buttons' );
     toolbarButtonsOpen=$( '.toolbar-buttons-open' );
 
@@ -505,7 +503,7 @@ function constrain(amt, low, high) {
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
-      //Click menu-toggle
+   //Click menu-toggle
 		menuToggle.on( 'click.manduca', function() {
 			siteNavContain.toggleClass( 'toggled-on' );
             menuToggle.toggleClass( 'toggled-on' );
@@ -525,6 +523,15 @@ function constrain(amt, low, high) {
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*/
  
  
  -
@@ -899,7 +906,16 @@ function constrain(amt, low, high) {
 })( jQuery ); 
 
 
+
+
+
+
+
+
+
+/*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.**/
 jQuery(document).ready(function($) {
+ 
 
     /*
      * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
