@@ -2897,6 +2897,11 @@ body.font-size-3 .toolbar-label {
 /* 	END width of 600-975*/
 
 
+
+
+
+
+
 /*START width of 976-1359 pixels. */
 @media screen and (min-width: 976px) {
 	
@@ -3007,9 +3012,9 @@ body.font-size-3 .toolbar-label {
 
 
 
+
+
 @media screen and (min-width: 1590px ){
-	
-	
 	
 	/*@since 18.9 */
 	.site {
@@ -3035,6 +3040,9 @@ body.font-size-3 .toolbar-label {
 	}
 	
 }
+
+
+
 
 
 
@@ -3193,5 +3201,4 @@ body.font-size-3 .toolbar-label {
 		margin-left: 50px;
 		margin-left: 3.57142857rem;
 	}
-
 }

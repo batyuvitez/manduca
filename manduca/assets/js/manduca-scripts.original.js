@@ -483,14 +483,15 @@ function constrain(amt, low, high) {
  */
 
 jQuery(document).ready(function($) {
-	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
+	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen, body;
 
 	masthead       = $( '#masthead' );
 	menuToggle     = masthead.find( '#menu-toggle' );
 	siteNavContain = masthead.find( '#navigation-bar' );   
 	siteNavigation = masthead.find( '#navigation-bar > ul' );
-    toolbarButtons = $( '.toolbar-buttons' );
-    toolbarButtonsOpen=$( '.toolbar-buttons-open' );
+ toolbarButtons = $( '.toolbar-buttons' );
+ toolbarButtonsOpen=$( '.toolbar-buttons-open' );
+ body          =$( '#total');
 
 	// Enable menuToggle.
 	(function() {
@@ -503,15 +504,15 @@ jQuery(document).ready(function($) {
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
-   //Click menu-toggle
-		menuToggle.on( 'click.manduca', function() {
-			siteNavContain.toggleClass( 'toggled-on' );
-            menuToggle.toggleClass( 'toggled-on' );
-            toolbarButtonsOpen.removeClass( 'toggled-on');
-            toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
-            toolbarButtons.removeClass( 'toggled-on');
-            toolbarButtons.css( 'display', 'none' ); 
-            
+  //Click menu-toggle
+   menuToggle.on( 'click.manduca', function() {
+   siteNavContain.toggleClass( 'toggled-on' );
+   menuToggle.toggleClass( 'toggled-on' );
+   toolbarButtonsOpen.removeClass( 'toggled-on');
+   toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
+   toolbarButtons.removeClass( 'toggled-on');
+   toolbarButtons.css( 'display', 'none' ); 
+   body.toggleClass ('menu-toggled-on');        
 
 			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 		});
@@ -681,7 +682,7 @@ jQuery(document).ready(function($) {
       $('.toolbar-buttons-open').click(function(){
          $('.toolbar-buttons').slideToggle( 200 );
          //close toolbar, if menu opens    
-          if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) ) {
+         if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) ) {
             $( ".megamenu" ).removeClass( "toggled-on" );
             $( ".menu-toggle" ).removeClass( "toggled-on" );
         }
@@ -690,12 +691,13 @@ jQuery(document).ready(function($) {
              $( ".toolbar-buttons" ).removeClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-			 $('#toolbar-buttons-open').focus();  
+        $('#toolbar-buttons-open').focus();  
          }
          else {
              $( ".toolbar-buttons" ).addClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
              $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
+             $( "#total").toggleClass ("toolbar-toggled-on");
          }
     });
       

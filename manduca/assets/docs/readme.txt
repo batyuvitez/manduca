@@ -65,7 +65,7 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
 * Thanks to Endre Nagy who always ready to help me. 
 * And the most important: Thanks for Jesus Christ who is the essential supporter of my work. 
 
-## Manduca examples using childthemes:
+## Manduca examples using child themes:
 * <https://xn--akadlymentes-honlap-tub.hu/elkeszult-munkak-velemenyek/>
 
  
