@@ -170,8 +170,7 @@ img {
 body .site,
 textarea,
 input, 
-body .site .basic-scheme,
-.site-header-menu.toggled-on {
+body .site .basic-scheme {
 	background-color: #f7f7f7;
 	color: #232323	
 }
@@ -892,59 +891,52 @@ body .site,
 	margin-right: 1em;
 }
 
-/* menu-toggle */
 
-.megamenu.toggled-on,
 .no-js .site-header-menu {
 	display: block;
 }
 
 
-.main-navigation ul .toggled-on {
-	display: block;
-}
-.menu-toggle span {
-	display: none;
-}
-
-/*Button to open submenu in main navigation*/
-.dropdown-toggle {
-	background-color: transparent;
-	border: 0;
-	color: #1a1a1a;
-	height: 1.357rem;
-	width: 1.357rem;
-	padding: 0;
-	position: absolute;
-	right: 0;
-	text-transform: none;
-	top: 12px;
-	right: 6px;
-}
 
 
 
-.dropdown-toggle.toggled-on {
-transform: rotate(180deg);
-}
+
 
 
 /* +---++---++---++---++---++---++---++---++---++---++---++---+
 +---+                  Menu toggle                        +---+
 --++---++---++---++---++---++---++---++---++---++---++---++---+*/
 
+@media screen and (max-width: 764px) {
+	.main-navigation ul .toggled-on {
+		display: block;
+	}
+	.menu-toggle span {
+		display: none;
+	}
+	
+	.dropdown-toggle.toggled-on {
+	transform: rotate(180deg);
+	}
 
-#navigation-bar:not(.toggled-on) ul {
-	display: none;
+	#navigation-bar:not(.toggled-on) ul {
+		display: none;
+	}
+
+	#navigation-bar.toggled-on {
+		text-align: left;
+		position: absolute;
+		top: 4em;
+		z-index: 100;
+		padding: 1rem;
+	}
+	
+	#navigation-bar ul > li.menu-item  {
+		display: block !important;
+	}
 }
 
-#navigation-bar.toggled-on {
-	text-align: left;
-	position: absolute;
-	top: 4em;
-	z-index: 100;
-	padding: 1rem;
-}
+
 
 
 
@@ -962,7 +954,8 @@ transform: rotate(180deg);
 }
 
 #navigation-bar ul > li.menu-item  { /* a top level navigation item in the mega menu */
-	display: block;list-style: none;
+	display: inline-block;
+	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
 }
@@ -2010,7 +2003,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-2 .site,
-.high-contrast-2 .megamenu.toggled-on,
+.high-contrast-2 #navigation-bar .toggled-on,
 #high-contrast-2{
     background-color: #000;
     color: #fff ;
