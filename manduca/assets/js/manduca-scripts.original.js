@@ -480,9 +480,9 @@ function constrain(amt, low, high) {
 /*
  * Contains handlers for navigation and widget area.
  * based on the script in theme twenty seventeen.
- */
+ /*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*/
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {    //closed on line 908
 	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen, body;
 
 	masthead       = $( '#masthead' );
@@ -493,8 +493,11 @@ jQuery(document).ready(function($) {
  toolbarButtonsOpen=$( '.toolbar-buttons-open' );
  body          =$( '#total');
 
-	// Enable menuToggle.
-	(function() {
+	/*
+  * Enable menuToggle.
+  * */
+	
+ (function() {
 
 		// Return early if menuToggle is missing.
 		if ( ! menuToggle.length ) {
@@ -619,97 +622,97 @@ jQuery(document).ready(function($) {
  
  
 	
-     /*
-      * Accessibility/reading options TOOLBAR scripts
-      *
-      * Author: Zsolt Edelényi
-      * @since 17.8
-      *
-      **/
-   
-      /*
-       * Read cookies to set user's preferences
-       * */
+/*
+* Accessibility/reading options TOOLBAR scripts
+*
+* Author: Zsolt Edelényi
+* @since 17.8
+*
+**/
+
+/*
+ * Read cookies to set user's preferences
+ * */
       
-      var contrastType=readCookie( "contrastType" );
-      if ( contrastType ) {
-          $('body').addClass( contrastType );
-		  $( '#' + contrastType ).attr( 'disabled' , 'true' );
+    var contrastType=readCookie( "contrastType" );
+    if ( contrastType ) {
+        $('body').addClass( contrastType );
+  $( '#' + contrastType ).attr( 'disabled' , 'true' );
+     }
+     else {
+        $('body').addClass( "high-contrast-0" );
+  $( '#high-contrast-0').attr( 'disabled', 'true' );
+     }
+ 
+    
+    var fontType=readCookie( "fontType" );
+       if ( fontType ) {
+           $('body').addClass( fontType );
+  $( '#' + fontType ).attr( 'disabled' , 'true' );
+        }
+        else {
+           $('body').addClass( "font-type-0" );
+  $( '#font-type-0').attr( 'disabled', 'true' );
+        }
+        
+            
+    var fontSize=readCookie( "fontSize" );
+       if ( fontSize ) {
+           $('body').addClass( fontSize );
+  $( '#' + fontSize ).attr( 'disabled' , 'true' );
+        }
+        else {
+           $('body').addClass( "font-size-0" );
+  $( '#font-size-0').attr( 'disabled', 'true' );
+        }
+    
+    
+  // Set target selector value @since 19.3
+  var linkTarget=readCookie( "linkTarget" );
+  if( linkTarget ) {
+      $( '#target-' + linkTarget ).attr( 'disabled', 'true');
+  }
+  else {
+      $( '#target-default').attr( 'disabled', 'true');
+  }
+ 
+ 
+    /*
+     * Behaviour open toolbar button of reading options 
+     **/
+ 
+        //Toggle tollbar
+    $('.toolbar-buttons-open').click(function(){
+       $('.toolbar-buttons').slideToggle( 200 );
+       //close toolbar, if menu opens    
+       if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) ) {
+          $( ".megamenu" ).removeClass( "toggled-on" );
+          $( ".menu-toggle" ).removeClass( "toggled-on" );
+      }
+       //add toggle on to toolbar-buttons
+       if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
+           $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+      $('#toolbar-buttons-open').focus();  
        }
        else {
-          $('body').addClass( "high-contrast-0" );
-		  $( '#high-contrast-0').attr( 'disabled', 'true' );
+           $( ".toolbar-buttons" ).addClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
+           $( "#total").toggleClass ("toolbar-toggled-on");
        }
-   
-      
-      var fontType=readCookie( "fontType" );
-         if ( fontType ) {
-             $('body').addClass( fontType );
-			 $( '#' + fontType ).attr( 'disabled' , 'true' );
-          }
-          else {
-             $('body').addClass( "font-type-0" );
-			 $( '#font-type-0').attr( 'disabled', 'true' );
-          }
-          
-              
-      var fontSize=readCookie( "fontSize" );
-         if ( fontSize ) {
-             $('body').addClass( fontSize );
-			 $( '#' + fontSize ).attr( 'disabled' , 'true' );
-          }
-          else {
-             $('body').addClass( "font-size-0" );
-			 $( '#font-size-0').attr( 'disabled', 'true' );
-          }
-      
-      
-    // Set target selector value @since 19.3
-    var linkTarget=readCookie( "linkTarget" );
-    if( linkTarget ) {
-        $( '#target-' + linkTarget ).attr( 'disabled', 'true');
-    }
-    else {
-        $( '#target-default').attr( 'disabled', 'true');
-    }
-	  
-   
-      /*
-       * Behaviour open toolbar button of reading options 
-       **/
-   
-          //Toggle tollbar
-      $('.toolbar-buttons-open').click(function(){
-         $('.toolbar-buttons').slideToggle( 200 );
-         //close toolbar, if menu opens    
-         if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) ) {
-            $( ".megamenu" ).removeClass( "toggled-on" );
-            $( ".menu-toggle" ).removeClass( "toggled-on" );
-        }
-         //add toggle on to toolbar-buttons
-         if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
-             $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-        $('#toolbar-buttons-open').focus();  
-         }
-         else {
-             $( ".toolbar-buttons" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
-             $( "#total").toggleClass ("toolbar-toggled-on");
-         }
-    });
-      
-	
-     //close toolbar with close button also    
-    $( '#buttons-close' ).click(function() {
-        $('#toolbar-buttons').slideUp();
-        $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-        $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-		$( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-		$('#toolbar-buttons-open').focus();  
-    });
+  });
+    
+
+   //close toolbar with close button also    
+  $( '#buttons-close' ).click(function() {
+      $('#toolbar-buttons').slideUp();
+      $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+      $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+$( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+$('#toolbar-buttons-open').focus();  
+  });
     
 	
 	
@@ -904,8 +907,8 @@ jQuery(document).ready(function($) {
 	
     
     
-//end of ($)functions
-})( jQuery ); 
+
+});  //end of ($)functions () line 485. 
 
 
 

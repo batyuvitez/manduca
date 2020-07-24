@@ -471,7 +471,7 @@ video {
 .excerpt-thumbnail>img{
 	display: block;
 	max-width: 100%;
-	height: auto!important;
+	height: auto; /* important removed in 20.7 */
 	width: 100%;
 	-ms-interpolation-mode: bicubic;
 	margin: 0 auto;
