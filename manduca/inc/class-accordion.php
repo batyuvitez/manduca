@@ -17,7 +17,6 @@
 class Accordion{
 		  public $accordion_args;
 		  
-		  
 		  public function __construct( $args ) {
 					$this->accordion_args = $args;
 		  }
