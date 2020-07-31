@@ -41,11 +41,11 @@ How to ...
 
 ... implement multi-level hide-show system on posts and other contents.
             You can use in #wrapper (that is #primary and #secondary)
-            Enque the script. Example: page-templates/accordion.php
-            Use the following classes:
+            The scripts includes in manduca.js
             
+            Use the following classes:
             *obligatory
-            js-to_expandmore  : this is the button (e.g. h2) which is the title of the collapsable part.
+            js-expandmore  : this is the button (e.g. h2) which is the title of the collapsable part.
             js-to_expand      : this is the hide/show part (div)
             Elements that have expandmore and to_expand classes must be adjacent.   
             
