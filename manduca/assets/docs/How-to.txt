@@ -41,11 +41,11 @@ How to ...
 
 ... implement multi-level hide-show system on posts and other contents.
             You can use in #wrapper (that is #primary and #secondary)
-            The scripts includes in manduca.js
-            
+            Enque the script. Example: page-templates/accordion.php
             Use the following classes:
+            
             *obligatory
-            js-expandmore  : this is the button (e.g. h2) which is the title of the collapsable part.
+            js-to_expandmore  : this is the button (e.g. h2) which is the title of the collapsable part.
             js-to_expand      : this is the hide/show part (div)
             Elements that have expandmore and to_expand classes must be adjacent.   
             
@@ -59,3 +59,6 @@ How to ...
 
 ...Use Adobe accessible megamenu (default until 20.7) instead of WAI menubar (since 20.7):
       change the menu_type to 1  in template-parts/header/menu.php
+      
+... Add homepage navmenu item: Add http://home-placement to the menu item.
+      This string will be replaced with the home URL.
