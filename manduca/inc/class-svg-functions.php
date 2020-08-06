@@ -26,9 +26,10 @@
 
 
 class SVG_Functions {
-	 protected $svg_name ;
 	 
-	 function __construct( $args ) {
+		protected $svg_name ;
+	 
+	 public function __construct( $args ) {
 			   $this->svg_name = $args;
 			}
 			
@@ -44,15 +45,13 @@ class SVG_Functions {
 			 * }
 			 * @return string SVG markup.
 			 */
-	 function SVG_Markup( ) {
+	 public function SVG_Markup( ) {
 			  // Make sure $this->svg_name are an array.
 			  if ( empty( $this->svg_name ) ) {
 						
 				  /* translators: Error message if there no array in the parameter */
 				  trigger_error ( __( 'Please define default parameters in the form of an array.', 'manduca' ) , E_USER_WARNING ) ;
-				  
-						return;
-			  
+						return;			  
 					}
 		  
 			  // Define an icon.
@@ -101,20 +100,20 @@ class SVG_Functions {
 				  }
 			  }
 		  
+				
 			  // Begin SVG markup.
-			  
-		  
+			 
 			  // Display the title.
 			  if ( $this->svg_name['title'] ) {
-				  $title = '<title id="title-' . $unique_id . '">' . esc_html( $this->svg_name['title'] ) . '</title>';
-		  
-				  // Display the desc only if the title is already set.
-				  if ( $this->svg_name['desc'] ) {
-					  $description = '<desc id="desc-' . $unique_id . '">' . esc_html( $this->svg_name['desc'] ) . '</desc>';
-				  }
-				  else {
-					   $description = '';
-				  }
+								$title = '<title id="title-' . $unique_id . '">' . esc_html( $this->svg_name['title'] ) . '</title>';
+						
+								// Display the desc only if the title is already set.
+								if ( $this->svg_name['desc'] ) {
+									$description = '<desc id="desc-' . $unique_id . '">' . esc_html( $this->svg_name['desc'] ) . '</desc>';
+								}
+								else {
+										$description = '';
+								}
 			  }
 			  else {
 				  $title= '';
@@ -132,17 +131,16 @@ class SVG_Functions {
 			   *  
 			   */
 			  if( isset ( $svg_icons [ esc_html( $this->svg_name['icon'] ) ] ) ) {
-
-					$svg_item 	=  $svg_icons [ esc_html( $this->svg_name['icon'] ) ] ;
+										$svg_item 	=  $svg_icons [ esc_html( $this->svg_name['icon'] ) ] ;
 			  }
 			  else {
-					//translators: PHP user error message when child theme not define an svg icon.
-					$error_message = sprintf( '%1$s : "%2$s"',
-											 __( 'No svg icon declared', 'manduca' ),
-											 $this->svg_name['icon']
-											);
-					user_error( $error_message );
-					return;
+								//translators: PHP user error message when child theme not define an svg icon.
+								$error_message = sprintf( '%1$s : "%2$s"',
+															__( 'No svg icon declared', 'manduca' ),
+															$this->svg_name['icon']
+														);
+								user_error( $error_message );
+								return;
 			  }
 			   
 			   $vector		= $svg_item[ 'vector' ]  ;
@@ -161,16 +159,13 @@ class SVG_Functions {
 	 
 	
 	
-	/*
-	 *Call method
-	 *Invoke the SVG complier and  return HTML code of accessible icon
-	 *
-	 *@return string: HTML code
-	 **/
-	public function Return_HTML() {
-			   return $this->SVG_Markup();
-	}
-	 
-	
-	
- }	
+				/*
+					*Call method
+					*Invoke the SVG complier and  return HTML code of accessible icon
+					*
+					*@return string: HTML code
+					**/
+				public function Return_HTML() {
+									return $this->SVG_Markup();
+				}
+	}	

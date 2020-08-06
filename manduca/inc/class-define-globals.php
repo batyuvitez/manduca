@@ -39,14 +39,12 @@ class Define_Globals {
 			}
 	 
 	public function load_svg_to_global() {
-		  
 		  require( get_template_directory() . '/assets/images/svg-icons.php' );
 		  
 		  // Filter svg icon array before put it into global variable 
 		  $svg_icons = apply_filters( 'manduca_svg_icons' , $svg_icons );
 						 
 		  $GLOBALS[ 'svg_icons' ] = $svg_icons;
-
 	 }
 	 
 	
