@@ -1090,7 +1090,7 @@ jQuery(document).ready(function($) {
 		var expires = "; expires="+date.toGMTString();
 	}
 	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
+	document.cookie = name+"="+value+expires+"; path=/;SameSite=Lax";;
 }
 
 function readCookie(name) {
