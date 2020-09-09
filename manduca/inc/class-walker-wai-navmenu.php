@@ -107,7 +107,7 @@ class Walker_Wai_Navmenu extends \Walker_Nav_Menu  {
 			$atts['rel']          = ! empty( $item->xfn ) ? $item->xfn : '';
 			$atts['href']         = ! empty( $item->url ) ? $item->url : '';
 			$atts['aria-current'] = $item->current ? 'page' : '';
-			$atts['tabindex']	  = '-1';
+			//$atts['tabindex']	  = '-1';
 			$atts['role']		 ='menuitem';
 	
 			
@@ -128,7 +128,6 @@ class Walker_Wai_Navmenu extends \Walker_Nav_Menu  {
 	
 			
 		}
-		//$d->debug( '$item_output',htmlspecialchars ($item_output));
 			$output .= $item_output;
 	}
 

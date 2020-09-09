@@ -1141,7 +1141,7 @@ var MenubarItem = function (domNode, menuObj) {
 };
 
 MenubarItem.prototype.init = function () {
-  this.domNode.tabIndex = -1;
+  //this.domNode.tabIndex = -1;
 
   this.domNode.addEventListener('keydown', this.handleKeydown.bind(this));
   this.domNode.addEventListener('focus', this.handleFocus.bind(this));
