@@ -11,6 +11,36 @@ msgstr ""
 "Language: hu\n"
 "Project-Id-Version: Themes - Manduca\n"
 
+# -------------- BEGIN of inserted part ------------------------
+#This part is not included in the offical po file
+# in https://translate.wordpress.org/projects/wp-themes/manduca/hu/default/
+
+#. Template Name of the plugin/theme
+msgid "Accessible tab page template"
+msgstr "Akadálymentes tabulátorok"
+
+#. Template Name of the plugin/theme
+msgid "Collapsable paragraph page template"
+msgstr "Akadálymentesen összezárható bekezdések"
+
+#. Template Name of the plugin/theme
+msgid "Full-width Page Template"
+msgstr "Teljes szélességű sablonminta"
+
+#. Template Name of the plugin/theme
+msgid "Page not found page"
+msgstr "404-es oldal sablon"
+
+#. Template Name of the plugin/theme
+msgid "Parent of pages template"
+msgstr "A szülő oldal sablonja"
+
+#. Template Name of the plugin/theme
+msgid "Sitemap Page Template"
+msgstr "Oldaltérkép sablonminta"
+
+# -------------- END of inserted part ------------------------
+
 #. Description of the theme
 msgid "Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians."
 msgstr "Akadálymentes honlapok (ISO/IEC 40500:2012, WCAG 2.1) készítésére alkalmas gyors és robusztus sablon. Bármilyen divatos webdizájn megvalósítható származtatott sablonnal. Magyar felhasználók számára egyedi funkciókkal. "
