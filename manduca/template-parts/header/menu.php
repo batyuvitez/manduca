@@ -52,7 +52,7 @@
 				 aria-label="<?php echo $menu_name; ?>"
 				 role="navigation">
 				<?php
-					$args = array(
+					wp_nav_menu (array(
 					   'theme_location'  => 'primary',
 					   'menu'            => 'primary Menu',
 					   'menu_class'      => 'nav-menu',
@@ -60,8 +60,7 @@
 					   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
 					   'depth'           => 3,
 					   'walker'          => new Manduca_accessible_walker() 
-					   );
-					wp_nav_menu( $args );
+					   ));
 				?>
 			</nav>
 			

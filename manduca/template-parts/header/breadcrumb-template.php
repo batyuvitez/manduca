@@ -18,7 +18,7 @@
         $prefix_text=__( 'You are here:', 'manduca' );
         
         //Translators: Breadcrumb name (for screen readers)
-        $name=__('breadcrumb', ',manduca');
+        $name=__('breadcrumb', 'manduca');
         $aria_label='aria-label="'.$name .'"';
         $this->templates = array(
             'before' 		=> '<nav id="breadcrumb" class="breadcrumb" '.$aria_label.'><span>' .$prefix_text .'</span><ul>',

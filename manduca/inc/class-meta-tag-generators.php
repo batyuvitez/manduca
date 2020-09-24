@@ -20,7 +20,7 @@ class Meta_Tag_Generators{
 	public function get_authors() {
 		return sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'All posts by %s', ' manduca' ), get_the_author() ) ),
+				esc_attr( sprintf( __( 'All posts by %s', 'manduca' ), get_the_author() ) ),
 				get_the_author()
 			);
 	}
