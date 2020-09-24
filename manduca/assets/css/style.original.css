@@ -202,6 +202,9 @@ textarea[disabled]{
 	color: #222;
 }
 
+.site .toolbar-buttons-open:active {
+	color:#daf3ff
+}
 
 .site a:hover,
 .site button:hover,
@@ -212,7 +215,9 @@ textarea[disabled]{
 
 .featured-scheme,
 .sticky 		/* sticky is not used in theme, but theme check requires it */
-.tooltip{
+.tooltip,
+.featured-article,
+.featured-article .lighter-scheme{
 	background-color: #DAF2FF;
 	color: #000;
 }
@@ -1434,13 +1439,18 @@ div.entry-content > h2:first-child{
 }
 
 .site-content article footer ul {
-	margin: 0;
+	border-top: 1px #aaa solid;
 }
 
-.site-content article footer li{
+.site-content article footer li {
 	display: inline-block;
-	margin: 0 3rem 0 0;
-	padding: 0.666rem 0;
+	margin: 0 3em 0 0;
+	padding: 0.5em 0;
+}
+
+.site-content article footer li svg {
+	position: relative;
+	top: -1px;
 }
 
 /* Thumbnail featured image  */
@@ -1783,8 +1793,8 @@ svg.icon-extlink {
 }
 
 .nav-single svg {
-	top: 3px;
-	left: 1px;
+		width: 2em;
+		height: 2em;
 }
 
 .page-numbers.prev svg,
@@ -1929,8 +1939,13 @@ svg.icon-extlink {
 
 .high-contrast-2 .featured-scheme {
 	border: 2px solid #c1ec15;
+	box-sizing: content-box;
 	background-color: #111;
 	color: #fff;
+}
+
+.high-contrast-2 table.featured-scheme {
+	border: none;
 }
 
 .high-contrast-2 .featured-scheme svg {
@@ -2028,6 +2043,16 @@ svg.icon-extlink {
 
 .font-size-2 {
     font-size: 150%;
+}
+
+.font-size-2 .top-bar {
+	display: block;
+	height: 6em;
+}
+
+.font-size-2 .site-header,
+.font-size-2 .header-bar{
+	position: static;
 }
 
 .font-size-3 {
@@ -2363,7 +2388,6 @@ body.font-size-3 .toolbar-label {
 	.column-right-wrapper {
 		width: 80%;
 	}
-	
 
 	.column-left {
 		width: 20%;
@@ -2375,7 +2399,6 @@ body.font-size-3 .toolbar-label {
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt .content-date {
-			width: 5.7em;
 			font-weight: 300;
 			text-align: center;
 			font-size: 1.25em;
@@ -2593,8 +2616,24 @@ body.font-size-3 .toolbar-label {
 
 @media screen and (min-width: 764px){
 	
-	/* Colors */
+	.column-right-wrapper {
+		width: 84%;
+		margin-left: 1%;
+	}
 	
+	.column-right-wrapper h1 {
+		text-align: left;
+	}
+
+	.column-left {
+		width: 15%;
+		max-width: 7em;
+		overflow: hidden;
+	}
+
+
+
+	/* Colors */	
 	body .site {
 		background-color: #ffffff;
 	}

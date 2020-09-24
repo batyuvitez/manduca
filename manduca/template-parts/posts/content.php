@@ -18,8 +18,13 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+if (is_sticky())
+	$sticky='featured-article';
+else
+	$sticky='';
+
 ?>		
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($sticky); ?>>
 	
 	<?php if ( has_post_thumbnail() ) {
 				$class = 'has-thumbnail'; 

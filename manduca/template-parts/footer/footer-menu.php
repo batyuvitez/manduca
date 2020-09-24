@@ -1,6 +1,9 @@
 <?php
 /*
- *footer site info
+ *Footer site info
+ *
+ * for duplicating HTML5 and ARIA landmark:
+ * @see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html
  *
  * &since 17.3
  **/
@@ -12,9 +15,10 @@
     
     <?php if ( has_nav_menu( 'footer' ) ) : ?>
         
-        <nav id="footer-navigation" class="footer-navigation" >
+        <nav id="footer-navigation"
+             class="footer-navigation"
+             role="navigation">
             <h3 class="screen-reader-text"><?php echo $menu_name; ?></h3>       
-            
             
             <?php
                 echo wp_nav_menu(array (
