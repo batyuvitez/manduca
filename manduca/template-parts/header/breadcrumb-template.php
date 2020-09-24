@@ -21,7 +21,7 @@
         $name=__('breadcrumb', ',manduca');
         $aria_label='aria-label="'.$name .'"';
         $this->templates = array(
-            'before' 		=> '<nav id="breadcrumb" class="breadcrumb"'.$aria_label.'><span>' .$prefix_text .'</span><ul>',
+            'before' 		=> '<nav id="breadcrumb" class="breadcrumb" '.$aria_label.'><span>' .$prefix_text .'</span><ul>',
             'after' 		=> '</ul></nav>',
             'standard' 		=> '<li>%1$s %2$s</li>',  // %1 :breadcrumb link %2: separator 
             'current' 		=> '<li class="current">%s</li>',

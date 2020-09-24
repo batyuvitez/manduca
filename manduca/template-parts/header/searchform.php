@@ -28,7 +28,7 @@
 ?>
 <form method="get"
 	  id="header-searchform"
-	  class=" use-tooltip header-searchform"
+	  class="header-searchform"
 	  role="search" 
 	  action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div role="search" >

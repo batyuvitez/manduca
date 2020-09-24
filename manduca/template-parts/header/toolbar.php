@@ -43,30 +43,28 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 		  <tbody>
 				
 					<tr>
-						 <td><span class="toolbar-label"><?php _e( 'Color scheme' , 'manduca' ); ?>:</span></td>
+						 <td class="toolbar-label"><span><?php _e( 'Color scheme' , 'manduca' ); ?>:</span></td>
 						 <td><button class="high-contrast" id="high-contrast-0" data-contrast-type="high-contrast-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Original' , 'manduca' ); ?></span></button></td>
 						<td><button class="high-contrast" id="high-contrast-1" data-contrast-type="high-contrast-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Pastel' , 'manduca' ); ?></span></button></td>
 						 <td><button class="high-contrast" id="high-contrast-2" aria-label="<?php _e( 'Dark background, light letters' , 'manduca' ); ?>" data-contrast-type="high-contrast-2"><span class="phone-text" aria-hidden="true" >Abc</span><span class="desktop-text"><?php _e( 'Inverse' , 'manduca' ); ?></span></button></td>
 					 </tr>
 				   
 					<tr>
-						 <td><span class="toolbar-label"><?php _e( 'Font type' , 'manduca' ); ?>:</span></td>
+						 <td class="toolbar-label"><span><?php _e( 'Font type' , 'manduca' ); ?>:</span></td>
 						 <td><button class="change-font-type" id="font-type-0" aria-label="<?php _e( 'Sans serif' , 'manduca' ); ?>" data-font-type="font-type-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Sans serif' , 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-type" id="font-type-1" aria-label="<?php _e( 'Serif' , 'manduca' ); ?>" data-font-type="font-type-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Serif' , 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-type"  id="font-type-2" aria-label="<?php _e( 'Monotype' , 'manduca' ); ?>" data-font-type="font-type-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Monotype' , 'manduca' ); ?></span></button></td>
 					 </tr>
 				   
 					 <tr>
-						 <td><span class="toolbar-label"><?php _e( 'Font size' , 'manduca' ); ?>:</span></td>
+						 <td class="toolbar-label"><span><?php _e( 'Font size' , 'manduca' ); ?>:</span></td>
 						 <td><button class="change-font-size"  id ="font-size-0" aria-label="<?php _e( 'Small' , 'manduca' ); ?>" data-zoom="font-size-0"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Small', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-1" aria-label="<?php _e( 'Normal' , 'manduca' ); ?>" data-zoom="font-size-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Normal', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
 					 </tr>
 						
 						<tr>
-						 <td>
-							<span class="toolbar-label"><?php _e( 'Choose link target', 'manduca' ); ?></span>
-						 </td>
+						 <td class="toolbar-label"><span><?php _e( 'Choose link target', 'manduca' ); ?></span></td>
 						 <td>
 							<button class="target-selector" id ="target-default" aria-label="<?php _e( 'Leave as it is', 'manduca' );?>" data-target="default">
 								<span class="phone-text" aria-hidden="true"><?php echo manduca_get_svg (array ('icon'=>'minus'));?></span>

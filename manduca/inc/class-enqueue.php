@@ -52,8 +52,7 @@ class Enqueue{
 		// Loads the Internet Explorer specific stylesheet.
 		wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'manduca-style' ) );
 		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
-		
-		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' )); 
+		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
 		
       
       	
@@ -69,6 +68,7 @@ class Enqueue{
                         //Translators: submenu expand
                         'expand'=>__( 'expand child menu', 'manduca' ),
                         //Translators: submenu collapse
+                        'collapse'=>__( 'collapse child menu', 'manduca' ),
                         'collapse'=>__( 'collapse child menu', 'manduca' ),
                         'icon'=>manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true )));
 			

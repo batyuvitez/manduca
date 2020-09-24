@@ -2,52 +2,28 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-01-09 07:25:12+0000\n"
+"PO-Revision-Date: 2020-07-30 03:40:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: hu\n"
 "Project-Id-Version: Themes - Manduca\n"
 
-# -------------- BEGIN of inserted part ------------------------
-#This part is not included in the offical po file
-# in https://translate.wordpress.org/projects/wp-themes/manduca/hu/default/
-
-#. Template Name of the plugin/theme
-msgid "Accessible tab page template"
-msgstr "Akadálymentes tabulátorok"
-
-#. Template Name of the plugin/theme
-msgid "Collapsable paragraph page template"
-msgstr "Akadálymentesen összezárható bekezdések"
-
-#. Template Name of the plugin/theme
-msgid "Full-width Page Template"
-msgstr "Teljes szélességű sablonminta"
-
-#. Template Name of the plugin/theme
-msgid "Page not found page"
-msgstr "404-es oldal sablon"
-
-#. Template Name of the plugin/theme
-msgid "Parent of pages template"
-msgstr "A szülő oldal sablonja"
-
-#. Template Name of the plugin/theme
-msgid "Sitemap Page Template"
-msgstr "Oldaltérkép sablonminta"
-
-# -------------- END of inserted part ------------------------
-
 #. Description of the theme
-msgid "Fast and robust theme to easily comply with the accessiblity guidelines (ISO/IEC 40500:2012, WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians."
-msgstr "Akadálymentes honlapok (ISO/IEC 40500:2012, WCAG 2.1) készítésére alkalmas gyors és robusztus sablon. Bármilyen divatos webdizájn megvalósítható származtatott sablonnal. Magyar felhasználók számára egyedi funkciókkal. "
+msgid "Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians."
+msgstr "Akadálymentes honlapok (WCAG 2.1) készítésére alkalmas gyors és robusztus sablon. Bármilyen webdizájn megvalósítható származtatott sablonnal. Magyar felhasználók számára egyedi funkciókkal pl. magyarosított névelők. "
 
 #. Theme Name of the theme
 msgid "Manduca"
 msgstr "Manduca"
+
+#. translators: second select menu's text in archive widget is year is
+#. selected:
+#: inc/class-widget-archives.php:241
+msgid "Select month"
+msgstr "Hónap kiválasztása"
 
 #: template-parts/header/toolbar.php:49
 msgid "Inverse"
@@ -93,13 +69,11 @@ msgstr "Rendben, engedélyeztem."
 msgid "Avatar of %s"
 msgstr "%s fényképe"
 
-#: template-parts/footer/footer-after.php:34
-#: template-parts/header/searchform.php:33
 #: template-parts/header/sitetitle.php:54
-#: inc/class-manduca-template-functions.php:81
-#: inc/class-manduca-template-functions.php:85
-#: inc/class-manduca-template-functions.php:390
-#: inc/class-manduca-template-functions.php:414
+#: inc/class-manduca-template-functions.php:80
+#: inc/class-manduca-template-functions.php:84
+#: inc/class-manduca-template-functions.php:399
+#: inc/class-manduca-template-functions.php:423
 msgid "Access key"
 msgstr "Gyorsbillentyű"
 
@@ -138,34 +112,34 @@ msgstr "Akadálymentes archív widget"
 msgid "You have two dropdown: one for years and one for months. This is easy-to use."
 msgstr "A könnyebb használat érdekében két legördülő menüt alkalmaz: az egyiken az évet, a másikkal a hónapot lehet beállítani. "
 
-#: footer.php:42
+#: footer.php:30
 msgid "Footer area"
 msgstr "Lábrész"
 
 #. translators: second select menu's text in archive widget is year is
 #. selected:
-#: inc/class-widget-archives.php:242 inc/class-widget-archives.php:338
+#: inc/class-widget-archives.php:337
 msgid "Months in %s"
-msgstr "Hónapok %s."
+msgstr "archívum %s. évben"
 
-#: inc/class-widget-archives.php:150
+#: inc/class-widget-archives.php:149
 msgid "Title:"
 msgstr "A widget neve:"
 
-#: inc/class-widget-archives.php:111
+#: inc/class-widget-archives.php:110
 msgid "Filter posts"
 msgstr "Szűrés"
 
 #. translators: second (month) select menus's text in archive widget until no
 #. year selected.
 #: inc/class-widget-archives.php:94
-msgid "Select month"
-msgstr "Hónap"
+msgid "First select year"
+msgstr "Először az évet kell kiválasztani."
 
 #. translators: first (year) select menu's text in archive widget
 #: inc/class-widget-archives.php:91
 msgid "Select year"
-msgstr "Év"
+msgstr "Év kiválasztása"
 
 #. translators: name of Manduca's accessible archive widget
 #: inc/class-widget-archives.php:53
@@ -174,7 +148,7 @@ msgstr "Akadálymentes archív widget"
 
 #: search.php:53
 msgid "No matching result found for %s."
-msgstr "Nincs találat a %s keresőkifejezésre."
+msgstr "Nincs találat a %s kereső kifejezésre."
 
 #: template-parts/header/toolbar.php:84
 msgid "Open links in new window"
@@ -196,13 +170,13 @@ msgstr "Hol nyíljanak meg a linkek? "
 msgid "Dark background, light letters"
 msgstr "Sötét háttér, világos betűk"
 
-#: template-parts/widget/manduca-archives.php:30
-msgid "Select Year"
-msgstr "Év kiválasztása"
-
 #: template-parts/widget/manduca-archives.php:33
 msgid "Select Month"
 msgstr "Hónap kiválasztása"
+
+#: template-parts/widget/manduca-archives.php:30
+msgid "Select Year"
+msgstr "Év kiválasztása"
 
 #. translators: Time difference between two dates, in years. 1: Number of years
 #: inc/class-hungarian-contents.php:99
@@ -230,12 +204,12 @@ msgstr[1] "%s napja"
 msgid "Back to top"
 msgstr "Az oldal tetejére"
 
-#: inc/class-manduca-template-functions.php:240
+#: inc/class-manduca-template-functions.php:239
 msgid "Posts navigation"
 msgstr "Bejegyzés navigáció"
 
 #. translators: This is the dots announcement in post navigation
-#: inc/class-manduca-template-functions.php:210
+#: inc/class-manduca-template-functions.php:209
 msgid "Not indicated pages"
 msgstr "Többi oldal"
 
@@ -243,8 +217,8 @@ msgstr "Többi oldal"
 #. in a html element referring to current page.
 #. translators it is duplicate: same as in Link_Functions: screen reader text
 #. for self-link.
-#: inc/class-sitemap.php:71 inc/class-link-functions.php:187
-#: inc/class-manduca-template-functions.php:179
+#: inc/class-sitemap.php:71 inc/class-link-functions.php:188
+#: inc/class-manduca-template-functions.php:178
 #: inc/class-accessible-menu.php:21
 msgid "Current page"
 msgstr "Jelenlegi oldal"
@@ -291,15 +265,15 @@ msgstr "Ugrás a lábrészhez"
 msgid "Skip to main content"
 msgstr "Ugrás a fő tartalomhoz"
 
-#: inc/class-manduca-template-functions.php:53
+#: inc/class-manduca-template-functions.php:52
 msgid "Pages of this post"
 msgstr "E bejegyzés több oldalból áll"
 
-#: inc/class-manduca-template-functions.php:49
+#: inc/class-manduca-template-functions.php:48
 msgid "Previous page of post"
 msgstr "A bejegyzés előző oldala"
 
-#: inc/class-manduca-template-functions.php:44
+#: inc/class-manduca-template-functions.php:43
 msgid "Next page of post"
 msgstr "A bejegyzés következő oldala"
 
@@ -315,7 +289,7 @@ msgstr "E-mail küldése"
 msgid "Electronic book"
 msgstr "Elektronikus könyv"
 
-#: inc/class-link-functions.php:210
+#: inc/class-link-functions.php:211
 msgid "open map"
 msgstr "Térkép megnyitása"
 
@@ -330,7 +304,7 @@ msgid "No svg icon declared"
 msgstr "Nincs definálva az svg ikon"
 
 #. Translators: add screen-reader-text if links open in new window.
-#: inc/class-link-functions.php:632
+#: inc/class-link-functions.php:620
 msgid "opens a new window"
 msgstr "új ablakban nyílik"
 
@@ -338,7 +312,7 @@ msgstr "új ablakban nyílik"
 msgid "Collapsable paragraph page template"
 msgstr "Összezárható bekezdések sablonmintája"
 
-#: template-parts/header/headerimage.php:33
+#: template-parts/header/headerimage.php:29
 msgid "This image has no alt text, sorry"
 msgstr "E képhez nincs alternatív szöveg megadva"
 
@@ -359,7 +333,7 @@ msgstr "Bejegyzések kategóriánként"
 msgid "No title"
 msgstr "Nincs cím"
 
-#: inc/class-manduca-setup.php:212
+#: inc/class-manduca-setup.php:213
 msgid "Excerpt size"
 msgstr "A kivonatba való képméret"
 
@@ -448,7 +422,7 @@ msgid "Categories"
 msgstr "Kategóriák"
 
 #. translators: screen reader text for numbered list items in post navigation
-#: inc/class-manduca-template-functions.php:194
+#: inc/class-manduca-template-functions.php:193
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "%s<span class=\"screen-reader-text\">. oldal</span>"
 
@@ -472,11 +446,11 @@ msgstr "Az almenü vége"
 msgid "Parent of pages template"
 msgstr "A szülő oldal sablonja"
 
-#: inc/class-manduca-template-functions.php:84
+#: inc/class-manduca-template-functions.php:83
 msgid "Older posts"
 msgstr "Régebbi bejegyzések"
 
-#: inc/class-manduca-template-functions.php:80
+#: inc/class-manduca-template-functions.php:79
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
@@ -552,11 +526,11 @@ msgstr "%s napján kelt bejegyzések: "
 msgid "Images"
 msgstr "Képek"
 
-#: inc/class-manduca-template-functions.php:413
+#: inc/class-manduca-template-functions.php:422
 msgid "Next post"
 msgstr "Következő bejegyzés"
 
-#: inc/class-manduca-template-functions.php:389
+#: inc/class-manduca-template-functions.php:398
 msgid "Previous post"
 msgstr "Előző bejegyzés"
 
@@ -600,16 +574,26 @@ msgstr "Következő"
 msgid "Previous"
 msgstr "Előző"
 
-#: inc/class-manduca-setup.php:210
+#. Translators: submenu collapse
+#: inc/class-enqueue.php:72
+msgid "collapse child menu"
+msgstr "Almenü összezárása"
+
+#. Translators: submenu expand
+#: inc/class-enqueue.php:70
+msgid "expand child menu"
+msgstr "Almenü szétnyitása"
+
+#: inc/class-manduca-setup.php:211
 msgid "Image in Post"
 msgstr "Bejegyzésben lévő kép"
 
-#: inc/class-manduca-setup.php:209
+#: inc/class-manduca-setup.php:210
 msgid "Thumbnail"
 msgstr "Előkép"
 
 #. Translators: add screen-reader-text to external link.
-#: inc/class-link-functions.php:217
+#: inc/class-link-functions.php:218
 msgid "external"
 msgstr "külső"
 
@@ -625,20 +609,19 @@ msgstr "Teljes szélességű sablonminta"
 msgid "Authors"
 msgstr "Szerzők"
 
-#: template-parts/header/searchform.php:34 searchform.php:35
+#: template-parts/header/searchform.php:44 searchform.php:35
 msgid "Start search"
 msgstr "Keresés indítása"
 
-#: template-parts/header/searchform.php:31
-#: template-parts/header/searchform.php:32
-#: template-parts/header/searchform.php:36 searchform.php:33 searchform.php:34
+#: template-parts/header/searchform.php:35
+#: template-parts/header/searchform.php:37 searchform.php:33 searchform.php:34
 #: searchform.php:37
 msgid "Search"
 msgstr "Keresés"
 
 #: index.php:60
 msgid "Maybe try a search."
-msgstr "Nem találtam semmit. Próbálkozna egy újabb kereséssel? "
+msgstr "Nincs találat. Próbálkozzon egy újabb kereséssel! "
 
 #: index.php:49
 msgid "Get started here!"
@@ -652,7 +635,7 @@ msgstr "Kezdhetjük a blogolást?"
 msgid "No post"
 msgstr "Nincs bejegyzés"
 
-#: image.php:57 image.php:84 inc/class-manduca-setup.php:211
+#: image.php:57 image.php:84 inc/class-manduca-setup.php:212
 msgid "Original size"
 msgstr "Eredeti méret"
 
@@ -711,12 +694,12 @@ msgid "Author"
 msgstr "Szerző"
 
 #. translators: sidebar description
-#: inc/class-manduca-setup.php:240
+#: inc/class-manduca-setup.php:241
 msgid "Appears all pages except when using full page template"
 msgstr "Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát használunk."
 
 #. translators: name of the sidebar
-#: inc/class-manduca-setup.php:237
+#: inc/class-manduca-setup.php:238
 msgid "Sidebar"
 msgstr "Oldalsáv"
 
@@ -754,7 +737,7 @@ msgstr "Kiemelt"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: template-parts/pages/content-page.php:32 page-templates/page-sitemap.php:61
+#: template-parts/pages/content-page.php:36 page-templates/page-sitemap.php:61
 #: page-templates/page-accessible-tabs.php:59 image.php:51
 msgid "Pages"
 msgstr "Oldalak"
@@ -788,14 +771,14 @@ msgstr "Kedves olvasó sajnos valami hiba csúszott a keresésbe, emiatt találk
 msgid "Error 404 &#45; Page Not Found!"
 msgstr "404-es hiba: Nincs ilyen oldal."
 
-#. Author of the theme
-msgid "Zsolt Edelényi(ezs@web25-hu)"
-msgstr "Edelényi Zsolt e.v. (ezs@web25-hu)"
-
 #. Theme URI of the theme
-msgid "https://akadálymentes-wordpress-sablon.hu"
-msgstr "https://akadálymentes-wordpress-sablon.hu"
+msgid "https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/"
+msgstr "https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/"
 
 #. Author URI of the theme
-msgid "https://akadálymentes-honlap.hu"
-msgstr ""
+msgid "https://akadálymnentes-honlap.hu/"
+msgstr "https://akadálymnentes-honlap.hu/"
+
+#. Author of the theme
+msgid "Zsolt Edelényi"
+msgstr "Edelényi Zsolt"

@@ -33,7 +33,9 @@ class Manduca_Setup {
 	public function init() {
 		
 		new \Manduca\Enqueue;
+		
 		new \Manduca\Filter_Nav_Menu; //@since 20.8
+
 		// Open the files which ara not classes.
 		$this->load_notclasses();
 		
@@ -105,9 +107,8 @@ class Manduca_Setup {
 			// Add anchor to image anchor insert in post content @ Since 16.10
 			add_filter('image_send_to_editor',array( $this, 'add_class_image_anchor' ) ,10,8);
 		
-			new Manduca\Correct_Headings;
 			// Correct headings 2-5 on archive pages
-			
+			new Manduca\Correct_Headings;
 			
 			// add alt tag to avatar
 			new \Manduca\Avatar_Alt_Text;
@@ -257,7 +258,6 @@ class Manduca_Setup {
 		}
 		return $html;
 	}
-	
 	
 
 	

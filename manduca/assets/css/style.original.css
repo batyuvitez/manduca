@@ -4,11 +4,11 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
 Author URI: https://akadálymentes-honlap.hu/
-Version: 20.7beta
+Version: 20.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
-Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, full-width-template, featured-images, accessibility-ready, theme-options, sticky-post
+Tags: one-column, two-columns, right-sidebar, custom-menu, full-width-template, featured-images, accessibility-ready, sticky-post
 Text Domain: manduca
 Github: https://github.com/batyuvitez/manduca/
 */
@@ -33,10 +33,10 @@ Github: https://github.com/batyuvitez/manduca/
 */
 	
 /*Color scheme of Manduca:
- *red: 9E430E
- *dark blue with white: 21759B,
- *light blue with black: DAF2FF,
- *grey with dark: F3F3F5
+ *red: #9E430E
+ *dark blue with white: #21759B,
+ *light blue with black: #DAF2FF,
+ *grey with dark: #F3F3F5
  *
  *@see: https://www.colourlovers.com/palette/3741887/Manduca
  **/
@@ -66,6 +66,7 @@ ul, ol  {
 html {
 	line-height: 1.460311;
 }
+
 
 .gecko fieldset {
 	display: table-cell; /*for the sake of Firefox &since 17.3*/
@@ -170,7 +171,8 @@ img {
 body .site,
 textarea,
 input, 
-body .site .basic-scheme {
+body .site .basic-scheme,
+.megamenu.toggled-on {
 	background-color: #f7f7f7;
 	color: #232323	
 }
@@ -196,7 +198,8 @@ button[disabled],
 input[disabled],
 textarea[disabled]{
 	outline: 4px solid #9E430E;
-	outline-offset: 2px 
+	outline-offset: 2px;
+	color: #222;
 }
 
 
@@ -207,17 +210,6 @@ textarea[disabled]{
 }
 
 
-.link-button,
-.link-button a{
-	background-color: #ab490f; 
-	color: #daf3ff;
-	padding: 0.3em 0.6em;
-	text-decoration: none;
-				
-}
-.link-button svg {
-	fill: #daf3ff;
-}
 .featured-scheme,
 .sticky 		/* sticky is not used in theme, but theme check requires it */
 .tooltip{
@@ -246,7 +238,9 @@ textarea[disabled]{
 	color: #ffffff;
 }
 
-
+.link-button svg {
+	fill: #daf3ff;
+}
 
 
 
@@ -263,7 +257,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 a.page-numbers.next,
 a.page-numbers.prev,
 .main-navigation ul li a,
-.site-header-menu .sub-nav ul li {
+.megamenu .sub-nav ul li {
 	border-bottom: none;
 }
 
@@ -281,59 +275,9 @@ a.page-numbers.prev,
 }
 
 
-/* menu-toggle, search-submit and toolbar-buttons-open */
-.search-submit,
-.menu-toggle,
-.toolbar-buttons-open {
-	margin: 0;
-	padding: 3.5px;
-	height: 2.2em;
-}
-
-.entry-content .search-submit {  /* This is not inline, need correction */
-	position: relative;
-	top: 5px;
-}
-
-
-.menu-toggle {
-	position: absolute;
-	top: 10px;
-	left: 6px;
-}
-
-.toolbar-buttons-open{
-    position: absolute;
-    top: 10px;
-    left: 62px;
-	cursor: pointer;
- }
 
 
 
-
-.reply {
-	display: inline-block;
-}
-
-.more-link {
-	max-width: 15em;
-	float: right;
-	margin: 2em 0 0;
-}
-
-
-
-
-
-
-
-/* Colors
--------------------------------------------------------------- */
-
-/* All about colors @since 17.8 */
-
-/*mobil background a little bit darker since @17.9.1 */
 
 .footer-wrapper,
 .top-bar,
@@ -355,6 +299,12 @@ a.page-numbers.prev,
 	font-size: 1.1em; /* corrected: 17.9.19  */
 	font-family: inherit;
 	max-width: 100%;
+	margin: 6px 0;
+	padding: 3px;
+}
+.site button.dropdown-toggle {
+	margin: 0;
+	padding: 0;
 }
 .site input,
 .site textarea {
@@ -422,10 +372,67 @@ a.page-numbers.prev,
 }
 
 .site input[type="checkbox"]{
-  width: 1rem; 
-  height: 1rem; 
+  width: 1em; 
+  height: 1em; 
   cursor: pointer;
 }
+
+
+
+.entry-content .search-submit {  /* This is not inline, need correction */
+	position: relative;
+	top: 5px;
+}
+
+
+.menu-toggle {
+	position: absolute;
+	top: 16px;
+	left: 6px;
+}
+
+.toolbar-buttons-open{
+    position: absolute;
+    top: 16px;
+    left: 62px;
+	cursor: pointer;
+ }
+
+
+.site .link-button,
+.site .link-button a{
+	background-color: #ab490f; 
+	color: #daf3ff;
+	padding: 6px 12px;
+	text-decoration: none;				
+}
+
+/* menu-toggle, search-submit and toolbar-buttons-open */
+.site .search-submit,
+.site .menu-toggle,
+.site .toolbar-buttons-open{
+	margin: 0;
+	padding: 3px 3px 7px 3px;
+}
+
+
+
+.reply {
+	display: inline-block;
+}
+
+.more-link {
+	max-width: 15em;
+	float: right;
+	margin: 2em 0 0;
+}
+
+
+
+
+
+
+
 
 
 /* Responsive images */
@@ -471,7 +478,7 @@ video {
 .excerpt-thumbnail>img{
 	display: block;
 	max-width: 100%;
-	height: auto; /* important removed in 20.7 */
+	height: auto!important;
 	width: 100%;
 	-ms-interpolation-mode: bicubic;
 	margin: 0 auto;
@@ -560,17 +567,15 @@ video {
 }
 
 .pagination .current {
-	font-size: 133%;
 	font-weight: 700;
 	position: relative;
-	top: 3px;
+	outline: 2px dotted #21759B;
 }
 
 a.page-numbers.next,
 a.page-numbers.prev {
 	position: relative;
 	top: 0.5rem;
-	height: 2.07rem; /* it is necessary to display the hover outline */
 }
 
 a.page-numbers.next {
@@ -630,7 +635,7 @@ a.use-tooltip:focus .tooltip {
 .site-content nav {
 	clear: both;
 	overflow: hidden;
-	padding: 1rem 0;
+	padding: 1rem 0.2rem; /*horizontal margin need to display outline of current page*/
 }
  main > nav.nav-single {
         margin-top: 0;
@@ -797,6 +802,20 @@ body .site,
  * Page structure
 */
 
+/* two columns layout */
+.inner-wrapper {
+		display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:stretch;
+		max-width: 180em;
+		margin: 0 auto;
+		
+	}
+	
+	
+	
 
 
 /* Header */
@@ -831,12 +850,10 @@ body .site,
 	padding: 0.214rem;
 }
 
-#header-searchform {  /* using ID is important, because use-tooltip would override it */
-	position: absolute;
-	top: 9px;
-	right: 18px;
-	width: 144px;
+.header-searchform {  
+		position: absolute;	
 }
+
 .header-searchform label { /* i.e. screen-reader-text*/
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -848,9 +865,7 @@ body .site,
 
 
 .header-searchform #s{
-	height: 35px;
 	margin: 0;
-	width: 103px;
 	float: left;
 }
 	
@@ -891,107 +906,100 @@ body .site,
 	margin-right: 1em;
 }
 
+/* menu-toggle */
 
+.megamenu.toggled-on,
 .no-js .site-header-menu {
 	display: block;
 }
 
 
+.main-navigation ul .toggled-on {
+	display: block;
+}
+.menu-toggle span {
+	display: none;
+}
 
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+                  Menu toggle                        +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
-@media screen and (max-width: 764px) {
-	.main-navigation ul .toggled-on {
-		display: block;
-	}
-	.menu-toggle span {
-		display: none;
-	}
-	
-	.dropdown-toggle.toggled-on {
-	transform: rotate(180deg);
-	}
-
-	#navigation-bar:not(.toggled-on) ul {
-		display: none;
-	}
-
-	#navigation-bar.toggled-on {
-		text-align: left;
-		position: absolute;
-		top: 4em;
-		z-index: 100;
-		padding: 1rem;
-	}
-	
-	#navigation-bar ul > li.menu-item  {
-		display: block !important;
-	}
+/*Button to open submenu in main navigation*/
+.dropdown-toggle {
+	background-color: transparent;
+	border: 0;
+	color: #1a1a1a;
+	height: 1.357rem;
+	width: 1.357rem;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-transform: none;
+	top: 12px;
+	right: 6px;
 }
 
 
 
+.dropdown-toggle.toggled-on {
+transform: rotate(180deg);
+}
 
 
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Main navigation bar common               +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-#navigation-bar.toggled-on ul {
+/* Navigation Menu */
+
+.megamenu:not(.toggled-on) {
+	display: none;
+}
+
+.megamenu.toggled-on {
+	text-align: left;
+	position: absolute;
+	top: 4em;
+	z-index: 100;
+	padding: 1rem;
+}
+
+
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	font-weight: 700;
+}
+
+
+.no-js .main-navigation ul-sub-menu {
+	display: block;
+}
+
+/* Accessible mega menu list &since 17.4 */
+.site ul.nav-menu {
 	display: block;
 	position: relative;
 	list-style: none;
 	margin: 0;
-	padding: 1em;
+	padding: 0;
 	z-index: 15;
-	background-color: #e6e6e6;
+	
 }
 
-#navigation-bar ul > li.menu-item  { /* a top level navigation item in the mega menu */
-	display: inline-block;
+/* a top level navigation item in the mega menu */
+.megamenu ul.nav-menu > li.menu-item  {
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
 }
 
-#navigation-bar .menu-item-has-children ul {
-	margin-left: 1em;
-	padding: 0.33em;
-}
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Adobe Accessible megamenu                +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+
-@(ul.nav-menu)
-@since 17.4
-*/
-
-.site-header-menu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 1em;
 	font-size: 1.5em;
 }
 
-.site-header-menu nav ul.nav-menu > li.menu-item > a {  /* top level navigation item */
-		font-size: 1.35em;
-	}
+
 
 
 /* open state of first descendant link
 
 /* Menu item has children*/
-.site-header-menu ul.nav-menu  > li.menu-item-has-children > a {  
+.megamenu ul.nav-menu  > li.menu-item-has-children > a {  
     padding-right: 3rem;
 	width: 100%;
 }
@@ -1037,102 +1045,8 @@ body .site,
 }
 
 
-#navigation-bar .current-menu-item > a,
-#navigation-bar .current-menu-ancestor > a {
-	font-weight: 700;
-}
 
-
-.no-js #navigation-bar ul.sub-menu {
-	display: block;
-}
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+              WAI NAVIGATION MENUBAR  						     +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
-
-ul[role="menubar"] .menu-item  [role="menuitem"]{
-  font-size: 1.5em;
-	padding: 0.33em 1em;
-}
-
-ul[role="menubar"] .wai-submenu  [role="menuitem"] {
-  font-size: 1.2em;
-	text-decoration: none;
-	padding: 0.2em 0.6em;
-	border-bottom: 1px dotted #c0c0c0;
-}
-ul[role="menubar"] .wai-submenu .menu-item:last-child [role="menuitem"] {
-	border-bottom: none;
-}
-
-ul[role="menubar"] [role="separator"] {
-  padding-top: 0.15em;
-  background-image: url('../images/separator.png');
-  background-position: center;
-  background-repeat: repeat-x;
-}
-li.menu-item-has-children li.menu-item {
-	text-align: left;
-}
-
-li.menu-item-has-children ul {
-	background-color: white;
-	border: 1px solid #c0c0c0;
-}
-
-ul[role="menubar"] [role="menuitem"]:focus,
-ul[role="menubar"] [role="menuitem"]:hover  {
-  background-color: #1f6c91;
-  color: white;
-}
-
-[role="menuitem"] svg {
-	fill: #1f6c91;
-}
-ul[role="menubar"] li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul[role="menubar"] > li {
-  position: relative;
-}
-
-
-ul[role="menubar"] ul[role="menu"] {
-  display: none;
-  position: absolute;
-  top: -2px;
-  left: 0;
-  margin: 0;
-  padding: 0;
-}
-
-ul[role="menubar"] ul[role="menu"] li a {
-  display: block;
-  max-width: 15em;
-}
-
-
-
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+                          Sidebar                    +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
+/* Sidebar */
 .widget-searchform ws {
 	margin-top: 0;
 }
@@ -1841,16 +1755,7 @@ a.comment-edit-link {
 	stroke-width: 0;
 }
 
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+             SVG FORMATTING                          +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
+/*15. SVG formating*/
 
 /* Shortcodes formating @since 17.9.7 */
 .site svg {
@@ -1904,25 +1809,10 @@ svg.icon-extlink {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            READING OPTIONS toolbar                  +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
+/*-------------------------------------------------------------- 
+/* Accessibility toolbar 
+/* @since 18.12
+-------------------------------------------------------------- */
 
 .high-contrast-1,
 .high-contrast-2 {
@@ -2003,7 +1893,7 @@ svg.icon-extlink {
 }
 
 .high-contrast-2 .site,
-.high-contrast-2 #navigation-bar .toggled-on,
+.high-contrast-2 .megamenu.toggled-on,
 #high-contrast-2{
     background-color: #000;
     color: #fff ;
@@ -2089,7 +1979,7 @@ svg.icon-extlink {
 }
 
 
-/* font-type-2: Seriff */
+/* font-type-2: Talpas*/
 
 .font-type-2 .site,
 .font-type-2 .site,
@@ -2174,12 +2064,20 @@ body.font-size-3 .toolbar-label {
 .toolbar-buttons button {
     margin-left: 3px;
     padding: 7px 3px;
-	font-size: 0.8em;
 }
  
 .toolbar-buttons td {
 	border: none;
-	padding: 0.7em;
+	text-align: center;
+	padding: 8px 4px;
+}
+
+.toolbar-buttons td.toolbar-label {
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	line-height: 1.3;
+	vertical-align: middle;
 }
 
     
@@ -2202,33 +2100,21 @@ body.font-size-3 .toolbar-label {
 
 .phone-text {
     display: inline;
-		color: #111;
 }
-
-#high-contrast-2 > span.phone-text 	{
-		color: #fff;
-}
+ 
 
 .button-container li {
     list-style: none;
 }
 
 
+/* end of accessibility toolbar */
 
-
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Accessible back-to-top function          +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
+/* accessible back-to-top function
+ * @since 19.1
+ -------------------------------------------------------------- */
 .manduca-back-to-top-div {
-		position: fixed;
+	position: fixed;
     opacity: 0;
     overflow: hidden;
     text-align: center;
@@ -2257,18 +2143,9 @@ body.font-size-3 .toolbar-label {
     opacity: 1.0;
 }
 
-
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+            Accessible hide-show system               +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
+/* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
+ * * @since 19.3
+ ---------------------------------------------------------------------------------- */
 .js-to_expand[aria-hidden=true],
 .js-to_expand[data-hidden=true] {
   display: none;
@@ -2312,24 +2189,26 @@ body.font-size-3 .toolbar-label {
 
 
 
+/*-------------------------------------------------------------- 
+/*                     Media queries
+-------------------------------------------------------------- */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* +---++---++---++---++---++---++---++---++---++---++---++---+
-+---+                    13. Media queries						     +---+
---++---++---++---++---++---++---++---++---++---++---++---++---+*/
-
+@media screen and ( max-width: 360px) {
+		.top-bar {
+			height: 8.284rem;
+		}
+		
+		.header-searchform {
+			top: 4.5rem;
+			left: 0.5rem;
+			right: 0.5rem;
+		}
+		
+		.header-searchform #s{
+			max-width: 80%;
+		}
+}
 
 @-ms-viewport {
 	width: device-width;
@@ -2345,13 +2224,18 @@ body.font-size-3 .toolbar-label {
 
 /*  Minimum width of 370 pixels. */
 @media screen and (min-width: 370px) {
-	#header-searchform,   /* using ID is important, because use-tooltip would override it */
-	.header-searchform #s {
-		width: auto;
-	}
+
 	.menu-toggle span {
 		font-size: 80%;
 		text-transform: lowercase;
+	}
+}
+
+
+@media screen and (min-width: 430px) {
+	.header-searchform  {
+		top: 17px;
+		right: 5px;
 	}
 }
 
@@ -2361,29 +2245,16 @@ body.font-size-3 .toolbar-label {
 @media screen and (min-width: 600px) {
 	
 	
-	/* two columns layout */
-	.inner-wrapper {
-			display:flex;
-			flex-wrap:wrap;
-			flex-direction:row;
-			justify-content:flex-start;
-			align-items:stretch;
-			max-width: 180em;
-			margin: 0 auto;
-			
-		}
-		
-		
-		body:not( .page-template-full-width) .site-content {
-			width: 75%;
-			max-width: 180em;
-			
-		}
-		.widget-area {
-			width: 25%;
-			max-width: 60em;
-			
-}
+	body:not( .page-template-full-width) .site-content {
+		width: 75%;
+		max-width: 180em;
+		padding: 0 2em 0 0;	
+	}
+	
+	.widget-area {
+		width: 25%;
+		max-width: 60em;		
+	}
 
 	
 	/*
@@ -2413,7 +2284,7 @@ body.font-size-3 .toolbar-label {
 	
 	/* Font size */ 
 	.site h2 {
-		font-size: 1.6em;
+		font-size: 1.536em;
 	}
 	
 	
@@ -2466,7 +2337,10 @@ body.font-size-3 .toolbar-label {
 		float: left;
 	}
 	
-	
+	.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+		font-size: 1.35em;
+	}
+
 	
 	.alignright {
 		float: right;
@@ -2478,47 +2352,22 @@ body.font-size-3 .toolbar-label {
 }
 
 
-     /* Entry-header since 2 columns
-	  * (second displayed first ) 
-     */	
-	.columns-mask {
-		position:relative;		
-		clear:both;
-		/*float:left; deleted in 17.8.3*/
-		width:100%;			
-		overflow:hidden;
-	}
+    /* 2 colmns replaced by flex
+	* @since 20.9
+	*/	
+	
 	.columns-wrapper {
-		float:left;
-		width:200%;
-		position:relative;
-		left:75px;
+		display: flex;
+		flex-direction: row-reverse;
 	}
 	.column-right-wrapper {
-		float:right;
-		width:48%;
-		position:relative;
-		right:75px;
-	}
-	.column-right {
-		position:relative;
-		right: 95%;
-		width: 82%;
-		overflow:hidden;
+		width: 80%;
 	}
 	
 
 	.column-left {
-		float:left;
-		width:60px;
-		width: 4.285rem;
-		position:relative;
-		right:75px;
-		right: 5.357rem;
+		width: 20%;
 	}
-		
-	
-	
 
 	/*content date format
 	 @since 16.8 */
@@ -2559,13 +2408,7 @@ body.font-size-3 .toolbar-label {
 		font-weight: 200;
 	}
 
-	.column-left {
-		width: 98px;
-		right: 98px;
-	}
-	.columns-wrapper {
-		left: 98px;
-	}
+
 	.edit-link {
 		margin: 14px 0;
 	}
@@ -2637,15 +2480,18 @@ body.font-size-3 .toolbar-label {
 		margin: 0 0 0 7px;
 	}
 	/* toolbars 600-784px */
-	.toolbar-buttons-open {
-        position: absolute;
-        top: 10px;
-        right: inherit;
+	.site .toolbar-buttons-open {
+    position: absolute;
+    top: 14px;
+    right: inherit;
 		left: 55px;
 		width: auto;
 		height: auto;
-		padding: 6px 12px;
-    }
+		padding: 3px 14px 6px 7px;
+  }
+	.site .toolbar-buttons-open svg {
+		display: none;
+	}
    
     .phone-text {
         display: none;
@@ -2756,8 +2602,8 @@ body.font-size-3 .toolbar-label {
 	
 	/* toolbars 784-1360px */
 	.toolbar-buttons-open {
-        top: 55px;
-        right: 17px;
+    top: 1.3rem;
+    right: 1.3rem;
 		left: auto;
     }
 		
@@ -2789,24 +2635,19 @@ body.font-size-3 .toolbar-label {
 		margin-left: 5px;
 	}
 	
-	.top-bar {
-		display: none;
-	}
 	
 	.site-title {
 			text-align: left;		
-	}
-	.header-bar {
-		position: relative;
 	}
 	
 	
 	/*Menu opened from 764px*/
 	.site-header-menu {
 		display: block;
+		margin: 1rem 0;
 	}
 
-	.site-header-menu > div{
+	.site-header-menu .megamenu {
 		display: block;
 		margin: 0;
 		text-align: center;
@@ -2814,9 +2655,9 @@ body.font-size-3 .toolbar-label {
 	 	
 	
 
-	.site-header-menu ul.nav-menu > li.menu-item {
-		margin-top: 1.714285714rem;
+	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
+		margin: 0;
 	}
 	
 
@@ -2830,7 +2671,7 @@ body.font-size-3 .toolbar-label {
 		text-align: center;
 	}
 	
-	.site-header-menu ul.nav-menu > li > a {
+	.megamenu ul.nav-menu > li > a {
 		padding: 7px 14px;
 		white-space: nowrap;
 		font-weight: 500;
@@ -2846,7 +2687,7 @@ body.font-size-3 .toolbar-label {
 	}
 
 
-	.site-header-menu li.menu-item-has-children {
+	.megamenu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0rem;
 	}
@@ -2890,15 +2731,31 @@ body.font-size-3 .toolbar-label {
 /* 	END width of 600-975*/
 
 
-
-
-
-
-
 /*START width of 976-1359 pixels. */
 @media screen and (min-width: 976px) {
 	
-		
+	.top-bar {
+		display: none;
+	}
+	
+	.header-bar {
+		position: relative;
+	}
+	
+	.site-title {
+		padding: 0.33rem 0;
+	}
+	
+	.site .toolbar-buttons-open {
+		right: 19em;
+		left: auto;
+	}
+	
+	.header-searchform {
+		font-size: 1.1em;
+		top: 13px;
+	}
+	
 	body.custom-background-empty {
 		background-color: #fff;
 	}
@@ -2910,10 +2767,10 @@ body.font-size-3 .toolbar-label {
 		box-shadow: none;
 	}
 	/* top level navigation item */
-		.site-header-menu ul.nav-menu > li.menu-item > a {
+		.megamenu ul.nav-menu > li.menu-item > a {
 		font-size: 1.5em;
 	}
-	.site-header-menu ul.nav-menu > li.menu-item > span {  /* @18.7 */
+	.megamenu ul.nav-menu > li.menu-item > span {  /* @18.7 */
 		font-size: 1.4em;
 		
 	}
@@ -2988,16 +2845,6 @@ body.font-size-3 .toolbar-label {
 	.excerpt-wrapper {
 		margin-bottom: 20px;
 	}
-	.toolbar-buttons {
-		top:4.5em;
-	}
-	.toolbar-buttons-open {
-        right: 327px;
-        top: 15px;
-    }
-	.header-searchform {
-		top: 16px;
-	}
 	
 }
 
@@ -3005,9 +2852,9 @@ body.font-size-3 .toolbar-label {
 
 
 
-
-
 @media screen and (min-width: 1590px ){
+	
+	
 	
 	/*@since 18.9 */
 	.site {
@@ -3021,21 +2868,9 @@ body.font-size-3 .toolbar-label {
 	article > header {
 		text-align: center;
 	}
-    .toolbar-buttons-open {
-		top: 6px;
-		left: auto;
-		right: 22.85em;
-	}
-	.header-searchform {
-		top: 10px;
-		right: 10px;
-		left: auto;
-	}
+
 	
 }
-
-
-
 
 
 
@@ -3110,11 +2945,9 @@ body.font-size-3 .toolbar-label {
 	
 	/*
 	 * Entry-header formating
-	 * */Content date 
+	 * */
 	.columns-mask,
-	.columns-wrapper,
 	.column-right-wrapper,
-	.column-right,
 	.column-left {
 		position: static;
 		float: none;
@@ -3194,4 +3027,5 @@ body.font-size-3 .toolbar-label {
 		margin-left: 50px;
 		margin-left: 3.57142857rem;
 	}
+
 }
