@@ -4,7 +4,7 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
 Author URI: https://akadálymentes-honlap.hu/
-Version: 20.9
+Version: 20.10beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
@@ -1123,8 +1123,17 @@ transform: rotate(180deg);
 /* this was disabled in media-query
  * @since 18.12
  * */
-.widget-area .widget,
-.site-content article {
+.hyphen-0 .widget-area .widget ,
+.hyphen-0 .site-content article {
+	-webkit-hyphens: none;
+	   -moz-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
+}
+
+
+.hyphen-1 .widget-area .widget ,
+.hyphen-1 .site-content * {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	   -moz-hyphens: auto;
@@ -2289,14 +2298,7 @@ body.font-size-3 .toolbar-label {
 	line-height: 1.64285; /* Golden rule*/
 	}
 
-	.widget-area .widget,
-	.site-content article {
-		-webkit-hyphens: none;
-		   -moz-hyphens: none;
-			-ms-hyphens: none;
-				hyphens: none;
-}
-
+	
 	
 	/* Colors */
 	

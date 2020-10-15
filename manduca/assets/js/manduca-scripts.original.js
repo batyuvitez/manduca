@@ -23,7 +23,7 @@
 jQuery.noConflict();
 
 
-
+                   
 
 
 /**
@@ -656,6 +656,18 @@ function constrain(amt, low, high) {
              $('body').addClass( "font-size-0" );
 			 $( '#font-size-0').attr( 'disabled', 'true' );
           }
+    
+    
+      var hyphen=readCookie( "hyphen" );
+         if ( hyphen) {
+             $('body').addClass( hyphen);
+          $( '#' + hyphen ).attr( 'disabled' , 'true' );
+          }
+          else {
+             $('body').addClass( "hyphen-0" );
+            $( '#hyphen-0').attr( 'disabled', 'true' );
+          }
+    
       
       
     // Set target selector value @since 19.3
@@ -767,6 +779,19 @@ function constrain(amt, low, high) {
         $('body').addClass(fontType);
         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
         document.cookie = 'fontType=' + fontType + '; expires=' + CookieDate.toGMTString() + '; path=/';
+    });
+	
+ //change hyphenation
+    $('.change-hyphen').click(function () {
+        var hyphen= $(this).attr('data-hyphen');
+        $( '.change-hyphen').removeAttr( 'disabled' );
+        $(this).attr('disabled' , 'true' );
+        var CookieDate = new Date();
+
+        $('body').removeClass('hyphen-1 hyphen-0');
+        $('body').addClass(hyphen);
+        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
+        document.cookie = 'hyphen=' + hyphen+ '; expires=' + CookieDate.toGMTString() + '; path=/';
     });
 	
 	 

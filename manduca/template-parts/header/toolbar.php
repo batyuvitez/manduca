@@ -30,15 +30,16 @@
 printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open link-button" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
 		   manduca_get_svg( array( 'icon' => 'eye' ) ),
 		   manduca_get_svg( array( 'icon' => 'close' ) ),
-		   __( 'Display options', 'manduca' )
+		   //Translators: Name of options button (text size, color etc) at the header.
+					__( 'Display options', 'manduca' )
 		  );
 ?>
-
-
- 
  <div id="toolbar-buttons" class="toolbar-buttons featured-scheme">
 	<h1 aria-hidden="true"><?php _e( 'Display options', 'manduca' ); ?></h1>
-	<p><?php _e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?> </p>
+	<p><?php
+			//Translators: cookie consent only if user change the default option with Display Options. 
+			_e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?></p>
+	
 	 <table role="presentation" class= "featured-scheme">
 		  <tbody>
 				
@@ -62,6 +63,13 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 						 <td><button class="change-font-size" id ="font-size-1" aria-label="<?php _e( 'Normal' , 'manduca' ); ?>" data-zoom="font-size-1"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Normal', 'manduca' ); ?></span></button></td>
 						 <td><button class="change-font-size" id ="font-size-2" aria-label="<?php _e( 'Large' , 'manduca' ); ?>" data-zoom="font-size-2"><span class="phone-text" aria-hidden="true">Abc</span><span class="desktop-text"><?php _e( 'Large', 'manduca' ); ?></span></button></td>
 					 </tr>
+						
+						<tr>
+						 <td class="toolbar-label"><span><?php _e( 'Hypenation' , 'manduca' ); ?>:</span></td>
+						 <td><button class="change-hyphen"  id ="hyphen-0" aria-label="<?php _e( 'none' , 'manduca' ); ?>" data-hyphen="hyphen-0"><span class="phone-text" aria-hidden="true">Ab-ce</span><span class="desktop-text"><?php _e( 'none', 'manduca' ); ?></span></button></td>
+						 <td><button class="change-hyphen"  id ="hyphen-1" aria-label="<?php _e( 'all' , 'manduca' ); ?>" data-hyphen="hyphen-1"><span class="phone-text" aria-hidden="true">Abce</span><span class="desktop-text"><?php _e( 'all', 'manduca' ); ?></span></button></td>
+					 </tr>
+						
 						
 						<tr>
 						 <td class="toolbar-label"><span><?php _e( 'Choose link target', 'manduca' ); ?></span></td>
