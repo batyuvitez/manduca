@@ -1,6 +1,6 @@
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020 Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -613,78 +613,18 @@ function constrain(amt, low, high) {
  
  
 	
-     /*
+     /*------------------------------------------------
       * Accessibility/reading options TOOLBAR scripts
       *
       * Author: Zsolt Edelényi
       * @since 17.8
       *
-      **/
+      **---------------------------------------------------*/
    
+      
       /*
-       * Read cookies to set user's preferences
-       * */
-      
-      var contrastType=readCookie( "contrastType" );
-      if ( contrastType ) {
-          $('body').addClass( contrastType );
-		  $( '#' + contrastType ).attr( 'disabled' , 'true' );
-       }
-       else {
-          $('body').addClass( "high-contrast-0" );
-		  $( '#high-contrast-0').attr( 'disabled', 'true' );
-       }
-   
-      
-      var fontType=readCookie( "fontType" );
-         if ( fontType ) {
-             $('body').addClass( fontType );
-			 $( '#' + fontType ).attr( 'disabled' , 'true' );
-          }
-          else {
-             $('body').addClass( "font-type-0" );
-			 $( '#font-type-0').attr( 'disabled', 'true' );
-          }
-          
-              
-      var fontSize=readCookie( "fontSize" );
-         if ( fontSize ) {
-             $('body').addClass( fontSize );
-			 $( '#' + fontSize ).attr( 'disabled' , 'true' );
-          }
-          else {
-             $('body').addClass( "font-size-0" );
-			 $( '#font-size-0').attr( 'disabled', 'true' );
-          }
-    
-    
-      var hyphen=readCookie( "hyphen" );
-         if ( hyphen) {
-             $('body').addClass( hyphen);
-          $( '#' + hyphen ).attr( 'disabled' , 'true' );
-          }
-          else {
-             $('body').addClass( "hyphen-0" );
-            $( '#hyphen-0').attr( 'disabled', 'true' );
-          }
-    
-      
-      
-    // Set target selector value @since 19.3
-    var linkTarget=readCookie( "linkTarget" );
-    if( linkTarget ) {
-        $( '#target-' + linkTarget ).attr( 'disabled', 'true');
-    }
-    else {
-        $( '#target-default').attr( 'disabled', 'true');
-    }
-	  
-   
-      /*
-       * Behaviour open toolbar button of reading options 
+       * Toolbar toggle 
        **/
-   
-          //Toggle tollbar
       $('.toolbar-buttons-open').click(function(){
          $('.toolbar-buttons').slideToggle( 200 );
          //close toolbar, if menu opens    
@@ -718,11 +658,11 @@ function constrain(amt, low, high) {
     
 	
 	
-    /*
-	 *Close toolbar for escape button and add focus back to the toolbar-button
-	 *
-	 *@since 19.2
-	 **/
+/*
+*Close toolbar for escape button and add focus back to the toolbar-button
+*
+*@since 19.2
+**/
 	$(document).on('keyup',function(evt) {
 		if (evt.key === 'Escape') {
     		if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
@@ -736,79 +676,57 @@ function constrain(amt, low, high) {
     });
  
    
-   
    /*
-    * Toolbar settings
-    * set cookies based on toolbar-buttons clicks
-    **/
-    //change font size
-    $('.change-font-size').click(function () {
-         var fontSize = $(this).attr('data-zoom');
-         $( '.change-font-size').removeAttr( 'disabled' );
-        $(this).attr('disabled' , 'true' );
-         var CookieDate = new Date();
-
-         $('body').removeClass('font-size-0 font-size-1 font-size-2 font-size-3');
-         $('body').addClass(fontSize);
-         CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-         document.cookie = 'fontSize=' + fontSize + '; expires=' + CookieDate.toGMTString() + '; path=/';
-     });
-     
-      
-      
-    ///change contrast
-    $('.high-contrast').click(function () {
-        var contrastType = $(this).attr('data-contrast-type');
-        $( '.high-contrast').removeAttr( 'disabled' );
-        $(this).attr('disabled' , 'true' );
-        var CookieDate = new Date();
-        $('body').removeClass('high-contrast-1 high-contrast-2 high-contrast-3 high-contrast-0');
-        $('body').addClass(contrastType);
-        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-        document.cookie = 'contrastType=' + contrastType + '; expires=' + CookieDate.toGMTString() + '; path=/';
+    * Handle cookies and events
+    * */
+   
+    var $blocks=$('#toolbar-buttons button');
+    var $uniqueNames = [];
+    $.each ($blocks, function ( i, $element ) {
+       var $class=$($element).attr('class');
+       if($.inArray($class, $uniqueNames) === -1) $uniqueNames.push($class);
+     }); 
+    $.each ($uniqueNames, function ( i, $block ) {
+    
+        var $cookieValue =readCookie( $block );
+          if ( $cookieValue ) {
+              $('body').addClass( $cookieValue );
+        $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
+           }
+           else {
+            var $default=$block+ '-0';
+              $('body').addClass( $default );
+             $( '#'+$default).attr( 'disabled', 'true' );
+           }
+       
+        
+        $('.'+$block).click(function () {
+          var $id= $(this).attr('id');
+          $( '.'+$block).removeAttr ('disabled');
+          $(this).attr('disabled' , 'true' );
+          var $removes='';
+          for ($i=0; $i<5; $i++) {
+            var $new=$block + '-' + $i + ' ';
+             $removes=$removes.concat($new);
+          }   
+          var CookieDate = new Date();
+          $('body').removeClass($removes);
+          $('body').addClass($id);
+          CookieDate.setFullYear(CookieDate.getFullYear() + 10);
+          document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
+        });
+        
     });
     
-    //change font family
-    $('.change-font-type').click(function () {
-        var fontType= $(this).attr('data-font-type');
-        $( '.change-font-type').removeAttr( 'disabled' );
-        $(this).attr('disabled' , 'true' );
-        var CookieDate = new Date();
-
-        $('body').removeClass('font-type-1 font-type-2 font-type-0');
-        $('body').addClass(fontType);
-        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-        document.cookie = 'fontType=' + fontType + '; expires=' + CookieDate.toGMTString() + '; path=/';
+    /*
+     *Target change should followed with reload
+     **/
+    $('.target').on( 'click' ,function () {
+        location.reload();
     });
-	
- //change hyphenation
-    $('.change-hyphen').click(function () {
-        var hyphen= $(this).attr('data-hyphen');
-        $( '.change-hyphen').removeAttr( 'disabled' );
-        $(this).attr('disabled' , 'true' );
-        var CookieDate = new Date();
-
-        $('body').removeClass('hyphen-1 hyphen-0');
-        $('body').addClass(hyphen);
-        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-        document.cookie = 'hyphen=' + hyphen+ '; expires=' + CookieDate.toGMTString() + '; path=/';
-    });
-	
-	 
-    //change target
-    $('.target-selector').on( 'click' ,function () {
-        var selectTarget= $(this).attr( 'data-target' ) ;
-        $( '.target-selector' ).removeAttr( 'disabled');
-		$(this).attr( 'disabled', 'true');
-		var CookieDate = new Date();
-        CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-        document.cookie = 'linkTarget=' + selectTarget + '; expires=' + CookieDate.toGMTString() + '; path=/';
-    	location.reload();
-      
-    });
+    
    
-   
-   
+  
     
     /*
     * Skiplinks 
@@ -940,7 +858,9 @@ jQuery(document).ready(function($) {
      *@since 19.3
      */
     // loading expand paragraphs
-    // these are recommended settings by a11y experts. You may update to fulfill your needs, but be sure of what you’re doing.
+    // these are recommended settings by a11y experts.
+    //You may update to fulfill your needs, but be sure of what you’re doing.
+    
     var attr_control = 'data-controls',
         attr_expanded = 'aria-expanded',
         attr_labelledby = 'data-labelledby',
@@ -1083,12 +1003,20 @@ jQuery(document).ready(function($) {
 });
 
 
-/*
+
+
+
+
+
+
+
+/*---------------------------------------------------
  **Cookie functions
  *
  *https://www.quirksmode.org/js/cookies.html
  *
- */
+ *--------------------------------------------------*/
+ 
  function createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();

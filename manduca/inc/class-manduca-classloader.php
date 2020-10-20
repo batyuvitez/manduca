@@ -124,8 +124,8 @@ class Manduca_Classloader {
                 $class_namespace = untrailingslashit( $class_namespace );
                 
                 $filename = self::create_filename( $class_name_wo_namespace ) ;
-                
-                $success = self::loadFile( self::$lookup_directories[ $class_namespace ]. $filename);
+                $dir = trailingslashit (self::$lookup_directories[ $class_namespace ]);               
+                $success = self::loadFile( $dir . $filename);
 
             }
 
