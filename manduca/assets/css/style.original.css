@@ -4,7 +4,7 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
 Author URI: https://akadálymentes-honlap.hu/
-Version: 20.10beta
+Version: 20.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Fast and robust theme to easily comply with the accessiblity guidelines (WCAG 2.1). Add child theme for any trendy webdesign. Special features for Hungarians.
@@ -183,9 +183,14 @@ svg {
 	fill: #164e68;	
 }
 
-body a{
+body a {
 	color: #1f6c91;
+	text-decoration-color: #257499;
+	text-decoration-skip-ink: auto;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: .13em; 
 }
+
 
 
 .site a:focus,
@@ -196,21 +201,22 @@ body a{
 .site select:active,
 button[disabled],
 input[disabled],
-textarea[disabled]{
+textarea[disabled] {
 	outline: 4px solid #9E430E;
 	outline-offset: 2px;
-	color: #222;
 }
+
+.site a:hover,
+.site button:hover:not([disabled]),
+.site select:hover {
+	outline: 1px dotted #9E430E; 	
+}
+
 
 .site .toolbar-buttons-open:active {
 	color:#daf3ff
 }
 
-.site a:hover,
-.site button:hover,
-.site select:hover {
-	outline: 1px dotted #9E430E; 	
-}
 
 
 .featured-scheme,
@@ -363,7 +369,8 @@ a.page-numbers.prev,
 .site button[disabled],
 .site input[disabled],
 .site textarea[disabled] {
-	cursor: default;
+	cursor: not-allowed;
+	color: #222;
 }
 
 
@@ -832,7 +839,7 @@ body .site,
 }
 
 .top-bar {
-	height: 4.142rem;
+	height: 8.284rem;
 	width: 100%;
 }
 
@@ -849,14 +856,19 @@ body .site,
 
 .header-searchform {
 	text-align: right;
-}
-.search-form label{
-	font-size: 148%;
-	padding: 0.214rem;
+	position: absolute;	
+	top: 4.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
 }
 
-.header-searchform {  
-		position: absolute;	
+.font-size-1 .header-searchform {
+	top: 6.5rem;
+}
+
+.search-form label { /* both widget and header */
+	font-size: 148%;
+	padding: 0.214rem;
 }
 
 .header-searchform label { /* i.e. screen-reader-text*/
@@ -868,12 +880,16 @@ body .site,
 	word-wrap: normal;
 }
 
-
 .header-searchform #s{
 	margin: 0;
 	float: left;
+	max-width: 77%;  /*Tested with double font size */
 }
 	
+.header-searchform .search-submit {
+		float: left;	
+}
+
 .header-bar {
 	display: block;
 }
@@ -1132,14 +1148,7 @@ transform: rotate(180deg);
 }
 
 
-.hyphen-1 .widget-area .widget ,
-.hyphen-1 .site-content * {
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	    -ms-hyphens: auto;
-	        hyphens: auto;
-}
+
 
 .site q:before {
 	content: "„";
@@ -1828,321 +1837,8 @@ svg.icon-extlink {
 
 
 
-/*-------------------------------------------------------------- 
-/* Accessibility toolbar 
-/* @since 18.12
--------------------------------------------------------------- */
-
-.high-contrast-1,
-.high-contrast-2 {
-	background-image: none;  /* cannot reset all background, since it removes background-colors too */
-}
-
-/*
- * high-cont	rast-1: low contrast pastel background easy to read in midnight
- */
-
-.high-contrast-1 a {
-	color: #4d99ff ;
-}
-
-.high-contrast-1 .site,
-.high-contrast-1 .megamenu.toggled-on,
-#high-contrast-1{
-    background-color: #c6d17e;
-    color: #808067 ;
-}
-
-.high-contrast-1 svg {
-	fill: #808067 ;
-}
-.high-contrast-1 textarea,
-.high-contrast-1 input,
-.high-contrast-1 select,
-.high-contrast-1 button,
-.high-contrast-1 .site .basic-scheme {
-	background-color: #dde98e;
-	color: #808067 ;
-}
-
-.high-contrast-1 .link-button,
-.high-contrast-1 .link-button a {
-	background-color: #c67254;
-	color: #eee; 
-}
-.high-contrast-1 .link-button svg{
-	fill: #eee;
-}
-
-.high-contrast-1 .lighter-scheme {
-	background-color: #dde98e;
-}
-
-.high-contrast-1 .featured-scheme {
-	border: 2px solid #98a05f;
-	background-color: #dde98e;
-}
-
-.high-contrast-1 .inverse-scheme {
-	color: #c6d17e;
-    background-color: #808067 ;
-}
-.high-contrast-1 .inverse-scheme a  {
-	color: #c0d4f0 ;
-    background-color: #808067 ;
-}
-
-.high-contrast-1 .inverse-scheme svg {
-	fill: #c6d17e;
-	}
 
 
-
-
-
-
-/*
- * high-contrast-2: High contrast black background and yellow letters, blue links
-*/
-
-.high-contrast-2 a {
-	background-color: #000 ;
-	color: #A5E9F8;
-	text-decoration: underline;
-}
-
-.high-contrast-2 .site,
-.high-contrast-2 .megamenu.toggled-on,
-#high-contrast-2{
-    background-color: #000;
-    color: #fff ;
-}
-
-.high-contrast-2 svg {
-	fill: #fff;
-}
-.high-contrast-2 textarea,
-.high-contrast-2 input,
-.high-contrast-2 select,
-.high-contrast-2 button {
-	background-color: #000;
-	color: #fff ;
-}
-
-.high-contrast-2 .basic-scheme svg {
-	fill: #000;
-}
-
-.high-contrast-2 .link-button,
-.high-contrast-2 .link-button a {
-	background-color: #fff;
-	color: #000; 
-}
-.high-contrast-2 .link-button svg{
-	fill: #000000;
-}
-
-.high-contrast-2 .lighter-scheme {
-	background-color: #222;
-}
-
-.high-contrast-2 .featured-scheme {
-	border: 2px solid #c1ec15;
-	box-sizing: content-box;
-	background-color: #111;
-	color: #fff;
-}
-
-.high-contrast-2 table.featured-scheme {
-	border: none;
-}
-
-.high-contrast-2 .featured-scheme svg {
-	fill: #fff;
-}
-
-.high-contrast-2 .inverse-scheme {
-	color: #fff;
-    background-color: #000;
-}
-.high-contrast-2 .inverse-scheme a  {
-	color: #15c6ec ;
-    background-color: #000;
-}
-
-.high-contrast-2 .inverse-scheme svg {
-	fill: #000;
-	}
-
-
-
-
- 
-/*
- * FONT-TYPE-1: Fix width
- */
-
-.font-type-1 .site #menu,
-.font-type-1 .site .site-header-menu,
-.font-type-1 .site,
-.font-type-1 .site article,
-.font-type-1 .site a,
-.font-type-1 .site h1,
-.font-type-1 .site h2,
-.font-type-1 .site h3,
-.font-type-1 .site h4,
-.font-type-1 .site h5,
-.font-type-1 .site h6,
-.font-type-1 .site p,
-.font-type-1 .site span,
-.font-type-1 .site label,
-.toolbar-buttons #font-type-1{
-    font-family: Courier, /* Windows, Ios */
-				'Droid Sans Mono',  /* Android */
-				monospace;
-}
-
-
-/* font-type-2: Talpas*/
-
-.font-type-2 .site,
-.font-type-2 .site,
-.font-type-2 .site #menu,
-.font-type-2 .site .site-header-menu,
-.fonr-type-2 .site article,
-.font-type-2 .site a,
-.font-type-2 .site h1,
-.font-type-2 .site h2,
-.font-type-2 .site h3,
-.font-type-2 .site h4,
-.font-type-2 .site h5,
-.font-type-2 .site h6,
-.font-type-2 .site p,
-.font-type-2 .site span,
-.font-type-2 .site label,
-.toolbar-buttons #font-type-2{
-    font-family: Garamond,  /* Windows */
-				'Droid Serif',  /* Android */
-				Georgia, /* iOs */
-				Times,  /* Linux */
-				serif;
-}
-
-
-/* Font size in reading option window */
-.toolbar-buttons button#font-size-0 span{
-    font-size: 2vw;
-}
-.toolbar-buttons button#font-size-1 span{
-    font-size: 2.5vw;
-}
-
-.toolbar-buttons button#font-size-2 span{
-    font-size: calc(0.1em + 3vw);
-}
-.toolbar-buttons button#font-size-3 span {
-    font-size: calc(0.5em + 4vw);
-}
-
-
-.font-size-1 {
-    font-size: 125%;
-}
-
-
-.font-size-2 {
-    font-size: 150%;
-}
-
-.font-size-2 .top-bar {
-	display: block;
-	height: 6em;
-}
-
-.font-size-2 .site-header,
-.font-size-2 .header-bar{
-	position: static;
-}
-
-.font-size-3 {
-    font-size: 200%;
-}
-
-.font-size-3 #s {
-	font-size: 25px; /* If bigger, hide the other buttons*/
-}
-.font-size-3 .top-bar {
-	height: 5rem;
-}
-
-
- /* Reading options modal window buttons design*/
- 
-.toolbar-buttons {
-    padding: 2.5em 1em 1em ;
-    width: 100%;
-    position: absolute;
-    top: 4.5rem;
-    left: 0;
-    z-index: 100;
-	display: none;
-}
-.toolbar-buttons > tr {
-	margin: 0 7px;
-}
-
-body.font-size-2 .toolbar-label,
-body.font-size-3 .toolbar-label {
- display: none;
- }
-.toolbar-buttons button {
-    margin-left: 3px;
-    padding: 7px 3px;
-}
- 
-.toolbar-buttons td {
-	border: none;
-	text-align: center;
-	padding: 8px 4px;
-}
-
-.toolbar-buttons td.toolbar-label {
-	padding: 0;
-	margin: 0;
-	text-align: left;
-	line-height: 1.3;
-	vertical-align: middle;
-}
-
-    
-	
-
-/*mobil appearance */
- .buttons-close {
-        display: block;
-								position: absolute;
-        right: 0.4em;
-        top: 0.4em;
-        border: 1px solid white;
-        padding: 1px;
-        cursor: pointer
-    }
-    
-.desktop-text {
-    display: none;
-}
-
-.phone-text {
-    display: inline;
-}
- 
-
-.button-container li {
-    list-style: none;
-}
-
-
-/* end of accessibility toolbar */
 
 /* accessible back-to-top function
  * @since 19.1
@@ -2176,6 +1872,8 @@ body.font-size-3 .toolbar-label {
     cursor: pointer;
     opacity: 1.0;
 }
+
+
 
 /* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
  * * @since 19.3
@@ -2223,26 +1921,455 @@ body.font-size-3 .toolbar-label {
 
 
 
-/*-------------------------------------------------------------- 
-/*                     Media queries
--------------------------------------------------------------- */
 
+/*-------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------- 
+/* Accessibility toolbar 
+/* @since 18.12
+/*
+/* Accessibility toolbar is not requred by WCAG 2.1, but gives
+/* user experience, mainly in mobile where reading optionas are complicated to change
+---------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------- --------------------------------------------------------------  */
 
-@media screen and ( max-width: 360px) {
-		.top-bar {
-			height: 8.284rem;
-		}
-		
-		.header-searchform {
-			top: 4.5rem;
-			left: 0.5rem;
-			right: 0.5rem;
-		}
-		
-		.header-searchform #s{
-			max-width: 80%;
-		}
+@media screen and (max-width 400px)
+{
+	
 }
+
+/*
+ *Contrast
+ **/
+
+.high-contrast-1,
+.high-contrast-2 {
+	background-image: none;  /* cannot reset all background, since it removes background-colors too */
+}
+
+
+.high-contrast-1 a {
+	background-color: #000 ;
+	color: #A5E9F8;
+	text-decoration: underline;
+}
+
+.high-contrast-1 .site,
+.high-contrast-1 .megamenu.toggled-on,
+#high-contrast-1{
+    background-color: #000;
+    color: #fff ;
+}
+
+.high-contrast-1 svg {
+	fill: #fff;
+}
+.high-contrast-1 textarea,
+.high-contrast-1 input,
+.high-contrast-1 select,
+.high-contrast-1 button {
+	background-color: #000;
+	color: #fff ;
+}
+
+.high-contrast-1 .basic-scheme svg {
+	fill: #000;
+}
+
+.high-contrast-1 .link-button,
+.high-contrast-1 .link-button a {
+	background-color: #fff;
+	color: #000; 
+}
+.high-contrast-1 .link-button svg{
+	fill: #000000;
+}
+
+.high-contrast-1 .lighter-scheme {
+	background-color: #222;
+}
+
+.high-contrast-1 .featured-scheme {
+	border: 2px solid #c1ec15;
+	box-sizing: content-box;
+	background-color: #111;
+	color: #fff;
+}
+
+.high-contrast-1 table.featured-scheme {
+	border: none;
+}
+
+.high-contrast-1 .featured-scheme svg {
+	fill: #fff;
+}
+
+.high-contrast-1 .inverse-scheme {
+	color: #fff;
+    background-color: #000;
+}
+.high-contrast-1 .inverse-scheme a  {
+	color: #15c6ec ;
+    background-color: #000;
+}
+
+.high-contrast-1 .inverse-scheme svg {
+	fill: #000;
+	}
+
+#high-contrast-0 {
+	background-color: #aaa;
+}
+
+
+ 
+/*
+ * FONT-TYPE
+ */
+.font-type-1 .site #menu,
+.font-type-1 .site .site-header-menu,
+.font-type-1 .site,
+.font-type-1 .site article,
+.font-type-1 .site a,
+.font-type-1 .site h1,
+.font-type-1 .site h2,
+.font-type-1 .site h3,
+.font-type-1 .site h4,
+.font-type-1 .site h5,
+.font-type-1 .site h6,
+.font-type-1 .site p,
+.font-type-1 .site span,
+.font-type-1 .site label,
+.toolbar-buttons #font-type-1{
+    font-family: Courier, /* Windows, Ios */
+				'Droid Sans Mono',  /* Android */
+				monospace;
+}
+
+#font-type-0 span {
+	font-family: sans-serif;
+}
+
+
+
+/*
+ * FONT SIZE 
+*/
+#font-size-1 span{
+    font-size: 150%;
+}
+
+.font-size-1 {
+    font-size: 200%;
+		word-break: break-all;
+}
+
+
+.font-size-1 .top-bar {
+	display: block;
+	height: 13rem;
+}
+
+.font-size-1 .site-header,
+.font-size-1 .header-bar{
+	position: static;
+}
+
+
+
+
+
+/*
+ * LINE-HEIGHT
+ * WCAG 2.1 says: Line height (line spacing) to at least 1.5 times the font size;
+ * Original line heigh satisfy this. criteria. 
+ * */
+ 
+ .line-height-1 {
+	line-height: 2;
+ }
+
+
+
+
+/*
+ * LETTER SPACING
+ WCAG 2.1: Letter spacing (tracking) to at least 0.12 times the font size;
+ **/
+ .letter-spacing-1,
+ #letter-spacing-1 {
+	letter-spacing: 0.12em;
+ }
+ 
+ 
+ 
+/*
+ * PARAGPRAH SPACING
+ * WCAG 2.1: Spacing following paragraphs to at least 2 times the font size;
+ **/
+.paragraph-spacing-1 p,
+.paragraph-spacing-1 li {
+	margin-bottom: 2em;
+}
+
+/*
+ * WORD SPACING
+ * wcag 2.1: Word spacing to at least 0.16 times the font size.
+ * */
+.word-spacing-1,
+#word-spacing-1 span {
+	word-spacing: 0.16em;
+}
+
+
+/*
+ * HYPHENATION
+ *@see: https://www.w3.org/WAI/WCAG21/Techniques/css/C33.html
+ **/
+.hyphen-1 .widget-area .widget ,
+.hyphen-1 .site-content * {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
+}
+
+
+/*
+ * LINK APPEARANCE
+ *@see: https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G183
+ *contrast to white: 6,42:1
+ *contrast to black: 3,26:1
+ *
+ */
+
+
+body.link-appearance-1 a,
+#link-appearance-1 {
+	color: #4e4eca;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+#link-appearance-0 span {
+	color: #1f6c91;
+	text-decoration: underline;
+}
+
+/*
+Reading options modal window buttons design
+*/
+ 
+
+.toolbar-buttons {
+    padding: 1em;
+    width: 100%;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    z-index: 100;
+	display: none;
+}
+
+.toolbar-buttons h1 {
+	margin: 0;
+	font-size: 1.35em;
+}
+
+.toolbar-buttons p {
+	text-align: center;
+}
+
+
+
+.toolbar-buttons-table .row .toolbar-label {
+	width: 100%;
+	font-weight: 700;
+	text-align: center;
+	font-size: 1.1em;
+	margin-top: 0.5em;
+}
+
+
+.toolbar-buttons-table .buttons-wrapper
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+
+.toolbar-buttons-table .button {
+		margin-left: 3px;
+    padding: 7px 3px;
+		cursor: pointer;
+		margin: 0 0.5em;
+}
+
+.toolbar-buttons-table .button button {
+	min-width: 60px;
+		min-height: 40px;
+}		
+.toolbar-buttons button[disabled]:hover{
+	outline: 4px solid #9E430E;
+	outline-offset: 2px;
+	color: #222;
+}
+
+ 
+
+.toolbar-buttons .toolbar-label {
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	line-height: 1.3;
+	vertical-align: middle;
+}
+
+    
+	
+/*mobil appearance */
+ .buttons-close {
+        display: block;
+								position: absolute;
+        right: 0.4em;
+        top: 0.4em;
+        border: 1px solid white;
+        padding: 1px;
+        cursor: pointer
+    }
+    
+.desktop-text {
+    display: none;
+}
+
+.phone-text {
+    display: inline;
+}
+ 
+
+.button-container li {
+    list-style: none;
+}
+
+@media screen and (min-width: 440px ) {
+.font-size-0 .toolbar-buttons-table .row {
+			display: flex;
+			justify-content: center;
+	}
+
+
+.font-size-0 	.toolbar-buttons-table .row .toolbar-label {
+		width: 50%;
+		text-align: right;
+		border-top: 1px white dotted;
+	}
+
+.font-size-0 	.toolbar-buttons-table .buttons-wrapper {
+		display: inline-flex;
+	}
+	
+}
+
+@media screen and (min-width: 600px)
+{
+	.toolbar-buttons-open span {
+		font-size: 1.1em;
+		margin: 0 0 0 7px;
+	}
+    
+  .toolbar-buttons {
+    position: absolute;
+		padding: 2em;
+		top: 7.5em;
+		right: 0;
+		left: auto;
+		z-index: 100;
+		max-width: 600px;
+		border: 3px solid #21759B;
+    }
+    
+		li.button-container {
+			padding-left: 1rem;
+			margin: 1rem 0;
+    }
+
+
+	.toolbar-buttons button#font-size-0 span{
+		font-size: 0.8em;
+	}
+	.toolbar-buttons button#font-size-1 span {
+		font-size: 0.9em;
+	}
+	
+	
+	.toolbar-buttons button#target-self span,
+	.toolbar-buttons button#target-default span{
+		font-size: 0.8em;
+	}
+	/*i don't know why I have to positionit'*/
+	.toolbar-buttons button#target-default {
+				position: relative;
+				top: 6px;
+	}
+
+	.site .toolbar-buttons .info-container {
+		display: block;
+		margin: 14px 0;
+	}
+}
+
+@media screen and (min-width: 660px ) {
+	.toolbar-buttons-table .row {
+			display: flex;
+			justify-content: center;
+	}
+
+
+	.toolbar-buttons-table .row .toolbar-label {
+		width: 50%;
+		text-align: right;
+		border-top: 1px white dotted;
+	}
+
+	.toolbar-buttons-table .buttons-wrapper {
+		display: inline-flex;
+	}
+	
+	.toolbar-buttons-table .button button {
+			min-width: 120px;
+			min-height: inherit;
+	}
+	
+}
+
+/* end of accessibility toolbar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------*-------------------------------------------------------------- *--------------------------------------------------------------  
+/*                     Media queries
+--------------------------------------------------------------*-------------------------------------------------------------- *--------------------------------------------------------------  */
+
 
 @-ms-viewport {
 	width: device-width;
@@ -2266,10 +2393,14 @@ body.font-size-3 .toolbar-label {
 }
 
 
-@media screen and (min-width: 430px) {
-	.header-searchform  {
+@media screen and (min-width: 520px) {
+	.font-size-0 .header-searchform  {
 		top: 17px;
 		right: 5px;
+		left: auto;
+	}
+	.top-bar {
+		height: 4.142rem;
 	}
 }
 
@@ -2279,14 +2410,14 @@ body.font-size-3 .toolbar-label {
 @media screen and (min-width: 600px) {
 	
 	
-	body:not( .page-template-full-width) .site-content {
-		width: 75%;
+	body.font-size-0:not( .page-template-full-width) .site-content {
+		width: 66%;
 		max-width: 180em;
 		padding: 0 2em 0 0;	
 	}
 	
-	.widget-area {
-		width: 25%;
+	body.font-size-0:not( .page-template-full-width) .widget-area {
+		width: 33%;
 		max-width: 60em;		
 	}
 
@@ -2379,8 +2510,9 @@ body.font-size-3 .toolbar-label {
 }
 
 
-    /* 2 colmns replaced by flex
+  /* 2 colmns replaced by flex
 	* @since 20.9
+	* For backward compatibility HTML had not changed.  
 	*/	
 	
 	.columns-wrapper {
@@ -2391,6 +2523,9 @@ body.font-size-3 .toolbar-label {
 		width: 80%;
 	}
 
+	.column-right {
+		margin-left: 1em;
+	}
 	.column-left {
 		width: 20%;
 	}
@@ -2489,6 +2624,7 @@ body.font-size-3 .toolbar-label {
 		float: right;
 		max-width: 50%;
 	}
+	
 	.footer-navigation ul{
 		text-align: right;
 		margin: 0;
@@ -2524,64 +2660,7 @@ body.font-size-3 .toolbar-label {
     .desktop-text {
         display: inline-block;
     }
-	.toolbar-buttons-open span {
-		font-size: 1.1em;
-		margin: 0 0 0 7px;
-	}
-    
-    
-    .toolbar-buttons {
-        position: absolute;
-		padding: 2em;
-        top: 7.5em;
-        right: 0;
-		left: auto;
-        z-index: 100;
-        max-width: 57em;
-    }
-    li.button-container {
-        padding-left: 1rem;
-		margin: 1rem 0;
-    }
 
-	.toolbar-buttons button {
-		font-size: 1.1em;
-		width: 9em;
-		height: 3em;
-	}
-	.toolbar-buttons span {
-		font-size: 1.3em;
-	}
-	.toolbar-buttons button#font-size-0 span{
-    font-size: 0.8em;
-	}
-	.toolbar-buttons button#font-size-1 span {
-		font-size: 0.9em;
-	}
-	
-	.toolbar-buttons button#font-size-2 span{
-		font-size: 1.1em;
-	}
-	.toolbar-buttons button#font-size-3 span{
-		font-size: 1.3em;
-	}
-
-	.toolbar-buttons button#target-self span,
-	.toolbar-buttons button#target-default span{
-		font-size: 0.8em;
-	}
-	/*i don't know why I have to positionit'*/
-	.toolbar-buttons button#target-default {
-				position: relative;
-				top: 6px;
-	}
-
-
-	
-	.site .toolbar-buttons .info-container {
-		display: block;
-		margin: 14px 0;
-	}
 
 	
 	/* comments *to be revised */
@@ -2617,6 +2696,7 @@ body.font-size-3 .toolbar-label {
 
 
 @media screen and (min-width: 764px){
+	
 	
 	.column-right-wrapper {
 		width: 84%;
@@ -2678,7 +2758,7 @@ body.font-size-3 .toolbar-label {
 	
 	
 	.site-title {
-			text-align: left;		
+			text-align: left;
 	}
 	
 	
@@ -2775,6 +2855,17 @@ body.font-size-3 .toolbar-label {
 /*START width of 976-1359 pixels. */
 @media screen and (min-width: 976px) {
 	
+	body.font-size-0:not( .page-template-full-width) .site-content {
+		width: 75%;
+		max-width: 180em;
+		padding: 0 2em 0 0;	
+	}
+	
+	body.font-size-0:not( .page-template-full-width) .widget-area {
+		width: 25%;
+		max-width: 60em;		
+	}
+	
 	.top-bar {
 		display: none;
 	}
@@ -2785,6 +2876,7 @@ body.font-size-3 .toolbar-label {
 	
 	.site-title {
 		padding: 0.33rem 0;
+		max-width: calc( 100% - 500px ) ;			
 	}
 	
 	.site .toolbar-buttons-open {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Generate the readong options table
+ * Generate the reading options table
  *
  * @since 20.11
  *
@@ -36,14 +36,15 @@ class Reading_Options {
 		$html='';
 		foreach ($args as $block)
 		{
-			$html.='<tr>'."\n";
-			$html.='<td class="toolbar-label">';
+			$html.='<div class="row">'."\n";
+			$html.='<div class="toolbar-label">';
 			$html.='<span>'.$block['label'].':</span>';
-			$html.='</td>'."\n";
+			$html.='</div>'."\n";
+			$html.='<div class="buttons-wrapper">'."\n";
 			for ($counter=0; $counter <count ($block['elements']); $counter++)
 			{
 				$element=$block['elements'][$counter];
-				$html.='<td>';
+				$html.='<div class="button">';
 				$html.='<button class="'.$block['name'].'" ';
 				$html.='id="'.$block['name'].'-'.strval ($counter).'" ';
 				if (isset ($element['aria_label']))
@@ -51,9 +52,10 @@ class Reading_Options {
 				$html.='>'."\n";
 				$html.='<span class="phone-text" aria-hidden="true">'.$element['phone_text'].'</span>';
 				$html .='<span class="desktop-text">'.$element['desktop_text'].'</span>';
-				$html .= '</button></td>'."\n";
+				$html .= '</button></div>'."\n";
 			}
-			$html .= '</tr>';
+			$html .= '</div>'."\n"; //end tag of .button-wrapper
+			$html .= '</div>'."\n";  //end tag of .row
 		}
 		echo $html;
 	}
