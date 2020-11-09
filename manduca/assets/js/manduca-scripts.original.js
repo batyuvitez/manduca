@@ -675,6 +675,7 @@ function constrain(amt, low, high) {
 		}	
     });
  
+ 
    
    /*
     * Handle cookies and events
@@ -690,12 +691,12 @@ function constrain(amt, low, high) {
     
         var $cookieValue =readCookie( $block );
           if ( $cookieValue ) {
-              $('body').addClass( $cookieValue );
+              $('html').addClass( $cookieValue );
         $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
            }
            else {
             var $default=$block+ '-0';
-              $('body').addClass( $default );
+              $('html').addClass( $default );
              $( '#'+$default).attr( 'disabled', 'true' );
            }
        
