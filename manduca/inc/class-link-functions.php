@@ -10,7 +10,7 @@
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -63,6 +63,10 @@ Class Link_Functions {
      * 
     */
     public function filter_links( $content ) {
+         // In the rare case that DOMDocument is not available we cannot reliably sniff content and so we assume legacy.
+         if ( ! class_exists( '\DOMDocument' ) ) 
+            return $content;
+		
         libxml_use_internal_errors( true );
         $this->dom = new \DOMDocument;
         $content = mb_convert_encoding (
