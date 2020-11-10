@@ -119,8 +119,8 @@ class Manduca_Classloader {
                 $namespaces = explode( '\\' , $class );
                 
                 $class_name_wo_namespace   = array_values( array_slice( $namespaces, -1 ) ) [0] ;
-                
-                $class_namespace = str_ireplace( $class_name_wo_namespace, '',  $class );
+                $len=strlen ($class_name_wo_namespace);
+                $class_namespace = substr ($class, 0, strlen ($class)-$len);
                 $class_namespace = untrailingslashit( $class_namespace );
                 
                 $filename = self::create_filename( $class_name_wo_namespace ) ;
