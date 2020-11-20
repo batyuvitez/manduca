@@ -249,7 +249,15 @@ Class Link_Functions {
              } 
             
             if( false !== strpos( $href, '.' ) && 3 < strlen( $href ) ) {
-                   $node = $this->add_icon_to_static_files( $node, $href );
+               $len=strlen ($href);
+               $use_tooltip=FALSE;
+               foreach ($this->get_file_extensions_array() as $ext => $xx ){
+                  if (substr ($href,-strlen ($ext))===$ext) {
+                     $node = $this->add_icon_to_static_files( $node, $href );
+                     $use_tooltip=TRUE;      
+                     break;
+                  }
+               }
             }
             
             
@@ -273,8 +281,10 @@ Class Link_Functions {
                 
                         
                 $node->setAttribute( 'aria-label', $info_text);
-                $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
-                $this->classes[] ='use-tooltip';
+                if ($use_tooltip) {
+                  $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
+                  $this->classes[] ='use-tooltipa';
+                }
             }
                 
             if( !empty( $this->classes ) ) {                
