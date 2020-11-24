@@ -281,7 +281,7 @@ Class Link_Functions {
                 
                         
                 $node->setAttribute( 'aria-label', $info_text);
-                if ($use_tooltip) {
+                if (isset ($use_tooltip) && $use_tooltip) {
                   $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
                   $this->classes[] ='use-tooltipa';
                 }
