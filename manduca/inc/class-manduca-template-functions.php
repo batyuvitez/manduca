@@ -74,15 +74,13 @@ class Manduca_Template_Functions {
 						return '';
 				}
 				$args						= array();
-				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>',
-												  manduca_get_svg( array( 'icon' => 'angle-left' ) ),
-												__( 'Newer posts', 'manduca' ),
-												__( 'Access key', 'manduca' ).': P'
+				$args[ 'prev_text']			= sprintf( '%s<span class="screen-reader-text">%s</span>',
+												  manduca_get_svg( array( 'icon' => 'angle-left' )),
+												__( 'Newer posts', 'manduca' )
 												);
-				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span><span aria-hidden="true" class="tooltip">%s</span>%s',
+				$args[ 'next_text']			= sprintf( '<span class="screen-reader-text">%s</span>%s',
 												__( 'Older posts', 'manduca' ),
-												__( 'Access key', 'manduca' ) .': N',
-												manduca_get_svg( array( 'icon' => 'angle-right' ) ) 			  
+												manduca_get_svg( array( 'icon' => 'angle-right' )) 
 												);
 			
 				$args[ 'end_size' ]			= 3;
@@ -163,7 +161,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="prev page-numbers use-tooltip inverse3" href="%1$s" accesskey="P" >%2$s</a></h4>',
+								'<h4><a class="prev page-numbers inverse3" href="%1$s">%2$s</a></h4>',
 								$link,
 								$args['prev_text']
 					);
@@ -220,7 +218,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="next page-numbers use-tooltip inverse3" href="%1$s" accesskey="N" >%2$s</a></h4>',
+								'<h4><a class="next page-numbers inverse3" href="%1$s" >%2$s</a></h4>',
 								$link,
 								$args['next_text']
 								);
@@ -260,7 +258,7 @@ class Manduca_Template_Functions {
 		
 				$class = $class ? ' '.$class : '';
 				
-				return sprintf( '<div class="more-link link-button %5$s">	<a href="%1$s" class="info-button" accesskey="0" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
+				return sprintf( '<div class="more-link link-button %5$s">	<a href="%1$s" class="info-button" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
 				   esc_html( $info_button_data[ 'url' ] ), 
 				   esc_html( $info_button_data[ 'title' ] ),
 				   manduca_get_svg( array( 'icon' => 'info' ) ),
@@ -391,12 +389,11 @@ class Manduca_Template_Functions {
 			if ( ! $post ) {
 				$output = '';
 			} else {
-					$output = sprintf( '<a href="%1$s" accesskey="P" class="use-tooltip" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
+					$output = sprintf( '<a href="%1$s" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true"</a>',
 						   get_permalink( $post ),
 						   $post->post_title,
 						   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),
-						   __( 'Previous post', 'manduca' ) .' ',
-						   __( 'Access key', 'manduca' ) .': P'
+						   __( 'Previous post', 'manduca' ) .' '
 						   );
 			}
 			return $output;
@@ -415,12 +412,11 @@ class Manduca_Template_Functions {
 			if ( ! $post ) {
 				$output = '';
 			} else {
-					$output = sprintf( '<a href="%1$s" class="use-tooltip" accesskey="N" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s<span aria-hidden="true" class="tooltip">%5$s</span></a>',
+					$output = sprintf( '<a href="%1$s" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s</a>',
 						   get_permalink( $post ),
 						   $post->post_title,
 						   manduca_get_svg( array( 'icon' => 'angle-circle-right') ),
-							__( 'Next post', 'manduca' ) .' ',
-							__( 'Access key', 'manduca' ) .': N'
+							__( 'Next post', 'manduca' ) .' '
 						   );
 			}
 			return $output;
