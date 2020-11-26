@@ -45,9 +45,13 @@ class Enqueue{
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-	
-		// Loads stylesheets.
-		wp_enqueue_style( 'theme-stylesheet', get_stylesheet_directory_uri().'/assets/css/style.min.css', false, false, 'all' );
+	 	// Loads stylesheets.
+      $stylesheet_path=get_stylesheet_directory(). '/assets/css/style.min.css';
+      if (file_exists ($stylesheet_path)) {
+          $stylesheet=get_stylesheet_directory_uri().'/assets/css/style.min.css';
+      }
+      $stylesheet=get_stylesheet_uri();
+      wp_enqueue_style( 'theme-stylesheet', $stylesheet, false, false, 'all' );
 			
 		// Loads the Internet Explorer specific stylesheet.
 		wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'manduca-style' ) );
