@@ -50,7 +50,9 @@ class Enqueue{
       if (file_exists ($stylesheet_path)) {
           $stylesheet=get_stylesheet_directory_uri().'/assets/css/style.min.css';
       }
-      $stylesheet=get_stylesheet_uri();
+      else {
+         $stylesheet=get_stylesheet_uri();
+      }
       wp_enqueue_style( 'theme-stylesheet', $stylesheet, false, false, 'all' );
 			
 		// Loads the Internet Explorer specific stylesheet.
