@@ -5,7 +5,7 @@ Theme Name: Manduca
 Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
 Author: Zsolt Edelényi 
 Author URI: https://akadálymentes-honlap.hu/
-Version: 20.10
+Version: 20.11
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
@@ -1934,10 +1934,7 @@ svg.icon-extlink {
 /* user experience, mainly in mobile where reading optionas are complicated to change
 ---------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------- --------------------------------------------------------------  */
 
-@media screen and (max-width 400px)
-{
-	
-}
+
 
 /*
  *Contrast
@@ -2146,7 +2143,7 @@ svg.icon-extlink {
  */
 
 
-body.link-appearance-1 a,
+html.link-appearance-1 a,
 #link-appearance-1 {
 	color: #4e4eca;
 	text-decoration: none;
@@ -2375,9 +2372,6 @@ Reading options modal window buttons design
 --------------------------------------------------------------*-------------------------------------------------------------- *--------------------------------------------------------------  */
 
 
-@-ms-viewport {
-	width: device-width;
-}
 /* MAXIMUM width: */
 @media screen and ( max-width: 600px) {
 	.breadcrumb span,
@@ -2414,13 +2408,13 @@ Reading options modal window buttons design
 @media screen and (min-width: 600px) {
 	
 	
-	body.font-size-0:not( .page-template-full-width) .site-content {
+	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 66%;
 		max-width: 180em;
 		padding: 0 2em 0 0;	
 	}
 	
-	body.font-size-0:not( .page-template-full-width) .widget-area {
+	html.font-size-0:not( .page-template-full-width) .widget-area {
 		width: 33%;
 		max-width: 60em;		
 	}
@@ -2859,13 +2853,13 @@ Reading options modal window buttons design
 /*START width of 976-1359 pixels. */
 @media screen and (min-width: 976px) {
 	
-	body.font-size-0:not( .page-template-full-width) .site-content {
+	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 75%;
 		max-width: 180em;
 		padding: 0 2em 0 0;	
 	}
 	
-	body.font-size-0:not( .page-template-full-width) .widget-area {
+	html.font-size-0:not( .page-template-full-width) .widget-area {
 		width: 25%;
 		max-width: 60em;		
 	}

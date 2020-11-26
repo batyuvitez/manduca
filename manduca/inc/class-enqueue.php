@@ -47,7 +47,7 @@ class Enqueue{
 		}
 	
 		// Loads stylesheets.
-		wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri(), false, false, 'all' );
+		wp_enqueue_style( 'theme-stylesheet', get_stylesheet_directory_uri().'/assets/css/style.min.css', false, false, 'all' );
 			
 		// Loads the Internet Explorer specific stylesheet.
 		wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'manduca-style' ) );
