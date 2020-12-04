@@ -134,13 +134,7 @@ class SVG_Functions {
 										$svg_item 	=  $svg_icons [ esc_html( $this->svg_name['icon'] ) ] ;
 			  }
 			  else {
-								//translators: PHP user error message when child theme not define an svg icon.
-								$error_message = sprintf( '%1$s : "%2$s"',
-															__( 'No svg icon declared', 'manduca' ),
-															$this->svg_name['icon']
-														);
-								user_error( $error_message );
-								return;
+					return;
 			  }
 			   
 			   $vector		= $svg_item[ 'vector' ]  ;
