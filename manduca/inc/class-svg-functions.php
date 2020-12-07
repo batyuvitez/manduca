@@ -140,7 +140,7 @@ class SVG_Functions {
 			   $vector		= $svg_item[ 'vector' ]  ;
 							  
 			   $viewBox		= $svg_item[ 'viewBox' ];
-			   $svg  = sprintf( '<svg xmlns="http://www.w3.org/2000/svg" class="icon-%1$s" viewbox="%2$s" %3$s %4$s >%5$s</svg>',
+			   $svg  = sprintf( '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="icon-%1$s" viewbox="%2$s" %3$s %4$s >%5$s</svg>',
 							   esc_attr( $this->svg_name['icon'] ),
 							   $viewBox,
 							   $aria_hidden,
