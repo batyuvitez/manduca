@@ -1,21 +1,4 @@
 @charset "UTF-8";
-/*
-/*
-Theme Name: Manduca
-Theme URI: https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/
-Author: Zsolt Edelényi 
-Author URI: https://akadálymentes-honlap.hu/
-Version: 20.11
-Requires at least: 5.0
-Tested up to: 5.5.1
-Requires PHP: 7.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Description: Use it to make cool and accessible website with a child theme. You can easily comply with the accessiblity guidelines (WCAG 2.1). Special features for Hungarians.
-Tags: one-column, two-columns, right-sidebar, custom-menu, full-width-template, featured-images, accessibility-ready, sticky-post
-Text Domain: manduca
-Github: https://github.com/batyuvitez/manduca/
-*/
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
@@ -44,7 +27,6 @@ Github: https://github.com/batyuvitez/manduca/
  *
  *@see: https://www.colourlovers.com/palette/3741887/Manduca
  **/
-
 
 /* Reset and set defaults
 -------------------------------------------------------------- */
@@ -375,6 +357,13 @@ a.page-numbers.prev,
 .site textarea[disabled] {
 	cursor: not-allowed;
 	color: #222;
+}
+
+.high-contrast-1 .site button[disabled],
+.high-contrast-1 .site input[disabled],
+.high-contrast-1 .site textarea[disabled] {
+	cursor: not-allowed;
+	color: #eee;
 }
 
 
@@ -1794,7 +1783,6 @@ a.comment-edit-link {
 	width: 1em;
 	height: 1em;
 	margin: 0 0.33em;
-	vertical-align: text-bottom;
 }
 
 
@@ -1940,8 +1928,7 @@ svg.icon-extlink {
  *Contrast
  **/
 
-.high-contrast-1,
-.high-contrast-2 {
+.high-contrast-1 {
 	background-image: none;  /* cannot reset all background, since it removes background-colors too */
 }
 
@@ -1954,7 +1941,7 @@ svg.icon-extlink {
 
 .high-contrast-1 .site,
 .high-contrast-1 .megamenu.toggled-on,
-#high-contrast-1{
+.high-contrast-1 .lighter-scheme {
     background-color: #000;
     color: #fff ;
 }
@@ -2002,17 +1989,14 @@ svg.icon-extlink {
 	fill: #fff;
 }
 
-.high-contrast-1 .inverse-scheme {
-	color: #fff;
-    background-color: #000;
-}
+
 .high-contrast-1 .inverse-scheme a  {
 	color: #15c6ec ;
     background-color: #000;
 }
 
 .high-contrast-1 .inverse-scheme svg {
-	fill: #000;
+	fill: #fff;
 	}
 
 #high-contrast-0 {
@@ -2039,9 +2023,8 @@ svg.icon-extlink {
 .font-type-1 .site span,
 .font-type-1 .site label,
 .toolbar-buttons #font-type-1{
-    font-family: Courier, /* Windows, Ios */
-				'Droid Sans Mono',  /* Android */
-				monospace;
+    
+			font-family: 'dyslexieregular';
 }
 
 #font-type-0 span {
@@ -3159,4 +3142,18 @@ Reading options modal window buttons design
 		margin-left: 3.57142857rem;
 	}
 
+}
+
+
+
+@font-face {
+    font-family: 'dyslexieregular';
+    src: url('../fonts/dyslexie_regular_lp55417-webfont.eot');
+    src: url('../fonts/dyslexie_regular_lp55417-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dyslexie_regular_lp55417-webfont.woff2') format('woff2'),
+         url('../fonts/dyslexie_regular_lp55417-webfont.woff') format('woff'),
+         url('../fonts/dyslexie_regular_lp55417-webfont.ttf') format('truetype'),
+         url('../fonts/dyslexie_regular_lp55417-webfont.svg#dyslexieregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }

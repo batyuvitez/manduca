@@ -711,8 +711,8 @@ function constrain(amt, low, high) {
              $removes=$removes.concat($new);
           }   
           var CookieDate = new Date();
-          $('body').removeClass($removes);
-          $('body').addClass($id);
+          $('html').removeClass($removes);
+          $('html').addClass($id);
           CookieDate.setFullYear(CookieDate.getFullYear() + 10);
           document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
         });

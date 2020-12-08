@@ -42,7 +42,8 @@ class Enqueue{
    public function enqueue() {
 		global $wp_styles;
 	
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		$assetDir=get_template_directory_uri() . '/assets/';
+      if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	 	// Loads stylesheets.
@@ -56,11 +57,10 @@ class Enqueue{
       wp_enqueue_style( 'theme-stylesheet', $stylesheet, false, false, 'all' );
 			
 		// Loads the Internet Explorer specific stylesheet.
-		wp_enqueue_style( 'manduca-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'manduca-style' ) );
+		wp_enqueue_style( 'manduca-ie', $assetDir.'css/ie.css', array( 'manduca-style' ) );
 		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
-		wp_enqueue_script( 'manduca-scripts', get_template_directory_uri() . '/assets/js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
+		wp_enqueue_script( 'manduca-scripts', $assetDir.'js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
 		
-      
       	
       /*
        *Add variables to jQuery scripts (manduca-scripts.js)
