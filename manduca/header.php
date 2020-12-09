@@ -3,10 +3,11 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
+ * @since 1.0
  **/
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -33,6 +34,12 @@
 	
 
 	<body id="total" <?php body_class(Manduca_Template_Functions::body_classes()); ?>>
+	    <?php
+			if ( function_exists( 'wp_body_open' ) ) {
+				wp_body_open();
+			} else {
+			    do_action( 'wp_body_open' );
+			}?>
 		<?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
 		<?php wp_body_open(); ?>
 		<div id="page" class="hfeed site">
@@ -41,7 +48,7 @@
 			<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 			<div id="masthead" class="site-header megamenu-parent" >
 				<div id="header-bar" class="header-bar">
-					<header role="banner">											
+					<header>											
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 					</header>
