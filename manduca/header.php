@@ -34,13 +34,7 @@
 	
 
 	<body id="total" <?php body_class(Manduca_Template_Functions::body_classes()); ?>>
-	    <?php
-			if ( function_exists( 'wp_body_open' ) ) {
-				wp_body_open();
-			} else {
-			    do_action( 'wp_body_open' );
-			}?>
-		<?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
+	    <?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
 		<?php wp_body_open(); ?>
 		<div id="page" class="hfeed site">
 			<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
