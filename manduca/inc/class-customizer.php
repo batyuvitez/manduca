@@ -9,7 +9,7 @@
  
  class Customizer {
 		
-	function add_hooks_to_wp() {
+	function __construct() {
 		
 		// Customizer setup
 		add_action( 'customize_register', array( $this,  'customize_register' ) );

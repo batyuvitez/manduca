@@ -45,7 +45,10 @@ class Manduca_Setup {
 		}
 		
 		// Register the themes main parameters: Nav menus, theme support, editor style, textdomain
-		add_action( 'after_setup_theme', array($this, 'theme_supports' ) );
+		
+		
+		new \Manduca\Theme_Support;
+		new \Manduca\Custom_Header_Image;
 		
 		// remove built-in image sizes and add optimized image sizes and names. 
 		$this->image_settings();
@@ -69,7 +72,7 @@ class Manduca_Setup {
 		add_action( 'widgets_init', array( $this, 'sidebar')  );
 		
 		// Az svg tábla beolvasása globális változóba
-			(new \Manduca\Define_Globals ) -> load_svg_to_global();
+		(new \Manduca\Define_Globals ) -> load_svg_to_global();
 				
 		// Accesssible widget archive
 		new \Manduca\Register_Widgets;
@@ -119,57 +122,11 @@ class Manduca_Setup {
 			//add aria-current="page to the current menu item. 
 			new Accessible_Menu;
 			
-			
-			// Eliminate W3Cvalidation warnings and shorten html file. 
-			add_filter('style_loader_tag', array( $this, 'codeless_remove_type_attr' ) , 10, 2);
-			add_filter('script_loader_tag', array( $this, 'codeless_remove_type_attr' ) , 10, 2);
-			
-			new Remove_Attributes_From_Scripts;
-			
 			new Search_Functions;
 			
 		}
 		
 	}
-	
-	
-	
-	
-
- 
-	public function theme_supports() {
-		// Styles the visual editor with editor-style.css
-		add_editor_style();
-		
-		// Adds RSS feed links to <head> for posts and comments.
-		add_theme_support( 'automatic-feed-links' );
-		
-		// Switch default core markup to output valid HTML5.
-		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'caption', 'gallery'
-		) );
-		
-		//Allows themes to add document title tag
-		add_theme_support( 'title-tag' );
-		
-		//Register navigation menus
-		//translators: name of main menu for admin and for screen reader users also
-		register_nav_menu( 'primary', __( 'Main navigation', 'manduca' ) );
-		//translators: name of menu in footer for admin and screen reader users also
-		register_nav_menu( 'footer', __( 'Footer navigation', 'manduca' ) );
-		
-		//Makes translation-ready
-		load_theme_textdomain( 'manduca', get_template_directory() . '/assets/lang' );
-		
-		
-		 //Supports custom background color and image
-		add_theme_support( 'custom-background', array(
-			'default-color' => 'f3f3f5',
-		) );
-		
-		new Custom_Header_Image;
-	}
-	
 	
 	
 	
@@ -248,7 +205,8 @@ class Manduca_Setup {
 		) );
 	}
 	
-	function add_class_image_anchor($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
+	
+	public function add_class_image_anchor($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
 		$classes = 'image-link'; 
 	  
 		if ( preg_match('/<a.*? class=".*?">/', $html) ) {
@@ -289,14 +247,4 @@ class Manduca_Setup {
 		}
 	}
 	
-	/*
-	 *Remove type attribute for Javascript and style in WordPress
-	 */
-    function codeless_remove_type_attr( $tag, $handle ) {
-				
-				$tag =  str_replace( " type='text/css'", '', $tag );
-				$tag =  str_replace( " type='text/javascript'", '', $tag );
-					
-		return $tag;
-    }
 }

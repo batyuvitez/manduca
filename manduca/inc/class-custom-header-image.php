@@ -16,6 +16,7 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+namespace Manduca;
 
 class Custom_Header_Image
 {
@@ -50,7 +51,6 @@ class Custom_Header_Image
 			'wp-head-callback'       => 'manduca_header_style',
 			'admin-head-callback'    => 'manduca_admin_header_style',
 			'admin-preview-callback' => 'manduca_admin_header_image');
-
 		add_theme_support( 'custom-header', $args );
 	}
 }
