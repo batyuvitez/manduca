@@ -83,8 +83,8 @@ class Manduca_Setup {
 		if ( is_admin() ){
 			
 			// Add customizer functions
-			$customizer = new Customizer;
-			$customizer->add_hooks_to_wp();
+			new Customizer;
+			
 			
 			// Add tiny MCE functions and stylesheets
 			$tinimce = new Tiny_Mce;
