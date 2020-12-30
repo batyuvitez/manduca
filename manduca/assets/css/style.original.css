@@ -207,7 +207,6 @@ textarea[disabled] {
 
 .featured-scheme,
 .sticky 		/* sticky is not used in theme, but theme check requires it */
-.tooltip,
 .featured-article,
 .featured-article .lighter-scheme{
 	background-color: #DAF2FF;
@@ -591,52 +590,6 @@ a.page-numbers.prev {
 	margin-right: 2rem;
 }
 
-
-/* Tooltip
-* @since 18.11
-*/
-
-.site .use-tooltip{
-	position: relative;
-}
-
-
-.site .tooltip {
-	display: none;
-}
-
-
-
-.tooltip:hover,
-.tooltip:focus, 
-.site .use-tooltip:hover .tooltip,
-.site .use-tooltip:focus .tooltip{
-    display: inline-block;
-				white-space: nowrap;
-    text-align: center;
-				font-size: 0.8rem;
-				z-index: 100;
-				text-shadow: none;
-    padding: 0.1em 0.3em;
-    position: absolute;
-				top: -96%;
-    left: 0;
-}
-#header-searchform:focus .tooltip,
-#header-searchform:hover .tooltip,
-.site-title:focus .tooltip,
-.site-title:hover .tooltip{
-		top: 92%;
-}
-
-a.use-tooltip:hover .tooltip,
-a.use-tooltip:focus .tooltip {
-	top: auto;
-	left: auto;
-}
-
-/* End tooltip */
-
 .site-content nav {
 	clear: both;
 	overflow: hidden;
@@ -897,9 +850,9 @@ body .site,
 	font-size: 1.5em;
 	text-align: center;
 }
+
 .header-bar .site-title > a {
 	text-decoration: none;
-	position: relative;  /* Need because of tooltip*/
 }
 
 /* Breadcrumb */
