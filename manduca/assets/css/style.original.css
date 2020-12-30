@@ -1851,9 +1851,9 @@ svg.icon-extlink {
  * * @since 21.1
  ---------------------------------------------------------------------------------- */
 /* Tooltip hidden by default */
-.simpletooltip[aria-hidden="true"],
-.minimalist-simpletooltip[aria-hidden="true"],
-.minimalist-left-simpletooltip[aria-hidden="true"] {
+.simpletooltip,
+.minimalist-simpletooltip,
+.minimalist-left-simpletooltip{
   display: none;
 }
 /* position relative for containers */
@@ -1865,9 +1865,9 @@ svg.icon-extlink {
 }
 
 /* tooltip styles */
-.simpletooltip,
-.minimalist-simpletooltip,
-.minimalist-left-simpletooltip {
+.simpletooltip.tooltip-show,
+.minimalist-simpletooltip.tooltip-show,
+.minimalist-left-simpletooltip.tooltip-show {
   position: absolute;
   display: inline-block;
   z-index: 666;
@@ -1891,9 +1891,9 @@ svg.icon-extlink {
   margin-right: .5em;
 }
 /* used pseudo-element to make arrows */
-.simpletooltip::before,
-.minimalist-simpletooltip::before,
-.minimalist-left-simpletooltip::before {
+.simpletooltip.tooltip-show::before,
+.minimalist-simpletooltip.tooltip-show::before,
+.minimalist-left-simpletooltip.tooltip-show::before {
   content: '';
   speak: none;
   position: absolute;
@@ -1901,15 +1901,15 @@ svg.icon-extlink {
   width: 10px;
   height: 10px;
 }
-.simpletooltip::before,
-.minimalist-simpletooltip::before {
+.simpletooltip.tooltip-show::before,
+.minimalist-simpletooltip.tooltip-show::before {
   top: .5em;
   left: -10px;
   margin-left: -10px;
   border: 10px solid transparent;
   border-right: 10px solid rgba( 0, 0, 0, .9 );
 }
-.minimalist-left-simpletooltip::before {
+.minimalist-left-simpletooltip.tooltip-show::before {
   top: .5em;
   right: -10px;
   margin-right: -10px;
@@ -1932,9 +1932,9 @@ svg.icon-extlink {
     margin-top: .7em;
     margin-left: -5em;
   }
-  .simpletooltip::before,
-  .minimalist-simpletooltip::before,
-  .minimalist-left-simpletooltip::before  {
+  .simpletooltip.tooltip-show::before,
+  .minimalist-simpletooltip.tooltip-show::before,
+  .minimalist-left-simpletooltip.tooltip-show::before  {
     top: -10px;
     right: auto;
     left: 50%;

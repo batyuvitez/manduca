@@ -1074,10 +1074,10 @@ jQuery(document).ready(function($) {
             .on('mouseenter focusin', '.js-simple-tooltip', function() {
                 var $this = $(this);
                 var aria_describedby = $this.attr('aria-describedby');
-                //var tooltip_to_show_id = aria_describedby.substr(0, aria_describedby.indexOf(" "));
                 var tooltip_to_show_id = aria_describedby.trimEnd(' ');
                 var $tooltip_to_show = $('#' + tooltip_to_show_id);
                 $tooltip_to_show.attr('aria-hidden', 'false');
+                $tooltip_to_show.addClass('tooltip-show');
             })
             .on('mouseleave', '.js-simple-tooltip', function(event) {
                 var $this = $(this);
@@ -1088,6 +1088,7 @@ jQuery(document).ready(function($) {
 
                 if (!$is_target_hovered) {
                     $tooltip_to_show.attr('aria-hidden', 'true');
+                    $tooltip_to_show.removeClass('tooltip-show');
                 }
             })
             .on('focusout', '.js-simple-tooltip', function(event) {
@@ -1097,10 +1098,12 @@ jQuery(document).ready(function($) {
                 var $tooltip_to_show = $('#' + tooltip_to_show_id);
 
                 $tooltip_to_show.attr('aria-hidden', 'true');
+                $tooltip_to_show.removeClass('tooltip-show');
             })
             .on('mouseleave', '.js-simpletooltip', function() {
                 var $this = $(this);
                 $this.attr('aria-hidden', 'true');
+                $tooltip_to_show.removeClass('tooltip-show');
             })
             .on('keydown', '.js-simple-tooltip', function(event) {
                 // close esc key
@@ -1112,6 +1115,7 @@ jQuery(document).ready(function($) {
 
                 if (event.keyCode == 27) { // esc
                     $tooltip_to_show.attr('aria-hidden', 'true');
+                    $tooltip_to_show.removeClass('tooltip-show');
                 }
             });
     });
