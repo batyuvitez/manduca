@@ -41,10 +41,10 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  
 ### 1.0
  Released April 24, 2015.
- Only for testing and private usage
+ Only for testing and private use
  
 ### 2.0
- Released November 26, 2015.
+ Released for public on November 26, 2015.
  Comply with WordPress Theme Development and Accessibility Standards.
  
  

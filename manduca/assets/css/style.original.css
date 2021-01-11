@@ -450,11 +450,12 @@ img[class*="wp-image-"],
 img[class*="attachment-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
+
 img.size-full,
 img.size-large,
 img.header-image,
 img.wp-post-image {
-	max-width: 1267px;
+	max-width: 100%;
 	margin: 0 auto;
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
@@ -593,11 +594,8 @@ a.page-numbers.prev {
 .site-content nav {
 	clear: both;
 	overflow: hidden;
-	padding: 1rem 0.2rem; /*horizontal margin need to display outline of current page*/
+	margin: 2rem 0;
 }
- main > nav.nav-single {
-        margin-top: 0;
-    }
 
 
 
@@ -1272,10 +1270,18 @@ div.entry-content > h2:first-child{
 		margin-top:  0 ;
 	}
 	
-.site p {
-	margin-bottom: 0.5rem; /* ratio: 1:2	 */
+	
+/*
+ * WCAG 1.4.8:paragraph spacing is at least 1.5 times larger than the line spacing.
+ * @since 21.1
+*/
+.site p,
+.site ol,
+.site ul {
+	margin-bottom: 2.3em; 
 }
- .site li {
+
+.site li {
 	list-style-position: inside;
  }
 
@@ -1625,7 +1631,7 @@ a.comment-edit-link {
 }
 /*@since 18.6 & wp 4.9.6 */
 .comment-respond form .comment-form-cookies-consent label{
-	display: inline-block;
+	display: inline;
 }
 .comment-respond form .comment-form-cookies-consent input {
 	position: relative;
@@ -1758,6 +1764,7 @@ svg.icon-extlink {
 .nav-single svg {
 		width: 2em;
 		height: 2em;
+		vertical-align: bottom;
 }
 
 .page-numbers.prev svg,
@@ -2121,7 +2128,7 @@ svg.icon-extlink {
  * */
  
  .line-height-1 {
-	line-height: 2;
+	line-height: 2.5;
  }
 
 
@@ -2144,7 +2151,7 @@ svg.icon-extlink {
  **/
 .paragraph-spacing-1 p,
 .paragraph-spacing-1 li {
-	margin-bottom: 2em;
+	margin-bottom: 3.6em;
 }
 
 /*
@@ -2460,8 +2467,10 @@ Reading options modal window buttons design
 	/*
 	 *TYPOGRAPHY
 	*/
+	/* Golden rule
+	 WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
 	html {
-	line-height: 1.64285; /* Golden rule*/
+		line-height: 1.64285; 
 	}
 
 	
@@ -2645,12 +2654,16 @@ Reading options modal window buttons design
 	
 	/* nav pagination*/
 	
-	.nav-previous{
-		float: left;
+	.nav-single {
+		display: flex;
+		justify-content: space-between;
 	}
-	.nav-next {
-		float: right;
+	.site h4.nav-previous,
+	.site h4.nav-next {
+		flex-basis: 50%;
+		margin: 0;
 	}
+	 
 	/* footer */
 
 	.footer-navigation{
@@ -2887,14 +2900,28 @@ Reading options modal window buttons design
 /* 	END width of 600-975*/
 
 
+/*WCAG 1.4.8: Width is no more than 80 characters or glyphs (40 if CJK).
+ *@since 21.1
+ **/
+
+
+
+
+
+
 /*START width of 976-1359 pixels. */
 @media screen and (min-width: 976px) {
 	
 	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 75%;
-		max-width: 180em;
 		padding: 0 2em 0 0;	
 	}
+	
+	html.font-size-0:not( .page-template-full-width) .site-content .main-content {
+		width: 41em;
+		margin: 0 auto;
+	}
+	
 	
 	html.font-size-0:not( .page-template-full-width) .widget-area {
 		width: 25%;

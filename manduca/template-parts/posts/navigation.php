@@ -21,7 +21,13 @@
 	<?php if( !empty ( $previous_post ) ) : ?>
 		<h4 class="nav-previous">
 			<?php echo $previous_post?>  
-			<?php paginate_links();  //the sake of themecheck.  I.e. there is no need for that but theme check requires it. ?>
+			<?php
+				/*the sake of themecheck.
+				I.e. there is no need for paginate_links in Manduca
+				but theme check requires it. */
+				ob_start ();
+				paginate_links();
+				ob_get_clean ();?>
 		</h4>
 	<?php endif; ?>
 	
