@@ -68,9 +68,7 @@ class Manduca_Setup {
 		//Filter page title
 		new \Manduca\Filter_Title;
 		
-		// Registger sidebar		
-		add_action( 'widgets_init', array( $this, 'sidebar')  );
-		
+		new \Manduca\Register_Sidebar;		
 		// Az svg tábla beolvasása globális változóba
 		(new \Manduca\Define_Globals ) -> load_svg_to_global();
 				
@@ -191,19 +189,6 @@ class Manduca_Setup {
 	
 	
 	
-	function sidebar () {
-		register_sidebar( array(
-			// translators: name of the sidebar
-			'name' =>__( 'Sidebar', 'manduca' ),
-			'id' => 'main_sidebar',
-			// translators: sidebar description
-			'description' => __( 'Appears all pages except when using full page template', 'manduca' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h2 class="widget-title">',
-			'after_title' =>'</h2>',
-		) );
-	}
 	
 	
 	public function add_class_image_anchor($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){

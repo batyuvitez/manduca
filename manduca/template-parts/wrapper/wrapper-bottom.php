@@ -27,6 +27,6 @@
 ?>
             </main>
         </div> <?php // END #primary .site-content ?>         
-     <?php get_sidebar(); ?>
+     <?php get_sidebar( 'main_sidebar' ); ?>
     </div> <?php // END #inner-wrapper?>
 </div> <?php // END .wrapper ?>
