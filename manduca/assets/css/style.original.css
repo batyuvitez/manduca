@@ -2,7 +2,7 @@
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 	Source code is available at https://github.com/batyuvitez/manduca
 
     This program is free software: you can redistribute it and/or modify
@@ -27,6 +27,7 @@
  *
  *@see: https://www.colourlovers.com/palette/3741887/Manduca
  **/
+
 
 /* Reset and set defaults
 -------------------------------------------------------------- */
@@ -159,7 +160,7 @@ textarea,
 input, 
 body .site .basic-scheme,
 .megamenu.toggled-on {
-	background-color: #f7f7f7;
+	background-color: #f5f5f5;
 	color: #232323	
 }
 .basic-scheme svg {
@@ -185,9 +186,9 @@ body a {
 .site button:active,
 .site select:focus,
 .site select:active,
-button[disabled],
-input[disabled],
-textarea[disabled] {
+button:focus,
+input:focus,
+textarea:focus{
 	outline: 4px solid #9E430E;
 	outline-offset: 2px;
 }
@@ -195,7 +196,7 @@ textarea[disabled] {
 .site a:hover,
 .site button:hover:not([disabled]),
 .site select:hover {
-	outline: 1px dotted #9E430E; 	
+	outline: 1px dotted #9E430E; 		
 }
 
 
@@ -391,14 +392,14 @@ a.page-numbers.prev,
 
 .menu-toggle {
 	position: absolute;
-	top: 16px;
-	left: 6px;
+	top: 1.1em;
+	left: 0.4em;
 }
 
 .toolbar-buttons-open{
     position: absolute;
-    top: 16px;
-    left: 62px;
+    top: 1.1em;
+    left: 4.4em;
 	cursor: pointer;
  }
 
@@ -416,7 +417,7 @@ a.page-numbers.prev,
 .site .menu-toggle,
 .site .toolbar-buttons-open{
 	margin: 0;
-	padding: 3px 3px 7px 3px;
+	padding: 0.3em;
 }
 
 
@@ -573,8 +574,6 @@ video {
 
 .pagination .current {
 	font-weight: 700;
-	position: relative;
-	outline: 2px dotted #21759B;
 }
 
 a.page-numbers.next,
@@ -801,13 +800,14 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 4.5rem;
-	left: 0.5rem;
-	right: 0.5rem;
+	top: 4.5em;
+	left: 0.5em;
+	right: 0.5em;
+	display: flex;
 }
 
-.font-size-1 .header-searchform {
-	top: 6.5rem;
+.search-wrapper {
+	max-width: 100%;
 }
 
 .search-form label { /* both widget and header */
@@ -830,8 +830,18 @@ body .site,
 	max-width: 77%;  /*Tested with double font size */
 }
 	
-.header-searchform .search-submit {
-		float: left;	
+.font-size-1 .header-searchform {
+	right: 0;
+	left: 0;
+}
+
+.font-size-1 .header-searchform #s {
+	width: 100%;
+	max-width: none;
+}
+.font-size-1 .header-searchform .search-submit{
+	display: block;
+	width: 100%;
 }
 
 .header-bar {
@@ -955,7 +965,7 @@ transform: rotate(180deg);
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 1em;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 
@@ -1794,6 +1804,8 @@ svg.icon-extlink {
 
 /* accessible back-to-top function
  * @since 19.1
+ *
+ *  Do not change with root unit 
  -------------------------------------------------------------- */
 .manduca-back-to-top-div {
 	position: fixed;
@@ -1801,9 +1813,8 @@ svg.icon-extlink {
     overflow: hidden;
     text-align: center;
     z-index: 99999999;
-    right: 2em;
-    bottom: 2em;
-    padding: 0.4em;
+    right: 28px;
+    bottom: 28px;
 		border: 2px solid #21759B;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -1813,8 +1824,8 @@ svg.icon-extlink {
 }
 
 .manduca-back-to-top-div svg {
-	width:  2em;
-	height: 2em;
+	width:  28px;  
+	height: 28px;
 	vertical-align: middle;
 	fill: #21759B;
 }
@@ -2205,7 +2216,7 @@ Reading options modal window buttons design
  
 
 .toolbar-buttons {
-    padding: 1em;
+    padding: 2em 1em 1em;
     width: 100%;
     position: absolute;
     top: 4.5rem;
@@ -2327,7 +2338,7 @@ Reading options modal window buttons design
 		right: 0;
 		left: auto;
 		z-index: 100;
-		max-width: 600px;
+		max-width: 43em;
 		border: 3px solid #21759B;
     }
     
@@ -2476,7 +2487,6 @@ Reading options modal window buttons design
 	
 	
 	/* Colors */
-	
 
 	.nav-single div,
 	textarea,
@@ -2508,6 +2518,7 @@ Reading options modal window buttons design
 	font-size: 0.6553em;
 	margin: 1.31072rem 0 0.65536rem;	
 	}
+	
 	
 	
 	.author-avatar {
@@ -2652,7 +2663,12 @@ Reading options modal window buttons design
 	}
 	
 	
-	/* nav pagination*/
+	/*archive navigation */
+	.nav-links {
+		margin-left: 10px; /*Focus should be seen WCAG 2.4.11 & 12*/
+	}
+	
+	/* single post navigaion */
 	
 	.nav-single {
 		display: flex;
@@ -2691,9 +2707,8 @@ Reading options modal window buttons design
 	/* toolbars 600-784px */
 	.site .toolbar-buttons-open {
     position: absolute;
-    top: 14px;
     right: inherit;
-		left: 55px;
+		left: 4em;
 		width: auto;
 		height: auto;
 		padding: 3px 14px 6px 7px;
@@ -2928,8 +2943,12 @@ Reading options modal window buttons design
 		max-width: 60em;		
 	}
 	
-	.top-bar {
+	.top-bar{
 		display: none;
+	}
+	
+	html.font-size-1 .top-bar {
+		height: 7.5em
 	}
 	
 	.header-bar {
@@ -2942,13 +2961,20 @@ Reading options modal window buttons design
 	}
 	
 	.site .toolbar-buttons-open {
-		right: 19em;
 		left: auto;
+		right: 19em;
+	}
+	.font-size-1 .toolbar-buttons-open {
+		right: auto;
 	}
 	
 	.header-searchform {
 		font-size: 1.1em;
-		top: 13px;
+		top: 1em;
+	}
+	
+	.font-size-1 .header-searchform {
+		left: auto;
 	}
 	
 	body.custom-background-empty {

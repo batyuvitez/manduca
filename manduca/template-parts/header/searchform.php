@@ -31,7 +31,7 @@
 	  class="header-searchform"
 	  role="search" 
 	  action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<div role="search" >
+	<div class="search-wrapper" >
 		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
 		<input type="text"
 			   placeholder="<?php _e( 'Search', 'manduca' ); ?>"
