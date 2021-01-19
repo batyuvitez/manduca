@@ -7,7 +7,7 @@
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@
 						array( 
 								'phone_text'					=>'Abc',
 							//translators: Toolbar font type selector
-								'desktop_text'			=>__( 'Monotype' , 'manduca' ) ) ) ),
+								'desktop_text'			=>__( 'Dyslexie' , 'manduca' ) ) ) ),
 				
 				
 				array (	'name'=>'font-size',
