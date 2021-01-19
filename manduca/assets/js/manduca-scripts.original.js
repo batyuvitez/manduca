@@ -614,6 +614,8 @@ function constrain(amt, low, high) {
  
  
  
+ 
+ 
 	
      /*------------------------------------------------
       * Accessibility/reading options TOOLBAR scripts
@@ -1100,9 +1102,12 @@ jQuery(document).ready(function($) {
                 $tooltip_to_show.attr('aria-hidden', 'true');
                 $tooltip_to_show.removeClass('tooltip-show');
             })
-            .on('mouseleave', '.js-simpletooltip', function() {
+            .on('mouseleave', '.js-simple-tooltip', function() {
                 var $this = $(this);
                 $this.attr('aria-hidden', 'true');
+                var aria_describedby = $this.attr('aria-describedby');
+                var tooltip_to_show_id = aria_describedby.trimEnd(' ');
+                var $tooltip_to_show = $('#' + tooltip_to_show_id);
                 $tooltip_to_show.removeClass('tooltip-show');
             })
             .on('keydown', '.js-simple-tooltip', function(event) {
