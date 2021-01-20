@@ -305,7 +305,7 @@ a.page-numbers.prev,
 }
 .site input,
 .site textarea {
-		padding: 0.3em 0.6em; /*corrected: 17.8.4*/
+		padding: 0.43em 0.75em; /*corrected: 21.1 with probing */
 		margin-bottom: 0.5em;	
 }
 
@@ -417,7 +417,7 @@ a.page-numbers.prev,
 .site .menu-toggle,
 .site .toolbar-buttons-open{
 	margin: 0;
-	padding: 0.3em;
+	padding: 0.37em;
 }
 
 
@@ -815,7 +815,7 @@ body .site,
 .header-searchform #s{
 	margin: 0;
 	float: left;
-	max-width: 77%;  /*Tested with double font size */
+	max-width: 80%;  
 }
 	
 .font-size-1 .header-searchform {
@@ -1470,7 +1470,8 @@ img.aligncenter,
 }
 .site-content article .entry-content,
 .site-content article header{
-	padding: 0 7px;
+	padding: 0 0.5em;
+	margin-top: -0.4em; /*negative margin to compensate too big margin at image bottom. */
 }
 
 .post-pagination {
@@ -2436,9 +2437,10 @@ Reading options modal window buttons design
 
 @media screen and (min-width: 520px) {
 	.font-size-0 .header-searchform  {
-		top: 17px;
-		right: 5px;
+		top: 1.15em;
+		right: 0.35em;;
 		left: auto;
+		width: 18em;
 	}
 	.top-bar {
 		height: 4.142rem;
@@ -2619,7 +2621,10 @@ Reading options modal window buttons design
 	/* excerpt */
 	.excerpt-thumbnail {
 		float: left;
-		margin: 4px 7px 7px 0;
+		margin-top: 0; /*top margin affect line height in the not-floated div */
+		margin-right: 1em;
+		margin-bottom: 0.75em;
+		margin-left: 0;
 		width: 35%;
 		max-height: 210px;
 	}
@@ -2759,7 +2764,7 @@ Reading options modal window buttons design
 	}
 
 	.column-left {
-		width: 15%;
+		width: 16%;
 		max-width: 7em;
 		overflow: hidden;
 	}
@@ -2957,7 +2962,6 @@ Reading options modal window buttons design
 	}
 	
 	.header-searchform {
-		font-size: 1.1em;
 		top: 1em;
 	}
 	
