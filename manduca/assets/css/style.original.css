@@ -2868,7 +2868,7 @@ Reading options modal window buttons design
 		margin: 0;
 		padding-right: 0rem;
 	}
-	ul.nav-menu li.menu-item-has-children:hover > .sub-nav 	{
+	ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{
 		display: block;
 	}
 		

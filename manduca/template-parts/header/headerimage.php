@@ -32,10 +32,9 @@ if( false != $header_image ) :
     /*
      * Accessibility function: Get the alt text for header image
      **/
-    
-    if( false != get_theme_mod( 'header_image_data' ) ) {
-        $data = get_object_vars ( get_theme_mod( 'header_image_data' ) ) ;    
-    
+    $data = get_theme_mod( 'header_image_data' ) ;   
+    if( $data ) {
+        
         if( is_array( $data ) && isset( $data[ 'attachment_id' ] ) ) {
               
             $attachment_id =  $data[ 'attachment_id' ];
