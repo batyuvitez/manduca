@@ -62,3 +62,9 @@ How to ...
       
 ... Add homepage navmenu item: Add http://home-placement to the menu item.
       This string will be replaced with the home URL.
+      
+... Add accessible tooltip:
+      add the followint 2 attributes to element:
+            class="js-simple-tooltip"
+            data-simpletooltip-text="tooltip text"
+      @more: https://a11y.nicolas-hoffmann.net/simple-tooltip/

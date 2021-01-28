@@ -658,6 +658,10 @@ html .firefox {
 /* Based on universal access: We are using the most readable fonts
 * http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf */
 
+html body {
+	margin-bottom: 3em; /* Not to overwrite Back-to-top button */
+}
+
 body .site,
  .toolbar-buttons .font-type-container > button:nth-child(2){   /* reading option orinal font remains always this.  */
 	font-family: Verdana,
@@ -2037,7 +2041,6 @@ svg.icon-extlink {
 
 .high-contrast-1 .featured-scheme {
 	border: 2px solid #c1ec15;
-	box-sizing: content-box;
 	background-color: #111;
 	color: #fff;
 }
@@ -2062,6 +2065,10 @@ svg.icon-extlink {
 
 #high-contrast-0 {
 	background-color: #aaa;
+}
+#high-contrast-1 {
+	background-color: #000;
+	color: #fff;
 }
 
 

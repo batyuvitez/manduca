@@ -299,5 +299,5 @@ jgs   |A|
 
 
 
-From now on, the release notes and development log will be found in /assets/docs/manduca.odt file.
+From now on, the release notes and development log will be found github
 
