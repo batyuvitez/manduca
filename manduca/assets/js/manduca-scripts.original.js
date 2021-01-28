@@ -509,17 +509,17 @@ function constrain(amt, low, high) {
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
-      //Click menu-toggle
-		menuToggle.on( 'click.manduca', function() {
-			siteNavContain.toggleClass( 'toggled-on' );
-            menuToggle.toggleClass( 'toggled-on' );
-            toolbarButtonsOpen.removeClass( 'toggled-on');
-            toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
-            toolbarButtons.removeClass( 'toggled-on');
-            toolbarButtons.css( 'display', 'none' ); 
-            
-
-			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
+    //Click menu-toggle
+    menuToggle.on( 'click.manduca', function() {
+     siteNavContain.toggleClass( 'toggled-on' );
+              menuToggle.toggleClass( 'toggled-on' );
+              toolbarButtonsOpen.removeClass( 'toggled-on');
+              toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
+              toolbarButtons.removeClass( 'toggled-on');
+              toolbarButtons.css( 'display', 'none' ); 
+              
+  
+     $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 		});
 	})();
 
@@ -530,9 +530,7 @@ function constrain(amt, low, high) {
  
  
  
- 
- -
-	
+ 	
 	/*
 	 *Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
 	 *
@@ -546,26 +544,26 @@ function constrain(amt, low, high) {
 
   function initMainNavigation( container ) {
 
-		// Add dropdown toggle that displays child menu items.
-		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( manducaVariables.icon )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
-
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
-
-		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this ),
-				screenReaderSpan = _this.find( '.screen-reader-text' );
-
-			e.preventDefault();
-			_this.toggleClass( 'toggled-on' );
-			_this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
-
-			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-
-			screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
-		});
-	}
+    // Add dropdown toggle that displays child menu items.
+    var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
+     .append( manducaVariables.icon )
+     .append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
+  
+    container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
+  
+    container.find( '.dropdown-toggle' ).click( function( e ) {
+     var _this = $( this ),
+      screenReaderSpan = _this.find( '.screen-reader-text' );
+  
+     e.preventDefault();
+     _this.toggleClass( 'toggled-on' );
+     _this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
+  
+     _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+  
+     screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
+    });
+   }
 
 	initMainNavigation( $( '.main-navigation' ) );
   
