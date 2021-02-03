@@ -683,7 +683,7 @@ function constrain(amt, low, high) {
     * Handle cookies and events
     * */
    
-    var $blocks=$('#toolbar-buttons button');
+    var $blocks=$('#toolbar-buttons-table button');
     var $uniqueNames = [];
     $.each ($blocks, function ( i, $element ) {
        var $class=$($element).attr('class');

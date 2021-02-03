@@ -8,7 +8,7 @@
 
   /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,34 +23,46 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+  
 
     
 $header_image = get_header_image() ;
-$alt = __( 'This image has no alt text, sorry', 'manduca' )  ;    
-if( false != $header_image ) :
-    
+$video_settingslt = __( 'Blog header image', 'manduca' )  ;    
+if( false != $header_image && (is_home() || is_front_page() && get_header_image())) : ?>
+    <?php
     /*
      * Accessibility function: Get the alt text for header image
      **/
-    $data = get_theme_mod( 'header_image_data' ) ;   
-    if( $data ) {
-        
-        if( is_array( $data ) && isset( $data[ 'attachment_id' ] ) ) {
-              
-            $attachment_id =  $data[ 'attachment_id' ];
-    
-            $alt = trim( strip_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-    
+    $header_image_data = get_theme_mod( 'header_image_data' ) ;   
+    if( $header_image_data ) {    
+        if( is_array( $header_image_data ) && isset( $data[ 'attachment_id' ] ) ) {
+            $video_settingsttachment_id =  $header_image_data[ 'attachment_id' ];
+            $video_settingslt = trim( strip_tags( get_post_meta( $video_settingsttachment_id, '_wp_attachment_image_alt', true ) ) );
         }
     }
+    ?>
+    <div id="wp-custom-header" class="wp-custom-header">
+        <?php echo wp_get_attachment_image( $header_image_data->attachment_id,
+                                            'full',
+                                            FALSE,
+                                            array( 'class'=>'header-image',
+                                                    'alt'=>$video_settingslt)); ?>
+        
+    </div>
+<?php endif; ?>
 
-    
-    if( is_home() || is_front_page() && get_header_image() ) {
-       printf( '<img src="%1$s" id="header-image" class="header-image" width="%2$s" height="%3$s" alt="%4$s" />',
-              $header_image,
-              esc_attr( get_custom_header()->width ),
-              esc_attr( get_custom_header()->height ),
-              $alt
-              );
-    }
-endif;
+<?php
+/*
+ *from theme php: the_custom_header_markup ()
+ **/
+$video_settings=get_header_video_settings();
+$video_settings['width']=1280;
+$video_settings['height']=800;
+
+if ( is_header_video_active() && ( has_header_video() || is_customize_preview() ) ) {
+		wp_enqueue_script( 'wp-custom-header' );
+		wp_localize_script( 'wp-custom-header', '_wpCustomHeaderSettings', $video_settings );
+	}
+
+
+?>
