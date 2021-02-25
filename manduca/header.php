@@ -37,19 +37,19 @@
 	    <?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
 		<?php wp_body_open(); ?>
 		<div id="page" class="hfeed site">
-			<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
-			<div  id="top-bar" class="top-bar inverse-scheme"></div>
-			<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
-			<div id="masthead" class="site-header megamenu-parent" >
-				<div id="header-bar" class="header-bar">
-					<header>											
-						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
-						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
-					</header>
-				</div>			
-				<?php get_template_part( '/template-parts/header/headerimage' ); ?>
-				<?php get_template_part( '/template-parts/header/menu' ); ?>
-				<?php get_template_part( '/template-parts/header/searchform' ); ?>					
-			</div>
+			<header>										
+				<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
+				<div  id="top-bar" class="top-bar inverse-scheme"></div>
+				<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
+				<div id="masthead" class="site-header megamenu-parent" >
+					<div id="header-bar" class="header-bar">
+							<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
+							<?php get_template_part( '/template-parts/header/toolbar' ); ?>
+					</div>			
+					<?php get_template_part( '/template-parts/header/headerimage' ); ?>
+					<?php get_template_part( '/template-parts/header/menu' ); ?>
+					<?php get_template_part( '/template-parts/header/searchform' ); ?>					
+				</div>
+			</header>
 			<?php get_template_part( '/template-parts/wrapper/wrapper', 'top' ); ?>
 				

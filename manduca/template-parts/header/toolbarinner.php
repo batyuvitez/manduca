@@ -145,6 +145,21 @@
 								'desktop_text'			=>__( 'All' , 'manduca' ) ) ) ),
 				
 				
+				array (	'name'=>'animation',
+				//translators: Toolbar color scheme selector
+				'label'=>__( 'Animation' , 'manduca' ),
+				'elements'=>
+					array (
+						array( 
+								'phone_text'			=>__( 'On' , 'manduca' ),
+								//translators: Animation default settings
+								'desktop_text'			=>__( 'Enabled' , 'manduca' )),
+						array( 
+								'phone_text'			=>__( 'Off' , 'manduca' ),
+								//translators: Animation stopped
+								'desktop_text'			=>__( 'Disabled' , 'manduca' ) ) ) ),
+				
+				
 				
 				array (	'name'=>'link-appearance',
 				//translators: Toolbar color scheme selector

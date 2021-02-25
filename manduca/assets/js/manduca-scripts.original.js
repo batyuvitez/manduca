@@ -26,52 +26,19 @@ jQuery.noConflict();
                    
 
 
-/**
- * Makes "skip to content" link work correctly in IE9, Chrome, and Opera
- * for better accessibility.
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------
  *
- * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
- */
-
- ( function() {
-  
-    var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-     isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-     isIE     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
-   
-    if ( ( isWebkit || isOpera || isIE ) && document.getElementById && window.addEventListener ) {
-     window.addEventListener( 'hashchange', function() {
-      var id = location.hash.substring( 1 ),
-       element;
-   
-      if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-       return;
-      }
-   
-      element = document.getElementById( id );
-   
-      if ( element ) {
-       if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-        element.tabIndex = -1;
-       }
-   
-       element.focus();
-   
-       // Repositions the window on jump-to-anchor to account for admin bar and border height.
-       window.scrollBy( 0, -53 );
-      }
-     }, false );
-    }
-    
-} )();
-
-
-
-
-
-
-/*
- * Focus snail  applied to Manduca
+ *      Focus snail  applied to Manduca
+ *      pure JavaScript
  *
  * 
  * @original   : https://github.com/NV/focus-snail/
@@ -79,7 +46,7 @@ jQuery.noConflict();
  * @param      : manducaVariables.red
  *               manducaVariables.green
  *               manducaVariables.blue
- **/
+ *----------------------------------------------------------------*/
 
 'use strict';
 
@@ -475,53 +442,62 @@ function constrain(amt, low, high) {
 	return amt;
 }
 
+/* THE END of focus snake*/
 
 
 
 
 
 
-/*
- * Contains handlers for navigation and widget area.
- * based on the script in theme twenty seventeen.
- */
 
-(function( $ ) {
-	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
 
-  
 
-	masthead       = $( '.megamenu-parent' );
-	menuToggle     = masthead.find( '.menu-toggle' );
-	siteNavContain = masthead.find( '.megamenu' );   
-	siteNavigation = masthead.find( '.megamenu > ul' );
-    toolbarButtons = $( '.toolbar-buttons' );
-    toolbarButtonsOpen=$( '.toolbar-buttons-open' );
 
-	// Enable menuToggle.
-	(function() {
 
-		// Return early if menuToggle is missing.
-		if ( ! menuToggle.length ) {
-			return;
-		}
+ /*------------------------------------------------
+ /*
+  * Contains handlers for navigation and widget area.
+  * based on the script in theme twenty seventeen.
+  * 
+  * /*------------------------------------------------
+*/
 
-		// Add an initial value for the attribute.
-		menuToggle.attr( 'aria-expanded', 'false' );
-
-    //Click menu-toggle
-    menuToggle.on( 'click.manduca', function() {
-     siteNavContain.toggleClass( 'toggled-on' );
-              menuToggle.toggleClass( 'toggled-on' );
-              toolbarButtonsOpen.removeClass( 'toggled-on');
-              toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
-              toolbarButtons.removeClass( 'toggled-on');
-              toolbarButtons.css( 'display', 'none' ); 
-              
-  
-     $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
-		});
-	})();
+(function navMenu( $ )
+{
+    var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
+   
+     
+   
+    masthead       = $( '.megamenu-parent' );
+    menuToggle     = masthead.find( '.menu-toggle' );
+    siteNavContain = masthead.find( '.megamenu' );   
+    siteNavigation = masthead.find( '.megamenu > ul' );
+       toolbarButtons = $( '.toolbar-buttons' );
+       toolbarButtonsOpen=$( '.toolbar-buttons-open' );
+   
+    // Enable menuToggle.
+    (function enableMenuToggle()
+    {
+   
+        // Return early if menuToggle is missing.
+        if ( ! menuToggle.length ) {
+         return;
+        }
+      
+        // Add an initial value for the attribute.
+        menuToggle.attr( 'aria-expanded', 'false' );
+          //Click menu-toggle
+          menuToggle.on( 'click.manduca', function()
+           {
+               siteNavContain.toggleClass( 'toggled-on' );
+               menuToggle.toggleClass( 'toggled-on' );
+               toolbarButtonsOpen.removeClass( 'toggled-on');
+               toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
+               toolbarButtons.removeClass( 'toggled-on');
+               toolbarButtons.css( 'display', 'none' ); 
+               $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
+           });
+    })();
 
 	
 	
@@ -531,172 +507,298 @@ function constrain(amt, low, high) {
  
  
  	
-	/*
-	 *Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
-	 *
-	 *last change @20.3
-	 *
-	 **/
-	(function() {
-		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
-			return;
-		}
-
-  function initMainNavigation( container ) {
-
-    // Add dropdown toggle that displays child menu items.
-    var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-     .append( manducaVariables.icon )
-     .append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
-  
-    container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
-  
-    container.find( '.dropdown-toggle' ).click( function( e ) {
-     var _this = $( this ),
-      screenReaderSpan = _this.find( '.screen-reader-text' );
-  
-     e.preventDefault();
-     _this.toggleClass( 'toggled-on' );
-     _this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
-  
-     _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-  
-     screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
-    });
-   }
-
-	initMainNavigation( $( '.main-navigation' ) );
-  
-  
-  
-		// Toggle `focus` class to allow submenu access on tablets.
-		function toggleFocusClassTouchScreen() {
-			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
-
-				$( document.body ).on( 'touchstart.manduca', function( e ) {
-					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-						$( '.main-navigation li' ).removeClass( 'focus' );
-					}
-				});
-
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-					.on( 'touchstart.manduca', function( e ) {
-						var el = $( this ).parent( 'li' );
-
-						if ( ! el.hasClass( 'focus' ) ) {
-							e.preventDefault();
-							el.toggleClass( 'focus' );
-							el.siblings( '.focus' ).removeClass( 'focus' );
-						}
-					});
-
-			} else {
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.manduca' );
-			}
-		}
-
-		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.manduca', toggleFocusClassTouchScreen );
-			toggleFocusClassTouchScreen();
-		}
-
-		siteNavigation.find( 'a' ).on( 'focus.manduca blur.manduca', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
-		});
-	})();
-    
-	
- 
- 
- 
- 
- 
- 
- 
- 
-	
-     /*------------------------------------------------
-      * Accessibility/reading options TOOLBAR scripts
-      *
-      * Author: Zsolt Edelényi
-      * @since 17.8
-      *
-      **---------------------------------------------------*/
+    /*
+     *Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+     *
+     *last change @20.3
+     *
+     **/
+    (function touchDevice()
+   {
+       if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+        return;
+       }
    
+       function initMainNavigation( container )
+       {
+   
+           // Add dropdown toggle that displays child menu items.
+           var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
+            .append( manducaVariables.icon )
+            .append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
+         
+           container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
+         
+           container.find( '.dropdown-toggle' ).click( function( e )
+           {
+               var _this = $( this ),
+                screenReaderSpan = _this.find( '.screen-reader-text' );
+            
+               e.preventDefault();
+               _this.toggleClass( 'toggled-on' );
+               _this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
+            
+               _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+            
+               screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
+          });
+      }
+   
+        initMainNavigation( $( '.main-navigation' ) );
+        
       
-      /*
-       * Toolbar toggle 
-       **/
-      $('.toolbar-buttons-open').click(function(){
-         $('.toolbar-buttons').slideToggle( 200 );
-         //close toolbar, if menu opens    
-          if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) ) {
-            $( ".megamenu" ).removeClass( "toggled-on" );
-            $( ".menu-toggle" ).removeClass( "toggled-on" );
+      
+      
+        // Toggle `focus` class to allow submenu access on tablets.
+        function toggleFocusClassTouchScreen()
+        {
+            if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
+         
+             $( document.body ).on( 'touchstart.manduca', function( e ) {
+              if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+               $( '.main-navigation li' ).removeClass( 'focus' );
+              }
+             });
+         
+             siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
+              .on( 'touchstart.manduca', function( e ) {
+               var el = $( this ).parent( 'li' );
+         
+               if ( ! el.hasClass( 'focus' ) ) {
+                e.preventDefault();
+                el.toggleClass( 'focus' );
+                el.siblings( '.focus' ).removeClass( 'focus' );
+               }
+              });
+         
+            } else {
+             siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.manduca' );
+            }
         }
-         //add toggle on to toolbar-buttons
-         if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
-             $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-			 $('#toolbar-buttons-open').focus();  
-         }
-         else {
-             $( ".toolbar-buttons" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
-         }
-    });
       
+        if ( 'ontouchstart' in window )
+        {
+             $( window ).on( 'resize.manduca', toggleFocusClassTouchScreen );
+             toggleFocusClassTouchScreen();
+        }
+      
+        siteNavigation.find( 'a' ).on( 'focus.manduca blur.manduca', function()
+        {
+             $( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+        });
+    })();
+     
+    /* THIS IS THE END of handlers for navigation and widget area.    */
 	
-     //close toolbar with close button also    
-    $( '#buttons-close' ).click(function() {
-        $('#toolbar-buttons').slideUp();
-        $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-        $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-		$( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-		$('#toolbar-buttons-open').focus();  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+    
+    
+    /*
+    * Skiplinks 
+    * Because Voiceover cannot handle the internal links ( eg href='#content'),
+    * necessary to apply javascripts to have jump links accessible
+    * This is tested with all kind of clients
+    *
+    * @since: 19.1
+    * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
+    **/
+	
+    $('#skip-to-content').click(function( event )
+    {
+        event.preventDefault( );
+       var pos = jQuery('#primary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#primary').find('h1').first().focus();
+        return false;
     });
     
+    $('#skip-to-sidebar').click(function( event )
+    {
+        event.preventDefault( );
+       var pos = jQuery('#secondary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#secondary').find('h1').first().focus();
+        return false;
+     });
+	 
+    $('#skip-to-footer').click(function( event )
+    {
+        event.preventDefault( );
+        var pos = jQuery('#footer-wrapper').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#footer-wrapper').find('h1').first().focus();
+        return false;
+    });
+     
+     $('#manduca-back-to-top').click(function( event )
+    {
+        event.preventDefault( );
+        jQuery('html, body').animate({scrollTop : 0}, 800);
+        jQuery('#menu-toggle').focus();
+        return false;
+    });
+
+    
+    
+    
+    
+    /*
+     * Show button only when your below from the bove-folder area
+     * */
+    $(document).on( 'scroll', function( event )
+    {
+         event.preventDefault();
+         if ($(window).scrollTop() > 100)
+         {
+            $('.manduca-back-to-top-div').addClass('show');
+         } else
+         {
+             $('.manduca-back-to-top-div').removeClass('show');
+         }
+        return false;
+    });
+       
+       
+    /*
+     *Change link target
+     *based on cookie. 
+     *@since 19.2
+     **/
+    $('a.extlink').click(function()
+    {
+         var linkTarget=readCookie( "linkTarget" );
+         if ( linkTarget == 'self' )
+         {
+             $(this).attr('target', '_self');
+        }
+            if ( linkTarget == 'blank' )
+        {
+            $(this).attr('target', '_blank');
+        }
+    });
 	
 	
-/*
-*Close toolbar for escape button and add focus back to the toolbar-button
-*
-*@since 19.2
-**/
-	$(document).on('keyup',function(evt) {
-		if (evt.key === 'Escape') {
-    		if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
-			    $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-			    $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-			    $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-				$( ".toolbar-buttons" ).css( 'display', 'none' );
-                $('#skip-to-content').focus();
-			}
-		}	
+	
+	
+	
+	
+    /*------------------------------------------------
+    /*
+     * Manduca's user-friendly archive widget function 
+     *
+     *@since 19.2
+     *
+    /*------------------------------------------------*/
+    $('#manduca_archive-month-submit').click(function()
+    {
+            var year = $( '#manduca-archive-year-dropdown' ).val();
+            var month = $( '#manduca-archive-month-dropdown' ).val(); 
+            var url = window.location.protocol + "//" + window.location.host + "/" + year + "/" + month + "/";
+        			document.location.href=url;
+    });
+    $( '#manduca-archive-year-dropdown' ).change(function()
+    {
+         var year = $( '#manduca-archive-year-dropdown' ).val();
+         var url = window.location.protocol + "//" + window.location.host +'/?manduca=ajax';
+         jQuery.ajax(
+        {
+            url: url,
+            type : 'post',
+            data :
+            {
+             action : 'archives',
+             year: year,
+             hash: manducaVariables.hash
+            },
+            success : function( response )
+            {
+                $( '#manduca-archive-month-dropdown option').remove();
+                $( '#manduca-archive-month-dropdown').append( response ).focus();
+           }
+        });
+    });
+})( jQuery ); 
+/* THE END of ($)functions */
+
+
+
+
+//(function navMenu( $ ) {...})( jQuery ); 
+
+
+
+
+
+/*------------------------------------------------
+ *
+ *
+ *          Section 2. After page is loaded
+ *
+ * 
+ *
+ **---------------------------------------------------*/
+
+jQuery(document).ready(function($)
+{
+    
+     /*------------------------------------------------
+    *Close toolbar for escape button and add focus back to the toolbar-button
+    *
+    *@since 19.2
+     /*------------------------------------------------**/
+     $(document).on('keyup',function(evt)
+    {
+      if (evt.key === 'Escape') {
+          if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
+           $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+        $( ".toolbar-buttons" ).css( 'display', 'none' );
+                    $('#skip-to-content').focus();
+       }
+      }	
     });
  
  
    
-   /*
-    * Handle cookies and events
-    * */
-   
+    /*------------------------------------------------
+     *
+     * Read cookies, set <html> element classes
+     * Also set reading options buttons attributes. 
+     *
+     * @var cokkies
+     *
+     *  
+     **---------------------------------------------------*/
     var $blocks=$('#toolbar-buttons-table button');
     var $uniqueNames = [];
-    $.each ($blocks, function ( i, $element ) {
+    $.each ($blocks, function ( i, $element )
+    {
        var $class=$($element).attr('class');
        if($.inArray($class, $uniqueNames) === -1) $uniqueNames.push($class);
-     }); 
-    $.each ($uniqueNames, function ( i, $block ) {
+    }); 
+    $.each ($uniqueNames, function ( i, $block )
+    {
     
         var $cookieValue =readCookie( $block );
-          if ( $cookieValue ) {
-              $('html').addClass( $cookieValue );
-        $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
+          if ( $cookieValue )
+          {
+                $('html').addClass( $cookieValue );
+                $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
            }
-           else {
+           else
+           {
             var $default=$block+ '-0';
               $('html').addClass( $default );
              $( '#'+$default).attr( 'disabled', 'true' );
@@ -730,125 +832,78 @@ function constrain(amt, low, high) {
     
    
   
-    
-    /*
-    * Skiplinks 
-    * Because Voiceover cannot handle the internal links ( eg href='#content'),
-    * necessary to apply javascripts to have jump links accessible
-    * This is tested with all kind of clients
-    *
-    * @since: 19.1
-    * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
-    **/
-	
-     $('#skip-to-content').click(function( event ) {
-        event.preventDefault( );
-       var pos = jQuery('#primary').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#primary').find('h1').first().focus();
-		return false;
-     });
-     $('#skip-to-sidebar').click(function( event ) {
-        event.preventDefault( );
-       var pos = jQuery('#secondary').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#secondary').find('h1').first().focus();
-		return false;
-     });
-	 
-	 $('#skip-to-footer').click(function( event ) {
-        event.preventDefault( );
-		var pos = jQuery('#footer-wrapper').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#footer-wrapper').find('h1').first().focus();
-		return false;
-     });
-     
-     $('#manduca-back-to-top').click(function( event ){
-		event.preventDefault( );
-        jQuery('html, body').animate({scrollTop : 0}, 800);
-		jQuery('#menu-toggle').focus();
-		return false;
-       });
-
-	/*
-	 * Show button only when your below from the bove-folder area
-	 * */
-	$(document).on( 'scroll', function( event ){
-		event.preventDefault();
-		if ($(window).scrollTop() > 100) {
-			$('.manduca-back-to-top-div').addClass('show');
-		} else {
-			$('.manduca-back-to-top-div').removeClass('show');
-		}
-		return false;
-	});
-    
-    
-	/*
-	 *Change link target
-	 *based on cookie. 
-	 *@since 19.2
-	 **/
-	$('a.extlink').click(function(){
-		var linkTarget=readCookie( "linkTarget" );
-		if ( linkTarget == 'self' ) {
-          $(this).attr('target', '_self');
-       }
-	   if ( linkTarget == 'blank' ) {
-          $(this).attr('target', '_blank');
-       }
-	   
-    });
-	
-	
-	
-	
-	
-	
-    /*
-     * Manduca's user-friendly archive widget function 
+    /*------------------------------------------------
+     * Accessibility/reading options TOOLBAR BUTTON scripts
      *
-     *@since 19.2
-     **/
-    $('#manduca_archive-month-submit').click(function(){
-            var year = $( '#manduca-archive-year-dropdown' ).val();
-            var month = $( '#manduca-archive-month-dropdown' ).val();
-            //var url = "/${year}/${month}/}";
-			var url = window.location.protocol + "//" + window.location.host + "/" + year + "/" + month + "/";
-			document.location.href=url;
+     * @dependency After cookies 
+     * Author: Zsolt Edelényi
+     * @since 17.8
+     *
+     **---------------------------------------------------*/
+      
+    //Toolbar toggle 
+    $('.toolbar-buttons-open').click(function()
+                                        {
+        var animation=$('html').hasClass('animation-0');
+       if ( animation)
+       {
+           $('.toolbar-buttons').slideToggle( 300 );
+       }
+        else
+        {
+           $('.toolbar-buttons').slideToggle( 0 );
+        }
+         //close toolbar, if menu opens    
+          if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) )
+        {
+            $( ".megamenu" ).removeClass( "toggled-on" );
+            $( ".menu-toggle" ).removeClass( "toggled-on" );
+        }
+         //add toggle on to toolbar-buttons
+         if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") )
+         {
+             $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+             $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+            $('#toolbar-buttons-open').focus();  
+         }
+         else
+         {
+             $( ".toolbar-buttons" ).addClass( "toggled-on" );
+             $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
+             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
+         }
     });
-	$( '#manduca-archive-year-dropdown' ).change(function(){
-		var year = $( '#manduca-archive-year-dropdown' ).val();
-		var url = window.location.protocol + "//" + window.location.host +'/?manduca=ajax';
-		jQuery.ajax({
-		url: url,
-		type : 'post',
-		data : {
-			action : 'archives',
-			year: year,
-			hash: manducaVariables.hash
-		},
-		success : function( response ) {
-				$( '#manduca-archive-month-dropdown option').remove();
-				$( '#manduca-archive-month-dropdown').append( response ).focus();
-				
-			}
-		});
-		
-	});
-	
+    
+    //Close toolbar with close button also    
+    $( '#buttons-close' ).click(function()
+    {
+        $('#toolbar-buttons').slideUp();
+        $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+        $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+        $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+        $('#toolbar-buttons-open').focus();  
+    });
     
     
-//end of ($)functions
-})( jQuery ); 
-
-
-jQuery(document).ready(function($) {
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*------------------------------------------------
     /*
      * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
      * @version v1.9.0   
@@ -859,11 +914,7 @@ jQuery(document).ready(function($) {
      *@package Manduca
      *@copyright Zsolt Edelényi
      *@since 19.3
-     */
-    // loading expand paragraphs
-    // these are recommended settings by a11y experts.
-    //You may update to fulfill your needs, but be sure of what you’re doing.
-    
+    /*------------------------------------------------    */
     var attr_control = 'data-controls',
         attr_expanded = 'aria-expanded',
         attr_labelledby = 'data-labelledby',
@@ -876,7 +927,8 @@ jQuery(document).ready(function($) {
         
 
 
-    if ($expandmore.length) { // if there are at least one :)
+    if ($expandmore.length)
+    { // if there are at least one :)
         $expandmore.each(function(index_to_expand) {
             var $this = $(this),
                 index_lisible = index_to_expand + 1,
@@ -916,8 +968,6 @@ jQuery(document).ready(function($) {
 
 
         });
-
-
     }
     
     
@@ -998,12 +1048,9 @@ jQuery(document).ready(function($) {
             }
 
         }
-
-
     });
-  
-
 });
+/* THE END of function executed after pageload */
 
 
 
@@ -1014,7 +1061,8 @@ jQuery(document).ready(function($) {
 
 
 
-(function() {
+(function otherFunctions()
+{
 
     'use strict';
 
@@ -1025,7 +1073,8 @@ jQuery(document).ready(function($) {
      * License MIT: https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria/blob/master/LICENSE
      */
 
-    function accessibleSimpleTooltipAria(options) {
+    function accessibleSimpleTooltipAria(options)
+    {
         var element = jQuery(this);
         options = options || element.data();
         var text = options.simpletooltipText || '';
@@ -1124,14 +1173,16 @@ jQuery(document).ready(function($) {
     });
 
 })();
-
+/* THE END of other functions */
 
 
 
 /*---------------------------------------------------
  **Cookie functions
+ * pure JavaScripts
  *
- *https://www.quirksmode.org/js/cookies.html
+ * @since 2.0
+ * @see:https://www.quirksmode.org/js/cookies.html
  *
  *--------------------------------------------------*/
  

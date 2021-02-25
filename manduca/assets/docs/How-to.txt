@@ -66,5 +66,5 @@ How to ...
 ... Add accessible tooltip:
       add the followint 2 attributes to element:
             class="js-simple-tooltip"
-            data-simpletooltip-text="tooltip text"
+            data-simpletooltip-text="tooltip text itself"
       @more: https://a11y.nicolas-hoffmann.net/simple-tooltip/

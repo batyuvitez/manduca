@@ -15,26 +15,17 @@
 	$next_post = Manduca_Template_Functions::next_post_link_html();
 ?>
 
-<nav class="nav-single">
-<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'manduca' ); ?></h3>
-
+<nav class="nav-single" aria-label="<?php _e( 'Post navigation', 'manduca' ); ?>">
 	<?php if( !empty ( $previous_post ) ) : ?>
-		<h4 class="nav-previous">
-			<?php echo $previous_post?>  
-			<?php
-				/*the sake of themecheck.
-				I.e. there is no need for paginate_links in Manduca
-				but theme check requires it. */
-				ob_start ();
-				paginate_links();
-				ob_get_clean ();?>
-		</h4>
+		<div class="nav-previous">
+			<?php echo $previous_post;?>  	
+		</div>
 	<?php endif; ?>
 	
 	
 	<?php if( !empty ( $next_post ) ) : ?>
-		<h4 class="nav-next">
-			<?php echo $next_post; ?> 
-		</h4>
+		<div class="nav-next">
+			<?php echo $next_post ?> 
+		</div>
 		<?php endif; ?>
 </nav>

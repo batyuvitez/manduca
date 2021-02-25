@@ -25,11 +25,10 @@
 
 <?php if ( is_active_sidebar( 'main_sidebar' ) &&  ! is_page_template( 'page-templates/full-width.php' ) ) : ?>
 	
-	<aside id="secondary" class="widget-area" >
-	
-		<h1 class="skip-link" tabindex="0" ><?php _e( 'Sidebar area' , 'manduca' ); ?></h1>
-			
+	<aside id="secondary" class="widget-area" aria-label="<?php _e( 'Sidebar area' , 'manduca' ); ?>">
+				
 		<?php dynamic_sidebar( 'main_sidebar' ); ?>
+		
 	</aside>
 
 <?php endif; ?>

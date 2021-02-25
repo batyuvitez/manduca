@@ -72,8 +72,10 @@ class SVG_Functions {
 			  $this->svg_name = wp_parse_args( $this->svg_name, $defaults );
 			   $svg_icons = $GLOBALS[ 'svg_icons' ];
 		  
-			  // Set aria hidden.
+			  // Set WAI_ARIA
+			  //@see: https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA24.html
 			  $aria_hidden = ' aria-hidden="true"';
+			  $aria_role = ' role="img"';
 		  
 			  // Set ARIA.
 			  $aria_labelledby = '';
@@ -140,12 +142,13 @@ class SVG_Functions {
 			   $vector		= $svg_item[ 'vector' ]  ;
 							  
 			   $viewBox		= $svg_item[ 'viewBox' ];
-			   $svg  = sprintf( '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="icon-%1$s" viewbox="%2$s" %3$s %4$s >%5$s</svg>',
+			   $svg  = sprintf( '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="icon-%1$s" viewbox="%2$s" %3$s %4$s %6$s >%5$s</svg>',
 							   esc_attr( $this->svg_name['icon'] ),
 							   $viewBox,
 							   $aria_hidden,
 							   $aria_labelledby,
-							   $vector
+							   $vector,
+							   $aria_role //since 21.2
 							 );
 			  
 			  return $svg;

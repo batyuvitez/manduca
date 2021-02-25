@@ -45,7 +45,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 			</div>		
 		 
 			<?php echo Manduca_Template_Functions::get_info_button_html( 'inverse3' ); ?>
-				<button id="buttons-close" class="buttons-close inverse-scheme"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>
+				<button id="buttons-close" class="buttons-close"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>
 </div>
 
 

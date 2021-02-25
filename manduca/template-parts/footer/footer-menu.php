@@ -17,9 +17,7 @@
         
         <nav id="footer-navigation"
              class="footer-navigation"
-             role="navigation">
-            <h3 class="screen-reader-text"><?php echo $menu_name; ?></h3>       
-            
+             aria-label="<?php echo $menu_name; ?>">
             <?php
                 echo wp_nav_menu(array (
                     'echo' => false,
