@@ -105,7 +105,7 @@ if ( post_password_required()  ) {
 		}
 		
 	endif; // have_comments() 
-	
-	comment_form(); ?>
+	$args=array ( 'class_submit'=>'link-button');
+	comment_form($args ); ?>
 
 </aside>

@@ -1,14 +1,10 @@
-Theme: Manduca - focus on accessibility
-
-FEATURES
-==
+WCAG 2.1 CONFORMITY
  
-
-Support of ISO/IEC 40500  (WCAG 2.1 )
-Accessibility features
-Indicated the WCAG level, number of guideline (success criterion) in brackets
-Please note, that the listed feature is not definately a success criterion for conforming to ISO/IEC:40500, but can be useful for many users. 
+Following is the list of Manduca's build-in accessibility features
+breakdown by WCAG principles and guidelines.
+Number of supported success criteria shown in brackets.
 --------------------------------------------------------------------------------------
+
 1. Preceivable
 
     1.1 Text alternatives
@@ -16,15 +12,20 @@ Please note, that the listed feature is not definately a success criterion for c
 
     1.3 Adaptable
         - Correct WAI-ARIA landmarks (1.3.1, 1.3.6 )
-        - Accessible SPA accordion (A 1.3.1)
-
-    1.4 Distingusibale: 
+        - Accessible SPA accordion (1.3.1)
+        - No css content (1.3.1)
+        - meaningful sequence (1.3.2)
+        
+    1.4 Distingusibale:
+        - Provide visual clues to links ('1.4.1)
         - Text contrast ration of 4.5:1 (A 1.4.3)
-        - 200 percent resize (AA 1.4.4, 1.4.10)
-        - Icons for different type of links: xls, doc, pdf (AAA 1.4.8)
-        - Link type indication with icon (AAA 1.4.8 )
-        - Search: highlight/emphasise the searched expression in the list (A 1.4.1)
-    
+        - text is resizable with 200% (AA 1.4.4)
+        - Webpage is resizeble without loss of information (1.4.8, 1.4.10)
+        - Texit is presented in accessible way (1.4.8)
+        - Icons for different type of links: xls, doc, pdf (1.4.8)
+        - Link type indication with icon (1.4.8 )
+        - Search: highlight/emphasise the searched expression in the list (1.4.1)
+        - Line hegiht, paragprah spacing, letter spacing, word spacing adjustabla (1.4.12)
     
         
 2. Operable
@@ -35,9 +36,11 @@ Please note, that the listed feature is not definately a success criterion for c
         -No access key (2.1.4)
         
     2.4 Navigation
-    - Change link to actual page to <span> element (A 2.4.4, 2.4.9)
+        - Skip links to main, footer and sidebar areas (1.4.1)
+        - Change link to actual page to <span> element (A 2.4.4, 2.4.9)
+        - Link purpose is clear (2.4.4, 2.4.9)
         - Breadcrumb (2.4.8)        
-        - Focus snail
+        - Focus snail (2.4.7)
         - Focus visible very well (2.4.7)
         - Accessible built-in navigation links (A 2.4.4, 2.4.9)
         - Headings in hierarchial order( AA 2.4.6, AAA 2.4.8 )
@@ -53,12 +56,15 @@ Please note, that the listed feature is not definately a success criterion for c
 3. Understandable
     
     3.1 Readable
-        - Hungarian language support scripts
+        - Language is set (3.1.1)
+        - Hungarian language support scripts (3.1.5)
     
     3.2 Predictable
+        - consistent navigation (3.2.3)
         - No unexpected event (3.2.1,3.2.2)
-        - Built in elements identified consistently (3.2.3,3.2.4)
+        - Built in elements identified consistently (3.2.4)
         - Open in new window indicated after link (3.2.5)
+        
 
 
 
@@ -67,6 +73,22 @@ Please note, that the listed feature is not definately a success criterion for c
         - Valid semantics (4.2)
 
 
+............................................................................
+This file is part of WordPress theme named Manduca - focus on accessibility.
 
+Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+Source code is available at https://github.com/batyuvitez/manduca
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+............................................................................

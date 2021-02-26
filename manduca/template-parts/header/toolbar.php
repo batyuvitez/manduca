@@ -40,7 +40,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					//Translators: cookie consent only if user change the default option with Display Options. 
 					_e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?></p>
 			
-			<div id="toolbar-buttons-table" role="presentation" class= "featured-scheme toolbar-buttons-table">
+			<div id="toolbar-buttons-table" class= "featured-scheme toolbar-buttons-table">
 					<?php 	get_template_part ('/template-parts/header/toolbarinner');?>
 			</div>		
 		 

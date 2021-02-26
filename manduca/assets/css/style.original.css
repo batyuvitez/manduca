@@ -18,15 +18,22 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-	
-/*Color scheme of Manduca:
- *red: #9E430E
- *dark blue with white: #21759B,
- *light blue with black: #DAF2FF,
- *grey with dark: #F3F3F5
- *
- *@see: https://www.colourlovers.com/palette/3741887/Manduca
- **/
+
+/*
+ *	Color scheme 
+ *	@since 21.2:
+ * -------------------------------------------------------------- 
+ *		darkSlateBlue (#48d8b) : text
+ *		darkSlateGrey (#2f4f4f) 
+ *		royalBlue (#4169e1) :link
+ *		paleTurquoise (#afeeee) :featured
+ *		marron (#800000)
+ *		ivory (#fffff0) :background
+ *		saddleBrown: inverse 
+ *		#23232 : the text color if links are underlined.
+ *			If links are bold, text is darkSlade Grey. It has a 3:1 contrast
+ *			and also link color has 4.5:1 to the background. 
+*/
 
 
 /* Reset and set defaults
@@ -38,7 +45,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-size: 100%;
 	font-style: normal;   /* @ since 17.8.10  */
 	vertical-align: baseline;
-    box-sizing: border-box;
+    box-sizing: border-box;		
 }
 
 /*/li and ul would not reset above, because that leaded to errorneous dipslay on iPhone.*/
@@ -142,37 +149,26 @@ img {
 	clear: both;
 }
 
-/* WordPress core styling
--------------------------------------------------------------- */
-
-#signup-content {
-    max-width: 500px;
-    margin: 28px auto;
-}
 
 
 /* 12 1.* Basic color scheme
  * 
  * @since 19.4
 -------------------------------------------------------------- */
-body .site,
 textarea,
 input, 
-body .site .basic-scheme,
+.site,
 .megamenu.toggled-on {
-	background-color: #f5f5f5;
-	color: #232323	
+	background-color: Ivory;
+	color: darkSlateGrey;	
 }
-.basic-scheme svg {
-	fill: #222;
-}
+
 svg {
-	fill: #164e68;	
+	fill: darkSlateBlue;	
 }
 
 body a {
-	color: #1f6c91;
-	text-decoration-color: #257499;
+	color: RoyalBlue;
 	text-decoration-skip-ink: auto;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: .13em; 
@@ -189,54 +185,46 @@ body a {
 button:focus,
 input:focus,
 textarea:focus{
-	outline: 4px solid #9E430E;
+	outline: 4px solid maroon;
 	outline-offset: 2px;
 }
 
 .site a:hover,
 .site button:hover:not([disabled]),
 .site select:hover {
-	outline: 1px dotted #9E430E; 		
+	outline: 1px dotted maroon; 		
 }
-
-
-.site .toolbar-buttons-open:active {
-	color:#daf3ff
-}
-
-
 
 .featured-scheme,
 .sticky 		/* sticky is not used in theme, but theme check requires it */
 .featured-article,
 .featured-article .lighter-scheme{
-	background-color: #DAF2FF;
-	color: #000;
+	background-color: paleTurquoise;
 }
 
 .featured-scheme svg {
 	fill: #222;
 }
 .lighter-scheme {
-			color: #565656;
-			background-color: white;
+			color: maroon;
+			background-color: ivory;
 }
 
 
 .inverse-scheme {
-				background-color: #164e68; 
-				color: #daf3ff;
+				background-color: darkSlateBlue; 
+				color: Ivory;
 }
 .inverse-scheme svg {
-				fill: #daf3ff;
+				fill: Ivory;
 }
 
 .inverse-scheme a {
-	color: #ffffff;
+	color: Ivory;
 }
 
 .link-button svg {
-	fill: #daf3ff;
+	fill: Ivory;
 }
 
 
@@ -268,7 +256,7 @@ a.page-numbers.prev,
 .footer-navigation a:hover,
 .footer-navigation a:focus,
 .footer-navigation a:active {
-	outline-color: yellow; /* only footer navigation has dark bacgkround*/
+	outline-color: paleTurquoise /* only footer navigation has dark bacgkround*/
 }
 
 
@@ -296,7 +284,7 @@ a.page-numbers.prev,
 	font-size: 1.1em; /* corrected: 17.9.19  */
 	font-family: inherit;
 	max-width: 100%;
-	margin: 0.3em 0.6em;
+	margin: 0.3em 0;
 	padding: 0.3em 0.6em;
 }
 .site button.dropdown-toggle {
@@ -351,7 +339,6 @@ a.page-numbers.prev,
 .site input[type="button"],
 .site input[type="reset"] {
 	cursor: pointer;
-	background-color: #fff;
 }
 
 
@@ -359,23 +346,20 @@ a.page-numbers.prev,
 .site input[disabled],
 .site textarea[disabled] {
 	cursor: not-allowed;
-	color: #333;
-	background-color: #ccc;
+	color: maroon;
+	background-color: paleTurquoise;
 }
 
 .high-contrast-1 .site button[disabled],
 .high-contrast-1 .site input[disabled],
 .high-contrast-1 .site textarea[disabled] {
-	cursor: not-allowed;
-	color: #eee;
+		color: Ivory;
 }
 
 
 .bypostauthor cite span {
-	color: #fff;
-	background-color: #21759b;
+	background-color: paleTurqoise;
 	background-image: none;
-	border: 1px solid #1f6f93;
 	box-shadow: none;
 	padding: 0;
 }
@@ -410,9 +394,9 @@ a.page-numbers.prev,
 
 .site .link-button,
 .site .link-button a{
-	background-color: #ab490f; 
-	color: #daf3ff;
-	padding: 6px 12px;
+	background-color: saddleBrown; 
+	color: Ivory;
+	padding: 0.428em 0.857em;
 	text-decoration: none;				
 }
 
@@ -505,7 +489,7 @@ video {
 .entry-caption {	
 	font-size: 95%;
 	line-height: 2;
-	color: #000;
+	color: black;
 }
 
 
@@ -556,9 +540,7 @@ video {
 	font-size: 110%;
 	display: inline-block;
 	text-align: center;
-	padding: 0 7px;
 	padding: 0 0.5rem;
-	margin: 7px 0;
 	margin: 0.5rem 0;
 }
 
@@ -591,11 +573,11 @@ a.page-numbers.prev {
 /* Image navigation */
 .image-navigation {
 	position: relative;
-	padding-bottom: 100px;
+	padding-bottom: 7rem;
 }
 .image-navigation .parent-post {
 	position: absolute;
-	bottom: 30px;
+	bottom: 3rem;
 	left: 50%;
 	margin-right: -50%;
 	transform: translate( -50%, 0);
@@ -623,10 +605,10 @@ a.page-numbers.prev {
 	margin-bottom: 1.714285714rem;
 }
 .author-info {
-	border-top: 1px solid #ededed;
-	border-bottom: 1px solid #ededed;
+	border-top: 1px solid paleTurquoise;
+	border-bottom: 1px solid paleTurquoise;
 	overflow: hidden;
-	padding-top: 14px;
+	padding-top: 1em;
 }
 .author-info .author-description > h3 {
 	margin-top: 0;
@@ -638,7 +620,6 @@ a.page-numbers.prev {
 }
 .author.archive .author-info {
 	border-top: 0;
-	margin: 0 0 48px;
 	margin: 0 0 3.428571429rem;
 }
 .author.archive .author-avatar {
@@ -719,18 +700,18 @@ body .site,
 	clip: auto;
 	clip-path: none;
 	background-color: #f1f1f1;
-	color: #333;
+	color: maroon;
 	display: block;
 	font-weight: 700;
 	outline: none;
-	padding: 15px 23px 14px;
+	padding: 1em 2em;
 	text-transform: none;
 	height: auto;
 	left: 6px;
 	top: 7px;
 	width: auto;
 	z-index: 100000;
-	outline: 4px solid #9E430E;
+	outline: 4px solid maroon;
 }
 #footer-wrapper .skip-link:focus,
 #footer-wrapper .skip-link:active {
@@ -760,7 +741,7 @@ body .site,
     flex-direction:row;
     justify-content:flex-start;
     align-items:stretch;
-		max-width: 180em;
+		max-width: 80em;
 		margin: 0 auto;		
 	}
 	
@@ -857,9 +838,6 @@ body .site,
 	text-align: center;
 }
 
-.header-bar .site-title > a {
-	text-decoration: none;
-}
 
 /* Breadcrumb */
 .breadcrumb {
@@ -878,6 +856,7 @@ body .site,
 .breadcrumb > span {
 	margin-right: 1em;
 }
+
 
 /* menu-toggle */
 
@@ -905,8 +884,8 @@ body .site,
 	position: absolute;
 	right: 0;
 	text-transform: none;
-	top: 12px;
-	right: 6px;
+	top: 0.857em;
+	right: 0.42em;
 }
 
 
@@ -980,7 +959,7 @@ transform: rotate(180deg);
 /* sub-navigation panel, /* first, second etc level sub-menu*/
 .sub-nav {
 		display: none;
-		top: 37px;
+		top: 2.642em;
 		right: 0;
 		padding: 0;
 		border: 1px solid #c0c0c0;
@@ -1013,6 +992,7 @@ transform: rotate(180deg);
 .sub-nav ul li a {
 	font-size: 1.2em;
 	padding: 5px 10px;
+	padding: 0.36em 0.72m;
 	display: block;
 	text-decoration: none;
 }
@@ -1038,7 +1018,7 @@ transform: rotate(180deg);
 
 .widget li,
 .widget p {
-	margin: 7px 0;
+	margin: 0.5em 0;
 }
 
 
@@ -1052,7 +1032,7 @@ transform: rotate(180deg);
 .widget_recent_comments li +li,
 .widget_recent_entries li + li,
 .widget_rss li + li {
-	border-top: 1px #daf2ff solid;  /* some widget has light border to enhance readbility */
+	border-top: 1px paleTurquoise solid;  /* some widget has light border to enhance readbility */
 }
 
 
@@ -1111,7 +1091,7 @@ transform: rotate(180deg);
 .site hr {
 	border: 0;
 	height: 1px;
-	margin: 24px;
+	margin: 2em;
 	margin-bottom: 1.714285714rem;
 }
 .site sub,
@@ -1133,27 +1113,15 @@ transform: rotate(180deg);
 
 
 .site blockquote {
-	margin-bottom: 21px;
-	margin-bottom: 1.5rem;
-	padding: 21px;
-	padding: 1.5rem;
-	border-left: 7px #DAF2FF solid;	
-	quotes: none;
-	
-	quotes: none;
+	margin-bottom: 1.5em;
+	padding-left: 2.5em;
+	padding: 1.5em;
+	border-left: 0.5em paleTurquoise solid;
+	font-size: 1.2em;
+	line-height: 1.5;
 }
-.site blockquote:before {
-  color: #21759B;
-  content: '\201e';
-  font-size: 4em;
-  line-height: 0.1em;
-  margin: -1em 0.25em 0 0 ;
-  vertical-align: 0.4em;
-}
-.site blockquote:after {
-	content: '';
-	content: none;
-}
+
+
 .site blockquote p {
 	display: inline;
 }
@@ -1162,12 +1130,9 @@ transform: rotate(180deg);
 	margin-bottom: 0;
 }
 .site blockquote footer {
-	margin-top: 14px;
+	margin-top: 1em;
 }
 
-.site blockquote footer:before {
-	content: '— ';  /* Copied from Bootstrap @since 17.8.10*/
-}
 
 .site cite {
 	font-size: 95%;
@@ -1186,7 +1151,7 @@ transform: rotate(180deg);
 }
 .site ol {
 	list-style: decimal outside;
-	margin: 0 0 7px 28px;
+	margin: 0 0 0.5em 2em;
 }
 
 
@@ -1204,18 +1169,21 @@ transform: rotate(180deg);
 	font-family: Courier, /* Windows, Ios */
 				'Droid Sans Mono',  /* Android */
 				monospace;
-	line-height: 1.714285714;
-	margin: 24px 0;
-	margin: 1.714285714rem 0;
+	padding: 0.1em 0.5em ;
+	font-size: 0.95rem;
 	overflow: auto;
+	background-color: paleTurquoise;
 }
+
+
 .site pre {
+	padding: 1em;
+	font-size: 1rem;
+	line-height: 1.714285714;
 	white-space: pre-wrap;       /* css-3 */
 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
-.site code {
-	border: 1px solid #ededed;
-}
+
 
 .site abbr,
 .site dfn,
@@ -1232,7 +1200,7 @@ transform: rotate(180deg);
 	display: inline;
 }
 .site kbd {   /* since @18.10.4 from wikipedia css */
-	    border: 1px solid #aaa;
+	    border: 1px solid paleTurquoise;
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -1298,7 +1266,6 @@ div.entry-content > h2:first-child{
 .site iframe,
 .site object,
 .site video {
-	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
 
@@ -1330,8 +1297,7 @@ div.entry-content > h2:first-child{
 
 .site td,
 .site th	{
-	border-top: 1px solid #ededed;
-	padding: 6px 10px 6px 0;
+	border-top: 1px solid paleTurquoise;
 	padding: 0.428rem 0.714rem 0.728rem 0;
 }
 
@@ -1339,8 +1305,8 @@ div.entry-content > h2:first-child{
 /* CONTENT HEADER: */
 
 .site-content article header .content-date  {
-	padding: 7px;
-	margin-top: 5px; /* to be inline with entry title */ 
+	padding: 0.5em;
+	margin-bottom: 0;
 }
 
 
@@ -1348,13 +1314,6 @@ div.entry-content > h2:first-child{
 	margin-bottom: 1em;
 }
 
-/*depreciated in 17.9.19 
- *.site-content main header h1 {
-	font-size: 1.714em;
-	text-align: center;
-	padding: 7px 0;
-	margin-bottom: 48px;
-}*/
 .site-content main header h1:first-letter {
 	text-transform: uppercase;
 }
@@ -1366,35 +1325,15 @@ div.entry-content > h2:first-child{
 }
 
 .site .column-right h2.entry-title {
-	margin-top: 0.5em;
+	margin: 0;
 }
 
 
 /* Manduca special typography elements */
 .featured-1 {
 	background: rgba( 255,255,255, 0.1 );
-	padding: 0 3px;
+	padding: 0 0.2em;
 }
-
-.highlight-1{
-	width:  90%;
-	font-size: 1.3em;
-	text-align: center;
-	line-height: 1.8;
-	border-bottom: 2px solid #e6e6e6;
-	border-top: 2px solid #e6e6e6;
-	font-weight: bolder;
-	margin: 1.428rem 0;
-	padding: 0.714rem;
-}
-
-.highlight-2 {
-	padding: 0.714rem;	
-	font-size: 1.2em;
-	width:  98%;
-	line-height: 1.5;
-}
-
 
 .featured-post {
 	overflow: hidden;
@@ -1417,13 +1356,13 @@ div.entry-content > h2:first-child{
 }
 
 .site-content article footer ul {
-	border-top: 1px #aaa solid;
+	border-top: 1px paleTurquoise solid;
 }
 
 .site-content article footer li {
-	display: inline-block;
-	margin: 0 3em 0 0;
 	padding: 0.5em 0;
+	margin-left: 2em;
+	list-style-position: outside;
 }
 
 .site-content article footer li svg {
@@ -1434,17 +1373,14 @@ div.entry-content > h2:first-child{
 /* Thumbnail featured image  */
 
 .entry-header img.wp-post-image {
-	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
 
 .entry-header .entry-format {
-	margin-top: 24px;
 	margin-top: 1.714285714rem;
 	font-weight: normal;
 }
 .entry-header .comments-link {
-	margin-top: 24px;
 	margin-top: 1.714285714rem;
 	line-height: 1.846153846;
 	color: #757575;
@@ -1460,19 +1396,17 @@ strong.search-excerpt {
 /* Images with caption*/
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 12px 24px 12px 0;
 	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
 }
 img.alignright,
 .wp-caption.alignright {
-	margin: 12px 0 12px 24px;
 	margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
 }
+
 img.aligncenter,
 .wp-caption.aligncenter {
 	clear: both;
-	margin-top: 12px;
-	margin-bottom: 12px;
+	margin-bottom: 0.857em;
 }
 
 .site-content article {
@@ -1486,7 +1420,7 @@ img.aligncenter,
 
 .post-pagination {
 	clear: both;
-	margin: 14px 0;
+	margin: 1em 0;
 }
 
 .single-author .entry-meta .by-author {
@@ -1494,13 +1428,6 @@ img.aligncenter,
 }
 
 
-.archive-meta {
-	color: #757575;
-	font-size: smaller;
-	line-height: 2;
-	margin-top: 22px;
-	margin-top: 1.571428571rem;
-}
 
 
 
@@ -1537,7 +1464,6 @@ img.aligncenter,
 	max-width: 100%;
 }
 .image-attachment .entry-caption {
-	margin-top: 8px;
 	margin-top: 0.571428571rem;
 }
 
@@ -1560,15 +1486,15 @@ img.aligncenter,
 	margin-right: 1rem;
 }
 .comments-area article {
-	margin: 24px 0;
 	margin: 1.714285714rem 0;
 }
+
 .comments-area article header {
-	margin: 0 0 48px;
 	margin: 0 0 3.428571429rem;
 	overflow: hidden;
 	position: relative;
 }
+
 .comments-area article header img {
 	float: left;
 	padding: 0;
@@ -1577,9 +1503,9 @@ img.aligncenter,
 .comments-area article 	header cite,
 .comments-area article header time {
 	display: block;
-	margin-left: 85px;
 	margin-left: 6.071428571rem;
 }
+
 .comments-area article header cite {
 	font-style: normal;
 	font-size: larger;
@@ -1588,20 +1514,14 @@ img.aligncenter,
 .comments-area cite b {
 	font-weight: normal;
 }
-.comments-area article header time {
-	line-height: 1.714285714;
-	font-size: smaller;
-	color: #5e5e5e;
-}
 
 
 .comments-area .bypostauthor cite span {
-	margin-left: 5px;
 	margin-left: 0.357142857rem;
-	padding: 2px 5px;
 	padding: 0.142857143rem 0.357142857rem;
 	font-size: 0.7em;
 }
+
 .comments-area .bypostauthor cite b {
 	font-weight: bold;
 }
@@ -1623,17 +1543,17 @@ a.comment-edit-link {
 }
 
 .comment-respond form {
-	margin: 24px 0;
 	margin: 1.714285714rem 0;
 }
+
 .comment-respondform p {
-	margin: 11px 0;
 	margin: 0.785714286rem 0;
 }
+
 .comment-respondform p.logged-in-as {
-	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
+
 .comment-respond form label {
 	display: block;
 	line-height: 1.714285714;
@@ -1648,16 +1568,7 @@ a.comment-edit-link {
 	margin-right: 6px;
 }
 
-.comment-respond form input[type="text"],
-.comment-respond form textarea {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: smaller;
-	line-height: 1.714285714;
-	padding: 10px;
-	padding: 0.714285714rem;	
-	width: 100%;
-}
+
 .comment-respond form p.form-allowed-tags {
 	margin: 0;
 	font-size: 0.9em;
@@ -1666,9 +1577,6 @@ a.comment-edit-link {
 }
 .comment-author-link {
 	font-size: 1.21rem;
-}
-.required {
-	color: red;
 }
 
 .nocomments {
@@ -1690,16 +1598,16 @@ a.comment-edit-link {
 }
 
 .widget-area .widget ul ul {
-	margin-left: 12px;
+	margin-left: 0.857em;
 }
 .widget_rss li {
-	margin: 12px 0;
+	margin: 0.857em 0;
 }
 .widget_recent_entries .post-date,
 .widget_rss .rss-date {
 	color: #555;
 	font-size: 78%;
-	margin-left: 12px;
+	margin-left: 0.857em;
 }
 #wp-calendar {
 	margin: 0;
@@ -1714,7 +1622,6 @@ a.comment-edit-link {
 	text-align: left;
 }
 #wp-calendar #next {
-	padding-right: 24px;
 	padding-right: 1.714285714rem;
 	text-align: right;
 }
@@ -1814,7 +1721,7 @@ svg.icon-extlink {
     z-index: 99999999;
     right: 28px;
     bottom: 28px;
-		border: 2px solid #21759B;
+		border: 2px solid DarkSlateBlue;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -1823,10 +1730,10 @@ svg.icon-extlink {
 }
 
 .manduca-back-to-top-div svg {
-	width:  28px;  
+	width:  28px;   /* Not em! */
 	height: 28px;
 	vertical-align: middle;
-	fill: #21759B;
+	fill: DarkSlateBlue;
 }
 
 
@@ -1908,11 +1815,12 @@ svg.icon-extlink {
   margin-right: .5em;
 }
 /* used pseudo-element to make arrows */
+
 .simpletooltip.tooltip-show::before,
 .minimalist-simpletooltip.tooltip-show::before,
 .minimalist-left-simpletooltip.tooltip-show::before {
   content: '';
-  speak: none;
+  speak: none; /*only opera supports */
   position: absolute;
   z-index: 666;
   width: 10px;
@@ -2005,40 +1913,40 @@ svg.icon-extlink {
 
 
 .high-contrast-1 a {
-	background-color: #000 ;
-	color: #A5E9F8;
+	background-color: black ;
+	color: paleTurquoise;
 	text-decoration: underline;
 }
 
 .high-contrast-1 .site,
 .high-contrast-1 .megamenu.toggled-on,
 .high-contrast-1 .lighter-scheme {
-    background-color: #000;
-    color: #fff ;
+    background-color: black;
+    color: Ivory ;
 }
 
 .high-contrast-1 svg {
-	fill: #fff;
+	fill: Ivory;
 }
 .high-contrast-1 textarea,
 .high-contrast-1 input,
 .high-contrast-1 select,
 .high-contrast-1 button {
-	background-color: #000;
-	color: #fff ;
+	background-color: black;
+	color: Ivory ;
 }
 
 .high-contrast-1 .basic-scheme svg {
-	fill: #000;
+	fill: black;
 }
 
 .high-contrast-1 .link-button,
 .high-contrast-1 .link-button a {
-	background-color: #fff;
-	color: #000; 
+	background-color: Ivory;
+	color: black; 
 }
 .high-contrast-1 .link-button svg{
-	fill: #000000;
+	fill: black000;
 }
 
 .high-contrast-1 .lighter-scheme {
@@ -2048,7 +1956,7 @@ svg.icon-extlink {
 .high-contrast-1 .featured-scheme {
 	border: 2px solid #c1ec15;
 	background-color: #111;
-	color: #fff;
+	color: Ivory;
 }
 
 .high-contrast-1 table.featured-scheme {
@@ -2056,25 +1964,22 @@ svg.icon-extlink {
 }
 
 .high-contrast-1 .featured-scheme svg {
-	fill: #fff;
+	fill: Ivory;
 }
 
 
 .high-contrast-1 .inverse-scheme a  {
 	color: #15c6ec ;
-    background-color: #000;
+    background-color: black;
 }
 
 .high-contrast-1 .inverse-scheme svg {
-	fill: #fff;
+	fill: Ivory;
 	}
 
-#high-contrast-0 {
-	background-color: #fff;
-}
 #high-contrast-1 {
-	background-color: #000;
-	color: #fff;
+	background-color: black;
+	color: Ivory;
 }
 
 
@@ -2194,7 +2099,7 @@ svg.icon-extlink {
 /*
  * LINK APPEARANCE
  *@see: https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G183
- *contrast to white: 6,42:1
+ *contrast to ivory: 6,42:1
  *contrast to black: 3,26:1
  *
  */
@@ -2202,13 +2107,19 @@ svg.icon-extlink {
 
 html.link-appearance-1 a,
 #link-appearance-1 {
-	color: #4e4eca;
 	text-decoration: none;
 	font-weight: 700;
 }
 
+html.link-appearance-1 textarea,
+html.link-appearance-1 input, 
+html.link-appearance-1 .site,
+html.link-appearance-1 .megamenu.toggled-on {
+	color: black;
+}
+
 #link-appearance-0 span {
-	color: #1f6c91;
+	color: RoyalBlue;
 	text-decoration: underline;
 }
 
@@ -2255,15 +2166,15 @@ Reading options modal window buttons design
 
 
 .toolbar-buttons-table .button {
-		margin-left: 3px;
-    padding: 7px 3px;
+		margin-left: 0.214em;
+    padding: 0.428em 0.214em;
 		cursor: pointer;
 		margin: 0 0.5em;
 }
 
 .toolbar-buttons-table .button button {
-	min-width: 60px;
-		min-height: 40px;
+		min-width: 4em;
+		min-height: 2em;
 }
 
 .toolbar-buttons button[disabled] {
@@ -2274,7 +2185,7 @@ Reading options modal window buttons design
 
 
 .toolbar-buttons button[disabled]:hover{
-	outline: 4px solid #9E430E;
+	outline: 4px solid maroon;
 	outline-offset: 2px;
 	color: #222;
 }
@@ -2297,7 +2208,7 @@ Reading options modal window buttons design
 								position: absolute;
         right: 0.4em;
         top: 0.4em;
-        border: 1px solid white;
+        border: 1px solid ivory;
         padding: 1px;
         cursor: pointer
     }
@@ -2325,7 +2236,7 @@ Reading options modal window buttons design
 .font-size-0 	.toolbar-buttons-table .row .toolbar-label {
 		width: 50%;
 		text-align: right;
-		border-top: 1px white dotted;
+		border-top: 1px ivory dotted;
 	}
 
 .font-size-0 	.toolbar-buttons-table .buttons-wrapper {
@@ -2349,7 +2260,7 @@ Reading options modal window buttons design
 		left: auto;
 		z-index: 100;
 		max-width: 43em;
-		border: 3px solid #21759B;
+		border: 3px solid DarkSlateBlue;
     }
     
 		li.button-container {
@@ -2392,15 +2303,19 @@ Reading options modal window buttons design
 	.toolbar-buttons-table .row .toolbar-label {
 		width: 50%;
 		text-align: right;
-		border-top: 1px white dotted;
+		border-top: 1px ivory dotted;
 	}
+
+.font-size-1 .toolbar-buttons-table .row .toolbar-label {
+		width: 39%; /* it's not perfect, need to find another solution */
+}
 
 	.toolbar-buttons-table .buttons-wrapper {
 		display: inline-flex;
 	}
 	
 	.toolbar-buttons-table .button button {
-			min-width: 120px;
+			min-width: 8em;
 			min-height: inherit;
 	}
 	
@@ -2534,7 +2449,6 @@ Reading options modal window buttons design
 	
 	.author-avatar {
 		float: left;
-		margin-top: 8px;
 		margin-top: 0.571428571rem;
 	}
 	.author-description {
@@ -2554,7 +2468,6 @@ Reading options modal window buttons design
 	.widget-searchform #s {
 		width: 70%;
 		position: relative;
-		top: -4px;
 		top: -4px;
 	}
 		.alignleft {
@@ -2602,9 +2515,10 @@ Reading options modal window buttons design
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt .content-date {
+		font-size: 95%;
+			text-transform: uppercase;
 			font-weight: 300;
 			text-align: center;
-			font-size: 1.25em;
 			margin: 0;
 			padding: 1px;
 	}
@@ -2614,29 +2528,12 @@ Reading options modal window buttons design
 			display: inline-block;
 		}
 	.content-date span.entry-date-month {
-		padding-right: 2px;
 		padding-right: 0.14rem;
-		padding-left: 2px;
 		padding-right: 0.14rem;
 	}
 		
-	
-	.content-date .entry-date-month {
-		font-size: 65%;
-		text-transform: uppercase;
-	}
-	.content-date .entry-date-day {
-		font-size: 75%;
-	}
-	.content-date .entry-date-year {
-		display: block;
-		font-size: 75%;
-		font-weight: 200;
-	}
-
-
 	.edit-link {
-		margin: 14px 0;
+		margin: 1em 0;
 	}
 	
 	/* excerpt */
@@ -2647,7 +2544,7 @@ Reading options modal window buttons design
 		margin-bottom: 0.75em;
 		margin-left: 0;
 		width: 35%;
-		max-height: 210px;
+		max-height: 15rem;
 	}
 	.excerpt-thumbnail  img {
 		max-width: 100%;
@@ -2661,7 +2558,7 @@ Reading options modal window buttons design
 		margin-bottom: 5rem;
 	}
 	.page-template-full-width .entry-content {
-		padding: 0 28px 28px;
+		padding: 0 2em 2em ;
 	  }
   
 		
@@ -2670,7 +2567,7 @@ Reading options modal window buttons design
 	}
 	
 	.page-template-full-width img.wp-post-image { /* Full width page*/
-		margin: 42px auto;
+		margin: 3em auto;
 	}
 	.excerpt-thumbnail img.wp-post-image {
 		float: left				
@@ -2679,7 +2576,7 @@ Reading options modal window buttons design
 	
 	/*archive navigation */
 	.nav-links {
-		margin-left: 10px; /*Focus should be seen WCAG 2.4.11 & 12*/
+		margin-left: 0.7rem; /*Focus should be seen WCAG 2.4.11 & 12*/
 	}
 	
 	/* single post navigaion */
@@ -2710,14 +2607,15 @@ Reading options modal window buttons design
 	.footer-navigation ul li{
 		list-style-type: none;
 		display: inline-block;
-		padding: 0 5px;
 		padding: 0 0.357rem;
 	}
+	
 	.copyright-text {
 		position: static;
 		text-align: left;
 		margin: 0 0 0 7px;
 	}
+	
 	/* toolbars 600-784px */
 	.site .toolbar-buttons-open {
     position: absolute;
@@ -2725,7 +2623,7 @@ Reading options modal window buttons design
 		left: 4em;
 		width: auto;
 		height: auto;
-		padding: 3px 14px 6px 7px;
+		padding: 0.21em 1em 0.42em 0.5em;
   }
 	.site .toolbar-buttons-open svg {
 		display: none;
@@ -2755,7 +2653,6 @@ Reading options modal window buttons design
 	}
 	
 	.commentlist .children {
-		margin-left: 48px;
 		margin-left: 3.428571429rem;
 	}
 	
@@ -2785,7 +2682,7 @@ Reading options modal window buttons design
 	}
 
 	.column-left {
-		width: 16%;
+		width: 17%;
 		max-width: 7em;
 		overflow: hidden;
 	}
@@ -2793,14 +2690,14 @@ Reading options modal window buttons design
 
 
 	/* Colors */	
-	body .site {
-		background-color: #ffffff;
+	.high-contrast-0 body {
+		background-color: Ivory;
 	}
 	
 	
 	/* toolbars 784-1360px */
 	.toolbar-buttons-open {
-    top: 1.3rem;
+    top: 1.2rem;
     right: 1.3rem;
 		left: auto;
     }
@@ -2824,13 +2721,12 @@ Reading options modal window buttons design
 		top: 0;
 		bottom: 0;
 		display: block;
-		width: 4px;
 		width: 0.285rem;
 	}
 	
 	/*Header*/
 	.search-submit {
-		margin-left: 5px;
+		margin-left: 0.5em;
 	}
 	
 	
@@ -2861,7 +2757,6 @@ Reading options modal window buttons design
 
 	.main-navigation div ul.nav-menu > li {
 		display: inline-block;
-		margin: 0 3px 0 0;
 		margin: 0 0.2142857142857143rem 0 0;
 		position: relative;
 	}
@@ -2870,7 +2765,7 @@ Reading options modal window buttons design
 	}
 	
 	.megamenu ul.nav-menu > li > a {
-		padding: 7px 14px;
+		padding:  0.5em 1em;
 		white-space: nowrap;
 		font-weight: 500;
 	}
@@ -2903,10 +2798,10 @@ Reading options modal window buttons design
 	}
 	
 	.dropdown-toggle { /* button to open submenu*/
-		top: 11px;
-		right: 15px;
-		
+		top: 0.785em;
+		right:  1.071rem;
 	}
+	
 	.menu-toggle {
 		display: none;
 	}
@@ -2914,13 +2809,14 @@ Reading options modal window buttons design
 	/* Content */
 		
 	.site-content article{
-		margin: 42px 0 0;
+		margin: 3rem 0 0;
 		padding: 1rem;
 	}
+	
 	/* Page and the first article need margin-top to be adjusted to widget area @17.8.8*/
 	.site-content article:first-child,
 	.page .site-content article {
-		margin-top: 17px;
+		margin-top: 1.214rem;
 	}
 	
 	
@@ -2948,7 +2844,6 @@ Reading options modal window buttons design
 	
 	html.font-size-0:not( .page-template-full-width) .site-content .main-content {
 		width: 41em;
-		margin: 0 auto;
 	}
 	
 	
@@ -2991,10 +2886,10 @@ Reading options modal window buttons design
 	}
 	
 	body.custom-background-empty {
-		background-color: #fff;
+		background-color: Ivory;
 	}
 	body.custom-background-empty .site,
-	body.custom-background-white .site {
+	body.custom-background-ivory .site {
 		padding: 0;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -3010,7 +2905,6 @@ Reading options modal window buttons design
 	}
 	
 	.widget-searchfrom #s {
-		width: 238px;
 		width: 17rem;
 	}
 	
@@ -3031,7 +2925,7 @@ Reading options modal window buttons design
 		
 	
 	.excerpt-wrapper article{
-		margin-top: 56px;
+		margin-top: 4em;
 	}
 	
 	
@@ -3039,7 +2933,7 @@ Reading options modal window buttons design
 	/* left indendt to all elements. @17.10.2  */
 	main > header,
 	.author-info {
-			margin-left: 55px /* This is the margin + padding of the articles */
+			margin-left: 3.92rem /* This is the margin + padding of the articles */
 	}
 
 	
@@ -3048,36 +2942,30 @@ Reading options modal window buttons design
 /* min width: 1360px */
 @media screen and (min-width: 1360px) {
 	
-	
 	.widget-searchform #s {
-		width: 17rem;
+		width: 1.5em;
 	}
 	
-	
-		/* Paddings on wider screens */
-	.header-bar,
-	.wrapper,
-	.footer-wrapper {
-		padding: 0;
+	html.font-size-0:not( .page-template-full-width) .site-content {
+		width: 66%;
 	}
-	
-	
-	
+	html.font-size-0:not( .page-template-full-width) .widget-area {
+		width: 33%;
+	}
+		
 	/* toolbars */
-
-	
 	.page-template-full-width article .entry-content {
 		columns: 2;
 		-moz-columns: 2;
 		-webkit-columns: 2;
-		column-gap: 42px;
-		-moz-column-gap: 42px;
-		-webkit-column-gap: 42px;
+		column-gap: 3em;
+		-moz-column-gap: 3em;
+		-webkit-column-gap: 3em;
 	}
 	
 	
 	.excerpt-wrapper {
-		margin-bottom: 20px;
+		margin-bottom: 3em;
 	}
 	
 }
@@ -3118,7 +3006,7 @@ Reading options modal window buttons design
 		background: none !important;
 	}
 	body .site {
-		color: #000;
+		color: black;
 		font-size: 12pt;
 		font-family: Georgia, 'Times New Roman', serif;
 		
@@ -3251,14 +3139,14 @@ Reading options modal window buttons design
 		width: auto;
 	}
 	.commentlist .avatar {	
-		height: 39px;
+		height: 2.78rem;
+		width: 2.78rem;
 		left: 2.2em;
 		top: 2.2em;
-		width: 39px;
 	}
+	
 	.comments-area article header cite,
 	.comments-area article header time {
-		margin-left: 50px;
 		margin-left: 3.57142857rem;
 	}
 

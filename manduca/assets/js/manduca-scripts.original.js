@@ -601,15 +601,17 @@ function constrain(amt, low, high) {
 	
     
     
-    /*
-    * Skiplinks 
+    /*------------------------------------------------
+    *
+    * 	Skiplinks 
+    *
     * Because Voiceover cannot handle the internal links ( eg href='#content'),
     * necessary to apply javascripts to have jump links accessible
     * This is tested with all kind of clients
     *
     * @since: 19.1
     * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
-    **/
+    /*------------------------------------------------**/
 	
     $('#skip-to-content').click(function( event )
     {
@@ -671,23 +673,25 @@ function constrain(amt, low, high) {
        
        
     /*
-     *Change link target
-     *based on cookie. 
-     *@since 19.2
-     **/
-    $('a.extlink').click(function()
+	 * ------------------------------------------------
+     * Change link target
+     * based on cookie. 
+     * @since 19.2
+     * @modified 21.2
+     **------------------------------------------------*/
+    $('a').click(function()
     {
-         var linkTarget=readCookie( "linkTarget" );
-         if ( linkTarget == 'self' )
-         {
+		var linkTargetBlank=$('html').hasClass('link-target-2');
+		var linkTargetSelf=$('html').hasClass('link-target-1');
+		if ( linkTargetSelf)
+		{
              $(this).attr('target', '_self');
         }
-            if ( linkTarget == 'blank' )
+        if ( linkTargetBlank)
         {
             $(this).attr('target', '_blank');
         }
     });
-	
 	
 	
 	

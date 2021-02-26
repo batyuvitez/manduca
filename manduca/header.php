@@ -46,9 +46,10 @@
 							<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
 							<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 					</div>			
+					<?php get_template_part( '/template-parts/header/searchform' ); ?>					
 					<?php get_template_part( '/template-parts/header/headerimage' ); ?>
 					<?php get_template_part( '/template-parts/header/menu' ); ?>
-					<?php get_template_part( '/template-parts/header/searchform' ); ?>					
+					
 				</div>
 			</header>
 			<?php get_template_part( '/template-parts/wrapper/wrapper', 'top' ); ?>

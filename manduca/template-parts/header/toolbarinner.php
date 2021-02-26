@@ -177,7 +177,7 @@
 				
 				
 				
-				array (	'name'=>'target',
+				array (	'name'=>'link-target',
 				//translators: Toolbar color scheme selector
 				'label'=>__( 'Link target' , 'manduca' ),
 				'elements'=>
