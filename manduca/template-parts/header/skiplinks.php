@@ -2,11 +2,14 @@
 /**
  * Jump links to content and sidebar
  * Header template file
+ *
+ * empty since 21.2: ARIA11 is satisfactory tecnique:
+ * Using wai-aria landmarks to identify regions of a page
  * */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,16 +26,3 @@
 */
 
 ?>
-<nav id="skip-links" class="skip-links" aria-label="<?php _e( 'Jump links' , 'manduca' ) ?>" >
-    <ul>
-        <li>
-            <a class="skip-link" id="skip-to-content" href="javascript::"><?php _e( 'Skip to main content', 'manduca' ); ?></a>
-        </li>
-        <li>
-            <a class="skip-link" id="skip-to-sidebar" href="javascript::"><?php _e( 'Skip to sidebar', 'manduca' ); ?></a>
-        </li>
-        <li>
-            <a class="skip-link" id="skip-to-footer" href="javascript::"><?php _e( 'Skip to footer', 'manduca' ); ?></a>
-        </li>
-    </ul>
-</nav>

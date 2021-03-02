@@ -1,6 +1,7 @@
 <?php
 /**
- * Display end of the page 
+ * Display end of the page
+ * 
  *
  * @ since 1.0
  **/
@@ -27,8 +28,7 @@
 			<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>
 			<div id="footer-wrapper"
 				 class="footer-wrapper inverse-scheme">
-				<h1 class="skip-link" tabindex="0" ><?php _e( 'Footer area' , 'manduca' ); ?></h1>
-				<footer id="colophon" >
+				<footer id="colophon" aria-label="<?php _e( 'Footer area' , 'manduca' ); ?>">
 					<div class="site-info">
 						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
 						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>

@@ -49,8 +49,7 @@
 			
 			<nav id="megamenu"
 				 class="megamenu"
-				 aria-label="<?php echo $menu_name; ?>"
-				 role="navigation">
+				 aria-label="<?php echo $menu_name; ?>">
 				<?php
 					wp_nav_menu (array(
 					   'theme_location'  => 'primary',

@@ -25,6 +25,7 @@ Number of supported success criteria shown in brackets.
         - Icons for different type of links: xls, doc, pdf (1.4.8)
         - Link type indication with icon (1.4.8 )
         - Search: highlight/emphasise the searched expression in the list (1.4.1)
+        - Label includes accessible name (2.5.3)
         - Line hegiht, paragprah spacing, letter spacing, word spacing adjustabla (1.4.12)
     
         
@@ -36,7 +37,7 @@ Number of supported success criteria shown in brackets.
         -No access key (2.1.4)
         
     2.4 Navigation
-        - Skip links to main, footer and sidebar areas (1.4.1)
+        - Using WAI-ARIA landmarks to bypass blocks (1.4.1)
         - Change link to actual page to <span> element (A 2.4.4, 2.4.9)
         - Link purpose is clear (2.4.4, 2.4.9)
         - Breadcrumb (2.4.8)        

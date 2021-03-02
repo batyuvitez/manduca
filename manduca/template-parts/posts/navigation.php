@@ -1,5 +1,6 @@
 <?php
 /**
+ * Post navigation 
  * Navigation to previous / next post in a single post page
  * Displays the title of the prev/next post.
  * 

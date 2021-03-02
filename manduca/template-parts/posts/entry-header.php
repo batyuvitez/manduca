@@ -19,7 +19,7 @@
 					
 	
 				<?php if ( is_single() ) :
-					printf( '<h1 id="post-%1$s-title" tabindex="0">%2$s</h1>',
+					printf( '<h1 id="post-%1$s-title">%2$s</h1>',
 						   get_the_ID(),
 						   get_the_title()
 						  );
