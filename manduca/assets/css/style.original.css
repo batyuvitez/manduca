@@ -22,22 +22,47 @@
 /*
  *	Color scheme 
  *	@since 21.2:
- * -------------------------------------------------------------- 
- *		darkSlateBlue (#48d8b) : text
- *		darkSlateGrey (#2f4f4f) 
- *		royalBlue (#4169e1) :link
- *		paleTurquoise (#afeeee) :featured
- *		marron (#800000)
- *		ivory (#fffff0) :background
- *		saddleBrown: inverse 
+ * ============================================================-- 
+ *		darkSlateBlue (#483d8b) :  ornaments
+ *		royalBlue (#4169e1) :link when bold. 
+ *		paleTurquoise (#afeeee) :featured scheme background: 
+ *		marron (#800000) : featured scheme text
+ *		ivory (#fffff0) : background
+ *		saddleBrown (#8b4513): link-button background
+ *		black (#000000) : inverse-scheme
+ *    SteelBlue (#4682b4): link in inverse-scheme background.
+ *    white (#ffffff) : inverse-sheme text
+ *    darkSlateGray (2f4f4f) : text when links are uderlined, 
  *		#23232 : the text color if links are underlined.
+ *		
  *			If links are bold, text is darkSlade Grey. It has a 3:1 contrast
- *			and also link color has 4.5:1 to the background. 
-*/
+ *			and also link color has 4.5:1 to the background.
+ *
+ * contrast ratios (to one):
+ *  black-white :21 FYI
+ *  black-steelBlue 5,11 inverse scheme background and bold link
+ * 	white-steelBlue :4,1  inverse scheme text and bold link
+ * 	paleTurquoise - SteeéBlue: 
+ * 	white - 232323 :	15,71 FYI
+ * 	ivory-royalBlue 4,8 bold link on background
+ * 	ivory-2323232 15,57 background and text
+ * 	232323-royalBlue : 3,24 bold link and text contrast
+ * 	marron-paleTurqoise 8,49 - fetured text and background
+ *  darkSlateGray-ivory: 	15,71 text and background when link are underlined
+ * 	marron-white: 10,94 lighter scheme text and background
+ * 	saddleBrown -white: 7,09 button and button text
+ * 	
+ **	@see: https://www.w3.org/WAI/WCAG21/working-examples/link-contrast/
+ **/
 
 
-/* Reset and set defaults
--------------------------------------------------------------- */
+/*============================================================
+|                                                            |
+|            SECTION  Reset and set defaults                 |
+|                                                            |
+==============================================================*/
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -151,29 +176,36 @@ img {
 
 
 
-/* 12 1.* Basic color scheme
- * 
- * @since 19.4
--------------------------------------------------------------- */
+
+
+
+
+/*============================================================
+|                                                            |
+|               SECTION COLORS 				                       |
+|                                                            |
+==============================================================*/
+
+body, 
+.site,
 textarea,
 input, 
-.site,
-.megamenu.toggled-on {
+.megamenu.toggled-on,
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {	
 	background-color: Ivory;
-	color: darkSlateGrey;	
+	color: black;	
 }
 
 svg {
-	fill: darkSlateBlue;	
+	fill: black;	
 }
 
-body a {
+body a,
+#link-appearance-0 span {
 	color: RoyalBlue;
-	text-decoration-skip-ink: auto;
-	text-decoration-thickness: 0.1em;
-	text-underline-offset: .13em; 
 }
-
 
 
 .site a:focus,
@@ -195,47 +227,223 @@ textarea:focus{
 	outline: 1px dotted maroon; 		
 }
 
-.featured-scheme,
-.sticky 		/* sticky is not used in theme, but theme check requires it */
-.featured-article,
-.featured-article .lighter-scheme{
-	background-color: paleTurquoise;
-}
 
-.featured-scheme svg {
-	fill: #222;
-}
+
+/*//////////////////////////////////
+Lighter */
 .lighter-scheme {
 			color: maroon;
-			background-color: ivory;
+			background-color: white;
+}
+
+/*//////////////////////////////////
+Inverse */
+
+.inverse-scheme,
+.simpletooltip.tooltip-show,
+.minimalist-simpletooltip.tooltip-show,
+.minimalist-left-simpletooltip.tooltip-show {
+				background-color: black; 
+				color: white;
 }
 
 
-.inverse-scheme {
-				background-color: darkSlateBlue; 
-				color: Ivory;
-}
 .inverse-scheme svg {
-				fill: Ivory;
+				fill: white;
 }
 
 .inverse-scheme a {
+	color: steelBlue;
+}
+
+.inverse-scheme a:hover,
+.inverse-scheme a:focus,
+.footer-navigation a:active {
+	outline-color: ivory/* only footer navigation has dark bacgkround*/
+}
+
+/*//////////////////////////////////
+Featured */
+.featured-scheme,
+.sticky 		/* sticky is not used in theme, but theme check requires it */
+.featured-article {
+	background-color: paleTurquoise;
+	color: maroon;
+}
+
+
+
+/*//////////////////////////////////
+Button, link-button        */
+button, 
+.link-button,
+.link-button svg,
+.link-button a {
+	background-color: saddleBrown; 
+	color: ivory;
+}
+
+button svg, 
+.site .link-button svg {
+		fill: ivory;
+}
+
+.site button[disabled],
+.site input[disabled],
+.site textarea[disabled] {
+	color: maroon;
+	background-color: paleTurquoise;
+}
+
+
+
+
+
+.bypostauthor cite span {
+	background-color: paleTurquoise;
+}
+
+/*=========================================
+ * LINKSA ARE UNDERLINED                        */
+.link-appearance-1 link-textarea,
+.link-appearance-1 input, 
+.link-appearance-1 .site,
+.link-appearance-1 .megamenu.toggled-on {
+	color: #232323;	
+}
+
+
+
+/*=========================================
+ * HIGH CONTRAST MODE                        */
+
+.high-contrast-1 {
+	background-image: none;  /* cannot reset all background, since it removes background-colors too */
+}
+
+
+.high-contrast-1 a {
+	background-color: black ;
+	color: paleTurquoise;
+	text-decoration: underline;
+}
+
+.high-contrast-1 .site,
+.high-contrast-1 .megamenu.toggled-on,
+.high-contrast-1 .lighter-scheme {
+    background-color: black;
+    color: Ivory ;
+}
+
+.high-contrast-1 svg {
+	background-color: black;
+	fill: Ivory;
+}
+
+.high-contrast-1 .site button[disabled],
+.high-contrast-1 .site input[disabled],
+.high-contrast-1 .site textarea[disabled] {
+		color: paleTurquoise;
+		background-color: maroon; 
+}
+
+.high-contrast-1 textarea,
+.high-contrast-1 input,
+.high-contrast-1 select {
+	background-color: white;
+	color: black ;
+}
+
+.high-contrast-1 button, 
+.high-contrast-1 .link-button,
+.high-contrast-1 .link-button svg {
+	background-color: black; 
 	color: Ivory;
 }
 
-.link-button svg {
+
+.high-contrast-1 .basic-scheme svg {
+	fill: black;
+}
+
+.high-contrast-1 .link-button,
+.high-contrast-1 .link-button a {
+	background-color: Ivory;
+	color: black; 
+}
+.high-contrast-1 .link-button svg {
+	fill: black;
+	background-color: white;
+}
+
+.high-contrast-1 .lighter-scheme {
+	background-color: #222;
+}
+
+.high-contrast-1 .featured-scheme {
+	border: 2px solid #c1ec15;
+	background-color: #111;
+	color: Ivory;
+}
+
+.high-contrast-1 table.featured-scheme {
+	border: none;
+}
+
+.high-contrast-1 .featured-scheme svg {
 	fill: Ivory;
 }
 
 
+.high-contrast-1 .inverse-scheme a  {
+	color: #15c6ec ;
+    background-color: black;
+}
 
-/* end colors ----------------------------------*/
+.high-contrast-1 .inverse-scheme svg {
+	fill: Ivory;
+	}
+
+#high-contrast-1 {
+	background-color: black;
+	color: Ivory;
+}
+
+
+
+
+
+
+
+
+
+ /*============================================================
+|                                                             |
+|             SECTION  CONTROL ELEMENTS     s                 |
+|                                                             |
+==============================================================*/
+
+ 
+body a,
+#link-appearance-0 span {
+	text-decoration: none;
+	font-weight: 700;
+}
+
+ 
+html.link-appearance-1 a,
+#link-appearance-1 {
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: .13em; 
+}
+ LINKS */
 
 body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	text-decoration: none;
 	padding: 0;
 }
-
 
 
 .gallery-item a,
@@ -246,17 +454,13 @@ a.page-numbers.prev,
 	border-bottom: none;
 }
 
+
+
 /* All about the status of control elements */
 
 
 .header-bar .site-title > a:focus {
 	margin-left: 7px;  /* TO DISPLAY THE LEFT SIDE OF OUTLINE. &SINCE 18.10.3*/
-}
-
-.footer-navigation a:hover,
-.footer-navigation a:focus,
-.footer-navigation a:active {
-	outline-color: paleTurquoise /* only footer navigation has dark bacgkround*/
 }
 
 
@@ -346,19 +550,11 @@ a.page-numbers.prev,
 .site input[disabled],
 .site textarea[disabled] {
 	cursor: not-allowed;
-	color: maroon;
-	background-color: paleTurquoise;
 }
 
-.high-contrast-1 .site button[disabled],
-.high-contrast-1 .site input[disabled],
-.high-contrast-1 .site textarea[disabled] {
-		color: Ivory;
-}
 
 
 .bypostauthor cite span {
-	background-color: paleTurqoise;
 	background-image: none;
 	box-shadow: none;
 	padding: 0;
@@ -394,8 +590,6 @@ a.page-numbers.prev,
 
 .site .link-button,
 .site .link-button a{
-	background-color: saddleBrown; 
-	color: Ivory;
 	padding: 0.428em 0.857em;
 	text-decoration: none;				
 }
@@ -405,7 +599,7 @@ a.page-numbers.prev,
 .site .menu-toggle,
 .site .toolbar-buttons-open{
 	margin: 0;
-	padding: 0.37em;
+	padding: 0.2em;
 }
 
 
@@ -415,11 +609,10 @@ a.page-numbers.prev,
 }
 
 .more-link {
-	max-width: 15em;
+	max-width: 16em;
 	float: right;
 	margin: 2em 0 0;
 }
-
 
 
 
@@ -484,12 +677,12 @@ video {
 	padding: 4px;
 	padding: 0.28rem;
 }
+
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {	
 	font-size: 95%;
 	line-height: 2;
-	color: black;
 }
 
 
@@ -537,22 +730,14 @@ video {
 
 .pagination span,
 .pagination a {
-	font-size: 110%;
 	display: inline-block;
 	text-align: center;
-	padding: 0 0.5rem;
-	margin: 0.5rem 0;
 }
 
 .pagination .current {
 	font-weight: 700;
 }
 
-a.page-numbers.next,
-a.page-numbers.prev {
-	position: relative;
-	top: 0.5rem;
-}
 
 a.page-numbers.next {
 	margin-left: 1rem; /* have a distenc from page numbers*/
@@ -614,7 +799,7 @@ a.page-numbers.prev {
 	margin-top: 0;
 }
 .author-description p {
-	color: #757575;
+	border: 1px darkSteelBlue solid;
 	font-size: smaller;
 	line-height: 1.846153846;
 }
@@ -628,7 +813,7 @@ a.page-numbers.prev {
 
 
 /* Basic structure
--------------------------------------------------------------- */
+============================================================-- */
 
 /* Body, links, basics */
 html {
@@ -660,23 +845,12 @@ body .site,
 	overflow: hidden;
 }
 
+/*===========================================
+* Assistive text
+* https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css */
 
-/* Assistive text
- *Updeted in 17.9.3
- * https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css
-*/
-/* #skip links inserted in 18.10.14 */
-#skip-links {
-	position: absolute;
-	top: 1em;
-	left: 1em;
-}
-#skip-links ul {
-	list-style: none;
-}
 .assistive-text,
-.screen-reader-text,
-.skip-link {
+.screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -689,35 +863,6 @@ body .site,
 	word-wrap: normal !important;
 }
 
-.skip-link {
-	
-	top: -9999em;
-}
-
-
-.site .skip-link:focus,
-.site .skip-link:active {
-	clip: auto;
-	clip-path: none;
-	background-color: #f1f1f1;
-	color: maroon;
-	display: block;
-	font-weight: 700;
-	outline: none;
-	padding: 1em 2em;
-	text-transform: none;
-	height: auto;
-	left: 6px;
-	top: 7px;
-	width: auto;
-	z-index: 100000;
-	outline: 4px solid maroon;
-}
-#footer-wrapper .skip-link:focus,
-#footer-wrapper .skip-link:active {
-	top:auto;
-	bottom: 0;
-}
 
 #manduca-back-to-top {
 	display: block;
@@ -873,26 +1018,8 @@ body .site,
 	display: none;
 }
 
-/*Button to open submenu in main navigation*/
-.dropdown-toggle {
-	background-color: transparent;
-	border: 0;
-	color: #1a1a1a;
-	height: 1.357rem;
-	width: 1.357rem;
-	padding: 0;
-	position: absolute;
-	right: 0;
-	text-transform: none;
-	top: 0.857em;
-	right: 0.42em;
-}
 
 
-
-.dropdown-toggle.toggled-on {
-transform: rotate(180deg);
-}
 
 
 /* Navigation Menu */
@@ -922,13 +1049,12 @@ transform: rotate(180deg);
 
 /* Accessible mega menu list &since 17.4 */
 .site ul.nav-menu {
-	display: block;
-	position: relative;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	z-index: 15;
-	
+		display: block;
+		position: relative;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		z-index: 15;
 }
 
 /* a top level navigation item in the mega menu */
@@ -936,6 +1062,20 @@ transform: rotate(180deg);
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
+	border-bottom: 1px solid darkSlateBlue;
+}
+
+.megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
+	display: inline-flex;
+}
+
+.megamenu ul.nav-menu > li.menu-item.menu-item-has-children:hover .sub-nav {
+	display: block;
+}
+
+.megamenu ul.nav-menu > li.menu-item.menu-item-has-children:hover .dropdown-toggle,
+.dropdown-toggle.toggled-on {
+	transform: rotate(180deg);
 }
 
 .megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
@@ -979,7 +1119,7 @@ transform: rotate(180deg);
 /* list item within sub-navigation panel */
 .sub-nav li {
 	list-style-type: none;
-	margin: 0;
+	margin: 0 0 1em 0 ;
 	padding: 0;
 	text-align: left;
 	position: relative; /* this is the anchor of the dropdown-menu button*/
@@ -1040,29 +1180,20 @@ transform: rotate(180deg);
 .footer-wrapper{
 	width:100%;
 	clear: both;
-	line-height: 2;
-	margin-left: auto;
-	margin-right: auto;
-
+	margin: 1em auto 2em;
+	padding: 1em;
 }
 
-.footer-navigation {
-	margin-bottom: 2rem;
-}
 .footer-navigation ul li{
 	list-style-type: none;
 	text-align: center;
 }
 
-.copyright-text {
-	text-align: center;
-	font-size: 0.9em;
-}
 
 
-/*-------------------------------------------------------------- 
+/*============================================================-- 
 /* TYPOGRAPHY 
--------------------------------------------------------------- */
+============================================================-- */
 
 /* General HTML5 elements general formating
  * This part is used in tiny mce stylesheet as well.
@@ -1172,7 +1303,6 @@ transform: rotate(180deg);
 	padding: 0.1em 0.5em ;
 	font-size: 0.95rem;
 	overflow: auto;
-	background-color: paleTurquoise;
 }
 
 
@@ -1346,28 +1476,34 @@ div.entry-content > h2:first-child{
 
 /* entry-meta*/
 
-.site-content article footer {
+.metatags {
 	clear: both;
 }
 
-.site-content article footer  {
+.metatags  {
 	list-style: none;
 	font-size: 0.95em;
 }
 
-.site-content article footer ul {
+.metatags ul {
 	border-top: 1px paleTurquoise solid;
 }
 
-.site-content article footer li {
+.metatags li {
 	padding: 0.5em 0;
 	margin-left: 2em;
-	list-style-position: outside;
+	list-style-type: none;
 }
 
-.site-content article footer li svg {
-	position: relative;
-	top: -1px;
+.metatags .meta-item {
+	display: inline-block;
+	margin-left: 0.5em;
+	width: calc(100% - 3em);
+}
+
+.site .metatags svg {
+	vertical-align: top;
+	display: inline-block;
 }
 
 /* Thumbnail featured image  */
@@ -1383,14 +1519,12 @@ div.entry-content > h2:first-child{
 .entry-header .comments-link {
 	margin-top: 1.714285714rem;
 	line-height: 1.846153846;
-	color: #757575;
 }
 
 /* Template content-search  */
 strong.search-excerpt {
 	font-size: 110%;
 	text-transform: uppercase;
-	color: black;
 }
 
 /* Images with caption*/
@@ -1432,7 +1566,7 @@ img.aligncenter,
 
 
 /* 6. Single audio/video attachment view
--------------------------------------------------------------- */
+============================================================-- */
 
 .attachment .entry-content .mejs-audio {
 	max-width: 400px;
@@ -1446,7 +1580,7 @@ img.aligncenter,
 
 
 /* 7.Single image attachment view
--------------------------------------------------------------- */
+============================================================-- */
 
 .article.attachment {
 	overflow: hidden;
@@ -1471,7 +1605,7 @@ img.aligncenter,
 
 
 /* 9. Comments
--------------------------------------------------------------- */
+============================================================-- */
 
 .comments-title {
 	margin-bottom: 3.428571429rem;
@@ -1527,7 +1661,6 @@ img.aligncenter,
 }
 
 a.comment-edit-link {
-	color: #686868;
 	font-size: smaller;
 	line-height: 1.846153846;
 }
@@ -1573,7 +1706,6 @@ a.comment-edit-link {
 	margin: 0;
 	font-size: 0.9em;
 	line-height: 2;
-	color: #5e5e5e;
 }
 .comment-author-link {
 	font-size: 1.21rem;
@@ -1587,7 +1719,7 @@ a.comment-edit-link {
 
 
 /* 11. Widgets
--------------------------------------------------------------- */
+============================================================-- */
 
 .site h2.widget-title {  
 	margin-top: 1em;
@@ -1605,7 +1737,6 @@ a.comment-edit-link {
 }
 .widget_recent_entries .post-date,
 .widget_rss .rss-date {
-	color: #555;
 	font-size: 78%;
 	margin-left: 0.857em;
 }
@@ -1614,7 +1745,6 @@ a.comment-edit-link {
 	width: 100%;
 	font-size: smaller;
 	line-height: 1.846153846;
-	color: #444;
 }
 #wp-calendar th,
 #wp-calendar td,
@@ -1628,7 +1758,7 @@ a.comment-edit-link {
 
 
 /*14. Focus snail css*
- ------------------------*/
+ ========================*/
 #focus-snail_svg {
 	position: absolute;
 	top: 0;
@@ -1651,15 +1781,21 @@ a.comment-edit-link {
 	stroke-width: 0;
 }
 
-/*15. SVG formating*/
 
-/* Shortcodes formating @since 17.9.7 */
+/*============================================================
+|                                                            |
+|               SECTION SVG   				                       |
+|                                                            |
+==============================================================*/
+
+
+
 .site svg {
-	width: 1em;
-	height: 1em;
+	width: 1.65em;
+	height: 1.65em;
 	margin: 0 0.33em;
+	vertical-align: middle;
 }
-
 
 svg.search-icon {
 	width: 1.65em;
@@ -1708,11 +1844,12 @@ svg.icon-extlink {
 
 
 
+
 /* accessible back-to-top function
  * @since 19.1
  *
  *  Do not change with root unit 
- -------------------------------------------------------------- */
+ =================================================================================- */
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;
@@ -1746,7 +1883,7 @@ svg.icon-extlink {
 
 /* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
  * * @since 19.3
- ---------------------------------------------------------------------------------- */
+ =================================================================================- */
 .js-to_expand[aria-hidden=true],
 .js-to_expand[data-hidden=true] {
   display: none;
@@ -1773,7 +1910,7 @@ svg.icon-extlink {
 
 /* jQuery accessible simple tooltip window, using ARIA
  * * @since 21.1
- ---------------------------------------------------------------------------------- */
+ =================================================================================- */
 /* Tooltip hidden by default */
 .simpletooltip,
 .minimalist-simpletooltip,
@@ -1797,8 +1934,6 @@ svg.icon-extlink {
   z-index: 666;
   width: 10em;
   border-radius: .5em;
-  background: rgba( 0, 0, 0, .9 );
-  color: #eee;
   padding: .5em;
   text-align: left;
   line-height: 1.3;
@@ -1880,113 +2015,20 @@ svg.icon-extlink {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------- 
+/*============================================================================================== 
 /* Accessibility toolbar 
 /* @since 18.12
 /*
 /* Accessibility toolbar is not requred by WCAG 2.1, but gives
 /* user experience, mainly in mobile where reading optionas are complicated to change
----------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------- --------------------------------------------------------------  */
+=========================================================================================================================*/
 
-
-
-/*
- *Contrast
- **/
-
-.high-contrast-1 {
-	background-image: none;  /* cannot reset all background, since it removes background-colors too */
-}
-
-
-.high-contrast-1 a {
-	background-color: black ;
-	color: paleTurquoise;
-	text-decoration: underline;
-}
-
-.high-contrast-1 .site,
-.high-contrast-1 .megamenu.toggled-on,
-.high-contrast-1 .lighter-scheme {
-    background-color: black;
-    color: Ivory ;
-}
-
-.high-contrast-1 svg {
-	fill: Ivory;
-}
-.high-contrast-1 textarea,
-.high-contrast-1 input,
-.high-contrast-1 select,
-.high-contrast-1 button {
-	background-color: black;
-	color: Ivory ;
-}
-
-.high-contrast-1 .basic-scheme svg {
-	fill: black;
-}
-
-.high-contrast-1 .link-button,
-.high-contrast-1 .link-button a {
-	background-color: Ivory;
-	color: black; 
-}
-.high-contrast-1 .link-button svg{
-	fill: black;
-}
-
-.high-contrast-1 .lighter-scheme {
-	background-color: #222;
-}
-
-.high-contrast-1 .featured-scheme {
-	border: 2px solid #c1ec15;
-	background-color: #111;
-	color: Ivory;
-}
-
-.high-contrast-1 table.featured-scheme {
-	border: none;
-}
-
-.high-contrast-1 .featured-scheme svg {
-	fill: Ivory;
-}
-
-
-.high-contrast-1 .inverse-scheme a  {
-	color: #15c6ec ;
-    background-color: black;
-}
-
-.high-contrast-1 .inverse-scheme svg {
-	fill: Ivory;
-	}
-
-#high-contrast-1 {
-	background-color: black;
-	color: Ivory;
-}
 
 
  
-/*
- * FONT-TYPE
- */
+/*///////////////////////////////
+/* FONT-TYPE                         */
+
 .font-type-1 .site #menu,
 .font-type-1 .site .site-header-menu,
 .font-type-1 .site,
@@ -2001,7 +2043,7 @@ svg.icon-extlink {
 .font-type-1 .site p,
 .font-type-1 .site span,
 .font-type-1 .site label,
-.toolbar-buttons #font-type-1{
+.toolbar-buttons #font-type-1 {
     
 			font-family: 'dyslexieregular';
 }
@@ -2012,15 +2054,12 @@ svg.icon-extlink {
 
 
 
-/*
- * FONT SIZE 
-*/
-#font-size-1 span{
-    font-size: 150%;
-}
+/*////////////////////////////////////
+ * FONT SIZE */
 
+#font-size-1 span,
 .font-size-1 {
-    font-size: 200%;
+    font-size: 150%;
 		word-break: break-all;
 }
 
@@ -2096,32 +2135,10 @@ svg.icon-extlink {
 }
 
 
-/*
- * LINK APPEARANCE
- *@see: https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G183
- *contrast to ivory: 6,42:1
- *contrast to black: 3,26:1
- *
- */
 
 
-html.link-appearance-1 a,
-#link-appearance-1 {
-	text-decoration: none;
-	font-weight: 700;
-}
 
-html.link-appearance-1 textarea,
-html.link-appearance-1 input, 
-html.link-appearance-1 .site,
-html.link-appearance-1 .megamenu.toggled-on {
-	color: black;
-}
 
-#link-appearance-0 span {
-	color: RoyalBlue;
-	text-decoration: underline;
-}
 
 /*
 Reading options modal window buttons design
@@ -2184,13 +2201,6 @@ Reading options modal window buttons design
 }
 
 
-.toolbar-buttons button[disabled]:hover{
-	outline: 4px solid maroon;
-	outline-offset: 2px;
-	color: #222;
-}
-
- 
 
 .toolbar-buttons .toolbar-label {
 	padding: 0;
@@ -2347,9 +2357,9 @@ Reading options modal window buttons design
 
 
 
-/*--------------------------------------------------------------*-------------------------------------------------------------- *--------------------------------------------------------------  
+/*============================================================--*============================================================-- *============================================================--  
 /*                     Media queries
---------------------------------------------------------------*-------------------------------------------------------------- *--------------------------------------------------------------  */
+============================================================--*============================================================-- *============================================================--  */
 
 
 /* MAXIMUM width: */
@@ -2376,7 +2386,7 @@ Reading options modal window buttons design
 		top: 1.15em;
 		right: 0.35em;;
 		left: auto;
-		width: 18em;
+		width: 19em;
 	}
 	.top-bar {
 		height: 4.142rem;
@@ -2412,13 +2422,8 @@ Reading options modal window buttons design
 
 	
 	
-	/* Colors */
-
-	.nav-single div,
-	textarea,
-	input {
-		background-color: #f9f9f9;
-	}
+	
+	
 	
 	/* Font size */ 
 	.site h2 {
@@ -2613,7 +2618,6 @@ Reading options modal window buttons design
 	.copyright-text {
 		position: static;
 		text-align: left;
-		margin: 0 0 0 7px;
 	}
 	
 	/* toolbars 600-784px */
@@ -2689,10 +2693,6 @@ Reading options modal window buttons design
 
 
 
-	/* Colors */	
-	.high-contrast-0 body {
-		background-color: Ivory;
-	}
 	
 	
 	/* toolbars 784-1360px */
@@ -2752,6 +2752,7 @@ Reading options modal window buttons design
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
 		margin: 0;
+		border: none;
 	}
 	
 
@@ -2885,9 +2886,7 @@ Reading options modal window buttons design
 		left: auto;
 	}
 	
-	body.custom-background-empty {
-		background-color: Ivory;
-	}
+	
 	body.custom-background-empty .site,
 	body.custom-background-ivory .site {
 		padding: 0;
