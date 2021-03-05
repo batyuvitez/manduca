@@ -33,10 +33,17 @@
 	<ul>
 		<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
 	<ul>
+</section>
 
 
 
-	<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) :  ?>
+<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) :  ?>
+	<section class="metatags" arialabelledby="author-header">
+		<h2 class="screen-reader-text" id="author-header">
+		<?php
+		// translators visually hidden title of author info
+		_e( 'Author info', 'manduca' ) ;?>
+	</h2>
 		<div class="author-info">
 			<div class="author-avatar">
 				<?php echo get_avatar( get_the_author_meta( 'user_email' ), 68 ); ?>
@@ -53,6 +60,6 @@
 				</div>
 			</div>
 		</div>
-	<?php endif; ?>
+	</section>
+<?php endif; ?>
 
-</section>

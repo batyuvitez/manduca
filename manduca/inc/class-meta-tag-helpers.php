@@ -51,7 +51,7 @@ class Meta_Tag_Helpers {
 
 	public static function meta_tag_generator () {
 	
-		$list_item_mask 	= '<li>%s<span class=metaBlock><span>%s : </span>%s</span></li>';
+		$list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></li>';
 	
 		$utility_text 	= sprintf(
 									$list_item_mask,

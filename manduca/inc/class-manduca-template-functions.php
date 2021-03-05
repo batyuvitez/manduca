@@ -161,7 +161,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="prev page-numbers inverse3" href="%1$s">%2$s</a></h4>',
+								'<a class="prev page-numbers link-button" href="%1$s">%2$s</a>',
 								$link,
 								$args['prev_text']
 					);
@@ -192,7 +192,7 @@ class Manduca_Template_Functions {
 														  number_format_i18n( $n )
 														 );
 							$page_links[] = sprintf(
-								'<a class="page-numbers" href="%1$s">
+								'<a class="page-numbers link-button" href="%1$s">
 								%2$s
 								</a>',
 										$link,
@@ -218,7 +218,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<h4><a class="next page-numbers inverse3" href="%1$s" >%2$s</a></h4>',
+								'<a class="next page-numbers link-button" href="%1$s" >%2$s</a>',
 								$link,
 								$args['next_text']
 								);

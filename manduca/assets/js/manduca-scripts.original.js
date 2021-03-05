@@ -23,7 +23,15 @@
 jQuery.noConflict();
 
 
-                   
+/*------------------------------------------------
+ *
+ *
+ *          Section 1. Executed on loading
+ *
+ * 
+ *
+ **---------------------------------------------------*/
+      
 
 
 
@@ -35,7 +43,8 @@ jQuery.noConflict();
 
 
 
-/*-----------------------------------------------------------------------
+///////////////////////////////////////////////   
+/*
  *
  *      Focus snail  applied to Manduca
  *      pure JavaScript
@@ -46,7 +55,7 @@ jQuery.noConflict();
  * @param      : manducaVariables.red
  *               manducaVariables.green
  *               manducaVariables.blue
- *----------------------------------------------------------------*/
+ */
 
 'use strict';
 
@@ -442,7 +451,8 @@ function constrain(amt, low, high) {
 	return amt;
 }
 
-/* THE END of focus snake*/
+///////////////////////////////////////////////
+// THE END of focus snake
 
 
 
@@ -453,18 +463,17 @@ function constrain(amt, low, high) {
 
 
 
+///////////////////////////////////////////////
+// jQuery block start
 
- /*------------------------------------------------
- /*
-  * Contains handlers for navigation and widget area.
-  * based on the script in theme twenty seventeen.
-  * 
-  * /*------------------------------------------------
-*/
 
 (function navMenu( $ )
 {
-    var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
+    
+	///////////////////////////////////////////////
+	// Contains handlers for navigation and widget area.
+	// based on the script in theme twenty seventeen.	
+	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
    
      
    
@@ -507,14 +516,11 @@ function constrain(amt, low, high) {
  
  
  	
-    /*
-     *Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
-     *
-     *last change @20.3
-     *
-     **/
+    ///////////////////////////////////////////////
+	//Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+
     (function touchDevice()
-   {
+    {
        if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
         return;
        }
@@ -587,8 +593,9 @@ function constrain(amt, low, high) {
              $( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
         });
     })();
-     
-    /* THIS IS THE END of handlers for navigation and widget area.    */
+    
+	///////////////////////////////////////////////
+	// THIS IS THE END of handlers for navigation and widget area.    
 	
  
  
@@ -655,9 +662,9 @@ function constrain(amt, low, high) {
     
     
     
-    /*
-     * Show button only when your below from the bove-folder area
-     * */
+    ///////////////////////////////////////////////
+	// Show button only when your below from the bove-folder area
+     
     $(document).on( 'scroll', function( event )
     {
          event.preventDefault();
@@ -672,13 +679,9 @@ function constrain(amt, low, high) {
     });
        
        
-    /*
-	 * ------------------------------------------------
-     * Change link target
-     * based on cookie. 
-     * @since 19.2
-     * @modified 21.2
-     **------------------------------------------------*/
+    ///////////////////////////////////////////////
+	// Change link target
+     
     $('a').click(function()
     {
 		var linkTargetBlank=$('html').hasClass('link-target-2');
@@ -697,13 +700,9 @@ function constrain(amt, low, high) {
 	
 	
 	
-    /*------------------------------------------------
-    /*
-     * Manduca's user-friendly archive widget function 
-     *
-     *@since 19.2
-     *
-    /*------------------------------------------------*/
+    ///////////////////////////////////////////////
+	// Manduca's user-friendly archive widget function 
+     
     $('#manduca_archive-month-submit').click(function()
     {
             var year = $( '#manduca-archive-year-dropdown' ).val();
@@ -732,13 +731,18 @@ function constrain(amt, low, high) {
            }
         });
     });
-})( jQuery ); 
-/* THE END of ($)functions */
+})( jQuery );
+///////////////////////////////////////////////
+//  THE END of jQuery functions */
 
 
 
 
-//(function navMenu( $ ) {...})( jQuery ); 
+
+
+
+
+
 
 
 
@@ -753,14 +757,13 @@ function constrain(amt, low, high) {
  *
  **---------------------------------------------------*/
 
+
 jQuery(document).ready(function($)
 {
     
-     /*------------------------------------------------
-    *Close toolbar for escape button and add focus back to the toolbar-button
-    *
-    *@since 19.2
-     /*------------------------------------------------**/
+    ///////////////////////////////////////////////
+	// Close toolbar for escape button and add focus back to the toolbar-button
+	
      $(document).on('keyup',function(evt)
     {
       if (evt.key === 'Escape') {
@@ -776,16 +779,10 @@ jQuery(document).ready(function($)
  
  
    
-    /*------------------------------------------------
-     *
-     * Read cookies, set <html> element classes
-     * Also set reading options buttons attributes. 
-     *
-     * @var cokkies
-     *
-     *  
-     **---------------------------------------------------*/
-    var $blocks=$('#toolbar-buttons-table button');
+    ///////////////////////////////////////////////
+	// Read cookies, set <html> element classes. Also set reading options buttons attributes. 
+    
+	var $blocks=$('#toolbar-buttons-table button');
     var $uniqueNames = [];
     $.each ($blocks, function ( i, $element )
     {
@@ -827,25 +824,18 @@ jQuery(document).ready(function($)
         
     });
     
-    /*
-     *Target change should followed with reload
-     **/
+    ///////////////////////////////////////////////
+	// Target change should followed with reload
+
     $('.target').on( 'click' ,function () {
         location.reload();
     });
     
    
   
-    /*------------------------------------------------
-     * Accessibility/reading options TOOLBAR BUTTON scripts
-     *
-     * @dependency After cookies 
-     * Author: Zsolt Edelényi
-     * @since 17.8
-     *
-     **---------------------------------------------------*/
+    ///////////////////////////////////////////////
+	// Accessibility/reading options TOOLBAR BUTTON scripts
       
-    //Toolbar toggle 
     $('.toolbar-buttons-open').click(function()
                                         {
         var animation=$('html').hasClass('animation-0');
@@ -879,8 +869,7 @@ jQuery(document).ready(function($)
          }
     });
     
-    //Close toolbar with close button also    
-    $( '#buttons-close' ).click(function()
+    $( '#buttons-close' ).click(function()  //Close toolbar with close button also    
     {
         $('#toolbar-buttons').slideUp();
         $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
@@ -1054,7 +1043,9 @@ jQuery(document).ready(function($)
         }
     });
 });
-/* THE END of function executed after pageload */
+
+///////////////////////////////////////////////
+// THE END of function executed after pageload */
 
 
 
@@ -1070,12 +1061,15 @@ jQuery(document).ready(function($)
 
     'use strict';
 
-    /*
+    /*------------------------------------------------
+     *
      * jQuery accessible simple (non-modal) tooltip window, using ARIA
+     *
      * @version v2.2.0 
      * Website: https://a11y.nicolas-hoffmann.net/simple-tooltip/
      * License MIT: https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria/blob/master/LICENSE
-     */
+     /*
+     ------------------------------------------------*/
 
     function accessibleSimpleTooltipAria(options)
     {

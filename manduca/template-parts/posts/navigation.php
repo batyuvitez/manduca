@@ -18,14 +18,14 @@
 
 <nav class="nav-single" aria-label="<?php _e( 'Post navigation', 'manduca' ); ?>">
 	<?php if( !empty ( $previous_post ) ) : ?>
-		<div class="nav-previous">
+		<div class="nav-previous link-button">
 			<?php echo $previous_post;?>  	
 		</div>
 	<?php endif; ?>
 	
 	
 	<?php if( !empty ( $next_post ) ) : ?>
-		<div class="nav-next">
+		<div class="nav-next link-button">
 			<?php echo $next_post ?> 
 		</div>
 		<?php endif; ?>

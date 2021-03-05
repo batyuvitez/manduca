@@ -168,12 +168,12 @@
 					array (
 						array( 
 								'phone_text'					=>'link',
-								//translators: Toolbar font-size selector default font sizet
-								'desktop_text'			=>__( 'Default' , 'manduca' )),
+								//translators: links are bold and has contrast of 3:1 to text color
+								'desktop_text'			=>__( 'Bold' , 'manduca' )),
 						array( 
 								'phone_text'					=>'link',
-								//translators: Toolbar font-size selector larger (150%) font sizet
-								'desktop_text'			=>__( 'Bold' , 'manduca' ) ) ) ),
+								//translators: lins are underlined 
+								'desktop_text'			=>__( 'Underlined' , 'manduca' ) ) ) ),
 				
 				
 				

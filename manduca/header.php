@@ -39,7 +39,7 @@
 		<div id="page" class="hfeed site">
 			<header>										
 				<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
-				<div  id="top-bar" class="top-bar inverse-scheme"></div>
+				<div  id="top-bar" aria-hidden="true" class="top-bar inverse-scheme"></div>
 				<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 				<div id="masthead" class="site-header megamenu-parent" >
 					<div id="header-bar" class="header-bar">
