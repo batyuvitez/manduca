@@ -1,6 +1,6 @@
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020 Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021 Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -463,50 +463,288 @@ function constrain(amt, low, high) {
 
 
 
-///////////////////////////////////////////////
-// jQuery block start
 
 
-(function navMenu( $ )
+
+
+
+/*----------------------------------------------------------
+* Modal dialog focus trap
+*
+* @see: https://github.com/ireade/accessible-modal-dialog
+* @since 21.2
+*----------------------------------------------------------*/
+
+
+
+function Dialog(dialogEl, overlayEl) {
+
+   this.dialogEl = dialogEl;
+   this.overlayEl = overlayEl;
+   this.focusedElBeforeOpen;
+
+   var focusableEls = this.dialogEl.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
+   this.focusableEls = Array.prototype.slice.call(focusableEls);
+
+   this.firstFocusableEl = this.focusableEls[0];
+   this.lastFocusableEl = this.focusableEls[ this.focusableEls.length - 1 ];
+
+   this.close(); // Reset
+}
+
+
+Dialog.prototype.open = function() {
+
+   var Dialog = this;
+
+   this.dialogEl.removeAttribute('aria-hidden');
+   this.overlayEl.removeAttribute('aria-hidden');
+
+   this.focusedElBeforeOpen = document.activeElement;
+
+   this.dialogEl.addEventListener('keydown', function(e) {
+	   Dialog._handleKeyDown(e);
+   });
+
+   this.overlayEl.addEventListener('click', function() {
+	   Dialog.close();
+   });
+
+   this.firstFocusableEl.focus();
+};
+
+Dialog.prototype.close = function() {
+
+   this.dialogEl.setAttribute('aria-hidden', true);
+   this.overlayEl.setAttribute('aria-hidden', true);
+
+   if ( this.focusedElBeforeOpen ) {
+	   this.focusedElBeforeOpen.focus();
+   }
+};
+
+
+Dialog.prototype._handleKeyDown = function(e) {
+
+   var Dialog = this;
+   var KEY_TAB = 9;
+   var KEY_ESC = 27;
+
+   function handleBackwardTab() {
+	   if ( document.activeElement === Dialog.firstFocusableEl ) {
+		   e.preventDefault();
+		   Dialog.lastFocusableEl.focus();
+	   }
+   }
+   function handleForwardTab() {
+	   if ( document.activeElement === Dialog.lastFocusableEl ) {
+		   e.preventDefault();
+		   Dialog.firstFocusableEl.focus();
+	   }
+   }
+
+   switch(e.keyCode) {
+   case KEY_TAB:
+	   if ( Dialog.focusableEls.length === 1 ) {
+		   e.preventDefault();
+		   break;
+	   } 
+	   if ( e.shiftKey ) {
+		   handleBackwardTab();
+	   } else {
+		   handleForwardTab();
+	   }
+	   break;
+   case KEY_ESC:
+	   Dialog.close();
+	   break;
+   default:
+	   break;
+   }
+
+
+};
+
+
+Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
+
+   var Dialog = this;
+
+   var openDialogEls = document.querySelectorAll(openDialogSel);
+   for ( var i = 0; i < openDialogEls.length; i++ ) {
+	   openDialogEls[i].addEventListener('click', function() { 
+		   Dialog.open();
+	   });
+   }
+
+   var closeDialogEls = document.querySelectorAll(closeDialogSel);
+   for ( var i = 0; i < closeDialogEls.length; i++ ) {
+	   closeDialogEls[i].addEventListener('click', function() {
+		   Dialog.close();
+	   });
+   }
+
+};
+
+var navDialogEl = document.querySelector('.dialog');
+var dialogOverlay = document.querySelector('.dialog-overlay');
+
+var myDialog = new Dialog(navDialogEl, dialogOverlay);
+myDialog.addEventListeners('.open-dialog', '.close-dialog');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------
+ *
+ *
+ *          Section 2. After page is loaded
+ *
+ * 
+ *
+ **---------------------------------------------------*/
+
+
+jQuery(document).ready(function($)
 {
     
-	///////////////////////////////////////////////
-	// Contains handlers for navigation and widget area.
-	// based on the script in theme twenty seventeen.	
-	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
+	
+    ///////////////////////////////////////////////
+	// Close toolbar for escape button and add focus back to the toolbar-button
+	
+     $(document).on('keyup',function(evt)
+    {
+      if (evt.key === 'Escape') {
+          if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
+           $( ".toolbar-buttons" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
+           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
+        $( ".toolbar-buttons" ).css( 'display', 'none' );
+                    $('#skip-to-content').focus();
+       }
+      }	
+    });
+ 
+ 
    
-     
+    ///////////////////////////////////////////////
+	// Read cookies, set <html> element classes. Also set reading options buttons attributes. 
+    
+	var $blocks=$('#toolbar-buttons-table button');
+    var $uniqueNames = [];
+    $.each ($blocks, function ( i, $element )
+    {
+       var $class=$($element).attr('class');
+       if($.inArray($class, $uniqueNames) === -1) $uniqueNames.push($class);
+    }); 
+    $.each ($uniqueNames, function ( i, $block )
+    {
+    
+        var $cookieValue =readCookie( $block );
+          if ( $cookieValue )
+          {
+                $('html').addClass( $cookieValue );
+                $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
+           }
+           else
+           {
+            var $default=$block+ '-0';
+              $('html').addClass( $default );
+             $( '#'+$default).attr( 'disabled', 'true' );
+           }
+       
+        
+        $('.'+$block).click(function () {
+          var $id= $(this).attr('id');
+          $( '.'+$block).removeAttr ('disabled');
+          $(this).attr('disabled' , 'true' );
+          var $removes='';
+          for ($i=0; $i<5; $i++) {
+            var $new=$block + '-' + $i + ' ';
+             $removes=$removes.concat($new);
+          }   
+          var CookieDate = new Date();
+          $('html').removeClass($removes);
+          $('html').addClass($id);
+          CookieDate.setFullYear(CookieDate.getFullYear() + 10);
+          document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
+        });
+        
+    });
+    var animation=$('html').hasClass('animation-0');
+	
+		
+	
+    ///////////////////////////////////////////////
+	// Target change should followed with reload
+
+    $('.target').on( 'click' ,function () {
+        location.reload();
+    });
+    
+   
+   
+   
+   
+   
+   
+   
+   	///////////////////////////////////////////////
+	// Contains handlers for navigation and widget area.
+	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
    
     masthead       = $( '.megamenu-parent' );
     menuToggle     = masthead.find( '.menu-toggle' );
     siteNavContain = masthead.find( '.megamenu' );   
     siteNavigation = masthead.find( '.megamenu > ul' );
-       toolbarButtons = $( '.toolbar-buttons' );
-       toolbarButtonsOpen=$( '.toolbar-buttons-open' );
+    toolbarButtons = $( '.toolbar-buttons' );
+    toolbarButtonsOpen=$( '.toolbar-buttons-open' );
    
-    // Enable menuToggle.
-    (function enableMenuToggle()
-    {
-   
-        // Return early if menuToggle is missing.
-        if ( ! menuToggle.length ) {
-         return;
-        }
-      
-        // Add an initial value for the attribute.
-        menuToggle.attr( 'aria-expanded', 'false' );
-          //Click menu-toggle
-          menuToggle.on( 'click.manduca', function()
-           {
-               siteNavContain.toggleClass( 'toggled-on' );
-               menuToggle.toggleClass( 'toggled-on' );
-               toolbarButtonsOpen.removeClass( 'toggled-on');
-               toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
-               toolbarButtons.removeClass( 'toggled-on');
-               toolbarButtons.css( 'display', 'none' ); 
-               $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
-           });
-    })();
+   // Return early if menuToggle is missing.
+	if ( menuToggle.length )
+	{
+		// Add an initial value for the attribute.
+		menuToggle.attr( 'aria-expanded', 'false' );
+		//Click menu-toggle
+		menuToggle.on( 'click.manduca', function()
+	   {
+		   if (animation)
+				siteNavContain.slideToggle (300);
+			else
+				siteNavContain.slideToggle ();
+		   siteNavContain.toggleClass( 'toggled-on' );
+		   menuToggle.toggleClass( 'toggled-on' );
+		   toolbarButtonsOpen.removeClass( 'toggled-on');
+		   toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
+		   toolbarButtons.removeClass( 'toggled-on');
+		   toolbarButtons.css( 'display', 'none' ); 
+		   $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
+	   });
+	}
 
 	
 	
@@ -541,6 +779,7 @@ function constrain(amt, low, high) {
                 screenReaderSpan = _this.find( '.screen-reader-text' );
             
                e.preventDefault();
+			   
                _this.toggleClass( 'toggled-on' );
                _this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
             
@@ -608,48 +847,9 @@ function constrain(amt, low, high) {
 	
     
     
-    /*------------------------------------------------
-    *
-    * 	Skiplinks 
-    *
-    * Because Voiceover cannot handle the internal links ( eg href='#content'),
-    * necessary to apply javascripts to have jump links accessible
-    * This is tested with all kind of clients
-    *
-    * @since: 19.1
-    * @see: https://www.alkosoft.hu/public/web/js/scripts_v9.js
-    /*------------------------------------------------**/
+    /*////////////////////////////////////////////
+    * Back to top*/
 	
-    $('#skip-to-content').click(function( event )
-    {
-        event.preventDefault( );
-       var pos = jQuery('#primary').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#primary').find('h1').first().focus();
-        return false;
-    });
-    
-    $('#skip-to-sidebar').click(function( event )
-    {
-        event.preventDefault( );
-       var pos = jQuery('#secondary').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#secondary').find('h1').first().focus();
-        return false;
-     });
-	 
-    $('#skip-to-footer').click(function( event )
-    {
-        event.preventDefault( );
-        var pos = jQuery('#footer-wrapper').position(); 
-        var y = parseInt(pos.top);
-        jQuery('html, body').animate({scrollTop : y}, 800);
-        jQuery('#footer-wrapper').find('h1').first().focus();
-        return false;
-    });
-     
      $('#manduca-back-to-top').click(function( event )
     {
         event.preventDefault( );
@@ -662,7 +862,7 @@ function constrain(amt, low, high) {
     
     
     
-    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
 	// Show button only when your below from the bove-folder area
      
     $(document).on( 'scroll', function( event )
@@ -680,7 +880,7 @@ function constrain(amt, low, high) {
        
        
     ///////////////////////////////////////////////
-	// Change link target
+	// Change link-target 
      
     $('a').click(function()
     {
@@ -700,8 +900,8 @@ function constrain(amt, low, high) {
 	
 	
 	
-    ///////////////////////////////////////////////
-	// Manduca's user-friendly archive widget function 
+    /*//////////////////////////////////////////////////
+    *Manduca's user-friendly archive widget function  */
      
     $('#manduca_archive-month-submit').click(function()
     {
@@ -731,114 +931,25 @@ function constrain(amt, low, high) {
            }
         });
     });
-})( jQuery );
-///////////////////////////////////////////////
-//  THE END of jQuery functions */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------------------------------------------
- *
- *
- *          Section 2. After page is loaded
- *
- * 
- *
- **---------------------------------------------------*/
-
-
-jQuery(document).ready(function($)
-{
-    
-    ///////////////////////////////////////////////
-	// Close toolbar for escape button and add focus back to the toolbar-button
-	
-     $(document).on('keyup',function(evt)
-    {
-      if (evt.key === 'Escape') {
-          if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
-           $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-           $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-        $( ".toolbar-buttons" ).css( 'display', 'none' );
-                    $('#skip-to-content').focus();
-       }
-      }	
-    });
- 
- 
    
-    ///////////////////////////////////////////////
-	// Read cookies, set <html> element classes. Also set reading options buttons attributes. 
-    
-	var $blocks=$('#toolbar-buttons-table button');
-    var $uniqueNames = [];
-    $.each ($blocks, function ( i, $element )
-    {
-       var $class=$($element).attr('class');
-       if($.inArray($class, $uniqueNames) === -1) $uniqueNames.push($class);
-    }); 
-    $.each ($uniqueNames, function ( i, $block )
-    {
-    
-        var $cookieValue =readCookie( $block );
-          if ( $cookieValue )
-          {
-                $('html').addClass( $cookieValue );
-                $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
-           }
-           else
-           {
-            var $default=$block+ '-0';
-              $('html').addClass( $default );
-             $( '#'+$default).attr( 'disabled', 'true' );
-           }
-       
-        
-        $('.'+$block).click(function () {
-          var $id= $(this).attr('id');
-          $( '.'+$block).removeAttr ('disabled');
-          $(this).attr('disabled' , 'true' );
-          var $removes='';
-          for ($i=0; $i<5; $i++) {
-            var $new=$block + '-' + $i + ' ';
-             $removes=$removes.concat($new);
-          }   
-          var CookieDate = new Date();
-          $('html').removeClass($removes);
-          $('html').addClass($id);
-          CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-          document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
-        });
-        
-    });
-    
-    ///////////////////////////////////////////////
-	// Target change should followed with reload
-
-    $('.target').on( 'click' ,function () {
-        location.reload();
-    });
-    
    
-  
+   
+   
+   
+   
+   
+   /*------------------------------------------------
+    *
+    * Accessibility/reading options TOOLBAR BUTTON scripts
+    *
+    **------------------------------------------------*/
+     
     ///////////////////////////////////////////////
 	// Accessibility/reading options TOOLBAR BUTTON scripts
-      
+      /*
     $('.toolbar-buttons-open').click(function()
                                         {
-        var animation=$('html').hasClass('animation-0');
+        
        if ( animation)
        {
            $('.toolbar-buttons').slideToggle( 300 );
@@ -1042,6 +1153,16 @@ jQuery(document).ready(function($)
 
         }
     });
+	
+	
+	
+	
+	
+
+
+
+	
+	
 });
 
 ///////////////////////////////////////////////
@@ -1054,7 +1175,8 @@ jQuery(document).ready(function($)
 
 
 
-
+///////////////////////////////////////////////
+// immediately-invoked functgion expression   */
 
 (function otherFunctions()
 {
@@ -1171,7 +1293,17 @@ jQuery(document).ready(function($)
     });
 
 })();
-/* THE END of other functions */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1184,7 +1316,8 @@ jQuery(document).ready(function($)
  *
  *--------------------------------------------------*/
  
- function createCookie(name,value,days) {
+function createCookie(name,value,days)
+{
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -1194,7 +1327,9 @@ jQuery(document).ready(function($)
 	document.cookie = name+"="+value+expires+"; path=/; SameSite=Lax";
 }
 
-function readCookie(name) {
+
+function readCookie(name)
+{
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
 	for(var i=0;i < ca.length;i++) {
@@ -1205,7 +1340,9 @@ function readCookie(name) {
 	return null;
 }
 
-function eraseCookie(name) {
+
+function eraseCookie(name)
+{
 	createCookie(name,"",-1);
 }
 

@@ -177,6 +177,23 @@ img {
 
 
 
+/*/////////////////////////////////////
+// Modal Dialog           */
+
+.dialog-overlay[aria-hidden="true"],
+.dialog[aria-hidden="true"] {
+	display: none;
+}
+
+.dialog-overlay:not([aria-hidden="true"]),
+.dialog:not([aria-hidden="true"]) {
+	display: block;
+}
+
+
+
+
+
 
 
 
@@ -190,7 +207,6 @@ body,
 .site,
 textarea,
 input, 
-.megamenu.toggled-on,
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {	
@@ -584,9 +600,18 @@ a.page-numbers.prev,
     position: absolute;
     top: 1.1em;
     left: 4.4em;
-	cursor: pointer;
+		cursor: pointer;
  }
 
+.dialog-overlay {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+}
 
 .site .link-button,
 .site .link-button a{
@@ -1028,9 +1053,10 @@ body .site,
 	display: none;
 }
 
-.megamenu.toggled-on {
+.megamenu {
 	text-align: left;
 	position: absolute;
+	right: 0;
 	top: 4em;
 	z-index: 100;
 	padding: 1rem;
@@ -1062,7 +1088,6 @@ body .site,
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
-	border-bottom: 1px solid darkSlateBlue;
 }
 
 .megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
@@ -2735,20 +2760,18 @@ Reading options modal window buttons design
 	}
 	
 	
-	/*Menu opened from 764px*/
-	.site-header-menu {
+	/*////////////////////////
+	// Menu opened from 764px                        */
+	
+	.site-header-menu {  /*child is absolute positioned */
 		display: block;
-		margin: 1rem 0;
+		height: 7rem;
 	}
 
 	.site-header-menu .megamenu {
-		display: block;
-		margin: 0;
-		text-align: center;
+		display: block;  /* hidden in small screens */
 	}
 	 	
-	
-
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
 		margin: 0;
@@ -2771,20 +2794,25 @@ Reading options modal window buttons design
 		font-weight: 500;
 	}
 	
-	/*sub-menu*/
+	
+	
+	/*//////////////////////////////////
+	// sub-menu         */
+	
 	.sub-nav {
 		position: absolute;
 	}
-.site ul	.sub-nav ul {
+
+	.site ul	.sub-nav ul {
 		margin: 0;
 		padding: 0;
 	}
-
 
 	.megamenu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0rem;
 	}
+	
 	ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{
 		display: block;
 	}
@@ -2793,23 +2821,19 @@ Reading options modal window buttons design
 		white-space: nowrap;
 }
 
-
 	.main-navigation ul ul .menu-item-has-children > a {
 		padding-right: 2.0625em;
 	}
 	
-	.dropdown-toggle { /* button to open submenu*/
-		top: 0.785em;
-		right:  1.071rem;
-	}
 	
 	.menu-toggle {
 		display: none;
 	}
 	
-	/* Content */
+	/*////////////////////////////
+	// Content                           S*/
 		
-	.site-content article{
+	.site-content article {
 		margin: 3rem 0 0;
 		padding: 1rem;
 	}
@@ -2823,19 +2847,18 @@ Reading options modal window buttons design
 	
 }
 
-/* 	END width of 600-975*/
-
-
-/*WCAG 1.4.8: Width is no more than 80 characters or glyphs (40 if CJK).
- *@since 21.1
- **/
 
 
 
 
 
 
-/*START width of 976-1359 pixels. */
+
+
+
+/*////////////////////////////////////
+// START width of 976-1359 pixels. */
+
 @media screen and (min-width: 976px) {
 	
 	html.font-size-0:not( .page-template-full-width) .site-content {
@@ -2937,6 +2960,8 @@ Reading options modal window buttons design
 
 	
 }
+
+
 
 /* min width: 1360px */
 @media screen and (min-width: 1360px) {

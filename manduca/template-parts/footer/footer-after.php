@@ -34,3 +34,4 @@
       <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
    </a>
 </div>
+<div class="dialog-overlay" tabindex="-1"></div>
