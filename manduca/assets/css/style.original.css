@@ -2197,7 +2197,7 @@ Reading options modal window buttons design
     
 	
 /*mobil appearance */
- .buttons-close {
+ .toolbar-buttons-close {
         display: block;
 								position: absolute;
         right: 0.4em;

@@ -586,12 +586,6 @@ Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
 
 };
 
-var navDialogEl = document.querySelector('.dialog');
-var dialogOverlay = document.querySelector('.dialog-overlay');
-
-var myDialog = new Dialog(navDialogEl, dialogOverlay);
-myDialog.addEventListeners('.open-dialog', '.close-dialog');
-
 
 
 
@@ -1158,6 +1152,15 @@ jQuery(document).ready(function($)
 	
 	
 	
+	/////////////////////////////////////////
+	// accessible modal dialog
+	
+	var navDialogEl = document.querySelector('.toolbar-buttons');
+	var dialogOverlay = document.querySelector('.dialog-overlay');
+	
+	var myDialog = new Dialog(navDialogEl, dialogOverlay);
+	myDialog.addEventListeners('.toolbar-buttons-open', '.toolbar-buttons-close');
+
 
 
 
