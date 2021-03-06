@@ -472,17 +472,6 @@ a.page-numbers.prev,
 
 
 
-/* All about the status of control elements */
-
-
-.header-bar .site-title > a:focus {
-	margin-left: 7px;  /* TO DISPLAY THE LEFT SIDE OF OUTLINE. &SINCE 18.10.3*/
-}
-
-
-
-
-
 
 .footer-wrapper,
 .top-bar,
@@ -937,7 +926,6 @@ body .site,
 
 
 /* Paddings on small screen  */
-.header-bar,
 .wrapper,
 .footer-wrapper {
 	padding: 0 1%;
@@ -993,9 +981,6 @@ body .site,
 	width: 100%;
 }
 
-.header-bar {
-	display: block;
-}
 
 
 
@@ -1028,40 +1013,25 @@ body .site,
 }
 
 
-/* menu-toggle */
+
+/*/////////////////////////////////
+// menu-toggle          */
 
 .megamenu.toggled-on,
 .no-js .site-header-menu {
 	display: block;
 }
 
-
 .main-navigation ul .toggled-on {
 	display: block;
 }
-.menu-toggle span {
-	display: none;
-}
 
 
-
-
-
-/* Navigation Menu */
-
+/*///////////////////////////////////
+// Navigation Menu     */
 .megamenu:not(.toggled-on) {
 	display: none;
 }
-
-.megamenu {
-	text-align: left;
-	position: absolute;
-	right: 0;
-	top: 4em;
-	z-index: 100;
-	padding: 1rem;
-}
-
 
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
@@ -1073,18 +1043,7 @@ body .site,
 	display: block;
 }
 
-/* Accessible mega menu list &since 17.4 */
-.site ul.nav-menu {
-		display: block;
-		position: relative;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		z-index: 15;
-}
-
-/* a top level navigation item in the mega menu */
-.megamenu ul.nav-menu > li.menu-item  {
+.megamenu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 1rem 0;
@@ -1118,15 +1077,16 @@ body .site,
 /* Menu item has children*/
 .megamenu ul.nav-menu  > li.menu-item-has-children > a {  
     padding-right: 3rem;
-	width: 100%;
+		width: 100%;
 }
 
 /* sub-navigation panel, /* first, second etc level sub-menu*/
 .sub-nav {
 		display: none;
-		top: 2.642em;
+		top: 3.8em;
 		right: 0;
 		padding: 0;
+		z-index: 150;
 		border: 1px solid #c0c0c0;
 	}
 
@@ -2094,8 +2054,7 @@ svg.icon-extlink {
 	height: 13rem;
 }
 
-.font-size-1 .site-header,
-.font-size-1 .header-bar{
+.font-size-1 .site-header {
 	position: static;
 }
 
@@ -2771,7 +2730,12 @@ Reading options modal window buttons design
 	.site-header-menu .megamenu {
 		display: block;  /* hidden in small screens */
 	}
-	 	
+	
+	.megamenu ul.nav-menu {
+		text-align: right;
+	}
+	
+	
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
 		margin: 0;
@@ -2882,10 +2846,6 @@ Reading options modal window buttons design
 	
 	html.font-size-1 .top-bar {
 		height: 7.5em
-	}
-	
-	.header-bar {
-		position: relative;
 	}
 	
 	.site-title {

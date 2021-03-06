@@ -1,10 +1,7 @@
 <?php
 /**
- * Displays top navigation
+ * Displays toggle menu button (for mobile)
  *
- * 
- * @ since 17.4
- * @last modification: 18.10.16
  */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -25,34 +22,16 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+?>
+<?php
 // Translators: name of the main menu for screen reader users. 
 $menu_name = __( 'Main navigation', 'manduca' ) ;	
-
 ?>
-<div id="site-header-menu" class="site-header-menu">
-	
-	<?php if ( has_nav_menu( 'primary' ) ) : ?>
-	
-		<div id="site-navigation" class="main-navigation">
-			
-			<nav id="megamenu"
-				 class="megamenu"
-				 aria-label="<?php echo $menu_name; ?>">
-				<?php
-					wp_nav_menu (array(
-					   'theme_location'  => 'primary',
-					   'menu'            => 'primary Menu',
-					   'menu_class'      => 'nav-menu',
-					   'container'       => false,
-					   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-					   'depth'           => 3,
-					   'walker'          => new Manduca_accessible_walker() 
-					   ));
-				?>
-			</nav>
-			
-		</div>
+
+<button id="menu-toggle"
+		class="menu-toggle link-button"
+		aria-label="<?php echo $menu_name;?>"
+		aria-expanded="false">
+		<?php 	echo manduca_get_svg( array( 'icon' => 'bars' ) );
+		echo manduca_get_svg( array( 'icon' => 'close' ) )?>
 		
-	<?php endif; ?>
-	
-</div>
