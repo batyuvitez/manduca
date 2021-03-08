@@ -36,7 +36,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 		<div id="site-navigation" class="main-navigation">
 			
 			<nav id="megamenu"
-				 class="megamenu"
+				 class="megamenu default-scheme"
 				 aria-label="<?php echo $menu_name; ?>">
 				<?php
 					wp_nav_menu (array(

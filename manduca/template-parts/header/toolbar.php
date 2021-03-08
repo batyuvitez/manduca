@@ -34,7 +34,7 @@ printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-butt
 					__( 'Display options', 'manduca' )
 		  );
 ?>
-<section id="toolbar-buttons" class="toolbar-buttons featured-scheme dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+<section id="toolbar-buttons" class="toolbar-buttons featured-scheme dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" aria-modal="true">
 	<h1 id="dialog-title"><?php _e( 'Display options', 'manduca' ); ?></h1>
 	<p id="dialog-description"><?php
 		//Translators: cookie consent only if user change the default option with Display Options. 

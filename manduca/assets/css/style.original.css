@@ -180,13 +180,13 @@ img {
 /*/////////////////////////////////////
 // Modal Dialog           */
 
-.dialog-overlay[aria-hidden="true"],
-.dialog[aria-hidden="true"] {
+.dialog-overlay,
+.dialog {
 	display: none;
 }
 
-.dialog-overlay:not([aria-hidden="true"]),
-.dialog:not([aria-hidden="true"]) {
+.dialog-overlay.active,
+.dialog.active {
 	display: block;
 }
 
@@ -202,6 +202,23 @@ img {
 |               SECTION COLORS 				                       |
 |                                                            |
 ==============================================================*/
+:root {
+	--default-background: ivory;
+	--default-text: black;
+	--default-link: royalBlue;
+	--default-button-background:saddleBrown;
+	--button-background:saddleBrown;
+	--button-text:ivory;
+	--default-outline: maroon;
+	--lighter-background: white;
+	--lighter-text: maroon;
+	--inverse-background: black;
+	--inverse-text: white;
+	--inverse-link: steelBlue;
+	--inverse-outline: ivory;
+	--featured-background: paleTurquoise;
+	--featured-text: maroon;
+}
 
 body, 
 .site,
@@ -209,8 +226,9 @@ textarea,
 input, 
 .wp-caption .wp-caption-text,
 .gallery-caption,
-.entry-caption {	
-	background-color: Ivory;
+.entry-caption,
+.default-scheme {	
+	background-color: var(--default-background);
 	color: black;	
 }
 
@@ -859,9 +877,9 @@ body .site,
 	overflow: hidden;
 }
 
-/*===========================================
-* Assistive text
-* https://github.com/wpaccessibility/a11ythemepatterns/blob/master/read-more-links/style.css */
+
+/*//////////////////////////////////////////////////////////
+* Assistive text  */
 
 .assistive-text,
 .screen-reader-text {
@@ -889,11 +907,9 @@ body .site,
 }
 
 
-/*
- * Page structure
-*/
+/*////////////////////////////
+// two columns layout */
 
-/* two columns layout */
 .inner-wrapper {
 		display:flex;
     flex-wrap:wrap;
@@ -907,11 +923,11 @@ body .site,
 .site-content {
 	max-width: 100%;
 }
-	
-	
 
 
-/* Header */
+
+/*/////////////////////////
+// vary top header */
 #no-javascript {
 	text-align: center;
 	font-size: 200%;
@@ -924,16 +940,14 @@ body .site,
 	width: 100%;
 }
 
-
-/* Paddings on small screen  */
 .wrapper,
 .footer-wrapper {
-	padding: 0 1%;
+	padding: 0 1%;  /* Paddings on small screen  */
 }
 
 
-/* searchforms (header and widget) */
-
+/*////////////////////////////
+ * Searchform         */
 .header-searchform {
 	text-align: right;
 	position: absolute;	
@@ -982,9 +996,8 @@ body .site,
 }
 
 
-
-
-/* site-title*/
+/*///////////////////////////////
+// site-title          */
 
 .site-title {	
 	font-weight: 500;
@@ -994,7 +1007,8 @@ body .site,
 }
 
 
-/* Breadcrumb */
+/*//////////////////////////
+// Breadcrumb */
 .breadcrumb {
 	margin: 0 0 2em 1em;
 }
@@ -1016,7 +1030,6 @@ body .site,
 
 /*/////////////////////////////////
 // menu-toggle          */
-
 .megamenu.toggled-on,
 .no-js .site-header-menu {
 	display: block;
@@ -1033,6 +1046,14 @@ body .site,
 	display: none;
 }
 
+.megamenu.toggled-on {
+		position:  absolute;
+		top: 4em;
+		z-index: 100;
+}
+
+
+
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
 	font-weight: 700;
@@ -1046,7 +1067,6 @@ body .site,
 .megamenu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	margin: 1rem 0;
 }
 
 .megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
@@ -1057,16 +1077,23 @@ body .site,
 	display: block;
 }
 
-.megamenu ul.nav-menu > li.menu-item.menu-item-has-children:hover .dropdown-toggle,
+.menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
+	display: none;
+}
+
+.menu-item-has-children .icon-close {
+	display: none;
+}
+
+.menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
 .dropdown-toggle.toggled-on {
-	transform: rotate(180deg);
+	display: block;
 }
 
 .megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 1em;
-	font-size: 1.3em;
 }
 
 
@@ -1076,7 +1103,7 @@ body .site,
 
 /* Menu item has children*/
 .megamenu ul.nav-menu  > li.menu-item-has-children > a {  
-    padding-right: 3rem;
+    padding-right: 2rem;
 		width: 100%;
 }
 
@@ -1812,9 +1839,10 @@ svg.icon-extlink {
 }
 
 
-.toggled-on svg.icon-close {
+.menu-toggle.toggled-on svg.icon-close {
 	display: inline;
 }
+
 .toggled-on svg.icon-eye,
 .toggled-on svg.icon-bars, 
 .menu-toggle:not(.toggled-on) svg.icon-close,
@@ -2738,7 +2766,7 @@ Reading options modal window buttons design
 	
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
-		margin: 0;
+		margin: 0 1rem 0 0 ;
 		border: none;
 	}
 	
@@ -2774,7 +2802,7 @@ Reading options modal window buttons design
 
 	.megamenu li.menu-item-has-children {
 		margin: 0;
-		padding-right: 0rem;
+		padding-right: 0;
 	}
 	
 	ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{

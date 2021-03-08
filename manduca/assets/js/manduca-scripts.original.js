@@ -496,10 +496,8 @@ function Dialog(dialogEl, overlayEl) {
 Dialog.prototype.open = function() {
 
    var Dialog = this;
-
-   this.dialogEl.removeAttribute('aria-hidden');
-   this.overlayEl.removeAttribute('aria-hidden');
-
+	this.dialogEl.classList.add("active");
+   this.overlayEl.classList.add("active");
    this.focusedElBeforeOpen = document.activeElement;
 
    this.dialogEl.addEventListener('keydown', function(e) {
@@ -515,8 +513,8 @@ Dialog.prototype.open = function() {
 
 Dialog.prototype.close = function() {
 
-   this.dialogEl.setAttribute('aria-hidden', true);
-   this.overlayEl.setAttribute('aria-hidden', true);
+   this.dialogEl.classList.remove('active');
+   this.overlayEl.classList.remove('active');
 
    if ( this.focusedElBeforeOpen ) {
 	   this.focusedElBeforeOpen.focus();
@@ -708,23 +706,20 @@ jQuery(document).ready(function($)
    
    
    	///////////////////////////////////////////////
-	// Contains handlers for navigation and widget area.
-	var masthead, menuToggle, siteNavContain, siteNavigation, toolbarButtons, toolbarButtonsOpen;
+	// Handlers for navigation and widget area.
+	
+	var masthead, menuToggle, siteNavContain, siteNavigation;
    
     masthead       = $( '.megamenu-parent' );
     menuToggle     = masthead.find( '.menu-toggle' );
     siteNavContain = masthead.find( '.megamenu' );   
     siteNavigation = masthead.find( '.megamenu > ul' );
-    toolbarButtons = $( '.toolbar-buttons' );
-    toolbarButtonsOpen=$( '.toolbar-buttons-open' );
-   
+    
    // Return early if menuToggle is missing.
 	if ( menuToggle.length )
 	{
-		// Add an initial value for the attribute.
-		menuToggle.attr( 'aria-expanded', 'false' );
-		//Click menu-toggle
-		menuToggle.on( 'click.manduca', function()
+		menuToggle.attr( 'aria-expanded', 'false' ); // Add an initial value for the attribute.
+		menuToggle.on( 'click.manduca', function()  //Click menu-toggle
 	   {
 		   if (animation)
 				siteNavContain.slideToggle (300);
@@ -732,10 +727,6 @@ jQuery(document).ready(function($)
 				siteNavContain.slideToggle ();
 		   siteNavContain.toggleClass( 'toggled-on' );
 		   menuToggle.toggleClass( 'toggled-on' );
-		   toolbarButtonsOpen.removeClass( 'toggled-on');
-		   toolbarButtonsOpen.attr( 'aria-expanded',  'false' );
-		   toolbarButtons.removeClass( 'toggled-on');
-		   toolbarButtons.css( 'display', 'none' ); 
 		   $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 	   });
 	}
@@ -753,42 +744,32 @@ jQuery(document).ready(function($)
 
     (function touchDevice()
     {
-       if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
-        return;
-       }
-   
-       function initMainNavigation( container )
-       {
-   
-           // Add dropdown toggle that displays child menu items.
-           var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-            .append( manducaVariables.icon )
-            .append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
-         
-           container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
-         
-           container.find( '.dropdown-toggle' ).click( function( e )
-           {
-               var _this = $( this ),
-                screenReaderSpan = _this.find( '.screen-reader-text' );
-            
-               e.preventDefault();
-			   
-               _this.toggleClass( 'toggled-on' );
-               _this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
-            
-               _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-            
-               screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
-          });
-      }
-   
+		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+		 return;
+		}
+	
+		function initMainNavigation( container )
+		{
+			var dropdownToggle = $( '.dropdown-toggle');
+			//.append( manducaVariables.icon )
+			//.append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
+			container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
+			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
+			{
+				 var _this = $( this ),
+				 screenReaderSpan = _this.find( '.screen-reader-text' );
+				 e.preventDefault();
+				_this.toggleClass( 'toggled-on' );
+				_this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
+				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+				screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
+			});
+	   }
         initMainNavigation( $( '.main-navigation' ) );
         
       
-      
-      
-        // Toggle `focus` class to allow submenu access on tablets.
+        /////////////////////////////////////////////////
+		// Toggle `focus` class to allow submenu access on tablets.
         function toggleFocusClassTouchScreen()
         {
             if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
@@ -932,56 +913,7 @@ jQuery(document).ready(function($)
    
    
    
-   /*------------------------------------------------
-    *
-    * Accessibility/reading options TOOLBAR BUTTON scripts
-    *
-    **------------------------------------------------*/
-     
-    ///////////////////////////////////////////////
-	// Accessibility/reading options TOOLBAR BUTTON scripts
-      /*
-    $('.toolbar-buttons-open').click(function()
-                                        {
-        
-       if ( animation)
-       {
-           $('.toolbar-buttons').slideToggle( 300 );
-       }
-        else
-        {
-           $('.toolbar-buttons').slideToggle( 0 );
-        }
-         //close toolbar, if menu opens    
-          if ( $( ".menu-toggle" ).hasClass( "toggled-on" ) )
-        {
-            $( ".megamenu" ).removeClass( "toggled-on" );
-            $( ".menu-toggle" ).removeClass( "toggled-on" );
-        }
-         //add toggle on to toolbar-buttons
-         if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") )
-         {
-             $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-            $('#toolbar-buttons-open').focus();  
-         }
-         else
-         {
-             $( ".toolbar-buttons" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).addClass( "toggled-on" );
-             $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'true' );
-         }
-    });
-    
-    $( '#buttons-close' ).click(function()  //Close toolbar with close button also    
-    {
-        $('#toolbar-buttons').slideUp();
-        $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-        $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-        $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-        $('#toolbar-buttons-open').focus();  
-    });
+   
     
     
     
@@ -1167,9 +1099,9 @@ jQuery(document).ready(function($)
 	
 	
 });
-
+// THE END of functions executed after pageload */
 ///////////////////////////////////////////////
-// THE END of function executed after pageload */
+
 
 
 
