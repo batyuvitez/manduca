@@ -207,9 +207,9 @@ img {
 	--default-text: black;
 	--default-link: royalBlue;
 	--default-button-background:saddleBrown;
-	--button-background:saddleBrown;
-	--button-text:ivory;
+	--default-button-text:ivory;
 	--default-outline: maroon;
+	--default-text-2: #232323;
 	--lighter-background: white;
 	--lighter-text: maroon;
 	--inverse-background: black;
@@ -219,6 +219,8 @@ img {
 	--featured-background: paleTurquoise;
 	--featured-text: maroon;
 	--ornament: darkSlateBlue;
+	--high-contrast-background: black;
+	--high-contrast-text: white;
 }
 
 body, 
@@ -230,21 +232,21 @@ input,
 .entry-caption,
 .default-scheme {	
 	background-color: var(--default-background);
-	color: black;	
+	color: var(--default-text);;	
 }
 
 svg {
-	fill: black;	
+	fill: var(--default-text);;	
 }
 
 
 body a,
 #link-appearance-0 span {
-	color: RoyalBlue;
+	color: var(--default-link);
 }
 
 body a svg {
-	fill: RoyalBlue;
+	fill: var(--default-link);
 }
 
 
@@ -257,7 +259,7 @@ body a svg {
 button:focus,
 input:focus,
 textarea:focus{
-	outline: 4px solid maroon;
+	outline: 4px solid var(--lighter-text);
 	outline-offset: 2px;
 }
 
@@ -272,9 +274,9 @@ textarea:focus{
 /*//////////////////////////////////
 Lighter */
 .lighter-scheme {
-			color: maroon;
-			background-color: white;
-			border: 1px paleTurquoise solid;
+			color: var(--lighter-text);
+			background-color: var(--lighter-background);
+			border: 1px solid var(--featured-background);
 }
 
 /*//////////////////////////////////
@@ -284,23 +286,23 @@ Inverse */
 .simpletooltip.tooltip-show,
 .minimalist-simpletooltip.tooltip-show,
 .minimalist-left-simpletooltip.tooltip-show {
-				background-color: black; 
-				color: white;
+				background-color: var(--default-text);; 
+				color: var(--featured-background);
 }
 
 
 .inverse-scheme svg {
-				fill: white;
+				fill: var(--featured-background);
 }
 
 .inverse-scheme a {
-	color: steelBlue;
+	color: var(--inverse-link);
 }
 
 .inverse-scheme a:hover,
 .inverse-scheme a:focus,
 .footer-navigation a:active {
-	outline-color: ivory/* only footer navigation has dark bacgkround*/
+	outline-color: var(--default-background);/* only footer navigation has dark bacgkround*/
 }
 
 /*//////////////////////////////////
@@ -308,8 +310,8 @@ Featured */
 .featured-scheme,
 .sticky 		/* sticky is not used in theme, but theme check requires it */
 .featured-article {
-	background-color: paleTurquoise;
-	color: maroon;
+	background-color: var(--featured-background);
+	color: var(--featured-text);
 }
 
 
@@ -320,20 +322,20 @@ button,
 .link-button,
 .link-button svg,
 .link-button a {
-	background-color: saddleBrown; 
-	color: ivory;
+	background-color: var(--default-button-background);; 
+	color: var(--default-button-text);
 }
 
 button svg, 
 .site .link-button svg {
-		fill: ivory;
+		fill: var(--default-button-text);;
 }
 
 .site button[disabled],
 .site input[disabled],
 .site textarea[disabled] {
-	color: maroon;
-	background-color: paleTurquoise;
+	color: var(--featured-text);
+	background-color: var(--featured-background);
 }
 
 
@@ -341,7 +343,7 @@ button svg,
 
 
 .bypostauthor cite span {
-	background-color: paleTurquoise;
+	background-color: var(--featured-background);
 }
 
 /*=========================================
@@ -350,7 +352,7 @@ button svg,
 .link-appearance-1 input, 
 .link-appearance-1 .site,
 .link-appearance-1 .megamenu.toggled-on {
-	color: #232323;	
+	color: var(--default-text-2);	
 }
 
 
@@ -364,27 +366,28 @@ button svg,
 
 
 .high-contrast-1 a {
-	background-color: black ;
-	color: paleTurquoise;
+	background-color: var(--high-contrast-background); ;
+	color: var(--featured-background);
 	text-decoration: underline;
 }
 
 .high-contrast-1 .site,
+.high-contrast-1 .default-scheme,
 .high-contrast-1 .megamenu.toggled-on,
 .high-contrast-1 .lighter-scheme {
-    background-color: black;
+    background-color: var(--high-contrast-background);;
     color: Ivory ;
 }
 
 .high-contrast-1 svg {
-	background-color: black;
+	background-color: var(--high-contrast-background);;
 	fill: Ivory;
 }
 
 .high-contrast-1 .site button[disabled],
 .high-contrast-1 .site input[disabled],
 .high-contrast-1 .site textarea[disabled] {
-		color: paleTurquoise;
+		color: var(--featured-background);
 		background-color: maroon; 
 }
 
@@ -392,28 +395,28 @@ button svg,
 .high-contrast-1 input,
 .high-contrast-1 select {
 	background-color: white;
-	color: black ;
+	color: var(--high-contrast-background); ;
 }
 
 .high-contrast-1 button, 
 .high-contrast-1 .link-button,
 .high-contrast-1 .link-button svg {
-	background-color: black; 
+	background-color: var(--high-contrast-background);; 
 	color: Ivory;
 }
 
 
 .high-contrast-1 .basic-scheme svg {
-	fill: black;
+	fill: var(--high-contrast-background);;
 }
 
 .high-contrast-1 .link-button,
 .high-contrast-1 .link-button a {
 	background-color: Ivory;
-	color: black; 
+	color: var(--high-contrast-background);; 
 }
 .high-contrast-1 .link-button svg {
-	fill: black;
+	fill: var(--high-contrast-background);;
 	background-color: white;
 }
 
@@ -437,17 +440,17 @@ button svg,
 
 
 .high-contrast-1 .inverse-scheme a  {
-	color: #15c6ec ;
-    background-color: black;
+	color: var(--high-contrast-text);
+  background-color: var(--high-contrast-background);;
 }
 
 .high-contrast-1 .inverse-scheme svg {
-	fill: Ivory;
+	fill: var(--default-background);
 	}
 
 #high-contrast-1 {
-	background-color: black;
-	color: Ivory;
+	background-color: var(--high-contrast-background);;
+	color: var(--default-background);
 }
 
 
@@ -836,8 +839,8 @@ a.page-numbers.prev {
 	margin-bottom: 1.714285714rem;
 }
 .author-info {
-	border-top: 1px solid paleTurquoise;
-	border-bottom: 1px solid paleTurquoise;
+	border-top: 1px solid var(--ornament);
+	border-bottom: 1px solid var(--ornament);
 	overflow: hidden;
 	padding-top: 1em;
 }
@@ -845,7 +848,7 @@ a.page-numbers.prev {
 	margin-top: 0;
 }
 .author-description p {
-	border: 1px darkSteelBlue solid;
+	border: 1px solid var(--ornament);
 	font-size: smaller;
 	line-height: 1.846153846;
 }
@@ -1024,7 +1027,7 @@ body .site,
 /*//////////////////////////
 // Breadcrumb */
 .breadcrumb {
-	margin: 0 0 2em 1em;
+	margin: 1em 0;
 }
 
 .breadcrumb > ul >li,
@@ -1060,16 +1063,18 @@ body .site,
 
 /*///////////////////////////////////
 // Navigation Menu     */
+
 .megamenu:not(.toggled-on) {
 	display: none;
 }
 
 .megamenu.toggled-on {
-		position:  absolute;
-		top: 4em;
+		position:  relative;
+		top: -8em;
 		z-index: 100;
 		width: 100%;
 		padding: 0 1em;
+		border: 5px solid var(--ornament);  /* Need to separatefrom content */
 }
 
 .main-navigation .menu-item .dropdown-toggle {
@@ -1078,9 +1083,8 @@ body .site,
 }
 
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
-	font-weight: 700;
+.main-navigation  a {
+	padding: 0.5em 0;
 }
 
 
@@ -1091,7 +1095,8 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	margin: 2em 0;
+	padding: 1em;
+	margin: 1em 0;
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
@@ -1099,8 +1104,7 @@ body .site,
 		width: 100%;
 }
 
-/* sub-navigation panel, /* first, second etc level sub-menu*/
-.main-navigation ul .sub-nav {
+.main-navigation ul .sub-nav {  
 		top: 3.8em;
 		right: 0;
 		left: 0;
@@ -1117,14 +1121,14 @@ body .site,
 	position: absolute; /* below the menu title */
 }
 
-.sub-nav ul.nav-menu {
+.main-navigation .sub-nav ul.nav-menu {
 	vertical-align: top;
 	margin: 1rem 1rem 0 0;
 	padding: 0;
 }
 
-/* list item within sub-navigation panel */
-.sub-nav li {
+
+.main-navigation .sub-nav li {		/* list item within sub-navigation panel */
 	list-style-type: none;
 	margin: 0 0 1em 0 ;
 	padding: 0;
@@ -1132,42 +1136,42 @@ body .site,
 	position: relative; /* this is the anchor of the dropdown-menu button*/
 }     	
 
-.sub-nav .sub-nav .dropdown-toggle {
+.main-navigation .sub-nav .sub-nav .dropdown-toggle {
 	display: none; /* 3rd level menu item is not allowed @17.8.9 */
 }
 
-.sub-nav ul li a {
+.main-navigation .sub-nav ul li a {
 	padding: 0.36em 0.72em;
 	display: block;
 	text-decoration: none;
 }
 
 
-ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
+.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
 	display: inline-flex;
 }
 
 
-.menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
+.main-navigation .menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
 	display: none;
 }
 
-.menu-item-has-children .icon-close {
+.main-navigation .menu-item-has-children .icon-close {
 	display: none;
 }
 
-.menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
-.dropdown-toggle.toggled-on {
+.main-navigation .menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
+.main-navigation .dropdown-toggle.toggled-on {
 	display: block;
 }
 
-.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+.main-navigation ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
 	display: inline-block;
 }
 
-.distance-keeper {
-	width: 3em;  /*mobile touch operations need this distance keeper btwn button and link*/
+.main-navigation .distance-keeper {
+	width: 2em;  /*mobile touch operations need this distance keeper btwn button and link*/
 }
 
 
@@ -1204,7 +1208,7 @@ ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
 .widget_recent_comments li +li,
 .widget_recent_entries li + li,
 .widget_rss li + li {
-	border-top: 1px paleTurquoise solid;  /* some widget has light border to enhance readbility */
+	border-top: 1px var(--ornament) solid;  /* some widget has light border to enhance readbility */
 }
 
 
@@ -1279,7 +1283,7 @@ ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
 	margin-bottom: 1.5em;
 	padding-left: 2.5em;
 	padding: 1.5em;
-	border-left: 0.5em paleTurquoise solid;
+	border-left: 0.5em var(--ornament)  solid;
 	font-size: 1.2em;
 	line-height: 1.5;
 }
@@ -1362,7 +1366,7 @@ ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
 	display: inline;
 }
 .site kbd {   /* since @18.10.4 from wikipedia css */
-	    border: 1px solid paleTurquoise;
+	    border: 1px solid var(--ornament);
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -1413,9 +1417,9 @@ div.entry-content > h2:first-child{
  * WCAG 1.4.8:paragraph spacing is at least 1.5 times larger than the line spacing.
  * @since 21.1
 */
-.site p,
-.site ol,
-.site ul {
+.site-content p,
+.site-content ol,
+.site-content  ul {
 	margin-bottom: 2.3em; 
 }
 
@@ -1459,7 +1463,7 @@ div.entry-content > h2:first-child{
 
 .site td,
 .site th	{
-	border-top: 1px solid paleTurquoise;
+	border-top: 1px solid var(--ornament);
 	padding: 0.428rem 0.714rem 0.728rem 0;
 }
 
@@ -1518,7 +1522,7 @@ div.entry-content > h2:first-child{
 }
 
 .metatags ul {
-	border-top: 1px paleTurquoise solid;
+	border-top: 1px solid var(--ornament);
 }
 
 .metatags li {
@@ -2242,7 +2246,7 @@ Reading options modal window buttons design
 								position: absolute;
         right: 0.4em;
         top: 0.4em;
-        border: 1px solid ivory;
+        border: 1px solid var(--default-background);;
         padding: 1px;
         cursor: pointer
     }
@@ -2270,7 +2274,7 @@ Reading options modal window buttons design
 .font-size-0 	.toolbar-buttons-table .row .toolbar-label {
 		width: 50%;
 		text-align: right;
-		border-top: 1px ivory dotted;
+		border-top: 1px var(--default-background); dotted;
 	}
 
 .font-size-0 	.toolbar-buttons-table .buttons-wrapper {
@@ -2345,7 +2349,7 @@ Reading options modal window buttons design
 	.toolbar-buttons-table .row .toolbar-label {
 		width: 50%;
 		text-align: right;
-		border-top: 1px ivory dotted;
+		border-top: 1px var(--default-background); dotted;
 	}
 
 .font-size-1 .toolbar-buttons-table .row .toolbar-label {
@@ -2708,6 +2712,10 @@ Reading options modal window buttons design
 @media screen and (min-width: 764px){
 	
 	
+	.site-header {
+		padding: 0 1%;
+	}
+	
 	.column-right-wrapper {
 		width: 84%;
 		margin-left: 1%;
@@ -2919,8 +2927,7 @@ Reading options modal window buttons design
 	}
 	
 	
-	body.custom-background-empty .site,
-	body.custom-background-ivory .site {
+	body.custom-background-empty .site {
 		padding: 0;
 		margin-top: 0;
 		margin-bottom: 0;
