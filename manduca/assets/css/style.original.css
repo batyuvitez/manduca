@@ -218,6 +218,7 @@ img {
 	--inverse-outline: ivory;
 	--featured-background: paleTurquoise;
 	--featured-text: maroon;
+	--ornament: darkSlateBlue;
 }
 
 body, 
@@ -273,6 +274,7 @@ Lighter */
 .lighter-scheme {
 			color: maroon;
 			background-color: white;
+			border: 1px paleTurquoise solid;
 }
 
 /*//////////////////////////////////
@@ -512,12 +514,6 @@ a.page-numbers.prev,
 |               TYPOGRAPHY 				                       |
 |                                                            |
 ==============================================================*/
-
-
-.site-header-menu ul.nav-menu > li.menu-item > a {
-	font-size: 1.2em;
-}
-
 
 
 /* Form fields, general styles first */
@@ -1072,10 +1068,13 @@ body .site,
 		position:  absolute;
 		top: 4em;
 		z-index: 100;
+		width: 100%;
+		padding: 0 1em;
 }
 
 .main-navigation .menu-item .dropdown-toggle {
-	position: static;
+	position: static; /* keep inline with the menu name */
+	display: inline-block;
 }
 
 
@@ -1089,33 +1088,33 @@ body .site,
 	display: block;
 }
 
-.megamenu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
+.megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: 2em 0;
 }
 
-
-/* open state of first descendant link
-
-/* Menu item has children*/
-.megamenu ul.nav-menu  > li.menu-item-has-children > a {  
+.megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
     margin-right: 2rem;
 		width: 100%;
 }
 
 /* sub-navigation panel, /* first, second etc level sub-menu*/
 .main-navigation ul .sub-nav {
-		display: none;
 		top: 3.8em;
 		right: 0;
+		left: 0;
 		padding: 0;
-		z-index: 150;
-		border: 1px solid #c0c0c0;
+		z-index: 150;		
 	}
+
+.main-navigation ul .sub-nav:not(.toggled-on) {
+		display: none;	
+}
 	
 .main-navigation ul .sub-nav.toggled-on{
 	display: block;
+	position: absolute; /* below the menu title */
 }
 
 .sub-nav ul.nav-menu {
@@ -1144,7 +1143,7 @@ body .site,
 }
 
 
-.megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
+ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
 	display: inline-flex;
 }
 
@@ -1165,7 +1164,6 @@ body .site,
 .megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
 	display: inline-block;
-	padding: 0.25em 1em;
 }
 
 .distance-keeper {
@@ -2745,18 +2743,6 @@ Reading options modal window buttons design
 		margin: 0
 	}
 	
-	.site-content:before,
-	.site-content:after,
-	.widget-area:after,
-	.widget-area:before
-	{
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		display: block;
-		width: 0.285rem;
-	}
 	
 	/*Header*/
 	.search-submit {
@@ -2782,7 +2768,7 @@ Reading options modal window buttons design
 	}
 	
 	.megamenu ul.nav-menu {
-		text-align: right;
+		text-align: center;
 	}
 	
 	
@@ -2805,7 +2791,6 @@ Reading options modal window buttons design
 	.megamenu ul.nav-menu > li > a {
 		padding:  0.5em 1em;
 		white-space: nowrap;
-		font-weight: 500;
 	}
 	
 	
@@ -2813,28 +2798,33 @@ Reading options modal window buttons design
 	/*//////////////////////////////////
 	// sub-menu         */
 	
-	.main-navigation ul .sub-nav {
+	.main-navigation ul.nav-menu > li.menu-item-has-children > .sub-nav {
 		position: absolute;
 		top: 100%;
 		left: auto;
 		right: auto;
 	}
 
+	.main-navigation .sub-nav .sub-nav {
+		top: 0;
+		left: 100%;
+		right: auto;
+	}
 	.site ul	.sub-nav ul {
 		margin: 0;
 		padding: 0;
 	}
 
-	.megamenu li.menu-item-has-children {
+	.main-navigation .megamenu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0;
 	}
 	
-	ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{
+	.main-navigation ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{
 		display: block;
 	}
 		
-	.sub-nav ul li a {
+	.main-navigation .sub-nav ul li a {
 		white-space: nowrap;
 		display: inline-block;
 }
@@ -2847,6 +2837,11 @@ Reading options modal window buttons design
 	.menu-toggle {
 		display: none;
 	}
+	
+	.main-navigation .sub-nav .submenu-container svg {
+		transform: rotate(-90deg);
+	}
+	
 	
 	/*////////////////////////////
 	// Content                           S*/
@@ -2932,12 +2927,13 @@ Reading options modal window buttons design
 		box-shadow: none;
 	}
 	/* top level navigation item */
-		.megamenu ul.nav-menu > li.menu-item > a {
+	.megamenu ul.nav-menu > li.menu-item > a,
+	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a{
 		font-size: 1.5em;
 	}
+	
 	.megamenu ul.nav-menu > li.menu-item > span {  /* @18.7 */
-		font-size: 1.4em;
-		
+		font-size: 1.4em;	
 	}
 	
 	.widget-searchfrom #s {

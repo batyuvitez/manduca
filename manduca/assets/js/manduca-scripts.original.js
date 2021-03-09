@@ -733,18 +733,15 @@ jQuery(document).ready(function($)
 		function initMainNavigation( container )
 		{
 			var dropdownToggle = $( '.dropdown-toggle');
-			//.append( manducaVariables.icon )
-			//.append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
-			//container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
-			//dropdownToggle.on( 'click.manduca', function()  
 			{
 				 var _this = $( this );
 				 e.preventDefault();
 				_this.toggleClass( 'toggled-on' );
-				_this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
+				var subnav=_this.closest('.menu-item-has-children').find( '.sub-nav' );
+				subnav=subnav.first();
+				subnav.toggleClass( 'toggled-on' );
 				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-				//screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
 			});
 	   }
         initMainNavigation( $( '.main-navigation' ) );

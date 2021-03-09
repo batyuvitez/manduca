@@ -87,6 +87,9 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 
 				
 		$item_output  = $args->before;
+		if( $submenu) {
+			$item_output .='<div class="submenu-container">';
+		}
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $item->title . $args->link_after;
 		$item_output .= '</a>';
@@ -100,6 +103,8 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 			$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
 			$item_output .= manduca_get_svg( array( 'icon' => 'close'));
 			$item_output .='</button>';
+			$item_output .= "\n";
+			$item_output .= "</div>";  //submenu-container
 			$item_output .= "\n";
 		}
 		$item_output .= $args->after;
