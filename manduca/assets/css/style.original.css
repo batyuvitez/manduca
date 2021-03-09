@@ -236,9 +236,14 @@ svg {
 	fill: black;	
 }
 
+
 body a,
 #link-appearance-0 span {
 	color: RoyalBlue;
+}
+
+body a svg {
+	fill: RoyalBlue;
 }
 
 
@@ -502,6 +507,18 @@ a.page-numbers.prev,
 
 
 
+/*============================================================
+|                                                            |
+|               TYPOGRAPHY 				                       |
+|                                                            |
+==============================================================*/
+
+
+.site-header-menu ul.nav-menu > li.menu-item > a {
+	font-size: 1.2em;
+}
+
+
 
 /* Form fields, general styles first */
 .site button,
@@ -518,6 +535,7 @@ a.page-numbers.prev,
 	margin: 0;
 	padding: 0;
 }
+
 .site input,
 .site textarea {
 		padding: 0.43em 0.75em; /*corrected: 21.1 with probing */
@@ -1035,8 +1053,12 @@ body .site,
 	display: block;
 }
 
-.main-navigation ul .toggled-on {
+.main-navigation ul subnav.toggled-on {
 	display: block;
+	position: absolute;
+	top: 100%;
+	left: 20%;
+	width: 100%;
 }
 
 
@@ -1052,6 +1074,9 @@ body .site,
 		z-index: 100;
 }
 
+.main-navigation .menu-item .dropdown-toggle {
+	position: static;
+}
 
 
 .main-navigation .current-menu-item > a,
@@ -1067,48 +1092,20 @@ body .site,
 .megamenu ul.nav-menu > li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
+	margin: 2em 0;
 }
-
-.megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
-	display: inline-flex;
-}
-
-.megamenu ul.nav-menu > li.menu-item.menu-item-has-children:hover .sub-nav {
-	display: block;
-}
-
-.menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
-	display: none;
-}
-
-.menu-item-has-children .icon-close {
-	display: none;
-}
-
-.menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
-.dropdown-toggle.toggled-on {
-	display: block;
-}
-
-.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
-	position: relative;
-	display: inline-block;
-	padding: 0.25em 1em;
-}
-
-
 
 
 /* open state of first descendant link
 
 /* Menu item has children*/
 .megamenu ul.nav-menu  > li.menu-item-has-children > a {  
-    padding-right: 2rem;
+    margin-right: 2rem;
 		width: 100%;
 }
 
 /* sub-navigation panel, /* first, second etc level sub-menu*/
-.sub-nav {
+.main-navigation ul .sub-nav {
 		display: none;
 		top: 3.8em;
 		right: 0;
@@ -1116,9 +1113,8 @@ body .site,
 		z-index: 150;
 		border: 1px solid #c0c0c0;
 	}
-
 	
-.sub-nav.open {
+.main-navigation ul .sub-nav.toggled-on{
 	display: block;
 }
 
@@ -1142,13 +1138,39 @@ body .site,
 }
 
 .sub-nav ul li a {
-	font-size: 1.2em;
-	padding: 5px 10px;
-	padding: 0.36em 0.72m;
+	padding: 0.36em 0.72em;
 	display: block;
 	text-decoration: none;
 }
 
+
+.megamenu ul.nav-menu > li.menu-item.menu-item-has-children  {
+	display: inline-flex;
+}
+
+
+.menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
+	display: none;
+}
+
+.menu-item-has-children .icon-close {
+	display: none;
+}
+
+.menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
+.dropdown-toggle.toggled-on {
+	display: block;
+}
+
+.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 1em;
+}
+
+.distance-keeper {
+	width: 3em;  /*mobile touch operations need this distance keeper btwn button and link*/
+}
 
 
 /* Sidebar */
@@ -1803,27 +1825,19 @@ a.comment-edit-link {
 
 
 .site svg {
-	width: 1.65em;
-	height: 1.65em;
+	width: 1em;
+	height: 1em;
 	margin: 0 0.33em;
 	vertical-align: middle;
 }
 
-svg.search-icon {
+svg.icon-search,
+.dropdown-toggle svg {
 	width: 1.65em;
 	height: 1.65em;
-	position:relative;
-	top: 1px;
-	right: 6px;
 }
 
 
-svg.icon-extlink {
-	position: relative;
-	left: 3px;
-	top: 1px;
-	fill: #2691c3;
-}
 
 .nav-single svg {
 		width: 1.3em;
@@ -1833,7 +1847,7 @@ svg.icon-extlink {
 
 .page-numbers.prev svg,
 .page-numbers.next svg{
-	width: 28px;
+	width: 28px;  /* do not magnify */
 	height: 28px;
 	
 }
@@ -2269,6 +2283,14 @@ Reading options modal window buttons design
 
 @media screen and (min-width: 600px)
 {
+	.menu-item-has-children:hover .sub-nav {
+		display: block;
+	}
+	
+	.distance-keeper {
+		display: none;
+	}
+
 	.toolbar-buttons-open span {
 		font-size: 1.1em;
 		margin: 0 0 0 7px;
@@ -2791,8 +2813,11 @@ Reading options modal window buttons design
 	/*//////////////////////////////////
 	// sub-menu         */
 	
-	.sub-nav {
+	.main-navigation ul .sub-nav {
 		position: absolute;
+		top: 100%;
+		left: auto;
+		right: auto;
 	}
 
 	.site ul	.sub-nav ul {
@@ -2811,6 +2836,7 @@ Reading options modal window buttons design
 		
 	.sub-nav ul li a {
 		white-space: nowrap;
+		display: inline-block;
 }
 
 	.main-navigation ul ul .menu-item-has-children > a {
@@ -2975,9 +3001,12 @@ Reading options modal window buttons design
 		-webkit-column-gap: 3em;
 	}
 	
-	
-	.excerpt-wrapper {
+		.excerpt-wrapper {
 		margin-bottom: 3em;
+	}
+	
+	.footer-wrapper {
+		margin-bottom: -1em;
 	}
 	
 }

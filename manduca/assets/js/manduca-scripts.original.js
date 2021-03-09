@@ -625,23 +625,6 @@ jQuery(document).ready(function($)
 {
     
 	
-    ///////////////////////////////////////////////
-	// Close toolbar for escape button and add focus back to the toolbar-button
-	
-     $(document).on('keyup',function(evt)
-    {
-      if (evt.key === 'Escape') {
-          if ( $( ".toolbar-buttons" ).hasClass( "toggled-on") ) {
-           $( ".toolbar-buttons" ).removeClass( "toggled-on" );
-           $( ".toolbar-buttons-open" ).removeClass( "toggled-on" );
-           $( ".toolbar-buttons-open" ).attr( 'aria-expanded', 'false' );
-        $( ".toolbar-buttons" ).css( 'display', 'none' );
-                    $('#skip-to-content').focus();
-       }
-      }	
-    });
- 
- 
    
     ///////////////////////////////////////////////
 	// Read cookies, set <html> element classes. Also set reading options buttons attributes. 
@@ -718,7 +701,6 @@ jQuery(document).ready(function($)
    // Return early if menuToggle is missing.
 	if ( menuToggle.length )
 	{
-		menuToggle.attr( 'aria-expanded', 'false' ); // Add an initial value for the attribute.
 		menuToggle.on( 'click.manduca', function()  //Click menu-toggle
 	   {
 		   if (animation)
@@ -753,16 +735,16 @@ jQuery(document).ready(function($)
 			var dropdownToggle = $( '.dropdown-toggle');
 			//.append( manducaVariables.icon )
 			//.append( $( '<span />', { 'class': 'screen-reader-text', text: manducaVariables.expand }) );
-			container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
+			//container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
+			//dropdownToggle.on( 'click.manduca', function()  
 			{
-				 var _this = $( this ),
-				 screenReaderSpan = _this.find( '.screen-reader-text' );
+				 var _this = $( this );
 				 e.preventDefault();
 				_this.toggleClass( 'toggled-on' );
 				_this.next( '.children, .sub-nav' ).toggleClass( 'toggled-on' );
 				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-				screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
+				//screenReaderSpan.text( screenReaderSpan.text() === manducaVariables.expand ? manducaVariables.collapse : manducaVariables.expand );
 			});
 	   }
         initMainNavigation( $( '.main-navigation' ) );
@@ -772,24 +754,25 @@ jQuery(document).ready(function($)
 		// Toggle `focus` class to allow submenu access on tablets.
         function toggleFocusClassTouchScreen()
         {
-            if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
+            if ( 'none' === $( '.menu-toggle' ).css( 'display' ) )
+			{
          
-             $( document.body ).on( 'touchstart.manduca', function( e ) {
-              if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-               $( '.main-navigation li' ).removeClass( 'focus' );
-              }
-             });
-         
-             siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-              .on( 'touchstart.manduca', function( e ) {
-               var el = $( this ).parent( 'li' );
-         
-               if ( ! el.hasClass( 'focus' ) ) {
-                e.preventDefault();
-                el.toggleClass( 'focus' );
-                el.siblings( '.focus' ).removeClass( 'focus' );
-               }
-              });
+				$( document.body ).on( 'touchstart.manduca', function( e ) {
+				 if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+				  $( '.main-navigation li' ).removeClass( 'focus' );
+				 }
+				});
+			
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
+				 .on( 'touchstart.manduca', function( e ) {
+				  var el = $( this ).parent( 'li' );
+			
+				  if ( ! el.hasClass( 'focus' ) ) {
+				   e.preventDefault();
+				   el.toggleClass( 'focus' );
+				   el.siblings( '.focus' ).removeClass( 'focus' );
+				  }
+				 });
          
             } else {
              siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.manduca' );
@@ -1116,8 +1099,7 @@ jQuery(document).ready(function($)
 (function otherFunctions()
 {
 
-    'use strict';
-
+    
     /*------------------------------------------------
      *
      * jQuery accessible simple (non-modal) tooltip window, using ARIA
