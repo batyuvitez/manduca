@@ -30,8 +30,10 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 
 <button id="menu-toggle"
 		class="menu-toggle link-button"
-		aria-label="<?php echo $menu_name;?>"
-		aria-expanded="false">
+		aria-hashpopup="false"
+		aria-controls="primary-nav-menu">
 		<?php 	echo manduca_get_svg( array( 'icon' => 'bars' ) );
 		echo manduca_get_svg( array( 'icon' => 'close' ) )?>
+		<?php echo $menu_name;?>
+		
 		

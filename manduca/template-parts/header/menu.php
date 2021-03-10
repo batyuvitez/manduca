@@ -43,6 +43,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'theme_location'  => 'primary',
 					   'menu'            => 'primary Menu',
 					   'menu_class'      => 'nav-menu',
+					   'menu_id'		 => 'primary-nav-menu',
 					   'container'       => false,
 					   'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
 					   'depth'           => 3,

@@ -286,8 +286,8 @@ Inverse */
 .simpletooltip.tooltip-show,
 .minimalist-simpletooltip.tooltip-show,
 .minimalist-left-simpletooltip.tooltip-show {
-				background-color: var(--default-text);; 
-				color: var(--featured-background);
+				background-color: var(--inverse-background);; 
+				color: var(--inverse-text);
 }
 
 
@@ -1072,7 +1072,7 @@ body .site,
 }
 
 
-.main-navigation  a {
+.site nav a {
 	padding: 0.5em;  /*target space should be large enough */
 }
 
@@ -1093,8 +1093,8 @@ body .site,
 		width: 100%;
 }
 
-.main-navigation ul .sub-nav {  
-		top: 3.8em;
+.main-navigation .sub-nav {  
+		top: 100%;
 		right: 0;
 		left: 0;
 		padding: 0;
@@ -1201,7 +1201,8 @@ body .site,
 }
 
 
-/* Footer */
+/*///////////////////////
+// Footer */
 .footer-wrapper{
 	width:100%;
 	clear: both;
@@ -1209,9 +1210,15 @@ body .site,
 	padding: 1em;
 }
 
+.footer-navigation {
+	border-bottom: 1px solid var(--ornament);
+	margin-bottom: 1em;
+}
+
 .footer-navigation ul li{
 	list-style-type: none;
 	text-align: center;
+	margin: 0.5em 0;
 }
 
 
