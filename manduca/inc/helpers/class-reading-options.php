@@ -45,16 +45,22 @@ class Reading_Options {
 			{
 				$element=$block['elements'][$counter];
 				$html.='<div class="button">';
+				
 				$html.='<button class="'.$block['name'].'" ';
 				$html.='id="'.$block['name'].'-'.strval ($counter).'" ';
 				if (isset ($element['aria_label']))
 					$html.='aria-label="'.$element['aria_label'].'" ';
 				$html.='>'."\n";
+				$html.='<span class="explain">';
+				//translators: Opt reading option
+				$html .= __( 'Change to', 'manduca' );
+				$html .='&nbsp;</span>';
 				$html.='<span class="phone-text" aria-hidden="true">'.$element['phone_text'].'</span>';
 				$html .='<span class="desktop-text">'.$element['desktop_text'].'</span>';
 				$html .= '</button></div>'."\n";
 			}
 			$html .= '</div>'."\n"; //end tag of .button-wrapper
+			$html .= '<div class="vonalzo"></div>'."\n"; //need because floated element
 			$html .= '</div>'."\n";  //end tag of .row
 		}
 		echo $html;

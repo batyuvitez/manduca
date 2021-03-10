@@ -527,9 +527,15 @@ a.page-numbers.prev,
 	font-size: 1.1em; /* corrected: 17.9.19  */
 	font-family: inherit;
 	max-width: 100%;
-	margin: 0.3em 0;
-	padding: 0.3em 0.6em;
 }
+
+.site button,
+.site .link-button {
+	padding: 0.428em 0.857em;
+	margin: 0.428em 0.857em;
+
+}
+
 .site button.dropdown-toggle {
 	margin: 0;
 	padding: 0;
@@ -537,7 +543,7 @@ a.page-numbers.prev,
 
 .site input,
 .site textarea {
-		padding: 0.43em 0.75em; /*corrected: 21.1 with probing */
+		padding: 0.75em; 
 		margin-bottom: 0.5em;	
 }
 
@@ -606,24 +612,16 @@ a.page-numbers.prev,
   cursor: pointer;
 }
 
-
-
-.entry-content .search-submit {  /* This is not inline, need correction */
-	position: relative;
-	top: 5px;
-}
-
-
 .menu-toggle {
 	position: absolute;
-	top: 1.1em;
-	left: 0.4em;
+	top: 0.8em;
+	right: 0.2em;
 }
 
 .toolbar-buttons-open{
     position: absolute;
-    top: 1.1em;
-    left: 4.4em;
+    top: 0.8em;
+    left: 0.2em;
 		cursor: pointer;
  }
 
@@ -637,21 +635,11 @@ a.page-numbers.prev,
 	background-color: rgba(0,0,0,0.3);
 }
 
+
 .site .link-button,
-.site .link-button a{
-	padding: 0.428em 0.857em;
+.site .link-button a {
 	text-decoration: none;				
 }
-
-/* menu-toggle, search-submit and toolbar-buttons-open */
-.site .search-submit,
-.site .menu-toggle,
-.site .toolbar-buttons-open{
-	margin: 0;
-	padding: 0.2em;
-}
-
-
 
 .reply {
 	display: inline-block;
@@ -665,12 +653,9 @@ a.page-numbers.prev,
 
 
 
+/*//////////////////////////////
+//  Responsive images */
 
-
-
-
-
-/* Responsive images */
 .entry-content img,
 .comment-content img,
 .widget img {
@@ -875,10 +860,6 @@ html .firefox {
 /* Based on universal access: We are using the most readable fonts
 * http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf */
 
-html body {
-	margin-bottom: 3em; /* Not to overwrite Back-to-top button */
-}
-
 body .site,
  .toolbar-buttons .font-type-container > button:nth-child(2){   /* reading option orinal font remains always this.  */
 	font-family: Verdana,
@@ -953,7 +934,7 @@ body .site,
 }
 
 .top-bar {
-	height: 8.284rem;
+	height: 10rem;
 	width: 100%;
 }
 
@@ -968,8 +949,8 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 4.5em;
-	left: 0.5em;
+	top: 5.5em;
+	left: 1em;
 	right: 0.5em;
 	display: flex;
 }
@@ -990,6 +971,10 @@ body .site,
 	height: 1px;
 	width: 1px;
 	word-wrap: normal;
+}
+
+.site .search-submit {
+	margin: 0 0 0 1em;
 }
 
 .header-searchform #s{
@@ -1027,7 +1012,11 @@ body .site,
 /*//////////////////////////
 // Breadcrumb */
 .breadcrumb {
-	margin: 1em 0;
+		margin: 1em 0 1.4em; /*should be equally distance from parts. */
+		font-size: 0.9em;
+		padding: 0.5em 0;
+		border-top: 1px solid var(--ornament);
+		border-bottom: 1px solid var(--ornament);
 }
 
 .breadcrumb > ul >li,
@@ -1068,9 +1057,9 @@ body .site,
 	display: none;
 }
 
-.megamenu.toggled-on {
+.megamenu {
 		position:  relative;
-		top: -8em;
+		top: -8em; /*Menu-toggle is absolutely positioned, navmenu not */
 		z-index: 100;
 		width: 100%;
 		padding: 0 1em;
@@ -1084,7 +1073,7 @@ body .site,
 
 
 .main-navigation  a {
-	padding: 0.5em 0;
+	padding: 0.5em;  /*target space should be large enough */
 }
 
 
@@ -1095,8 +1084,8 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	padding: 1em;
-	margin: 1em 0;
+	padding: 0;
+	margin: 0.5em 0;
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
@@ -1341,6 +1330,9 @@ body .site,
 	overflow: auto;
 }
 
+.site code {
+	border: 1px solid var(--ornament);
+}
 
 .site pre {
 	padding: 1em;
@@ -1370,16 +1362,14 @@ body .site,
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
-    
     font-size: 0.85em;
 }
 
 /* defaults headings */
 .site h1 {
-	font-size: 1.7em;
-	line-height: 1.25;
+	font-size: 1.5em;
 	margin: 0 0 1em;
-	text-align: center;
+	font-weight: bold;  /* browser default is usually bold */
 	clear: both;
 }
 
@@ -1830,7 +1820,7 @@ a.comment-edit-link {
 	width: 1em;
 	height: 1em;
 	margin: 0 0.33em;
-	vertical-align: middle;
+	vertical-align: baseline;
 }
 
 svg.icon-search,
@@ -2168,11 +2158,9 @@ svg.icon-search,
 
 
 
-/*
-Reading options modal window buttons design
-*/
+/*///////////////////////////////////////
+Modal window design */
  
-
 .toolbar-buttons {
     padding: 2em 1em 1em;
     width: 100%;
@@ -2192,30 +2180,23 @@ Reading options modal window buttons design
 	text-align: center;
 }
 
-
+.toolbar-buttons .row {
+	border: 1px solid var(--ornament);
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}
 
 .toolbar-buttons-table .row .toolbar-label {
-	width: 100%;
+	display: inline-block;
 	font-weight: 700;
-	text-align: center;
-	font-size: 1.1em;
-	margin-top: 1.1em;
 }
 
 
-.toolbar-buttons-table .buttons-wrapper
-{
-	display: flex;
-	justify-content: space-around;
-}
-
-
+.toolbar-buttons-table .buttons-wrapper,  /* need for backwards compatibility */
 .toolbar-buttons-table .button {
-		margin-left: 0.214em;
-    padding: 0.428em 0.214em;
-		cursor: pointer;
-		margin: 0 0.5em;
+	display: inline;  
 }
+
 
 .toolbar-buttons-table .button button {
 		min-width: 4em;
@@ -2224,11 +2205,18 @@ Reading options modal window buttons design
 
 .toolbar-buttons button[disabled] {
 	border: none;
+	display: inline;
 	background-color: transparent;
 	font-weight: 700;
 }
 
+.toolbar-buttons button[disabled] .explain {
+	display: none;
+}
 
+.toolbar-buttons button:not([disabled]) {
+	float: right;
+}
 
 .toolbar-buttons .toolbar-label {
 	padding: 0;
@@ -2251,12 +2239,8 @@ Reading options modal window buttons design
         cursor: pointer
     }
     
-.desktop-text {
-    display: none;
-}
-
 .phone-text {
-    display: inline;
+    display: none; /* 21.2 depretiated */
 }
  
 
@@ -2393,32 +2377,21 @@ Reading options modal window buttons design
 
 
 
-/*============================================================--*============================================================-- *============================================================--  
-/*                     Media queries
-============================================================--*============================================================-- *============================================================--  */
+/*=================================================================
+/*
+/*                                    Media queries
+/*
+===================================================================
+@see: https://zellwk.com/blog/media-query-units/
+*/
 
 
-/* MAXIMUM width: */
-@media screen and ( max-width: 600px) {
-	.breadcrumb span,
-	.breadcrumb a {
-		font-size: 0.9em; /* only on small screens to display long titles nicely */
-	}
-}
 
+/*//////////////////////////////////
+// minimum 520 px */
 
-/*  Minimum width of 370 pixels. */
-@media screen and (min-width: 370px) {
-
-	.menu-toggle span {
-		font-size: 80%;
-		text-transform: lowercase;
-	}
-}
-
-
-@media screen and (min-width: 520px) {
-	.font-size-0 .header-searchform  {
+@media screen and (min-width: 37.14em) {
+	.font-size-0 .header-searchform  { /*Searchform is inline */
 		top: 1.15em;
 		right: 0.35em;;
 		left: auto;
@@ -2431,8 +2404,10 @@ Reading options modal window buttons design
 
 
 
-/*  Minimum width of 600 pixels. */
-@media screen and (min-width: 600px) {
+/*/////////////////////////////////////
+//  Minimum width of 600 -784 pixels. */
+
+@media screen and (min-width: 42.85em) {
 	
 	
 	html.font-size-0:not( .page-template-full-width) .site-content {
@@ -2632,17 +2607,19 @@ Reading options modal window buttons design
 		margin: 0;
 	}
 	 
-	/* footer */
+	/*///////////////////////////////
+	   footer */
 
+	.site-info {
+		display: flex;
+	}
+		 
 	.footer-navigation{
-		/* @since 19.3. Not to overlap the back-to-top */
-		margin-right: 6em;
-		float: right;
-		max-width: 50%;
+		width: 50%;
 	}
 	
 	.footer-navigation ul{
-		text-align: right;
+		text-align: left;
 		margin: 0;
 	}
 	.footer-navigation ul li{
@@ -2652,9 +2629,10 @@ Reading options modal window buttons design
 	}
 	
 	.copyright-text {
-		position: static;
-		text-align: left;
+		text-align: right;
+		width: 50%;
 	}
+	
 	
 	/* toolbars 600-784px */
 	.site .toolbar-buttons-open {
@@ -3006,11 +2984,7 @@ Reading options modal window buttons design
 	
 		.excerpt-wrapper {
 		margin-bottom: 3em;
-	}
-	
-	.footer-wrapper {
-		margin-bottom: -1em;
-	}
+	}	
 	
 }
 
@@ -3021,8 +2995,6 @@ Reading options modal window buttons design
 @media screen and (min-width: 1590px ){
 	
 	
-	
-	/*@since 18.9 */
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
 		max-width: 1267px;
@@ -3030,12 +3002,12 @@ Reading options modal window buttons design
 		padding: 1em;
     }
 	 
-
 	article > header {
 		text-align: center;
 	}
-
 	
+	.footer-wrapper {
+		margin-bottom: 0;
 }
 
 

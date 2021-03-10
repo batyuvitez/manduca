@@ -39,7 +39,7 @@
 			   name="s"
 			   id="s"/>
 		<button type="submit"
-				class="search-submit link-button"
+				class="search-submit"
 				id="search-submit"
 				aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
 		   <?php echo  manduca_get_svg( array( 'icon'=>'search') ) ;?>
