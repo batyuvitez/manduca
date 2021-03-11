@@ -12,7 +12,7 @@
 
 		<?php if ( have_posts() ) : ?>
 			<header>
-				<h1  tabindex="0"><?php
+				<h1><?php
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s', 'manduca' ), '<span>' . get_the_date( 'Y. F j.' ) . '</span>' );
 					elseif ( is_month() ) :

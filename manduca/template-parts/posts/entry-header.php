@@ -12,10 +12,10 @@
 						<div class="featured-post featured-scheme"><?php _e( 'Featured', 'manduca' ) ?></div>
 <?php endif; ?>
 
-<div class="columns-mask">
-	<div class="columns-wrapper">
-		<div class="column-right-wrapper">
-			<div class="column-right">
+
+	<div class="entry-header-wrapper">
+		<div class="entry-title-rapper">
+			
 					
 	
 				<?php if ( is_single() ) :
@@ -43,22 +43,21 @@
 				
 				<?php do_action( 'manduca_post_subtitle' ); ?>
 					
-			</div>
+			
 		</div>
 		
-		<div class="column-left">
+		<div class="content-date featured-scheme"">
 		
 				<?php
 				$month 		= esc_html( get_the_date( 'M' ) );
 				$day		= esc_html( get_the_date( 'j' ) );
-				$date_mask	='<p class="content-date"><time class="entry-date featured-scheme" datetime="%1$s"><span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span> <span class="entry-date-year">%2$s</span></time></p>';
+				$date_mask	='<time class="entry-date featured-scheme" datetime="%1$s"><span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span> <span class="entry-date-year">%2$s</span></time>';
 	
 				if ( strpos ( get_bloginfo( 'language' ), 'hu' ) !== FALSE ) {
-						// setlocale(LC_ALL, 'hu_HU.UTF8'); not worki with PHP7 removed @17.10.7
 						$short_month_array = array('','jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.');
 						$month =$short_month_array[ get_post_time( 'n' ) ] ;
 						$day 		.= '.';
-						$date_mask	='<p class="content-date featured-scheme"><time class="entry-date " datetime="%1$s"><span class="entry-date-year">%2$s.</span> <span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span></time></p>';
+						$date_mask	='<time class="entry-date " datetime="%1$s"><span class="entry-date-year">%2$s.</span> <span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span></time>';
 	
 				}
 				
@@ -77,7 +76,7 @@
 		
 		</div>
 	</div>	
-</div>
+
 	
 		
 	

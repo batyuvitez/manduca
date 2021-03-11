@@ -861,8 +861,15 @@ html {
 /* Based on universal access: We are using the most readable fonts
 * http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf */
 
+body .site {   /* reading option orinal font remains always this.  */
+	text-rendering: optimizeLegibility;
+	position: relative;
+	overflow: hidden;
+	max-width: 80em; /* 1280px */
+	margin: 0 auto;
+}
 body .site,
- .toolbar-buttons .font-type-container > button:nth-child(2){   /* reading option orinal font remains always this.  */
+.toolbar-buttons .font-type-container > button:nth-child(2) {
 	font-family: Verdana,
 	             "Helvetica Neue",
 				 Arial,
@@ -870,10 +877,7 @@ body .site,
 				 system-ui,
 				 BlinkMacSystemFont,
 				 "Segoe UI",
-				 Roboto,sans-serif;   /* Keep original Manduca fonts, but inlclude the wfollowing: https://github.com/necolas/normalize.css/issues/665 */ 
-	text-rendering: optimizeLegibility;
-	position: relative;
-	overflow: hidden;
+				 Roboto,sans-serif;   
 }
 
 
@@ -1367,14 +1371,21 @@ body .site,
 	clear: both;
 }
 
+.site .entry-content h1 {
+	margin: 3em 0 1.5em;
+}
+
 .font-size-3 h1 {
 	font-size: 1.4em;
 }
 .site h2 {
 	font-size: 1.3em;
 	line-height: 1.5;
-	margin: 2.6em 0 1.3em;
 	clear: both;
+}
+
+.site .entry-content h2 {
+	margin: 2.6em 0 1.3em;
 }
 
 
@@ -1454,24 +1465,22 @@ div.entry-content > h2:first-child{
 
 /* CONTENT HEADER: */
 
-.site-content article header .content-date  {
+.content-date  {
 	padding: 0.5em;
 	margin-bottom: 0;
+	max-width: 5.8rem;  /*probing. 'width' not worked*/
+	min-width: 5.8rem;
+	position: relative;
 }
 
-
+.content-date time {
+	position: absolute;
+	display: block;
+	top: 50%;
+	transform: translateY(-50%)
+}
 .site-content article header {
 	margin-bottom: 1em;
-}
-
-.site-content main header h1:first-letter {
-	text-transform: uppercase;
-}
-
-
-.site-content main .column-right header h1 {
-	text-align: left;
-	padding: 0;
 }
 
 .featured-post {
@@ -1731,10 +1740,6 @@ a.comment-edit-link {
 /* 11. Widgets
 ============================================================-- */
 
-.site h2.widget-title {  
-	margin-top: 1em;
-}
-
 .widget-content {
 	padding: 1em 0;
 }
@@ -1767,8 +1772,14 @@ a.comment-edit-link {
 }
 
 
-/*14. Focus snail css*
- ========================*/
+
+
+/*============================================================
+|                                                            |
+|               FOCUS SNAIL     			                       |
+|                                                            |
+==============================================================*/
+
 #focus-snail_svg {
 	position: absolute;
 	top: 0;
@@ -1792,13 +1803,13 @@ a.comment-edit-link {
 }
 
 
+
+
 /*============================================================
 |                                                            |
 |               SECTION SVG   				                       |
 |                                                            |
 ==============================================================*/
-
-
 
 .site svg {
 	width: 1em;
@@ -1840,19 +1851,18 @@ svg.icon-search,
 	display: none;
 }
 
-/* End of svg formatting */
 
 
 
 
 
 
+/*============================================================
+|                                                            |
+|           ACCESSIBLE BACK-TO-TOP                           |
+|                                                            |
+==============================================================*/
 
-/* accessible back-to-top function
- * @since 19.1
- *
- *  Do not change with root unit 
- =================================================================================- */
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;
@@ -1883,10 +1893,13 @@ svg.icon-search,
 }
 
 
+ 
+/*============================================================
+|                                                            |
+|           ACCESSIBLE HIDE-SHOW SYSTEM                      |
+|                                                            |
+==============================================================*/
 
-/* jQuery simple and accessible hide-show system (collapsible regions), using ARIA
- * * @since 19.3
- =================================================================================- */
 .js-to_expand[aria-hidden=true],
 .js-to_expand[data-hidden=true] {
   display: none;
@@ -1908,13 +1921,12 @@ svg.icon-search,
 }
 
 
+/*============================================================
+|                                                            |
+|           ACCESSIBLE TOOLTIP                               |
+|                                                            |
+==============================================================*/
 
-
-
-/* jQuery accessible simple tooltip window, using ARIA
- * * @since 21.1
- =================================================================================- */
-/* Tooltip hidden by default */
 .simpletooltip,
 .minimalist-simpletooltip,
 .minimalist-left-simpletooltip{
@@ -2010,9 +2022,11 @@ svg.icon-search,
 }
 
 
-/* Large font-size typography 
- * * @since 21.2
- =================================================================================- */
+/*============================================================
+|                                                            |
+|           LARGE FONT TYPOGRAPHY                            |
+|                                                            |
+==============================================================*/
 
 .font-size-1 .desktop-text {
 	display: none;
@@ -2036,18 +2050,11 @@ svg.icon-search,
 
 
 
-
-
-/*============================================================================================== 
-/* Accessibility toolbar 
-/* @since 18.12
-/*
-/* Accessibility toolbar is not requred by WCAG 2.1, but gives
-/* user experience, mainly in mobile where reading optionas are complicated to change
-===================================================================================================
-
-
-
+/*============================================================
+|                                                            |
+|           READING OPTIONS                                  |
+|                                                            |
+==============================================================*/
  
 /*///////////////////////////////
 /* FONT-TYPE                         */
@@ -2417,8 +2424,7 @@ Modal window design */
 	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 66%;
-		max-width: 180em;
-		padding: 0 2em 0 0;	
+		padding: 0 4em 0 0;	
 	}
 	
 	html.font-size-0:not( .page-template-full-width) .widget-area {
@@ -2504,19 +2510,18 @@ Modal window design */
 	* For backward compatibility HTML had not changed.  
 	*/	
 	
-	.columns-wrapper {
+	.entry-header-wrapper {
 		display: flex;
 		flex-direction: row-reverse;
+		justify-content: flex-end;  
 	}
-	.column-right-wrapper {
+	.entry-header-wrapper h1,
+	.entry-header-wrapper h2 {
 		width: 80%;
 	}
 
-	.column-right {
+	.entry-title-rapper {
 		margin-left: 1em;
-	}
-	.column-left {
-		width: 20%;
 	}
 
 	/*content date format
@@ -2675,20 +2680,6 @@ Modal window design */
 		padding: 0 1%;
 	}
 	
-	.column-right-wrapper {
-		width: 84%;
-		margin-left: 1%;
-	}
-	
-	.column-right-wrapper h1 {
-		text-align: left;
-	}
-
-	.column-left {
-		width: 17%;
-		max-width: 7em;
-		overflow: hidden;
-	}
 	
 	/* One column layout sincd @17.8.9*/
 	.page-template-full-width .site-content {
@@ -2728,6 +2719,10 @@ Modal window design */
 
 @media screen and (min-width: 53em) { /* 848px*/
 
+	.site {
+		padding: 1em;
+	}
+	
 	.site-header-menu {
 		margin: 2em 0;
 	}
@@ -2853,21 +2848,6 @@ Modal window design */
 
 @media screen and (min-width: 61em) { /* 976px */
 	
-	html.font-size-0:not( .page-template-full-width) .site-content {
-		width: 75%;
-		padding: 0 2em 0 0;	
-	}
-	
-	html.font-size-0:not( .page-template-full-width) .site-content .main-content {
-		width: 41em;
-	}
-	
-	
-	html.font-size-0:not( .page-template-full-width) .widget-area {
-		width: 25%;
-		max-width: 60em;		
-	}
-		
 	body.custom-background-empty .site {
 		padding: 0;
 		margin-top: 0;
@@ -2915,49 +2895,15 @@ Modal window design */
 	.author-info {
 			margin-left: 3.92rem /* This is the margin + padding of the articles */
 	}
-
-	
 }
 
 
 
-/* min width: 1360px */
-@media screen and (min-width: 1360px) {
-	
-	.widget-searchform #s {
-		width: 1.5em;
-	}
-	
-	html.font-size-0:not( .page-template-full-width) .site-content {
-		width: 66%;
-	}
-	html.font-size-0:not( .page-template-full-width) .widget-area {
-		width: 33%;
-	}
+/*////////////////////////////////////
+//   wide screen */
+
+@media screen and (min-width: 100em ){  /* 1600px */
 		
-	/* toolbars */
-	.page-template-full-width article .entry-content {
-		columns: 2;
-		-moz-columns: 2;
-		-webkit-columns: 2;
-		column-gap: 3em;
-		-moz-column-gap: 3em;
-		-webkit-column-gap: 3em;
-	}
-	
-		.excerpt-wrapper {
-		margin-bottom: 3em;
-	}	
-	
-}
-
-
-
-
-
-@media screen and (min-width: 1590px ){
-	
-	
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
 		max-width: 1267px;
@@ -2976,9 +2922,8 @@ Modal window design */
 
 
 
-/*
- *Accessible print
- **/
+/*////////////////////////////////////
+//    Accessible print  **/
 @media print {
 	
 	body {
@@ -3047,14 +2992,6 @@ Modal window design */
 	/*
 	 * Entry-header formating
 	 * */
-	.columns-mask,
-	.column-right-wrapper,
-	.column-left {
-		position: static;
-		float: none;
-		width: 100%;
-		margin: 0;
-	}
 	
 	header.excerpt-header {
 		display: block;
