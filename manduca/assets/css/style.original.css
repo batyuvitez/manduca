@@ -124,7 +124,9 @@ hgroup,
 nav,
 section {
 	display: block;
+	max-width: 100%;
 }
+
 audio,
 canvas,
 video {
@@ -533,7 +535,7 @@ a.page-numbers.prev,
 .site .link-button {
 	padding: 0.428em 0.857em;
 	margin: 0.428em 0.857em;
-
+	width: min-content;
 }
 
 .site button.dropdown-toggle {
@@ -618,12 +620,13 @@ a.page-numbers.prev,
 	right: 0.2em;
 }
 
-.toolbar-buttons-open{
+.toolbar-buttons-open {
     position: absolute;
     top: 0.8em;
     left: 0.2em;
 		cursor: pointer;
- }
+}
+
 
 .dialog-overlay {
 	z-index: 2;
@@ -851,10 +854,8 @@ a.page-numbers.prev {
 
 /* Body, links, basics */
 html {
-	font-size: 87.5%; 
-}
-html .firefox {
-	font-size: 100%;
+	font-size: 87.5%;
+	line-height: 1.64285; /*WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
 }
 
 /* Based on universal access: We are using the most readable fonts
@@ -934,7 +935,7 @@ body .site,
 }
 
 .top-bar {
-	height: 10rem;
+	height: 12rem;
 	width: 100%;
 }
 
@@ -949,19 +950,24 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 5.5em;
+	top: 7.5em;
 	left: 1em;
 	right: 0.5em;
 	display: flex;
 }
 
 .search-wrapper {
-	max-width: 100%;
+	display: inline-flex;
 }
 
 .search-form label { /* both widget and header */
 	font-size: 148%;
 	padding: 0.214rem;
+}
+
+.header-searchform input {
+	padding: 0 0.5em;
+	margin: 0;
 }
 
 .header-searchform label { /* i.e. screen-reader-text*/
@@ -975,26 +981,7 @@ body .site,
 
 .site .search-submit {
 	margin: 0 0 0 1em;
-}
-
-.header-searchform #s{
-	margin: 0;
-	float: left;
-	max-width: 80%;  
-}
-	
-.font-size-1 .header-searchform {
-	right: 0;
-	left: 0;
-}
-
-.font-size-1 .header-searchform #s {
-	width: 100%;
-	max-width: none;
-}
-.font-size-1 .header-searchform .search-submit{
-	display: block;
-	width: 100%;
+	padding: 0.33em;
 }
 
 
@@ -1375,7 +1362,7 @@ body .site,
 /* defaults headings */
 .site h1 {
 	font-size: 1.5em;
-	margin: 0 0 1em;
+	margin: 0 0 1.5em;
 	font-weight: bold;  /* browser default is usually bold */
 	clear: both;
 }
@@ -1384,16 +1371,16 @@ body .site,
 	font-size: 1.4em;
 }
 .site h2 {
-	font-size: 1.236em;
-	line-height: 1.25;
-	margin: 1.236em 0 0.618em;
+	font-size: 1.3em;
+	line-height: 1.5;
+	margin: 2.6em 0 1.3em;
 	clear: both;
 }
 
 
 .site h3 {
 	font-size: 1.125em;
-	line-height: 1.352;
+	line-height: 1.5;
 	margin: 1.125em 0 0.5625em;
 	clear: both;
 }
@@ -1487,17 +1474,6 @@ div.entry-content > h2:first-child{
 	padding: 0;
 }
 
-.site .column-right h2.entry-title {
-	margin: 0;
-}
-
-
-/* Manduca special typography elements */
-.featured-1 {
-	background: rgba( 255,255,255, 0.1 );
-	padding: 0 0.2em;
-}
-
 .featured-post {
 	overflow: hidden;
 	text-align: right;
@@ -1520,6 +1496,7 @@ div.entry-content > h2:first-child{
 
 .metatags ul {
 	border-top: 1px solid var(--ornament);
+	margin-bottom: 0;
 }
 
 .metatags li {
@@ -2033,6 +2010,26 @@ svg.icon-search,
 }
 
 
+/* Large font-size typography 
+ * * @since 21.2
+ =================================================================================- */
+
+.font-size-1 .desktop-text {
+	display: none;
+}
+
+.font-size-1 .header-searchform {
+	display: block;
+	top: 5em;
+}
+
+.font-size-1 .search-wrapper {
+	display: block;
+}
+
+.font-size-1 .header-searchform input {
+	padding: 0.5em;
+}
 
 
 
@@ -2047,7 +2044,7 @@ svg.icon-search,
 /*
 /* Accessibility toolbar is not requred by WCAG 2.1, but gives
 /* user experience, mainly in mobile where reading optionas are complicated to change
-=========================================================================================================================*/
+===================================================================================================
 
 
 
@@ -2201,7 +2198,8 @@ Modal window design */
 
 .toolbar-buttons-table .buttons-wrapper,  /* need for backwards compatibility */
 .toolbar-buttons-table .button {
-	display: inline;  
+	display: inline;
+	vertical-align: middle;
 }
 
 
@@ -2284,10 +2282,6 @@ Modal window design */
 		display: none;
 	}
 
-	.toolbar-buttons-open span {
-		font-size: 1.1em;
-		margin: 0 0 0 7px;
-	}
     
   .toolbar-buttons {
     position: absolute;
@@ -2393,30 +2387,34 @@ Modal window design */
 */
 
 
+/*/////////////////////////////////////
+//  Minimum width of 368 -592 pixels. */
 
-/*//////////////////////////////////
-// minimum 520 px */
+@media screen and (min-width: 23em) {
 
-@media screen and (min-width: 37.14em) {
-	.font-size-0 .header-searchform  { /*Searchform is inline */
-		top: 1.15em;
-		right: 0.35em;;
-		left: auto;
-		width: 19em;
+	.site button,
+	.site .link-button {
+		width: auto;
 	}
+	
 	.top-bar {
-		height: 4.142rem;
+		height: 10em;
 	}
+	
+	.header-searchform {
+		top: 5.5em;
+	}
+
 }
 
 
-
 /*/////////////////////////////////////
-//  Minimum width of 600 -784 pixels. */
+//  Minimum width of 592 -656 pixels. */
 
-@media screen and (min-width: 42.85em) {
+@media screen and (min-width: 37em) {
 	
 	
+	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 66%;
 		max-width: 180em;
@@ -2427,20 +2425,16 @@ Modal window design */
 		width: 33%;
 		max-width: 60em;		
 	}
-
 	
-	/*
-	 *TYPOGRAPHY
-	*/
-	/* Golden rule
-	 WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
-	html {
-		line-height: 1.64285; 
+	
+	.page-template-full-width img.wp-post-image {
+		margin: 0 auto;
+	}
+	
+	.page-template-full-width img.wp-post-image { /* Full width page*/
+		margin: 3em auto;
 	}
 
-	
-	
-	
 	
 	
 	/* Font size */ 
@@ -2456,19 +2450,18 @@ Modal window design */
 	
 	
 	.site h4 {
-	font-size: 1.024em;
-	margin: 2.048rem 0 0.686rem 2.048rem;
-}
+		font-size: 1.024em;
+		margin: 2.048rem 0 0.686rem 2.048rem;
+	}
 	.site h5 {
-	font-size: 0.819em;
-	margin: 1.638rem 0 0.546rem;
+		font-size: 0.819em;
+		margin: 1.638rem 0 0.546rem;
 	}
 	.site h6 {
-	font-size: 0.6553em;
-	margin: 1.31072rem 0 0.65536rem;	
+		font-size: 0.6553em;
+		margin: 1.31072rem 0 0.65536rem;	
 	}
-	
-	
+
 	
 	.author-avatar {
 		float: left;
@@ -2485,22 +2478,16 @@ Modal window design */
 		margin-bottom: 0;
 		height: auto;
 	}
-	.header-searchform #s {
-		width: auto;
-	}
-	.widget-searchform #s {
-		width: 70%;
-		position: relative;
-		top: -4px;
-	}
-		.alignleft {
+ 
+ 	.alignleft {
 		float: left;
 	}
 	
-	.megamenu ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+	.megamenu ul.nav-menu > li.menu-item > a,
+	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a
+	{  /* top level navigation item */
 		font-size: 1.35em;
 	}
-
 	
 	.alignright {
 		float: right;
@@ -2538,12 +2525,16 @@ Modal window design */
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt .content-date {
-		font-size: 95%;
+			font-size: 95%;
 			text-transform: uppercase;
 			font-weight: 300;
 			text-align: center;
 			margin: 0;
 			padding: 1px;
+	}
+	
+	.featured-scheme .content-date {
+			border: 2px solid var(--inverse-background);
 	}
 	
 	.content-date span.entry-date-month,
@@ -2585,13 +2576,7 @@ Modal window design */
 	  }
   
 		
-	.page-template-full-width img.wp-post-image {
-		margin: 0 auto;
-	}
 	
-	.page-template-full-width img.wp-post-image { /* Full width page*/
-		margin: 3em auto;
-	}
 	.excerpt-thumbnail img.wp-post-image {
 		float: left				
 	}
@@ -2639,30 +2624,7 @@ Modal window design */
 		text-align: right;
 		width: 50%;
 	}
-	
-	
-	/* toolbars 600-784px */
-	.site .toolbar-buttons-open {
-    position: absolute;
-    right: inherit;
-		left: 4em;
-		width: auto;
-		height: auto;
-		padding: 0.21em 1em 0.42em 0.5em;
-  }
-	.site .toolbar-buttons-open svg {
-		display: none;
-	}
-   
-    .phone-text {
-        display: none;
-    }
-    .desktop-text {
-        display: inline-block;
-    }
-
-
-	
+		
 	/* comments *to be revised */
 	.comment-respond form input[type="text"] {
 		width: 46.333333333%;
@@ -2679,23 +2641,35 @@ Modal window design */
 	
 	.commentlist .children {
 		margin-left: 3.428571429rem;
-	}
-	
-	
+	}	
 
 }
 
 
 
-/*END 600-794 px*/
-
-/* START width of 764 -976 pixels
-	open the toggle boxes*/
 
 
+/*//////////////////////////////////
+// width of 656 - px */
 
-@media screen and (min-width: 764px){
-	
+@media screen and (min-width: 41em) {
+	.font-size-0 .header-searchform  { /*Searchform is inline */
+		top: 1.15em;
+		right: 0.35em;;
+		left: 17em;
+	}
+	.top-bar {
+		height: 5em;
+	}
+}
+
+
+
+
+/*//////////////////////////////////
+ * sidebar comes in */
+
+@media screen and (min-width: 48em) { /* 968px */
 	
 	.site-header {
 		padding: 0 1%;
@@ -2715,20 +2689,6 @@ Modal window design */
 		max-width: 7em;
 		overflow: hidden;
 	}
-
-
-
-	
-	
-	/* toolbars 784-1360px */
-	.toolbar-buttons-open {
-    top: 1.2rem;
-    right: 1.3rem;
-		left: auto;
-    }
-		
-
-	
 	
 	/* One column layout sincd @17.8.9*/
 	.page-template-full-width .site-content {
@@ -2736,27 +2696,43 @@ Modal window design */
 		margin: 0
 	}
 	
-	
 	/*Header*/
 	.search-submit {
 		margin-left: 0.5em;
 	}
 	
-	
 	.site-title {
 			text-align: left;
 	}
 	
-	
-	/*////////////////////////
-	// Menu opened from 764px                        */
-	
-	.site-header-menu {  /*child is absolute positioned */
-		display: block;
-		height: 7rem;
+	.site-content article {  /* Content  */		
+		margin: 3rem 0 0;
+		padding: 1rem;
 	}
+	
+	
+	.site-content article:first-child, /* Page and the first article top margin adjusted */
+	.page .site-content article {
+		margin-top: 1.214rem;
+	}	
+}
 
-	.site-header-menu .megamenu {
+
+
+
+
+
+
+/*//////////////////////////////////
+ * menu opened  */
+
+@media screen and (min-width: 53em) { /* 848px*/
+
+	.site-header-menu {
+		margin: 2em 0;
+	}
+	 
+	 .site-header-menu .megamenu {
 		display: block;  /* hidden in small screens */
 	}
 	
@@ -2793,9 +2769,6 @@ Modal window design */
 	
 	.main-navigation ul.nav-menu > li.menu-item-has-children > .sub-nav {
 		position: absolute;
-		top: 100%;
-		left: auto;
-		right: auto;
 	}
 
 	.main-navigation .sub-nav .sub-nav {
@@ -2835,21 +2808,31 @@ Modal window design */
 		transform: rotate(-90deg);
 	}
 	
-	
-	/*////////////////////////////
-	// Content                           S*/
-		
-	.site-content article {
-		margin: 3rem 0 0;
-		padding: 1rem;
+	.top-bar{   /* remove top bar and its absoluted positioned buttons */
+		display: none;
+	}
+
+	.controls {
+		display: flex;
+		align-items: flex-start;
+	}
+	.site-title {
+		padding: 0;
+		flex-grow: 4;
 	}
 	
-	/* Page and the first article need margin-top to be adjusted to widget area @17.8.8*/
-	.site-content article:first-child,
-	.page .site-content article {
-		margin-top: 1.214rem;
+	.toolbar-buttons-open {
+		position: static;
 	}
 	
+	.megamenu {
+		position: static;
+		border: none;
+	}
+	.header-searchform {
+		position: static;
+		margin: 0.428em 0;
+	}
 	
 }
 
@@ -2862,10 +2845,13 @@ Modal window design */
 
 
 
-/*////////////////////////////////////
-// START width of 976-1359 pixels. */
 
-@media screen and (min-width: 976px) {
+
+
+/*////////////////////////////////////
+//    */
+
+@media screen and (min-width: 61em) { /* 976px */
 	
 	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 75%;
@@ -2881,37 +2867,7 @@ Modal window design */
 		width: 25%;
 		max-width: 60em;		
 	}
-	
-	.top-bar{
-		display: none;
-	}
-	
-	html.font-size-1 .top-bar {
-		height: 7.5em
-	}
-	
-	.site-title {
-		padding: 0.33rem 0;
-		max-width: calc( 100% - 500px ) ;			
-	}
-	
-	.site .toolbar-buttons-open {
-		left: auto;
-		right: 19em;
-	}
-	.font-size-1 .toolbar-buttons-open {
-		right: auto;
-	}
-	
-	.header-searchform {
-		top: 1em;
-	}
-	
-	.font-size-1 .header-searchform {
-		left: auto;
-	}
-	
-	
+		
 	body.custom-background-empty .site {
 		padding: 0;
 		margin-top: 0;

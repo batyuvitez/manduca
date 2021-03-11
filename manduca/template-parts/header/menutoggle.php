@@ -33,7 +33,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 		aria-hashpopup="false"
 		aria-controls="primary-nav-menu">
 		<?php 	echo manduca_get_svg( array( 'icon' => 'bars' ) );
-		echo manduca_get_svg( array( 'icon' => 'close' ) )?>
-		<?php echo $menu_name;?>
+		echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
+		<span class="desktop-text"><?php echo $menu_name;?></span>
 		
 		
