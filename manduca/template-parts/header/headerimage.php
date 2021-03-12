@@ -33,22 +33,23 @@ if( false != $header_image && (is_home() || is_front_page() && get_header_image(
     /*
      * Accessibility function: Get the alt text for header image
      **/
-    $header_image_data = get_theme_mod( 'header_image_data' ) ;   
-    if( $header_image_data ) {    
-        if( is_array( $header_image_data ) && isset( $data[ 'attachment_id' ] ) ) {
+    $header_image_data = get_theme_mod( 'header_image_data' ) ;
+    if( $header_image_data 
+        && is_array( $header_image_data )
+        && isset( $data[ 'attachment_id' ] ) ) {
             $video_settingsttachment_id =  $header_image_data[ 'attachment_id' ];
             $video_settingslt = trim( strip_tags( get_post_meta( $video_settingsttachment_id, '_wp_attachment_image_alt', true ) ) );
-        }
     }
-    ?>
-    <div id="wp-custom-header" class="wp-custom-header">
-        <?php echo wp_get_attachment_image( $header_image_data->attachment_id,
+    $img= wp_get_attachment_image( $header_image_data->attachment_id,
                                             'full',
                                             FALSE,
                                             array( 'class'=>'header-image',
-                                                    'alt'=>$video_settingslt)); ?>
-        
-    </div>
+                                                    'alt'=>$video_settingslt));
+    if ( $img ) : ?>
+        <div id="wp-custom-header" class="wp-custom-header">
+            <?php echo $img; ?>
+        </div>
+    <?php endif; ?>
 <?php endif; ?>
 
 <?php

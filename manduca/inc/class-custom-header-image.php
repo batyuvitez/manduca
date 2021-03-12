@@ -46,13 +46,13 @@ class Custom_Header_Image
 	public function manduca_custom_header_setup() {
 		$args = array(
 			// Text color and image (empty to use none).
-			'default-text-color'     => '222222',
+			'default-text-color'     => '232323',
 			'default-image'          => '',
 	
 			// Set height and width, with a maximum value for the width.
 			'height'                 => 200,
-			'width'                  => 1267,
-			'max-width'              => 1267,
+			'width'                  => 1070,  /* 80rem */
+			'max-width'              => 1070,
 	
 			// Support flexible height and width.
 			'flex-height'            => true,
@@ -62,7 +62,6 @@ class Custom_Header_Image
 			'random-default'         => false,
 	
 			// Callbacks for styling the header and the admin preview.
-			'wp-head-callback'       => array ($this, 'manduca_header_style'),
 			'admin-head-callback'    => array ($this, 'manduca_admin_header_style'),
 			'admin-preview-callback' => array ($this, 'manduca_admin_header_image'),
 			//since 21.2
@@ -107,45 +106,11 @@ class Custom_Header_Image
 	}
 	
 	
-	public function manduca_admin_header_style() {
-	?>
-		<style type="text/css" id="manduca-admin-header-css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-			font-family: "Open Sans", Helvetica, Arial, sans-serif;
-		}
-		#headimg h1,
-		#headimg h2 {
-			line-height: 1.84615;
-			margin: 0;
-			padding: 0;
-		}
-		#headimg h1 {
-			font-size: 26px;
-		}
-		#headimg h1 a {
-			color: #515151;
-			text-decoration: none;
-		}
-		#headimg h1 a:hover {
-			color: #21759b !important; /* Has to override custom inline style. */
-		}
-		#headimg h2 {
-			color: #757575;
-			font-size: 13px;
-			margin-bottom: 24px;
-		}
-		#headimg img {
-			max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
-		}
-		</style>
-	<?php
-	}
 	
 	
 	public function manduca_admin_header_image() {
 		?>
-		<div id="headimg">
+		<div id="heading">
 			<?php
 			if ( ! display_header_text() ) {
 				$style = ' style="display:none;"';

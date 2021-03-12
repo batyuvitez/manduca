@@ -46,11 +46,11 @@
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 						<?php get_template_part( '/template-parts/header/searchform' ); ?>					
-						<?php get_template_part( '/template-parts/header/headerimage' ); ?>
 						<?php get_template_part( '/template-parts/header/menutoggle' ); ?>
 					</div>
 					<?php get_template_part( '/template-parts/header/menu' ); ?>
 				</div>
+				<?php get_template_part( '/template-parts/header/headerimage' ); ?>
 			</header>
 			<?php get_template_part( '/template-parts/wrapper/wrapper', 'top' ); ?>
 				
