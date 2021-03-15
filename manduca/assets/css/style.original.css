@@ -62,10 +62,11 @@
  *
  *
  * /////////////////////////////////////////////
+ * //@see: https://zellwk.com/blog/media-query-units/
  * // media query breaking points
  * 23 em 368 header becomes only  2 lines
  * 37 em 592 px sidebar comes to right side
- * 41 em 656 px
+ * 41 em 656 px searchform and footer rearrangement
  * 48 em 768 px menu toggle becomes horizontal nav menu
  * 53 em 884 px /top bar disappears  
  * 61 em 976 px 
@@ -241,7 +242,7 @@ img {
 	--inverse-outline: ivory;
 	--featured-background: paleTurquoise;
 	--featured-text: maroon;
-	--ornament: darkSlateBlue;
+	--ornament: SlateGrey;
 	--high-contrast-background: black;
 	--high-contrast-text: white;
 }
@@ -342,10 +343,15 @@ Featured */
 /*//////////////////////////////////
 Button, link-button        */
 button, 
-.link-button,
-.link-button svg,
+.link-button {
+	background-color: var(--default-button-background);
+	color: var(--default-button-text);
+	border-width: 3px;
+	border-color:  var(--ornament);
+	border-style: outset;
+}
+
 .link-button a {
-	background-color: var(--default-button-background);; 
 	color: var(--default-button-text);
 }
 
@@ -399,25 +405,25 @@ button svg,
 .high-contrast-1 .megamenu.toggled-on,
 .high-contrast-1 .lighter-scheme {
     background-color: var(--high-contrast-background);;
-    color: Ivory ;
+    color: var(--default-background);
 }
 
 .high-contrast-1 svg {
 	background-color: var(--high-contrast-background);;
-	fill: Ivory;
+	fill: var(--high-contrast-text);;
 }
 
 .high-contrast-1 .site button[disabled],
 .high-contrast-1 .site input[disabled],
 .high-contrast-1 .site textarea[disabled] {
 		color: var(--featured-background);
-		background-color: maroon; 
+		background-color: var(--featured-text); 
 }
 
 .high-contrast-1 textarea,
 .high-contrast-1 input,
 .high-contrast-1 select {
-	background-color: white;
+	background-color: var(--high-contrast-text);
 	color: var(--high-contrast-background); ;
 }
 
@@ -425,7 +431,7 @@ button svg,
 .high-contrast-1 .link-button,
 .high-contrast-1 .link-button svg {
 	background-color: var(--high-contrast-background);; 
-	color: Ivory;
+	color: var(--high-contrast-text);;
 }
 
 
@@ -435,22 +441,22 @@ button svg,
 
 .high-contrast-1 .link-button,
 .high-contrast-1 .link-button a {
-	background-color: Ivory;
-	color: var(--high-contrast-background);; 
+	background-color: var(--high-contrast-text);
+	color: var(--high-contrast-background);
 }
 .high-contrast-1 .link-button svg {
 	fill: var(--high-contrast-background);;
-	background-color: white;
+	background-color: var(--high-contrast-text);
 }
 
 .high-contrast-1 .lighter-scheme {
-	background-color: #222;
+	background-color: var(--high-contrast-background);
 }
 
 .high-contrast-1 .featured-scheme {
-	border: 2px solid #c1ec15;
-	background-color: #111;
-	color: Ivory;
+	border: 2px solid var(--ornament);
+	background-color: var(--high-contrast-text);
+	color: var(--high-contrast-text);
 }
 
 .high-contrast-1 table.featured-scheme {
@@ -458,13 +464,13 @@ button svg,
 }
 
 .high-contrast-1 .featured-scheme svg {
-	fill: Ivory;
+	fill: var(--high-contrast-text);
 }
 
 
 .high-contrast-1 .inverse-scheme a  {
 	color: var(--high-contrast-text);
-  background-color: var(--high-contrast-background);;
+  background-color: var(--high-contrast-background);
 }
 
 .high-contrast-1 .inverse-scheme svg {
@@ -472,8 +478,8 @@ button svg,
 	}
 
 #high-contrast-1 {
-	background-color: var(--high-contrast-background);;
-	color: var(--default-background);
+	background-color: var(--high-contrast-background);
+	color: var(--high-contrast-text);
 }
 
 
@@ -514,81 +520,28 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 .gallery-item a,
-a.page-numbers.next,
-a.page-numbers.prev,
+.post-navigation a.next,
+.post-navigation a.prev,
 .main-navigation ul li a,
 .megamenu .sub-nav ul li {
 	border-bottom: none;
 }
 
-
-
-
-.footer-wrapper,
-.top-bar,
-.info-button,
-.content-date, 
-.content-date span{ 
-		text-align: center;
-}
-
-
-
-
-/*============================================================
-|                                                            |
-|               TYPOGRAPHY 				                       |
-|                                                            |
-==============================================================*/
-
-
-/* Form fields, general styles first */
-.site button,
-.site input,
-.site select,
-.site textarea {
-	font-size: 1.1em; /* corrected: 17.9.19  */
-	font-family: inherit;
-	max-width: 100%;
-}
-
 .site button,
 .site .link-button {
-	padding: 0.428em 0.857em;
-	margin: 0.428em 0.857em;
-	width: min-content;
+	padding: 0.4em 0.3em;  /* very narrow screens */
+	margin: 0.3em;
 }
+
+.site button,
+.site .link-button a {
+	display: flex;
+	align-items: center;	
+}
+
 
 .site button.dropdown-toggle {
 	margin: 0;
-	padding: 0;
-}
-
-.site input,
-.site textarea {
-		padding: 0.75em; 
-		margin-bottom: 0.5em;	
-}
-
-.site button,
-.site input {
-	line-height: normal;
-}
-.site textarea {
-	font-size: 100%;
-	overflow: auto;
-	vertical-align: top;
-	width: 84%;
-}
-
-/* Reset non-text input types */
-.site input[type="checkbox"],
-.site input[type="radio"],
-.site input[type="file"],
-.site input[type="hidden"],
-.site input[type="image"],
-.site input[type="color"] {
-	border: 0;
 	padding: 0;
 }
 
@@ -623,6 +576,65 @@ a.page-numbers.prev,
 
 
 
+
+/*============================================================
+|                                                            |
+|               FORMS 				                       |
+|                                                            |
+==============================================================*/
+
+
+/* Form fields, general styles first */
+.site button,
+.site input,
+.site select,
+.site textarea {
+	font-size: 1.1em; /* corrected: 17.9.19  */
+	font-family: inherit;
+	max-width: 100%;
+}
+
+
+
+
+.site input,
+.site textarea {
+		padding: 0.75em; 
+		margin-bottom: 0.5em;	
+}
+
+.site button,
+.site input {
+	line-height: normal;
+}
+
+.site textarea {
+	font-size: 100%;
+	overflow: auto;
+	vertical-align: top;
+	width: 84%;
+}
+
+/* Reset non-text input types */
+.site input[type="checkbox"],
+.site input[type="radio"],
+.site input[type="file"],
+.site input[type="hidden"],
+.site input[type="image"],
+.site input[type="color"] {
+	border: 0;
+	padding: 0;
+}
+
+
+
+/*============================================================
+|                                                             |
+|             OTHER TYPOGRAPHY                                |
+|                                                             |
+==============================================================*/
+
+
 .bypostauthor cite span {
 	background-image: none;
 	box-shadow: none;
@@ -635,17 +647,19 @@ a.page-numbers.prev,
   cursor: pointer;
 }
 
-.menu-toggle {
+.site .menu-toggle {
 	position: absolute;
 	top: 0.8em;
 	right: 0.2em;
+	max-width: 50%;
 }
 
-.toolbar-buttons-open {
+.site .toolbar-buttons-open {
     position: absolute;
     top: 0.8em;
     left: 0.2em;
 		cursor: pointer;
+		max-width: 50%;
 }
 
 
@@ -669,7 +683,7 @@ a.page-numbers.prev,
 	display: inline-block;
 }
 
-.more-link {
+.site .more-link.link-button {
 	max-width: 16em;
 	float: right;
 	margin: 2em 0 0;
@@ -780,11 +794,6 @@ video {
 
 
 /* post pagination @since 18.10.17-*/
-.site .pagination h4 {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
 
 .pagination span,
 .pagination a {
@@ -797,20 +806,17 @@ video {
 }
 
 
-a.page-numbers.next {
-	margin-left: 1rem; /* have a distenc from page numbers*/
-	
-}
-a.page-numbers.prev {
-	margin-right: 2rem;
-}
-
 .site-content nav {
 	clear: both;
 	overflow: hidden;
 	margin: 2rem 0;
 }
 
+.post-navigation >div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
 
 
 /* Image navigation */
@@ -886,8 +892,8 @@ body .site {   /* reading option orinal font remains always this.  */
 	text-rendering: optimizeLegibility;
 	position: relative;
 	overflow: hidden;
-	max-width: 80em; /* 1280px */
 	margin: 0 auto;
+	display: none;  /* will be displayed after page loaded  */
 }
 body .site,
 .toolbar-buttons .font-type-container > button:nth-child(2) {
@@ -1071,7 +1077,7 @@ body .site,
 
 .megamenu {
 		position:  relative;
-		top: -8em; /*Menu-toggle is absolutely positioned, navmenu not */
+		top: -18em; /*Menu-toggle is absolutely positioned, navmenu not */
 		z-index: 100;
 		width: 100%;
 		padding: 0 1em;
@@ -1081,11 +1087,6 @@ body .site,
 .main-navigation .menu-item .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
 	display: inline-block;
-}
-
-
-.site nav a {
-	padding: 0.5em;  /*target space should be large enough */
 }
 
 
@@ -1486,20 +1487,12 @@ div.entry-content > h2:first-child{
 
 /* CONTENT HEADER: */
 
-.content-date  {
-	padding: 0.5em;
-	margin-bottom: 0;
-	max-width: 5.8rem;  /*probing. 'width' not worked*/
-	min-width: 5.8rem;
-	position: relative;
-}
+.entry-header .content-date,
+	.excerpt .content-date {
+		margin: 0 -1em;
+		padding: 0.5em 1em;
+	}
 
-.content-date time {
-	position: absolute;
-	display: block;
-	top: 50%;
-	transform: translateY(-50%)
-}
 .site-content article header {
 	margin-bottom: 1em;
 }
@@ -1585,6 +1578,7 @@ img.aligncenter,
 
 .site-content article {
 	position: relative; /* to position the edit link */
+	margin-bottom: 5em; /*small screens */
 }
 .site-content article .entry-content,
 .site-content article header{
@@ -1852,14 +1846,6 @@ svg.icon-search,
 		height: 1.3em;
 		vertical-align: bottom;
 }
-
-.page-numbers.prev svg,
-.page-numbers.next svg{
-	width: 28px;  /* do not magnify */
-	height: 28px;
-	
-}
-
 
 .menu-toggle.toggled-on svg.icon-close {
 	display: inline;
@@ -2411,7 +2397,6 @@ Modal window design */
 /*                                    Media queries
 /*
 ===================================================================
-@see: https://zellwk.com/blog/media-query-units/
 */
 
 
@@ -2419,7 +2404,7 @@ Modal window design */
 //  Minimum width of 368 -592 pixels. */
 
 @media screen and (min-width: 23em) {
-
+	
 	.site button,
 	.site .link-button {
 		width: auto;
@@ -2441,6 +2426,11 @@ Modal window design */
 
 @media screen and (min-width: 37em) {
 	
+	.site .link-button,
+	.site button {
+		margin: 0.5625em 0.8437em;
+		padding: 0.5625 0.8437em;
+	}
 	
 	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
@@ -2541,7 +2531,7 @@ Modal window design */
 		width: 80%;
 	}
 
-	.entry-title-rapper {
+	.entry-title-wrapper {
 		margin-left: 1em;
 	}
 
@@ -2556,7 +2546,10 @@ Modal window design */
 			font-weight: 300;
 			text-align: center;
 			margin: 0;
-			padding: 1px;
+			padding: 0.5em;
+			max-width: 5.8rem;  /*probing. 'width' not worked*/
+			min-width: 5.8rem;
+			position: relative;
 	}
 	
 	.featured-scheme .content-date {
@@ -2572,6 +2565,13 @@ Modal window design */
 		padding-right: 0.14rem;
 	}
 		
+	
+	.content-date time {
+		position: absolute;
+		display: block;
+		top: 50%;
+		transform: translateY(-50%)
+}
 	.edit-link {
 		margin: 1em 0;
 	}
@@ -2609,7 +2609,7 @@ Modal window design */
 	
 	
 	/*archive navigation */
-	.nav-links {
+	.post-navigation {
 		margin-left: 0.7rem; /*Focus should be seen WCAG 2.4.11 & 12*/
 	}
 	
@@ -2625,31 +2625,7 @@ Modal window design */
 		margin: 0;
 	}
 	 
-	/*///////////////////////////////
-	   footer */
-
-	.site-info {
-		display: flex;
-	}
-		 
-	.footer-navigation{
-		width: 50%;
-	}
 	
-	.footer-navigation ul{
-		text-align: left;
-		margin: 0;
-	}
-	.footer-navigation ul li{
-		list-style-type: none;
-		display: inline-block;
-		padding: 0 0.357rem;
-	}
-	
-	.copyright-text {
-		text-align: right;
-		width: 50%;
-	}
 		
 	/* comments *to be revised */
 	.comment-respond form input[type="text"] {
@@ -2686,6 +2662,32 @@ Modal window design */
 	}
 	.top-bar {
 		height: 5em;
+	}
+	
+	/* Footer  */
+	.site-info {
+		display: flex;
+	}
+		 
+	.footer-navigation{
+		width: 50%;
+		border-bottom: none;
+	}
+	
+	.footer-navigation ul{
+		text-align: left;
+		margin: 0;
+		
+	}
+	.footer-navigation ul li{
+		list-style-type: none;
+		display: inline-block;
+		padding: 0 0.357rem;
+	}
+	
+	.copyright-text {
+		text-align: right;
+		width: 50%;
 	}
 }
 
@@ -2807,7 +2809,7 @@ Modal window design */
 	}
 	
 	
-	.menu-toggle {
+	.site .menu-toggle {
 		display: none;
 	}
 	
@@ -2826,9 +2828,10 @@ Modal window design */
 	.site-title {
 		padding: 0;
 		flex-grow: 4;
+		text-align: left;
 	}
 	
-	.toolbar-buttons-open {
+	.site .toolbar-buttons-open {
 		position: static;
 	}
 	
@@ -2918,7 +2921,6 @@ Modal window design */
 		
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
-		max-width: 1267px;
 		margin: 0 auto;
 		padding: 1em;
     }

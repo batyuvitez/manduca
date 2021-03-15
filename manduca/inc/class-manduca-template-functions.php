@@ -49,7 +49,7 @@ class Manduca_Template_Functions {
 								 );
 		
 			$args = array (
-				'before'            => '<div class="post-pagination"><span class="screen-reader-text" role="heading">' . __( 'Pages of this post', 'manduca' ) . ': </span>',
+				'before'            => '<div class="post-pagination"><span class="screen-reader-text">' . __( 'Pages of this post', 'manduca' ) . ': </span>',
 				'after'             => '</div>',
 				'link_before'       => '<span class="page-link">',
 				'link_after'        => '</span>',
@@ -61,6 +61,8 @@ class Manduca_Template_Functions {
 			 
 			wp_link_pages( $args );
 	}
+	
+	
 	
 	/*
 	 * Displays the navigation to next/previous set of posts, when you re in excerpt tamplate.
@@ -161,7 +163,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<a class="prev page-numbers link-button" href="%1$s">%2$s</a>',
+								'<a class="prev link-button" href="%1$s">%2$s</a>',
 								$link,
 								$args['prev_text']
 					);
@@ -172,7 +174,7 @@ class Manduca_Template_Functions {
 						// but some screen announce it after the title. This is the reason I use screen-reader-text
 						//@since 18.11
 						$page_links[] = sprintf(
-								'<span class="page-numbers current"><span class="screen-reader-text">%s </span>%s</span>',
+								'<span class="current"><span class="screen-reader-text">%s </span>%s</span>',
 								__( 'Current page', 'manduca' ),
 								number_format_i18n( $n )
 								);
@@ -202,7 +204,7 @@ class Manduca_Template_Functions {
 							$dots = true;
 						elseif ( $dots && ! $args['show_all'] ) :
 							$page_links[] = sprintf(
-													'<span class="page-numbers dots" aria-label="%1$s">%2$s</span>',
+													'<span class="dots" aria-label="%1$s">%2$s</span>',
 													//translators: This is the dots announcement in post navigation
 													__( 'Not indicated pages', 'manduca'),
 													manduca_get_svg( array( 'icon' => 'dots' ) ) 
@@ -218,7 +220,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<a class="next page-numbers link-button" href="%1$s" >%2$s</a>',
+								'<a class="next link-button" href="%1$s" >%2$s</a>',
 								$link,
 								$args['next_text']
 								);
@@ -228,17 +230,8 @@ class Manduca_Template_Functions {
 				if ( !$links ) {
 					return;
 				}
-					
 			
-				$nav = sprintf( '<nav class="navigation pagination">
-							   <h3 class="screen-reader-text">%1$s</h3>
-							<div class="nav-links">%2$s</div>
-							</nav>',
-							__( 'Posts navigation' ),
-							$links
-							);
-			
-				return $nav;
+				return $links;
 
 		}
 	

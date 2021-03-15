@@ -624,6 +624,11 @@ Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
 jQuery(document).ready(function($)
 {
     
+	///////////////////////////////////////////////////
+	// hide spinner, show content
+	
+	$('#page').css('display','block' );
+    $('#pageload-spinner').hide();
 	
    
     ///////////////////////////////////////////////

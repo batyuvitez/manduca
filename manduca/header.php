@@ -36,10 +36,12 @@
 	<body id="total" <?php body_class(Manduca_Template_Functions::body_classes()); ?>>
 	    <?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
 		<?php wp_body_open(); ?>
+		<?php get_template_part( '/template-parts/header/load-spinner' ); ?>
+		<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
 		<div id="page" class="hfeed site">
 			<header>										
-				<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
-				<div  id="top-bar" aria-hidden="true" class="top-bar inverse-scheme"></div>
+				<?php get_template_part( '/template-parts/header/liveregion' ); ?>
+				<?php get_template_part( '/template-parts/header/topbar' ); ?>
 				<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 				<div id="masthead" class="site-header megamenu-parent" >
 					<div class="controls">

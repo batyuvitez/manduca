@@ -14,7 +14,7 @@
 
 
 	<div class="entry-header-wrapper">
-		<div class="entry-title-rapper">
+		<div class="entry-title-wrapper">
 			
 					
 	
