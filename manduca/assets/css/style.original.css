@@ -227,11 +227,11 @@ img {
 |                                                            |
 ==============================================================*/
 :root {
-	--default-background: ivory;
+	--default-background: azure;
 	--default-text: black;
 	--default-link: royalBlue;
 	--default-button-background:saddleBrown;
-	--default-button-text:ivory;
+	--default-button-text:azure;
 	--default-outline: maroon;
 	--default-text-2: #232323;
 	--lighter-background: white;
@@ -535,7 +535,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 .site button,
 .site .link-button a {
-	display: flex;
+	display: inline-flex;
 	align-items: center;	
 }
 
@@ -843,9 +843,6 @@ video {
 
 .nav-next {
 	text-align: right;
-}
-.nav-single div a {
-	display: block; /* in order to have rectangular shape */
 }
 
 
@@ -2621,7 +2618,7 @@ Modal window design */
 	}
 	.site .nav-previous,
 	.site .nav-next {
-		flex-basis: 50%;
+		flex-basis: 45%;
 		margin: 0;
 	}
 	 
