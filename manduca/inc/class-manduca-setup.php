@@ -33,6 +33,7 @@ class Manduca_Setup {
 		
 	public function init() {
 		
+		new \Manduca\Debug_Mode;
 		new \Manduca\Enqueue;
 		
 		//@since 20.8
