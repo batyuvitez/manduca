@@ -2,7 +2,7 @@
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -26,7 +26,9 @@
 	<?php if ( have_posts() ) : ?>
 	
 		<header>
-			<h1 id="homepage" tabindex="0"><?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?></h1>
+			<h1 id="homepage">
+				<?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?>
+			</h1>
 		</header>
 	
 		<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>

@@ -2,11 +2,10 @@
 /**
  * Author archive page
  * 
- * @ Since 1.0
  **/
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 	Source code is available at https://github.com/batyuvitez/manduca
 
     This program is free software: you can redistribute it and/or modify
