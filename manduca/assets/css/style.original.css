@@ -882,6 +882,10 @@ html {
 	line-height: 1.64285; /*WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
 }
 
+.body:not(.debug) {
+	display: none;  /* In production site will be displayed after page loaded  */
+}
+
 /* Based on universal access: We are using the most readable fonts
 * http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf */
 
@@ -890,8 +894,9 @@ body .site {   /* reading option orinal font remains always this.  */
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
-	display: none;  /* will be displayed after page loaded  */
 }
+
+
 body .site,
 .toolbar-buttons .font-type-container > button:nth-child(2) {
 	font-family: Verdana,
@@ -1027,23 +1032,23 @@ body .site,
 /*//////////////////////////
 // Breadcrumb */
 .breadcrumb {
-		margin: 1em 0 1.4em; /*should be equally distance from parts. */
+		margin: 1em 0 1.4em; 
 		font-size: 0.9em;
 		padding: 0.5em 0;
 		border-top: 1px solid var(--ornament);
 		border-bottom: 1px solid var(--ornament);
 }
 
-.breadcrumb > ul >li,
-.breadcrumb > ul,
-.breadcrumb > span  {
+.breadcrumb  ul > li,
+.breadcrumb  ul,
+.breadcrumb  span  {
 	display: inline-block;
 }
 
-.breadcrumb > ul {
+.breadcrumb  ul {
 	padding: 0; /* reset browser's default */
 }
-.breadcrumb > span {
+.breadcrumb  span {
 	margin-right: 1em;
 }
 
@@ -2564,7 +2569,8 @@ Modal window design */
 		position: absolute;
 		display: block;
 		top: 50%;
-		transform: translateY(-50%)
+		transform: translateY(-50%);
+		max-width: 4.8em;
 }
 	.edit-link {
 		margin: 1em 0;

@@ -441,6 +441,9 @@ class Manduca_Template_Functions {
 		
 		//Detect visitors OS and browser and add to body tag	
 		$classes=array_merge( $classes , (new User_Agent_Detect() )->get_classes() );
+		if ( defined ('WP_DEBUG') && WP_DEBUG===TRUE) {
+			$classes[]='debug';
+		}
 		return $classes;
 	}
 }

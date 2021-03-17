@@ -28,7 +28,6 @@
  
 ?>
    
-</div>
 <svg id="pageload-spinner"
      width="70"
      height="70"

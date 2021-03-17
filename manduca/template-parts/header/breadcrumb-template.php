@@ -1,28 +1,37 @@
 <?php
 /**
- * Generate breadcrumb
- * Header template file
+ * Generate  and display breadcrumb
  * 
- * @ Theme: Manduca - focus on accessibility 
- * @ Since 17.10.7
  **/
 
  
- class manduca_breadcrumb extends breadcrumb {
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+**/
+
+class manduca_breadcrumb extends breadcrumb {
     
     
     
     public function customize_breadcrumb() {
 	
-        //translators: Breadcrumb prefix text: 
-        $prefix_text=__( 'You are here:', 'manduca' );
-        
-        //Translators: Breadcrumb name (for screen readers)
-        $name=__('breadcrumb', 'manduca');
-        $aria_label='aria-label="'.$name .'"';
         $this->templates = array(
-            'before' 		=> '<nav id="breadcrumb" class="breadcrumb" '.$aria_label.'><span>' .$prefix_text .'</span><ul>',
-            'after' 		=> '</ul></nav>',
+            'before' 		=> '<ul>',
+            'after' 		=> '</ul>',
             'standard' 		=> '<li>%1$s %2$s</li>',  // %1 :breadcrumb link %2: separator 
             'current' 		=> '<li class="current">%s</li>',
             'link' 			=> '<a href="%s"><span >%s</span></a>'
@@ -61,9 +70,27 @@
          //Translators: Breadcrumb page not found text
          '404_error' => __( 'Page not found', 'manduca' )
 		);
-		
 	}
 }
+
+
+
+
+//translators: Breadcrumb prefix text: 
+$prefix_text=__( 'You are here:', 'manduca' );
+
+//Translators: Title of breadcrumb navigation (for screen reader users)
+$name=__('breadcrumb', 'manduca');       
+
 $breadcrumb = new manduca_breadcrumb();
 $breadcrumb->customize_breadcrumb();
-echo $breadcrumb->output();
+
+?>
+
+
+<div id="breadcrumb" class="breadcrumb" >
+        <nav aria-label="<?php echo $aria_label; ?>">
+            <span><?php echo $prefix_text; ?></span>
+            <?php echo $breadcrumb->output(); ?>
+        </nav>
+</div>
