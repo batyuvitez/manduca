@@ -511,21 +511,12 @@ html.link-appearance-1 a,
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: .13em; 
 }
- LINKS */
 
 body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	text-decoration: none;
 	padding: 0;
 }
 
-
-.gallery-item a,
-.post-navigation a.next,
-.post-navigation a.prev,
-.main-navigation ul li a,
-.megamenu .sub-nav ul li {
-	border-bottom: none;
-}
 
 .site button,
 .site .link-button {
@@ -536,14 +527,16 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 .site button,
 .site .link-button a {
 	display: inline-flex;
-	align-items: center;	
+	align-items: center;
+	justify-content: space-between;
 }
 
-
-.site button.dropdown-toggle {
-	margin: 0;
-	padding: 0;
+.site .more-link.link-button {
+	max-width: 16em;
+	float: right;
+	margin: 2em 0 0;
 }
+
 
 /* Buttons */
 .site input[type="submit"],
@@ -556,6 +549,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	padding: 0.51rem 0.72rem;
 	white-space: nowrap;
 }
+
 
 
 
@@ -582,6 +576,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 |               FORMS 				                       |
 |                                                            |
 ==============================================================*/
+
 
 
 /* Form fields, general styles first */
@@ -673,20 +668,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	background-color: rgba(0,0,0,0.3);
 }
 
-
-.site .link-button,
-.site .link-button a {
-	text-decoration: none;				
-}
-
 .reply {
 	display: inline-block;
-}
-
-.site .more-link.link-button {
-	max-width: 16em;
-	float: right;
-	margin: 2em 0 0;
 }
 
 
@@ -1023,7 +1006,6 @@ body .site,
 
 .site-title {	
 	font-weight: 500;
-	line-height: 2;
 	font-size: 1.5em;
 	text-align: center;
 }
@@ -1089,8 +1071,9 @@ body .site,
 .main-navigation .menu-item .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
 	display: inline-block;
+	margin: 0;
+	padding: 0;
 }
-
 
 .no-js .main-navigation ul-sub-menu {
 	display: block;
@@ -2430,11 +2413,14 @@ Modal window design */
 
 @media screen and (min-width: 37em) {  /* 592px */
 	
-	.site .link-button,
-	.site button {
+	.site .link-button {
 		margin: 0.5625em 0.8437em;
-		padding: 0.5625em 0.8437em;
 	}
+	
+	.site button {
+			padding: 0.5625em 0.8437em;
+	}
+	
 	
 	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
@@ -2745,6 +2731,7 @@ Modal window design */
 		display: block;  /* hidden in small screens */
 	}
 	
+	
 	.megamenu ul.nav-menu {
 		text-align: center;
 	}
@@ -2832,8 +2819,12 @@ Modal window design */
 	}
 	
 	.site .toolbar-buttons-open {
-		position: static;
+		position: relative;
+		top: 3px;
+		min-width: 14em;
+		margin-right: 2em;
 	}
+	
 	
 	.megamenu {
 		position: static;
