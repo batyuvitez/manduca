@@ -89,7 +89,7 @@ $breadcrumb->customize_breadcrumb();
 
 
 <div id="breadcrumb" class="breadcrumb" >
-        <nav aria-label="<?php echo $aria_label; ?>">
+        <nav aria-label="<?php echo $name; ?>">
             <span><?php echo $prefix_text; ?></span>
             <?php echo $breadcrumb->output(); ?>
         </nav>
