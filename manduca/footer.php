@@ -26,9 +26,8 @@
 ?>
 			<?php get_template_part ('template-parts/wrapper/wrapper','bottom'); ?>					
 			<?php get_template_part( 'template-parts/footer/footer', 'before' ); ?>
-			<div id="footer-wrapper"
-				 class="footer-wrapper inverse-scheme">
-				<footer id="colophon" aria-label="<?php _e( 'Footer area' , 'manduca' ); ?>">
+			<div id="footer-wrapper" class="footer-wrapper inverse-scheme">
+				<footer id="colophon">
 					<div class="site-info">
 						<?php get_template_part( 'template-parts/footer/footer', 'menu' ); ?>
 						<?php get_template_part( 'template-parts/footer/footer', 'siteinfo' ); ?>

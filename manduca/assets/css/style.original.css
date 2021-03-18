@@ -674,14 +674,22 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 
-/*//////////////////////////////
-//  Responsive images */
+/*============================================================
+|                                                             |
+|             IMAGES                                          |
+|                                                             |
+==============================================================*/
 
 .entry-content img,
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
+
+img.header-image {
+	display: block;
+}
+
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
@@ -856,8 +864,12 @@ video {
 }
 
 
-/* Basic structure
-============================================================-- */
+/*============================================================
+|                                                             |
+|             STRUCTURE                                       |
+|                                                             |
+==============================================================*/
+
 
 /* Body, links, basics */
 html {
@@ -892,6 +904,13 @@ body .site,
 				 Roboto,sans-serif;   
 }
 
+.site-header .controls,
+.breadcrumb  > nav,
+.site-info {
+	max-width: 93em;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /*//////////////////////////////////////////////////////////
 * Assistive text  */
