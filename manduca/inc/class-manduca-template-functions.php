@@ -1,13 +1,12 @@
 <?php
 /*
- * Functions using in template files
- *@Since 18.9
+ * Static functions used by template files
  **/
 
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -163,7 +162,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<a class="prev link-button" href="%1$s">%2$s</a>',
+								'<div class="link-button"><a class="prev" href="%1$s">%2$s</a></div>',
 								$link,
 								$args['prev_text']
 					);
@@ -194,9 +193,7 @@ class Manduca_Template_Functions {
 														  number_format_i18n( $n )
 														 );
 							$page_links[] = sprintf(
-								'<a class="page-numbers link-button" href="%1$s">
-								%2$s
-								</a>',
+								'<div class="link-button"><a class="page-numbers" href="%1$s">%2$s</a></div>',
 										$link,
 										$screen_reader_text
 										);
@@ -220,7 +217,7 @@ class Manduca_Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<a class="next link-button" href="%1$s" >%2$s</a>',
+								'<div class="link-button"><a class="next" href="%1$s" >%2$s</a></div>',
 								$link,
 								$args['next_text']
 								);

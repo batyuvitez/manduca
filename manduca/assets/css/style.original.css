@@ -520,15 +520,15 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 .site button,
 .site .link-button {
-	padding: 0.4em 0.3em;  /* very narrow screens */
 	margin: 0.3em;
 }
 
 .site button,
-.site .link-button a {
+.site .link-button > a {
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 10px;  /* very narrow screens */
 }
 
 .site .more-link.link-button {
@@ -1845,9 +1845,10 @@ svg.icon-search,
 
 
 
-.nav-single svg {
-		width: 1.3em;
-		height: 1.3em;
+.nav-single svg,
+.link-button svg {
+		width: 1.4em;
+		height: 1.4em;
 		vertical-align: bottom;
 }
 
@@ -2531,8 +2532,10 @@ Modal window design */
 	.entry-header-wrapper {
 		display: flex;
 		flex-direction: row-reverse;
-		justify-content: flex-end;  
+		justify-content: flex-end;
+		min-height: 4em;
 	}
+	
 	.entry-header-wrapper h1,
 	.entry-header-wrapper h2 {
 		width: 80%;
