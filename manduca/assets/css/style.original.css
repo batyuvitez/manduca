@@ -1106,7 +1106,7 @@ body .site,
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
-    margin-right: 2rem;
+    margin-right: 1rem;
 		width: 100%;
 }
 
@@ -2775,7 +2775,8 @@ Modal window design */
 		text-align: center;
 	}
 	
-	.megamenu ul.nav-menu > li > a {
+	.megamenu ul.nav-menu > li.menu-item > a,
+	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a {
 		padding:  0.5em 1em;
 		white-space: nowrap;
 	}
@@ -2887,6 +2888,7 @@ Modal window design */
 		margin-bottom: 0;
 		box-shadow: none;
 	}
+	
 	/* top level navigation item */
 	.megamenu ul.nav-menu > li.menu-item > a,
 	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a{
