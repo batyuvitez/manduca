@@ -1081,13 +1081,16 @@ body .site,
 }
 
 .megamenu {
-		position:  relative;
-		top: -18em; /*Menu-toggle is absolutely positioned, navmenu not */
+		position:  absolute;
+		top: 4.8em; /*Menu-toggle is absolutely positioned, navmenu not */
+		width: fit-content;
+		right: 0.5em;
+		left: auto;
 		z-index: 100;
-		width: 100%;
-		padding: 0 1em;
+		padding: 1em 2em;
 		border: 5px solid var(--ornament);  /* Need to separatefrom content */
 }
+
 
 .main-navigation .menu-item .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
@@ -1103,8 +1106,14 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	padding: 0;
+	padding: 0.3em 0.4em;
 	margin: 0.5em 0;
+	border: 1px solid var(--ornament);
+}
+
+.megamenu ul.nav-menu  li.menu-item > a,
+.megamenu ul.nav-menu  li.menu-item > .submenu-container > a {
+	font-size: 1.4em;
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
