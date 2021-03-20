@@ -654,6 +654,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
     top: 0.8em;
     left: 0.2em;
 		cursor: pointer;
+		padding-top: 0.76em;
+		padding-bottom: 0.76em;
 		max-width: 50%;
 }
 
@@ -1001,7 +1003,7 @@ body .site,
 }
 
 .header-searchform input {
-	padding: 0 0.5em;
+	padding: .82em 0.5em;
 	margin: 0;
 }
 
@@ -2433,15 +2435,7 @@ Modal window design */
 
 @media screen and (min-width: 37em) {  /* 592px */
 	
-	.site .link-button {
-		margin: 0.5625em 0.8437em;
-	}
-	
-	.site button {
-			padding: 0.5625em 0.8437em;
-	}
-	
-	
+		
 	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
 		width: 66%;
@@ -2664,7 +2658,7 @@ Modal window design */
 
 @media screen and (min-width: 41em) {
 	.font-size-0 .header-searchform  {  /* 656px */
-		top: 1.15em;
+		top: 1.2em;
 		right: 0.35em;;
 		left: 17em;
 	}
