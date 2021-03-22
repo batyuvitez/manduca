@@ -1598,7 +1598,6 @@ img.aligncenter,
 .site-content article .entry-content,
 .site-content article header{
 	padding: 0 0.5em;
-	margin-top: -0.4em; /*negative margin to compensate too big margin at image bottom. */
 }
 
 .post-pagination {
@@ -2594,7 +2593,7 @@ Modal window design */
 		margin-right: 1em;
 		margin-bottom: 0.75em;
 		margin-left: 0;
-		width: 35%;
+		width: 32%;
 		max-height: 15rem;
 	}
 	.excerpt-thumbnail  img {
@@ -2708,7 +2707,7 @@ Modal window design */
 /*//////////////////////////////////
  * sidebar comes in */
 
-@media screen and (min-width: 48em) { /* 968px */
+@media screen and (min-width: 48em) { /* 768px */
 	
 	/* One column layout sincd @17.8.9*/
 	.page-template-full-width .site-content {
@@ -2722,15 +2721,9 @@ Modal window design */
 	}
 	
 	.site-content article {  /* Content  */		
-		margin: 3rem 0 0;
+		margin: 0 0 0 3 rem;
 		padding: 1rem;
 	}
-	
-	
-	.site-content article:first-child, /* Page and the first article top margin adjusted */
-	.page .site-content article {
-		margin-top: 1.214rem;
-	}	
 }
 
 
