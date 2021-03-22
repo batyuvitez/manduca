@@ -2018,7 +2018,6 @@ svg.icon-search,
 
 /* for this example: mobile */
 @media (max-width: 44.375em) {
-
   .simpletooltip,
   .minimalist-simpletooltip,
   .minimalist-left-simpletooltip  {
@@ -2765,12 +2764,11 @@ Modal window design */
 	}
 		
 	.main-navigation .sub-nav ul li a {
-		white-space: nowrap;
 		display: inline-block;
-}
+	}
 
 	.main-navigation ul ul .menu-item-has-children > a {
-		padding-right: 2.0625em;
+		padding-right: 2em;
 	}
 	
 	

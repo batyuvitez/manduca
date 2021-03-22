@@ -846,3 +846,8 @@ msgstr ""
 #. Author of the theme
 msgid "Zsolt Edelényi"
 msgstr "Edelényi Zsolt"
+
+#. Author of the theme
+msgid "Change to"
+msgstr "Váltás: "
+
