@@ -1,7 +1,7 @@
 <?php
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -36,6 +36,11 @@ if ( has_post_thumbnail() && ! post_password_required() && !is_search ()) : ?>
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
+
+<?php else : ?>
+	
+	<div class="post-thumbnail image-fallback" aria-hidden="true"></div>
+
 
 <?php endif; ?>
 

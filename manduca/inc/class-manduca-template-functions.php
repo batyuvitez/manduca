@@ -378,8 +378,9 @@ class Manduca_Template_Functions {
 
 			if ( ! $post ) {
 				$output = '';
-			} else {
-					$output = sprintf( '<a href="%1$s" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s<span aria-hidden="true"</a>',
+			}
+			else {
+					$output = sprintf( '<a href="%1$s" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s</a>',
 						   get_permalink( $post ),
 						   $post->post_title,
 						   manduca_get_svg( array( 'icon' => 'angle-circle-left') ),

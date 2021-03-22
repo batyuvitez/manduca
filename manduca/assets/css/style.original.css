@@ -826,14 +826,6 @@ video {
 	
 }
 
-/* Single post navigation*/ 
-.nav-single div {
-	padding: 1rem;
-	margin: 0.333rem 0;
-	border: 1px solid #eaeaea;
-	/* font-size: 90%;removed since 17.9.7 */
-}
-
 .nav-next {
 	text-align: right;
 }
@@ -907,6 +899,7 @@ body .site,
 }
 
 .site-header .controls,
+.megamenu,
 .breadcrumb  > nav,
 .site-info {
 	max-width: 93em;
@@ -2486,7 +2479,8 @@ Modal window design */
 }
 
 
-  /* 2 colmns replaced by flex
+  /*/////////////////////////////////
+	 * * 2 colmns replaced by flex
 	*/	
 	
 	.entry-header-wrapper {
@@ -2494,15 +2488,13 @@ Modal window design */
 		flex-direction: row-reverse;
 		justify-content: flex-end;
 		min-height: 4em;
+		margin-bottom: 1em;
 	}
 	
 	.entry-header-wrapper h1,
 	.entry-header-wrapper h2 {
-		width: 80%;
-	}
-
-	.entry-title-wrapper {
-		margin-left: 1em;
+		width: calc( 100% - 5.8em);
+		margin: 0 0 0 1em;
 	}
 
 	/*content date format*/
@@ -2532,14 +2524,20 @@ Modal window design */
 		padding-right: 0.14rem;
 	}
 		
+	.content-date {
+		
+	}
 	
 	.content-date time {
-		position: absolute;
-		display: block;
-		top: 50%;
-		transform: translateY(-50%);
-		max-width: 4.8em;
-}
+		display: flex;
+		flex-direction: column;
+		width: 4.8em;	
+	}
+	
+	.content-date time span {
+		text-align: center;
+	}
+
 	.edit-link {
 		margin: 1em 0;
 	}
@@ -2591,6 +2589,9 @@ Modal window design */
 	.site .nav-next {
 		flex-basis: 45%;
 		margin: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	 
 	
