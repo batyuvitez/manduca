@@ -2282,106 +2282,7 @@ Modal window design */
     list-style: none;
 }
 
-@media screen and (min-width: 440px ) {
-.font-size-0 .toolbar-buttons-table .row {
-			display: flex;
-			justify-content: center;
-	}
 
-
-.font-size-0 	.toolbar-buttons-table .row .toolbar-label {
-		width: 50%;
-		text-align: right;
-		border-top: 1px var(--default-background); dotted;
-	}
-
-.font-size-0 	.toolbar-buttons-table .buttons-wrapper {
-		display: inline-flex;
-	}
-	
-}
-
-@media screen and (min-width: 600px)
-{
-	.menu-item-has-children:hover .sub-nav {
-		display: block;
-	}
-	
-	.distance-keeper {
-		display: none;
-	}
-
-    
-  .toolbar-buttons {
-    position: absolute;
-		padding: 2em;
-		top: 7.5em;
-		right: 0;
-		left: auto;
-		z-index: 100;
-		max-width: 43em;
-		border: 3px solid DarkSlateBlue;
-    }
-    
-		li.button-container {
-			padding-left: 1rem;
-			margin: 1rem 0;
-    }
-
-
-	.toolbar-buttons button#font-size-0 span{
-		font-size: 0.8em;
-	}
-	.toolbar-buttons button#font-size-1 span {
-		font-size: 0.9em;
-	}
-	
-	
-	.toolbar-buttons button#target-self span,
-	.toolbar-buttons button#target-default span{
-		font-size: 0.8em;
-	}
-	/*i don't know why I have to positionit'*/
-	.toolbar-buttons button#target-default {
-				position: relative;
-				top: 6px;
-	}
-
-	.site .toolbar-buttons .info-container {
-		display: block;
-		margin: 14px 0;
-	}
-}
-
-@media screen and (min-width: 660px ) {
-	.toolbar-buttons-table .row {
-			display: flex;
-			justify-content: center;
-	}
-
-
-	.toolbar-buttons-table .row .toolbar-label {
-		width: 50%;
-		text-align: right;
-		border-top: 1px var(--default-background); dotted;
-	}
-
-.font-size-1 .toolbar-buttons-table .row .toolbar-label {
-		width: 39%; /* it's not perfect, need to find another solution */
-}
-
-	.toolbar-buttons-table .buttons-wrapper {
-		display: inline-flex;
-	}
-	
-	.toolbar-buttons-table .button button {
-			min-width: 8em;
-			min-height: inherit;
-	}
-	
-}
-
-/* end of accessibility toolbar */
 
 
 
@@ -2434,6 +2335,64 @@ Modal window design */
 	}
 
 }
+
+/*//////////////////////////////////////
+ * Reading options design
+ * */
+@media screen and (min-width: 36em) { /*576px */
+
+	.menu-item-has-children:hover .sub-nav {
+		display: block;
+	}
+	
+	.distance-keeper {
+		display: none;
+	}
+
+    
+  .toolbar-buttons {
+    position: absolute;
+		padding: 2em;
+		top: 7.5em;
+		right: 0;
+		left: auto;
+		z-index: 100;
+		max-width: 45em;
+		border: 3px solid var(--ornament);
+    }
+    
+		li.button-container {
+			padding-left: 1rem;
+			margin: 1rem 0;
+    }
+
+
+	.toolbar-buttons button#font-size-0 span{
+		font-size: 0.8em;
+	}
+	.toolbar-buttons button#font-size-1 span {
+		font-size: 0.9em;
+	}
+	
+	
+	.toolbar-buttons button#target-self span,
+	.toolbar-buttons button#target-default span{
+		font-size: 0.8em;
+	}
+	/*i don't know why I have to positionit'*/
+	.toolbar-buttons button#target-default {
+				position: relative;
+				top: 6px;
+	}
+
+	.site .toolbar-buttons .info-container {
+		display: block;
+		margin: 14px 0;
+	}
+}
+
+
+
 
 
 
