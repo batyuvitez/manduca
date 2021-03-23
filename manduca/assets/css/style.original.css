@@ -1075,14 +1075,14 @@ body .site,
 }
 
 .megamenu {
-		position:  absolute;
+		position:  fixed;
 		top: 4.8em; /*Menu-toggle is absolutely positioned, navmenu not */
-		width: fit-content;
+		width: 80%;
 		right: 0.5em;
 		left: auto;
 		z-index: 100;
 		padding: 1em 2em;
-		border: 5px solid var(--ornament);  /* Need to separatefrom content */
+		border: 1px solid var(--ornament);
 }
 
 
@@ -1100,7 +1100,7 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	margin: 0.6em 0;
+	margin: 1em 0;
 	
 }
 
@@ -1109,6 +1109,8 @@ body .site,
 	font-size: 1.1em;
 	padding: 0.3em 0.4em;
 	border: 1px solid var(--ornament);
+	font-weight: normal;
+	
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
@@ -1116,20 +1118,8 @@ body .site,
 		width: 100%;
 }
 
-.main-navigation .sub-nav {  
-		top: 100%;
-		right: 0;
-		padding: 0;
-		z-index: 150;
-		width: 150%;
-}
-
 .main-navigation .sub-nav >ul {
 	margin: 1.5em;
-}
-
-.main-navigation .sub-nav .sub-nav {
-	width: 120%;
 }
 
 .main-navigation ul .sub-nav:not(.toggled-on) {
@@ -1138,7 +1128,13 @@ body .site,
 	
 .main-navigation ul .sub-nav.toggled-on{
 	display: block;
+	top: 100%;
+	right: 0;
+	padding: 0;
+	z-index: 150;
+	width: 120%;
 	position: absolute; /* below the menu title */
+	border: 1px solid var(--ornament);
 }
 
 .main-navigation .sub-nav ul.nav-menu {
@@ -2350,14 +2346,9 @@ Modal window design */
  * */
 @media screen and (min-width: 36em) { /*576px */
 
-	.menu-item-has-children:hover .sub-nav {
-		display: block;
-	}
-	
 	.distance-keeper {
 		display: none;
 	}
-
     
   .toolbar-buttons {
     position: absolute;
@@ -2758,20 +2749,12 @@ Modal window design */
 	/*//////////////////////////////////
 	// sub-menu         */
 	
-	.main-navigation ul.nav-menu > li.menu-item-has-children > .sub-nav {
-		position: absolute;
-	}
-
 	.main-navigation .sub-nav .sub-nav {
 		top: 0;
 		left: 100%;
 		right: auto;
 	}
-	.site ul	.sub-nav ul {
-		margin: 0;
-		padding: 0;
-	}
-
+	
 	.main-navigation .megamenu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0;
