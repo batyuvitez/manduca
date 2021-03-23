@@ -1100,14 +1100,15 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	padding: 0.3em 0.4em;
-	margin: 0.5em 0;
-	border: 1px solid var(--ornament);
+	margin: 0.6em 0;
+	
 }
 
 .megamenu ul.nav-menu  li.menu-item > a,
 .megamenu ul.nav-menu  li.menu-item > .submenu-container > a {
-	font-size: 1.4em;
+	font-size: 1.1em;
+	padding: 0.3em 0.4em;
+	border: 1px solid var(--ornament);
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
@@ -1118,10 +1119,18 @@ body .site,
 .main-navigation .sub-nav {  
 		top: 100%;
 		right: 0;
-		left: 0;
 		padding: 0;
-		z-index: 150;		
-	}
+		z-index: 150;
+		width: 150%;
+}
+
+.main-navigation .sub-nav >ul {
+	margin: 1.5em;
+}
+
+.main-navigation .sub-nav .sub-nav {
+	width: 120%;
+}
 
 .main-navigation ul .sub-nav:not(.toggled-on) {
 		display: none;	
