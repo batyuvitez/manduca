@@ -646,17 +646,18 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	position: absolute;
 	top: 0.8em;
 	right: 0.2em;
-	max-width: 50%;
+	max-width: 43%;
 }
 
 .site .toolbar-buttons-open {
     position: absolute;
-    top: 0.8em;
+    top: 1.1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
 		padding-top: 0.76em;
 		padding-bottom: 0.76em;
-		max-width: 50%;
+		max-width: 52%;
+		font-size: 0.8em;
 }
 
 
@@ -2042,13 +2043,10 @@ svg.icon-search,
 |                                                            |
 ==============================================================*/
 
-.font-size-1 .desktop-text {
-	display: none;
-}
 
 .font-size-1 .header-searchform {
 	display: block;
-	top: 5em;
+	top: 9em;
 }
 
 .font-size-1 .search-wrapper {
@@ -2059,14 +2057,34 @@ svg.icon-search,
 	padding: 0.5em;
 }
 
+#font-size-1 span,
+.font-size-1 {
+    font-size: 150%;
+		word-break: break-all;
+}
 
 
+.font-size-1 .top-bar {
+	display: block;
+	height: 15rem;
+}
 
+.font-size-1 .site-header {
+	position: static;
+}
 
+.font-size-1 .menu-toggle {
+	max-width: 100%;
+	top: 5rem;
+}
+
+.font-size-1 .toolbar-buttons-open {
+	max-width: 100%;-
+}
 
 /*============================================================
 |                                                            |
-|           READING OPTIONS                                  |
+|           Dyslexie font                                    |
 |                                                            |
 ==============================================================*/
  
@@ -2094,27 +2112,6 @@ svg.icon-search,
 
 #font-type-0 span {
 	font-family: sans-serif;
-}
-
-
-
-/*////////////////////////////////////
- * FONT SIZE */
-
-#font-size-1 span,
-.font-size-1 {
-    font-size: 150%;
-		word-break: break-all;
-}
-
-
-.font-size-1 .top-bar {
-	display: block;
-	height: 13rem;
-}
-
-.font-size-1 .site-header {
-	position: static;
 }
 
 
@@ -2325,8 +2322,19 @@ Modal window design */
 	.header-searchform {
 		top: 5.5em;
 	}
-
 }
+
+/*/////////////////////////////////////
+//  Toolbar buttons normal font size  */
+
+@media screen and (min-width: 29em) {
+	.site .toolbar-buttons-open {
+		font-size: 1em;
+		top: 0.8em;
+	}
+}
+
+
 
 /*//////////////////////////////////////
  * Reading options design
@@ -2680,7 +2688,7 @@ Modal window design */
 	}
 	
 	.site-content article {  /* Content  */		
-		margin: 0 0 0 3 rem;
+		margin: 0 0 0 3rem;
 		padding: 1rem;
 	}
 }
@@ -2798,7 +2806,7 @@ Modal window design */
 	.site .toolbar-buttons-open {
 		position: relative;
 		top: 3px;
-		min-width: 14em;
+		min-width: 16em;
 		margin-right: 2em;
 	}
 	
@@ -2878,6 +2886,7 @@ Modal window design */
 	
 	.footer-wrapper {
 		margin-bottom: 0;
+	}
 }
 
 
@@ -3028,7 +3037,6 @@ Modal window design */
 	}
 
 }
-
 
 
 @font-face {
