@@ -1306,22 +1306,9 @@ body .site,
 	padding-left: 2.5em;
 	padding: 1.5em;
 	border-left: 0.5em var(--ornament)  solid;
-	font-size: 1.2em;
+	font-size: 1.05em;
 	line-height: 1.5;
 }
-
-
-.site blockquote p {
-	display: inline;
-}
-
-.site blockquote p:last-child {
-	margin-bottom: 0;
-}
-.site blockquote footer {
-	margin-top: 1em;
-}
-
 
 .site cite {
 	font-size: 95%;
@@ -1498,17 +1485,9 @@ div.entry-content > h2:first-child{
 }
 
 
-/* CONTENT HEADER: */
+/*////////////////////////////////
+// CONTENT HEADER: */
 
-.entry-header .content-date,
-	.excerpt .content-date {
-		margin: 0 -1em;
-		padding: 0.5em 1em;
-	}
-
-.site-content article header {
-	margin-bottom: 1em;
-}
 
 .featured-post {
 	overflow: hidden;
@@ -1519,8 +1498,9 @@ div.entry-content > h2:first-child{
 	margin-bottom: 1rem;
 }
 
-/* entry-meta*/
 
+/*////////////////////////////
+entry-meta*/
 .metatags {
 	clear: both;
 }
@@ -1592,10 +1572,6 @@ img.aligncenter,
 .site-content article {
 	position: relative; /* to position the edit link */
 	margin-bottom: 5em; /*small screens */
-}
-.site-content article .entry-content,
-.site-content article header{
-	padding: 0 0.5em;
 }
 
 .post-pagination {
@@ -1842,7 +1818,7 @@ a.comment-edit-link {
 	width: 1.2em;
 	height: 1.2em;
 	margin: 0 0.4em;
-	vertical-align: baseline;
+	vertical-align: text-top;
 }
 
 svg.icon-search,
@@ -2686,15 +2662,6 @@ Modal window design */
 		margin: 0
 	}
 	
-	/*Header*/
-	.search-submit {
-		margin-left: 0.5em;
-	}
-	
-	.site-content article {  /* Content  */		
-		margin: 0 0 0 3rem;
-		padding: 1rem;
-	}
 }
 
 
@@ -2819,7 +2786,6 @@ Modal window design */
 	.post-navigation > div {
 		justify-content: flex-start;
 	}
-	
 	
 }
 
