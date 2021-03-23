@@ -654,9 +654,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
     top: 1.1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
-		padding-top: 0.76em;
-		padding-bottom: 0.76em;
-		max-width: 52%;
+		padding-top: 0.85em;
+		padding-bottom: 0.85em;
 		font-size: 0.8em;
 }
 
@@ -1840,9 +1839,9 @@ a.comment-edit-link {
 ==============================================================*/
 
 .site svg {
-	width: 1em;
-	height: 1em;
-	margin: 0 0.33em;
+	width: 1.2em;
+	height: 1.2em;
+	margin: 0 0.4em;
 	vertical-align: baseline;
 }
 
@@ -2199,8 +2198,9 @@ Modal window design */
 }
 
 .toolbar-buttons h1 {
-	margin: 1em 0 0 0;
+	margin: 1em 0;
 	font-size: 1.35em;
+	text-align: center;
 }
 
 .toolbar-buttons p {
@@ -2211,6 +2211,10 @@ Modal window design */
 	border: 1px solid var(--ornament);
 	margin-bottom: 0.5em;
 	padding: 0.5em;
+}
+
+.toolbar-buttons-table {
+	margin-top: 2em;
 }
 
 .toolbar-buttons-table .row .toolbar-label {
@@ -2335,7 +2339,7 @@ Modal window design */
 @media screen and (min-width: 29em) {
 	.site .toolbar-buttons-open {
 		font-size: 1em;
-		top: 0.8em;
+		top: 0.9em;
 	}
 }
 
@@ -2797,7 +2801,7 @@ Modal window design */
 	
 	.site .toolbar-buttons-open {
 		position: relative;
-		top: 3px;
+		top: 0.3125em;
 		min-width: 16em;
 		margin-right: 2em;
 	}
