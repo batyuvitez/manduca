@@ -686,6 +686,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	display: block;  /*small screen shouldn't float */
+	margin: 0.5rem auto;
 }
 
 img.header-image {
@@ -1553,22 +1555,6 @@ strong.search-excerpt {
 	text-transform: uppercase;
 }
 
-/* Images with caption*/
-img.alignleft,
-.wp-caption.alignleft {
-	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
-}
-img.alignright,
-.wp-caption.alignright {
-	margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
-}
-
-img.aligncenter,
-.wp-caption.aligncenter {
-	clear: both;
-	margin-bottom: 0.857em;
-}
-
 .site-content article {
 	position: relative; /* to position the edit link */
 	margin-bottom: 5em; /*small screens */
@@ -2324,6 +2310,32 @@ Modal window design */
 }
 
 
+/*/////////////////////////////////////
+//  excerpt-size image Images should be floated
+*/
+@media screen and (min-width: 31em) {
+
+	
+	img.alignleft,
+	.wp-caption.alignleft {
+		float: left;
+		margin-bottom: 0.5em;
+		border-right: 0.5em solid transparent;  /* hack to add distance, cause margin wont work */
+		margin-top: 0.5em;
+	}
+	
+	img.alignright,
+	.wp-caption.alignright {
+		float: right;
+		margin-bottom: 0.5em;
+		border-left: 0.5em solid transparent; /* hack to add distance, cause margin wont work */
+		margin-top: 0.5em;
+	}
+	
+}
+
+
+
 
 /*//////////////////////////////////////
  * Reading options design
@@ -2451,24 +2463,12 @@ Modal window design */
 		height: auto;
 	}
  
- 	.alignleft {
-		float: left;
-	}
-	
 	.megamenu ul.nav-menu > li.menu-item > a,
 	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a
 	{  /* top level navigation item */
 		font-size: 1.35em;
 	}
 	
-	.alignright {
-		float: right;
-	}
-	.aligncenter {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-}
 
 
   /*/////////////////////////////////

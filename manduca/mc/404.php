@@ -1,13 +1,16 @@
 <?php
 /**
- * Befor footer
- * Inserted before footer, just before the end of <main> tag
+ * Display page 404
+ * if there is one page is saved with "page not found page" template, that is used instead of this.
  *
  **/
+
+ 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
+    Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -21,4 +24,12 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+
+ 
 ?>
+
+<?php get_header(); ?>
+
+<?php get_template_part( '/template-parts/404-template' ); ?>
+
+<?php get_footer(); ?>

@@ -1,12 +1,15 @@
 <?php
 /**
- * Befor footer
- * Inserted before footer, just before the end of <main> tag
- *
+ * End ofthe div#wrapper. 
+ * 
+ * 
+ * @ Theme: Manduca - focus on accessibility 
  **/
-/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,3 +25,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 ?>
+            </main>
+        </div> <?php // END #primary .site-content ?>         
+     <?php get_sidebar( 'main_sidebar' ); ?>
+    </div> <?php // END #inner-wrapper?>
+</div> <?php // END .wrapper ?>

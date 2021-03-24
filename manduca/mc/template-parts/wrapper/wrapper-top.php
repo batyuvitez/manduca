@@ -1,12 +1,17 @@
 <?php
 /**
- * Befor footer
- * Inserted before footer, just before the end of <main> tag
- *
+ * Beginning of the div#wrapper.
+ * 
+ * for duplicating HTML5 and ARIA landmark:
+ * @see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html
+ * 
+ * @Theme: Manduca - focus on accessibility 
  **/
-/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+
+ 
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2020 Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,3 +27,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 ?>
+<div id="wrapper" class="wrapper">
+    <?php get_template_part( '/template-parts/header/breadcrumb' , 'template' ); ?>
+    <div id="inner-wrapper" class="inner-wrapper">
+        <div id="primary" class="site-content">
+            <main id="content" class="main-content">

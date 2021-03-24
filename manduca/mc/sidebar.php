@@ -1,12 +1,12 @@
 <?php
 /**
- * Befor footer
- * Inserted before footer, just before the end of <main> tag
+ * Display sidebar 
  *
  **/
-/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,3 +22,13 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 ?>
+
+<?php if ( is_active_sidebar( 'main_sidebar' ) &&  ! is_page_template( 'page-templates/full-width.php' ) ) : ?>
+	
+	<aside id="secondary" class="widget-area" aria-label="<?php _e( 'Sidebar area' , 'manduca' ); ?>">
+				
+		<?php dynamic_sidebar( 'main_sidebar' ); ?>
+		
+	</aside>
+
+<?php endif; ?>

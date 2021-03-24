@@ -1,12 +1,11 @@
-<?php
-/**
- * Befor footer
- * Inserted before footer, just before the end of <main> tag
- *
- **/
-/*  This file is part of WordPress theme named Manduca - focus on accessibility.
- *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+<?php 
+/*
+ * filter of copyright text
+ * @since 16.12
+ * */
+
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
+    Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,3 +21,5 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 ?>
+        
+<div class="copyright-text">&copy; <?php echo date ('Y'); ?>, <?php echo get_bloginfo(); ?></div>

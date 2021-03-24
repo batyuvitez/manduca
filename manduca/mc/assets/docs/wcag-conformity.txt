@@ -1,0 +1,95 @@
+WCAG 2.1 CONFORMITY
+ 
+Following is the list of Manduca's build-in accessibility features
+breakdown by WCAG principles and guidelines.
+Number of supported success criteria shown in brackets.
+--------------------------------------------------------------------------------------
+
+1. Preceivable
+
+    1.1 Text alternatives
+        - Provide alt text for header image (A 1.1.1 )
+
+    1.3 Adaptable
+        - Correct WAI-ARIA landmarks (1.3.1, 1.3.6 )
+        - Accessible SPA accordion (1.3.1)
+        - No css content (1.3.1)
+        - meaningful sequence (1.3.2)
+        
+    1.4 Distingusibale:
+        - Provide visual clues to links ('1.4.1)
+        - Text contrast ration of 4.5:1 (A 1.4.3)
+        - text is resizable with 200% (AA 1.4.4)
+        - Webpage is resizeble without loss of information (1.4.8, 1.4.10)
+        - Texit is presented in accessible way (1.4.8)
+        - Icons for different type of links: xls, doc, pdf (1.4.8)
+        - Link type indication with icon (1.4.8 )
+        - Search: highlight/emphasise the searched expression in the list (1.4.1)
+        - Label includes accessible name (2.5.3)
+        - Line hegiht, paragprah spacing, letter spacing, word spacing adjustabla (1.4.12)
+    
+        
+2. Operable
+    
+    2.1 Keyboard
+        -Keyboard accessible (2.1.1)
+        -No keyboard trap (2.1.2)
+        -No access key (2.1.4)
+        
+    2.4 Navigation
+        - Using WAI-ARIA landmarks to bypass blocks (1.4.1)
+        - Change link to actual page to <span> element (A 2.4.4, 2.4.9)
+        - Link purpose is clear (2.4.4, 2.4.9)
+        - Breadcrumb (2.4.8)        
+        - Focus snail (2.4.7)
+        - Focus visible very well (2.4.7)
+        - Accessible built-in navigation links (A 2.4.4, 2.4.9)
+        - Headings in hierarchial order( AA 2.4.6, AAA 2.4.8 )
+        - Focus visible ( AA 2.4.7)
+        - Properly used landmarks (2.4.1)
+    
+    2.5 Input modalities
+        - Accessible search form (2.5.3)
+        - Good target sizer (2.5.5)
+
+    
+    
+3. Understandable
+    
+    3.1 Readable
+        - Language is set (3.1.1)
+        - Hungarian language support scripts (3.1.5)
+    
+    3.2 Predictable
+        - consistent navigation (3.2.3)
+        - No unexpected event (3.2.1,3.2.2)
+        - Built in elements identified consistently (3.2.4)
+        - Open in new window indicated after link (3.2.5)
+        
+
+
+
+4. Robust
+        - Valid HTML (4.1)
+        - Valid semantics (4.2)
+
+
+............................................................................
+This file is part of WordPress theme named Manduca - focus on accessibility.
+
+Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+Source code is available at https://github.com/batyuvitez/manduca
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+............................................................................
