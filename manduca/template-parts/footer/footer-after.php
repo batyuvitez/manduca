@@ -27,7 +27,7 @@
 */
 
 ?>
-<div class="manduca-back-to-top-div featured-scheme">
+<div class="manduca-back-to-top-div link-button">
    <a id="manduca-back-to-top"
       aria-label="<?php _e( 'Back to top', 'manduca' ); ?>"
       href="javascript::" >

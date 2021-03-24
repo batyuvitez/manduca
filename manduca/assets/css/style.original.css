@@ -1859,27 +1859,31 @@ svg.icon-search,
 |                                                            |
 ==============================================================*/
 
+body {
+	margin-bottom: 5em;  /*button should not cover the footer content */
+}
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;
     overflow: hidden;
     text-align: center;
     z-index: 99999999;
-    right: 28px;
+    right: 28px;  /* not em, independent from em */
     bottom: 28px;
-		border: 2px solid DarkSlateBlue;
-    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.animation-0 .manduca-back-to-top-div  {
+	  -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;			
 }
 
 .manduca-back-to-top-div svg {
 	width:  28px;   /* Not em! */
 	height: 28px;
 	vertical-align: middle;
-	fill: DarkSlateBlue;
 }
 
 
@@ -2769,7 +2773,7 @@ Modal window design */
 	.site .toolbar-buttons-open {
 		position: relative;
 		top: 0.3125em;
-		min-width: 16em;
+		min-width: 15em;
 		margin-right: 2em;
 	}
 	
