@@ -528,7 +528,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px;  /* very narrow screens */
+	padding: 0.625em;  /* very narrow screens */
 }
 
 .site .more-link.link-button {
@@ -1872,7 +1872,6 @@ body {
 	vertical-align: middle;
 }
 
-
 .manduca-back-to-top-div.show{
     cursor: pointer;
     opacity: 1.0;
@@ -2773,7 +2772,6 @@ Modal window design */
 	.site .toolbar-buttons-open {
 		position: relative;
 		top: 0.3125em;
-		min-width: 15em;
 		margin-right: 2em;
 	}
 	
