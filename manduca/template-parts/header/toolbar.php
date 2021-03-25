@@ -25,15 +25,6 @@
 
 ?>
 
-<?php
-
-printf( '<button id="toolbar-buttons-open" aria-label="%3$s" class="toolbar-buttons-open" aria-expanded="false">%1$s%2$s<span class="desktop-text">%3$s</span></button>',
-		   manduca_get_svg( array( 'icon' => 'eye' ) ),
-		   manduca_get_svg( array( 'icon' => 'close' ) ),
-		   //Translators: Name of options button (text size, color etc) at the header.
-					__( 'Display options', 'manduca' )
-		  );
-?>
 <section id="toolbar-buttons" class="toolbar-buttons featured-scheme dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" aria-modal="true">
 	<h1 id="dialog-title"><?php _e( 'Display options', 'manduca' ); ?></h1>
 	<p id="dialog-description"><?php
