@@ -1084,6 +1084,7 @@ body .site,
 		z-index: 100;
 		margin-top: 1em ;
 		border: 1px solid var(--ornament);
+		padding: 2em;
 }
 
 
@@ -1107,7 +1108,6 @@ body .site,
 
 .megamenu ul.nav-menu  li.menu-item > a,
 .megamenu ul.nav-menu  li.menu-item > .submenu-container > a {
-	font-size: 1.1em;
 	padding: 0.3em 0.4em;
 	border: 1px solid var(--ornament);
 	font-weight: normal;
@@ -1389,8 +1389,8 @@ body .site,
 
 /* defaults headings */
 .site h1 {
-	font-size: 1.5em;
-	margin: 0 0 1.5em;
+	font-size: 1.8em;
+	margin: 0 0 1.8em;
 	font-weight: bold;  /* browser default is usually bold */
 	clear: both;
 }
@@ -2719,8 +2719,10 @@ Modal window design */
 		padding-right: 0;
 	}
 	
-	.main-navigation ul.nav-menu li.menu-item-has-children:hover > .sub-nav.toggled-on 	{
+	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.toggled-on 	{
 		display: block;
+		right: auto;
+		width: 150%;
 	}
 		
 	.main-navigation .sub-nav ul li a {
@@ -2767,8 +2769,10 @@ Modal window design */
 	
 	.megamenu {
 		position: static;
-		border: none;
+		border: none;  /* reset mobil-view */
+		padding: 0;
 	}
+	
 	.header-searchform {
 		position: static;
 		margin: 0.6em 0;

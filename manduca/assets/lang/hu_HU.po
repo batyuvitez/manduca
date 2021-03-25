@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-03-24 08:10+0100\n"
+"PO-Revision-Date: 2021-03-25 08:29+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -865,3 +865,7 @@ msgstr "Tiltva"
 #. toolbar buttons
 msgid "Underlined"
 msgstr "aláhúzott"
+
+#. toolbar buttons
+msgid "Dyslexie"
+msgstr "Diszlexia"
