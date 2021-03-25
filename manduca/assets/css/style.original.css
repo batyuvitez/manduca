@@ -454,8 +454,8 @@ button svg,
 }
 
 .high-contrast-1 .featured-scheme {
-	border: 2px solid var(--ornament);
-	background-color: var(--high-contrast-text);
+	border: 2px solid var(--high-contrast-text);
+	background-color: var(--high-contrast-background);
 	color: var(--high-contrast-text);
 }
 
@@ -1082,7 +1082,7 @@ body .site,
 		right: 0.5em;
 		left: auto;
 		z-index: 100;
-		padding: 1em 2em;
+		margin-top: 1em ;
 		border: 1px solid var(--ornament);
 }
 
@@ -1115,7 +1115,7 @@ body .site,
 }
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 		width: 100%;
 }
 
@@ -2048,7 +2048,7 @@ body {
 }
 
 .font-size-1 .toolbar-buttons-open {
-	max-width: 100%;-
+	max-width: 100%;
 }
 
 /*============================================================
@@ -2185,34 +2185,16 @@ Modal window design */
 .toolbar-buttons-table .row .toolbar-label {
 	display: inline-block;
 	font-weight: 700;
-}
-
-
-.toolbar-buttons-table .buttons-wrapper,  /* need for backwards compatibility */
-.toolbar-buttons-table .button {
-	display: inline;
-	vertical-align: middle;
-}
-
-
-.toolbar-buttons-table .button button {
-		min-width: 4em;
-		min-height: 2em;
+	font-size: 1.15em;
 }
 
 .toolbar-buttons button[disabled] {
 	border: none;
-	display: inline;
 	background-color: transparent;
-	font-weight: 700;
 }
 
 .toolbar-buttons button[disabled] .explain {
 	display: none;
-}
-
-.toolbar-buttons button:not([disabled]) {
-	float: right;
 }
 
 .toolbar-buttons .toolbar-label {
@@ -2222,8 +2204,6 @@ Modal window design */
 	line-height: 1.3;
 	vertical-align: middle;
 }
-
-    
 	
 /*mobil appearance */
  .toolbar-buttons-close {
@@ -2298,6 +2278,7 @@ Modal window design */
 	}
 }
 
+
 /*/////////////////////////////////////
 //  Toolbar buttons normal font size  */
 
@@ -2306,6 +2287,20 @@ Modal window design */
 		font-size: 1em;
 		top: 0.9em;
 	}
+	
+	.toolbar-buttons-table .buttons-wrapper,  /* need for backwards compatibility */
+	.toolbar-buttons-table .button {
+		display: inline;
+		vertical-align: middle;
+	}
+	
+	.toolbar-buttons button[disabled] {
+		display: inline;
+	}
+	.toolbar-buttons button:not([disabled]) {
+		float: right;
+}
+	
 }
 
 
@@ -2467,12 +2462,6 @@ Modal window design */
 	{  /* top level navigation item */
 		font-size: 1.35em;
 	}
-	
-
-
-  /*/////////////////////////////////
-	 * * 2 colmns replaced by flex
-	*/	
 	
 	.entry-header-wrapper {
 		display: flex;
@@ -2679,13 +2668,9 @@ Modal window design */
 @media screen and (min-width: 53em) { /* 848px*/
 
 	.site > header {
-		padding: 1em;
+		padding: 0 1em;
 	}
 	
-	.site-header-menu {
-		margin: 2em 0;
-	}
-	 
 	 .site-header-menu .megamenu {
 		display: block;  /* hidden in small screens */
 	}
@@ -2698,7 +2683,7 @@ Modal window design */
 	
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
-		margin: 0 1rem 0 0 ;
+		margin: 0 1rem 1rem 0;
 		border: none;
 	}
 	
@@ -2755,11 +2740,15 @@ Modal window design */
 		transform: rotate(-90deg);
 	}
 	
-	.top-bar{   /* remove top bar and its absoluted positioned buttons */
+	/*////////////////
+	 * Header      */
+	
+	.top-bar,
+	.font-size-1 .top-bar {   /* remove top bar and its absoluted positioned buttons */
 		display: none;
 	}
 
-	.controls {
+	.font-size-0 .controls {
 		display: flex;
 		align-items: flex-start;
 	}
