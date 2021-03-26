@@ -51,12 +51,10 @@ class Reading_Options {
 				if (isset ($element['aria_label']))
 					$html.='aria-label="'.$element['aria_label'].'" ';
 				$html.='>'."\n";
-				$html.='<span class="explain">';
 				//translators: Opt reading option
 				$html .= __( 'Change to', 'manduca' );
-				$html .='&nbsp;</span>';
-				$html.='<span class="phone-text" aria-hidden="true">'.$element['phone_text'].'</span>';
-				$html .='<span class="desktop-text">'.$element['desktop_text'].'</span>';
+				$html .='&nbsp;';
+				$html .=$element['desktop_text'];
 				$html .= '</button></div>'."\n";
 			}
 			$html .= '</div>'."\n"; //end tag of .button-wrapper

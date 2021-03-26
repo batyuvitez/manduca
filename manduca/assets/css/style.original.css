@@ -582,7 +582,6 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 .site input,
 .site select,
 .site textarea {
-	font-size: 1.1em; /* corrected: 17.9.19  */
 	font-family: inherit;
 	max-width: 100%;
 }
@@ -971,7 +970,7 @@ body .site,
 
 .wrapper,
 .footer-wrapper {
-	padding: 0 1em;  /* Paddings on small screen  */
+	padding: 0 0.5em;  /* Paddings on small screen  */
 }
 
 
@@ -1076,15 +1075,18 @@ body .site,
 .megamenu {
 		position:  fixed;
 		top: 4.8em; /*Menu-toggle is absolutely positioned, navmenu not */
-		width: 80%;
-		right: 0.5em;
+		width: 100%;
+		right: 0;
 		left: auto;
 		z-index: 100;
 		margin-top: 1em ;
 		border: 1px solid var(--ornament);
-		padding: 2em;
+		padding: 1rem;
 }
 
+.font-size-1 .megamenu {
+		top: 6em;
+}
 
 .main-navigation .menu-item .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
@@ -1303,8 +1305,8 @@ body .site,
 
 .site blockquote {
 	margin-bottom: 1.5em;
-	padding-left: 2.5em;
-	padding: 1.5em;
+	margin-top: 1.5em;
+	padding-left: 1em;
 	border-left: 0.5em var(--ornament)  solid;
 	font-size: 1.05em;
 	line-height: 1.5;
@@ -2509,7 +2511,8 @@ Modal window design */
 	.content-date time {
 		display: flex;
 		flex-direction: column;
-		width: 4.8em;	
+		width: 4.8em;
+		padding: 0.5em 0;
 	}
 	
 	.content-date time span {
@@ -2985,6 +2988,7 @@ Modal window design */
 		color: #444;
 		font-size: 10pt;
 	}
+	
 	.author-description {
 		float: none;
 		width: auto;
