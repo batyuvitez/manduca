@@ -263,9 +263,7 @@ svg {
 	fill: var(--default-text);;	
 }
 
-
-body a,
-#link-appearance-0 span {
+body a {
 	color: var(--default-link);
 }
 
@@ -2949,9 +2947,22 @@ Modal window design */
 	.site-header-menu,
 	.pagination,
 	.nav-single,
-	.crop-height {
+	.crop-height,
+	.entry-content img,
+	.footer-wrapper,
+	.manduca-back-to-top-div {
 		display: none !important;
 	}
+	
+	.site-title {
+		font-size: 20pt;
+	}
+	
+	.site-title a {
+		color: black;
+		text-decoration: none !important;
+	}
+	
 	.wrapper {
 		border-top: none;
 		box-shadow: none;
@@ -2959,6 +2970,10 @@ Modal window design */
 	.site-content {
 		margin: 0;
 		width: auto;
+	}
+	
+	.site-content p {
+		margin-bottom: 15px;
 	}
 	
 	.entry-header .entry-title,
