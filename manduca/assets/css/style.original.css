@@ -651,9 +651,9 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
     top: 1.1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
-		padding-top: 0.85em;
-		padding-bottom: 0.85em;
-		font-size: 0.8em;
+		padding-top: 0.78em;
+		padding-bottom: 0.78em;
+		font-size: 0.9em;
 }
 
 
@@ -1133,7 +1133,7 @@ body .site,
 	right: 0;
 	padding: 0;
 	z-index: 150;
-	width: 120%;
+	width: 100%;
 	position: absolute; /* below the menu title */
 	border: 1px solid var(--ornament);
 }
