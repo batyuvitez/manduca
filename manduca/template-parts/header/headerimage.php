@@ -27,24 +27,18 @@
 
     
 $header_image = get_header_image() ;
-$video_settingslt = __( 'Blog header image', 'manduca' )  ;    
+$video_settings = __( 'Blog header image', 'manduca' )  ;    
+
 if( false != $header_image && (is_home() || is_front_page() && get_header_image())) : ?>
     <?php
-    /*
-     * Accessibility function: Get the alt text for header image
-     **/
     $header_image_data = get_theme_mod( 'header_image_data' ) ;
-    if( $header_image_data 
-        && is_array( $header_image_data )
-        && isset( $data[ 'attachment_id' ] ) ) {
-            $video_settingsttachment_id =  $header_image_data[ 'attachment_id' ];
-            $video_settingslt = trim( strip_tags( get_post_meta( $video_settingsttachment_id, '_wp_attachment_image_alt', true ) ) );
-    }
-    $img= wp_get_attachment_image( $header_image_data->attachment_id,
+    if( !isset ($header_image_data['attachment_id']))
+       return;    
+    //$video_settingslt = trim( strip_tags( get_post_meta( $video_settingsttachment_id, '_wp_attachment_image_alt', true ) ) );
+    $img= wp_get_attachment_image( $header_image_data['attachment_id'],
                                             'full',
                                             FALSE,
-                                            array( 'class'=>'header-image',
-                                                    'alt'=>$video_settingslt));
+                                            array( 'class'=>'header-image'));
     if ( $img ) : ?>
         <div id="wp-custom-header" class="wp-custom-header">
             <?php echo $img; ?>
@@ -64,6 +58,3 @@ if ( is_header_video_active() && ( has_header_video() || is_customize_preview() 
 		wp_enqueue_script( 'wp-custom-header' );
 		wp_localize_script( 'wp-custom-header', '_wpCustomHeaderSettings', $video_settings );
 	}
-
-
-?>
