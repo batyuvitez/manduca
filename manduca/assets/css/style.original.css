@@ -980,7 +980,7 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 7.5em;
+	top: 5.5em;
 	left: 1em;
 	right: 0.5em;
 	display: flex;
@@ -1012,6 +1012,7 @@ body .site,
 .site .search-submit {
 	margin: 0 0 0 1em;
 	padding: 0.33em;
+	vertical-align: bottom;
 }
 
 
@@ -2270,13 +2271,7 @@ Modal window design */
 		width: auto;
 	}
 	
-	.top-bar {
-		height: 10em;
-	}
 	
-	.header-searchform {
-		top: 5.5em;
-	}
 }
 
 
@@ -2595,9 +2590,6 @@ Modal window design */
 }
 
 
-
-
-
 /*//////////////////////////////////
 //*Searchform is inline */
 
@@ -2637,6 +2629,20 @@ Modal window design */
 		width: 50%;
 	}
 }
+
+
+
+/*//////////////////////////////////
+//* big font: haader getting narrow*/
+
+@media screen and (min-width: 47em) {
+		.font-size-1 .header-searchform {
+				top: 1em;
+		}
+	}
+
+}
+
 
 
 
@@ -2774,6 +2780,10 @@ Modal window design */
 	.header-searchform {
 		position: static;
 		margin: 0.6em 0;
+	}
+	
+	.font-size-1 .header-searchform {
+		display: inline-block;
 	}
 	
 	.post-navigation > div {
