@@ -584,6 +584,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 .site textarea {
 	font-family: inherit;
 	max-width: 100%;
+	font-size: 1em;  /* Important to have a basis font-size */
 }
 
 
