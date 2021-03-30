@@ -60,13 +60,18 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 		if ($submenu) {
 			$this->aria_controls='control-' . $item->ID;
 			$this->aria_labelledby='title-'.$item->ID;
+			//Authors MUST ensure that the role of the element that serves as the container for
+			//the popup content is menu, listbox, tree, grid, or dialog, and that the value of aria-haspopup matches the role of the popup container.
+			//WAI-ARIA 1.2.
+			$menuitem= ' role="menuitem"';
 		}
 		else {
 			$this->aria_controls='';
 			$this->aria_labelledby='';
+			$menuitem= '';
 		}
 		
-		$output .= $indent . '<li' . $id . $class_names . '>';
+		$output .= $indent . '<li' . $id . $class_names . $menuitem .'>';
 
 		$atts                 = array();
 		$atts['title']        = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -74,7 +79,6 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 		$atts['rel']          = ! empty( $item->xfn ) ? $item->xfn : '';
 		$atts['href']         = ! empty( $item->url ) ? $item->url : '';
 		$atts['aria-current'] = $item->current ? 'page' : '';
-		$atts['role']		  = 'menuitem';
 		$atts ['id']		  = $submenu ? $this->aria_labelledby : '';
 		
 		$attributes = '';

@@ -46,7 +46,7 @@
 			
 		</div>
 		
-		<div class="content-date featured-scheme"">
+		<div class="content-date featured-scheme">
 		
 				<?php
 				$month 		= esc_html( get_the_date( 'M' ) );
