@@ -201,9 +201,7 @@ class Manduca_Template_Functions {
 							$dots = true;
 						elseif ( $dots && ! $args['show_all'] ) :
 							$page_links[] = sprintf(
-													'<span class="dots" aria-label="%1$s">%2$s</span>',
-													//translators: This is the dots announcement in post navigation
-													__( 'Not indicated pages', 'manduca'),
+													'<span class="dots">%s</span>',
 													manduca_get_svg( array( 'icon' => 'dots' ) ) 
 																   );
 							$dots = false;

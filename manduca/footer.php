@@ -39,6 +39,5 @@
 			<?php get_template_part( 'template-parts/footer/footer', 'after' ); ?>
 			<?php wp_footer(); ?>
 		</div> <?php // closing tag of  .site #page  ?>
-		<div id=manducaPushUp> </div>
 	</body>
 </html>
