@@ -227,7 +227,7 @@ img {
 |                                                            |
 ==============================================================*/
 :root {
-	--default-background: azure;
+	--default-background: ivory;
 	--default-text: black;
 	--default-link: royalBlue;
 	--default-button-background:saddleBrown;
@@ -339,9 +339,10 @@ Featured */
 
 
 /*//////////////////////////////////
-Button, link-button        */
+Button, link-button, menu        */
 button, 
-.link-button {
+.link-button,
+li.menu-item a {
 	background-color: var(--default-button-background);
 	color: var(--default-button-text);
 	border-width: 3px;
@@ -981,7 +982,7 @@ body .site,
 	text-align: right;
 	position: absolute;	
 	top: 5.5em;
-	left: 1em;
+	left: 0.5em;
 	right: 0.5em;
 	display: flex;
 }
@@ -2666,12 +2667,12 @@ Modal window design */
 
 
 /*//////////////////////////////////
- * menu opened  */
+ * menu opened*/
 
 @media screen and (min-width: 53em) { /* 848px*/
 
 	.site > header {
-		padding: 0 1em;
+		padding: 0 0.5em;
 	}
 	
 	 .site-header-menu .megamenu {
@@ -2769,11 +2770,12 @@ Modal window design */
 		margin-right: 2em;
 	}
 	
-	
 	.megamenu {
 		position: static;
 		border: none;  /* reset mobil-view */
 		padding: 0;
+		margin-top: 2.5em;
+		margin-bottom: 1.5em;
 	}
 	
 	.header-searchform {
