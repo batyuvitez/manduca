@@ -869,3 +869,7 @@ msgstr "aláhúzott"
 #. toolbar buttons
 msgid "Dyslexie"
 msgstr "Diszlexia"
+
+#. toolbar buttons
+msgid "Animation"
+msgstr "Animáció"
