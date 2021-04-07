@@ -1,10 +1,8 @@
 <?php
 /**
- * After footer
- * Inserted after footer, just before the end of div.site 
+ * After footer - overlay div
  *
  * @since 18.7
- * skiplink @since 19.1
  **/
 
  
@@ -27,3 +25,5 @@
 */
 
 ?>
+
+<div class="dialog-overlay" aria-hidden="true" ></div>

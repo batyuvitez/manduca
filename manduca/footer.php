@@ -36,6 +36,8 @@
 				<div class="clearfix"></div>
 			</div>
 			
+			<?php get_template_part( 'template-parts/footer/footer', 'backtotop' ); ?>
+			<?php get_template_part( 'template-parts/footer/footer', 'overlay' ); ?>
 			<?php get_template_part( 'template-parts/footer/footer', 'after' ); ?>
 			<?php wp_footer(); ?>
 		</div> <?php // closing tag of  .site #page  ?>
