@@ -42,12 +42,12 @@
  
 <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
     
-        <div class="site-title">
+        <div id="site-title" class="site-title">
             <span class="display-site-title"><?php echo $site_title; ?> </span>
         </div>
         
 <?php else :  ?>
-    <div class="site-title">
+    <div id="site-title" class="site-title">
         <a href="<?php echo esc_html (home_url( '/' ));  ?>" rel="home">
             <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
             <span class="display-site-title"><?php echo $site_title; ?></span>
