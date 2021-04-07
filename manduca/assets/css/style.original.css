@@ -643,7 +643,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 .site .menu-toggle {
 	position: absolute;
-	top: 0.8em;
+	top: 0.9em;
 	right: 0.2em;
 	max-width: 43%;
 }

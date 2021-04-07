@@ -718,6 +718,21 @@ jQuery(document).ready(function($)
 	   });
 	}
 
+    // Escape handler  */
+	 $(document).keyup(function(e) {
+         if (e.keyCode === 27) {
+			$( ".menu-toggle" ).removeClass( "toggled-on" );
+            $( ".menu-toggle" ).attr( 'aria-expanded', 'false' );
+            $( ".megamenu" ).removeClass( "toggled-on" );
+			if (animation)
+				siteNavContain.hide(300);
+			else
+				siteNavContain.hide (0);
+         }            
+      });
+	 
+	 //Keyboard trap in menu toggle 
+   
 	
 	
  
@@ -891,7 +906,11 @@ jQuery(document).ready(function($)
            }
         });
     });
-   
+	
+	
+	
+	
+	
    
    
    
@@ -1070,13 +1089,15 @@ jQuery(document).ready(function($)
 	
 	
 	/////////////////////////////////////////
-	// accessible modal dialog
+	// Toolbar buttons (Reading options)
 	
 	var navDialogEl = document.querySelector('.toolbar-buttons');
 	var dialogOverlay = document.querySelector('.dialog-overlay');
 	
 	var myDialog = new Dialog(navDialogEl, dialogOverlay);
 	myDialog.addEventListeners('.toolbar-buttons-open', '.toolbar-buttons-close');
+
+
 
 
 
