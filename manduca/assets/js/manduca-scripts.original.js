@@ -754,13 +754,16 @@ jQuery(document).ready(function($)
 		{
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
 			{
+				var _this = $( this );
+				var test=_this.hasClass('toggled-on');
 				//Close oll dropdown
-				var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
-				$.each (toggleOffs, function ( index, el) {
-					$(el).removeClass( 'toggled-on');
-				});
+				if (!test) {
+					var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
+					$.each (toggleOffs, function ( index, el) {
+						$(el).removeClass( 'toggled-on');
+					});
+				}
 				 				 
-				 var _this = $( this );
 				 e.preventDefault();
 				_this.toggleClass( 'toggled-on' );
 				var subnav=_this.closest('.menu-item-has-children').find( '.sub-nav' );
