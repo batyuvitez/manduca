@@ -393,9 +393,15 @@ button svg,
 }
 
 
-.high-contrast-1 a {
+.high-contrast-1 button, 
+.high-contrast-1 .link-button,
+.high-contrast-1 a,
+.high-contrast-1 li.menu-item a{
 	background-color: var(--high-contrast-background); ;
 	color: var(--featured-background);
+}
+
+.high-contrast-1 a {
 	text-decoration: underline;
 }
 
@@ -422,30 +428,16 @@ button svg,
 .high-contrast-1 textarea,
 .high-contrast-1 input,
 .high-contrast-1 select {
-	background-color: var(--high-contrast-text);
-	color: var(--high-contrast-background); ;
+	color: var(--high-contrast-text);
+	background-color: var(--high-contrast-background);
+	border: var(--ornament) 3px solid;
 }
 
-.high-contrast-1 button, 
-.high-contrast-1 .link-button,
+
+.high-contrast-1 .basic-scheme svg,
 .high-contrast-1 .link-button svg {
-	background-color: var(--high-contrast-background);; 
-	color: var(--high-contrast-text);;
-}
-
-
-.high-contrast-1 .basic-scheme svg {
-	fill: var(--high-contrast-background);;
-}
-
-.high-contrast-1 .link-button,
-.high-contrast-1 .link-button a {
-	background-color: var(--high-contrast-text);
-	color: var(--high-contrast-background);
-}
-.high-contrast-1 .link-button svg {
-	fill: var(--high-contrast-background);;
-	background-color: var(--high-contrast-text);
+	fill: var(--high-contrast-text);
+	background-color: var(--high-contrast-background);
 }
 
 .high-contrast-1 .lighter-scheme {
@@ -1109,8 +1101,8 @@ body .site,
 	
 }
 
-.megamenu ul.nav-menu  li.menu-item > a,
-.megamenu ul.nav-menu  li.menu-item > .submenu-container > a {
+nav li.menu-item > a,
+nav li.menu-item > .submenu-container > a {
 	padding: 0.3em 0.4em;
 	border: 1px solid var(--ornament);
 	font-weight: normal;
@@ -1820,8 +1812,8 @@ svg.icon-search,
 
 .nav-single svg,
 .link-button svg {
-		width: 1.4em;
-		height: 1.4em;
+		width: 1.9em;
+		height: 1.9em;
 		vertical-align: bottom;
 }
 
@@ -2189,6 +2181,7 @@ Modal window design */
 	display: inline-block;
 	font-weight: 700;
 	font-size: 1.15em;
+	max-width: 10em;
 }
 
 .toolbar-buttons button[disabled] {
@@ -2450,8 +2443,8 @@ Modal window design */
 		height: auto;
 	}
  
-	.megamenu ul.nav-menu > li.menu-item > a,
-	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a
+	nav li.menu-item > a,
+	nav li.menu-item > .submenu-container > a
 	{  /* top level navigation item */
 		font-size: 1.35em;
 	}
@@ -2622,7 +2615,6 @@ Modal window design */
 	.footer-navigation ul li{
 		list-style-type: none;
 		display: inline-block;
-		padding: 0 0.357rem;
 	}
 	
 	.copyright-text {
@@ -2701,8 +2693,8 @@ Modal window design */
 		text-align: center;
 	}
 	
-	.megamenu ul.nav-menu > li.menu-item > a,
-	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a {
+	nav li.menu-item > a,
+	nav li.menu-item > .submenu-container > a	{
 		padding:  0.5em 1em;
 		white-space: nowrap;
 	}
@@ -2818,15 +2810,11 @@ Modal window design */
 	}
 	
 	/* top level navigation item */
-	.megamenu ul.nav-menu > li.menu-item > a,
-	.megamenu ul.nav-menu > li.menu-item > .submenu-container > a{
+	nav li.menu-item > a,
+	nav li.menu-item > .submenu-container > a{
 		font-size: 1.5em;
 	}
-	
-	.megamenu ul.nav-menu > li.menu-item > span {  /* @18.7 */
-		font-size: 1.4em;	
-	}
-	
+		
 	.widget-searchfrom #s {
 		width: 17rem;
 	}

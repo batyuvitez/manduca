@@ -131,7 +131,7 @@
 				
 				
 				array (	'name'=>'hyphen',
-				//translators: Toolbar color scheme selector
+				//translators: Toolbar hyphenation selector label
 				'label'=>__( 'Hyphenation' , 'manduca' ),
 				'elements'=>
 					array (
@@ -146,7 +146,7 @@
 				
 				
 				array (	'name'=>'animation',
-				//translators: Toolbar color scheme selector
+				//translators: Toolbar animation disable/enable label
 				'label'=>__( 'Animation' , 'manduca' ),
 				'elements'=>
 					array (
@@ -162,8 +162,8 @@
 				
 				
 				array (	'name'=>'link-appearance',
-				//translators: Toolbar color scheme selector
-				'label'=>__( 'Links' , 'manduca' ),
+				//translators: Toolbar link appearance selector label (bold or underlined)
+				'label'=>__( 'Link appearance' , 'manduca' ),
 				'elements'=>
 					array (
 						array( 
@@ -178,7 +178,7 @@
 				
 				
 				array (	'name'=>'link-target',
-				//translators: Toolbar color scheme selector
+				//translators: Toolbar link target selector label
 				'label'=>__( 'Link target' , 'manduca' ),
 				'elements'=>
 					array (
