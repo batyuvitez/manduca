@@ -752,9 +752,17 @@ jQuery(document).ready(function($)
 	
 		function initMainNavigation( container )
 		{
-			var dropdownToggle = $( '.dropdown-toggle');
+			//var dropdownToggle = $( '.dropdown-toggle');
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
 			{
+				//Close oll dropdown
+				var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
+				$.each (toggleOffs, function ( index, el) {
+					var $class=$(el).attr('class');
+					console.log ($class);
+					$(el).removeClass( 'toggled-on');
+				});
+				 				 
 				 var _this = $( this );
 				 e.preventDefault();
 				_this.toggleClass( 'toggled-on' );
