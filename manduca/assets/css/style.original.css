@@ -2843,7 +2843,16 @@ Modal window design */
 	}
 }
 
+/*////////////////////////////////////
+//   Windows high contrast mode
+*/
 
+@media (-ms-high-contrast: active), (forced-colors: active) {
+	body {
+		-ms-high-contrast-adjust: none;
+		forced-color-adjust: none;
+	}
+}
 
 
 /*////////////////////////////////////

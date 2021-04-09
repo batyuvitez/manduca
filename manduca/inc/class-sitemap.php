@@ -41,7 +41,8 @@ class Sitemap {
 	}
 	
 	/*
-	 *@param: $excludes (array): Contains the post_id of the pages to exclude from sitemap
+	 *@param: $excludes (array):
+	 *Contains the post_id of the pages to exclude from sitemap
 	 **/
 	public function pages( $excludes = NULL) {
 		$args = array(
