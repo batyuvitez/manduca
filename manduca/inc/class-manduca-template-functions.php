@@ -64,7 +64,8 @@ class Manduca_Template_Functions {
 	
 	
 	/*
-	 * Displays the navigation to next/previous set of posts, when you re in excerpt tamplate.
+	 * Displays the navigation in post (next/previous set of posts)
+	 * when you re in excerpt tamplate.
 	 *
 	 * @see template-parts/posts/content-excerpt.php
 	 * @return (string) : html markup of navigation

@@ -410,7 +410,7 @@ button svg,
 .high-contrast-1 .megamenu.toggled-on,
 .high-contrast-1 .lighter-scheme {
     background-color: var(--high-contrast-background);;
-    color: var(--default-background);
+    color: var(--high-contrast-text);
 }
 
 .high-contrast-1 svg {
@@ -1795,17 +1795,21 @@ a.comment-edit-link {
 |                                                            |
 ==============================================================*/
 
-.site svg {
+.site svg,
+.expandmore__symbol {
+	display: block;
 	width: 1.2em;
 	height: 1.2em;
-	margin: 0 0.4em;
+	margin: 0 0.4em 0 0;
 	vertical-align: text-top;
 }
+
 
 svg.icon-search,
 .dropdown-toggle svg {
 	width: 1.65em;
 	height: 1.65em;
+	margin: 0;
 }
 
 
