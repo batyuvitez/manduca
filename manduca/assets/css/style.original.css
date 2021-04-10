@@ -1795,12 +1795,10 @@ a.comment-edit-link {
 |                                                            |
 ==============================================================*/
 
-.site svg,
+svg,
 .expandmore__symbol {
-	display: block;
 	width: 1.2em;
 	height: 1.2em;
-	margin: 0 0.4em 0 0;
 	vertical-align: text-top;
 }
 
@@ -1812,13 +1810,16 @@ svg.icon-search,
 	margin: 0;
 }
 
-
+button svg,
+.link-button svg {
+	display: block;
+	margin-right: 0.5em;
+}
 
 .nav-single svg,
 .link-button svg {
 		width: 1.9em;
 		height: 1.9em;
-		vertical-align: bottom;
 }
 
 .menu-toggle.toggled-on svg.icon-close {
