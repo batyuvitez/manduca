@@ -281,10 +281,7 @@ Class Link_Functions {
                 
                         
                 $node->setAttribute( 'aria-label', $info_text);
-                if (isset ($use_tooltip) && $use_tooltip) {
-                  $node->appendChild( $this->create_tooltip_node( implode( ', ', $this->aria_labels ) ) );
-                  $this->classes[] ='use-tooltipa';
-                }
+                
             }
                 
             if( !empty( $this->classes ) ) {                
@@ -334,12 +331,6 @@ Class Link_Functions {
             if( $href_part == $needle ) {
                 $this->aria_labels[] = $data[ 'text' ];
                 $node->appendChild( $this->create_svg_node( $data[ 'icon' ] ) ) ;
-                //tooltip introduced in 19.2
-                $node->setAttribute(
-                           'class',
-                           'use-tooltip'
-                        );
-                $this->create_tooltip_node( $data[ 'text' ] );
             }
         }
       
@@ -461,7 +452,7 @@ Class Link_Functions {
     $svg_attr->value = 'true' ;
     $svg_node->appendChild( $svg_attr ) ; 
     $svg_attr = $this->dom->createAttribute( 'class' );
-    $svg_attr->value = sprintf( 'icon-%s',
+    $svg_attr->value = sprintf( 'icon-%s link-function',
            $svg
           );
     $svg_node->appendChild( $svg_attr ) ; 
@@ -588,30 +579,7 @@ Class Link_Functions {
        return $node;
    }
    
-    /*
-    * Add tooltip to $parent_node
-    *
-    * @param string  $tooltip:          the text to add. 
-    * @param domNode class               : $partent_node
-    *
-    * @return domNode class;
-    **/
-    protected function create_tooltip_node ($tooltip) {
-         $node = $this->dom->createElement(
-             'span',
-              $tooltip
-             );
-         $node->setAttribute(
-             'class',
-             'tooltip'
-          );
-              
-       return $node;
-    }
-    
-    
-    
-    
+     
     
     /*
      *Add new windows icon and aria-label

@@ -47,7 +47,7 @@
             var accessibleTabsDefaults = {
                 wrapperClass: 'entry-content', // Classname to apply to the div that is wrapped around the original Markup
                 currentClass: 'current', // Classname to apply to the LI of the selected Tab
-                tabhead: 'h4', // Tag or valid Query Selector of the Elements to Transform the Tabs-Navigation from (originals are removed)
+                tabhead: 'h2', // Tag or valid Query Selector of the Elements to Transform the Tabs-Navigation from (originals are removed)
                 tabheadClass: 'tabhead', // Classname to apply to the target heading element for each tab div
                 tabbody: '.tabbody', // Tag or valid Query Selector of the Elements to be treated as the Tab Body
                 fx:'show', // can be "fadeIn", "slideDown", "show"

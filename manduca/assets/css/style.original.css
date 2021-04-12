@@ -1822,6 +1822,10 @@ button svg,
 		height: 1.9em;
 }
 
+svg.link-function {  /* @see:Link_Functions */
+	margin: 0 0.5em;
+}
+
 .menu-toggle.toggled-on svg.icon-close {
 	display: inline;
 }

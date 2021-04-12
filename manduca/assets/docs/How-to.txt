@@ -1,6 +1,6 @@
 This file is part of WordPress theme named Manduca - focus on accessibility.
 
-Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,8 @@ See also: https://github.com/batyuvitez/manduca/wiki/
 
 How to ...
 
-
+... add accessible tabs
+      @see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
 
 ... add new svg icons.
       Use filter 'manduca_svg_icons' Input parameter is Manduca svg icons, and you can extend it with yours.
@@ -64,7 +65,7 @@ How to ...
       This string will be replaced with the home URL.
       
 ... Add accessible tooltip:
-      add the followint 2 attributes to element:
+      add the following attributes to element:
             class="js-simple-tooltip"
             data-simpletooltip-text="tooltip text itself"
       @more: https://a11y.nicolas-hoffmann.net/simple-tooltip/
