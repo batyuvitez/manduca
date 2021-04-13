@@ -2083,10 +2083,12 @@ body {
 .toolbar-buttons #font-type-1 {
     
 			font-family: 'dyslexieregular';
+			font-size: 94%;  /* this is a bigger font */
 }
 
 #font-type-0 span {
-	font-family: sans-serif;
+		font-family: sans-serif;
+		font-size: 100%;
 }
 
 
