@@ -1,7 +1,7 @@
 <?php
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -47,7 +47,7 @@
 			 
 				
 			<div class="entry-content">		
-					<?php echo Manduca_Template_Functions::get_the_excerpt(); ?>
+					<?php echo Manduca\helpers\Template_Functions::get_the_excerpt(); ?>
 			</div>
 			
 			<div class="clearfix-content"></div>

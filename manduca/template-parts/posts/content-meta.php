@@ -24,16 +24,10 @@
 
 ?>
 
-<section class="metatags" arialabelledby="meta-header">
-	<h2 class="screen-reader-text" id="meta-header">
-		<?php
-		// translators visually hidden title of meta section
-		_e( 'Post meta', 'manduca' ) ;?>
-	</h2>
-	<ul>
-		<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
-	<ul>
-</section>
+<ul>
+	<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
+</ul>
+
 
 
 

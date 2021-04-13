@@ -22,7 +22,7 @@
  
 jQuery.noConflict();
 
-
+	
 /*------------------------------------------------
  *
  *
@@ -31,7 +31,8 @@ jQuery.noConflict();
  * 
  *
  **---------------------------------------------------*/
-      
+    //hide while pageloads, if JS enabled
+	document.getElementById ("page").setAttribute('style','display:none');
 
 
 

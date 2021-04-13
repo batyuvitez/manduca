@@ -27,7 +27,7 @@ $label=__( 'Posts navigation', 'manduca' );
 
 <nav class="post-navigation" aria-label="<?php echo $label; ?>">
 	<div class="nav-links">
-        <?php echo Manduca_Template_Functions::post_navigation(); ?>        
+        <?php echo Manduca\helpers\Template_Functions::post_navigation(); ?>        
     </div>
 </nav>
 							

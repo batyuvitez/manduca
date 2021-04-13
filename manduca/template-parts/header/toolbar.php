@@ -36,7 +36,7 @@
 		<?php 	get_template_part ('/template-parts/header/toolbarinner');?>
 	</div>		
  
-	<?php echo Manduca_Template_Functions::get_info_button_html( 'inverse3' ); ?>
+	<?php echo Manduca\helpers\Template_Functions::get_info_button_html( 'inverse3' ); ?>
 	<button id="buttons-close" class="toolbar-buttons-close"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>
 </section>
 

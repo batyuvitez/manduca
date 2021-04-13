@@ -33,7 +33,7 @@
 	</head>
 	
 
-	<body id="total" <?php body_class(Manduca_Template_Functions::body_classes()); ?>>
+	<body id="total" <?php body_class(Manduca\helpers\Template_Functions::body_classes()); ?>>
 	    <?php get_template_part( '/template-parts/header/backgroundimages' ); ?>
 		<?php wp_body_open(); ?>
 		<?php get_template_part( '/template-parts/header/load-spinner' ); ?>

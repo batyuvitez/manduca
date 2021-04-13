@@ -17,8 +17,9 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+namespace Manduca;
 
- class User_Agent_Detect{
+class User_Agent_Detect{
   
     public function __construct() {
         $this->user_agent = $_SERVER['HTTP_USER_AGENT'] ;

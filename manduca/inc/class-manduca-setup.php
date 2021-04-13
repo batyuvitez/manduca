@@ -62,8 +62,6 @@ class Manduca_Setup {
 			new \Manduca\Link_Functions();
 		}
 		
-		// Link function (add svg, aria etc. )
-		new Manduca_Template_Functions();
 		
 		//Filter page title
 		new \Manduca\Filter_Title;

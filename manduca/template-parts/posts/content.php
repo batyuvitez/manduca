@@ -1,7 +1,7 @@
 <?php
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -50,7 +50,7 @@ else
 		
 		<?php the_content() ; //last correction: @17.9?>
 		
-		<?php Manduca_Template_Functions::manduca_link_pages(); ?>
+		<?php Manduca\helpers\Template_Functions::manduca_link_pages('angle-circle-left', 'angle-circle-right'); ?>
 	
 	<div class="clearfix-content"></div>
 	</div>
@@ -63,7 +63,7 @@ else
 		do_action( 'manduca_after_entry_content' );
 	?>
 
-	<footer class="lighter-scheme">
+	<footer class="lighter-scheme metatags">
 		<?php get_template_part( 'template-parts/posts/content', 'meta' ); ?>
 	</footer>
 
