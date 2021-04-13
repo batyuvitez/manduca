@@ -353,7 +353,7 @@ class Template_Functions {
 	 **/
 	protected static function add_morelink ($html)
 	{
-		$more_link = new More_Links;
+		$more_link = new \More_Links;
 		return $html.$more_link->more_link_create_html();
 	}
 	

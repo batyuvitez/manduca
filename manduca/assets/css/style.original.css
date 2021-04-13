@@ -1508,7 +1508,6 @@ entry-meta*/
 }
 
 .metatags ul {
-	border-top: 1px solid var(--ornament);
 	margin-bottom: 0;
 }
 
@@ -1822,6 +1821,9 @@ button svg,
 		height: 1.9em;
 }
 
+.nav-next svg {
+	margin-left: 0.5em;
+}
 svg.link-function {  /* @see:Link_Functions */
 	margin: 0 0.5em;
 }
