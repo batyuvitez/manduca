@@ -2034,7 +2034,7 @@ body {
 
 #font-size-1 span,
 .font-size-1 {
-    font-size: 150%;
+    font-size: 140%;
 		word-break: break-all;
 }
 
@@ -2194,6 +2194,8 @@ Modal window design */
 	display: inline-block;
 	font-weight: 700;
 	font-size: 1.15em;
+}
+font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	max-width: 10em;
 }
 
