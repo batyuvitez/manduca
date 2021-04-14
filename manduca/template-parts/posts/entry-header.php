@@ -28,7 +28,7 @@
  
 ?>
 <?php if ( is_sticky() &&  ! is_paged() ) : ?>
-						<div class="featured-post featured-scheme"><?php _e( 'Featured', 'manduca' ) ?></div>
+		<div class="featured-post featured-scheme"><?php _e( 'Featured', 'manduca' ) ?></div>
 <?php endif; ?>
 
 
@@ -46,14 +46,14 @@
 					elseif( is_search() ) :
 					$title = Search_Functions::emphasize( get_the_title(), get_search_query() );
 
-					printf( '<h2 class="entry-title"><a  id="post-%3$s-title" href="%1$s" rel="bookmark">%2$s</a></h2>',
+					printf( '<h2 class="entry-title"><a  id="post-%3$s-title" href="%1$s">%2$s</a></h2>',
 						   esc_url( get_permalink() ),
 						   $title,
 						   get_the_ID()
 						   );
 					
 					else : 
-					printf( '<h2 class="entry-title"><a href="%1$s" id="post-%2$s-title" class="underlined" rel="bookmark">%3$s</a></h2>',
+					printf( '<h2 class="entry-title"><a href="%1$s" id="post-%2$s-title">%3$s</a></h2>',
 						   get_permalink(),
 						   get_the_ID(),
 						   get_the_title()
