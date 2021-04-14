@@ -1,13 +1,12 @@
 <?php
 /**
- * Search form in the header. 
+ * Accessible Searchform in the header. 
  * (Different one in widget)
- *@ Since 1.0
  **/
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,16 +31,15 @@
 	  role="search" 
 	  action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div class="search-wrapper" >
-		<label for="s" ><?php _e( 'Search', 'manduca' ) ?></label>
 		<input type="text"
-			   placeholder="<?php _e( 'Search', 'manduca' ); ?>"
+			   placeholder="<?php _e( 'Search'); ?>"
 			   value="<?php echo get_search_query(); ?>"
 			   name="s"
 			   id="s"/>
 		<button type="submit"
 				class="search-submit"
 				id="search-submit"
-				aria-label="<?php _e( 'Start search', 'manduca' ) ?>" >
+				value="<?php _e( 'Start search', 'manduca' ) ?>" >
 		   <?php echo  manduca_get_svg( array( 'icon'=>'search') ) ;?>
 		</button>
 	</div>

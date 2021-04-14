@@ -23,6 +23,9 @@ See also: https://github.com/batyuvitez/manduca/wiki/
 
 How to ...
 
+...Add multiple line as site-title:
+      - use '|' sign to linebreak in the general settings
+
 ... add accessible tabs
       @see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
 

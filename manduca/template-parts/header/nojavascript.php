@@ -1,11 +1,7 @@
 <?php
 /**
- * Message in case of no javascript
- *
- * <button> is removed from <a>
- *@see: https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5
- *
- *@since 19.2
+ * Message in case of disabled Javascript
+ **
  * */
 
  
@@ -31,11 +27,13 @@
  
 ?>
 <noscript>
-				<div id="no-javascript" class="inverse3">
-      <?php _e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?>
-     <div>
-      <a href="/" role="button"><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></a>
-     </div>
+	<div id="no-javascript" class="no-javascript inverse-scheme">
+		<?php
+		//Translators: This is the text in case of Javascript is disabled in browser */
+		_e( 'JavaScript is off. Please enable to use all functions.', 'manduca' ); ?>
+		<div>
+			<a href="/" role="button"><?php _e( 'Ok, I enabled javascript', 'manduca'); ?></a>
+		</div>
     </div>
 </noscript>
 	

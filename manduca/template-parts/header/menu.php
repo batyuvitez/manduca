@@ -3,8 +3,6 @@
  * Displays top navigation
  *
  * 
- * @ since 17.4
- * @last modification: 18.10.16
  */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.

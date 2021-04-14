@@ -950,7 +950,7 @@ body .site,
 
 /*/////////////////////////
 // vary top header */
-#no-javascript {
+.no-javascript {
 	text-align: center;
 	font-size: 200%;
 	padding: 3rem;
@@ -993,14 +993,6 @@ body .site,
 	margin: 0;
 }
 
-.header-searchform label { /* i.e. screen-reader-text*/
-	position: absolute;
-	clip: rect(1px, 1px, 1px, 1px);
-	overflow: hidden;
-	height: 1px;
-	width: 1px;
-	word-wrap: normal;
-}
 
 .site .search-submit {
 	margin: 0 0 0 1em;

@@ -3,8 +3,6 @@
  * Template of site title and blog description 
  *
  *
- * @since 17.1
- * @last modification: 18.10.3
  *
  * */
 
@@ -18,7 +16,7 @@
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
