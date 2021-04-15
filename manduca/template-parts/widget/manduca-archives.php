@@ -3,12 +3,11 @@
 /**
  * template of Accessible archive widget
  * So far I cannot use, since parameters cannot pass into template part in Wp. 
- * @since 19.2
  */
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
