@@ -58,4 +58,4 @@
 
 </div>
 
-<?php get_template_part ('/template-parts/posts/excerpt', 'navigation'); ?>
+<?php get_template_part ('/template-parts/posts/post', 'navigation'); ?>
