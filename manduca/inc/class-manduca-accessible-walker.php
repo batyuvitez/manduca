@@ -2,10 +2,25 @@
 /**
  * Add html markup to main navigation with walker
  *
- * @ Theme: Manduca - focus on accessibility
- * @ since 17.7
- *
  **/
+
+/*  This file is part of WordPress theme named Manduca - focus on accessibility.
+ *  Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+
+    Manduca is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 
 class Manduca_accessible_walker extends Walker_Nav_Menu  {
 
@@ -80,6 +95,9 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 		$atts['href']         = ! empty( $item->url ) ? $item->url : '';
 		$atts['aria-current'] = $item->current ? 'page' : '';
 		$atts ['id']		  = $submenu ? $this->aria_labelledby : '';
+		$atts ['class']		  = $submenu ? 'has-dropdown-toggle ': '';
+		$atts ['class']		  .= 'level-'.$depth;
+		$atts ['class']		  .= ' menu-link';
 		
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {

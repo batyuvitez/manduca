@@ -2594,8 +2594,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 /*//////////////////////////////////
 //*Searchform is inline */
 
-@media screen and (min-width: 41em) {
-	.font-size-0 .header-searchform  {  /* 656px */
+@media screen and (min-width: 41em) { /* 656px */
+	.font-size-0 .header-searchform  {  
 		top: 1.2em;
 		right: 0.35em;;
 		left: 17em;
@@ -2635,7 +2635,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 /*//////////////////////////////////
 //* big font: haader getting narrow*/
 
-@media screen and (min-width: 47em) {
+@media screen and (min-width: 47em) {  /* 752px */
 		.font-size-1 .header-searchform {
 				top: 1em;
 		}
