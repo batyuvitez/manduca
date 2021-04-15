@@ -28,7 +28,7 @@
     <?php get_template_part( 'template-parts/posts/content', get_post_format() );  ?>
     
     
-    <?php get_template_part( '/template-parts/posts/navigation' ) ; ?>
+    <?php get_template_part( '/template-parts/posts/nav','single' ) ; ?>
 
     <?php comments_template(); ?>
 

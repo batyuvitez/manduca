@@ -1,7 +1,6 @@
 <?php
 /**
  * Display the meta data of the post*
- * @ Since  17.1
  **/
 
   /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -23,11 +22,11 @@
 */
 
 ?>
-
-<ul>
-	<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
-</ul>
-
+<footer class="lighter-scheme metatags">
+	<ul>
+		<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
+	</ul>
+</footer>
 
 
 

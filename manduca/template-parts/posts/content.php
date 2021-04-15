@@ -63,8 +63,7 @@ else
 		do_action( 'manduca_after_entry_content' );
 	?>
 
-	<footer class="lighter-scheme metatags">
 		<?php get_template_part( 'template-parts/posts/content', 'meta' ); ?>
-	</footer>
+	
 
 </article>
