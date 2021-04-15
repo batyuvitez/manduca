@@ -3,8 +3,6 @@
  * After footer : back to top
  * Inserted after footer, just before the end of div.site 
  *
- * @since 18.7
- * skiplink @since 19.1
  **/
 
  
@@ -29,6 +27,7 @@
 ?>
 <div class="manduca-back-to-top-div link-button">
    <a id="manduca-back-to-top"
+      class="manduca-back-to-top"
       aria-label="<?php _e( 'Back to top', 'manduca' ); ?>"
       href="javascript::" >
       <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>

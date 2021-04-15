@@ -918,12 +918,15 @@ body .site,
 }
 
 
-#manduca-back-to-top {
+/*//////////////////////////////////////////////////////////
+* Back-to-top*/
+
+.manduca-back-to-top {
 	display: block;
 }
 
-#manduca-back-to-top:active,
-#manduca-back-to-top:focus {
+.manduca-back-to-top:active,
+.manduca-back-to-top:focus {
 	right:0;
 	left: auto;
 }
@@ -2683,10 +2686,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		text-align: center;
 	}
 	
-	
 	.megamenu ul.nav-menu > li.menu-item {
 		display: inline-block;
-		margin: 0 1rem 1rem 0;
+		margin: 0 0.5rem;
 		border: none;
 	}
 	
