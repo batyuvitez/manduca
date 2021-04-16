@@ -3,12 +3,11 @@
  * SVG icons related functions and filters
  *
  * @ Theme: Manduca focus on accessiblilty 
- * @ since 17.4
  **/
 
   /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2018  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,12 +28,8 @@ namespace Manduca;
 class Define_Globals {
 	
 	 
-	 function __construct() {
-			   add_action(
-					'enqueue_block_editor_assets',
-					array( $this, 'load_svg_to_global' )
-				 );
-				 
+	 public function __construct() {
+			   add_action( 'enqueue_block_editor_assets',array( $this, 'load_svg_to_global' ));
 				 
 			}
 	 
@@ -42,7 +37,15 @@ class Define_Globals {
 		  
 		  require( get_template_directory() . '/assets/images/svg-icons.php' );
 		  
-		  // Filter svg icon array before put it into global variable 
+		  /*
+				 * Filter of svg icons
+				 * 
+				 * Filter svg icon array before put it into global variable 
+				 *@param array $svg_icons :
+				 *							'icon_name ' => [ ['viewBox' => '',
+				 *																									'vector'=> '',
+				 *																									'path'=>''] ]
+				 * */
 		  $svg_icons = apply_filters( 'manduca_svg_icons' , $svg_icons );
 						 
 		  $GLOBALS[ 'svg_icons' ] = $svg_icons;

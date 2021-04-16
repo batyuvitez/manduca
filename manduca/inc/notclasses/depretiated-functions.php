@@ -1,12 +1,12 @@
 <?php
  /*
  * This functions from the older Manduca version is still here
- * to provide backwards compatibility
+ * Maybe they are usefull, or should be provide backward compatibility
  */
  
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@
  
 
  function manduca_get_svg( $args = array() ) { 
-	  $svg= new SVG_Functions( $args ) ;
+	  $svg= new Manduca\SVG_Functions( $args ) ;
 	  return $svg->Return_HTML();
  }
  
