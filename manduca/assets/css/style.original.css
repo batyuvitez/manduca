@@ -652,7 +652,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 .dialog-overlay {
-	z-index: 2;
+	z-index: 99;  /* tooltbar-buttons has z-index of 100 */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1068,7 +1068,6 @@ body .site,
 		width: 100%;
 		right: 0;
 		left: auto;
-		z-index: 100;
 		margin-top: 1em ;
 		border: 1px solid var(--ornament);
 		padding: 1rem;
