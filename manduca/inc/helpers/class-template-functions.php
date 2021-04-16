@@ -39,12 +39,12 @@ class Template_Functions {
 	 **/
 	public static function manduca_link_pages( string $left, string $right) {
 			$next_link = sprintf( '%s&nbsp;%s ',
-								 __( 'Next page of post', 'manduca' ),
+								 __( 'Older posts', 'manduca' ),
 								 manduca_get_svg( array( 'icon' => $left) )
 								 );
 			$previous_link = sprintf( '%s&nbsp;%s ',
 								 manduca_get_svg( array( 'icon' => $right) ),
-								 __( 'Previous page of post', 'manduca' )
+								 __( 'Newer posts', 'manduca' )
 								 );
 		
 			$args = array (
