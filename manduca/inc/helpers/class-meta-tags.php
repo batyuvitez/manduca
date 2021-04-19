@@ -23,9 +23,11 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca;
+namespace Manduca\helpers;
  
-class Meta_Tag_Helpers {
+class Meta_Tags {
+	
+	
     
 	public static function get_post_date() {
 		return sprintf( '<time datetime="%s">%s</time>',
@@ -49,9 +51,7 @@ class Meta_Tag_Helpers {
 				);
 	}
 
-	public static function meta_tag_generator () {
-	
-		$list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></li>';
+	public static function post_meta_tag_html ($list_item_mask) {
 	
 		$utility_text 	= sprintf(
 									$list_item_mask,
@@ -102,6 +102,50 @@ class Meta_Tag_Helpers {
 								);			
 		}
 		return $utility_text;	
+	}
+	
+	
+	
+	
+	public static function attachment_meta_tag_html ($list_item_mask) {
+		global $post;
+		$metadata = wp_get_attachment_metadata();
+		$image_alt 			= get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
+		$image_caption  	= $post->post_excerpt;
+		$image_description 	= $post->post_content;
+	
+		$utility_text=self::post_meta_tag_html ($list_item_mask);
+		$utility_text.=sprintf( $list_item_mask,
+						manduca_get_svg( array( 'icon' => 'cube' ) ),
+						//translators: attachment metadata size of attachment
+						__( 'Original size', 'manduca' ),
+						$metadata['width'].' * ' . $metadata['height'] 		
+						);
+		if ($image_alt ) {
+			$utility_text.=sprintf( $list_item_mask,
+						manduca_get_svg( array( 'icon' => 'text' ) ),
+						//translators: attachment metadata size of attachment
+						__( 'Alternative Text' ),
+						$image_alt
+						);
+		}
+		if( !empty( $image_caption ) ) {
+			$utility_text.=sprintf( $list_item_mask,
+					manduca_get_svg( array( 'icon' => 'film' ) ),
+					__( 'Captions/Subtitles' ),
+					$image_caption
+					);			
+		}
+			
+		if( !empty( $image_description ) ) {
+			$utility_text.=sprintf( $list_item_mask,
+							manduca_get_svg( array( 'icon' => 'bubble' ) ),
+							__( 'Image description'  ),
+							$image_description
+							);
+		}
+		
+		return $utility_text;
 	}
 
 }

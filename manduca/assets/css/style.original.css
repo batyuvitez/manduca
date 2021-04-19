@@ -1583,10 +1583,13 @@ strong.search-excerpt {
 }
 .image-attachment div.attachment {
 	text-align: center;
+	margin-bottom: 2em; 
 }
+
 .image-attachment div.attachment p {
 	text-align: center;
 }
+
 .image-attachment div.attachment img {
 	display: block;
 	height: auto;

@@ -30,9 +30,11 @@
 <?php
 	$previous_post = Manduca\helpers\Template_Functions::previous_post_link_html('angle-circle-left');
 	$next_post = Manduca\helpers\Template_Functions::next_post_link_html('angle-circle-right');
+	//Translators: navigation to previous / next post in a single post page
+	$post_nav_text=__( 'Post navigation', 'manduca' ); 
 ?>
 
-<nav id="nav-single" class="nav-single" aria-label="<?php _e( 'Post navigation', 'manduca' ); ?>">
+<nav id="nav-single" class="nav-single" aria-label="<?php echo $post_nav_text;?>">
 	<?php if( !empty ( $previous_post ) ) : ?>
 		<div class="nav-previous link-button">
 			<?php echo $previous_post;?>  	

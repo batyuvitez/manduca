@@ -21,10 +21,12 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+$list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></li>';
+
 ?>
 <footer class="lighter-scheme metatags">
 	<ul>
-		<?php echo Manduca\Meta_Tag_Helpers::meta_tag_generator (); ?>
+		<?php echo Manduca\helpers\Meta_Tags::post_meta_tag_html ($list_item_mask); ?>
 	</ul>
 </footer>
 
