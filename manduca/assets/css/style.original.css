@@ -645,8 +645,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
     top: 1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
-		padding-top: 0.85em;
-		padding-bottom: 0.85em;
+		padding-top: 1.15em;
+		padding-bottom: 1.15em;
 		font-size: 0.9em;
 }
 
@@ -748,11 +748,14 @@ video {
 
 .gallery {
 	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
 }
+
 .gallery .gallery-item {
 	text-align: center;
-	display: inline-block;
-	}
+	flex-basis: 33%;
+}
 
 
 .gallery-caption {
@@ -768,11 +771,13 @@ video {
 	max-width: 100%;
 	width: auto;
 }
+
 .gallery .gallery-icon img {
 	height: auto;
 	max-width: 90.909%;
 	padding: 0.909%;
 }
+
 .gallery-columns-1 .gallery-icon img {
 	padding: 3%;
 }
@@ -1064,6 +1069,7 @@ body .site,
 
 .megamenu {
 		position:  fixed;
+		z-index: 101;  /*overlay has z-index of100*/
 		top: 4.8em; /*Menu-toggle is absolutely positioned, navmenu not */
 		width: 100%;
 		right: 0;
@@ -2214,7 +2220,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 	
 /*mobil appearance */
- .toolbar-buttons-close {
+ .modal-window-close {
         display: block;
 								position: absolute;
         right: 0.4em;
@@ -2828,6 +2834,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		
 	.widget-searchfrom #s {
 		width: 17rem;
+	}
+	
+	.gallery .gallery-item {
+		flex-basis: 25%;
 	}
 	
 }

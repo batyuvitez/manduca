@@ -48,6 +48,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'walker'          => new Manduca_accessible_walker() 
 					   ));
 				?>
+				<button id="primary-nav-close" class="modal-window-close"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>
 			</nav>
 			
 		</div>

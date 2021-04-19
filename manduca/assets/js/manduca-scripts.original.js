@@ -722,16 +722,23 @@ jQuery(document).ready(function($)
     // Escape handler  */
 	 $(document).keyup(function(e) {
          if (e.keyCode === 27) {
-			$( ".menu-toggle" ).removeClass( "toggled-on" );
+			closeModalMenu ();	
+         }            
+      });
+	 
+	 $('#primary-nav-close').on ('click', function () {
+			closeModalMenu ();
+		});
+	 
+	 function closeModalMenu () {
+		$( ".menu-toggle" ).removeClass( "toggled-on" );
             $( ".menu-toggle" ).attr( 'aria-expanded', 'false' );
             $( ".megamenu" ).removeClass( "toggled-on" );
 			if (animation)
 				siteNavContain.hide(300);
 			else
 				siteNavContain.hide (0);
-         }            
-      });
-	 
+	 }
 	 //Keyboard trap in menu toggle 
    
 	
@@ -1104,7 +1111,7 @@ jQuery(document).ready(function($)
 	var dialogOverlay = document.querySelector('.dialog-overlay');
 	
 	var myDialog = new Dialog(navDialogEl, dialogOverlay);
-	myDialog.addEventListeners('.toolbar-buttons-open', '.toolbar-buttons-close');
+	myDialog.addEventListeners('.toolbar-buttons-open', '.modal-window-close');
 
 
 
