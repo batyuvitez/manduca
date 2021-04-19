@@ -234,7 +234,7 @@ msgstr "Akadálymentes archív widget"
 
 #: search.php:53
 msgid "No matching result found for %s."
-msgstr "Nincs találat a %s kereső kifejezésre."
+msgstr "Nincs találat %s kereső kifejezésre."
 
 #. translators: Toolbar link target selector: screenreader text.
 #: template-parts/header/toolbarinner.php:175
@@ -603,7 +603,7 @@ msgstr "Előző bejegyzés"
 #. translators: %1$s is the number of results found, %2$s is the search term
 #: search.php:39
 msgid "Found %1$s search result for keyword: %2$s"
-msgstr "A %2$s kifejezésre összesen %1$s találat van"
+msgstr "%2$s kifejezésre összesen %1$s találat van"
 
 #. Translators: Breadcrumb home page.
 #: template-parts/header/breadcrumb-template.php:53

@@ -1008,6 +1008,11 @@ body .site,
 	vertical-align: bottom;
 }
 
+.widget-searchform .search-submit {
+    margin: 0;
+    vertical-align: middle;
+}
+
 
 /*///////////////////////////////
 // site-title          */
@@ -1244,7 +1249,9 @@ nav li.menu-item > .submenu-container > a {
 	margin: 0.5em 0;
 }
 
-
+.widget .tagcloud a {
+    margin-right: 1em;
+}
 
 /*============================================================-- 
 /* TYPOGRAPHY 
@@ -2477,7 +2484,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.entry-header-wrapper h1,
 	.entry-header-wrapper h2 {
-		width: calc( 100% - 5.8em);
 		margin: 0 0 0 1em;
 	}
 
@@ -2508,10 +2514,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding-right: 0.14rem;
 	}
 		
-	.content-date {
-		
-	}
-	
 	.content-date time {
 		display: flex;
 		flex-direction: column;
@@ -2716,7 +2718,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		white-space: nowrap;
 	}
 	
-	
+	.megamenu button.modal-window-close {
+		display: none;
+	}
 	
 	/*//////////////////////////////////
 	// sub-menu         */

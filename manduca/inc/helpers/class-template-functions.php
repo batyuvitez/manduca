@@ -381,7 +381,7 @@ class Template_Functions {
 			else {
 					$output = sprintf( '<a href="%1$s" rel="prev"><span class="screen-reader-text">%4$s</span>%3$s %2$s</a>',
 						   get_permalink( $post ),
-						   $post->post_title,
+						   '<span>'.$post->post_title.'</span>',
 						   manduca_get_svg( array( 'icon' => $svg) ),
 						   __( 'Previous post', 'manduca' ) .' '
 						   );
@@ -404,7 +404,7 @@ class Template_Functions {
 			} else {
 					$output = sprintf( '<a href="%1$s" rel="next"><span class="screen-reader-text">%4$s</span>%2$s %3$s</a>',
 						   get_permalink( $post ),
-						   $post->post_title,
+						   '<span>'.$post->post_title.'</span>',
 						   manduca_get_svg( array( 'icon' => $svg) ),
 							__( 'Next post', 'manduca' ) .' '
 						   );

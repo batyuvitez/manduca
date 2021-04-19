@@ -22,41 +22,42 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- 
+global $wp_query;
+$search_expr=get_search_query();
+if (get_locale()==='hu_HU') {
+	$search_expr=Hungarian_Contents::definite_article ($search_expr).' ' .$search_expr;
+}
 
 ?>
 
 <?php get_header(); ?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="entry-header no-thumbnail">
-				<h1>
-				<?php
-				 global $wp_query;
-                    /* translators: %1$s is the number of results found, %2$s is the search term */
-                    printf( __( 'Found %1$s search result for keyword: %2$s', 'manduca' ), 
-                            number_format_i18n( $wp_query->found_posts ), 
-                            '<span class="twocolumns">' . get_search_query() . '</span>' 
-                    );
-				?>
-				</h1>
+	<?php if ( have_posts() ) : ?>
+	
+		<header class="entry-header no-thumbnail">
+			<h1>
+			<?php			
+				/* translators: %1$s is the number of results found, %2$s is the search term */
+				printf( __( 'Found %1$s search result for keyword: %2$s', 'manduca' ), 
+					number_format_i18n( $wp_query->found_posts ), 
+					'<span class="twocolumns">' . $search_expr. '</span>' ); ?>
+			</h1>
+		</header>
+	
+		
+		<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
+	
+	<?php else : ?>
+	
+		<article id="post-0" class="post no-results not-found">
+				<h1><?php printf( __( 'No matching result found for %s.', 'manduca' ), $search_expr ) ?></h1>
 			</header>
-
-			
-			<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
-
-		<?php else : ?>
-
-			<article id="post-0" class="post no-results not-found">
-					<h1 tabindex="0"><?php printf( __( 'No matching result found for %s.', 'manduca' ), get_search_query() ) ?></h1>
-				</header>
-
-				<div class="entry-content">
-					<?php get_search_form(); ?>
-				</div>
-			</article>
-
-		<?php endif; ?>
+	
+			<div class="entry-content">
+				<?php get_search_form(); ?>
+			</div>
+		</article>
+	
+	<?php endif; ?>
 
 <?php get_footer(); ?>
