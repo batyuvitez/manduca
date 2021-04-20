@@ -29,8 +29,8 @@
 ?>
    
 <svg id="pageload-spinner"
-     width="70"
-     height="70"
+     width="210"
+     height="210"
      style="position: fixed; top: 50%; left: 50%;"
      viewBox="0 0 38 38"
      xmlns="http://www.w3.org/2000/svg"

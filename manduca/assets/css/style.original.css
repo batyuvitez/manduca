@@ -509,20 +509,20 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 }
 
 
-.site button,
-.site .link-button {
+button,
+.link-button {
 	margin: 0.3em;
 }
 
-.site button,
-.site .link-button > a {
+button,
+.link-button > a {
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0.625em;  /* very narrow screens */
 }
 
-.site .more-link.link-button {
+.more-link.link-button {
 	max-width: 16em;
 	float: right;
 	margin: 2em 0 0;
@@ -530,11 +530,11 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 /* Buttons */
-.site input[type="submit"],
-.site input[type="button"],
-.site input[type="reset"],
-.site article.post-password-required input[type=submit],
-.site .bypostauthor cite span {
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+article.post-password-required input[type=submit],
+.bypostauthor cite span {
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 0.51rem 0.72rem;
@@ -545,17 +545,17 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 .menu-toggle,
-.site button,
-.site input[type="submit"],
-.site input[type="button"],
-.site input[type="reset"] {
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
 	cursor: pointer;
 }
 
 
-.site button[disabled],
-.site input[disabled],
-.site textarea[disabled] {
+button[disabled],
+input[disabled],
+textarea[disabled] {
 	cursor: not-allowed;
 }
 
@@ -571,10 +571,10 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 /* Form fields, general styles first */
-.site button,
-.site input,
-.site select,
-.site textarea {
+button,
+input,
+select,
+textarea {
 	font-family: inherit;
 	max-width: 100%;
 	font-size: 1em;  /* Important to have a basis font-size */
@@ -583,18 +583,18 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 
-.site input,
-.site textarea {
+input,
+textarea {
 		padding: 0.75em; 
 		margin-bottom: 0.5em;	
 }
 
-.site button,
-.site input {
+button,
+input {
 	line-height: normal;
 }
 
-.site textarea {
+textarea {
 	font-size: 100%;
 	overflow: auto;
 	vertical-align: top;
@@ -602,12 +602,12 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 }
 
 /* Reset non-text input types */
-.site input[type="checkbox"],
-.site input[type="radio"],
-.site input[type="file"],
-.site input[type="hidden"],
-.site input[type="image"],
-.site input[type="color"] {
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"],
+input[type="hidden"],
+input[type="image"],
+input[type="color"] {
 	border: 0;
 	padding: 0;
 }
@@ -627,20 +627,20 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	padding: 0;
 }
 
-.site input[type="checkbox"]{
+input[type="checkbox"]{
   width: 1em; 
   height: 1em; 
   cursor: pointer;
 }
 
-.site .menu-toggle {
+.menu-toggle {
 	position: absolute;
 	top: 0.9em;
 	right: 0.2em;
 	max-width: 43%;
 }
 
-.site .toolbar-buttons-open {
+.toolbar-buttons-open {
     position: absolute;
     top: 1em;  /* compensate smaller font */
     left: 0.2em;
@@ -803,12 +803,15 @@ video {
 	margin: 2rem 0;
 }
 
-.post-navigation >div {
+.post-navigation > div {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 }
 
+.post-navigation .link-button > a.page-numbers {
+	font-size: 1.1em; /* in order to have equal height to the arrows*/
+}
 
 /* Image navigation */
 .image-navigation {
@@ -1043,9 +1046,6 @@ body .site,
 .breadcrumb  ul {
 	padding: 0; /* reset browser's default */
 }
-.breadcrumb  span {
-	margin-right: 1em;
-}
 
 
 
@@ -1246,7 +1246,7 @@ nav li.menu-item > .submenu-container > a {
 .footer-navigation ul li{
 	list-style-type: none;
 	text-align: center;
-	margin: 0.5em 0;
+	margin: 1em;
 }
 
 .widget .tagcloud a {
@@ -1390,9 +1390,10 @@ nav li.menu-item > .submenu-container > a {
 }
 
 /* defaults headings */
-.site h1 {
+h1 {
 	font-size: 1.8em;
-	margin: 0 0 1.8em;
+	margin: 0;
+	text-align: center;
 	font-weight: bold;  /* browser default is usually bold */
 	clear: both;
 }
@@ -2285,8 +2286,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 @media screen and (min-width: 23em) {
 	
-	.site button,
-	.site .link-button {
+	button,
+	.link-button {
 		width: auto;
 	}
 	
@@ -2516,7 +2517,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		
 	.content-date time {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
 		width: 4.8em;
 		padding: 0.5em 0;
 	}
@@ -2608,6 +2610,17 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 //*Searchform is inline */
 
 @media screen and (min-width: 41em) { /* 656px */
+	
+	button,
+	.link-button a {
+		padding: 0.4em;	
+	}
+	
+	.toolbar-buttons-open {
+		padding-bottom: 0.9em;
+		padding-top: 0.9em;
+	}
+	
 	.font-size-0 .header-searchform  {  
 		top: 1.2em;
 		right: 0.35em;;
