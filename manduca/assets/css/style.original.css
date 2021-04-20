@@ -273,12 +273,12 @@ body a svg {
 }
 
 
-.site a:focus,
-.site a:active,
-.site button:focus,
-.site button:active,
-.site select:focus,
-.site select:active,
+a:focus,
+a:active,
+button:focus,
+button:active,
+select:focus,
+select:active,
 button:focus,
 input:focus,
 textarea:focus{
@@ -286,9 +286,9 @@ textarea:focus{
 	outline-offset: 2px;
 }
 
-.site a:hover,
-.site button:hover:not([disabled]),
-.site select:hover {
+a:hover,
+button:hover:not([disabled]),
+select:hover {
 	outline: 1px dotted maroon; 		
 }
 
@@ -356,13 +356,13 @@ li.menu-item a {
 }
 
 button svg, 
-.site .link-button svg {
+.link-button svg {
 		fill: var(--default-button-text);;
 }
 
-.site button[disabled],
-.site input[disabled],
-.site textarea[disabled] {
+button[disabled],
+input[disabled],
+textarea[disabled] {
 	color: var(--featured-text);
 	background-color: var(--featured-background);
 }
@@ -419,9 +419,9 @@ button svg,
 	fill: var(--high-contrast-text);;
 }
 
-.high-contrast-1 .site button[disabled],
-.high-contrast-1 .site input[disabled],
-.high-contrast-1 .site textarea[disabled] {
+.high-contrast-1 button[disabled],
+.high-contrast-1 input[disabled],
+.high-contrast-1 textarea[disabled] {
 		color: var(--featured-background);
 		background-color: var(--featured-text); 
 }
@@ -1006,7 +1006,7 @@ body .site,
 }
 
 
-.site .search-submit {
+.search-submit {
 	margin: 0 0 0 1em;
 	padding: 0.33em;
 	vertical-align: bottom;
@@ -1277,37 +1277,37 @@ nav li.menu-item > .submenu-container > a {
 
 
 
-.site q:before {
+q:before {
 	content: "„";
 }
-.site q:after {
+q:after {
 	content: "”";
 }
-.site hr {
+hr {
 	border: 0;
 	height: 1px;
 	margin: 2em;
 	margin-bottom: 1.714285714rem;
 }
-.site sub,
-.site sup {
+sub,
+sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
-.site sup {
+sup {
 	top: -0.5em;
 }
-.site sub {
+sub {
 	bottom: -0.25em;
 }
-.site small {
+small {
 	font-size: 75%;
 }
 
 
-.site blockquote {
+blockquote {
 	margin-bottom: 1.5em;
 	margin-top: 1.5em;
 	padding-left: 1em;
@@ -1316,37 +1316,37 @@ nav li.menu-item > .submenu-container > a {
 	line-height: 1.5;
 }
 
-.site cite {
+cite {
 	font-size: 95%;
 	font-style: italic;
 }
 
-.site ul ul,
-.site ol ol,
-.site ul ol,
-.site ol ul {
+ul ul,
+ol ol,
+ul ol,
+ol ul {
 	margin: 0 0 0.66em 0.66em;
 }
 
-.site ul {
+ul {
 	list-style: disc outside;
 }
-.site ol {
+ol {
 	list-style: decimal outside;
 }
 
 
-.site strong {
+strong {
 	font-weight: 700;
 }
-.site em {
+em {
 	font-style: italic;  /*  This is a WP theme requirement*/
 }
 
-.site pre,
-.site code,
-.site tt,
-.site b {
+pre,
+code,
+tt,
+b {
 	font-family: Courier, /* Windows, Ios */
 				'Droid Sans Mono',  /* Android */
 				monospace;
@@ -1355,11 +1355,11 @@ nav li.menu-item > .submenu-container > a {
 	overflow: auto;
 }
 
-.site code {
+code {
 	border: 1px solid var(--ornament);
 }
 
-.site pre {
+pre {
 	padding: 1em;
 	font-size: 1rem;
 	line-height: 1.714285714;
@@ -1368,21 +1368,21 @@ nav li.menu-item > .submenu-container > a {
 }
 
 
-.site abbr,
-.site dfn,
-.site acronym {
+abbr,
+dfn,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-.site a abbr {
+a abbr {
 	border-bottom: none;
 }
-.site address {
+address {
 	font-weight: bolder;
 	line-height: 1.2;
 	display: inline;
 }
-.site kbd {   /* since @18.10.4 from wikipedia css */
+kbd {   /* since @18.10.4 from wikipedia css */
 	    border: 1px solid var(--ornament);
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
@@ -1399,25 +1399,25 @@ h1 {
 	clear: both;
 }
 
-.site .entry-content h1 {
+.entry-content h1 {
 	margin: 3em 0 1.5em;
 }
 
 .font-size-3 h1 {
 	font-size: 1.4em;
 }
-.site h2 {
+h2 {
 	font-size: 1.3em;
 	line-height: 1.5;
 	clear: both;
 }
 
-.site .entry-content h2 {
+.entry-content h2 {
 	margin: 2.6em 0 1.3em;
 }
 
 
-.site h3 {
+h3 {
 	font-size: 1.125em;
 	line-height: 1.5;
 	margin: 1.125em 0 0.5625em;
@@ -1447,41 +1447,41 @@ li {
  }
 
 
-.site embed,
-.site iframe,
-.site object,
-.site video {
+embed,
+iframe,
+object,
+video {
 	margin-bottom: 1.714285714rem;
 }
 
-.site dl {
+dl {
 	margin: 0 0 1rem;
 	line-height: 1.5;
 }
 
-.site dt {
+dt {
 	font-weight: bold;
 	margin: 1rem 0 0;
 }
 
-.site dd {
+dd {
 	margin: 0.33rem 0 0 2rem;
 }
 
-.site table {
+table {
 	font-size: smaller;
 	line-height: 2;
 	margin: 0 0 1.33rem;
 	width: 100%;
 }
 
-.site table caption {
+table caption {
 	font-size: larger;
 	margin: 1.33rem 0;
 }
 
-.site td,
-.site th	{
+td,
+th	{
 	border-top: 1px solid var(--ornament);
 	padding: 0.428rem 0.714rem 0.728rem 0;
 }
@@ -1528,7 +1528,7 @@ entry-meta*/
 	width: calc(100% - 3em);
 }
 
-.site .metatags svg {
+.metatags svg {
 	vertical-align: top;
 	display: inline-block;
 }
@@ -2074,20 +2074,20 @@ body {
 /*///////////////////////////////
 /* FONT-TYPE                         */
 
-.font-type-1 .site #menu,
-.font-type-1 .site .site-header-menu,
+.font-type-1 #menu,
+.font-type-1 .site-header-menu,
 .font-type-1 .site,
-.font-type-1 .site article,
-.font-type-1 .site a,
-.font-type-1 .site h1,
-.font-type-1 .site h2,
-.font-type-1 .site h3,
-.font-type-1 .site h4,
-.font-type-1 .site h5,
-.font-type-1 .site h6,
-.font-type-1 .site p,
-.font-type-1 .site span,
-.font-type-1 .site label,
+.font-type-1 article,
+.font-type-1 a,
+.font-type-1 h1,
+.font-type-1 h2,
+.font-type-1 h3,
+.font-type-1 h4,
+.font-type-1 h5,
+.font-type-1 h6,
+.font-type-1 p,
+.font-type-1 span,
+.font-type-1 label,
 .toolbar-buttons #font-type-1 {
     
 			font-family: 'dyslexieregular';
@@ -2335,6 +2335,13 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin-top: 0.5em;
 	}
 	
+	img.aligncenter,
+	.wp-caption.aligncenter {
+		margin-bottom: 0.5em;
+		border-left: 0.5em solid transparent; /* hack to add distance, cause margin wont work */
+		margin-top: 0.5em;
+	}
+	
 }
 
 
@@ -2384,7 +2391,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 				top: 6px;
 	}
 
-	.site .toolbar-buttons .info-container {
+	.toolbar-buttons .info-container {
 		display: block;
 		margin: 14px 0;
 	}
@@ -2425,26 +2432,26 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	
 	/* Font size */ 
-	.site h2 {
+	h2 {
 		font-size: 1.536em;
 	}
 	
 	
-	.site h3 {
+	h3 {
 		font-size: 1.28em;
 		margin: 2em 0 0.6666em;
 	}
 	
 	
-	.site h4 {
+	h4 {
 		font-size: 1.024em;
 		margin: 2.048rem 0 0.686rem 2.048rem;
 	}
-	.site h5 {
+	h5 {
 		font-size: 0.819em;
 		margin: 1.638rem 0 0.546rem;
 	}
-	.site h6 {
+	h6 {
 		font-size: 0.6553em;
 		margin: 1.31072rem 0 0.65536rem;	
 	}
@@ -2569,8 +2576,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		display: flex;
 		justify-content: space-between;
 	}
-	.site .nav-previous,
-	.site .nav-next {
+	.nav-previous,
+	.nav-next {
 		flex-basis: 45%;
 		margin: 0;
 		display: flex;
@@ -2759,7 +2766,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	
-	.site .menu-toggle {
+	.menu-toggle {
 		display: none;
 	}
 	
@@ -2785,7 +2792,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		text-align: left;
 	}
 	
-	.site .toolbar-buttons-open {
+	.toolbar-buttons-open {
 		position: relative;
 		top: 0.3125em;
 		margin-right: 2em;
