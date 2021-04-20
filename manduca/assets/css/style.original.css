@@ -97,9 +97,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /*/li and ul would not reset above, because that leaded to errorneous dipslay on iPhone.*/
 ul, ol  {
-	margin: 0;
+	margin: 0 0 1em 1em;
 	padding: 0;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -1331,7 +1332,6 @@ nav li.menu-item > .submenu-container > a {
 }
 .site ol {
 	list-style: decimal outside;
-	margin: 0 0 0.5em 2em;
 }
 
 
@@ -1425,27 +1425,23 @@ h1 {
 
 
 	
-.site h1 + h2,
-.site h2 + h3,
-.site h3 + h4,
-.site h4 + h5,
-.site h5 + h6,
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6,
 div.entry-content > h2:first-child{
 		margin-top:  0 ;
-	}
+}
 	
 	
-/*
- * WCAG 1.4.8:paragraph spacing is at least 1.5 times larger than the line spacing.
- * @since 21.1
-*/
 .site-content p,
 .site-content ol,
 .site-content  ul {
-	margin-bottom: 2.3em; 
+	margin-bottom: 1.5em; 
 }
 
-.site li {
+li {
 	list-style-position: inside;
  }
 
@@ -2135,7 +2131,11 @@ body {
  * WCAG 2.1: Spacing following paragraphs to at least 2 times the font size;
  **/
 .paragraph-spacing-1 p,
-.paragraph-spacing-1 li {
+.paragraph-spacing-1 ol,
+.paragraph-spacing-1 ul,
+.paragraph-spacing-1 .site-content p,
+.paragraph-spacing-1 .site-content ol,
+.paragraph-spacing-1 .site-content  ul{
 	margin-bottom: 3.6em;
 }
 
@@ -2491,14 +2491,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	/*content date format*/
 	.entry-header .content-date,
 	.excerpt .content-date {
-			font-size: 95%;
+			font-size: 93%;
 			text-transform: uppercase;
 			font-weight: 300;
 			text-align: center;
 			margin: 0;
 			padding: 0.5em;
-			max-width: 5.8rem;  /*probing. 'width' not worked*/
-			min-width: 5.8rem;
 			position: relative;
 	}
 	
@@ -2519,7 +2517,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		width: 4.8em;
+		width: 5.3em; /* Hungarian "szept.31."displayed inline */
 		padding: 0.5em 0;
 	}
 	
