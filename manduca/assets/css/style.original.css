@@ -346,9 +346,9 @@ button,
 li.menu-item a {
 	background-color: var(--default-button-background);
 	color: var(--default-button-text);
-	border-width: 3px;
+	border-width: 3px;  /* all sides */
 	border-color:  var(--ornament);
-	border-style: outset;
+	border-style: outset;  /* button-like */
 }
 
 .link-button a {
@@ -521,6 +521,23 @@ button,
 	align-items: center;
 	justify-content: space-between;
 	padding: 0.625em;  /* very narrow screens */
+}
+
+.nav-single a {
+	height: 100%;
+}
+
+.nav-single .link-button svg {
+	flex-basis: 20%;
+	margin: 0;
+}
+
+.nav-single .link-button span {
+	flex-basis: 80%;
+}
+
+.nav-previous a {
+	justify-content: flex-start;
 }
 
 .more-link.link-button {
@@ -785,7 +802,8 @@ video {
 
 
 
-/* post pagination @since 18.10.17-*/
+
+/* post pagination */
 
 .pagination span,
 .pagination a {
@@ -803,6 +821,7 @@ video {
 	overflow: hidden;
 	margin: 2rem 0;
 }
+
 
 .post-navigation > div {
 	display: flex;
@@ -1111,7 +1130,6 @@ body .site,
 nav li.menu-item > a,
 nav li.menu-item > .submenu-container > a {
 	padding: 0.3em 0.4em;
-	border: 1px solid var(--ornament);
 	font-weight: normal;
 	
 }
@@ -1829,9 +1847,6 @@ button svg,
 		height: 1.9em;
 }
 
-.nav-next svg {
-	margin-left: 0.5em;
-}
 svg.link-function {  /* @see:Link_Functions */
 	margin: 0 0.5em;
 }
