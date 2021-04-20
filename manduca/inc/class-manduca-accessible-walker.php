@@ -118,7 +118,7 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 		$item_output .= "\n";
 		if( $submenu) {
 			$item_output .='<div class="distance-keeper" aria-hidden="true"></div>';
-			$item_output .= '<button class="dropdown-toggle" ';
+			$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';			
 			$item_output .= 'aria-haspopup="true" ';
 			$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
 			$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'">';
