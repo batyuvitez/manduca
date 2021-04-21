@@ -2728,6 +2728,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.megamenu ul.nav-menu {
 		text-align: center;
+		margin-top: 0;
 	}
 	
 	.megamenu ul.nav-menu > li.menu-item {
