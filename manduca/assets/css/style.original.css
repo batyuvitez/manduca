@@ -1105,6 +1105,10 @@ body .site,
 		padding: 1rem;
 }
 
+.megamenu ul.nav-menu {
+		margin-top: 4em; /*'cause close button */
+}
+
 .font-size-1 .megamenu {
 		top: 6em;
 }
