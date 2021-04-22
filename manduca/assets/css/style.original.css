@@ -76,6 +76,36 @@
 
 
 
+/*============================================================
+|                                                            |
+|               VARIABLES                                    |
+|                                                            |
+==============================================================*/
+:root {
+	--default-background: ivory;
+	--default-text: black;
+	--default-link: royalBlue;
+	--default-button-background:saddleBrown;
+	--default-button-text:azure;
+	--default-outline: maroon;
+	--default-text-2: #232323;
+	--lighter-background: white;
+	--lighter-text: maroon;
+	--inverse-background: black;
+	--inverse-text: white;
+	--inverse-link: steelBlue;
+	--inverse-outline: ivory;
+	--featured-background: paleTurquoise;
+	--featured-text: maroon;
+	--ornament: SlateGrey;
+	--high-contrast-background: black;
+	--high-contrast-text: white;
+	--alternate-font-type: 'dyslexieregular';
+	--default-screen-font-type: Verdana,'Helvetica Neue',Arial,-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
+	--print-title-font-type: Arial, Helvetica, Ubuntu, sans-serif;
+	--print-default-font-type: Georgia, 'Times New Roman', 'Liberations sans', serif;
+}
 
 
 /*============================================================
@@ -227,26 +257,6 @@ img {
 |               SECTION COLORS 				                       |
 |                                                            |
 ==============================================================*/
-:root {
-	--default-background: ivory;
-	--default-text: black;
-	--default-link: royalBlue;
-	--default-button-background:saddleBrown;
-	--default-button-text:azure;
-	--default-outline: maroon;
-	--default-text-2: #232323;
-	--lighter-background: white;
-	--lighter-text: maroon;
-	--inverse-background: black;
-	--inverse-text: white;
-	--inverse-link: steelBlue;
-	--inverse-outline: ivory;
-	--featured-background: paleTurquoise;
-	--featured-text: maroon;
-	--ornament: SlateGrey;
-	--high-contrast-background: black;
-	--high-contrast-text: white;
-}
 
 body, 
 .site,
@@ -909,14 +919,7 @@ body .site {   /* reading option orinal font remains always this.  */
 
 body .site,
 .toolbar-buttons .font-type-container > button:nth-child(2) {
-	font-family: Verdana,
-	             "Helvetica Neue",
-				 Arial,
-	             -apple-system,
-				 system-ui,
-				 BlinkMacSystemFont,
-				 "Segoe UI",
-				 Roboto,sans-serif;   
+	font-family: var(--default-screen-font-type);
 }
 
 .site-header .controls,
@@ -1369,9 +1372,7 @@ pre,
 code,
 tt,
 b {
-	font-family: Courier, /* Windows, Ios */
-				'Droid Sans Mono',  /* Android */
-				monospace;
+	font-family: var(--default-monospace-font-type);
 	padding: 0.1em 0.5em ;
 	font-size: 0.95rem;
 	overflow: auto;
@@ -2109,12 +2110,12 @@ body {
 .font-type-1 label,
 .toolbar-buttons #font-type-1 {
     
-			font-family: 'dyslexieregular';
+			font-family: var(--alternate-font-type);
 			font-size: 94%;  /* this is a bigger font */
 }
 
 #font-type-0 span {
-		font-family: sans-serif;
+		font-family: var(--default-screen-font-type);
 		font-size: 100%;
 }
 
@@ -2925,7 +2926,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	body .site {
 		color: black;
 		font-size: 12pt;
-		font-family: Georgia, 'Times New Roman', serif;
+		font-family: var(--print-default-font-type);
 		
 	}
 	
@@ -2955,14 +2956,18 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		border-bottom: 1px blue solid;
 	}
 	.site-title {
-		font-size: 2.5em;
+		font-size: 2.7em;
 		font-weight: 700;
 		text-align: center;
 		display: block;
-		color: blue;
-		font-family: Arial, Helvetica, Ubuntu, sans-serif;
+		color: blue;		
 		text-transform: uppercase;
 	}
+	
+	.site-title, h1, h2, h3, h4, h5, h6 {
+		font-family: var(--print-title-font-type);
+	}
+	
 	a.site-title:after {
 		content: attr(href) ; /* Show URLs */
 		font-size: 0.5em;
