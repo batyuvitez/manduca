@@ -1724,7 +1724,7 @@ a.comment-edit-link {
 	display: block;
 	line-height: 1.714285714;
 }
-/*@since 18.6 & wp 4.9.6 */
+
 .comment-respond form .comment-form-cookies-consent label{
 	display: inline;
 }
@@ -1735,21 +1735,22 @@ a.comment-edit-link {
 }
 
 
-.comment-respond form p.form-allowed-tags {
-	margin: 0;
-	font-size: 0.9em;
-	line-height: 2;
-}
-.comment-author-link {
-	font-size: 1.21rem;
-}
-
 .nocomments {
 	display: inline-block;
 	margin: 0 0 1rem 0.5rem;
 }
 
+.comment .reply.more-link.link-button {
+	display: flex;
+	align-items: center;
+}
+.comment .reply.more-link.link-button svg {
+	flex-basis: 20%;
+}
 
+.comment .reply.more-link.link-button a {
+	flex-basis: 80%;
+}
 
 /* 11. Widgets
 ============================================================-- */

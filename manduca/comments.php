@@ -1,4 +1,7 @@
 <?php
+/*
+ * Displays the comment part blow the the post content
+ * */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
@@ -25,20 +28,19 @@ if ( post_password_required()  ) {
 	return;
 }
 ?>
-<aside id="comments" class="comments-area">
 
-<?php if ( have_comments()  ) :
-
-?>
+<?php if ( have_comments()  ) :  ?>
+	<aside id="comments" class="comments-area">
 
 	
 
+	
 		<?php /* Get the comments and pings count */ 
 			
-			$comments_num = manduca_get_comment_count();
+			$comments_num = Manduca\helpers\Comments::manduca_get_comment_count();
 			// to also show comments awaiting approval
-			$allcomments_num = manduca_get_comment_count( 'comments', false );
-			$pings_num = manduca_get_comment_count( 'pings' );
+			$allcomments_num = Manduca\helpers\Comments::manduca_get_comment_count( 'comments', false );
+			$pings_num = Manduca\helpers\Comments::manduca_get_comment_count( 'pings' );
 						
 			
 		?>
@@ -76,7 +78,7 @@ if ( post_password_required()  ) {
 
 		<ol class="commentlist">
 			<?php wp_list_comments( array(
-										  'callback' => 'manduca_comment',
+										  'callback' => array ('Manduca\helpers\Comments','manduca_comment'),
 										  'style' => 'ol'
 										  )
 									); ?>
@@ -92,8 +94,6 @@ if ( post_password_required()  ) {
 		
 			/*
 			 * Filter nocomment text
-			 *
-			 * since @17.9.4
 			 * */
 			
 			echo apply_filters	( 'manduca_nocomment_text', sprintf(
@@ -102,10 +102,11 @@ if ( post_password_required()  ) {
 														   )
 						 );
 			
-		}
+		} 
 		
-	endif; // have_comments() 
-	$args=array ( 'class_submit'=>'link-button');
-	comment_form($args ); ?>
+		$args=array ( 'class_submit'=>'link-button');
+		comment_form($args ); ?>
 
-</aside>
+	</aside>
+	
+<?php endif; // have_comments() 
