@@ -36,7 +36,7 @@ $list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></l
 	<section class="metatags" arialabelledby="author-header">
 		<h2 class="screen-reader-text" id="author-header">
 		<?php
-		// translators visually hidden title of author info
+		// Translators: visually hidden title of author info
 		_e( 'Author info', 'manduca' ) ;?>
 	</h2>
 		<div class="author-info">

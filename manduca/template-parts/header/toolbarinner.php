@@ -2,7 +2,6 @@
 /**
  * Readability toolbar in the header. 
  *
- * @since 17.8
  * */
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -151,8 +150,9 @@
 				'elements'=>
 					array (
 						array( 
+								//translators: Animation default settings on phone
 								'phone_text'			=>__( 'On' , 'manduca' ),
-								//translators: Animation default settings
+								//translators: Animation default settings on monitor
 								'desktop_text'			=>__( 'Enabled' , 'manduca' )),
 						array( 
 								'phone_text'			=>__( 'Off' , 'manduca' ),
