@@ -722,7 +722,10 @@ jQuery(document).ready(function($)
     // Escape handler  */
 	 $(document).keyup(function(e) {
          if (e.keyCode === 27) {
-			closeModalMenu ();	
+			var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
+			$.each (toggleOffs, function ( index, el) {
+				$(el).removeClass( 'toggled-on');
+			});
          }            
       });
 	 
