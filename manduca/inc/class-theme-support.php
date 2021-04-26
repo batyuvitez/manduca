@@ -1,7 +1,11 @@
 <?php
+/*
+ *  WordPress Themes Supports
+ *@see: /*https://wordpress.stackexchange.com/questions/287830/remove-type-attribute-from-script-and-style-tags-added-by-wordpress
+*/
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021 Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,9 +23,7 @@
 
 namespace Manduca;
 
-class Theme_Support
-{
-	
+class Theme_Support {
 	
 	public function __construct ()
 	{
@@ -39,7 +41,13 @@ class Theme_Support
 		
 		// Switch default core markup to output valid HTML5.
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'caption', 'gallery'
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'caption',
+			'gallery',
+			'script', 
+			'style'
 		) );
 		
 		//Allows themes to add document title tag
@@ -59,9 +67,7 @@ class Theme_Support
 			'default-color' => 'f3f3f5',
 		) );
 		
-		
 	}
-	
 	
 }
 
