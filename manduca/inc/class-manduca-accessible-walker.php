@@ -29,7 +29,8 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
    
 	 public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-        $output .= "\n" .$indent .'<div class="sub-nav lighter-scheme">';
+        $output .= "\n" .$indent .'<div class="sub-nav lighter-scheme ';
+		$output .= 'level-'.$depth.'">';
 		$output .= '<ul role="menu" id="' .$this->aria_controls .'">';
 		$output .= "\n";
     }
@@ -110,7 +111,8 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 				
 		$item_output  = $args->before;
 		if( $submenu) {
-			$item_output .='<div class="submenu-container">';
+			$item_output .='<div class="submenu-container ';
+			$item_output .='level-'.$depth.'">';
 		}
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $item->title . $args->link_after;

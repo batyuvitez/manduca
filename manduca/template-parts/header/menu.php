@@ -44,7 +44,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'menu_id'		 => 'primary-nav-menu',
 					   'container'       => false,
 					   'items_wrap'      => '<ul id="%1$s" class="%2$s" role="menu">%3$s</ul>',
-					   'depth'           => 3,
+					   'depth'           => 4,
 					   'walker'          => new Manduca_accessible_walker() 
 					   ));
 				?>

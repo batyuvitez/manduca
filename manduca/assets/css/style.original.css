@@ -1180,9 +1180,6 @@ nav li.menu-item > .submenu-container > a {
 	position: relative; /* this is the anchor of the dropdown-menu button*/
 }     	
 
-.main-navigation .sub-nav .sub-nav .dropdown-toggle {
-	display: none; /* 3rd level menu item is not allowed @17.8.9 */
-}
 
 .main-navigation .sub-nav ul li a {
 	padding: 0.36em 0.72em;
@@ -2775,8 +2772,14 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.toggled-on 	{
 		display: block;
-		right: auto;
-		width: 150%;
+	
+	}
+	
+	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.level-1 {
+			right: auto;
+			width: 150%;
+			top:-1.5em;
+			left: calc(100% + 1.5em);
 	}
 		
 	.main-navigation .sub-nav ul li a {
