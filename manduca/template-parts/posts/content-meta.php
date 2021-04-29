@@ -45,7 +45,7 @@ $meta_type=array(
 						//translators: Category of post - in the post meta 
 						'label' => __( 'Category', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_categories') ),
-		'author' => array (
+		'tags' => array (
 						'icon'=> manduca_get_svg( array( 'icon' => 'tags' ) ),
 						//translators: Tags of post - in the post meta
 						'label' => __( 'Tags', 'manduca' ),
