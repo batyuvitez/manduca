@@ -56,7 +56,7 @@ class Meta_Tags {
 	
 	public static function get_categories () {
 		if ( has_category() ) {
-			return get_the_category_list( '', ', ', '' );
+			return get_the_category_list( ', ');
 		}
 		return FALSE;
 	}
