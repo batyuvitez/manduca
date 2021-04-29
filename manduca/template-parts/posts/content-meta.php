@@ -23,10 +23,40 @@
 
 $list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></li>';
 
+//key of meta_type array has only comment function 
+$meta_type=array(
+		'date' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'calendar' ) ),
+						// translators: Date of post - in the post meta. 
+						'label'=> __( 'Entry date', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_post_date')),
+		'modified-date' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
+						//translators: Last modification of post - in the post meta
+						'label' => __( 'Last revision', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_modified_date') ),
+		'author' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
+						//translators: Author of post - in the post meta
+						'label' => __( 'Author', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_author') ),
+		'categories' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'folder-open' ) ),
+						//translators: Category of post - in the post meta 
+						'label' => __( 'Category', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_categories') ),
+		'author' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'tags' ) ),
+						//translators: Tags of post - in the post meta
+						'label' => __( 'Tags', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_tags') ),
+						
+		);
+
 ?>
 <footer class="lighter-scheme metatags">
 	<ul>
-		<?php echo Manduca\helpers\Meta_Tags::post_meta_tag_html ($list_item_mask); ?>
+		<?php echo Manduca\helpers\Meta_Tags::post_meta_tag_html ($list_item_mask, $meta_type); ?>
 	</ul>
 </footer>
 
