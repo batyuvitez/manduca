@@ -2505,35 +2505,16 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin: 0 0 0 1em;
 	}
 
-	/*content date format*/
-	.entry-header .content-date,
-	.excerpt .content-date {
+	/*////////////////////
+	// content date format
+	*/
+	.content-date {
 			text-align: center;
 			margin: 0;
 			padding: 0.5em;
 			position: relative;
 	}
 	
-	.excerpt .content-date span {
-			font-size: 0.8em;
-			text-transform: uppercase;
-			font-weight: 300;
-		
-	}
-	
-	.featured-scheme .content-date {
-			border: 2px solid var(--inverse-background);
-	}
-	
-	.content-date span.entry-date-month,
-	.content-date span.entry-date-day {
-			display: inline-block;
-		}
-	.content-date span.entry-date-month {
-		padding-right: 0.14rem;
-		padding-right: 0.14rem;
-	}
-		
 	.content-date time {
 		display: flex;
 		flex-wrap: wrap;
@@ -2541,16 +2522,31 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: 4.2em; /* Hungarian "szept.31."displayed inline */
 		padding: 0.5em 0;
 	}
-	
-	.content-date time span {
-		text-align: center;
-	}
-
-	.edit-link {
-		margin: 1em 0;
+	.excerpt .content-date time span {
+			font-size: 0.8em;
+			text-transform: uppercase;
+			font-weight: 300;	
+			text-align: center;
 	}
 	
-	/* excerpt */
+	.featured-scheme .content-date {
+			border: 2px solid var(--inverse-background);
+	}
+	
+	.content-date span.entry-date-year {
+		width: 100%;
+	}
+	
+	.content-date span.entry-date-month,
+	.content-date span.entry-date-day {
+			display: inline-block;
+	}
+		
+	
+	
+	/*////////////////////
+	// excerpt
+	*/
 	.excerpt-thumbnail {
 		float: left;
 		margin-top: 0; /*top margin affect line height in the not-floated div */
@@ -2566,8 +2562,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		height: auto
 	}
 	
-	/* content */
 	
+	/*////////////////////
+	// content
+	*/
 	.site-content article {
 		margin-bottom: 5rem;
 	}
@@ -2575,20 +2573,20 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding: 0 2em 2em ;
 	  }
   
-		
-	
 	.excerpt-thumbnail img.wp-post-image {
 		float: left				
 	}
 	
-	
-	/*archive navigation */
+	/*////////////////////
+	//  posts navigation (archive)
+	*/
 	.post-navigation {
 		margin-left: 0.7rem; /*Focus should be seen WCAG 2.4.11 & 12*/
 	}
 	
-	/* single post navigaion */
-	
+	/*////////////////////
+	//  single post navigation
+	*/
 	.nav-single {
 		display: flex;
 		justify-content: space-between;
