@@ -665,7 +665,7 @@ input[type="checkbox"]{
 
 .menu-toggle {
 	position: absolute;
-	top: 0.9em;
+	top: 0.85em; /*need to inline with toolbar-buttons-open */
 	right: 0.2em;
 	max-width: 43%;
 }
@@ -675,8 +675,8 @@ input[type="checkbox"]{
     top: 1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
-		padding-top: 1.15em;
-		padding-bottom: 1.15em;
+		padding-top: 1.12em;
+		padding-bottom: 1.12em;
 		font-size: 0.9em;
 }
 
@@ -1009,7 +1009,7 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 5.5em;
+	top: 6.5em;
 	left: 0.5em;
 	right: 0.5em;
 	display: flex;
