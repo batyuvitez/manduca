@@ -353,6 +353,7 @@ Featured */
 Button, link-button, menu        */
 button, 
 .link-button,
+input [type="submit"] ,
 li.menu-item a {
 	background-color: var(--default-button-background);
 	color: var(--default-button-text);
@@ -521,7 +522,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 button,
-.link-button {
+.link-button,
+input [type="submit"] {
 	margin: 0.3em;
 }
 
@@ -2302,7 +2304,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 23em) {
 	
 	button,
-	.link-button {
+	.link-button,
+	input [type="submit"] {
 		width: auto;
 	}
 	
@@ -2629,7 +2632,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 41em) { /* 656px */
 	
 	button,
-	.link-button a {
+	.link-button a,
+	input [type="submit"] {
 		padding: 0.2em 0.6em;
 		font-weight: normal;
 		

@@ -22,7 +22,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- 
+//Translators: Start search button
+$label=__( 'Start search', 'manduca' ) ;
 
 ?>
 <form method="get"
@@ -38,9 +39,9 @@
 			   id="s"/>
 		<button type="submit"
 				class="search-submit"
-				id="search-submit"
-				value="<?php _e( 'Start search', 'manduca' ) ?>" >
+				id="search-submit">
 		   <?php echo  manduca_get_svg( array( 'icon'=>'search') ) ;?>
+		   <span class="screen-reader-text"><?php echo $label?></span>
 		</button>
 	</div>
 </form>
