@@ -769,8 +769,7 @@ video {
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {	
-	font-size: 95%;
-	line-height: 2;
+	font-size: 90%;
 }
 
 
@@ -787,13 +786,19 @@ video {
 	flex-basis: 33%;
 }
 
+.gallery-size-thumbnail .gallery-item {
+		width: 150px;
+}
 
 .gallery-caption {
 	width: 90%;
+	margin: -0.33em auto 1em auto;
 }
+
 .gallery-item a {
 	display: inline-block;
 }
+
 .gallery-caption a {
 	display: inline;
 }
@@ -804,8 +809,7 @@ video {
 
 .gallery .gallery-icon img {
 	height: auto;
-	max-width: 90.909%;
-	padding: 0.909%;
+	margin: 0;
 }
 
 .gallery-columns-1 .gallery-icon img {
@@ -1579,6 +1583,7 @@ strong.search-excerpt {
 .site-content article {
 	position: relative; /* to position the edit link */
 	margin-bottom: 5em; /*small screens */
+	padding: 0.5em;
 }
 
 .post-pagination {
@@ -2878,8 +2883,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: 17rem;
 	}
 	
-	.gallery .gallery-item {
+	.gallery.columns-4 .gallery-item {
 		flex-basis: 25%;
+	}
+	
+	.gallery.columns-3 .gallery-item {
+		flex-basis: 33%;
 	}
 	
 }

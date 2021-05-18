@@ -43,7 +43,7 @@
 				<?php get_template_part( '/template-parts/header/topbar' ); ?>
 				<?php get_template_part( '/template-parts/header/skiplinks' ); ?>
 				<div id="masthead" class="site-header megamenu-parent" >
-					<div class="controls">
+					<div id="controls" class="controls">
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
 						<?php get_template_part( '/template-parts/header/toolbarbutton' ); ?>
 						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
