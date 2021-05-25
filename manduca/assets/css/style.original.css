@@ -388,8 +388,7 @@ textarea[disabled] {
 
 /*=========================================
  * LINKSA ARE UNDERLINED                        */
-.link-appearance-1 link-textarea,
-.link-appearance-1 input, 
+.link-appearance-1 .link-textarea,
 .link-appearance-1 .site,
 .link-appearance-1 .megamenu.toggled-on {
 	color: var(--default-text-2);	
@@ -554,10 +553,12 @@ button,
 
 .more-link.link-button {
 	max-width: 16em;
+}
+
+.excerpt .more-link  {
 	float: right;
 	margin: 2em 0 0;
 }
-
 
 /* Buttons */
 input[type="submit"],
@@ -628,7 +629,7 @@ textarea {
 	font-size: 100%;
 	overflow: auto;
 	vertical-align: top;
-	width: 84%;
+	width: 100%;
 }
 
 /* Reset non-text input types */
@@ -1661,21 +1662,10 @@ strong.search-excerpt {
 	margin: 1.714285714rem 0;
 }
 
-.comments-area article header {
-	margin: 0 0 3.428571429rem;
-	overflow: hidden;
-	position: relative;
-}
-
 .comments-area article header img {
 	float: left;
 	padding: 0;
 	line-height: 0;
-}
-.comments-area article 	header cite,
-.comments-area article header time {
-	display: block;
-	margin-left: 6.071428571rem;
 }
 
 .comments-area article header cite {
@@ -1683,11 +1673,10 @@ strong.search-excerpt {
 	font-size: larger;
 	line-height: 1.42857143;
 }
-.comments-area cite b {
-	font-weight: normal;
+
+.comments-area header {
+	margin-bottom: 1em;
 }
-
-
 .comments-area .bypostauthor cite span {
 	margin-left: 0.357142857rem;
 	padding: 0.142857143rem 0.357142857rem;
@@ -1748,7 +1737,11 @@ a.comment-edit-link {
 .comment .reply.more-link.link-button {
 	display: flex;
 	align-items: center;
+	margin-right: 0;
+	margin-left: auto;
+	font-size: 0.9em;
 }
+
 .comment .reply.more-link.link-button svg {
 	flex-basis: 20%;
 }
@@ -1756,6 +1749,18 @@ a.comment-edit-link {
 .comment .reply.more-link.link-button a {
 	flex-basis: 80%;
 }
+
+.depth-2 {
+	padding-left: 1em;
+	border-left: 1px var(--ornament) solid;
+}
+
+.depth-3 {
+	padding-left: 1.5em;
+	border-left: 1px var(--ornament) solid;
+}
+
+
 
 /* 11. Widgets
 ============================================================-- */
@@ -2625,10 +2630,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: 47.916666667%;
 	}
 	
-	.commentlist .children {
-		margin-left: 3.428571429rem;
-	}	
-
 }
 
 
@@ -2711,6 +2712,13 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: 100%;
 		margin: 0
 	}
+	
+	.comments-area article header {
+		margin: 0 0 3rem;
+		overflow: hidden;
+		position: relative;
+	}
+
 	
 }
 

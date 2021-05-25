@@ -32,7 +32,6 @@ class Comments {
 	*/
 	public static function manduca_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
-		//echo '<pre>' ;print_r ($comment );echo '</pre>';
 		if ( $comment->comment_type !== 'pingback' && $comment->comment_type !== 'trackback'  ) {
 			
 			global $post;

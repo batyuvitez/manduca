@@ -247,7 +247,7 @@ class Template_Functions {
 		
 				$class = $class ? ' '.$class : '';
 				
-				return sprintf( '<div class="more-link link-button %5$s">	<a href="%1$s" class="info-button" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
+				return sprintf( '<div class="more-link info-button link-button %5$s">	<a href="%1$s" class="info-button" title="%2$s">%3$s<span class="desktop-text">%4$s</span></a></div>' ,
 				   esc_html( $info_button_data[ 'url' ] ), 
 				   esc_html( $info_button_data[ 'title' ] ),
 				   manduca_get_svg( array( 'icon' => 'info' ) ),
