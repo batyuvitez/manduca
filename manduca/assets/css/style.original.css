@@ -1552,6 +1552,7 @@ entry-meta*/
 	display: inline-block;
 	margin-left: 0.5em;
 	width: calc(100% - 3em);
+	text-align: left; /*some user agent css has center */
 }
 
 .metatags svg {
