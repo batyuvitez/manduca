@@ -71,8 +71,12 @@ class Template_Functions {
 	 * @return (string) : html markup of navigation
 	 * 
 	 * */
-		public static function post_navigation(){
-				if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		public static function post_navigation(\WP_Query $query=NULL ) {
+				if (!$query) {
+					global $wp_query;
+					$query=$wp_query;
+				}
+				if ( $query->max_num_pages < 2 ) {
 						return '';
 				}
 				$args						= array();
@@ -89,14 +93,14 @@ class Template_Functions {
 				$args['mid_size' ]           	= 1;
 			
 				/* The paginate_links() function cloned here and modified in 18.10.14 */
-				global $wp_query, $wp_rewrite;
+				global $wp_rewrite;
 			
 				// Setting up default values based on the current URL.
 				$pagenum_link = html_entity_decode( get_pagenum_link() );
 				$url_parts    = explode( '?', $pagenum_link );
 			
 				// Get max pages and current page out of the current query, if available.
-				$total   = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+				$total   = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 				$current = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
 			
 				// Append the format placeholder to the base URL.
