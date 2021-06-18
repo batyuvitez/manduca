@@ -60,17 +60,4 @@ $parent_text=__( 'Related content', 'manduca' );
 		</div>
 	<?php endif; ?>
 	
-	<?php if( !empty ( $data['parent_title'] ) ) : ?>
-		<div class="link-button">
-			<a href="<?php echo $data['parent_permalink']; ?>"
-				rel="next">
-				<span class="screen-reader-text"><?php echo $parent_text; ?></span>
-				<?php echo manduca_get_svg( array( 'icon' => 'info') ); ?>
-				<?php echo $data['parent_title']; ?>
-			</a>
-		</div>
-	<?php endif; ?>
-	
-	
-	
 </nav>

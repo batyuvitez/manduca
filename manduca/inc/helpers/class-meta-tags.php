@@ -127,5 +127,23 @@ class Meta_Tags {
 			return $image_description ;
 		return self::empty_metadata();
 	}
+	
+	public static function get_attachment_parent (){
+		$post = get_post();
+		$parent_id = $post->post_parent;
+		
+		if( !empty( $parent_id ) ) {
+			$parent_title = get_the_title( $parent_id );
+		}
+		else {
+		 return FALSE;
+		}
+		$parent_permalink = get_permalink( $parent_id );
+		$a ='<a href="';
+		$a.=$parent_permalink;
+		$a.='">'.$parent_title;
+		$a.='</a>';
+		return $a;
+	}
 
 }

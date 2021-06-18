@@ -30,15 +30,6 @@ class Navigation_Single {
 
 	public static function attachment_navigation_html (){
 		$post = get_post();
-		$parent_id = $post->post_parent;
-		
-		if( !empty( $parent_id ) ) {
-			$parent_title = get_the_title( $parent_id );
-		}
-		else {
-		 $parent_title = false ;
-		}
-		$parent_permalink = get_permalink( $parent_id );
 		
 		/* Get all images */
 		$query_images_args = array(
@@ -80,10 +71,7 @@ class Navigation_Single {
 		$data=array (
 			'previous_permalink'  	=> get_attachment_link( $previous_id ),
 			'next_permalink' 		=> get_attachment_link ( $next_id ),
-			'next_title'			=> $next_title,
-			'previous_title'		=> $previous_title,
-			'parent_permalink'		=>$parent_permalink,
-			'parent_title'			=>$parent_title);
+			'next_title'			=> $next_title);
 		return $data;
 	}
 	

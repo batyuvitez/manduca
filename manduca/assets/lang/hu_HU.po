@@ -851,3 +851,8 @@ msgstr "nincs"
 #. original attachment
 msgid "Show original"
 msgstr "Eredeti megtekintése"
+
+
+#. original attachment
+msgid "Part of the following post"
+msgstr "A következő bejegyzés tartalmazza"

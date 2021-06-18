@@ -52,7 +52,12 @@ $meta_type=array(
 						'icon'=> manduca_get_svg( array( 'icon' => 'calendar' ) ),
 						// translators: Date of post - in the post meta. 
 						'label'=> __( 'Entry date', 'manduca' ),
-						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_post_date'))
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_post_date')),
+		'parent' => array (
+						'icon'=> manduca_get_svg( array( 'icon' => 'info') ),
+						// translators: This is a link to the realted (parent) post of an image. 
+						'label'=> __( 'Part of the following post', 'manduca' ),
+						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_attachment_parent'))
 		);
 
 ?>
