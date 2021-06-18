@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-30 06:33+0200\n"
+"PO-Revision-Date: 2021-06-18 10:52+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.3\n"
 "Language: hu\n"
 "Project-Id-Version: Themes - Manduca\n"
 "POT-Creation-Date: \n"
@@ -32,7 +32,7 @@ msgid "Extra wide"
 msgstr "Széles"
 
 #. translators: Opt reading option
-#: inc/helpers/class-reading-options.php:56
+#: inc/helpers/class-reading-options.php:55
 msgid "Change to"
 msgstr "Váltás"
 
@@ -70,27 +70,28 @@ msgstr "Letiltva"
 msgid "Off"
 msgstr "Kikapcsolt"
 
-#. translators: Animation default settings
+#. translators: Animation default settings on monitor
 #: template-parts/header/toolbarinner.php:156
 msgid "Enabled"
 msgstr "Engedélyezve"
 
+#. translators: Animation default settings on phone
 #: template-parts/header/toolbarinner.php:154
 msgid "On"
 msgstr "Aktív"
 
 #. translators: Toolbar animation disable/enable label
-#: template-parts/header/toolbarinner.php:150
+#: template-parts/header/toolbarinner.php:149
 msgid "Animation"
 msgstr "Mozgások"
 
-#. translators visually hidden title of author info
-#: template-parts/posts/content-meta.php:40
+#. Translators: visually hidden title of author info
+#: template-parts/posts/content-meta.php:70
 msgid "Author info"
 msgstr "A szerzőről"
 
 #. translators: Toolbar font type selector
-#: template-parts/header/toolbarinner.php:58
+#: template-parts/header/toolbarinner.php:57
 msgid "Dyslexie"
 msgstr "Diszlexia"
 
@@ -115,47 +116,47 @@ msgid "Bold"
 msgstr "Vastagított"
 
 #. translators: Toolbar font-size selector larger (150%) font sizet
-#: template-parts/header/toolbarinner.php:145
+#: template-parts/header/toolbarinner.php:144
 msgid "All"
 msgstr "Mind"
 
 #. translators: Toolbar font-size selector default font sizet
-#: template-parts/header/toolbarinner.php:141
+#: template-parts/header/toolbarinner.php:140
 msgid "None"
 msgstr "Semelyik"
 
 #. translators: Toolbar hyphenation selector label
-#: template-parts/header/toolbarinner.php:135
+#: template-parts/header/toolbarinner.php:134
 msgid "Hyphenation"
 msgstr "Elválasztás"
 
 #. translators: Toolbar word spacing selector button
-#: template-parts/header/toolbarinner.php:121
+#: template-parts/header/toolbarinner.php:120
 msgid "Word spacing"
 msgstr "Szavak közti távolság"
 
 #. translators: Toolbar paragrpah spacing selector button
-#: template-parts/header/toolbarinner.php:108
+#: template-parts/header/toolbarinner.php:107
 msgid "Paragraph spacing"
 msgstr "Bekezdések közti távolság"
 
 #. translators: Toolbar letter psacing selector button
-#: template-parts/header/toolbarinner.php:93
+#: template-parts/header/toolbarinner.php:92
 msgid "Letter spacing"
 msgstr "Betűk közti távolság"
 
 #. translators: Toolbar line height 2
-#: template-parts/header/toolbarinner.php:86
-#: template-parts/header/toolbarinner.php:88
-#: template-parts/header/toolbarinner.php:103
+#: template-parts/header/toolbarinner.php:85
+#: template-parts/header/toolbarinner.php:87
+#: template-parts/header/toolbarinner.php:102
+#: template-parts/header/toolbarinner.php:114
 #: template-parts/header/toolbarinner.php:115
-#: template-parts/header/toolbarinner.php:116
-#: template-parts/header/toolbarinner.php:129
+#: template-parts/header/toolbarinner.php:128
 msgid "Wide"
 msgstr "Széles"
 
 #. translators: Toolbar line height selector
-#: template-parts/header/toolbarinner.php:78
+#: template-parts/header/toolbarinner.php:77
 msgid "Line height"
 msgstr "Sortávolság"
 
@@ -171,7 +172,7 @@ msgid "Select month"
 msgstr "Hónap kiválasztása"
 
 #. translators: Toolbar color scheme set dark background white letters.
-#: template-parts/header/toolbarinner.php:42
+#: template-parts/header/toolbarinner.php:41
 msgid "Inverse"
 msgstr "Inverz"
 
@@ -193,20 +194,20 @@ msgstr "Ebben az ablakban"
 #. translators: Toolbar font-size selector default font size
 #. translators: Toolbar line height 1.7
 #. translators: Toolbar link target selector: links open where specified
-#: template-parts/header/toolbarinner.php:53
-#: template-parts/header/toolbarinner.php:69
-#: template-parts/header/toolbarinner.php:82
-#: template-parts/header/toolbarinner.php:84
-#: template-parts/header/toolbarinner.php:99
+#: template-parts/header/toolbarinner.php:52
+#: template-parts/header/toolbarinner.php:68
+#: template-parts/header/toolbarinner.php:81
+#: template-parts/header/toolbarinner.php:83
+#: template-parts/header/toolbarinner.php:98
+#: template-parts/header/toolbarinner.php:111
 #: template-parts/header/toolbarinner.php:112
-#: template-parts/header/toolbarinner.php:113
-#: template-parts/header/toolbarinner.php:126
+#: template-parts/header/toolbarinner.php:125
 #: template-parts/header/toolbarinner.php:188
 msgid "Default"
 msgstr "Alapbeállítás"
 
 #. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:31
+#: template-parts/header/toolbarinner.php:30
 msgid "Color scheme"
 msgstr "Színséma"
 
@@ -303,7 +304,7 @@ msgid "Leave as it is"
 msgstr "Az alapbeállítások maradnak. "
 
 #. translators: Toolbar color scheme set dark background white letters.
-#: template-parts/header/toolbarinner.php:43
+#: template-parts/header/toolbarinner.php:42
 msgid "Dark background, light letters"
 msgstr "Sötét háttér, világos betűk"
 
@@ -346,16 +347,17 @@ msgstr "Az oldal tetejére"
 msgid "Posts navigation"
 msgstr "Bejegyzés navigáció"
 
-#. translators it is duplicate: same as in Link_Functions: screen reader text
-#. for self-link.
 #. translators: this is the text read by screen readers only in case of you are
 #. in a html element referring to current page.
-#: inc/helpers/class-template-functions.php:178 inc/class-sitemap.php:72
-#: inc/class-accessible-menu.php:21 inc/class-link-functions.php:192
+#. translators it is duplicate: same as in Link_Functions: screen reader text
+#. for self-link.
+#: inc/class-sitemap.php:72 inc/class-link-functions.php:192
+#: inc/helpers/class-template-functions.php:178
+#: inc/class-accessible-menu.php:21
 msgid "Current page"
 msgstr "Jelenlegi oldal"
 
-#: template-parts/header/toolbar.php:40 template-parts/header/menu.php:51
+#: template-parts/header/menu.php:51 template-parts/header/toolbar.php:40
 msgid "Close"
 msgstr "Bezárás"
 
@@ -366,7 +368,7 @@ msgid "Image to the post titled: %s"
 msgstr "Kép a %s cikkhez. "
 
 #. translators: Toolbar font-size selector large (200%)font size
-#: template-parts/header/toolbarinner.php:74
+#: template-parts/header/toolbarinner.php:73
 msgid "Large"
 msgstr "Nagy"
 
@@ -477,23 +479,23 @@ msgid "Current tab:"
 msgstr "Az éppen nyitott fül"
 
 #. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:63
+#: template-parts/header/toolbarinner.php:62
 msgid "Font size"
 msgstr "Betűméret"
 
 #. translators: Toolbar color scheme selector original colors set
-#: template-parts/header/toolbarinner.php:37
+#: template-parts/header/toolbarinner.php:36
 msgid "Original"
 msgstr "Eredeti"
 
 #. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:47
+#: template-parts/header/toolbarinner.php:46
 msgid "Font type"
 msgstr "Betűtípus"
 
 #. Translators: Name of options button (text size, color etc) at the header.
-#: template-parts/header/toolbar.php:29
 #: template-parts/header/toolbarbutton.php:28
+#: template-parts/header/toolbar.php:29
 msgid "Display options"
 msgstr "Olvasási beállítások"
 
@@ -536,15 +538,11 @@ msgstr "Régebbi bejegyzések"
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
-#: comments.php:71
-msgid "%s pings"
-msgstr "%s db viszontlink"
-
-#: comments.php:61
+#: comments.php:52
 msgid "%s comments"
 msgstr "%s db hozzászólás"
 
-#: comments.php:49
+#: comments.php:39
 msgid "Reply to &bdquo;%s&rdquo;"
 msgstr "Hozzászólás a &bdquo;%s&rdquo; című bejegyzéshez"
 
@@ -561,16 +559,16 @@ msgstr "Rövidítés"
 msgid "Quotation"
 msgstr "Idézet"
 
-#: inc/helpers/class-meta-tags.php:143
+#: inc/helpers/class-meta-tags.php:125
 msgid "Image description"
 msgstr "Kép hosszabb leírása: "
 
-#: inc/helpers/class-meta-tags.php:135
+#: inc/helpers/class-meta-tags.php:117
 msgid "Captions/Subtitles"
 msgstr "Kép felirata: "
 
 #. translators: attachment metadata size of attachment
-#: inc/helpers/class-meta-tags.php:128
+#: inc/helpers/class-meta-tags.php:110
 msgid "Alternative Text"
 msgstr "Helyettesítő szöveg: "
 
@@ -633,11 +631,11 @@ msgstr "2. címsorszint"
 msgid "Page not found"
 msgstr "Nincs ilyen oldal"
 
-#: comments.php:89
+#: comments.php:68
 msgid "Next"
 msgstr "Következő"
 
-#: comments.php:88
+#: comments.php:67
 msgid "Previous"
 msgstr "Előző"
 
@@ -676,11 +674,12 @@ msgstr "Teljes szélességű sablonminta"
 msgid "Authors"
 msgstr "Szerzők"
 
-#: template-parts/header/searchform.php:42 searchform.php:33
+#. Translators: Start search button
+#: template-parts/header/searchform.php:26 searchform.php:33
 msgid "Start search"
 msgstr "Keresés indítása"
 
-#: template-parts/header/searchform.php:35 searchform.php:32 searchform.php:35
+#: template-parts/header/searchform.php:36 searchform.php:32 searchform.php:35
 msgid "Search"
 msgstr "Keresés"
 
@@ -701,7 +700,7 @@ msgid "No post"
 msgstr "Nincs bejegyzés"
 
 #. translators: attachment metadata size of attachment
-#: inc/helpers/class-meta-tags.php:121 inc/class-images.php:68
+#: inc/class-images.php:68 inc/helpers/class-meta-tags.php:103
 msgid "Original size"
 msgstr "Eredeti méret"
 
@@ -719,39 +718,39 @@ msgid "Copyright text"
 msgstr "Copyright szöveg"
 
 #. translators: Tags of post - in the post meta
-#: inc/helpers/class-meta-tags.php:100
+#: template-parts/posts/content-meta.php:51
 msgid "Tags"
 msgstr "Címkék"
 
 #. translators: Category of post - in the post meta
-#: inc/helpers/class-meta-tags.php:89
+#: template-parts/posts/content-meta.php:46
 msgid "Category"
 msgstr "Kategóriák"
 
 #. translators: Last modification of post - in the post meta
-#: inc/helpers/class-meta-tags.php:69
+#: template-parts/posts/content-meta.php:36
 msgid "Last revision"
 msgstr "Utolsó módosítás"
 
 #. translators: Date of post - in the post meta.
-#: inc/helpers/class-meta-tags.php:60
+#: template-parts/posts/content-meta.php:31
 msgid "Entry date"
 msgstr "Bejegyzés kelte"
 
-#: inc/helpers/class-comments.php:73
+#: inc/helpers/class-comments.php:72
 msgid "Reply"
 msgstr "Válasz a hozzászólásra"
 
-#: inc/helpers/class-comments.php:61
+#: inc/helpers/class-comments.php:60
 msgid "Comment is awaiting for apporval."
 msgstr "A bejegyzés megjelenését jóvá kell hagynia a rendszergazdának."
 
-#: inc/helpers/class-comments.php:52
+#: inc/helpers/class-comments.php:51
 msgid "Date: %1$s: %2$s"
 msgstr "Dátuma: %1$s: %2$s"
 
 #. translators: Author of post - in the post meta
-#: inc/helpers/class-meta-tags.php:79 inc/helpers/class-comments.php:47
+#: template-parts/posts/content-meta.php:41 inc/helpers/class-comments.php:46
 msgid "Author"
 msgstr "Szerző"
 
@@ -767,22 +766,22 @@ msgstr "Oldalsáv"
 
 #. Translators: name of the footer menu for screen-reader users.
 #. translators: name of menu in footer for admin and screen reader users also
-#: template-parts/footer/footer-menu.php:13 inc/class-theme-support.php:60
+#: template-parts/footer/footer-menu.php:29 inc/class-theme-support.php:60
 msgid "Footer navigation"
 msgstr "Lábrész menü"
 
 #. Translators: name of the main menu for screen reader users.
 #. translators: name of main menu for admin and for screen reader users also
-#: template-parts/header/menutoggle.php:28 template-parts/header/menu.php:27
+#: template-parts/header/menu.php:27 template-parts/header/menutoggle.php:28
 #: inc/class-theme-support.php:58
 msgid "Main navigation"
 msgstr "Főmenü"
 
-#: template-parts/posts/content-meta.php:52 inc/helpers/class-meta-tags.php:42
+#: template-parts/posts/content-meta.php:82 inc/helpers/class-meta-tags.php:41
 msgid "All posts by %s"
 msgstr "%s összes bejegyzése"
 
-#: template-parts/posts/content-meta.php:48
+#: template-parts/posts/content-meta.php:78
 msgid "Author: %s"
 msgstr "Szerző: %s"
 
@@ -795,12 +794,12 @@ msgstr "Tovább olvasom"
 msgid "Featured"
 msgstr "Kiemelt"
 
-#: template-parts/postlink-edit.php:37 inc/helpers/class-comments.php:66
+#: template-parts/postlink-edit.php:37 inc/helpers/class-comments.php:65
 msgid "Edit"
 msgstr "Szerkesztés"
 
+#: template-parts/pages/content-page.php:36 page-templates/page-sitemap.php:61
 #: page-templates/page-accessible-tabs.php:59
-#: page-templates/page-sitemap.php:61 template-parts/pages/content-page.php:36
 msgid "Pages"
 msgstr "Oldalak"
 
@@ -816,7 +815,7 @@ msgstr "Nincs ilyen bejegyzés. Az alábbi honlaptérkép talán segít megtalá
 msgid "Nothing found"
 msgstr "Nincs eredmény"
 
-#: comments.php:101
+#: comments.php:80
 msgid "Comments are closed."
 msgstr "Sajnos nincs lehetőség hozzászólásra."
 
@@ -844,3 +843,11 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
 msgstr ""
+
+#. None Alt text
+msgid "none"
+msgstr "nincs"
+
+#. original attachment
+msgid "Show original"
+msgstr "Eredeti megtekintése"

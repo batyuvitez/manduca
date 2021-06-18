@@ -28,6 +28,30 @@ namespace Manduca\helpers;
 class Meta_Tags {
 	
 	
+	/*
+	 *For backwards compatibility
+	 **/
+	public static function post_meta_tag_html (string $list_item_mask, array $meta_type) {
+		self::meta_tag_html ($list_item_mask, $meta_type);
+	}
+	
+	public static function meta_tag_html (string $list_item_mask, array $meta_type) {
+		$utility_text='';
+		foreach( $meta_type as $metatag ) {
+			$value = call_user_func ($metatag['callback']);
+			if ($value !== FALSE ) {
+				$utility_text 	.= sprintf(
+									$list_item_mask,
+									$metatag ['icon'],
+									$metatag ['label'],
+									$value);
+			}
+		}
+		return $utility_text;
+	}
+	
+	
+		
 	public static function get_post_date() {
 		return sprintf( '<time datetime="%s">%s</time>',
 			esc_attr( get_the_date( 'c' ) ),
@@ -69,65 +93,39 @@ class Meta_Tags {
 		return FALSE;
 	}
 
-	
-	
-	public static function post_meta_tag_html (string $list_item_mask, array $meta_type) {
-		$utility_text='';
-		foreach( $meta_type as $metatag ) {
-			$value = call_user_func ($metatag['callback']);
-			if ($value) {
-				$utility_text 	.= sprintf(
-									$list_item_mask,
-									$metatag ['icon'],
-									$metatag ['label'],
-									$value);
-			}
-		}
-		return $utility_text;
+	public static function get_alt_tag () {
+		global $post;
+		$image_alt 			= get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
+		if ($image_alt)
+			return $image_alt;
+		return self::empty_metadata();
 	}
 	
-	
-	
-	
-	public static function attachment_meta_tag_html ($list_item_mask) {
-		global $post;
+	public static function get_image_size () {
 		$metadata = wp_get_attachment_metadata();
-		$image_alt 			= get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
-		$image_caption  	= $post->post_excerpt;
-		$image_description 	= $post->post_content;
+		return $metadata['width'].' * ' . $metadata['height'];
+	}
 	
-		$utility_text=self::post_meta_tag_html ($list_item_mask);
-		$utility_text.=sprintf( $list_item_mask,
-						manduca_get_svg( array( 'icon' => 'cube' ) ),
-						//translators: attachment metadata size of attachment
-						__( 'Original size', 'manduca' ),
-						$metadata['width'].' * ' . $metadata['height'] 		
-						);
-		if ($image_alt ) {
-			$utility_text.=sprintf( $list_item_mask,
-						manduca_get_svg( array( 'icon' => 'text' ) ),
-						//translators: attachment metadata size of attachment
-						__( 'Alternative Text' ),
-						$image_alt
-						);
-		}
-		if( !empty( $image_caption ) ) {
-			$utility_text.=sprintf( $list_item_mask,
-					manduca_get_svg( array( 'icon' => 'film' ) ),
-					__( 'Captions/Subtitles' ),
-					$image_caption
-					);			
-		}
-			
-		if( !empty( $image_description ) ) {
-			$utility_text.=sprintf( $list_item_mask,
-							manduca_get_svg( array( 'icon' => 'bubble' ) ),
-							__( 'Image description'  ),
-							$image_description
-							);
-		}
+	public static function get_caption (){
+		global $post;
+		$image_caption  	= $post->post_excerpt;
+		if ($image_caption)
+			return $image_caption;
+		return self::empty_metadata();
 		
-		return $utility_text;
+	}
+	
+	public static function empty_metadata () {
+		//Translators: Missing metadata 
+		return __( 'none', 'manduca' );
+	}
+	
+	public static function get_description () {
+		global $post;
+		$image_description 	= $post->post_content;
+		if ($image_description 	)
+			return $image_description ;
+		return self::empty_metadata();
 	}
 
 }
