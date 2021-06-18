@@ -30,7 +30,7 @@
 
 	<?php get_template_part ('/template-parts/attachment/image'); ?>
 	
-	comments_template(); 
+	<?php comments_template(); ?>
 
 <?php endwhile;   ?>
 
