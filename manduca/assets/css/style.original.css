@@ -883,7 +883,6 @@ video {
 	margin-top: 0;
 }
 .author-description p {
-	border: 1px solid var(--ornament);
 	font-size: smaller;
 	line-height: 1.846153846;
 }
