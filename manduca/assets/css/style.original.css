@@ -1116,6 +1116,7 @@ body .site,
 
 .megamenu ul.nav-menu {
 		margin-top: 4em; /*'cause close button */
+		margin-left: 0; /* compensate <ul> style */ 
 }
 
 .font-size-1 .megamenu {
