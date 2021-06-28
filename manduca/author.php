@@ -28,7 +28,7 @@
 			<?php the_post(); ?>
 			
 			<header>
-				<h1  tabindex="0">
+				<h1>
 				<?php printf( __( 'Post of %s', 'manduca' ), get_the_author() ); ?>
 				</h1>
 				

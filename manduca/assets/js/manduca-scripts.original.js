@@ -842,7 +842,15 @@ jQuery(document).ready(function($)
         jQuery('#menu-toggle').focus();
         return false;
     });
-
+	 
+	 $('#skip-to-content').click(function( event ) {
+        event.preventDefault( );
+       var pos = jQuery('#primary').position(); 
+        var y = parseInt(pos.top);
+        jQuery('html, body').animate({scrollTop : y}, 800);
+        jQuery('#content').find('h1').first().attr('tabindex','0').focus();
+		return false;
+     });
     
     
     

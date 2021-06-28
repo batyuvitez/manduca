@@ -25,11 +25,10 @@
 */
 
 ?>
-<div class="manduca-back-to-top-div link-button">
-   <a id="manduca-back-to-top"
+<div class="manduca-back-to-top-div">
+   <button id="manduca-back-to-top"
       class="manduca-back-to-top"
-      aria-label="<?php _e( 'Back to top', 'manduca' ); ?>"
-      href="javascript::" >
+      aria-label="<?php _e( 'Back to top', 'manduca' ); ?>">
       <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
-   </a>
+   </button>
 </div>

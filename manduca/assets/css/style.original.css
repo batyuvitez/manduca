@@ -940,7 +940,6 @@ body .site,
 /*//////////////////////////////////////////////////////////
 * Assistive text  */
 
-.assistive-text,
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -954,6 +953,21 @@ body .site,
 	word-wrap: normal !important;
 }
 
+
+.site .skip-link:focus,
+.site .skip-link:active {
+	clip: auto;
+	clip-path: none;
+	display: block;
+	font-weight: 700;
+	padding: 0.5em 1em;
+	text-transform: none;
+	height: auto;
+	left: 6px;
+	top: 7px;
+	width: auto;			
+	z-index: 100000;
+}
 
 /*//////////////////////////////////////////////////////////
 * Back-to-top*/

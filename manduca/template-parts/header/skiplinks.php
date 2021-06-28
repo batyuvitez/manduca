@@ -26,3 +26,6 @@
 */
 
 ?>
+
+<button class="skip-link screen-reader-text" id="skip-to-content"><?php _e( 'Skip to main content', 'manduca' ); ?></button>
+        
