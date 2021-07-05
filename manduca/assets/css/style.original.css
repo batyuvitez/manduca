@@ -519,6 +519,9 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	padding: 0;
 }
 
+body a {
+	white-space: nowrap; /* Includes svg icons should be displayed inline */
+}
 
 button,
 .link-button,
@@ -2972,6 +2975,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	body a.underlined {
 		text-decoration: none;
 	}
+	
 	.entry-content img,
 	.comment-content img,
 	.author-avatar img  {
