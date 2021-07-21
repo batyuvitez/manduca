@@ -1233,7 +1233,7 @@ nav li.menu-item > .submenu-container > a {
 }
 
 .main-navigation .distance-keeper {
-	width: 2em;  /*mobile touch operations need this distance keeper btwn button and link*/
+	flex-basis: 2em;  /*mobile touch operations need this distance keeper btwn button and link*/
 }
 
 
