@@ -167,7 +167,7 @@ class Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<div class="link-button"><a class="prev" href="%1$s">%2$s</a></div>',
+								'<div class="link-button prev"><a href="%1$s">%2$s</a></div>',
 								$link,
 								$args['prev_text']
 					);
@@ -198,7 +198,7 @@ class Template_Functions {
 														  number_format_i18n( $n )
 														 );
 							$page_links[] = sprintf(
-								'<div class="link-button"><a class="page-numbers" href="%1$s">%2$s</a></div>',
+								'<div class="link-button page-numbers"><a class="page-numbers" href="%1$s">%2$s</a></div>',
 										$link,
 										$screen_reader_text
 										);
@@ -220,7 +220,7 @@ class Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<div class="link-button"><a class="next" href="%1$s" >%2$s</a></div>',
+								'<div class="link-button next"><a href="%1$s" >%2$s</a></div>',
 								$link,
 								$args['next_text']
 								);

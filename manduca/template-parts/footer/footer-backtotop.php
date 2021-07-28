@@ -1,6 +1,6 @@
 <?php
 /**
- * After footer : back to top
+ * back to top service 
  * Inserted after footer, just before the end of div.site 
  *
  **/

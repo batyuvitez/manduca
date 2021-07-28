@@ -849,7 +849,7 @@ video {
 	align-items: center;
 }
 
-.post-navigation .link-button > a.page-numbers {
+.post-navigation .link-button.page-numbers > a{
 	font-size: 1.1em; /* in order to have equal height to the arrows*/
 }
 

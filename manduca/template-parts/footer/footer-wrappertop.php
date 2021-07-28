@@ -1,15 +1,13 @@
 <?php
 /**
- * Display category page
+ * Befor footer
+ * Inserted before footer, just before the end of <main> tag
  *
  **/
-
- 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
-    Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -23,25 +21,8 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-
- 
 ?>
-
-<?php get_header() ?>
-
-	<?php if ( have_posts() ) : ?>
-		<header class='archive-header'>
-			<h1><?php echo single_cat_title( '', false ); ?></h1>
-
-		<?php 
-			$term_description = category_description();
-			if ( ! empty( $term_description ) ) {
-				printf( '<div class="taxonomy-description">%s</div>', $term_description );
-			} ?>
-		</header>
-		
-		<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
-		
-	<?php endif; ?>
-
-<?php get_footer() ?>
+<div id="footer-wrapper" class="footer-wrapper inverse-scheme">
+    <footer id="colophon">
+        <div id="site-info" class="site-info">
+			

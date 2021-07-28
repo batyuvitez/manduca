@@ -2,10 +2,7 @@
 /**
  * After footer
  * Inserted after footer, just before the end of div.site 
- *
- * @since 18.7
- * skiplink @since 19.1
- **/
+ * **/
 
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
