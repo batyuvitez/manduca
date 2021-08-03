@@ -519,7 +519,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	padding: 0;
 }
 
-body a {
+.site-content body a {
 	white-space: nowrap; /* Includes svg icons should be displayed inline */
 }
 
