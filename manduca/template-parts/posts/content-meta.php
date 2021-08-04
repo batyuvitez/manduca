@@ -36,7 +36,7 @@ $meta_type=array(
 						'label' => __( 'Last revision', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_modified_date') ),
 		'author' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
+						'icon'=> manduca_get_svg( array( 'icon' => 'author' ) ) ,
 						//translators: Author of post - in the post meta
 						'label' => __( 'Author', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_author') ),
