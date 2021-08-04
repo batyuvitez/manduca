@@ -21,7 +21,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-$list_item_mask 	= '<li>%s<span class="meta-item"><span>%s : </span>%s</span></li>';
+$list_item_mask 	= '<li>%s<span class="meta-item"><span class="meta-item-label">%s: </span>%s</span></li>';
 
 //key of meta_type array has only comment function 
 $meta_type=array(
