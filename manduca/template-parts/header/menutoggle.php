@@ -26,15 +26,17 @@
 <?php
 // Translators: name of the main menu for screen reader users. 
 $menu_name = __( 'Main navigation', 'manduca' ) ;	
-?>
 
-<button id="menu-toggle"
+if ( has_nav_menu( 'primary' ) ) : ?>
+
+	<button id="menu-toggle"
 		class="menu-toggle link-button"
 		aria-haspopup="true"
 		aria-controls="primary-nav-menu">
 		<?php 	echo manduca_get_svg( array( 'icon' => 'bars' ) );
 		echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
 		<span class="desktop-text"><?php echo $menu_name;?></span>
-</button>
+	</button>
+<?php endif; ?>
 		
 		
