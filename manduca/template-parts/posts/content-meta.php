@@ -52,14 +52,14 @@ $meta_type=array(
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_tags') ),
 						
 		);
-
-?>
+$meta_html=Manduca\helpers\Meta_Tags::meta_tag_html ($list_item_mask, $meta_type); 
+if ($meta_html ) : ?>
 <footer class="lighter-scheme metatags">
 	<ul>
-		<?php echo Manduca\helpers\Meta_Tags::post_meta_tag_html ($list_item_mask, $meta_type); ?>
+		<?php echo $meta_html; ?>
 	</ul>
 </footer>
-
+<?php endif; ?>
 
 
 <?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) :  ?>

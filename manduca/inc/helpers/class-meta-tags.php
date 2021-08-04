@@ -32,8 +32,11 @@ class Meta_Tags {
 	 *For backwards compatibility
 	 **/
 	public static function post_meta_tag_html (string $list_item_mask, array $meta_type) {
-		self::meta_tag_html ($list_item_mask, $meta_type);
+		return self::meta_tag_html ($list_item_mask, $meta_type);
 	}
+	
+	
+	
 	
 	public static function meta_tag_html (string $list_item_mask, array $meta_type) {
 		$utility_text='';
