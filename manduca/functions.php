@@ -26,7 +26,9 @@
  
  $dirs = array( get_template_directory() .'/inc/',
                'Manduca' => get_template_directory() .'/inc/',
-               'Manduca\helpers' => get_template_directory() .'/inc/helpers') ;
+               'Manduca\helpers' => get_template_directory() .'/inc/helpers',
+               'Manduca\walkers' => get_template_directory() .'/inc/walkers'
+               ) ;
   
 
  // If child_theme exists, it may opened Manduca_Classloader

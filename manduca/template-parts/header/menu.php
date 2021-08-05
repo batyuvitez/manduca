@@ -23,6 +23,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+use Manduca\walkers as walk;
+
 // Translators: name of the main menu for screen reader users. 
 $menu_name = __( 'Main navigation', 'manduca' ) ;	
 
@@ -45,7 +47,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'container'       => false,
 					   'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 					   'depth'           => 4,
-					   'walker'          => new Manduca_accessible_walker() 
+					   'walker'          => new walk\Nav_Menu_Walker() 
 					   ));
 				?>
 				<button id="primary-nav-close" class="modal-window-close"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>

@@ -22,7 +22,9 @@
 */
 
 
-class Manduca_accessible_walker extends Walker_Nav_Menu  {
+namespace Manduca\walkers;
+
+class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 
 	protected $aria_controls='';
 	protected $aria_labelledby='';
@@ -103,7 +105,7 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 			}
 		}
 
-				
+		//HTML of the <a> element 
 		$item_output  = $args->before;
 		if( $submenu) {
 			$item_output .='<div class="submenu-container ';
@@ -128,9 +130,8 @@ class Manduca_accessible_walker extends Walker_Nav_Menu  {
 			$item_output .= "</div>";  //submenu-container
 			$item_output .= "\n";
 		}
-		$item_output .= $args->after;
-
 		
+		$item_output .= $args->after;
 		$output .= $item_output;
 	}
 
