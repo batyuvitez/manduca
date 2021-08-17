@@ -1103,13 +1103,6 @@ body .site,
 	display: block;
 }
 
-.main-navigation ul subnav.toggled-on {
-	display: block;
-	position: absolute;
-	top: 100%;
-	left: 20%;
-	width: 100%;
-}
 
 
 /*///////////////////////////////////
@@ -1167,10 +1160,6 @@ nav li.menu-item > .submenu-container > a {
 }
 
 
-.megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
-    margin-right: 0.5rem;
-		width: 100%;
-}
 
 .main-navigation .sub-nav >ul {
 	margin: 1.5em;
@@ -1182,11 +1171,16 @@ nav li.menu-item > .submenu-container > a {
 	
 .main-navigation ul .sub-nav.toggled-on{
 	display: block;
+}
+
+.main-navigation ul .sub-nav {
 	top: 100%;
 	right: 0;
+	left: 0;
 	padding: 0;
 	z-index: 150;
-	width: max-content;
+	width: 100%;
+	max-width: 25em; 
 	position: absolute; /* below the menu title */
 	border: 1px solid var(--ornament);
 }
@@ -1210,7 +1204,7 @@ nav li.menu-item > .submenu-container > a {
 
 
 .main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
-	display: inline-flex;
+	display: flex;
 }
 
 
@@ -2746,7 +2740,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 /*//////////////////////////////////
- * menu opened*/
+ /Remove menu-toggle, horizontal menubar */
 
 @media screen and (min-width: 53em) { /* 848px*/
 
@@ -2754,11 +2748,22 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding: 0 0.5em;
 	}
 	
-	 .site-header-menu .megamenu {
+	.menu-toggle {
+		display: none;
+	}
+	
+	.megamenu:not(.toggled-on) {
 		display: block;  /* hidden in small screens */
 	}
 	
-	
+	.megamenu {
+		position: static;
+		border: none;  /* reset mobil-view */
+		padding: 0;
+		margin-top: 2.5em;
+		margin-bottom: 0.5em;
+	}
+	 
 	.megamenu ul.nav-menu {
 		text-align: center;
 		margin-top: 0;
@@ -2793,12 +2798,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	/*//////////////////////////////////
 	// sub-menu         */
 	
-	.main-navigation .sub-nav .sub-nav {
-		top: 0;
-		left: 100%;
-		right: auto;
-	}
 	
+	
+	.megamenu ul .sub-nav {
+		width: max-content;
+	}
+
 	.main-navigation .megamenu li.menu-item-has-children {
 		margin: 0;
 		padding-right: 0;
@@ -2825,9 +2830,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	
-	.menu-toggle {
-		display: none;
-	}
 	
 	.main-navigation .sub-nav .submenu-container svg {
 		transform: rotate(-90deg);
@@ -2855,14 +2857,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		position: relative;
 		top: 0.3125em;
 		margin-right: 2em;
-	}
-	
-	.megamenu {
-		position: static;
-		border: none;  /* reset mobil-view */
-		padding: 0;
-		margin-top: 2.5em;
-		margin-bottom: 0.5em;
 	}
 	
 	.header-searchform {

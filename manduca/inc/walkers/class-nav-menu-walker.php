@@ -26,10 +26,11 @@ namespace Manduca\walkers;
 
 class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 
+	//these variables used in differenct cycles of the walker
 	protected $aria_controls='';
 	protected $aria_labelledby='';
    
-	 public function start_lvl( &$output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
         $output .= "\n" .$indent .'<div class="sub-nav lighter-scheme ';
 		$output .= 'level-'.$depth.'">';
@@ -39,7 +40,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 	
 	
 	
-	
+	//end of submenu list and the wrapper .sub.nav
     public function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
 		$output .= $indent.'</ul>'."\n".'</div>';
@@ -49,10 +50,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 	
 	
 	
-	/*
-	* @since 19.4
-	* Attach svg icon if there is submenu
-	*/
+	// Menu and submenu element assemble
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
