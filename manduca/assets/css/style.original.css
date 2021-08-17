@@ -1088,6 +1088,7 @@ body .site,
 	margin: 0;
 }
 
+.breadcrumb ul,
 .breadcrumb ul > li {
 	display: inline-block;
 }
