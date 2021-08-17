@@ -37,7 +37,8 @@ if (get_locale()==='hu_HU') {
 		<header class="entry-header no-thumbnail">
 			<h1>
 			<?php			
-				/* translators: %1$s is the number of results found, %2$s is the search term */
+				/* translators: %1$s is the number of results found, %2$s is the search term,
+				   in Hungarian, no need for definite article */
 				printf( __( 'Found %1$s search result for keyword: %2$s', 'manduca' ), 
 					number_format_i18n( $wp_query->found_posts ), 
 					'<span class="twocolumns">' . $search_expr. '</span>' ); ?>
@@ -50,6 +51,8 @@ if (get_locale()==='hu_HU') {
 	<?php else : ?>
 	
 		<article id="post-0" class="post no-results not-found">
+				<?php
+					/* translators: in Hungarian, no need for definite article */ ?>
 				<h1><?php printf( __( 'No matching result found for %s.', 'manduca' ), $search_expr ) ?></h1>
 			</header>
 	
