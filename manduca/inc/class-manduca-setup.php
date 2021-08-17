@@ -33,12 +33,11 @@ class Manduca_Setup {
 		
 	public function init() {
 		
+		new \Manduca\filters\Controller;
 		new \Manduca\Debug_Mode;
 		new \Manduca\Enqueue;
 		
-		//@since 20.8
-		new \Manduca\Filter_Nav_Menu; 
-
+	
 		// Open the files which ara not classes.
 		$this->load_notclasses();
 		
@@ -62,9 +61,6 @@ class Manduca_Setup {
 			new \Manduca\Link_Functions();
 		}
 		
-		
-		//Filter page title
-		new \Manduca\Filter_Title;
 		
 		new \Manduca\Register_Sidebar;		
 		

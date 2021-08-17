@@ -27,6 +27,7 @@
  $dirs = array( get_template_directory() .'/inc/',
                'Manduca' => get_template_directory() .'/inc/',
                'Manduca\helpers' => get_template_directory() .'/inc/helpers',
+               'Manduca\filters' => get_template_directory() .'/inc/filters',
                'Manduca\walkers' => get_template_directory() .'/inc/walkers'
                ) ;
   

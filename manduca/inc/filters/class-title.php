@@ -1,15 +1,18 @@
 <?php
 /*
- * Filters the title of the page. Modify if paginated (i.e. archives )
- * Hungarian translation in WP is unexpectable ( i.e. 'Oldal3' ), 
+ * Filters the title of the page.
  *
- * @since 18.11
+ * 1. Modify if paginated (i.e. archives )
+ *    Hungarian translation in WP is unexpectable ( i.e. 'Oldal3' ),
+ *  2. Remove teh | element from the title,
+ *     which represents a line break in HTML
+ *
  **/
 
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,32 +29,35 @@
 */
 
 
-namespace Manduca;
+namespace Manduca\filters;
 
-class Manduca_Filter_Title{
+class Title {
     
     public function __construct(){ 
         add_action ( 'init',
                     array( $this, 'place_filter_very_early')
                    );
     }
-    public function place_filter_very_early(){
+    public function place_filter_very_early() {
       
         // In case of Yoast Seo active. This hook is called earlier. 
         add_filter(
                    'pre_get_document_title',
-                   array( $this, 'add_hungarian_pagination' ),
+                   array( $this, 'filter_title' ),
                     20
                   );
           // If yoast seo not active, this hook will be applied
         add_filter(
                    'document_title_parts',
-                   array( $this, 'add_hungarian_pagination' ),
+                   array( $this, 'filter_title' ),
                     1
                   );
+        
     }
     
-    public function add_hungarian_pagination( $title ) {
+    public function filter_title( $title ) {
+        $title=str_replace ('|', '', $title);
+        
         if( '' == $title || !is_array( $title )) return ; // If Yoast Seo is not active, the pre_get_document_title hook does'nt needed. 
             global $paged, $page;
                     if( $paged < 2  || is_404() ) {

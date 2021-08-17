@@ -6,7 +6,7 @@
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,24 +23,17 @@
 */
 
 
-namespace manduca;
+namespace Manduca\filters;
 
 
-class Filter_Nav_Menu{
+class Controller {
 	
-	protected $homepagePlacement='http://home-placement';
 	
 	public function __construct ()
 	{
-		add_filter ('wp_nav_menu_items', array ($this,'filterNavMenu'));
+		new Nav_Menu;
+		New Title;
+		
 	}
 	
-	
-	
-	public function filterNavMenu (string $html)
-	{
-		$homeUrl=esc_url (home_url('/'));
-		$html=str_ireplace ($this->homepagePlacement, $homeUrl, $html);
-		return $html;
-	}
 }
