@@ -43,4 +43,3 @@ if ( has_post_thumbnail() && ! post_password_required() && !is_search ()) : ?>
 
 
 <?php endif; ?>
-
