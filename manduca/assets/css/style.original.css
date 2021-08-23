@@ -2930,17 +2930,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 }
 
-/*////////////////////////////////////
-//   Windows high contrast mode
-*/
-
-@media (-ms-high-contrast: active), (forced-colors: active) {
-	body {
-		-ms-high-contrast-adjust: none;
-		forced-color-adjust: none;
-	}
-}
-
 
 /*////////////////////////////////////
 //    Accessible print  **/
