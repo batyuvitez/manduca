@@ -7,7 +7,7 @@
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,7 +23,9 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- class Hungarian_Contents {
+namespace Manduca\helpers;
+
+class Hungarian_Contents {
 
 	
    /*
@@ -107,7 +109,29 @@
                   esc_attr( get_the_date( 'Y. F j. H:i, l' ) ),
                  self::get_date_difference( get_the_date( 'U' ) )
                 );	
-       
       }
+      
+      
+      
+      
+    public static function entry_date_html () {
+        $month 		= esc_html( get_the_date( 'M' ) );
+        $day		= esc_html( get_the_date( 'j' ) );
+        $date_mask	='<time class="entry-date featured-scheme" datetime="%1$s"><span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span> <span class="entry-date-year">%2$s</span></time>';
+     
+        if ( strpos ( get_bloginfo( 'language' ), 'hu' ) !== FALSE ) {
+            $short_month_array = array('','jan.','febr.','márc.','ápr.','máj.','jún.','júl.','aug.','szept.','okt.','nov.','dec.');
+            $month =$short_month_array[ get_post_time( 'n' ) ] ;
+            $day 		.= '.';
+            $date_mask	='<time class="entry-date " datetime="%1$s"><span class="entry-date-year">%2$s.</span> <span class="entry-date-month">%4$s</span> <span class="entry-date-day">%3$s</span></time>';
+        }
+        $html = sprintf( $date_mask,
+						esc_attr( get_the_date( 'c' ) ),
+						esc_attr( get_the_date( 'Y' ) ),
+						$day,
+						$month
+				   );
+        return $html;
+    }
 	
  }

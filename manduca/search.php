@@ -25,7 +25,7 @@
 global $wp_query;
 $search_expr=get_search_query();
 if (get_locale()==='hu_HU') {
-	$search_expr=Hungarian_Contents::definite_article ($search_expr).' ' .$search_expr;
+	$search_expr=Manduca\helpers\Hungarian_Contents::definite_article ($search_expr).' ' .$search_expr;
 }
 
 ?>
