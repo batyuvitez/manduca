@@ -291,15 +291,12 @@ select:focus,
 select:active,
 button:focus,
 input:focus,
-textarea:focus{
-	outline: 4px solid var(--lighter-text);
-	outline-offset: 2px;
-}
-
+textarea:focus,
 a:hover,
 button:hover:not([disabled]),
 select:hover {
-	outline: 1px dotted maroon; 		
+	outline: 4px solid var(--lighter-text);
+	outline-offset: 2px;
 }
 
 
@@ -1217,7 +1214,6 @@ nav li.menu-item > .submenu-container > a {
 
 .main-navigation ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
-	display: inline-block;
 }
 
 .main-navigation .distance-keeper {
