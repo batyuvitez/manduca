@@ -279,7 +279,7 @@ class Template_Functions {
 	public static function get_the_excerpt ($morelink_flag=false, int $len=45 ){
 		$post 		= get_post();
 		$post_content = $post->post_content;
-		
+		$post_content =Blocks::get_text_contents ($post_content);
 		if( has_excerpt() === true ) {
 				$html 		= $post->post_excerpt;
 				$morelink_flag=TRUE;
@@ -300,6 +300,7 @@ class Template_Functions {
 			$html=self::add_morelink ($html);
 		return $html;
 	}
+	
 	
 	
 	
