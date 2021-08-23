@@ -20,7 +20,7 @@ excerpt_length                  : Depretiated, instead use function variable of 
 
 Boolean filters:
 ----------------
-manduca_enable_link_functions   : Enable/disable link function in child theme | located: manduca-setup.php 
+manduca_enable_link_functions   : Enable/disable link function in child theme | filters\Controller 
 
 Action hooks:
 -------------

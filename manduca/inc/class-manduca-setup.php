@@ -50,18 +50,6 @@ class Manduca_Setup {
 		new \Manduca\Theme_Support;
 		new \Manduca\Custom_Header_Image;
 		new \Manduca\Images;
-				
-		
-		/* Link function (add svg, aria etc. )
-		 * Filter to disable link function in child theme
-		 *@since@18.10.6
-		 * */
-		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
-		if( $link_function_enable ) {	
-			new \Manduca\Link_Functions();
-		}
-		
-		
 		new \Manduca\Register_Sidebar;		
 		
 		// Add childthemes' icons to global

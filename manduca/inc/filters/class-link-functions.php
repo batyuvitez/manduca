@@ -26,7 +26,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca;
+namespace Manduca\filters;
 
 
   
@@ -83,10 +83,7 @@ Class Link_Functions {
         $this->dom->encoding = 'utf-8'; //@see: https://stackoverflow.com/questions/6573258/domdocument-and-special-characters
         $this->dom->loadHTML( $content ); 
         libxml_use_internal_errors( false );
-                            
         foreach ( $this->dom->getElementsByTagName('a') as $node) {
-         
-        
              /*If role="button", do not insert anything.
               *@since 19.1
               ***/
@@ -101,6 +98,9 @@ Class Link_Functions {
             $link_text 	    = $node->nodeValue;
             $link_text      = preg_replace('/[\x00-\x1F\x7F]/u', '', $link_text);  // filter invisible chars. 
             $this->aria_labels = array();
+            if ($node->hasAttribute ('aria-label')) {
+               $this->aria_labels[]=$node->getAttribute ('aria-label');
+            }
             $external_link  = false;
             // some people uses PHP < 5.6
             if( $node->getAttribute( 'class' ) )   {

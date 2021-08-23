@@ -32,7 +32,16 @@ class Controller {
 	public function __construct ()
 	{
 		new Nav_Menu;
-		New Title;
+		new Title;
+		
+		/* Link function (add svg, aria etc. )
+		 * Filter to disable link function in child theme
+		 * */
+		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
+		if( $link_function_enable ) {	
+			new Link_Functions();
+		}
+		
 		
 	}
 	
