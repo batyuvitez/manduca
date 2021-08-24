@@ -259,14 +259,14 @@ img {
 |                                                            |
 ==============================================================*/
 
-body, 
-.site,
-textarea,
-input, 
-.wp-caption .wp-caption-text,
-.gallery-caption,
-.entry-caption,
-.default-scheme {	
+.high-contrast-0 body, 
+.high-contrast-0 .site,
+.high-contrast-0 textarea,
+.high-contrast-0 input, 
+.high-contrast-0 .wp-caption .wp-caption-text,
+.high-contrast-0 .gallery-caption,
+.high-contrast-0 .entry-caption,
+.high-contrast-0 .default-scheme {	
 	background-color: var(--default-background);
 	color: var(--default-text);;	
 }
