@@ -100,6 +100,7 @@
 	--ornament: SlateGrey;
 	--high-contrast-background: black;
 	--high-contrast-text: white;
+	--high-contrast-link: yellow;
 	--alternate-font-type: 'dyslexieregular';
 	--default-screen-font-type: Verdana,'Helvetica Neue',Arial,-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
@@ -283,23 +284,36 @@ body a svg {
 }
 
 
-a:focus,
-a:active,
-button:focus,
-button:active,
-select:focus,
-select:active,
-button:focus,
-input:focus,
-textarea:focus,
-a:hover,
-button:hover:not([disabled]),
-select:hover {
+
+.high-contrast-0 button:focus,
+.high-contrast-0 button:active,
+.high-contrast-0 button:hover:not([disabled]),
+.high-contrast-0 select:focus,
+.high-contrast-0 select:active,
+.high-contrast-0 select:hover 
+.high-contrast-0 input:focus,
+.high-contrast-0 textarea:focus {
 	outline: 4px solid var(--lighter-text);
 	outline-offset: 2px;
 }
 
+a:focus,
+a:active {
+	outline: 3px solid var(--lighter-text);
+}
 
+.high-contrast-1 button:focus,
+.high-contrast-1 button:active,
+.high-contrast-1 button:hover:not([disabled]),
+.high-contrast-1 select:focus,
+.high-contrast-1 select:active,
+.high-contrast-1 select:hover 
+.high-contrast-1 input:focus,
+.high-contrast-1 textarea:focus,
+.high-contrast-1 a:focus,
+.high-contrast-1 a:active {
+	outline: 4px solid var(--high-contrast-link);
+}
 
 /*//////////////////////////////////
 Lighter */
@@ -411,6 +425,7 @@ textarea[disabled] {
 
 .high-contrast-1 a {
 	text-decoration: underline;
+	color: var(--high-contrast-link);
 }
 
 .high-contrast-1 .site,
@@ -900,6 +915,10 @@ html {
 
 .body:not(.debug) {
 	display: none;  /* In production site will be displayed after page loaded  */
+}
+
+.debug .icon-extlink {
+	display: none;
 }
 
 /* Based on universal access: We are using the most readable fonts
@@ -2377,7 +2396,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 36em) { /*576px */
 
 	.distance-keeper {
-		display: none;
+		width: 0.33em;
 	}
     
   .toolbar-buttons {
