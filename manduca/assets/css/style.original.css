@@ -2688,6 +2688,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	/* 3 columns is default */
 	.gallery-columns-3 {
 		 display: flex;
+         flex-wrap: wrap;
 	}
 	
 	.gallery .gallery-item {
