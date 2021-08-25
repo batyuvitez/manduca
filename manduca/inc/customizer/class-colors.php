@@ -28,21 +28,29 @@ class Colors {
      }
      
     public function inline_css() {
-        $custom_css = $this->theme_get_customizer_css();
-        if ($custom_css) {
+        $custom_css = $this->site_title_color ();
+        $custom_css .= $this->background_color ();
+        if (!empty ($custom_css)) {
             $r=wp_add_inline_style( 'manduca-stylesheet', $custom_css );
         }
         
     }
     
     
-    public function theme_get_customizer_css() {
-        ob_start();
+    public function site_title_color() {
         $text_color = get_theme_mod( 'header_textcolor', '' );
         if (  empty( $text_color ) ) {
-            return FALSE;
+            return '';
         }
         return ':root { --site-title: #' . $text_color .'}';
+    }
+    
+    public function background_color() {
+        $color = get_background_color();
+        if (  empty( $color ) ) {
+            return '';
+        }
+        return ':root { --default-background: #' . $color .'}';
     }
      
 }
