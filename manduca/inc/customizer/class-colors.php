@@ -1,9 +1,4 @@
 <?php
-/**
- * Manduca initialization
- * 
- **/
-
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	   Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
@@ -24,20 +19,30 @@
 */
 
  
- $dirs = array( get_template_directory() .'/inc/',
-               'Manduca' => get_template_directory() .'/inc/',
-               'Manduca\customizer' => get_template_directory() .'/inc/customizer',
-               'Manduca\helpers' => get_template_directory() .'/inc/helpers',
-               'Manduca\filters' => get_template_directory() .'/inc/filters',
-               'Manduca\walkers' => get_template_directory() .'/inc/walkers'
-               ) ;
-  
- // If child_theme exists, it may opened Manduca_Classloader
-if( class_exists( 'Manduca_Classloader' ) )     
-    Manduca_Classloader::add_dirs( $dirs );
-else
-{	  
-   require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );  
-   new Manduca_Classloader( $dirs );		
+namespace Manduca\customizer;
+ 
+class Colors {
+		
+    public function __construct() {
+        add_action( 'wp_enqueue_scripts', array( $this,  'inline_css' ) );
+     }
+     
+    public function inline_css() {
+        $custom_css = $this->theme_get_customizer_css();
+        if ($custom_css) {
+            $r=wp_add_inline_style( 'manduca-stylesheet', $custom_css );
+        }
+        
+    }
+    
+    
+    public function theme_get_customizer_css() {
+        ob_start();
+        $text_color = get_theme_mod( 'header_textcolor', '' );
+        if (  empty( $text_color ) ) {
+            return FALSE;
+        }
+        return ':root { --site-title: #' . $text_color .'}';
+    }
+     
 }
-( new Manduca_Setup )-> init();

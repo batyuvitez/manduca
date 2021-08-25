@@ -62,7 +62,7 @@ class Theme_Support {
 		//Makes translation-ready
 		load_theme_textdomain( 'manduca', get_template_directory() . '/assets/lang' );
 		
-		 //Supports custom background color and image
+		 //Supports custom background color and image 
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f5',
 		) );

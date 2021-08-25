@@ -1,7 +1,7 @@
 <?php
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2020  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-namespace Manduca;
+namespace Manduca\customizer;
 
-class Custom_Header_Image
+class Header_Image
 {
 	
 	
@@ -62,8 +62,7 @@ class Custom_Header_Image
 			'random-default'         => false,
 	
 			// Callbacks for styling the header and the admin preview.
-			'admin-head-callback'    => array ($this, 'manduca_admin_header_style'),
-			'admin-preview-callback' => array ($this, 'manduca_admin_header_image'),
+			'admin-preview-callback' => array ($this, 'header_image'),
 			//since 21.2
 			'video'					 =>TRUE);
 		add_theme_support( 'custom-header', $args );
@@ -71,44 +70,7 @@ class Custom_Header_Image
 	
 	
 	
-
-
-
-	public function manduca_header_style() {
-		$text_color = get_header_textcolor();
-	
-		if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
-			return;
-	
-		// If we get this far, we have custom styles.
-		?>
-		<style type="text/css" id="manduca-header-css">
-		<?php
-			// Has the text been hidden?
-			if ( ! display_header_text() ) :
-		?>
-			.site-title,
-			.site-description {
-				position: absolute;
-				clip: rect(1px 1px 1px 1px); /* IE7 */
-				clip: rect(1px, 1px, 1px, 1px);
-			}
-		<?php
-			// If the user has set a custom color for the text, use that.
-			else :
-		?>
-			.display-site-title {
-				color: #<?php echo $text_color; ?>;
-			}
-		<?php endif; ?>
-		</style>
-		<?php
-	}
-	
-	
-	
-	
-	public function manduca_admin_header_image() {
+	public function header_image() {
 		?>
 		<div id="heading">
 			<?php

@@ -48,7 +48,6 @@ class Manduca_Setup {
 		
 		// Register the themes main parameters
 		new \Manduca\Theme_Support;
-		new \Manduca\Custom_Header_Image;
 		new \Manduca\Images;
 		new \Manduca\Register_Sidebar;		
 		
@@ -60,13 +59,12 @@ class Manduca_Setup {
 		new \Manduca\Widget_Archives;
 		new \Manduca\Ajax_Call_Handler;
 		
-		
+		new Manduca\customizer\Controller;
+			
 		
 		// Functions of admin size
 		if ( is_admin() ){
 			
-			// Add customizer functions
-			new Customizer;
 			
 			// Add tiny MCE functions and stylesheets
 			$tinimce = new Tiny_Mce;

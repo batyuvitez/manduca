@@ -85,6 +85,7 @@
 	--default-background: ivory;
 	--default-text: black;
 	--default-link: royalBlue;
+	--site-title: brown;
 	--default-button-background:saddleBrown;
 	--default-button-text:azure;
 	--default-outline: maroon;
@@ -398,7 +399,7 @@ textarea[disabled] {
 }
 
 /*=========================================
- * LINKSA ARE UNDERLINED                        */
+ * LINKS ARE UNDERLINED                        */
 .link-appearance-1 .link-textarea,
 .link-appearance-1 .site,
 .link-appearance-1 .megamenu.toggled-on {
@@ -946,6 +947,10 @@ body .site,
 	margin-right: auto;
 }
 
+.high-contrast-0 .display-site-title {
+	color:  var(--site-title)
+}
+
 /*//////////////////////////////////////////////////////////
 * Assistive text  */
 
@@ -1094,9 +1099,14 @@ body .site,
 	margin: 0;
 }
 
-.breadcrumb ul,
+.breadcrumb ul{
+	display: inline-block;
+	margin-left: 1em;
+}
+
 .breadcrumb ul > li {
 	display: inline-block;
+	margin-right: 1em;
 }
 
 

@@ -1,9 +1,4 @@
 <?php
-/**
- * Manduca initialization
- * 
- **/
-
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	   Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
@@ -24,20 +19,15 @@
 */
 
  
- $dirs = array( get_template_directory() .'/inc/',
-               'Manduca' => get_template_directory() .'/inc/',
-               'Manduca\customizer' => get_template_directory() .'/inc/customizer',
-               'Manduca\helpers' => get_template_directory() .'/inc/helpers',
-               'Manduca\filters' => get_template_directory() .'/inc/filters',
-               'Manduca\walkers' => get_template_directory() .'/inc/walkers'
-               ) ;
-  
- // If child_theme exists, it may opened Manduca_Classloader
-if( class_exists( 'Manduca_Classloader' ) )     
-    Manduca_Classloader::add_dirs( $dirs );
-else
-{	  
-   require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );  
-   new Manduca_Classloader( $dirs );		
+namespace Manduca\customizer;
+ 
+class Controller{
+		
+	public function __construct() {
+			new Register;
+			new Preview;
+			new Header_Image;
+			new Header_Video;
+			new Colors;
+		}
 }
-( new Manduca_Setup )-> init();
