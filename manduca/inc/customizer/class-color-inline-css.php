@@ -21,7 +21,7 @@
  
 namespace Manduca\customizer;
  
-class Colors {
+class Color_Inline_Css {
 		
     public function __construct() {
         add_action( 'wp_enqueue_scripts', array( $this,  'inline_css' ) );

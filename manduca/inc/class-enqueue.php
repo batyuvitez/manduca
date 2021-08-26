@@ -57,9 +57,7 @@ class Enqueue{
       wp_enqueue_style( 'manduca-stylesheet', $stylesheet, false, false, 'all' );
 			
 		// Loads the Internet Explorer specific stylesheet.
-		wp_enqueue_style( 'manduca-ie', $assetDir.'css/ie.css', array( 'manduca-style' ) );
-		$wp_styles->add_data( 'manduca-ie', 'conditional', 'lt IE 9' );
-		wp_enqueue_script( 'manduca-scripts', $assetDir.'js/manduca-scripts.js', array( 'jquery' ), '', 'true'); 
+		wp_enqueue_script( 'manduca-scripts', $assetDir.'js/manduca-scripts.min.js', array( 'jquery' ), '', 'true'); 
 		
       	
       /*

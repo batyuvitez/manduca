@@ -28,6 +28,6 @@ class Controller{
 			new Preview;
 			new Header_Image;
 			new Header_Video;
-			new Colors;
+			new Color_Inline_Css;
 		}
 }
