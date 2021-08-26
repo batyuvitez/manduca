@@ -7,7 +7,7 @@
   
   /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -24,9 +24,9 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca;
+namespace Manduca\walkers;
 
-class Walker_Sitemap_Category extends \Walker_Category {
+class Sitemap_Category extends \Walker_Category {
    	/**
 	 * This walker returns the post links to the current category.
 	 * If there is Yoast Seo, post inlcudes only in the primary category. 
