@@ -261,12 +261,12 @@ img {
 ==============================================================*/
 
 body:not(.custom-background), /* custom color may override it */
-body:not(.custom-background) textarea,
-body:not(.custom-background) input, 
-body:not(.custom-background) .wp-caption .wp-caption-text,
-body:not(.custom-background) .gallery-caption,
-body:not(.custom-background) .entry-caption,
-body:not(.custom-background) .default-scheme {	
+textarea,
+input, 
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.default-scheme {	
 	background-color: var(--default-background);
 	color: var(--default-text);;	
 }
