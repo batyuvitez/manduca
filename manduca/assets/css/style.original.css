@@ -795,6 +795,8 @@ video {
 
 .gallery .gallery-item .gallery-icon  {
 	flex-basis: 45%;
+	text-align: right;
+	align-self: center;
 }
 
 .gallery .gallery-item .gallery-caption {
@@ -1856,7 +1858,7 @@ a.comment-edit-link {
 |                                                            |
 ==============================================================*/
 
-svg [class^=icon],  /* Only content-icons not focus-snail */
+svg[class^=icon],  /* Only content-icons not focus-snail */
 .expandmore__symbol {
 	width: 1.2em;
 	height: 1.2em;
