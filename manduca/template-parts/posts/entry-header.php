@@ -46,7 +46,9 @@ else {
 				<?php if ( is_single() ) : ?> 
 					<h1 id="post-<?php echo get_the_ID(); ?>-title" class="entry-title"><?php echo $title; ?></h1>
 				<?php else : ?>	
-					<h2 id="post-<?php echo get_the_ID(); ?>-title" class="entry-title"><?php echo $title; ?></h2>
+					<h2 id="post-<?php echo get_the_ID(); ?>-title" class="entry-title">
+						<a href="<?php esc_url (get_permalink()); ?>"><?php echo $title; ?></a>
+					</h2>
 				<?php endif; ?>
 				
 				<?php do_action( 'manduca_post_subtitle' ); ?>
