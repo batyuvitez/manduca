@@ -32,52 +32,9 @@ class Comments {
 	*/
 	public static function manduca_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
-		if ( $comment->comment_type !== 'pingback' && $comment->comment_type !== 'trackback'  ) {
-			
-			global $post;
-			?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-				<article id="comment-<?php comment_ID(); ?>" class="comment">
-					<header class="comment-meta comment-author vcard">
-						<?php
-							echo get_avatar( $comment, 44 );
-							printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
-								get_comment_author_link(),
-								( $comment->user_id === $post->post_author ) ? '<span>' .__( 'Author', 'manduca' ) .'</span>' : ''
-							);
-							printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_time( 'c' ),
-								sprintf( __( 'Date: %1$s: %2$s', 'manduca' ),
-										get_comment_date(),
-										get_comment_time()
-										)
-							);
-						?>
-					</header>
-		
-					<?php if ( '0' == $comment->comment_approved ) { ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Comment is awaiting for apporval.', 'manduca' ) ?></p>
-					<?php } ?>
-		
-					<section class="comment-content comment">
-						<?php comment_text(); ?>
-						<?php edit_comment_link( __( 'Edit', 'manduca' ), '<p class="edit-link">', '</p>' ); ?>
-					</section><!-- .comment-content -->
-		
-					<div class="reply more-link link-button">
-						<?php comment_reply_link( array_merge(
-											$args,
-											array(
-												  'reply_text' => __( 'Reply', 'manduca' ),
-												  'before' => manduca_get_svg( array( 'icon' => 'mail-reply' ) ),
-												  'depth' => $depth,
-												  'max_depth' => $args['max_depth']
-												  )
-											) ); ?>
-					</div>
-				</article>
-			<?php	
+		if ( $comment->comment_type !== 'pingback' && $comment->comment_type !== 'trackback'  ) {	
+			$pass=array( 'args'=>$args, 'depth'=>$depth);
+			get_template_part( '/template-parts/posts/comments', NULL ,$pass);
 		}
 	}
  
@@ -108,6 +65,13 @@ class Comments {
 			   comment_post_ID= ' . get_the_ID() );
 	   
 	   return $result;
+	}
+	
+	public static function get_comment_date() {
+		return sprintf( '<time datetime="%s">%s</time>',
+			esc_attr( get_comment_time() ),
+			esc_html( get_comment_date() )
+		);	
 	}
  	
 }

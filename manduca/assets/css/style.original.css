@@ -1681,19 +1681,19 @@ strong.search-excerpt {
 	margin-right: 1rem;
 }
 .comments-area article {
-	margin: 1.714285714rem 0;
+	margin: 1rem 0;
 }
 
-.comments-area article header img {
+.comment-avatar{
 	float: left;
 	padding: 0;
 	line-height: 0;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
 }
 
-.comments-area article header cite {
-	font-style: normal;
-	font-size: larger;
-	line-height: 1.42857143;
+ol.commentlist {
+	list-style-type: none;
 }
 
 .comments-area header {
@@ -1705,14 +1705,13 @@ strong.search-excerpt {
 	font-size: 0.7em;
 }
 
-.comments-area .bypostauthor cite b {
-	font-weight: bold;
-}
 
 a.comment-edit-link {
 	font-size: smaller;
 	line-height: 1.846153846;
 }
+
+.comments-area .comment-info;
 
 
 /* Comment form */
@@ -3136,9 +3135,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		top: 2.2em;
 	}
 	
-	.comments-area article header cite,
-	.comments-area article header time {
-		margin-left: 3.57142857rem;
+	.comments-area .comment-info {
+		margin-left: 1rem;
 	}
 
 }
