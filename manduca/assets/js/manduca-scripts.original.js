@@ -498,24 +498,28 @@ Dialog.prototype.open = function() {
 
    var Dialog = this;
 	this.dialogEl.classList.add("active");
-   this.overlayEl.classList.add("active");
+   if (this.overlayEl)
+	this.overlayEl.classList.add("active");
    this.focusedElBeforeOpen = document.activeElement;
 
    this.dialogEl.addEventListener('keydown', function(e) {
 	   Dialog._handleKeyDown(e);
    });
 
-   this.overlayEl.addEventListener('click', function() {
-	   Dialog.close();
-   });
-
+   if (this.overlayEl) {
+		this.overlayEl.addEventListener('click', function() {
+		   Dialog.close();
+		});
+   }
+   
    this.firstFocusableEl.focus();
 };
 
 Dialog.prototype.close = function() {
 
    this.dialogEl.classList.remove('active');
-   this.overlayEl.classList.remove('active');
+   if (this.overlayEl)
+	   this.overlayEl.classList.remove('active');
 
    if ( this.focusedElBeforeOpen ) {
 	   this.focusedElBeforeOpen.focus();
@@ -576,12 +580,14 @@ Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
 	   });
    }
 
-   var closeDialogEls = document.querySelectorAll(closeDialogSel);
-   for ( var i = 0; i < closeDialogEls.length; i++ ) {
-	   closeDialogEls[i].addEventListener('click', function() {
-		   Dialog.close();
-	   });
-   }
+	if (closeDialogSel) {
+		var closeDialogEls = document.querySelectorAll(closeDialogSel);
+		for ( var i = 0; i < closeDialogEls.length; i++ ) {
+			closeDialogEls[i].addEventListener('click', function() {
+				Dialog.close();
+			});
+		}
+	}
 
 };
 
@@ -742,8 +748,27 @@ jQuery(document).ready(function($)
 			else
 				siteNavContain.hide (0);
 	 }
-	 //Keyboard trap in menu toggle 
-	/** still to be done */
+	//Keyboard trap in menu toggle
+	var navDialogEl = document.querySelector('.megamenu');
+	var dialogOverlay = document.querySelector('.dialog-overlay');
+	
+	var myDialog = new Dialog(navDialogEl, dialogOverlay);
+	myDialog.addEventListeners('.menu-toggle', '.modal-window-close');
+ 
+	 
+	 //Keyboard trap in submenus 
+	$( '.sub-nav').each(function (){
+		modal_id=this.id;
+		modal_controller=modal_id.replace ('sub-nav', 'button');
+		var navDialogEl = document.querySelector("#" + modal_id);
+		var myDialog = new Dialog(navDialogEl, null);
+		myDialog.addEventListeners('#' + modal_controller, null);
+	});
+	
+	
+
+
+
 	
 	
  

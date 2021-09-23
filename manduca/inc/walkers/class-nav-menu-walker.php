@@ -29,11 +29,15 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 	//these variables used in differenct cycles of the walker
 	protected $aria_controls='';
 	protected $aria_labelledby='';
+	protected $subnav_id='';
    
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-        $output .= "\n" .$indent .'<div class="sub-nav lighter-scheme ';
-		$output .= 'level-'.$depth.'">';
+        $output .= "\n" .$indent .'<div ';
+		$output .=  $this->subnav_id;
+		$output .='class="sub-nav lighter-scheme ';
+		$output .= 'level-'.$depth .'">';
+		$output .= "\n";
 		$output .= '<ul role="menu" id="' .$this->aria_controls .'">';
 		$output .= "\n";
     }
@@ -76,10 +80,12 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 		if ($submenu) {
 			$this->aria_controls='control-' . $item->ID;
 			$this->aria_labelledby='title-'.$item->ID;
+			$this->subnav_id=' id="sub-nav-'.$item->ID.'"';
 		}
 		else {
 			$this->aria_controls='';
 			$this->aria_labelledby='';
+			$this->subnav_id='';			
 		}
 		
 		$output .= $indent . '<li' . $id . $class_names .'>';
@@ -115,7 +121,8 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 		$item_output .= "\n";
 		if( $submenu) {
 			$item_output .='<div class="distance-keeper" aria-hidden="true"></div>';
-			$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';			
+			$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';
+			$item_output .= 'id= "button-'.$item->ID .'" ';			
 			$item_output .= 'aria-haspopup="true" ';
 			$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
 			$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'" ';
