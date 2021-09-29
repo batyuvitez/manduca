@@ -877,9 +877,6 @@ video {
 
 
 /* Author profiles */
-.author .archive-header {
-	margin-bottom: 1.714285714rem;
-}
 .author-info {
 	border-top: 1px solid var(--ornament);
 	border-bottom: 1px solid var(--ornament);
@@ -899,6 +896,16 @@ video {
 }
 .author.archive .author-avatar {
 	margin-top: 0;
+}
+
+/* Taxonomies */
+.taxonomy-header {
+	text-transform: uppercase;
+}
+
+.taxonomy-description {
+	font-weight: bold;
+	text-align: center;
 }
 
 
@@ -1445,7 +1452,7 @@ h1 {
 	clear: both;
 }
 
-.site-content h1 {  /* archive pages */
+.entry-content h1 {  /* archive pages */
 	margin: 0 0 1.5em;
 }
 .entry-content h1 { 
