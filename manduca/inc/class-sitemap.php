@@ -2,13 +2,11 @@
 /*
  * This class provide the sitemap to Manduca sitemap page
  *
- *@since 17.10
- *
  **/
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -116,7 +114,7 @@ class Sitemap {
 				}
 		}
 		$args = array( $categories, '', $defaults);
-		$walker = new Walker_Sitemap_Category;
+		$walker = new walkers\Sitemap_Category;
 		return  call_user_func_array( array( $walker, 'walk' ), $args );		
 				
 	}
