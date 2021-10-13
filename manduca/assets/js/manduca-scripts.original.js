@@ -710,44 +710,18 @@ jQuery(document).ready(function($)
     siteNavContain = masthead.find( '.megamenu' );   
     siteNavigation = masthead.find( '.megamenu > ul' );
     
-   // Return early if menuToggle is missing.
-	if ( menuToggle.length )
-	{
-		menuToggle.on( 'click.manduca', function()  //Click menu-toggle
-	   {
-		   if (animation)
-				siteNavContain.slideToggle (300);
-			else
-				siteNavContain.slideToggle ();
-		   siteNavContain.toggleClass( 'toggled-on' );
-		   menuToggle.toggleClass( 'toggled-on' );
-		   $( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
-	   });
-	}
 
     // Escape handler  */
 	 $(document).keyup(function(e) {
          if (e.keyCode === 27) {
 			var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
 			$.each (toggleOffs, function ( index, el) {
-				$(el).removeClass( 'toggled-on');
+				$(el).removeClass( 'active');
 			});
          }            
       });
 	 
-	 $('#primary-nav-close').on ('click', function () {
-			closeModalMenu ();
-		});
 	 
-	 function closeModalMenu () {
-		$( ".menu-toggle" ).removeClass( "toggled-on" );
-            $( ".menu-toggle" ).attr( 'aria-expanded', 'false' );
-            $( ".megamenu" ).removeClass( "toggled-on" );
-			if (animation)
-				siteNavContain.hide(300);
-			else
-				siteNavContain.hide (0);
-	 }
 	//Keyboard trap in menu toggle
 	var navDialogEl = document.querySelector('.megamenu');
 	var dialogOverlay = document.querySelector('.dialog-overlay');
@@ -792,10 +766,10 @@ jQuery(document).ready(function($)
 			{
 				var _this = $( this );
 				e.preventDefault();
-				_this.toggleClass( 'toggled-on' );
+				_this.toggleClass( 'acitve' );
 				var subnav=_this.closest('.menu-item-has-children').find( '.sub-nav' );
 				subnav=subnav.first();
-				subnav.toggleClass( 'toggled-on' );
+				subnav.toggleClass( 'active' );
 				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			});
 	   }

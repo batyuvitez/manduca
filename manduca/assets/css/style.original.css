@@ -401,7 +401,7 @@ textarea[disabled] {
  * LINKS ARE UNDERLINED                        */
 .link-appearance-1 .link-textarea,
 .link-appearance-1 .site,
-.link-appearance-1 .megamenu.toggled-on {
+.link-appearance-1 .megamenu.active {
 	color: var(--default-text-2);	
 }
 
@@ -430,7 +430,7 @@ textarea[disabled] {
 
 .high-contrast-1 .site,
 .high-contrast-1 .default-scheme,
-.high-contrast-1 .megamenu.toggled-on,
+.high-contrast-1 .megamenu.active,
 .high-contrast-1 .lighter-scheme {
     background-color: var(--high-contrast-background);;
     color: var(--high-contrast-text);
@@ -1121,12 +1121,12 @@ body .site,
 
 /*///////////////////////////////////
 // Navigation Menu     */
-.megamenu.toggled-on,
+.megamenu.active,
 .no-js .site-header-menu {
 	display: block;
 }
 
-.megamenu:not(.toggled-on) {
+.megamenu:not(.active) {
 	display: none;
 }
 
@@ -1183,11 +1183,11 @@ nav li.menu-item > .submenu-container > a {
 	margin: 1.5em;
 }
 
-.main-navigation ul .sub-nav:not(.toggled-on) {
+.main-navigation ul .sub-nav:not(.active) {
 		display: none;	
 }
 	
-.main-navigation ul .sub-nav.toggled-on{
+.main-navigation ul .sub-nav.active{
 	display: block;
 }
 
@@ -1226,7 +1226,7 @@ nav li.menu-item > .submenu-container > a {
 }
 
 
-.main-navigation .menu-item-has-children .dropdown-toggle.toggled-on .icon-caret-down {
+.main-navigation .menu-item-has-children .dropdown-toggle.active .icon-caret-down {
 	display: none;
 }
 
@@ -1234,8 +1234,8 @@ nav li.menu-item > .submenu-container > a {
 	display: none;
 }
 
-.main-navigation .menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
-.main-navigation .dropdown-toggle.toggled-on {
+.main-navigation .menu-item-has-children .dropdown-toggle.active .icon-close,
+.main-navigation .dropdown-toggle.active {
 	display: block;
 }
 
@@ -1895,14 +1895,14 @@ svg.link-function {  /* @see:Link_Functions */
 	margin: 0 0.5em;
 }
 
-.menu-toggle.toggled-on svg.icon-close {
+.menu-toggle.active svg.icon-close {
 	display: inline;
 }
 
-.toggled-on svg.icon-eye,
-.toggled-on svg.icon-bars, 
-.menu-toggle:not(.toggled-on) svg.icon-close,
-.toolbar-buttons-open:not(.toggled-on) svg.icon-close{
+.active svg.icon-eye,
+.active svg.icon-bars, 
+.menu-toggle:not(.active) svg.icon-close,
+.toolbar-buttons-open:not(.active) svg.icon-close{
 	display: none;
 }
 
@@ -2796,7 +2796,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		display: none;
 	}
 	
-	.megamenu:not(.toggled-on) {
+	.megamenu:not(.active) {
 		display: block;  /* hidden in small screens */
 	}
 	
@@ -2853,7 +2853,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding-right: 0;
 	}
 	
-	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.toggled-on 	{
+	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.active 	{
 		display: block;
 	
 	}
