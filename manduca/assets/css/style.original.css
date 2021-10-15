@@ -107,6 +107,7 @@
 	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
 	--print-title-font-type: Arial, Helvetica, Ubuntu, sans-serif;
 	--print-default-font-type: Georgia, 'Times New Roman', 'Liberations sans', serif;
+	--font-size-basic: 87.5%;
 }
 
 
@@ -418,7 +419,8 @@ textarea[disabled] {
 .high-contrast-1 button, 
 .high-contrast-1 .link-button,
 .high-contrast-1 a,
-.high-contrast-1 li.menu-item a{
+.high-contrast-1 li.menu-item a,
+.high-contrast-1 ::placeholder {
 	background-color: var(--high-contrast-background); ;
 	color: var(--featured-background);
 }
@@ -918,7 +920,7 @@ video {
 
 /* Body, links, basics */
 html {
-	font-size: 87.5%;
+	font-size: var(--font-size-basic);
 	line-height: 1.64285; /*WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
 }
 
