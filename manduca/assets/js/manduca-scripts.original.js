@@ -710,7 +710,8 @@ jQuery(document).ready(function($)
     siteNavContain = masthead.find( '.megamenu' );   
     siteNavigation = masthead.find( '.megamenu > ul' );
     
-
+	
+	
     // Escape handler  */
 	 $(document).keyup(function(e) {
          if (e.keyCode === 27) {
@@ -760,17 +761,26 @@ jQuery(document).ready(function($)
 		 return;
 		}
 	
+		// Operate menu toggle
 		function initMainNavigation( container )
 		{
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
 			{
 				var _this = $( this );
 				e.preventDefault();
-				_this.toggleClass( 'acitve' );
 				var subnav=_this.closest('.menu-item-has-children').find( '.sub-nav' );
-				subnav=subnav.first();
-				subnav.toggleClass( 'active' );
-				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+					subnav=subnav.first();
+					
+				if( _this.hasClass ('toggled-on') ) {
+					_this.removeClass( 'toggled-on' );
+					subnav.removeClass( 'toggled-on' );
+					subnav.removeClass( 'active' );
+				}
+				else {
+					_this.addClass( 'toggled-on' );
+					subnav.addClass( 'toggled-on' );
+					_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+				}
 			});
 	   }
         initMainNavigation( $( '.main-navigation' ) );

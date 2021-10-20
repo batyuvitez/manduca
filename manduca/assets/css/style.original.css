@@ -1228,18 +1228,6 @@ nav li.menu-item > .submenu-container > a {
 }
 
 
-.main-navigation .menu-item-has-children .dropdown-toggle.active .icon-caret-down {
-	display: none;
-}
-
-.main-navigation .menu-item-has-children .icon-close {
-	display: none;
-}
-
-.main-navigation .menu-item-has-children .dropdown-toggle.active .icon-close,
-.main-navigation .dropdown-toggle.active {
-	display: block;
-}
 
 .main-navigation ul.nav-menu > li.menu-item > a {  /* top level navigation item */
 	position: relative;
@@ -1908,6 +1896,18 @@ svg.link-function {  /* @see:Link_Functions */
 	display: none;
 }
 
+.dropdown-toggle.toggled-on .icon-caret-down {
+	display: none;
+}
+
+.menu-item-has-children .icon-close {
+	display: none;
+}
+
+.menu-item-has-children .dropdown-toggle.toggled-on .icon-close,
+.dropdown-toggle.active {
+	display: block;
+}
 
 
 
