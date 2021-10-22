@@ -1135,7 +1135,7 @@ body .site,
 .megamenu {
 		position:  fixed;
 		z-index: 101;  /*overlay has z-index of100*/
-		top: 4.8em; /*Menu-toggle is absolutely positioned, navmenu not */
+		top: 8em; /*Menu-toggle is absolutely positioned, navmenu not */
 		width: 100%;
 		right: 0;
 		left: auto;
@@ -1177,7 +1177,8 @@ nav li.menu-item > .submenu-container > a {
 	font-weight: normal;
 	display: block;
 	font-size: 0.95em;
-}
+	flex-basis: 80%;
+} 
 
 
 
@@ -1889,10 +1890,10 @@ svg.link-function {  /* @see:Link_Functions */
 	display: inline;
 }
 
-.active svg.icon-eye,
 .active svg.icon-bars, 
 .menu-toggle:not(.active) svg.icon-close,
-.toolbar-buttons-open:not(.active) svg.icon-close{
+.toolbar-buttons-open:not(.toggled-on) svg.icon-close,
+.toolbar-buttons-open.toggled-on svg.icon-eye {
 	display: none;
 }
 

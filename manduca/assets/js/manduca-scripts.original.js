@@ -478,10 +478,11 @@ function constrain(amt, low, high) {
 
 
 
-function Dialog(dialogEl, overlayEl) {
+function Dialog(dialogEl, overlayEl, dialogToggler) {
 
    this.dialogEl = dialogEl;
    this.overlayEl = overlayEl;
+   this.dialogToggler = dialogToggler;
    this.focusedElBeforeOpen;
 
    var focusableEls = this.dialogEl.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
@@ -496,8 +497,10 @@ function Dialog(dialogEl, overlayEl) {
 
 Dialog.prototype.open = function() {
 
-   var Dialog = this;
+	var Dialog = this;
 	this.dialogEl.classList.add("active");
+	if (this.dialogToggler)
+		this.dialogToggler.classList.add("toggled-on");
    if (this.overlayEl)
 	this.overlayEl.classList.add("active");
    this.focusedElBeforeOpen = document.activeElement;
@@ -518,8 +521,10 @@ Dialog.prototype.open = function() {
 Dialog.prototype.close = function() {
 
    this.dialogEl.classList.remove('active');
-   if (this.overlayEl)
+   if (this.overlayEl) {
 	   this.overlayEl.classList.remove('active');
+	   this.dialogToggler.classList.remove('toggled-on');
+   }
 
    if ( this.focusedElBeforeOpen ) {
 	   this.focusedElBeforeOpen.focus();
@@ -726,8 +731,9 @@ jQuery(document).ready(function($)
 	//Keyboard trap in menu toggle
 	var navDialogEl = document.querySelector('.megamenu');
 	var dialogOverlay = document.querySelector('.dialog-overlay');
+	var dialogToggler = document.querySelector('.menu-toggle');
 	
-	var myDialog = new Dialog(navDialogEl, dialogOverlay);
+	var myDialog = new Dialog(navDialogEl, dialogOverlay, dialogToggler);
 	myDialog.addEventListeners('.menu-toggle', '.modal-window-close');
  
 	 
@@ -1120,8 +1126,9 @@ jQuery(document).ready(function($)
 	
 	var navDialogEl = document.querySelector('.toolbar-buttons');
 	var dialogOverlay = document.querySelector('.dialog-overlay');
+	var dialogToggler = document.querySelector('.toolbar-buttons-open');
 	
-	var myDialog = new Dialog(navDialogEl, dialogOverlay);
+	var myDialog = new Dialog(navDialogEl, dialogOverlay, dialogToggler);
 	myDialog.addEventListeners('.toolbar-buttons-open', '.modal-window-close');
 
 
