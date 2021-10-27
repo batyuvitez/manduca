@@ -684,7 +684,7 @@ input[type="checkbox"]{
 .menu-toggle {
 	position: absolute;
 	top: 0.85em; /*need to inline with toolbar-buttons-open */
-	right: 0.2em;
+	right: 2em;
 	max-width: 43%;
 }
 
@@ -692,10 +692,6 @@ input[type="checkbox"]{
     position: absolute;
     top: 1em;  /* compensate smaller font */
     left: 0.2em;
-		cursor: pointer;
-		padding-top: 1.12em;
-		padding-bottom: 1.12em;
-		font-size: 0.9em;
 }
 
 
@@ -964,7 +960,8 @@ body .site,
 /*//////////////////////////////////////////////////////////
 * Assistive text  */
 
-.screen-reader-text {
+.screen-reader-text,
+.desktop-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -972,9 +969,9 @@ body .site,
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
-	position: absolute !important;
+	position: absolute;
 	width: 1px;
-	word-wrap: normal !important;
+	word-wrap: normal;
 }
 
 
@@ -2102,7 +2099,6 @@ body {
 	padding: 0.5em;
 }
 
-#font-size-1 span,
 .font-size-1 {
     font-size: 140%;
 		word-break: break-all;
@@ -2235,7 +2231,6 @@ body {
 Modal window design */
  
 .toolbar-buttons {
-    padding: 2em 1em 1em;
     width: 100%;
     position: absolute;
     top: 4.5rem;
@@ -2245,7 +2240,7 @@ Modal window design */
 }
 
 .toolbar-buttons h1 {
-	margin: 1em 0;
+	margin: 4em 0 0 0;
 	font-size: 1.35em;
 	text-align: center;
 }
@@ -2258,6 +2253,7 @@ Modal window design */
 	border: 1px solid var(--ornament);
 	margin-bottom: 0.5em;
 	padding: 0.5em;
+	position: relative; /* Positioning the descendant elements */
 }
 
 .toolbar-buttons-table {
@@ -2267,7 +2263,6 @@ Modal window design */
 .toolbar-buttons-table .row .toolbar-label {
 	display: inline-block;
 	font-weight: 700;
-	font-size: 1.15em;
 }
 font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	max-width: 10em;
@@ -2276,6 +2271,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 .toolbar-buttons button[disabled] {
 	border: none;
 	background-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .toolbar-buttons button[disabled] .explain {
@@ -2343,7 +2341,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 /*/////////////////////////////////////
 //  Header rearrangement */
 
-@media screen and (min-width: 23em) {
+@media screen and (min-width: 23em) { /*322px */
 	
 	button,
 	.link-button,
@@ -2351,7 +2349,15 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: auto;
 	}
 	
-	
+	.desktop-text {
+		display: block;
+		width: auto;
+		height: auto;
+		margin: 0;
+		position: static;
+		clip: auto;
+		clip-path: none;
+	}
 }
 
 
@@ -2368,10 +2374,17 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.toolbar-buttons button[disabled] {
 		display: inline;
+		left: 13em;
 	}
 	.toolbar-buttons button:not([disabled]) {
 		float: right;
-}
+	}
+	
+	.toolbar-buttons button.link-target:disabled {
+		left: 0;
+		top: 1.9em;
+		padding: 0;
+	}
 	
 }
 

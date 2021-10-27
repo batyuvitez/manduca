@@ -30,7 +30,6 @@
 				<?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?>
 			</h1>
 		</header>
-	
 		<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
 		
 	<?php else : ?>

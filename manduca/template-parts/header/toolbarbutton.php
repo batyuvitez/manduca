@@ -29,7 +29,7 @@ $button_name=__( 'Display options', 'manduca' )
 
 ?>
 <button id="toolbar-buttons-open"
-		class="toolbar-buttons-open"
+		class="toolbar-buttons-open link-button"
 		aria-expanded="false"><?php 
 		   echo manduca_get_svg( array( 'icon' => 'eye' ) );
 		   echo manduca_get_svg( array( 'icon' => 'close' ) ); ?>
