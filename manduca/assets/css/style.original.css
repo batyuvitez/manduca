@@ -232,6 +232,9 @@ img {
 	clear: both;
 }
 
+button > * {
+	pointer-events: none;
+}
 
 
 
@@ -2691,8 +2694,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	.toolbar-buttons-open {
-		padding-bottom: 0.65em;
-		padding-top: 0.65em;
+		padding-bottom: 0.3em;
+		padding-top: 0.3em;
 	}
 	
 	.font-size-0 .header-searchform  {  
@@ -2755,8 +2758,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 
 		
-}
-
 
 
 /*//////////////////////////////////
