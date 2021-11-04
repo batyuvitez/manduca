@@ -25,6 +25,8 @@
 ?>
             </main>
         </div> <?php // END #primary .site-content ?>         
-     <?php get_sidebar( 'main_sidebar' ); ?>
+     <?php if ( is_active_sidebar ('main_sidebar') ) : ?> 
+        <?php get_sidebar( 'main_sidebar' ); ?>
+    <?php endif; ?>
     </div> <?php // END #inner-wrapper?>
 </div> <?php // END .wrapper ?>
