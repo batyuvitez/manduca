@@ -234,6 +234,8 @@ img {
 
 button > * {
 	pointer-events: none;
+	cursor: pointer;
+	
 }
 
 
