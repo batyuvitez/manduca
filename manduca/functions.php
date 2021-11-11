@@ -29,7 +29,8 @@
                'Manduca\customizer' => get_template_directory() .'/inc/customizer',
                'Manduca\helpers' => get_template_directory() .'/inc/helpers',
                'Manduca\filters' => get_template_directory() .'/inc/filters',
-               'Manduca\walkers' => get_template_directory() .'/inc/walkers'
+               'Manduca\walkers' => get_template_directory() .'/inc/walkers',
+               'Manduca\widgets' => get_template_directory() .'/inc/widgets'
                ) ;
   
  // If child_theme exists, it may opened Manduca_Classloader

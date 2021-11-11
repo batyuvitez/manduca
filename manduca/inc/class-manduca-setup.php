@@ -54,10 +54,7 @@ class Manduca_Setup {
 		// Add childthemes' icons to global
 		(new \Manduca\Define_Globals ) -> load_svg_to_global();
 				
-		// Accesssible widget archive
-		new \Manduca\Register_Widgets;
-		new \Manduca\Widget_Archives;
-		new \Manduca\Ajax_Call_Handler;
+		new Manduca\widgets\Controller;
 		
 		new Manduca\customizer\Controller;
 			

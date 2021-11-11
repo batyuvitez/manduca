@@ -1,14 +1,12 @@
 <?php
-
 /*
  * Register accessible widgets. 
- *@since 19.2
  **/
 
  
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,7 +23,7 @@
 */
 
 
-namespace Manduca;
+namespace Manduca\widgets;
 
 class Register_Widgets{
    
@@ -37,6 +35,6 @@ class Register_Widgets{
    }
    
    public function register_manduca_archives_widget(){
-      register_widget( '\Manduca\Widget_Archives' );
+      register_widget( '\Manduca\widgets\Widget_Archives' );
    }
 }
