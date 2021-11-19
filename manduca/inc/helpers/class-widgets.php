@@ -52,13 +52,17 @@ class Widgets {
 	*/
    public static function get_recent_posts( $args = array() ) {
    
-	   $posts = self::get_posts( $args );
+	   $html=FALSE;
+		$posts = self::get_posts( $args );
 		$all_args=array( $posts, $args);
 		if ( $posts->have_posts() ) {
-			get_template_part ('template-parts/widget/recentposts' , NULL, $all_args);  
+			ob_start ();
+			get_template_part ('template-parts/widget/recentposts' , NULL, $all_args);
+			$html=ob_get_contents ();
+			ob_end_clean ();
 		}
 	   wp_reset_postdata();
-	      
+		return $html;
    }
    
    /**

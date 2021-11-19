@@ -59,31 +59,27 @@ class Widget_Recent_Posts extends \WP_Widget {
 
 	
 	public function widget( $args, $instance ) {
-		extract( $args );
+		
+		$instance = wp_parse_args($instance, $this->get_default_args() );
 
-		$instance = wp_parse_args( $args, $this->get_default_args() );
-   
 		$recent = hlp\Widgets::get_recent_posts ( $instance );
 
-		if ( $recent ) {
+		if ( !empty ($recent )) {
+			
+			echo $args['before_widget'];
 
-			// Output the theme's $before_widget wrapper.
-			echo $before_widget;
+			if ( !empty ($instance['title'] ) ) {
 
-			// If both title and title url is not empty, display it.
-			if ( ! empty( $instance['title_url'] ) && ! empty( $instance['title'] ) ) {
-				echo $before_title . '<a href="' . esc_url( $instance['title_url'] ) . '" title="' . esc_attr( $instance['title'] ) . '">' . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . '</a>' . $after_title;
-
-			// If the title not empty, display it.
-			} elseif ( ! empty( $instance['title'] ) ) {
-				echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
+				if ( ! empty( $instance['title_url'] ) ) {
+					echo $args['before_title'] . '<a href="' . esc_url( $instance['title_url'] ) . '" >' . $instance['title'], '</a>' . $args ['$after_title'];
+				}
+				else  {
+					echo $args['before_title'] . $instance['title']. $args['after_title'];
+				}
 			}
-
-			// Get the recent posts query.
 			echo $recent;
 
-			// Close the theme's widget wrapper.
-			echo $after_widget;
+			echo $args ['after_widget'];
 
 		}
 
