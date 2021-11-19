@@ -2061,6 +2061,29 @@ body {
 
 /*============================================================
 |                                                            |
+|           ACCESSIBLE RECENT POST WIDGET                    |
+|                                                            |
+==============================================================*/
+
+.recent-post-block header.thumbnail {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.recent-post-block header.thumbnail img {
+	width: 4em;
+	height: 4em;
+	margin: 0.5em;
+}
+
+.recent-post-block header.thumbnail h3 {
+	margin: 0;
+}
+
+
+/*============================================================
+|                                                            |
 |           LARGE FONT TYPOGRAPHY                            |
 |                                                            |
 ==============================================================*/
