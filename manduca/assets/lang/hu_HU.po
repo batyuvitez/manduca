@@ -287,8 +287,8 @@ msgid "Months in %s"
 msgstr "archívum %s. évben"
 
 #: inc/class-widget-archives.php:149
-msgid "Title:"
-msgstr "A widget neve:"
+msgid "Title"
+msgstr "Neve"
 
 #: inc/class-widget-archives.php:110
 msgid "Filter posts"
@@ -870,3 +870,107 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
 msgstr ""
+
+msgid "Accessible recent posts widget"
+msgstr "Akadálymentes legfrisebb bejegyzések"
+
+
+msgid "Title URL"
+msgstr "Név URL"
+
+msgid "Ignore sticky posts"
+msgstr "A ragadós bejegyzéseket nem jeleníti meg"
+
+msgid "Exclude current post"
+msgstr ""
+
+#: includes/form.php:77
+msgid "Post Types"
+msgstr "Tartalom típusok"
+
+#: includes/form.php:93
+msgid "Post Status"
+msgstr "Státusz"
+
+#: includes/form.php:104
+msgid "Order"
+msgstr "Sorrend"
+
+#: includes/form.php:107
+msgid "Descending"
+msgstr "csökkenő"
+
+#: includes/form.php:108
+msgid "Ascending"
+msgstr "növekvő"
+
+#: includes/form.php:114
+msgid "Orderby"
+msgstr "mező"
+
+
+
+#: includes/form.php:122
+msgid "Random"
+msgstr "véletlen"
+
+#: includes/form.php:123
+msgid "Comment Count"
+msgstr "a hozzászólások száma"
+
+#: includes/form.php:124
+#: includes/form.php:130
+msgid "Limit to Category"
+msgstr "Az alábbi kategóriák"
+
+#: includes/form.php:146
+msgid "Limit to Tag"
+msgstr "Az alábbi címkék"
+
+#: includes/form.php:162
+msgid "Limit to Taxonomy"
+msgstr ""
+
+
+#: includes/form.php:175
+msgid "Number of posts to show"
+msgstr "Hány bejegyzést mutasson?"
+
+#: includes/form.php:182
+msgid "Offset"
+msgstr "Kihagyjon ennyit:"
+
+
+#: includes/form.php:193
+msgid "Display Thumbnail"
+msgstr "Mutassa a bélyegképet"
+
+
+#: includes/form.php:212
+msgid "Default Thumbnail"
+msgstr "ha nincs bélyegkép"
+
+
+#: includes/form.php:223
+msgid "Display Excerpt"
+msgstr "Kivonatot mutassa"
+
+
+#: includes/form.php:251
+msgid "Display Comment Count"
+msgstr "Mutassa a hozzászólások száműt"
+
+#: includes/form.php:258
+msgid "Display Date"
+msgstr "Mutassa a bejegyzés keltét"
+
+
+#: includes/form.php:272
+msgid "Use Relative Date. eg: 5 days ago"
+msgstr "Használjon relatív időt pl: 5 nappal ezelőtt."
+
+msgid "thumbnail substitution"
+msgstr "bélyegkép helyettesítő"
+
+msgid "No comments"
+msgstr "Nincs hozzászólás"

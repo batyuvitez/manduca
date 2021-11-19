@@ -6,7 +6,7 @@
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	   Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	   Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -26,11 +26,12 @@
  
  $dirs = array( get_template_directory() .'/inc/',
                'Manduca' => get_template_directory() .'/inc/',
-               'Manduca\customizer' => get_template_directory() .'/inc/customizer',
-               'Manduca\helpers' => get_template_directory() .'/inc/helpers',
-               'Manduca\filters' => get_template_directory() .'/inc/filters',
-               'Manduca\walkers' => get_template_directory() .'/inc/walkers',
-               'Manduca\widgets' => get_template_directory() .'/inc/widgets'
+               'Manduca\customizer'    => get_template_directory() .'/inc/customizer',
+               'Manduca\helpers'       => get_template_directory() .'/inc/helpers',
+               'Manduca\filters'       => get_template_directory() .'/inc/filters',
+               'Manduca\walkers'       => get_template_directory() .'/inc/walkers',
+               'Manduca\widgets'       => get_template_directory() .'/inc/widgets',
+               'Manduca\accessibility' => get_template_directory() .'/inc/accessibility'
                ) ;
   
  // If child_theme exists, it may opened Manduca_Classloader

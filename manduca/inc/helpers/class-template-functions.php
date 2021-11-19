@@ -6,7 +6,7 @@
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,7 +22,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca\helpers; 
+namespace Manduca\helpers;
+use Manduca\accessibility as y11;
 
 class Template_Functions {
 		
@@ -260,11 +261,6 @@ class Template_Functions {
 				   );
 	}
 	
-	public static function display_excerpt(){
-		$more_link 	= new More_Links;
-		$html 		.=$more_link->more_link_create_html();
-		return $html;
-	}
 	
 	
 	/*
@@ -276,7 +272,7 @@ class Template_Functions {
 	 *
 	 * */
 	
-	public static function get_the_excerpt ($morelink_flag=false, int $len=45 ){
+	public static function get_the_excerpt ($always_morelink=false, int $len=45 ){
 		$post 		= get_post();
 		$post_content = $post->post_content;
 		$post_content =Blocks::get_text_contents ($post_content);
@@ -293,7 +289,8 @@ class Template_Functions {
 				}
 		}
 		else {
-				$html = self::trim_excerpt ($post_content, $len);
+				$html = self::trim_excerpt ($always_morelink,  $post_content, $len);
+				$morelink_flag=FALSE;
 		}
 		$html = strip_shortcodes( $html);
 		if( $morelink_flag )
@@ -316,7 +313,7 @@ class Template_Functions {
 	 * @return (string) excerpt in HTML 
 	 * @see: https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
 	 */
-    protected static function trim_excerpt( string $content, int $excerpt_word_count ) {
+    protected static function trim_excerpt( $always_morelink, string $content, int $excerpt_word_count ) {
 		$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>,<h2>,<h3>,<h4>'; 
 		$excerpt = strip_shortcodes( $content );
 		$excerpt = apply_filters('the_content', $excerpt);
@@ -344,8 +341,9 @@ class Template_Functions {
 			$excerptOutput .= $token;// Append what's left of the token
 		}
 		$excerpt = trim(force_balance_tags($excerptOutput));
-		if( $morelink_flag )
+		if ( $morelink_flag || $always_morelink ) {
 			$excerpt=self::add_morelink ($excerpt);
+		}
 		return $excerpt;   
 	}
 	
@@ -358,7 +356,7 @@ class Template_Functions {
 	 **/
 	protected static function add_morelink ($html)
 	{
-		$more_link = new \More_Links;
+		$more_link = new y11\More_Links;
 		return $html.$more_link->more_link_create_html();
 	}
 	

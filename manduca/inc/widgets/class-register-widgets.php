@@ -36,5 +36,6 @@ class Register_Widgets{
    
    public function register_manduca_archives_widget(){
       register_widget( '\Manduca\widgets\Widget_Archives' );
+      register_widget( '\Manduca\widgets\Widget_Recent_Posts' );
    }
 }

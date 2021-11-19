@@ -146,7 +146,7 @@ class Widget_Archives extends \WP_Widget {
 		$title = sanitize_text_field( $instance['title'] );
 		?>
 		<p>
-         <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'manduca' ); ?></label>
+         <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'manduca' ); ?>:</label>
          <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
       </p>
 		

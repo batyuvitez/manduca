@@ -62,7 +62,6 @@ class Manduca_Setup {
 		// Functions of admin size
 		if ( is_admin() ){
 			
-			
 			// Add tiny MCE functions and stylesheets
 			$tinimce = new Tiny_Mce;
 			$tinimce->add_hooks_to_wp();
@@ -70,7 +69,7 @@ class Manduca_Setup {
 		
 		else {
 			// Add accessible more-links Need svg to be loaded. 
-			$more_links = new More_Links;
+			$more_links = new Manduca\accessibility\More_Links;
 		
 			// Remove gallery inline style
 			add_filter( 'use_default_gallery_style', '__return_false' );
