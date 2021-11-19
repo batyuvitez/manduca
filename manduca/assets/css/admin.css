@@ -24,3 +24,52 @@ svg[class^="icon"] {
 	height: 0.929rem;
 	top: 0.07rem;
 }
+
+.widget-inside .admin-col {
+	overflow: hidden;
+	float: left;
+	width: 31%;
+	margin-right: 3.5%;
+}
+
+.widget-inside .admin-col select.widefat {
+	width: 98.5%;
+}
+
+.widget-inside .admin-last-col {
+	float: right;
+	margin-right: 0;
+}
+
+.widget-inside .admin-col label {
+	font-size: 11px;
+}
+
+.widget-inside .admin-col p small {
+	color: #777;
+	font-style: italic;
+}
+
+.small-input {
+	width: 30%;
+}
+
+.admin-block {
+	display: block;
+}
+
+.admin-multiple-check-form {
+	margin: 1em 0;
+}
+
+.admin-multiple-check-form ul {
+	border: 1px solid #eee;
+	padding: 10px;
+	max-height: 110px;
+	overflow: auto;
+	margin-top: 0;
+}
+
+.admin-multiple-check-form ul li:last-child {
+	margin-bottom: 0;
+}

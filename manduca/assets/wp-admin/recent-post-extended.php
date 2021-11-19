@@ -27,7 +27,7 @@
 use \Manduca\helpers as hlp;
 ?>
 
-<div class="rpwe-columns-3">
+<div class="admin-col">
 
 	<p>
 		<label for="<?php echo $args[ 'id' ][ 'title' ]; ?>">
@@ -43,11 +43,6 @@ use \Manduca\helpers as hlp;
 		<input class="widefat" id="<?php echo $args[ 'id' ][ 'title_url' ]; ?>" name="<?php echo $args[ 'name' ][ 'title_url' ]; ?>" type="text" value="<?php echo esc_url( $args[ 'value' ][ 'title_url'] ); ?>" />
 	</p>
 
-		
-</div>
-
-<div class="rpwe-columns-3">
-
 	<p>
 		<input class="checkbox" type="checkbox" <?php checked( $args[ 'value' ][ 'ignore_sticky'], 1 ); ?> id="<?php echo $args[ 'id' ][ 'ignore_sticky' ]; ?>" name="<?php echo $args ['name'] [ 'ignore_sticky' ]; ?>" />
 		<label for="<?php echo $args[ 'id' ][ 'ignore_sticky' ]; ?>">
@@ -62,7 +57,7 @@ use \Manduca\helpers as hlp;
 		</label>
 	</p>
 
-	<div class="rpwe-multiple-check-form">
+	<div class="admin-multiple-check-form">
 		<label>
 			<?php _e( 'Post Types', 'manduca' ); ?>
 		</label>
@@ -115,7 +110,12 @@ use \Manduca\helpers as hlp;
 		</select>
 	</p>
 
-	<div class="rpwe-multiple-check-form">
+		
+</div>
+
+<div class="admin-col">
+
+	<div class="admin-multiple-check-form">
 		<label>
 			<?php _e( 'Limit to Category', 'manduca' ); ?>
 		</label>
@@ -131,7 +131,7 @@ use \Manduca\helpers as hlp;
 		</ul>
 	</div>
 
-	<div class="rpwe-multiple-check-form">
+	<div class="admin-multiple-check-form">
 		<label>
 			<?php _e( 'Limit to Tag', 'manduca' ); ?>
 		</label>
@@ -150,7 +150,7 @@ use \Manduca\helpers as hlp;
 	
 </div>
 
-<div class="rpwe-columns-3 rpwe-column-last">
+<div class="admin-col admin-last-col">
 
 	<p>
 		<label for="<?php echo $args[ 'id' ][ 'limit' ]; ?>">
@@ -185,6 +185,14 @@ use \Manduca\helpers as hlp;
 		</p>
 
 	<?php } ?>
+
+
+	<p>
+		<input id="<?php echo $args[ 'id' ][ 'excerpt' ]; ?>" name="<?php echo $args[ 'name' ][ 'excerpt' ]; ?>" type="checkbox" <?php checked( $args[ 'value' ][ 'excerpt'] ); ?> />
+		<label for="<?php echo $args[ 'id' ][ 'excerpt' ]; ?>">
+			<?php _e( 'Display Excerpt', 'manduca' ); ?>
+		</label>
+	</p>
 
 	
 	

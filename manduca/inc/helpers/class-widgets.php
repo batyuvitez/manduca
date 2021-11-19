@@ -50,19 +50,15 @@ class Widgets {
 	*
 	* @return string|array The HTML for the random posts.
 	*/
-   public static function get_recent_posts( $args = array() ) {
+   public static function display_recent_posts( $args = array() ) {
    
 	   $html=FALSE;
 		$posts = self::get_posts( $args );
 		$all_args=array( $posts, $args);
 		if ( $posts->have_posts() ) {
-			ob_start ();
 			get_template_part ('template-parts/widget/recentposts' , NULL, $all_args);
-			$html=ob_get_contents ();
-			ob_end_clean ();
 		}
 	   wp_reset_postdata();
-		return $html;
    }
    
    /**

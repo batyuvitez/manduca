@@ -61,28 +61,23 @@ class Widget_Recent_Posts extends \WP_Widget {
 	public function widget( $args, $instance ) {
 		
 		$instance = wp_parse_args($instance, $this->get_default_args() );
+		
+		echo $args ['before_widget'];	
+		
+		if ( !empty ($instance['title'] ) ) {
 
-		$recent = hlp\Widgets::get_recent_posts ( $instance );
-
-		if ( !empty ($recent )) {
-			
-			echo $args['before_widget'];
-
-			if ( !empty ($instance['title'] ) ) {
-
-				if ( ! empty( $instance['title_url'] ) ) {
-					echo $args['before_title'] . '<a href="' . esc_url( $instance['title_url'] ) . '" >' . $instance['title'], '</a>' . $args ['$after_title'];
-				}
-				else  {
-					echo $args['before_title'] . $instance['title']. $args['after_title'];
-				}
+			if ( ! empty( $instance['title_url'] ) ) {
+				echo  $args['before_title'] . '<a href="' . esc_url( $instance['title_url'] ) . '" >' . $instance['title']. '</a>' . $args ['$after_title'];
 			}
-			echo $recent;
-
-			echo $args ['after_widget'];
-
+			else  {
+				echo $args['before_title'] . $instance['title']. $args['after_title'];
+			}
 		}
-
+		
+		
+			hlp\Widgets::display_recent_posts ( $instance );
+			
+			echo $args ['after_widget'];
 	}
 
 	public function update( $new_instance, $old_instance ) {
