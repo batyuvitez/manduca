@@ -2074,11 +2074,11 @@ body {
 .recent-post-block header.thumbnail img {
 	width: 4em;
 	height: 4em;
-	margin: 0.5em;
+	margin: 0;
 }
 
 .recent-post-block header.thumbnail h3 {
-	margin: 0;
+	margin: 0 0 0 0.5em;
 }
 
 
@@ -2087,7 +2087,7 @@ body {
 |           LARGE FONT TYPOGRAPHY                            |
 |                                                            |
 ==============================================================*/
-
+fa
 
 .font-size-1 .header-searchform {
 	display: block;
