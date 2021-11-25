@@ -82,7 +82,7 @@
 |                                                            |
 ==============================================================*/
 :root {
-	--default-background: ivory;
+	--default-background: ivory;  /* replacable by customizer */
 	--default-text: black;
 	--default-link: royalBlue;
 	--site-title: brown;
@@ -299,7 +299,7 @@ body a svg {
 .high-contrast-0 select:hover 
 .high-contrast-0 input:focus,
 .high-contrast-0 textarea:focus {
-	outline: 4px solid var(--lighter-text);
+	outline: 4px solid var(--default-outline);
 	outline-offset: 2px;
 }
 
