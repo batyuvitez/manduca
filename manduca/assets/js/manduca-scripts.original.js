@@ -759,7 +759,7 @@ jQuery(document).ready(function($)
  
  	
     ///////////////////////////////////////////////
-	//Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	// Handle the dropdown buttons of main navigation 
 
     (function touchDevice()
     {
@@ -767,29 +767,49 @@ jQuery(document).ready(function($)
 		 return;
 		}
 	
-		// Operate menu toggle
 		function initMainNavigation( container )
 		{
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
 			{
 				var _this = $( this );
+				
+				
 				e.preventDefault();
-				var subnav=_this.closest('.menu-item-has-children').find( '.sub-nav' );
-					subnav=subnav.first();
+				var subnav=getSubNavObj (_this);
 					
 				if( _this.hasClass ('toggled-on') ) {
 					_this.removeClass( 'toggled-on' );
-					subnav.removeClass( 'toggled-on' );
+					_this.attr( 'aria-expanded', false);
 					subnav.removeClass( 'active' );
 				}
 				else {
+					var $blocks=$('.dropdown-toggle');
+					$.each( $blocks, function  ( i, e) {  //Close other dropdowns 
+						$element=$(e);
+						if( $element.hasClass('toggled-on') ) {
+							$element.removeClass( 'toggled-on');
+							var $subNavObj=getSubNavObj ($element);
+							$subNavObj.removeClass( 'active');
+							
+						}
+					});
 					_this.addClass( 'toggled-on' );
-					subnav.addClass( 'toggled-on' );
-					_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+					subnav.addClass( 'active' );
+					_this.attr( 'aria-expanded', 'true' );
 				}
+				
+				
+				
 			});
 	   }
-        initMainNavigation( $( '.main-navigation' ) );
+	   
+	   function getSubNavObj ($element) {
+			var $id=$element.attr('id');
+			var $subNavId=$id.replace('button', 'sub-nav');
+			return $('#'+$subNavId);
+	   }
+		
+		initMainNavigation( $( '.main-navigation' ) );
         
       
         /////////////////////////////////////////////////
