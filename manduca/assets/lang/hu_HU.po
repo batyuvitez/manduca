@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-19 11:34+0100\n"
+"PO-Revision-Date: 2021-11-29 06:26+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,6 +21,130 @@ msgstr "WCAG honlap készítésére alkalmas. Származtatott sablonnal együtt b
 #. Theme Name of the theme
 msgid "Manduca"
 msgstr "Manduca"
+
+#: template-parts/widget/recentposts.php:79
+msgid "1 Comment"
+msgstr "Hozzászólás"
+
+#: template-parts/widget/recentposts.php:77
+msgid "%s Comments"
+msgstr "%s hozzászólás"
+
+#: template-parts/widget/recentposts.php:75
+msgid "No Comments"
+msgstr "Nincs hozzászólás"
+
+#: template-parts/widget/recentposts.php:49
+msgid "thumbnail substitution"
+msgstr "bélyegkép helyettesítő"
+
+#: inc/widgets/class-widget-recent-posts.php:142
+msgid "Recent Posts"
+msgstr "Aktuális bejegyzés"
+
+#: inc/widgets/class-widget-recent-posts.php:51
+msgid "Accessible recent posts widget"
+msgstr "Akadálymentes legutóbbi bejegyzések widget"
+
+#: inc/widgets/class-widget-recent-posts.php:39
+msgid "Gives enhanced control and accessible HTML"
+msgstr "Több paraméterezési lehetőséget biztosít és akadálymentes"
+
+#: assets/wp-admin/recent-post-extended.php:217
+msgid "Use Relative Date. eg: 5 days ago"
+msgstr "A mai naphoz viszonyított időmegjelölés pl. 5 napja. "
+
+#: assets/wp-admin/recent-post-extended.php:209
+msgid "Display Date"
+msgstr "Mutassa a bejegyzés keltét"
+
+#: assets/wp-admin/recent-post-extended.php:202
+msgid "Display Comment Count"
+msgstr "Mutassa a hozzászólások számát"
+
+#: assets/wp-admin/recent-post-extended.php:193
+msgid "Display Excerpt"
+msgstr "Mutassa a kivonatot"
+
+#: assets/wp-admin/recent-post-extended.php:182
+msgid "Default Thumbnail"
+msgstr "Az alapértelmezett bélyegkép"
+
+#: assets/wp-admin/recent-post-extended.php:175
+msgid "Display Thumbnail"
+msgstr "Jelenítse meg a bélyegképet"
+
+#: assets/wp-admin/recent-post-extended.php:164
+msgid "Offset"
+msgstr "Eltolás"
+
+#: assets/wp-admin/recent-post-extended.php:157
+msgid "Number of posts to show"
+msgstr "Hány darab bejegyzést mutasson?"
+
+#: assets/wp-admin/recent-post-extended.php:136
+msgid "Limit to Tag"
+msgstr "Csak a kijelölt címkével rendelkezőket mutassa"
+
+#: assets/wp-admin/recent-post-extended.php:120
+msgid "Limit to Category"
+msgstr "Csak a kijelölt kategóriában lévőket mutassa"
+
+#: assets/wp-admin/recent-post-extended.php:109
+msgid "Menu Order"
+msgstr "A menü sorrendje"
+
+#: assets/wp-admin/recent-post-extended.php:108
+msgid "Comment Count"
+msgstr "A hozzászólások száma"
+
+#: assets/wp-admin/recent-post-extended.php:107
+msgid "Random"
+msgstr "Véletlenszerű"
+
+#: assets/wp-admin/recent-post-extended.php:106
+msgid "Modified"
+msgstr "Módosítva"
+
+#: assets/wp-admin/recent-post-extended.php:102
+msgid "ID"
+msgstr "Azonosító"
+
+#: assets/wp-admin/recent-post-extended.php:99
+msgid "Orderby"
+msgstr "Rendezés"
+
+#: assets/wp-admin/recent-post-extended.php:93
+msgid "Ascending"
+msgstr "Növekvő"
+
+#: assets/wp-admin/recent-post-extended.php:92
+msgid "Descending"
+msgstr "Csökkenő"
+
+#: assets/wp-admin/recent-post-extended.php:89
+msgid "Order"
+msgstr "Sorrend"
+
+#: assets/wp-admin/recent-post-extended.php:78
+msgid "Post Status"
+msgstr "Bejegyzés státusza"
+
+#: assets/wp-admin/recent-post-extended.php:62
+msgid "Post Types"
+msgstr "Bejegyzéstípusok"
+
+#: assets/wp-admin/recent-post-extended.php:56
+msgid "Exclude current post"
+msgstr "A jelenlegi bejegyzés kihagyása"
+
+#: assets/wp-admin/recent-post-extended.php:49
+msgid "Ignore sticky posts"
+msgstr "Ragadós bejegyzések kihagyása"
+
+#: assets/wp-admin/recent-post-extended.php:41
+msgid "Title URL"
+msgstr "Cím URL"
 
 #. translators: This is a link to the realted (parent) post of an image.
 #: template-parts/attachment/attachment-meta.php:59
@@ -182,7 +306,7 @@ msgstr "kenyérmorzsa"
 
 #. translators: second select menu's text in archive widget is year is
 #. selected:
-#: inc/class-widget-archives.php:241
+#: inc/widgets/class-widget-archives.php:241
 msgid "Select month"
 msgstr "Hónap kiválasztása"
 
@@ -245,72 +369,75 @@ msgstr "Rendben, engedélyeztem."
 msgid "Avatar of %s"
 msgstr "%s fényképe"
 
-#: inc/class-sitemap.php:105
+#: inc/class-sitemap.php:103
 msgid "No categories"
 msgstr "Nincs kategorizálva"
 
-#: inc/class-hungarian-contents.php:80
+#: inc/helpers/class-hungarian-contents.php:82
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "ebben az órában"
 msgstr[1] "%s órával ezelőtt"
 
-#: inc/class-hungarian-contents.php:77
+#: inc/helpers/class-hungarian-contents.php:79
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "Ebben a percben"
 msgstr[1] "%s perccel ezelőtt"
 
 #. Translators: Accessible show-hide system: collapse all button
-#: inc/class-enqueue.php:73
+#: inc/class-enqueue.php:71
 msgid "Collapse all"
 msgstr "Az összes bezárása"
 
 #. Translators: Accessible show-hide system: expand all button
-#: inc/class-enqueue.php:71 page-templates/page-sitemap.php:55
+#: inc/class-enqueue.php:69 page-templates/page-sitemap.php:55
 msgid "Expand all"
 msgstr "Az összes kinyitása"
 
-#: inc/class-widget-archives.php:76
+#: inc/widgets/class-widget-archives.php:76
 msgid "User friendy archives"
 msgstr "Akadálymentes archív widget"
 
 #. translators: description of Manduca's accessible archive widget
-#: inc/class-widget-archives.php:49
+#: inc/widgets/class-widget-archives.php:49
 msgid "You have two dropdown: one for years and one for months. This is easy-to use."
 msgstr "A könnyebb használat érdekében két legördülő menüt alkalmaz: az egyiken az évet, a másikkal a hónapot lehet beállítani. "
 
 #. translators: second select menu's text in archive widget is year is
 #. selected:
-#: inc/class-widget-archives.php:337
+#: inc/widgets/class-widget-archives.php:337
 msgid "Months in %s"
 msgstr "archívum %s. évben"
 
-#: inc/class-widget-archives.php:149
+#: assets/wp-admin/recent-post-extended.php:34
+#: assets/wp-admin/recent-post-extended.php:104
+#: inc/widgets/class-widget-archives.php:149
 msgid "Title"
-msgstr "Neve"
+msgstr ""
 
-#: inc/class-widget-archives.php:110
+#: inc/widgets/class-widget-archives.php:110
 msgid "Filter posts"
 msgstr "Szűrés"
 
 #. translators: second (month) select menus's text in archive widget until no
 #. year selected.
-#: inc/class-widget-archives.php:94
+#: inc/widgets/class-widget-archives.php:94
 msgid "First select year"
 msgstr "Hónap"
 
 #. translators: first (year) select menu's text in archive widget
-#: inc/class-widget-archives.php:91
+#: inc/widgets/class-widget-archives.php:91
 msgid "Select year"
 msgstr "Év kiválasztása"
 
 #. translators: name of Manduca's accessible archive widget
-#: inc/class-widget-archives.php:53
+#: inc/widgets/class-widget-archives.php:53
 msgid " User-friendly archives"
 msgstr "Akadálymentes archív widget"
 
-#: search.php:53
+#. translators: in Hungarian, no need for definite article
+#: search.php:56
 msgid "No matching result found for %s."
 msgstr "Nincs találat %s  kifejezésre."
 
@@ -333,7 +460,7 @@ msgid "Select Year"
 msgstr "Év kiválasztása"
 
 #. translators: Time difference between two dates, in years. 1: Number of years
-#: inc/class-hungarian-contents.php:99
+#: inc/helpers/class-hungarian-contents.php:101
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s éve"
@@ -341,14 +468,14 @@ msgstr[1] "%s éve"
 
 #. translators: Time difference between two dates, in months. 1: Number of
 #. months
-#: inc/class-hungarian-contents.php:93
+#: inc/helpers/class-hungarian-contents.php:95
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s hónapja"
 msgstr[1] "%s hónapja"
 
 #. translators: Time difference between two dates, in days. 1: Number of days
-#: inc/class-hungarian-contents.php:87
+#: inc/helpers/class-hungarian-contents.php:89
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s napja"
@@ -368,18 +495,19 @@ msgstr "Bejegyzés navigáció"
 #. for self-link.
 #. translators: this is the text read by screen readers only in case of you are
 #. in a html element referring to current page.
-#: inc/class-accessible-menu.php:21 inc/class-link-functions.php:192
-#: inc/class-sitemap.php:72 inc/helpers/class-template-functions.php:182
+#: inc/class-accessible-menu.php:21 inc/class-sitemap.php:70
+#: inc/filters/class-link-functions.php:192
+#: inc/helpers/class-template-functions.php:183
 msgid "Current page"
 msgstr "Jelenlegi oldal"
 
-#: template-parts/header/menu.php:51 template-parts/header/toolbar.php:40
+#: template-parts/header/menu.php:53 template-parts/header/toolbar.php:40
 msgid "Close"
 msgstr "Bezárás"
 
 #. Translators: %s = title of post. This is an aria-label to a link  which has
 #. a children of an image, and image has no alt text.
-#: inc/class-link-functions.php:154
+#: inc/filters/class-link-functions.php:154
 msgid "Image to the post titled: %s"
 msgstr "Kép a %s cikkhez. "
 
@@ -392,23 +520,23 @@ msgstr "Nagy"
 msgid "Skip to main content"
 msgstr "Ugrás a fő tartalomhoz"
 
-#: inc/helpers/class-template-functions.php:51
+#: inc/helpers/class-template-functions.php:52
 msgid "Pages of this post"
 msgstr "E bejegyzés több oldalból áll"
 
-#: inc/class-link-functions.php:545
+#: inc/filters/class-link-functions.php:545
 msgid "Call on phone"
 msgstr "Telefonhívás"
 
-#: inc/class-link-functions.php:540
+#: inc/filters/class-link-functions.php:540
 msgid "Send email"
 msgstr "E-mail küldése"
 
-#: inc/class-link-functions.php:522
+#: inc/filters/class-link-functions.php:522
 msgid "Electronic book"
 msgstr "Elektronikus könyv"
 
-#: inc/class-link-functions.php:215
+#: inc/filters/class-link-functions.php:215
 msgid "open map"
 msgstr "Térkép megnyitása"
 
@@ -418,7 +546,7 @@ msgid "The requested page could not be located on this blog."
 msgstr "Nincs ilyen oldal. "
 
 #. Translators: add screen-reader-text if links open in new window.
-#: inc/class-link-functions.php:602
+#: inc/filters/class-link-functions.php:602
 msgid "opens a new window"
 msgstr "új ablakban nyílik"
 
@@ -439,7 +567,7 @@ msgid "Posts by category"
 msgstr "Bejegyzések kategóriánként"
 
 #. translators: When image has no title, indicated with this text in sitemap.
-#: inc/class-sitemap.php:164
+#: inc/class-sitemap.php:162
 msgid "No title"
 msgstr "Nincs cím"
 
@@ -461,10 +589,8 @@ msgstr "Oldalsáv"
 
 #. translators: This string is a replacement of the same string in WP's.
 #. Hungarian translation in WP is bad.
-#. translators: This string is a replacement of the same string in WP's.
-#. Hungarian translation in WP is bad.
 #. Translators: Breadcrumb paginated pages
-#: inc/class-filter-title.php:61 inc/class-manduca-filter-title.php:61
+#: inc/filters/class-title.php:67
 #: template-parts/header/breadcrumb-template.php:68
 msgid "Page %d"
 msgstr "%d. oldal"
@@ -483,16 +609,18 @@ msgstr "A képet tartalmazó bejegyzés"
 msgid "Image navigation"
 msgstr "Képek közti navigáció"
 
-#: inc/class-link-functions.php:518
+#: inc/filters/class-link-functions.php:518
 msgid "PDF document"
 msgstr "PDF dokumentum"
 
-#: inc/class-link-functions.php:509 inc/class-link-functions.php:513
+#: inc/filters/class-link-functions.php:509
+#: inc/filters/class-link-functions.php:513
 msgid "MS Excel document"
 msgstr "Excel dokumentum"
 
-#: inc/class-link-functions.php:497 inc/class-link-functions.php:501
-#: inc/class-link-functions.php:505
+#: inc/filters/class-link-functions.php:497
+#: inc/filters/class-link-functions.php:501
+#: inc/filters/class-link-functions.php:505
 msgid "MS Word document"
 msgstr "Word dokumentum"
 
@@ -527,12 +655,12 @@ msgstr "Olvasási beállítások"
 msgid "JavaScript is off. Please enable to use all functions."
 msgstr "A böngészőjében le van tiltva a JavaScript futtatása. Kérem engedélyezze, hogy a honlap minden funkcióját képes legyen használni. "
 
-#: inc/class-sitemap.php:108
+#: inc/class-sitemap.php:106
 msgid "Categories"
 msgstr "Kategóriák"
 
 #. translators: screen reader text for numbered list items in post navigation
-#: inc/helpers/class-template-functions.php:197
+#: inc/helpers/class-template-functions.php:198
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "%s<span class=\"screen-reader-text\">. oldal</span>"
 
@@ -550,13 +678,13 @@ msgstr "Légy szíves az SVG ikon nevét egy tömbben határozd meg."
 msgid "Parent of pages template"
 msgstr "A szülő oldal sablonja"
 
-#: inc/helpers/class-template-functions.php:42
-#: inc/helpers/class-template-functions.php:88
+#: inc/helpers/class-template-functions.php:43
+#: inc/helpers/class-template-functions.php:89
 msgid "Older posts"
 msgstr "Régebbi bejegyzések"
 
-#: inc/helpers/class-template-functions.php:47
-#: inc/helpers/class-template-functions.php:85
+#: inc/helpers/class-template-functions.php:48
+#: inc/helpers/class-template-functions.php:86
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
@@ -616,16 +744,17 @@ msgstr "%s napján kelt bejegyzések: "
 msgid "Images"
 msgstr "Képek"
 
-#: inc/helpers/class-template-functions.php:413
+#: inc/helpers/class-template-functions.php:412
 msgid "Next post"
 msgstr "Következő bejegyzés"
 
-#: inc/helpers/class-template-functions.php:390
+#: inc/helpers/class-template-functions.php:389
 msgid "Previous post"
 msgstr "Előző bejegyzés"
 
-#. translators: %1$s is the number of results found, %2$s is the search term
-#: search.php:41
+#. translators: %1$s is the number of results found, %2$s is the search term,
+#. in Hungarian, no need for definite article
+#: search.php:42
 msgid "Found %1$s search result for keyword: %2$s"
 msgstr "%1$s találat: %2$s kifejezésre"
 
@@ -664,12 +793,12 @@ msgid "Previous"
 msgstr "Előző"
 
 #. Translators: submenu collapse
-#: inc/class-enqueue.php:77
+#: inc/class-enqueue.php:75
 msgid "collapse child menu"
 msgstr "Almenü összezárása"
 
 #. Translators: submenu expand
-#: inc/class-enqueue.php:75
+#: inc/class-enqueue.php:73
 msgid "expand child menu"
 msgstr "Almenü szétnyitása"
 
@@ -682,7 +811,7 @@ msgid "Thumbnail"
 msgstr "Előkép"
 
 #. Translators: add screen-reader-text to external link.
-#: inc/class-link-functions.php:222
+#: inc/filters/class-link-functions.php:222
 msgid "external"
 msgstr "külső"
 
@@ -728,7 +857,11 @@ msgstr "Nincs bejegyzés"
 msgid "Original size"
 msgstr "Eredeti méret"
 
-#: home.php:40
+#: assets/wp-admin/recent-post-extended.php:105
+msgid "Date"
+msgstr "Időpont"
+
+#: home.php:39
 msgid "No matching result found."
 msgstr "Nincs találat, újabb keresési lehetőség. "
 
@@ -737,7 +870,7 @@ msgstr "Nincs találat, újabb keresési lehetőség. "
 msgid "Post navigation"
 msgstr "Bejegyzések oldalai"
 
-#: inc/class-customizer.php:38
+#: inc/customizer/class-register.php:45
 msgid "Copyright text"
 msgstr "Copyright szöveg"
 
@@ -763,20 +896,18 @@ msgstr "Utolsó módosítás"
 msgid "Entry date"
 msgstr "Bejegyzés kelte"
 
-#: inc/helpers/class-comments.php:72
+#: template-parts/posts/comments.php:54
 msgid "Reply"
 msgstr "Válasz a hozzászólásra"
 
-#: inc/helpers/class-comments.php:60
+#: template-parts/posts/comments.php:42
 msgid "Comment is awaiting for apporval."
 msgstr "A bejegyzés megjelenését jóvá kell hagynia a rendszergazdának."
 
-#: inc/helpers/class-comments.php:51
-msgid "Date: %1$s: %2$s"
-msgstr "Dátuma: %1$s: %2$s"
-
 #. translators: Author of post - in the post meta
-#: inc/helpers/class-comments.php:46 template-parts/posts/content-meta.php:41
+#: assets/wp-admin/recent-post-extended.php:103
+#: template-parts/posts/comments.php:34
+#: template-parts/posts/content-meta.php:41
 msgid "Author"
 msgstr "Szerző"
 
@@ -799,7 +930,7 @@ msgstr "Lábrész menü"
 #. translators: name of main menu for admin and for screen reader users also
 #. Translators: name of the main menu for screen reader users.
 #. Translators: name of the main menu for screen reader users.
-#: inc/class-theme-support.php:58 template-parts/header/menu.php:27
+#: inc/class-theme-support.php:58 template-parts/header/menu.php:29
 #: template-parts/header/menutoggle.php:28
 msgid "Main navigation"
 msgstr "Főmenü"
@@ -813,15 +944,17 @@ msgid "Author: %s"
 msgstr "Szerző: %s"
 
 #. Translators: text of the read more and excerpt more buttons
-#: inc/class-more-links.php:36
+#. Translators: text of the read more and excerpt more buttons
+#: inc/accessibility/class-more-links.php:36
+#: inc/helpers/class-more-links.php:36
 msgid "Continue reading"
 msgstr "Tovább olvasom"
 
-#: template-parts/posts/entry-header.php:31
+#: template-parts/posts/entry-header.php:37
 msgid "Featured"
 msgstr "Kiemelt"
 
-#: inc/helpers/class-comments.php:65 template-parts/postlink-edit.php:37
+#: template-parts/postlink-edit.php:37 template-parts/posts/comments.php:47
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -870,97 +1003,3 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
 msgstr ""
-
-msgid "Accessible recent posts widget"
-msgstr "Akadálymentes legfrisebb bejegyzések"
-
-msgid "Title URL"
-msgstr "Név URL"
-
-msgid "Ignore sticky posts"
-msgstr "A ragadós bejegyzéseket nem jeleníti meg"
-
-msgid "Exclude current post"
-msgstr ""
-
-#: includes/form.php:77
-msgid "Post Types"
-msgstr "Tartalom típusok"
-
-#: includes/form.php:93
-msgid "Post Status"
-msgstr "Státusz"
-
-#: includes/form.php:104
-msgid "Order"
-msgstr "Sorrend"
-
-#: includes/form.php:107
-msgid "Descending"
-msgstr "csökkenő"
-
-#: includes/form.php:108
-msgid "Ascending"
-msgstr "növekvő"
-
-#: includes/form.php:114
-msgid "Orderby"
-msgstr "mező"
-
-#: includes/form.php:122
-msgid "Random"
-msgstr "véletlen"
-
-#: includes/form.php:123
-msgid "Comment Count"
-msgstr "a hozzászólások száma"
-
-#: includes/form.php:124 includes/form.php:130
-msgid "Limit to Category"
-msgstr "Az alábbi kategóriák"
-
-#: includes/form.php:146
-msgid "Limit to Tag"
-msgstr "Az alábbi címkék"
-
-#: includes/form.php:162
-msgid "Limit to Taxonomy"
-msgstr ""
-
-#: includes/form.php:175
-msgid "Number of posts to show"
-msgstr "Hány bejegyzést mutasson?"
-
-#: includes/form.php:182
-msgid "Offset"
-msgstr "Kihagyjon ennyit:"
-
-#: includes/form.php:193
-msgid "Display Thumbnail"
-msgstr "Mutassa a bélyegképet"
-
-#: includes/form.php:212
-msgid "Default Thumbnail"
-msgstr "ha nincs bélyegkép"
-
-#: includes/form.php:223
-msgid "Display Excerpt"
-msgstr "Kivonatot mutassa"
-
-#: includes/form.php:251
-msgid "Display Comment Count"
-msgstr "Mutassa a hozzászólások száműt"
-
-#: includes/form.php:258
-msgid "Display Date"
-msgstr "Mutassa a bejegyzés keltét"
-
-#: includes/form.php:272
-msgid "Use Relative Date. eg: 5 days ago"
-msgstr "Használjon relatív időt pl: 5 nappal ezelőtt."
-
-msgid "thumbnail substitution"
-msgstr "bélyegkép helyettesítő"
-
-msgid "No comments"
-msgstr "Nincs hozzászólás"
