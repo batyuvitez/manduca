@@ -23,6 +23,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+namespace Manduca;
  
  $dirs = array( get_template_directory() .'/inc/',
                'Manduca' => get_template_directory() .'/inc/',
@@ -36,10 +37,29 @@
   
  // If child_theme exists, it may opened Manduca_Classloader
 if( class_exists( 'Manduca_Classloader' ) )     
-    Manduca_Classloader::add_dirs( $dirs );
+    \Manduca_Classloader::add_dirs( $dirs );
 else
 {	  
    require_once( get_template_directory() .'/inc/class-manduca-classloader.php' );  
-   new Manduca_Classloader( $dirs );		
+   new \Manduca_Classloader( $dirs );		
 }
-( new Manduca_Setup )-> init();
+
+
+//Load not classes 
+$dir = get_template_directory() .'/inc/notclasses/' ;
+		
+$files 		= scandir( $dir );
+
+//Get rid of points (libraries )
+$files 		= array_diff( $files, array('..', '.') ) ;
+
+// Open all files in it
+if( !empty ($files ) ) {
+			foreach( $files as $file ) {
+      if( strpos( $file , '.php' ) !== false ) {
+       require_once( $dir .$file );
+				  }
+			}
+}
+  
+( new Theme_Setup )-> init();

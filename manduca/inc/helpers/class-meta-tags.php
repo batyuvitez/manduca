@@ -55,10 +55,10 @@ class Meta_Tags {
 	
 	
 		
-	public static function get_post_date() {
+	public static function get_post_date( $format=NULL) {
 		return sprintf( '<time datetime="%s">%s</time>',
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
+			esc_html( get_the_date( $format ) )
 		);	
 	}
 	

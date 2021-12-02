@@ -17,7 +17,8 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
- 
+
+use Manduca\helpers as hlp; 
 ?>
 
 
@@ -47,7 +48,7 @@
 			 
 				
 			<div class="entry-content">		
-					<?php echo Manduca\helpers\Template_Functions::get_the_excerpt(); ?>
+					<?php echo hlp\Template_Functions::get_the_excerpt(); ?>
 			</div>
 			
 			<div class="clearfix-content"></div>
