@@ -38,6 +38,12 @@
  
 <?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
  
+<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+ 
+     <?php the_custom_logo(); ?>
+ 
+<?php endif; ?>
+ 
 <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
     
         <div id="site-title" class="site-title">

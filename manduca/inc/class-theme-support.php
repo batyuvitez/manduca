@@ -25,8 +25,7 @@ namespace Manduca;
 
 class Theme_Support {
 	
-	public function __construct ()
-	{
+	public function __construct ()	{
 		add_action( 'after_setup_theme', array($this, 'theme_supports' ) );
 	}
 	
@@ -66,6 +65,19 @@ class Theme_Support {
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f5',
 		) );
+		
+		$defaults = array(
+			'height'               => 400,
+			'width'                => 400,
+			'flex-height'          => true,
+			'flex-width'           => true,
+			'header-text'          => array( 'site-title', 'site-description' ),
+			'unlink-homepage-logo' => true, 
+		);
+ 
+		add_theme_support( 'custom-logo', $defaults );
+	
+ 
 		
 	}
 	

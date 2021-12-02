@@ -403,9 +403,13 @@ textarea[disabled] {
 	background-color: var(--featured-background);
 }
 
-/*=========================================
- * LINKS ARE UNDERLINED                        */
-.link-appearance-1 .link-textarea,
+
+
+/*============================================================
+|                                                             |
+|             LINK APPEARANCE                                 |
+|                                                             |
+==============================================================*/.link-appearance-1 .link-textarea,
 .link-appearance-1 .site,
 .link-appearance-1 .megamenu.active {
 	color: var(--default-text-2);	
@@ -413,8 +417,13 @@ textarea[disabled] {
 
 
 
-/*=========================================
- * HIGH CONTRAST MODE                        */
+
+
+/*============================================================
+|                                                             |
+|             CONTRAST - INVERSE                              |
+|                                                             |
+==============================================================*/
 
 .high-contrast-1 {
 	background-image: none;  /* cannot reset all background, since it removes background-colors too */
@@ -513,7 +522,7 @@ textarea[disabled] {
 
  /*============================================================
 |                                                             |
-|             SECTION  CONTROL ELEMENTS     s                 |
+|             SECTION  CONTROL ELEMENTS                       |
 |                                                             |
 ==============================================================*/
 
@@ -674,11 +683,6 @@ input[type="color"] {
 ==============================================================*/
 
 
-.bypostauthor cite span {
-	background-image: none;
-	box-shadow: none;
-	padding: 0;
-}
 
 input[type="checkbox"]{
   width: 1em; 
@@ -1099,6 +1103,17 @@ body .site,
 }
 
 
+/*///////////////////////////////
+// lOGO              	          */
+.custom-logo-link img {
+		max-width: 10em;
+		height: auto;
+		display: block;
+		margin-right: 1em;
+}
+
+
+
 /*//////////////////////////
 // Breadcrumb */
 .breadcrumb {
@@ -1307,7 +1322,7 @@ nav li.menu-item > .submenu-container > a {
 }
 
 /*============================================================-- 
-/* TYPOGRAPHY 
+/* CONTENT TYPOGRAPHY 
 ============================================================-- */
 
 /* General HTML5 elements general formating
