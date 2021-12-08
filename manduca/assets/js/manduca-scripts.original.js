@@ -767,23 +767,27 @@ jQuery(document).ready(function($)
 		 return;
 		}
 	
-		function initMainNavigation( container )
-		{
+		function initMainNavigation( container ) {
 			container.find( '.dropdown-toggle' ).click( function( e ) //Click dropdown-toggle
 			{
 				var _this = $( this );
 				
-				
 				e.preventDefault();
 				var subnav=getSubNavObj (_this);
-					
-				if( _this.hasClass ('toggled-on') ) {
-					_this.removeClass( 'toggled-on' );
+				
+				if( _this.hasClass ('toggled-on') ) {  
+					_this.removeClass( 'toggled-on' );  //close submenu
 					_this.attr( 'aria-expanded', false);
 					subnav.removeClass( 'active' );
 				}
 				else {
-					var $blocks=$('.dropdown-toggle');
+					var $level;
+					for (let i=0; i<3; i++) {
+						$level='level-' + i;
+						if (_this.hasClass ($level))
+							break;
+					}
+					var $blocks=$('.dropdown-toggle.'+$level);
 					$.each( $blocks, function  ( i, e) {  //Close other dropdowns 
 						$element=$(e);
 						if( $element.hasClass('toggled-on') ) {
