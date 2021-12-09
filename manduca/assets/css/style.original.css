@@ -834,7 +834,7 @@ video {
 
 
 
-/* post pagination */
+/* post pagination and navigation */
 
 .pagination span,
 .pagination a {
@@ -855,6 +855,11 @@ video {
 
 .post-navigation .page-numbers {
 	display: none;
+}
+
+.post-navigation .nav-item {
+		width: 3rem; /* equal width */
+		text-align: center;
 }
 
 .post-navigation > div {

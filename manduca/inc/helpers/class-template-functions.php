@@ -168,7 +168,7 @@ class Template_Functions {
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
 					$page_links[] = sprintf(
-								'<div class="link-button prev"><a href="%1$s">%2$s</a></div>',
+								'<div class="nav-item link-button prev"><a href="%1$s">%2$s</a></div>',
 								$link,
 								$args['prev_text']
 					);
@@ -179,7 +179,7 @@ class Template_Functions {
 						// but some screen announce it after the title. This is the reason I use screen-reader-text
 						//@since 18.11
 						$page_links[] = sprintf(
-								'<span class="current"><span class="screen-reader-text">%s </span>%s</span>',
+								'<span class="nav-item current"><span class="screen-reader-text">%s </span>%s</span>',
 								__( 'Current page', 'manduca' ),
 								number_format_i18n( $n )
 								);
@@ -199,7 +199,7 @@ class Template_Functions {
 														  number_format_i18n( $n )
 														 );
 							$page_links[] = sprintf(
-								'<div class="link-button page-numbers"><a class="page-numbers" href="%1$s">%2$s</a></div>',
+								'<div class="nav-item link-button page-numbers"><a class="page-numbers" href="%1$s">%2$s</a></div>',
 										$link,
 										$screen_reader_text
 										);
@@ -207,7 +207,7 @@ class Template_Functions {
 							$dots = true;
 						elseif ( $dots && ! $args['show_all'] ) :
 							$page_links[] = sprintf(
-													'<span class="dots">%s</span>',
+													'<span class="nav-item dots">%s</span>',
 													manduca_get_svg( array( 'icon' => 'dots' ) ) 
 																   );
 							$dots = false;
