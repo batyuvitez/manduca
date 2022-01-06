@@ -26,7 +26,7 @@ Number of supported success criteria shown in brackets.
         - Link type indication with icon (1.4.8 )
         - Search: highlight/emphasise the searched expression in the list (1.4.1)
         - Label includes accessible name (2.5.3)
-        - Line hegiht, paragprah spacing, letter spacing, word spacing adjustabla (1.4.12)
+        - Line height, paragprah spacing, letter spacing, word spacing adjustabla (1.4.12)
     
         
 2. Operable
@@ -70,7 +70,7 @@ Number of supported success criteria shown in brackets.
 
 
 4. Robust
-        - Valid HTML (4.1)
+        - Valid HTML syntax (4.1)
         - Valid semantics (4.2)
 
 
