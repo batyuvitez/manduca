@@ -29,7 +29,7 @@ namespace Manduca\widgets;
 class Controller {
 	
    public function __construct () {
-      // Accesssible widget archive
+      new Page_Sisters;
       new Register_Widgets;
 		new Widget_Archives;
 		new Ajax_Call_Handler;
