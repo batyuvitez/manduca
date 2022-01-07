@@ -2,7 +2,7 @@
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 	Source code is available at https://github.com/batyuvitez/manduca
 
     This program is free software: you can redistribute it and/or modify
@@ -1249,7 +1249,8 @@ nav li.menu-item > .submenu-container > a {
 
 
 
-.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
+.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container,
+.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container > button.menu-item{
 	display: flex;
 }
 
@@ -1262,6 +1263,9 @@ nav li.menu-item > .submenu-container > a {
 .main-navigation .distance-keeper {
 	flex-basis: 2em;  /*mobile touch operations need this distance keeper btwn button and link*/
 }
+
+
+
 
 
 /*///////////////////////////////////

@@ -5,7 +5,7 @@
  **/
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
- *  Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+ *  Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -56,7 +56,6 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 	
 	// Menu and submenu element assemble
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
 			$n = '';
@@ -115,22 +114,38 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 			$item_output .='<div class="submenu-container ';
 			$item_output .='level-'.$depth.'">';
 		}
-		$item_output .= '<a' . $attributes . '>';
-		$item_output .= $args->link_before . $item->title . $args->link_after;
-		$item_output .= '</a>';
-		$item_output .= "\n";
-		if( $submenu) {
-			$item_output .='<div class="distance-keeper" aria-hidden="true"></div>';
-			$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';
-			$item_output .= 'id= "button-'.$item->ID .'" ';			
-			$item_output .= 'aria-haspopup="true" ';
-			$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
-			$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'" ';
-			$item_output .= 'aria-expanded="false"';
-			$item_output .= '>';
-			$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
-			$item_output .= manduca_get_svg( array( 'icon' => 'close'));
-			$item_output .='</button>';
+		if ($item->url!=='#' ) {
+			$item_output .= '<a' . $attributes . '>';
+			$item_output .= $args->link_before . $item->title . $args->link_after;
+			$item_output .= '</a>';
+			$item_output .= "\n";
+		}
+		if ($submenu ) {
+			if ($item->url!=='#' ) {
+				$item_output .='<div class="distance-keeper" aria-hidden="true"></div>';
+				$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';
+				$item_output .= 'id= "button-'.$item->ID .'" ';			
+				$item_output .= 'aria-haspopup="true" ';
+				$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
+				$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'" ';
+				$item_output .= 'aria-expanded="false"';
+				$item_output .= '>';
+				$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
+				$item_output .= manduca_get_svg( array( 'icon' => 'close'));
+				$item_output .='</button>';
+			}
+			else  {
+				$item_output .= '<button class="dropdown-toggle menu-item level-'.$depth.'" ';			
+				$item_output .= 'aria-haspopup="true" ';
+				$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
+				$item_output .= 'id= "button-'.$item->ID .'" ';			
+				$item_output .= 'aria-expanded="false"';
+				$item_output .= '>';
+				$item_output .= $args->link_before . $item->title . $args->link_after;
+				$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
+				$item_output .= manduca_get_svg( array( 'icon' => 'close'));
+				$item_output .='</button>';
+			}
 			$item_output .= "\n";
 			$item_output .= "</div>";  //submenu-container
 			$item_output .= "\n";
