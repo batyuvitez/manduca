@@ -32,6 +32,7 @@ namespace Manduca;
                'Manduca\filters'       => get_template_directory() .'/inc/filters',
                'Manduca\walkers'       => get_template_directory() .'/inc/walkers',
                'Manduca\widgets'       => get_template_directory() .'/inc/widgets',
+               'Manduca\setup'         => get_template_directory() .'/inc/setup',
                'Manduca\accessibility' => get_template_directory() .'/inc/accessibility'
                ) ;
   

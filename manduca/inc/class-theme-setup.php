@@ -40,12 +40,9 @@ class Theme_Setup {
 		new Enqueue;
 		
 		// Register the themes main parameters
-		new Theme_Support;
+		new setup\Controller;
 		new Images;
-		new Register_Sidebar;		
 		
-		// Add childthemes' icons to global
-		(new Define_Globals ) -> load_svg_to_global();
 				
 		new widgets\Controller;
 		

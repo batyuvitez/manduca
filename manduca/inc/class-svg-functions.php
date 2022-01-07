@@ -1,6 +1,7 @@
 <?php
 /**
- * Create SVG icon markup 
+ * Create SVG icon markup
+ * see: setup\Define_Globals
  *
  **/
 
