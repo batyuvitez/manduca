@@ -1,6 +1,6 @@
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021 Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022 Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -476,6 +476,7 @@ function constrain(amt, low, high) {
 * @since 21.2
 *----------------------------------------------------------*/
 
+/* Global need for Escape mousedown event */
 
 
 function Dialog(dialogEl, overlayEl, dialogToggler) {
@@ -491,7 +492,7 @@ function Dialog(dialogEl, overlayEl, dialogToggler) {
    this.firstFocusableEl = this.focusableEls[0];
    this.lastFocusableEl = this.focusableEls[ this.focusableEls.length - 1 ];
 
-   this.close(); // Reset
+   //this.close(); // Reset
 }
 
 
@@ -520,7 +521,10 @@ Dialog.prototype.open = function() {
 
 Dialog.prototype.close = function() {
 
-   this.dialogEl.classList.remove('active');
+   //this.dialogEl.classList.remove('active');
+   currentId=this.dialogEl.id;
+   currentEl=document.getElementById (currentId);
+   currentEl.classList.remove( 'active');
    if (this.overlayEl) {
 	   this.overlayEl.classList.remove('active');
 	   this.dialogToggler.classList.remove('toggled-on');
@@ -537,7 +541,7 @@ Dialog.prototype._handleKeyDown = function(e) {
    var Dialog = this;
    var KEY_TAB = 9;
    var KEY_ESC = 27;
-
+   
    function handleBackwardTab() {
 	   if ( document.activeElement === Dialog.firstFocusableEl ) {
 		   e.preventDefault();
@@ -564,7 +568,7 @@ Dialog.prototype._handleKeyDown = function(e) {
 	   }
 	   break;
    case KEY_ESC:
-	   Dialog.close();
+		//Dialog.close();
 	   break;
    default:
 	   break;
@@ -595,8 +599,6 @@ Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
 	}
 
 };
-
-
 
 
 
@@ -717,17 +719,7 @@ jQuery(document).ready(function($)
     
 	
 	
-    // Escape handler  */
-	 $(document).keyup(function(e) {
-         if (e.keyCode === 27) {
-			var toggleOffs = $('button.dropdown-toggle.toggled-on, div.sub-nav.toggled-on');
-			$.each (toggleOffs, function ( index, el) {
-				$(el).removeClass( 'active');
-			});
-         }            
-      });
-	 
-	 
+     
 	//Keyboard trap in menu toggle
 	var navDialogEl = document.querySelector('.megamenu');
 	var dialogOverlay = document.querySelector('.dialog-overlay');
@@ -736,15 +728,7 @@ jQuery(document).ready(function($)
 	var myDialog = new Dialog(navDialogEl, dialogOverlay, dialogToggler);
 	myDialog.addEventListeners('.menu-toggle', '.modal-window-close');
  
-	 
-	 //Keyboard trap in submenus 
-	$( '.sub-nav').each(function (){
-		modal_id=this.id;
-		modal_controller=modal_id.replace ('sub-nav', 'button');
-		var navDialogEl = document.querySelector("#" + modal_id);
-		var myDialog = new Dialog(navDialogEl, null);
-		myDialog.addEventListeners('#' + modal_controller, null);
-	});
+		
 	
 	
 
@@ -775,20 +759,25 @@ jQuery(document).ready(function($)
 				e.preventDefault();
 				var subnav=getSubNavObj (_this);
 				
+				// When already opened 
 				if( _this.hasClass ('toggled-on') ) {  
 					_this.removeClass( 'toggled-on' );  //close submenu
 					_this.attr( 'aria-expanded', false);
 					subnav.removeClass( 'active' );
 				}
+				//When tooggled. 
 				else {
 					var $level;
+					//Find the depth
 					for (let i=0; i<3; i++) {
 						$level='level-' + i;
 						if (_this.hasClass ($level))
 							break;
 					}
+					
 					var $blocks=$('.dropdown-toggle.'+$level);
-					$.each( $blocks, function  ( i, e) {  //Close other dropdowns 
+					//Close other dropdowns 
+					$.each( $blocks, function  ( i, e) {  
 						$element=$(e);
 						if( $element.hasClass('toggled-on') ) {
 							$element.removeClass( 'toggled-on');
@@ -806,6 +795,10 @@ jQuery(document).ready(function($)
 				
 			});
 	   }
+	   
+	      
+	   
+	   
 	   
 	   function getSubNavObj ($element) {
 			var $id=$element.attr('id');
@@ -855,6 +848,61 @@ jQuery(document).ready(function($)
         {
              $( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
         });
+
+		
+			
+		/* Handle TAB and ESC keys in navigation menu. 
+		/* @see: https://stackoverflow.com/questions/29820441/how-to-handle-tab-key-using-jquery
+		*/
+		$('.main-navigation').keyup ( function (e) {
+			var code= e.keyCode || e.which;
+			//Exit if not TAB or ESC. 
+			if (code  !== 9 && code !== 27)
+				return;
+			var focused= $(':focus');
+			var level;
+			levelInt=-1;
+				//Find the depth
+			for (let i=0; i<3; i++) {
+				levelInt=i;
+				level='level-' + i;
+				levelParent='level-' + (i-1);
+				if (focused.hasClass (level))
+					break;
+			}
+			var dropdown=$('.dropdown-toggle.toggled-on.'+levelParent);
+			var allDropdowns=$('.dropdown-toggle.toggled-on');
+			var subNav=$('.sub-nav.active.'+levelParent);
+			var allSubNavs=$('.sub-nav.active');
+			// Tab key
+			if (code  === 9) {
+				if(levelInt==0) {
+						allDropdowns.removeClass("toggled-on");
+						allSubNavs.removeClass('active');
+				}
+				if ( focused.hasClass( "menu-link") && levelInt !== allDropdowns.length) {
+						
+						var levelChild='level-'+(levelInt+1);			
+						console.log ('bezár a ' + levelChild);
+						$('.dropdown-toggle.toggled-on.'+level).removeClass ('toggled-on');
+						$('.sub-nav.active.'+level).removeClass ('active');				
+				}
+			}
+			
+			//Escape keypress
+			if (code === 27) {
+				dropdown.removeClass ('toggled-on');
+				dropdown.focus();
+				subNav.removeClass ('active');				
+				}
+		
+		});
+	 
+		
+		
+		
+		
+		
     })();
     
 	///////////////////////////////////////////////
