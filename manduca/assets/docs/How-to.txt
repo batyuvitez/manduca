@@ -75,3 +75,11 @@ How to ...
             class="js-simple-tooltip"
             data-simpletooltip-text="tooltip text itself"
       @more: https://a11y.nicolas-hoffmann.net/simple-tooltip/
+      
+      
+... Create accessible layout tables
+      use the following css classes:
+            responsive-tables: draw border around table
+            table-row : for rows
+            table-col and col 5, col 10 etc. to define the width of the col.
+            eg. class=table-col col10 means a table with 10 percent of width.       
