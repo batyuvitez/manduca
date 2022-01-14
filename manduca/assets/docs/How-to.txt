@@ -80,9 +80,10 @@ How to ...
 ... Create accessible layout tables
       use the following css classes:
             responsive-tables: draw border around table
-            responsive breakpoints r30, r40 .. r100. 30 means 30em (Manduca has a 14px basis);
-            e.g. class="responsive-tables r40" mean resolution < 560px has no table layout.
+                  responsive breakpoints breaking-point-30, breaking-point-40 breaking-point-100.
+                  30 means 30em (Manduca has a 14px basis);
+                  e.g. class="responsive-tables breaking-point-40" mean resolution < 560px has no table layout.
             table-row : for rows
             table-col and col 5, col 10 etc. to define the width of the col.
-            eg. class="table-col col10" means a table with 10 percent of width.
+                  eg. class="table-col col10" means a table with 10 percent of width.
 
