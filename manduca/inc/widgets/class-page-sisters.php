@@ -23,29 +23,25 @@
 namespace Manduca\widgets;
 
  
-class Page_Sisters extends \WP_Widget
-{
+class Page_Sisters extends \WP_Widget {
 	
    const WIDGET_ID = 'page_sisters';
    
-	protected $archive_array = array();
-   
-   protected $meta_name ='web25_page_order';
 	
+   
 	/**
-	 * Sets up a new Archives widget instance.
+	 * Sets up a new widget instance.
 	 *
-	 * @since 2.8.0
 	 */
 	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'widget_page_sisters',
-			// translators: description of Manduca's accessible archive widget
-			'description' => __( 'Displays the pages of the same parent page' ),
+			// translators: description of Manduca's sister page widget
+			'description' => __( 'Displays the pages of the same parent page', 'manduca' ),
 			'customize_selective_refresh' => FALSE,
 		);
-		// translators: name of Manduca's accessible archive widget
-		parent::__construct( self::WIDGET_ID, __( 'Sister pages' ), $widget_ops);
+		// translators: name of Manduca's  sister page widget
+		parent::__construct( self::WIDGET_ID, __( 'Sister pages', 'manduca' ), $widget_ops);
 	}
 
 	
@@ -57,14 +53,12 @@ class Page_Sisters extends \WP_Widget
 	 *
 	 * @param array $args     Display arguments including 'before_title', 'after_title',
 	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance Settings for the current Archives widget instance.
+	 * @param array $instance Settings for the current widget instance.
 	 */
 	public function widget( $args, $instance )   {
 		global $wp_locale;
-		/*Hiába tettem bele a widget_title filtert, nem ment valamiért, ez íygy most egyszerűbb volt,
-		mivel az svg-t úgyis külön meg kell adni*/
 		$args['title']=$instance['title'];
-		$a=$this->getSisterPages ();
+		$a=$this->get_sister_pages ();
       if( $a ) {
          $args['list']=$a;
          get_template_part ( '/template-parts/widget/sisterpages', '', $args);
@@ -73,12 +67,10 @@ class Page_Sisters extends \WP_Widget
 	}
 
 	/**
-	 * Handles updating settings for the current Archives widget instance.
+	 * Handles updating settings for the current widget instance.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
-	 *                            WP_Widget_Archives::form().
+	 * @param array $new_instance 
+	 *                       
 	 * @param array $old_instance Old settings for this instance.
 	 * @return array Updated settings to save.
 	 */
@@ -94,9 +86,7 @@ class Page_Sisters extends \WP_Widget
 	
 	
 	/**
-	 * Outputs the settings form for the Archives widget.
-	 * Copied from WordPress' archive widget
-	 * 
+	 * Outputs the settings form for the widget.
 	 *
 	 *
 	 * @param array $instance Current settings.
@@ -114,7 +104,7 @@ class Page_Sisters extends \WP_Widget
 	}
     
 	
-   private function getSisterPages () {
+   private function get_sister_pages () {
         global $post;
         if ($post->post_type !=='page')
            return FALSE;
@@ -127,13 +117,13 @@ class Page_Sisters extends \WP_Widget
          'child_of' 			=> $child_of,
          'sort_order'		=>'ASC',
          'sort_column'		=>'post_date',
-         'depth'				=> 2,
+         'depth'				=> 1,
 		'show_date'    => '',
 		'date_format'  => get_option( 'date_format' ),
 		'sort_column'  => 'menu_order, post_title',
 		'item_spacing' => 'preserve' );
 		
-        $html = $this->listPages( $args);
+        $html = $this->list_pages( $args);
         if (empty ($html))
             return FALSE;
         return $html;
@@ -145,7 +135,7 @@ class Page_Sisters extends \WP_Widget
 	 *Simplified clone of  wp_list_pages,
 	 *Reason: there is no filter in wp_list_pages
 	 **/
-	private function listPages( $args )
+	private function list_pages( $args )
 	{
 			
 		$output= '';
@@ -153,7 +143,7 @@ class Page_Sisters extends \WP_Widget
 	
 		// Query pages.
 		$pages=get_pages( $args );
-		$pages=$this->reorderPages ($pages, $args['child_of']);
+		$pages=$this->reorder_pages ($pages, $args['child_of']);
 		if ( ! empty( $pages ) ) {
 				
 			global $wp_query;
@@ -168,22 +158,20 @@ class Page_Sisters extends \WP_Widget
 	}
 	
 	/*
-	 *A self::metaname érték alapján sorbarendezi.
-	 *Ha nincs ilyen érték megadva,  többit a végére teszi.
-	 **/
-	private function reorderPages ( array $pages, int $parent )	{
+    * Order pages base on post object menu_order
+    **/
+   private function reorder_pages ( array $pages, int $parent )	{
 		$reordered=array();
 		$order=0;
 		foreach ($pages as $page)
 		{
 			if ( $page->post_parent === $parent)
 			{
-				
-            $order=get_post_meta ($page->ID, $this->meta_name, TRUE);
-				if (!$order)
-					$order=99;
-				$order=intval ($order)+1;
-				$reordered[$order][]=$page;
+            $order=$page->menu_order;
+            if ( $order) {
+               $order=intval ($order)+1;
+               $reordered[$order][]=$page;
+            }
 			}
 			else {
 				$reordered[$order][]=$page;
@@ -192,17 +180,16 @@ class Page_Sisters extends \WP_Widget
 		
 		}
 		ksort ($reordered, SORT_NUMERIC);
-		$reorderedFinal=array();
+		$reordered_final=array();
 		foreach ($reordered as $order=>$pages )
 		{
-			foreach ($pages as $page)
-			{
-				$reorderedFinal[]=$page;
+			foreach ($pages as $page) {
+				$reordered_final[]=$page;
 			
 			}
 		}
 		
-		return $reorderedFinal;
+		return $reordered_final;
 	}
 
 

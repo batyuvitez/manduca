@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-29 06:26+0100\n"
+"PO-Revision-Date: 2022-01-14 13:46+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1002,4 +1002,10 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
-msgstr ""
+msgstr "Edelényi Zsolt (ezs@web25.hu)"
+
+msgid "Displays the pages of the same parent page"
+msgstr "Az azonos színtű, illetve azok gyermekeit mutatja meg a szerkesztőfelületen meghatározott sorrendben."
+
+msgid "Sister pages"
+msgstr "Testvéroldalak"

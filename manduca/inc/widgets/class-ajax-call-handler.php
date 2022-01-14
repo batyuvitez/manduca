@@ -1,7 +1,7 @@
 <?php
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,23 +23,23 @@ class Ajax_Call_Handler {
 	
 	public function __construct(){
 		add_filter('query_vars',
-				   array( $this, 'es_plugin_query_vars')
+				   array( $this, 'plugin_query_vars')
 				  );
 		
 		add_action('parse_request',
-			   array( $this, 'es_plugin_parse_request')
+			   array( $this, 'plugin_parse_request')
 			  );
 	}
 	
 	
-	public function es_plugin_query_vars($vars) {
+	public function plugin_query_vars($vars) {
 		$vars[] = 'manduca';
 		return $vars;
 	}
 	
 	
 
-	public function es_plugin_parse_request($qstring) {
+	public function plugin_parse_request($qstring) {
 		if (array_key_exists('manduca', $qstring->query_vars)) {
 			$page = $qstring->query_vars['manduca'];
 			switch($page) {
