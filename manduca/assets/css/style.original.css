@@ -2409,6 +2409,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 .responsive-table .col80 {
 	width: 80%;
 }
+.responsive-table .col90 {
+	width: 90%;
+}
 .responsive-table .col95 {
 	width: 95%;
 }

@@ -41,7 +41,7 @@ class manduca_breadcrumb extends breadcrumb {
           'show_pta'		=>false,
           
           // which taxonomy to show
-          'show_tax'   => 'category',
+          //'show_tax'   => 'category',
           
           // show hierarchical terms for post types
          'show_htfpt' => true, 							
