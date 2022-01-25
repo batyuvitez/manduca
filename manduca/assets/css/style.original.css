@@ -2419,8 +2419,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	width: 100%;
 }
 
-.responsive-table.breaking-point-50 .table-col {
-	width: 100%;
+.responsive-table.breaking-point-0 .table-row {
+	display: flex;
 }
 
 
@@ -2485,7 +2485,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 }
 
-
+@media screen and (min-width: 20em) {
+	.responsive-table.breaking-point-20 .table-row	{
+		display: flex;
+	}	
+}
 
 /*/////////////////////////////////////
 //  Header rearrangement */
@@ -2544,8 +2548,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 @media screen and (min-width: 30em) {
-	.responsive-table.breaking-point-30 .table-row
-	{
+	.responsive-table.breaking-point-30 .table-row {
 		display: flex;
 	}	
 }
