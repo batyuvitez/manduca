@@ -104,6 +104,7 @@ class Page_Sisters extends \WP_Widget {
 	}
     
 	
+   
    private function get_sister_pages () {
         global $post;
         if ($post->post_type !=='page')
@@ -127,17 +128,18 @@ class Page_Sisters extends \WP_Widget {
         if (empty ($html))
             return FALSE;
         return $html;
-	
     }
 	
 	
 	/*
-	 *Simplified clone of  wp_list_pages,
-	 *Reason: there is no filter in wp_list_pages
+	 * Simplified clone of  wp_list_pages,
+	 * Reason: there is no filter in wp_list_pages
+	 *  
+	 * @param array $args : same as wp_list_pages.
+	 *
+	 * @return string: html markup of the pages' link;
 	 **/
-	private function list_pages( $args )
-	{
-			
+	private function list_pages( array $args ) {
 		$output= '';
 		$args['hierarchical'] = 0;
 	
@@ -157,40 +159,33 @@ class Page_Sisters extends \WP_Widget {
 		
 	}
 	
+   
+   
 	/*
     * Order pages base on post object menu_order
     **/
-   private function reorder_pages ( array $pages, int $parent )	{
+   private function reorder_pages ( array $pages, int $parent ) {
 		$reordered=array();
 		$order=0;
-		foreach ($pages as $page)
+      foreach ($pages as $page)
 		{
-			if ( $page->post_parent === $parent)
-			{
+         if ( $page->post_parent === $parent) {
             $order=$page->menu_order;
             if ( $order) {
                $order=intval ($order)+1;
                $reordered[$order][]=$page;
             }
-			}
-			else {
-				$reordered[$order][]=$page;
-			}
-			
-		
+			}		
 		}
 		ksort ($reordered, SORT_NUMERIC);
 		$reordered_final=array();
-		foreach ($reordered as $order=>$pages )
-		{
+		foreach ($reordered as $order=>$pages ){
 			foreach ($pages as $page) {
-				$reordered_final[]=$page;
+            $reordered_final[]=$page;
 			
 			}
 		}
 		
 		return $reordered_final;
 	}
-
-
 }
