@@ -27,7 +27,7 @@ How to ...
       - use '|' sign to linebreak in the general settings
 
 ... Add new SVG icons
-      - use SVG icon filter: manduca_svg_icons
+      - use SVG icon filter: manduca_icon ( string $icon_name, bool $display=true)
 
 ... add accessible tabs
       @see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
