@@ -33,8 +33,8 @@ if ( has_nav_menu( 'primary' ) ) : ?>
 		class="menu-toggle link-button"
 		aria-haspopup="true"
 		aria-controls="primary-nav-menu">
-		<?php 	echo manduca_icon( 'bars' );
-		manduca_icon( 'close' ); ?>
+		<?php 	manduca_icon( 'bars' );
+				manduca_icon( 'close' ); ?>
 		<span class="desktop-text"><?php echo $menu_name;?></span>
 	</button>
 <?php endif; ?>

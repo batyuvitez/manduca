@@ -28,33 +28,33 @@ $original_size_text=__( 'Show original', 'manduca' );
 //key of meta_type array has only comment function 
 $meta_type=array(
 		'image_caption' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'film' ) ),
+						'icon'=> manduca_icon( 'film', false ),
 						//translators: catpion of image in attachment page
 						'label' => __( 'Captions/Subtitles' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_caption')),
 		
 		'alt-tag' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'calendar' ) ),
+						'icon'=> manduca_icon( 'calendar', false  ),
 						//translators: alternative text of an image on attachment page
 						'label' => __( 'Alternative Text' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_alt_tag')),
 		'description' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'bubble' ) ),
+						'icon'=> manduca_icon( 'bubble', false  ),
 						//translators: image desctription of an image on attachment page
 						'label' => __( 'Image description'  ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_description')),
 		'image_size' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'cube' ) ),
+						'icon'=> manduca_icon( 'cube', false  ),
 						//translators: attachment metadata size of image in attachment page
 						'label' => __( 'Original size', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_image_size')),
 		'date' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'calendar' ) ),
+						'icon'=> manduca_icon( 'calendar', false  ),
 						// translators: Date of post - in the post meta. 
 						'label'=> __( 'Entry date', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_post_date')),
 		'parent' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'info') ),
+						'icon'=> manduca_icon( 'info', false ),
 						// translators: This is a link to the realted (parent) post of an image. 
 						'label'=> __( 'Part of the following post', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_attachment_parent'))
@@ -66,7 +66,7 @@ $meta_type=array(
 		
 		<?php echo Manduca\helpers\Meta_Tags::meta_tag_html ($list_item_mask, $meta_type); ?>
 
-		<li><?php echo manduca_get_svg( array( 'icon' => 'image' ) )?>
+		<li><?php manduca_icon( 'image' ); ?>
 			<a href="<?php echo esc_url( wp_get_attachment_url()); ?>" class="meta-item"><?php echo $original_size_text; ?></a>
 		</li>						
 			

@@ -1,13 +1,13 @@
 <?php
 /**
- * Displays top navigation
+ * Displays top navigation (main navigation, site-navigation)
  *
  * 
  */
 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'walker'          => new walk\Nav_Menu_Walker() 
 					   ));
 				?>
-				<button id="primary-nav-close" class="modal-window-close"><?php echo manduca_get_svg( array( 'icon' => 'close' ) ).'&nbsp;'; _e( 'Close' ); ?></button>
+				<button id="primary-nav-close" class="modal-window-close"><?php manduca_icon( 'close' ).'&nbsp;'; _e( 'Close' ); ?></button>
 			</nav>
 			
 		</div>

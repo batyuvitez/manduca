@@ -64,8 +64,8 @@
 		</ol>
 		
 		<?php the_comments_pagination( array(
-			'prev_text' => manduca_get_svg( array( 'icon' => 'angle-circle-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'manduca' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'manduca' ) . '</span>' . manduca_get_svg( array( 'icon' => 'angle-circle-right' ) ),
+			'prev_text' => manduca_icon( 'angle-circle-left', false ) . '<span class="screen-reader-text">' . __( 'Previous', 'manduca' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'manduca' ) . '</span>' . manduca_icon( 'angle-circle-right',false ),
 		) );
 
 		

@@ -43,7 +43,7 @@ $parent_text=__( 'Related content', 'manduca' );
 			<a  href="<?php echo $data['previous_permalink']; ?>"
 				rel="prev">
 				<span class="screen-reader-text"><?php echo $prev_text; ?></span>
-				<?php echo manduca_get_svg( array( 'icon' => 'angle-circle-left') ); ?>
+				<?php manduca_icon( 'angle-circle-left' ); ?>
 				<?php echo $data['previous_title']; ?>
 			</a>
 		</div>
@@ -55,7 +55,7 @@ $parent_text=__( 'Related content', 'manduca' );
 				rel="next">
 				<span class="screen-reader-text"><?php echo $next_text; ?></span>
 				<?php echo $data['next_title']; ?>
-				<?php echo manduca_get_svg( array( 'icon' => 'angle-circle-right') ); ?>
+				<?php manduca_icon( 'angle-circle-right'); ?>
 			</a>
 		</div>
 	<?php endif; ?>

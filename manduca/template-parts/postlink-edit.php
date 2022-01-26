@@ -31,7 +31,7 @@
 
 <div class="edit-link">
     
-    <?php manduca_get_svg ( array( 'icon' => 'pencil' ) ); ?>
+    <?php manduca_icon( 'pencil' ); ?>
     
     <a href="<?php echo get_edit_post_link(); ?>">
         <?php _e( 'Edit', 'manduca' ); ?>

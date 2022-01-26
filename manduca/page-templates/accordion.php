@@ -27,8 +27,8 @@
 */
 
 $args = 	array(
-															'icon'  	=> manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true ) ),
-															'selector'	=> '.entry-content > h2',
+					'icon'  	=> manduca_icon( 'caret-down', false ),
+					'selector'	=> '.entry-content > h2',
                 'header'    => 'h2');
  
 (new accordion( $args ))->add_hook_to_wp();

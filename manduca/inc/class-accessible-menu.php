@@ -16,7 +16,7 @@ class Accessible_Menu {
     public function change_current_menu_item( $item_output, $item, $depth, $args  ) {
 		if( in_array( 'current-menu-item', $item->classes ) ) {
 				$item_output = sprintf( '<span class="current-menu-item">%s <span class="screen-reader-text">%s </span>%s</span>',
-									   manduca_get_svg( array( 'icon' => 'current') ),
+									   manduca_icon( 'current',false ),
 									   //translators it is duplicate: same as in Link_Functions: screen reader text for self-link. 
 									   __( 'Current page', 'manduca' ),
 									   $item->title

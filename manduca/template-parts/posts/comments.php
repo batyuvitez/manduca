@@ -52,7 +52,7 @@ $args=$args['args'];
 								$args,
 								array(
 									  'reply_text' => __( 'Reply', 'manduca' ),
-									  'before' => manduca_get_svg( array( 'icon' => 'mail-reply' ) ),
+									  'before' => manduca_icon( 'mail-reply', false ),
 									  'depth' => $depth,
 									  'max_depth' => $args['max_depth']
 									  )
