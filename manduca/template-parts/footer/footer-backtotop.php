@@ -29,6 +29,6 @@
    <button id="manduca-back-to-top"
       class="manduca-back-to-top"
       aria-label="<?php _e( 'Back to top', 'manduca' ); ?>">
-      <?php echo manduca_get_svg( array ( 'icon'=>'back-to-top') ); ?>
+      <?php manduca_icon( 'back-to-top'); ?>
    </button>
 </div>

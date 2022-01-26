@@ -25,6 +25,7 @@
  
 /*
  *@see: manduca_icon function (functions.php)
+ **/
  function manduca_get_svg( $args = array() ) { 
 	  $svg= new Manduca\SVG_Functions( $args ) ;
 	  return $svg->Return_HTML();

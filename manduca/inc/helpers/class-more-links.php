@@ -22,7 +22,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca\helpers; 
+namespace Manduca\helpers;
+use Manduca;
 
 Class More_Links {
    
@@ -34,7 +35,7 @@ Class More_Links {
     
         //Translators: text of the read more and excerpt more buttons
        $args[ "text" ] 			= __( 'Continue reading', 'manduca' );
-       $args[ 'icon' ] 			= manduca_get_svg( array( 'icon' => 'angle-right' ) ) ;
+       $args[ 'icon' ] 			= manduca_icon( 'angle-right', false ) ;
        $args[ 'classes']			= 'more-link link-button';
        $this->args = apply_filters(
               'manduca_more_links' ,

@@ -130,8 +130,8 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 				$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'" ';
 				$item_output .= 'aria-expanded="false"';
 				$item_output .= '>';
-				$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
-				$item_output .= manduca_get_svg( array( 'icon' => 'close'));
+				$item_output .= manduca_icon( 'caret-down', false );
+				$item_output .= manduca_icon( 'close', false );
 				$item_output .='</button>';
 			}
 			else  {
@@ -142,8 +142,8 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 				$item_output .= 'aria-expanded="false"';
 				$item_output .= '>';
 				$item_output .= $args->link_before . $item->title . $args->link_after;
-				$item_output .= manduca_get_svg( array( 'icon' => 'caret-down'));
-				$item_output .= manduca_get_svg( array( 'icon' => 'close'));
+				$item_output .= manduca_icon( 'caret-down', false );
+				$item_output .= manduca_icon( 'close', false );
 				$item_output .='</button>';
 			}
 			$item_output .= "\n";

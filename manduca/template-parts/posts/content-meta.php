@@ -26,29 +26,29 @@ $list_item_mask 	= '<li>%s<span class="meta-item"><span class="meta-item-label">
 //key of meta_type array has only comment function 
 $meta_type=array(
 		'date' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'calendar' ) ),
+						'icon'=> manduca_icon( 'calendar', false ),
 						// translators: Date of post - in the post meta. 
 						'label'=> __( 'Entry date', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_post_date')),
 		'modified-date' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
+						'icon'=> manduca_icon( 'calendar-add', false ) ,
 						//translators: Last modification of post - in the post meta
 						'label' => __( 'Last revision', 'manduca' ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_modified_date') ),
 		'author' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'author' ) ) ,
+						'icon'=> manduca_icon( 'author' ) ,
 						//translators: Author of post - in the post meta
-						'label' => __( 'Author', 'manduca' ),
+						'label' => __( 'Author', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_author') ),
 		'categories' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'folder-open' ) ),
+						'icon'=> manduca_icon( 'folder-open' ),
 						//translators: Category of post - in the post meta 
-						'label' => __( 'Category', 'manduca' ),
+						'label' => __( 'Category', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_categories') ),
 		'tags' => array (
-						'icon'=> manduca_get_svg( array( 'icon' => 'tags' ) ),
+						'icon'=> manduca_icon( 'tags' ),
 						//translators: Tags of post - in the post meta
-						'label' => __( 'Tags', 'manduca' ),
+						'label' => __( 'Tags', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_tags') ),
 						
 		);
@@ -80,7 +80,7 @@ if ($meta_html ) : ?>
 				<div class="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 						<?php printf( __( 'All posts by %s', 'manduca' ) , get_the_author() ) ; ?>
-						<?php echo manduca_get_svg( array( 'icon' => 'angle-circle-right' ) ) ?>
+						<?php manduca_icon( 'angle-circle-right' ) ?>
 					</a>
 				</div>
 			</div>

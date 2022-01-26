@@ -57,7 +57,7 @@ class Theme_Setup {
 		
 		else {
 			// Add accessible more-links Need svg to be loaded. 
-			$more_links = new accessibility\More_Links;
+			new helpers\More_Links;
 		
 			// Remove gallery inline style
 			add_filter( 'use_default_gallery_style', '__return_false' );

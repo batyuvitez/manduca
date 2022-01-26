@@ -183,19 +183,19 @@
 				'elements'=>
 					array (
 						array( 
-								'phone_text'			=>manduca_get_svg (array ('icon'=>'minus') ),
+								'phone_text'			=>manduca_icon ( 'minus', false ),
 								//translators: Toolbar link target selector: links open where specified
 								'desktop_text'			=>__( 'Default' , 'manduca' ),
 								//translators: Toolbar link target selector: screenreader text. 
 								'aria_label'			=>__( 'Leave as it is', 'manduca' ) ),
 						array( 
-								'phone_text'			=> manduca_get_svg( array ( 'icon'=>'target' ) ),
+								'phone_text'			=> manduca_icon( 'target', false ),
 								//translators: Toolbar link target selector: Links open in same window
 								'desktop_text'			=>__( 'Same window' , 'manduca' ),
 								//translators: Toolbar link target selector: Links open in same window
 								'aria_label'			=>__( 'Always opens link in same window', 'manduca' ) ),
 						array( 
-								'phone_text'			=>manduca_get_svg( array ( 'icon'=>'extlink' ) ),
+								'phone_text'			=>manduca_icon( 'extlink', false ),
 								//translators: Toolbar link target seleccotr: Open links in new window
 								'desktop_text'			=>__( 'New window' , 'manduca' ),
 								//translators: Toolbar link target seleccotr: Open links in new window

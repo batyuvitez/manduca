@@ -46,7 +46,7 @@ class manduca_breadcrumb extends breadcrumb {
           // show hierarchical terms for post types
          'show_htfpt' => true, 							
          
-         'separator'		=> manduca_get_svg( array( 'icon' => 'arrow-right-double' ) ) ,
+         'separator'		=> manduca_icon( 'arrow-right-double', false ) ,
          
          'posts_on_front' => 'posts' == get_option( 'show_on_front' ) ? true : false,
          

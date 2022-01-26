@@ -73,7 +73,7 @@ class Enqueue{
                         'expand'=>__( 'expand child menu', 'manduca' ),
                         //Translators: submenu collapse
                         'collapse'=>__( 'collapse child menu', 'manduca' ),
-                        'icon'=>manduca_get_svg( array( 'icon' => 'caret-down', 'fallback' => true )));
+                        'icon'=>manduca_icon( 'caret-down' ));
 			
       if( \Manduca\widgets\Widget_Archives::is_this_widget_active() ) {
          $js_variables['hash']       	= wp_create_nonce( 'manduca-ajax' );

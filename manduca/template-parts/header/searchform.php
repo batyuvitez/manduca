@@ -40,7 +40,7 @@ $label=__( 'Start search', 'manduca' ) ;
 		<button type="submit"
 				class="search-submit"
 				id="search-submit">
-		   <?php echo  manduca_get_svg( array( 'icon'=>'search') ) ;?>
+		   <?php manduca_icon( 'search') ;?>
 		   <span class="screen-reader-text"><?php echo $label?></span>
 		</button>
 	</div>
