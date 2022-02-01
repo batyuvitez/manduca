@@ -67,7 +67,7 @@ How to ...
             
             Detailed description see: https://a11y.nicolas-hoffmann.net/hide-show/
 
-...Use Adobe accessible megamenu (default until 20.7) instead of WAI menubar (since 20.7):
+...Use Adobe accessible megamenu (depretiated in 20.7) instead of WAI menubar (since 20.7):
       change the menu_type to 1  in template-parts/header/menu.php
       
 ... Add homepage navmenu item: Add http://home-placement to the menu item.
@@ -97,3 +97,11 @@ How to ...
                         <div class="table-col col60">2. column</div>
                   </div>
             </div>
+
+... In nav menu don't want that parent menu item has individual page,
+    instead, parent menu element is only a label of submenu items?
+       Parent menu url shoud be only one character: #
+       
+... In nav menu parent  menu item links a page lists subpages?
+       Use parent page template. You can add content before listing child page.
+

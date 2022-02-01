@@ -761,9 +761,9 @@ jQuery(document).ready(function($)
 				
 				// When already opened 
 				if( _this.hasClass ('toggled-on') ) {  
-					_this.removeClass( 'toggled-on' );  //close submenu
+					_this.removeClass( 'toggled-on' );  //change icon in dropdown button
 					_this.attr( 'aria-expanded', false);
-					subnav.removeClass( 'active' );
+					subnav.removeClass( 'active' ); // close submenu 
 				}
 				//When tooggled. 
 				else {

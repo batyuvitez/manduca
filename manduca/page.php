@@ -5,7 +5,7 @@
  **/
 /* This file is part of Manduca
  *
- *  Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+ *  Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
  *  
  *  Manduca is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,8 +31,7 @@
 					
 			<?php do_action( 'manduca_after_single_page' );?>
 					
-			<?php comments_template(); ?>
-			
+		
 	<?php endwhile; // end of the loop.?>
 				
 <?php get_footer(); ?>
