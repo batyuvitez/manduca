@@ -1,7 +1,7 @@
 <?php
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -29,41 +29,38 @@ else
 	<?php if ( has_post_thumbnail() ) {
 				$class = 'has-thumbnail'; 
 			}
-			else{
+			else {
 				$class = 'no-thumbnail';
-			}
-			//display header tag
-			printf( '<header class="content-header %s">',
-				   $class
-				   );
-	?>
+			} ?>
+			
+	<header class="content-header <?php echo $class; ?>">
 			
 		<?php get_template_part( 'template-parts/posts/entry-header' ); ?>
 
 		<?php get_template_part( 'template-parts/posts/featured-image' ); ?>
 		
 	</header>
+	
 	<?php get_template_part( '/template-parts/postlink', 'edit' ) ; ?>
 	
 
 	<div class="entry-content" >
 		
-		<?php the_content() ; //last correction: @17.9?>
+		<?php the_content(); ?>
 		
 		<?php Manduca\helpers\Template_Functions::manduca_link_pages('angle-circle-left', 'angle-circle-right'); ?>
-	
-	<div class="clearfix-content"></div>
+
+		<div class="clearfix-content"></div>
+		
 	</div>
 	
 	<?php
 		/* Action hook: manduca_after_entry_content
 		 * Add something after entry content
-		 * @since 17.2.8
 		 * */
 		do_action( 'manduca_after_entry_content' );
 	?>
 
 		<?php get_template_part( 'template-parts/posts/content', 'meta' ); ?>
-	
 
 </article>
