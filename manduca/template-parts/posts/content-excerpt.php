@@ -40,9 +40,9 @@ use Manduca\helpers as hlp;
 			 <?php get_template_part( '/template-parts/postlink', 'edit' ) ; ?>
 		
 		
-			<?php if ( has_post_thumbnail() ) : ?>
+			<?php if ( hlp\Images::has_thumbnail() ) : ?>
 				 <div class="excerpt-thumbnail">
-					<?php the_post_thumbnail( 'excerpt-size' ); // defined in Manduca 268*178 | aspect-ratio: 1.5:1  ?>
+					<?php hlp\Images::thumbnail_substitution() ;?>
 				 </div>
 			<?php endif; ?>
 			 

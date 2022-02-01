@@ -29,5 +29,6 @@ class Controller{
 			new Header_Image;
 			new Header_Video;
 			new Color_Inline_Css;
+			new Thumbnail_Substitution;
 		}
 }
