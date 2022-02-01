@@ -37,7 +37,7 @@ class Page_Sisters extends \WP_Widget {
 		$widget_ops = array(
 			'classname' => 'widget_page_sisters',
 			// translators: description of Manduca's sister page widget
-			'description' => __( 'Displays the pages of the same parent page', 'manduca' ),
+			'description' => __( 'Displays the child pages of the same parent as the displayed page ', 'manduca' ),
 			'customize_selective_refresh' => FALSE,
 		);
 		// translators: name of Manduca's  sister page widget
@@ -96,7 +96,7 @@ class Page_Sisters extends \WP_Widget {
 		$title = sanitize_text_field( $instance['title'] );
 		?>
 		<p>
-         <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'manduca' ); ?></label>
+         <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'manduca' ); ?></label>
          <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
       </p>
 		

@@ -1,0 +1,11 @@
+Theme: Manduca - focus on accessibility
+
+WordPress parameters
+==
+
+        
+Image sizes:
+    -thumbnail size: built in
+    -post-size: 890*592 (aspect-ratio: 3:2)
+    -excerpt-size: 268*178 (aspect-ratio: 3:2)
+    -extra-wide: 1920*384 (aspect-ratio: 1:5)

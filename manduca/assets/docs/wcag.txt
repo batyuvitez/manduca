@@ -37,6 +37,7 @@ Number of supported success criteria shown in brackets.
         -No access key (2.1.4)
         
     2.4 Navigation
+        - Disclosure navigation menu based on Authoring Practices 1.2 
         - Using WAI-ARIA landmarks to bypass blocks (1.4.1)
         - Change link to actual page to <span> element (A 2.4.4, 2.4.9)
         - Link purpose is clear (2.4.4, 2.4.9)

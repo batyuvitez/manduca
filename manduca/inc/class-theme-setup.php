@@ -3,9 +3,6 @@
  * This is the main class of the theme
  *
  * Theme Execution begins here:
- *  -add static controller function
- * - autoload all files,
- * - Initiate Manduca functions
  *
  **/
 
@@ -39,17 +36,12 @@ class Theme_Setup {
 		new Debug_Mode;
 		new Enqueue;
 		
-		// Register the themes main parameters
-		new setup\Controller;
-		new Images;
-		
-				
+		new setup\Controller;		
 		new widgets\Controller;
-		
 		new customizer\Controller;
 				
-		if ( is_admin() ){
-			
+		if ( is_admin() ) {
+
 			// Add tiny MCE functions and stylesheets
 			$tinimce = new \Tiny_Mce;
 			$tinimce->add_hooks_to_wp();

@@ -27,6 +27,7 @@ class Controller {
 		new Theme_Support;
 		new Navigation_Menus;
 		new Register_Sidebar;
+		new Images;
 		// Add childthemes' icons to global
 		(new Define_Globals ) -> load_svg_to_global();
 		
