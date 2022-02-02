@@ -20,11 +20,11 @@
  
 ?>		
 <?php echo $args['before_widget']; ?>
-<nav>
 	<?php if ($args ['title']) : ?> 
-		<?php echo $args['before_title'] . $args['title'] . $args['after_title']; ?> 
+		<nav aria-label="<?php echo $args['title']; ?>">
+	<?php else : ?>
+		<nav>
 	<?php endif; ?>
-	
 	<ul>
 		<?php echo $args['list']; ?>
 	</ul>
