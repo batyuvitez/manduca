@@ -29,8 +29,8 @@ class Images
 		$images=self::get_images ();
 		if (is_array( $images ) && isset( $images[0] ) ) {
 			$attachmentUrl=$images[0];
-			if (substr_count ($attachmentUrl, WP_HOME) === 2) {
-				return preg_replace ('^'.WP_HOME.'/^', '', $attachmentUrl, 1);
+			if (substr_count ($attachmentUrl, get_home_url()) === 2) {
+				return preg_replace ('^'.get_home_url().'/^', '', $attachmentUrl, 1);
 			}
 		}	
 	}
@@ -47,6 +47,7 @@ class Images
 		global $post;
 		$dom=new \DOMDocument;
 		$content=mb_convert_encoding ($post->post_content, 'HTML-ENTITIES', 'UTF-8');
+		libxml_use_internal_errors (true);
 		$dom->loadHTML ($content);
 		foreach ($dom->getElementsByTagName ('img') as $node) {
 			$images[] =home_url ( '/' ) .$node->getAttribute ('src');
