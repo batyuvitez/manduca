@@ -16,7 +16,10 @@
 
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+
 */
+
+use Manduca\helpers as hlp;
 
 if (is_sticky())
 	$sticky='featured-article';
@@ -26,14 +29,8 @@ else
 ?>		
 <article id="post-<?php the_ID(); ?>" <?php post_class($sticky); ?>>
 	
-	<?php if ( has_post_thumbnail() ) {
-				$class = 'has-thumbnail'; 
-			}
-			else {
-				$class = 'no-thumbnail';
-			} ?>
 			
-	<header class="content-header <?php echo $class; ?>">
+	<header class="content-header <?php echo hlp\Images::thumbnail_class (); ?>">
 			
 		<?php get_template_part( 'template-parts/posts/entry-header' ); ?>
 

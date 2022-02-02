@@ -22,18 +22,17 @@ namespace Manduca\helpers;
 class Images
 {
 	
-	protected static $has_thumbnail = FALSE;
 	protected static $thumbnail_html;
-	
+	protected static $size;	
 		
 	public static function get_first_image_of_post () {
-		if ($firstImage) {
+		$images=self::get_images ();
+		if (is_array( $images ) && isset( $images[0] ) ) {
 			$attachmentUrl=$images[0];
 			if (substr_count ($attachmentUrl, WP_HOME) === 2) {
-				$thumbnail_substitution_url = preg_replace ('^'.WP_HOME.'/^', '', $attachmentUrl, 1);
+				return preg_replace ('^'.WP_HOME.'/^', '', $attachmentUrl, 1);
 			}
-		}		
-		return self::create_responsive_image ($thumbnail_substitution_url);
+		}	
 	}
 	
 	
@@ -49,42 +48,70 @@ class Images
 		$dom=new \DOMDocument;
 		$content=mb_convert_encoding ($post->post_content, 'HTML-ENTITIES', 'UTF-8');
 		$dom->loadHTML ($content);
-		foreach ($dom->getElementsByTagName ('img') as $node)
+		foreach ($dom->getElementsByTagName ('img') as $node) {
 			$images[] =home_url ( '/' ) .$node->getAttribute ('src');
+		}
 		return $images;
 	}
 	
 	/*
-	 *@see: https://stackoverflow.com/questions/45504077/wordpress-adding-srcset-and-sizes-attributes-to-image-from-customizer
+	 *@parameter string img : URL of the image (attachment URL)
+	 *
+	 *@return string: HTML markup of post_thumbnail of the image. 
 	 */
 	public static function create_responsive_image( $img ) {
 		$img_id = attachment_url_to_postid( $img );
-		$img_srcset = wp_get_attachment_image_srcset( $img_id );
-		$img_sizes = wp_get_attachment_image_sizes( $img_id );
-		return '<img src="' . $img . '" srcset="' . esc_attr( $img_srcset ) . '" sizes="' . esc_attr( $img_sizes ) . '">';
+		$args 	= array ( 'class'=>'attachment-post-size size-post-size wp-post-image');
+		return wp_get_attachment_image( $img_id, self::$size, NULL, $args );
 	}
 	
 	
-	public static function has_thumbnail( bool $firstImage = FALSE ) {
+	
+	/*
+	 * Returns  TRUE, if find an image to display as featured image (alias thumbnail). 
+	 * This method need to be called before echo thumbnail substitution
+	 *
+	 *@param bool $firtsimage: if TRUE, thumbnail is set the first image of the post.
+	 *                         Default: FALSE
+	 *@param $size    : Image size. Accepts any registered image size name,
+	 *                  or an array of width and height values in pixels (in that order).
+	 *                  Default: excerpt-size
+	 *
+	 *@return bool: TRUE if find a thumbnail.
+	 *
+	 **/
+	public static function has_thumbnail( bool $firstImage = FALSE,  $size = 'excerpt-size' ) {
+		
+		self::$size=$size;
 		if ( has_post_thumbnail() ) {
-			self::$has_thumbnail=TRUE;
-			self::$thumbnail_html=get_the_post_thumbnail (null, 'excerpt-size');
+			self::$thumbnail_html=get_the_post_thumbnail (null, $size);
+			return TRUE;
 		}
-		elseif( $firstImage ) {
+		$thumbnail_url = get_theme_mod ('thumbnail_substitution');
+		self::$thumbnail_html=self::create_responsive_image ($thumbnail_url);
+		if( $thumbnail_url && !$firstImage) {	
+			return TRUE;
+		}
+		if( $firstImage ) {
 			$thumbnail_url=self::get_first_image_of_post ();
 			if( $thumbnail_url ) {
-				self::$has_thumbnail=TRUE;
 				self::$thumbnail_html=self::create_responsive_image ($thumbnail_url);
+				return TRUE;
 			}
 		}
-		else {
-			$thumbnail_url = get_theme_mod ('thumbnail_substitution');
-			if( $thumbnail_url ) {
-				self::$has_thumbnail=TRUE;
-				self::$thumbnail_html=self::create_responsive_image ($thumbnail_url);
-			}
+		return FALSE;
+	}
+	
+	/*
+	 *@return string of class.
+	 *			If post has assigned featured-image: has-thumbnail,
+	 *			other cases: no-thumbnail.
+	 **/
+	public static function thumbnail_class () {
+		if ( has_post_thumbnail() ) {
+				return 'has-thumbnail'; 
 		}
-		return self::$has_thumbnail;
+		return 'no-thumbnail';
 	}
 
 }

@@ -15,36 +15,26 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 
+
+@See also: https://github.com/batyuvitez/manduca/wiki/
+
+********************************************************************************************
+                           HOW TO ...
 ********************************************************************************************
 
-See also: https://github.com/batyuvitez/manduca/wiki/
-
-********************************************************************************************
-
-How to ...
 
 ...Add multiple line as site-title:
       - use '|' sign to linebreak in the general settings
 
-... Add new SVG icons
-      - use SVG icon filter: manduca_icon ( string $icon_name, bool $display=true)
 
 ... add accessible tabs
       @see: https://github.com/batyuvitez/manduca/wiki/Create-accessible-tab-page
 
-... add new svg icons.
-      Use filter 'manduca_svg_icons' Input parameter is Manduca svg icons, and you can extend it with yours.
-      
-... change breadcrumb parameters
-      - copy breadcrumb-template file to the child theme's template-parts/header directory and change the parameters in it.
-      - or - if you are familiar with PHP programming: extend the breadcrumb class.
-      
-... add namespace in child theme in order to avoid nam confusions::
-      add the namesepace as a key to Manduca_Classloader. e.g 'Web25\\childtheme' => get_stylesheet_directory() .'/inc/'
 
 ... use Collapsable Paragraph (accessible multi-level hide-show system) page template
       - use <h2></h2> elements for titles of collapsable paragraph.
       - Before first (h2) is not collapsable.
+
 
 ... implement multi-level hide-show system on posts and other contents.
             You can use in #wrapper (that is #primary and #secondary)
@@ -66,12 +56,10 @@ How to ...
             Use escape to hide actual part.
             
             Detailed description see: https://a11y.nicolas-hoffmann.net/hide-show/
-
-...Use Adobe accessible megamenu (depretiated in 20.7) instead of WAI menubar (since 20.7):
-      change the menu_type to 1  in template-parts/header/menu.php
       
 ... Add homepage navmenu item: Add http://home-placement to the menu item.
       This string will be replaced with the home URL.
+
       
 ... Add accessible tooltip:
       add the following attributes to element:
@@ -98,10 +86,15 @@ How to ...
                   </div>
             </div>
 
+
 ... In nav menu don't want that parent menu item has individual page,
     instead, parent menu element is only a label of submenu items?
        Parent menu url shoud be only one character: #
+
        
 ... In nav menu parent  menu item links a page lists subpages?
        Use parent page template. You can add content before listing child page.
 
+
+... Do not want substitute of missing featured images or want a different one:
+        - Us the thumbnail substitustion section in Customizer. 

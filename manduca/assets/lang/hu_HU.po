@@ -1009,3 +1009,18 @@ msgstr "Az azonos színtű, illetve azok gyermekeit mutatja meg a szerkesztőfel
 
 msgid "Sister pages"
 msgstr "Testvéroldalak"
+
+msgid "Post thumbnail substitution"
+msgstr "Bejegyzés kiemelt kép helyettesítés"
+
+msgid "This image appears in excerpt if no thumbnail assigned"
+msgstr "Ez a kép jelenik meg, amikor nincs helyettesítő kép"
+
+msgid "Select thumbnail substitution"
+msgstr "A helyettesítő kép kiválasztása"
+
+msgid "Change thumbnail substitution"
+msgstr "A helyettesítő kép megváltoztatása"
+
+msgid "Remove thumbnail substitution"
+msgstr "A helyettesítő kép törlése"
