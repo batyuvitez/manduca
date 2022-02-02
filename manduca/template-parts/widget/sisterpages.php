@@ -17,17 +17,18 @@
     You should have received a copy of the GNU General Public License
     in assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
- 
+// translators: name of Manduca's  sister page widget (same as defined in class-page-sisters.php)
+$aria_label=__( 'Sister pages', 'manduca' )
 ?>		
 <?php echo $args['before_widget']; ?>
+
 	<?php if ($args ['title']) : ?> 
-		<nav aria-label="<?php echo $args['title']; ?>">
-	<?php else : ?>
-		<nav>
+		<?php echo $args['before_title'] . $args['title'] . $args['after_title']; ?> 
 	<?php endif; ?>
-	<ul>
-		<?php echo $args['list']; ?>
-	</ul>
-</nav>
+	<nav aria-label="<?php echo $aria_label; ?>">
+		<ul>
+			<?php echo $args['list']; ?>
+		</ul>
+	</nav>
 
 <?php echo $args['after_widget']; ?>

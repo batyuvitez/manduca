@@ -371,7 +371,7 @@ Button, link-button, menu        */
 button, 
 .link-button,
 input [type="submit"] ,
-li.menu-item a {
+li.menu-item a{
 	background-color: var(--default-button-background);
 	color: var(--default-button-text);
 	border-width: 3px;  /* all sides */
@@ -395,7 +395,11 @@ textarea[disabled] {
 	background-color: var(--featured-background);
 }
 
-
+.edit-link {
+		display: inline-block;
+		padding: 0.3em 0.6em;
+		border:  1px var(--ornament) solid;
+}
 
 
 
@@ -409,13 +413,12 @@ textarea[disabled] {
 |                                                             |
 |             LINK APPEARANCE                                 |
 |                                                             |
-==============================================================*/.link-appearance-1 .link-textarea,
+==============================================================*/
+.link-appearance-1 .link-textarea,
 .link-appearance-1 .site,
 .link-appearance-1 .megamenu.active {
 	color: var(--default-text-2);	
 }
-
-
 
 
 
@@ -1636,7 +1639,6 @@ strong.search-excerpt {
 .site-content article {
 	position: relative; /* to position the edit link */
 	margin-bottom: 5em; /*small screens */
-	padding: 0.5em;
 }
 
 .post-pagination {
