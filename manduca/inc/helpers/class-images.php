@@ -94,11 +94,14 @@ class Images
 			return TRUE;
 		}
 		if( $firstImage ) {
-			$thumbnail_url=self::get_first_image_of_post ();
-			if( $thumbnail_url ) {
-				self::$thumbnail_html=self::create_responsive_image ($thumbnail_url);
+			$thumbnail_url2=self::get_first_image_of_post ();
+			if( $thumbnail_url2 ) {
+				self::$thumbnail_html=self::create_responsive_image ($thumbnail_url2);
 				return TRUE;
 			}
+		}
+		if( $thumbnail_url ) {
+			return TRUE;
 		}
 		return FALSE;
 	}
