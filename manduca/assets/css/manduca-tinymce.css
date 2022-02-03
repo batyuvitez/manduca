@@ -300,3 +300,98 @@ img {
 	position: relative;
 	top: 2px;
 }
+
+
+/*////////////////////////////////
+// RESPONSIVE TABLES: */
+
+
+
+.responsive-table {
+	margin: 1rem 0;
+	border: 1px var(--ornament) solid;
+}
+
+.responsive-table .table-row {
+	padding: 0.5em;
+	border: 3px double var(--ornament);
+}
+.responsive-table .table-col{
+	 padding: 0 0.25em;
+	 margin-bottom: 0.5em;
+	 overflow: hidden; 
+}
+
+.responsive-table .tableCol {
+	padding: 0.5em;
+}
+
+.responsive-table .col5 {
+	width: 5%;
+}
+.responsive-table .col10 {
+	width: 10%;
+}
+.responsive-table .col15 {
+	width: 15%;
+}
+.responsive-table .col20 {
+	width: 20%;
+}
+.responsive-table .col25 {
+	width: 25%;
+}
+
+.responsive-table .col30 {
+	width: 30%;
+}
+.responsive-table .col35 {
+	width: 35%;
+}
+
+.responsive-table .col40 {
+	width: 40%;
+}
+
+.responsive-table .col45 {
+	width: 45%;
+}
+.responsive-table .col50 {
+	width: 50%;
+}
+.responsive-table .col55 {
+	width: 55%;
+}
+.responsive-table .col60 {
+	width: 60%;
+}
+.responsive-table .col65 {
+	width: 65%;
+}
+.responsive-table .col70 {
+	width: 70%;
+}
+.responsive-table .col75 {
+	width: 75%;
+}
+.responsive-table .col80 {
+	width: 80%;
+}
+.responsive-table .col90 {
+	width: 90%;
+}
+.responsive-table .col95 {
+	width: 95%;
+}
+.responsive-table .col100 {
+	width: 100%;
+}
+
+.responsive-table .table-row {
+	display: flex;
+}
+
+
+
+
+

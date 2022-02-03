@@ -1,14 +1,27 @@
 <?php
-/**
- * Add tinyMCE functions, stylesheets
+ /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
- * @ Theme: Manduca - focus on accessibility
- *
- **/
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
+*/
+ 
+namespace Manduca\backend;
  
 class Tiny_Mce {
 	
-	public function add_hooks_to_wp() {
+	public function __construct() {
 		
 		// Add accessible format options to TinyMCE. 
 		add_filter( 'tiny_mce_before_init', array ( $this, 'tinymce_formats' ) );
@@ -22,7 +35,7 @@ class Tiny_Mce {
 	}
 	
 	
-   function tinymce_formats( $init_array ) {
+   public function tinymce_formats( $init_array ) {
 	   
 	   // Define the style_formats array
 	   $style_formats = array(  
@@ -53,14 +66,16 @@ class Tiny_Mce {
    }
    
 	
-   function core_buttons( $buttons ) {	
+   public function core_buttons( $buttons ) {	
 	   $buttons[] = 'superscript';
 	   $buttons[] = 'subscript';
 	   array_unshift( $buttons, 'styleselect' );
 	   return $buttons;
    }
    
-   function editor_css() {
-	   add_editor_style( '/assets/css/manduca-tinymce.css' );    
+	
+	
+   public function editor_css() {
+	   add_editor_style( 'assets/css/manduca-tinymce.css' );    
    }  
 }

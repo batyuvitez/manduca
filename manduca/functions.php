@@ -33,6 +33,7 @@ namespace Manduca;
                'Manduca\walkers'       => get_template_directory() .'/inc/walkers',
                'Manduca\widgets'       => get_template_directory() .'/inc/widgets',
                'Manduca\setup'         => get_template_directory() .'/inc/setup',
+               'Manduca\backend'       => get_template_directory() .'/inc/backend',
                'Manduca\accessibility' => get_template_directory() .'/inc/accessibility'
                ) ;
   

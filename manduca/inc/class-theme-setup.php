@@ -39,12 +39,10 @@ class Theme_Setup {
 		new setup\Controller;		
 		new widgets\Controller;
 		new customizer\Controller;
+		new backend\Controller;
 				
 		if ( is_admin() ) {
-
-			// Add tiny MCE functions and stylesheets
-			$tinimce = new \Tiny_Mce;
-			$tinimce->add_hooks_to_wp();
+			new backend\Tiny_Mce;
 		}
 		
 		else {
