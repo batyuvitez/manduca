@@ -54,6 +54,7 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  * 2018: Sophisticated breadcrumb, lots of user tests.
  * 2019: Accessible archive widget, access keys and tooltips, accessible show-hide system.
  * 2020: Accessible tooltip, testing with WCAG 2.1, start to refactor.
+ * 2021: continue refactoring, new accessible widgets, navigation menu, clear-cut design, documentation
  
  
 ## Credits and acknowledgement

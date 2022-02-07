@@ -50,6 +50,9 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 					   'walker'          => new walk\Nav_Menu_Walker() 
 					   ));
 				?>
+				
+				<?php get_template_part( '/template-parts/header/toolbarbutton' ); ?>
+				
 				<button id="primary-nav-close" class="modal-window-close"><?php manduca_icon( 'close' ).'&nbsp;'; _e( 'Close' ); ?></button>
 			</nav>
 			

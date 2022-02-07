@@ -107,7 +107,7 @@ class Page_Sisters extends \WP_Widget {
    
    private function get_sister_pages () {
         global $post;
-        if ($post->post_type !=='page')
+        if (!$post || $post->post_type !=='page')
            return FALSE;
         if ( $post->post_parent != 0 )
            $child_of = $post->post_parent;
