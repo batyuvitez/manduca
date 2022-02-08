@@ -2420,7 +2420,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	width: 100%;
 }
 
-.responsive-table.breaking-point-0 .table-row {
+.responsive-table .table-row {
 	display: flex;
 }
 
@@ -2449,13 +2449,102 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-
-/*=================================================================
-/*                                                                =
-/*                                    Media queries               =
-/*                                                                =
-===================================================================
+/*=======================================================================
+/*                                                                      =
+/*                               Media queries                          = 
+/*                                                                      =
+=========================================================================
 */
+
+@media screen and (max-width: 20em) {
+		.responsive-table.breaking-point-20 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-20 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 30em) {
+		.responsive-table.breaking-point-30 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-30 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 40em) {
+		.responsive-table.breaking-point-40 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-40 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 50em) {
+		.responsive-table.breaking-point-50 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-50 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 60em) {
+		.responsive-table.breaking-point-60 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-60 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 70em) {
+		.responsive-table.breaking-point-70 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-70 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 80em) {
+		.responsive-table.breaking-point-80 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-80 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 90em) {
+		.responsive-table.breaking-point-90 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-90 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 100em) {
+		.responsive-table.breaking-point-100 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-100 .table-row {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 30em) {
+		.responsive-table.breaking-point-30 .table-col {
+			width: 100%;
+		}
+		.responsive-table.breaking-point-30 .table-row {
+			display: block;
+		}
+}
 
 
 
@@ -2486,11 +2575,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 }
 
-@media screen and (min-width: 20em) {
-	.responsive-table.breaking-point-20 .table-row	{
-		display: flex;
-	}	
-}
 
 /*/////////////////////////////////////
 //  Header rearrangement */
@@ -2541,11 +2625,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-@media screen and (min-width: 30em) {
-	.responsive-table.breaking-point-30 .table-row {
-		display: flex;
-	}	
-}
 
 
 /*/////////////////////////////////////
@@ -2866,11 +2945,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-@media screen and (min-width: 40em) {
-	.responsive-table.breaking-point-40 .table-row 	{
-		display: flex;
-	}	
-}
 
 
 
@@ -2956,11 +3030,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-@media screen and (min-width: 50em) {
-	.responsive-table.breaking-point-50 .table-row {
-		display: flex;
-	}
-}
 
 
 
@@ -3113,11 +3182,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	
 	
-@media screen and (min-width: 60em) {
-	.responsive-table.breaking-point-60 .table-row {
-		display: flex;
-	}	
-}
 
 
 
@@ -3154,18 +3218,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 
 
-@media screen and (min-width: 70em) {
-	.responsive-table.breaking-point-70 .table-row {
-		display: flex;
-	}	
-}
 
 
 @media screen and (min-width: 80em) {
-	.responsive-table.breaking-point-80 .table-row {
-		display: flex;
-	}
-	
 	.site-header .controls,
 	.megamenu,
 	.breadcrumb  > nav,
@@ -3179,13 +3234,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 
 
-@media screen and (min-width: 90em) {
-	.responsive-table.breaking-point-90 .table-row {
-		display: flex;
-	}
-	
-}
-
 
 
 /*////////////////////////////////////
@@ -3193,9 +3241,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 @media screen and (min-width: 100em ){  /* 1600px */
 		
-	.responsive-table.r100 .table-row {
-		display: flex;
-	}	
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
 		margin: 0 auto;
