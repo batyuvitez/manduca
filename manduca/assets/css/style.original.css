@@ -88,7 +88,8 @@
 	--site-title: brown;
 	--default-button-background:saddleBrown;
 	--default-button-text:azure;
-	--default-outline: maroon;
+	--default-focus-indicator: maroon;
+	--inverse-focus-indicator: yellow;
 	--default-text-2: #232323;
 	--lighter-background: white;
 	--lighter-text: maroon;
@@ -290,22 +291,25 @@ body a svg {
 }
 
 
-
-.high-contrast-0 button:focus,
-.high-contrast-0 button:active,
-.high-contrast-0 button:hover:not([disabled]),
+.high-contrast-0 a:focus,
+.high-contrast-0 a:active,
 .high-contrast-0 select:focus,
-.high-contrast-0 select:active,
-.high-contrast-0 select:hover 
 .high-contrast-0 input:focus,
 .high-contrast-0 textarea:focus {
-	outline: 4px solid var(--default-outline);
-	outline-offset: 2px;
+	outline: 4px solid var(--default-focus-indicator);
+	outline-offset: 4px;
 }
 
-a:focus,
-a:active {
-	outline: 3px solid var(--lighter-text);
+.high-contrast-0 .site-header-menu a:focus,
+.high-contrast-0 .site-header-menu a:active,
+.high-contrast-0 .link-button a:focus,
+.high-contrast-0 .link-button a:active,
+.high-contrast-0 .inverse-scheme a:focus,
+.high-contrast-0 .inverse-scheme a:active,
+.high-contrast-0 button:focus,
+.high-contrast-0 button:active {
+	outline: 2px solid var(--inverse-focus-indicator);
+	outline-offset: -4px;
 }
 
 .high-contrast-1 button:focus,
@@ -349,11 +353,6 @@ Inverse */
 	color: var(--inverse-link);
 }
 
-.inverse-scheme a:hover,
-.inverse-scheme a:focus,
-.footer-navigation a:active {
-	outline-color: var(--default-background);/* only footer navigation has dark bacgkround*/
-}
 
 /*//////////////////////////////////
 Featured */
