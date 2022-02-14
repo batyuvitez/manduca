@@ -24,7 +24,8 @@
 
 global $wp_query;
 $search_expr=get_search_query();
-if (get_locale()==='hu_HU') {
+
+if( get_locale()==='hu_HU' && $search_expr ) {
 	$search_expr=Manduca\helpers\Hungarian_Contents::definite_article ($search_expr).' ' .$search_expr;
 }
 
@@ -32,8 +33,26 @@ if (get_locale()==='hu_HU') {
 
 <?php get_header(); ?>
 
-	<?php if ( have_posts() ) : ?>
+		<?php if ( !$search_expr ) : ?>
+		
+		<article id="post-0" class="post no-results not-found">
+				<h1><?php 	/* translators: Search result page in case of empty search*/
+							_e( 'Missing search expression', 'manduca' ); ?></h1>
+			</header>
 	
+			<div class="entry-content">
+				<h2><?php
+					/* translators: Search result page*/
+					_e( 'Try another search!', 'manduca' ); ?></h2>
+				<?php get_search_form(); ?>
+			</div>
+		</article>
+	
+		
+		
+		<?php elseif ( have_posts() ) : ?>
+	
+		
 		<header class="entry-header no-thumbnail">
 			<h1>
 			<?php			
@@ -56,7 +75,9 @@ if (get_locale()==='hu_HU') {
 				<h1><?php printf( __( 'No matching result found for %s.', 'manduca' ), $search_expr ) ?></h1>
 			</header>
 	
+			
 			<div class="entry-content">
+				<h2><?php _e( 'Try another search!', 'manduca' ); ?></h2>
 				<?php get_search_form(); ?>
 			</div>
 		</article>
