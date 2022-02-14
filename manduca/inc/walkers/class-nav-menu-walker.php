@@ -33,12 +33,12 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
    
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-        $output .= "\n" .$indent .'<div ';
+        $output .= "\n" .$indent .'<section ';
 		$output .=  $this->subnav_id. ' ';
 		$output .='class="sub-nav lighter-scheme ';
 		$output .= 'level-'.$depth .'">';
 		$output .= "\n";
-		$output .= '<ul role="menu" id="' .$this->aria_controls .'">';
+		$output .= '<ul id="' .$this->aria_controls .'">';
 		$output .= "\n";
     }
 	
@@ -47,7 +47,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 	//end of submenu list and the wrapper .sub.nav
     public function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-		$output .= $indent.'</ul>'."\n".'</div>';
+		$output .= $indent.'</ul>'."\n".'</section>';
 		$output .= "\n";
     }
 	
@@ -125,7 +125,6 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 				$item_output .='<div class="distance-keeper" aria-hidden="true"></div>';
 				$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';
 				$item_output .= 'id= "button-'.$item->ID .'" ';			
-				$item_output .= 'aria-haspopup="true" ';
 				$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
 				$item_output .= 'aria-labelledby="'.$this->aria_labelledby .'" ';
 				$item_output .= 'aria-expanded="false"';
@@ -136,7 +135,6 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 			}
 			else  {
 				$item_output .= '<button class="dropdown-toggle menu-item level-'.$depth.'" ';			
-				$item_output .= 'aria-haspopup="true" ';
 				$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
 				$item_output .= 'id= "button-'.$item->ID .'" ';			
 				$item_output .= 'aria-expanded="false"';
