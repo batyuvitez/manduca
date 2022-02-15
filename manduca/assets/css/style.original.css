@@ -2264,7 +2264,7 @@ Modal window design */
     position: absolute;
     top: 4.5rem;
     left: 0;
-    z-index: 100;
+    z-index: 110; /*In front of the nav menu*/
 	display: none;
 }
 
@@ -2298,11 +2298,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 
 .toolbar-buttons button[disabled] {
-	border: none;
-	background-color: transparent;
-	position: absolute;
-	top: 0;
-	right: 0;
+	display: none;
 }
 
 .toolbar-buttons button[disabled] .explain {
@@ -2605,10 +2601,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		vertical-align: middle;
 	}
 	
-	.toolbar-buttons button[disabled] {
-		display: inline;
-		left: 13em;
-	}
 	.toolbar-buttons button:not([disabled]) {
 		float: right;
 	}
@@ -2676,7 +2668,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		right: 0;
 		left: auto;
 		z-index: 100;
-		max-width: 45em;
+		max-width: 39em;
 		border: 3px solid var(--ornament);
     }
     
