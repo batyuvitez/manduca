@@ -1,7 +1,8 @@
 <?php
 /**
- * Html in the wp head
- * in order not to hook into WordPress univers
+ * Very early place in <haed> section
+ * for a script of cookie consent  (e.g. One Trust)
+ * 
  **
  * */
 

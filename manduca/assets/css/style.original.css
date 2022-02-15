@@ -102,7 +102,8 @@
 	--ornament: SlateGrey;
 	--high-contrast-background: black;
 	--high-contrast-text: white;
-	--high-contrast-link: yellow;
+	--high-contrast-link: royalBlue; /* CR: 4.33 to black 4.84 to white */
+	--high-contrast-focus-indicator: PaleGreen;
 	--alternate-font-type: 'dyslexieregular';
 	--default-screen-font-type: Verdana,'Helvetica Neue',Arial,-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
@@ -322,7 +323,7 @@ body a svg {
 .high-contrast-1 textarea:focus,
 .high-contrast-1 a:focus,
 .high-contrast-1 a:active {
-	outline: 4px solid var(--high-contrast-link);
+	outline: 4px solid var(--high-contrast-focus-indicator);
 }
 
 /*//////////////////////////////////
@@ -486,7 +487,6 @@ textarea[disabled] {
 }
 
 .high-contrast-1 .featured-scheme {
-	border: 2px solid var(--high-contrast-text);
 	background-color: var(--high-contrast-background);
 	color: var(--high-contrast-text);
 }
