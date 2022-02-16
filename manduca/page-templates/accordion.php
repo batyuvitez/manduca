@@ -3,13 +3,14 @@
  * Template Name: Collapsable paragraph page template
  *
  *
- * @ Usage: see docs/how-to
+ *@alias: acccessible show hide system
+ *@Usage: see docs/how-to
  *
  **/
 
 	/*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -26,12 +27,16 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+use Manduca\accessibleServices as serv;
+
 $args = 	array(
 					'icon'  	=> manduca_icon( 'caret-down', false ),
 					'selector'	=> '.entry-content > h2',
-                'header'    => 'h2');
+					'header'    => 'h2',
+					'skip'		=>'.not-to-collapse'
+					);
  
-(new accordion( $args ))->add_hook_to_wp();
+new serv\Show_Hide_System( $args );
 
 get_header();
 
@@ -42,7 +47,6 @@ get_header();
 			//Add content after each page					
 			do_action( 'manduca_after_single_page' );
 					
-			
 	endwhile; // end of the loop.
 				
 get_footer();

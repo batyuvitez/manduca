@@ -34,7 +34,8 @@ namespace Manduca;
                'Manduca\widgets'       => get_template_directory() .'/inc/widgets',
                'Manduca\setup'         => get_template_directory() .'/inc/setup',
                'Manduca\backend'       => get_template_directory() .'/inc/backend',
-               'Manduca\accessibility' => get_template_directory() .'/inc/accessibility'
+               'Manduca\accessibility' => get_template_directory() .'/inc/accessibility',
+               'Manduca\accessibleServices' => get_template_directory() .'/inc/accessible-services'
                ) ;
   
  // If child_theme exists, it may opened Manduca_Classloader

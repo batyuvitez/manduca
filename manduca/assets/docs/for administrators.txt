@@ -50,6 +50,7 @@ in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
                   <div class=js-to_expand>content</div>
             
             *optional
+            not-to-collapse   : use this div to add content outside the hide-show system
             js-expandmore-all : this is a button to hide all and show all. 
             is-opened         : part is visible when page has been loaded
             Use keys: space or enter to hide/show,
