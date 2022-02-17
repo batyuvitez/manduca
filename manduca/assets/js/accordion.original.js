@@ -40,7 +40,7 @@
                                 .prepend( manducaAccordionArgs.icon );
                                 
         var notCollapsed= $('.accordion-body > '+ manducaAccordionArgs.skip);
-        notCollapsed.parent().before(notCollapsed);
+        notCollapsed.parent().after(notCollapsed);
         
         // Click 
          $(  manducaAccordionArgs.selector ).click(function(){
