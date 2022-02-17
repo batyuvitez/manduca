@@ -39,9 +39,12 @@
         $( manducaAccordionArgs.selector ).addClass( "collapsed" )
                                 .prepend( manducaAccordionArgs.icon );
                                 
+        //Move nodes to 
+        //@see: https://stackoverflow.com/questions/1394020/jquery-each-backwards
         var notCollapsed= $('.accordion-body > '+ manducaAccordionArgs.skip);
-        notCollapsed.parent().after(notCollapsed);
-        
+        $(notCollapsed.get().reverse()).each( function () { 
+            $(this).parent().after(this);
+        });
         // Click 
          $(  manducaAccordionArgs.selector ).click(function(){
             
