@@ -33,20 +33,20 @@ $meta_type=array(
 		'modified-date' => array (
 						'icon'=> manduca_icon( 'calendar-add', false ) ,
 						//translators: Last modification of post - in the post meta
-						'label' => __( 'Last revision', 'manduca' ),
+						'label' => __( 'Last revision', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_modified_date') ),
 		'author' => array (
-						'icon'=> manduca_icon( 'author' ) ,
+						'icon'=> manduca_icon( 'author', false ) ,
 						//translators: Author of post - in the post meta
-						'label' => __( 'Author', 'manduca', false ),
+						'label' => __( 'Author', 'manduca'),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_author') ),
 		'categories' => array (
-						'icon'=> manduca_icon( 'folder-open' ),
+						'icon'=> manduca_icon( 'folder-open', false ),
 						//translators: Category of post - in the post meta 
 						'label' => __( 'Category', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_categories') ),
 		'tags' => array (
-						'icon'=> manduca_icon( 'tags' ),
+						'icon'=> manduca_icon( 'tags', false ),
 						//translators: Tags of post - in the post meta
 						'label' => __( 'Tags', 'manduca', false ),
 						'callback'=>array( 'Manduca\helpers\Meta_Tags', 'get_tags') ),
