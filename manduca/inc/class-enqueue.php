@@ -73,12 +73,13 @@ class Enqueue{
                         'expand'=>__( 'expand child menu', 'manduca' ),
                         //Translators: submenu collapse
                         'collapse'=>__( 'collapse child menu', 'manduca' ),
-                        'icon'=>manduca_icon( 'caret-down', false ));
+                        'icon'=>manduca_icon( 'caret-down', false ),
+                        'reading_options'=> array( 'link-appearance' => 1)
+                        );
 			
       if( \Manduca\widgets\Widget_Archives::is_this_widget_active() ) {
          $js_variables['hash']       	= wp_create_nonce( 'manduca-ajax' );
       }
-         
          
          
       
@@ -96,11 +97,16 @@ class Enqueue{
 			 * @param array  RGB color of focus snail
 			 */
       $focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
-      
-      
       $js_variables = $js_variables + $focus_snail_color;
+      
+      /**
+			 * Filters all javascript variagles
+			 *
+			 * @param array  variables
+			 */
+      $js_variables = apply_filters( 'manduca_js_variables' , $js_variables);
+      
       wp_localize_script( 'manduca-scripts', 'manducaVariables', $js_variables );
-      wp_localize_script( 'manduca-scripts', 'manducaFocusSnailColour', $focus_snail_color );
       
 	}
    
