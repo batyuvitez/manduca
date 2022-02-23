@@ -650,6 +650,7 @@ jQuery(document).ready(function($)
     
 	var $blocks=$('#toolbar-buttons-table button');
     var $uniqueNames = [];
+	var $defaults = manducaVariables.reading_options;
     $.each ($blocks, function ( i, $element )
     {
        var $class=$($element).attr('class');
@@ -659,16 +660,21 @@ jQuery(document).ready(function($)
     {
     
         var $cookieValue =readCookie( $block );
-          if ( $cookieValue )
-          {
+          if ( $cookieValue ) {
                 $('html').addClass( $cookieValue );
                 $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
            }
-           else
-           {
-            var $default=$block+ '-0';
-              $('html').addClass( $default );
-             $( '#'+$default).attr( 'disabled', 'true' );
+           else {
+				if ($defaults[$block] === 'undefined') {
+					var $default=$block+ '-0';
+				}
+				else {
+					var $default=$block + '-' + $defaults[$block];
+					$( '.'+$block).removeAttr ('disabled');
+				}
+				
+				$('html').addClass( $default );
+				$( '#'+$default).attr( 'disabled', 'true' );
            }
        
         
