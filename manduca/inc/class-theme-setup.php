@@ -33,12 +33,13 @@ class Theme_Setup {
 	public function init() {
 		
 		new filters\Controller;
-		new Debug_Mode;
 		new Enqueue;
+		
 		
 		new setup\Controller;		
 		new widgets\Controller;
 		new customizer\Controller;
+		new frontend\Controller;
 		new backend\Controller;
 				
 		if ( is_admin() ) {

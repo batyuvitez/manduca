@@ -35,6 +35,7 @@ namespace Manduca;
                'Manduca\setup'         => get_template_directory() .'/inc/setup',
                'Manduca\backend'       => get_template_directory() .'/inc/backend',
                'Manduca\accessibility' => get_template_directory() .'/inc/accessibility',
+               'Manduca\frontend'      => get_template_directory() .'/inc/frontend',
                'Manduca\accessibleServices' => get_template_directory() .'/inc/accessible-services'
                ) ;
   
