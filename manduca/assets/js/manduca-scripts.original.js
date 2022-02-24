@@ -650,7 +650,7 @@ jQuery(document).ready(function($)
     
 	var $blocks=$('#toolbar-buttons-table button');
     var $uniqueNames = [];
-	var $defaults = manducaVariables.reading_options;
+	var $themeSettings = manducaVariables.reading_options;
     $.each ($blocks, function ( i, $element )
     {
        var $class=$($element).attr('class');
@@ -665,16 +665,16 @@ jQuery(document).ready(function($)
                 $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
            }
            else {
-				if ($defaults[$block] === 'undefined') {
-					var $default=$block+ '-0';
+				if (typeof $themeSettings[$block] === 'undefined') {
+					var $class=$block+ '-0';
 				}
 				else {
-					var $default=$block + '-' + $defaults[$block];
+					var $class=$block + '-' + $themeSettings[$block];
 					$( '.'+$block).removeAttr ('disabled');
 				}
 				
-				$('html').addClass( $default );
-				$( '#'+$default).attr( 'disabled', 'true' );
+				$('html').addClass( $class);
+				$( '#'+$class).attr( 'disabled', 'true' );
            }
        
         
