@@ -33,6 +33,7 @@ class Thumbnail_Substitution
 	public function thumbnail_substitution( $wp_customize ) {
 		
 		$wp_customize->add_section( 'thumbnail_substitution', array(
+			//translators: the title of the thumbnail substitution customizer section
             'title' => __('Post thumbnail substitution', 'manduca'),
             'description' => __( 'This image appears in excerpt if no thumbnail assigned', 'manduca'),
             'priority' => 10,

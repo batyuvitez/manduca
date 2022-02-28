@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-02-14 10:28+0100\n"
+"PO-Revision-Date: 2022-02-28 13:53+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,9 +22,53 @@ msgstr "WCAG honlap készítésére alkalmas. Származtatott sablonnal együtt b
 msgid "Manduca"
 msgstr "Manduca"
 
+#. translators: Search result page
+#: search.php:46 search.php:80
+msgid "Try another search!"
+msgstr "Próbálja meg egy újabb kereséssel!"
+
+#. translators: Search result page in case of empty search
+#: search.php:40
+msgid "Missing search expression"
+msgstr "Hiányzik a keresési kifejezés."
+
+#. translators: description of Manduca's sister page widget
+#: inc/widgets/class-page-sisters.php:40
+msgid "Displays the child pages of the same parent as the displayed page "
+msgstr "Ugyanannak a szülő oldalnak a közvetlen gyermekoldalainak címét mutatja."
+
+#: inc/customizer/class-thumbnail-substitution.php:57
+msgid "Change thumbnail substitution"
+msgstr "A bélyegkép helyettesítő kép"
+
+#: inc/customizer/class-thumbnail-substitution.php:56
+msgid "Remove thumbnail substitution"
+msgstr "A bélyegkép helyettesítő törlése"
+
+#: inc/customizer/class-thumbnail-substitution.php:55
+msgid "Select thumbnail substitution"
+msgstr "A bélyegkép helyettesítő kiválasztása"
+
+#: inc/customizer/class-thumbnail-substitution.php:37
+msgid "This image appears in excerpt if no thumbnail assigned"
+msgstr "A bélyegkép helyére kerülő alapértelmezett kép, amikor nincs a bejegyzéshez bélyegkép rendelve."
+
+#: inc/customizer/class-thumbnail-substitution.php:36
+#: inc/customizer/class-thumbnail-substitution.php:50
+msgid "Post thumbnail substitution"
+msgstr "Alapértelmezett bélyegkép"
+
+#. translators: name of Manduca's  sister page widget
+#. translators: name of Manduca's  sister page widget (same as defined in
+#. class-page-sisters.php)
+#: inc/widgets/class-page-sisters.php:44
+#: template-parts/widget/sisterpages.php:21
+msgid "Sister pages"
+msgstr "Testvéroldalak"
+
 #: template-parts/widget/recentposts.php:79
 msgid "1 Comment"
-msgstr "Hozzászólás"
+msgstr "1 hozzászólás"
 
 #: template-parts/widget/recentposts.php:77
 msgid "%s Comments"
@@ -166,11 +210,11 @@ msgid "none"
 msgstr "Hiányzó metaadatok"
 
 #. translators: test text in case of debug mode
-#: inc/class-debug-mode.php:38
+#: inc/frontend/class-debug-mode.php:37
 msgid "DEBUG"
 msgstr "Teszt"
 
-#: inc/class-images.php:70
+#: inc/setup/class-images.php:69
 msgid "Extra wide"
 msgstr "Széles"
 
@@ -284,7 +328,6 @@ msgid "Letter spacing"
 msgstr "Betűk közti távolság"
 
 #. translators: Toolbar line height 2
-#. translators: Toolbar line height 2
 #: template-parts/header/toolbarinner.php:85
 #: template-parts/header/toolbarinner.php:87
 #: template-parts/header/toolbarinner.php:102
@@ -332,7 +375,6 @@ msgstr "Ebben az ablakban"
 #. translators: Toolbar font type selector
 #. translators: Toolbar font-size selector default font size
 #. translators: Toolbar line height 1.7
-#. translators: Toolbar line height 1.7
 #. translators: Toolbar link target selector: links open where specified
 #: template-parts/header/toolbarinner.php:52
 #: template-parts/header/toolbarinner.php:68
@@ -357,7 +399,7 @@ msgstr "Színséma"
 msgid "When using non-default reading options you accept that cookies will be saved in your browser."
 msgstr "Az alapbeállítástól eltérő beállítást sütiben tároljuk."
 
-#: template-parts/header/sitetitle.php:50
+#: template-parts/header/sitetitle.php:56
 msgid "Jump to homepage"
 msgstr "Kezdőlapra ugrás"
 
@@ -412,6 +454,7 @@ msgstr "archívum %s. évben"
 
 #: assets/wp-admin/recent-post-extended.php:34
 #: assets/wp-admin/recent-post-extended.php:104
+#: inc/widgets/class-page-sisters.php:99
 #: inc/widgets/class-widget-archives.php:149
 msgid "Title"
 msgstr ""
@@ -437,7 +480,7 @@ msgid " User-friendly archives"
 msgstr "Akadálymentes archív widget"
 
 #. translators: in Hungarian, no need for definite article
-#: search.php:56
+#: search.php:75
 msgid "No matching result found for %s."
 msgstr "Nincs találat %s  kifejezésre."
 
@@ -501,7 +544,7 @@ msgstr "Bejegyzés navigáció"
 msgid "Current page"
 msgstr "Jelenlegi oldal"
 
-#: template-parts/header/menu.php:53 template-parts/header/toolbar.php:40
+#: template-parts/header/menu.php:56 template-parts/header/toolbar.php:40
 msgid "Close"
 msgstr "Bezárás"
 
@@ -571,7 +614,7 @@ msgstr "Bejegyzések kategóriánként"
 msgid "No title"
 msgstr "Nincs cím"
 
-#: inc/class-images.php:69
+#: inc/setup/class-images.php:68
 msgid "Excerpt size"
 msgstr "A kivonatba való képméret"
 
@@ -645,7 +688,7 @@ msgstr "Betűtípus"
 
 #. Translators: Name of options button (text size, color etc) at the header.
 #: template-parts/header/toolbar.php:29
-#: template-parts/header/toolbarbutton.php:28
+#: template-parts/header/toolbarbutton.php:27
 msgid "Display options"
 msgstr "Olvasási beállítások"
 
@@ -665,12 +708,12 @@ msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "%s<span class=\"screen-reader-text\">. oldal</span>"
 
 #. translators: Error message if there is no icon exist with the given name
-#: inc/class-svg-functions.php:57
+#: inc/class-svg-functions.php:58
 msgid "Please define an SVG icon filename."
 msgstr "Légy szíves határozd meg az SVG ikon nevét!"
 
 #. translators: Error message if there no array in the parameter
-#: inc/class-svg-functions.php:50
+#: inc/class-svg-functions.php:51
 msgid "Please define default parameters in the form of an array."
 msgstr "Légy szíves az SVG ikon nevét egy tömbben határozd meg."
 
@@ -701,11 +744,11 @@ msgstr "Hozzászólás a &bdquo;%s&rdquo; című bejegyzéshez"
 msgid "You are here:"
 msgstr "Ön itt áll: "
 
-#: inc/class-tiny-mce.php:36
+#: inc/backend/class-tiny-mce.php:49
 msgid "Abbreviation"
 msgstr "Rövidítés"
 
-#: inc/class-tiny-mce.php:31
+#: inc/backend/class-tiny-mce.php:44
 msgid "Quotation"
 msgstr "Idézet"
 
@@ -754,7 +797,7 @@ msgstr "Előző bejegyzés"
 
 #. translators: %1$s is the number of results found, %2$s is the search term,
 #. in Hungarian, no need for definite article
-#: search.php:42
+#: search.php:61
 msgid "Found %1$s search result for keyword: %2$s"
 msgstr "%1$s találat: %2$s kifejezésre"
 
@@ -763,19 +806,19 @@ msgstr "%1$s találat: %2$s kifejezésre"
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: inc/class-tiny-mce.php:48
+#: inc/backend/class-tiny-mce.php:61
 msgid "Blockquote"
 msgstr "Hosszúidézet"
 
-#: inc/class-tiny-mce.php:47
+#: inc/backend/class-tiny-mce.php:60
 msgid "Preformatted"
 msgstr "Előre formázott"
 
-#: inc/class-tiny-mce.php:46
+#: inc/backend/class-tiny-mce.php:59
 msgid "Heading 3"
 msgstr "3. címsorszint"
 
-#: inc/class-tiny-mce.php:45
+#: inc/backend/class-tiny-mce.php:58
 msgid "Heading 2"
 msgstr "2. címsorszint"
 
@@ -802,11 +845,11 @@ msgstr "Almenü összezárása"
 msgid "expand child menu"
 msgstr "Almenü szétnyitása"
 
-#: inc/class-images.php:67
+#: inc/setup/class-images.php:66
 msgid "Image in Post"
 msgstr "Bejegyzésben lévő kép"
 
-#: inc/class-images.php:66
+#: inc/setup/class-images.php:65
 msgid "Thumbnail"
 msgstr "Előkép"
 
@@ -853,7 +896,8 @@ msgid "No post"
 msgstr "Nincs bejegyzés"
 
 #. translators: attachment metadata size of image in attachment page
-#: inc/class-images.php:68 template-parts/attachment/attachment-meta.php:49
+#: inc/setup/class-images.php:67
+#: template-parts/attachment/attachment-meta.php:49
 msgid "Original size"
 msgstr "Eredeti méret"
 
@@ -890,7 +934,6 @@ msgid "Last revision"
 msgstr "Utolsó módosítás"
 
 #. translators: Date of post - in the post meta.
-#. translators: Date of post - in the post meta.
 #: template-parts/attachment/attachment-meta.php:54
 #: template-parts/posts/content-meta.php:31
 msgid "Entry date"
@@ -912,25 +955,25 @@ msgid "Author"
 msgstr "Szerző"
 
 #. translators: sidebar description
-#: inc/class-register-sidebar.php:46
+#: inc/setup/class-register-sidebar.php:46
 msgid "Appears all pages except when using full page template"
 msgstr "Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát használunk."
 
 #. translators: name of the sidebar
-#: inc/class-register-sidebar.php:43
+#: inc/setup/class-register-sidebar.php:43
 msgid "Sidebar"
 msgstr "Oldalsáv"
 
 #. translators: name of menu in footer for admin and screen reader users also
 #. Translators: name of the footer menu for screen-reader users.
-#: inc/class-theme-support.php:60 template-parts/footer/footer-menu.php:29
+#: inc/setup/class-navigation-menus.php:38
+#: template-parts/footer/footer-menu.php:29
 msgid "Footer navigation"
 msgstr "Lábrész menü"
 
 #. translators: name of main menu for admin and for screen reader users also
 #. Translators: name of the main menu for screen reader users.
-#. Translators: name of the main menu for screen reader users.
-#: inc/class-theme-support.php:58 template-parts/header/menu.php:29
+#: inc/setup/class-navigation-menus.php:36 template-parts/header/menu.php:29
 #: template-parts/header/menutoggle.php:28
 msgid "Main navigation"
 msgstr "Főmenü"
@@ -944,9 +987,7 @@ msgid "Author: %s"
 msgstr "Szerző: %s"
 
 #. Translators: text of the read more and excerpt more buttons
-#. Translators: text of the read more and excerpt more buttons
-#: inc/accessibility/class-more-links.php:36
-#: inc/helpers/class-more-links.php:36
+#: inc/helpers/class-more-links.php:37
 msgid "Continue reading"
 msgstr "Tovább olvasom"
 
@@ -1002,31 +1043,4 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
-msgstr "Edelényi Zsolt (ezs@web25.hu)"
-
-msgid "Displays the pages of the same parent page"
-msgstr "Az azonos színtű, illetve azok gyermekeit mutatja meg a szerkesztőfelületen meghatározott sorrendben."
-
-msgid "Sister pages"
-msgstr "Testvéroldalak"
-
-msgid "Post thumbnail substitution"
-msgstr "Bejegyzés kiemelt kép helyettesítés"
-
-msgid "This image appears in excerpt if no thumbnail assigned"
-msgstr "Ez a kép jelenik meg, amikor nincs helyettesítő kép"
-
-msgid "Select thumbnail substitution"
-msgstr "A helyettesítő kép kiválasztása"
-
-msgid "Change thumbnail substitution"
-msgstr "A helyettesítő kép megváltoztatása"
-
-msgid "Remove thumbnail substitution"
-msgstr "A helyettesítő kép törlése"
-
-msgid "Missing search expression"
-msgstr "Nem adott meg keresési kifejezést"
-
-msgid "Try another search!"
-msgstr "Próbálkozzon egy újabb kereséssel!"
+msgstr ""
