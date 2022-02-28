@@ -21,8 +21,6 @@
     along with this program in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 ?>
-
-
 <?php get_header();?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
