@@ -16,7 +16,7 @@
  
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Manduca is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,10 +32,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- 
- ?>
-
- 
+?>
 <?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
  
 <?php if ( function_exists( 'the_custom_logo' ) ) : ?>
@@ -43,19 +40,20 @@
      <?php the_custom_logo(); ?>
  
 <?php endif; ?>
- 
-<?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
     
-        <div id="site-title" class="site-title">
-            <span class="display-site-title"><?php echo $site_title; ?> </span>
-        </div>
-        
-<?php else :  ?>
     <div id="site-title" class="site-title">
-        <a href="<?php echo esc_html (home_url( '/' ));  ?>" rel="home">
-            <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
-            <span class="display-site-title"><?php echo $site_title; ?></span>
-        </a>
-    </div>
 
-<?php endif; ?>
+        <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>   
+        
+            <span class="display-site-title"><?php echo $site_title; ?> </span>
+        
+        <?php else :  ?>
+
+            <a href="<?php echo esc_html (home_url( '/' ));  ?>" rel="home">
+                <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
+                <span class="display-site-title"><?php echo $site_title; ?></span>
+            </a>
+
+        <?php endif; ?>
+    
+    </div>
