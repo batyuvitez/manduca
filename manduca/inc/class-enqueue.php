@@ -73,7 +73,8 @@ class Enqueue{
                         'expand'=>__( 'expand child menu', 'manduca' ),
                         //Translators: submenu collapse
                         'collapse'=>__( 'collapse child menu', 'manduca' ),
-                        'icon'=>manduca_icon( 'caret-down', false )
+                        'icon'=>manduca_icon( 'caret-down', false ),
+                        'reading_options'=> array()
                         );
 			
       if( \Manduca\widgets\Widget_Archives::is_this_widget_active() ) {

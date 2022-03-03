@@ -3,7 +3,6 @@
  * Template of site title and blog description 
  *
  *
- *
  * */
 
  /*
@@ -12,8 +11,6 @@
     On the blog posts index, is_home() will always return TRUE, regardless of whether the blog posts index is displayed on the site front page or a separate page.
     
 */
- 
- 
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
@@ -31,19 +28,20 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-
 ?>
 <?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
  
-<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
- 
-     <?php the_custom_logo(); ?>
- 
-<?php endif; ?>
     
-    <div id="site-title" class="site-title">
+<div id="site-title" class="site-title">
+    
 
-        <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>   
+        <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
+        
+            <?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+ 
+                <?php the_custom_logo(); ?>
+ 
+            <?php endif; ?>
         
             <span class="display-site-title"><?php echo $site_title; ?> </span>
         
@@ -51,9 +49,15 @@
 
             <a href="<?php echo esc_html (home_url( '/' ));  ?>" rel="home">
                 <span class="screen-reader-text"><?php _e( 'Jump to homepage' , 'manduca' ) ; ?></span>
+                    <?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+ 
+                        <?php the_custom_logo(); ?>
+ 
+                    <?php endif; ?>
+
                 <span class="display-site-title"><?php echo $site_title; ?></span>
             </a>
 
         <?php endif; ?>
     
-    </div>
+</div>
