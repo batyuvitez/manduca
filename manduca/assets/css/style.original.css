@@ -82,24 +82,24 @@
 |                                                            |
 ==============================================================*/
 :root {
-	--default-background: ivory;  /* replacable by customizer */
+	--default-background: ivory;  /* This is the only on color which is replacable by customizer */
 	--default-text: black;
 	--default-link: royalBlue;
-	--site-title: brown;
-	--default-button-background:saddleBrown;
+	--site-title: brown; 
+	--default-button-background:saddleBrown; /*Menu item, more-link and all other button */
 	--default-button-text:azure;
 	--default-focus-indicator: maroon;
 	--inverse-focus-indicator: yellow;
 	--default-text-2: #232323; /*When links are underlined */
 	--lighter-background: white;
 	--lighter-text: maroon;
-	--inverse-background: black;
+	--inverse-background: black; /* inverse is for footer */
 	--inverse-text: white;
 	--inverse-link: steelBlue;
 	--inverse-outline: ivory;
-	--featured-background: paleTurquoise;
+	--featured-background: paleTurquoise; /* for featured post */
 	--featured-text: maroon;
-	--ornament: SlateGrey;
+	--ornament: SlateGrey; 
 	--high-contrast-background: black;
 	--high-contrast-text: white;
 	--high-contrast-link: royalBlue; /* CR: 4.33 to black 4.84 to white */

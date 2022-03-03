@@ -30,5 +30,6 @@ class Controller{
 			new Header_Video;
 			new Color_Inline_Css;
 			new Thumbnail_Substitution;
+			new Site_Title_Icon;
 		}
 }
