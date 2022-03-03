@@ -1104,12 +1104,17 @@ body .site,
 
 
 /*///////////////////////////////
-// lOGO              	          */
-.custom-logo-link img {
-		max-width: 10em;
-		height: auto;
+// lOGO */
+
+.custom-logo-link {
 		display: block;
-		margin-right: 1em;
+		text-align: center;
+
+}
+
+.custom-logo-link img {
+		max-width: 10rem;
+		height: auto;
 }
 
 
@@ -2543,7 +2548,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-/*Simple tooltip. I dhould reverst as min-width) */
+/*Simple tooltip. I dhould reverse as min-width) */
 
 @media (max-width: 44.375em) {
   .simpletooltip,
@@ -2593,7 +2598,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 /*/////////////////////////////////////
 //  Toolbar buttons normal font size  */
 
-@media screen and (min-width: 29em) {
+@media screen and (min-width: 29em) {  /*406px */
 	
 	.toolbar-buttons-table .buttons-wrapper,  /* need for backwards compatibility */
 	.toolbar-buttons-table .button {
@@ -2609,6 +2614,14 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		left: 0;
 		top: 1.9em;
 		padding: 0;
+	}
+	
+	
+	
+	.site-title {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
 	}
 	
 }
