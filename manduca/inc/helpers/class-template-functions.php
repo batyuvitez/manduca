@@ -167,6 +167,7 @@ class Template_Functions {
 					if ( $add_args )
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
+					$link = esc_html( $link );
 					$page_links[] = sprintf(
 								'<div class="nav-item link-button prev"><a href="%1$s">%2$s</a></div>',
 								$link,
@@ -192,6 +193,7 @@ class Template_Functions {
 							if ( $add_args )
 								$link = add_query_arg( $add_args, $link );
 							$link .= $args['add_fragment'];
+							$link = esc_html( $link );
 			
 							
 							//translators: screen reader text for numbered list items in post navigation
@@ -220,6 +222,7 @@ class Template_Functions {
 					if ( $add_args )
 						$link = add_query_arg( $add_args, $link );
 					$link .= $args['add_fragment'];
+					$link = esc_html( $link );
 					$page_links[] = sprintf(
 								'<div class="link-button next"><a href="%1$s" >%2$s</a></div>',
 								$link,
