@@ -3,7 +3,7 @@
  * embed in ul class=commentlist
  */
 /*
-	Copyright (C) 2015-2021  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
