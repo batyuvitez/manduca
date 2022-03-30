@@ -305,8 +305,6 @@ body a svg {
 	outline-offset: 4px;
 }
 
-.high-contrast-0 .site-header-menu a:focus,
-.high-contrast-0 .site-header-menu a:active,
 .high-contrast-0 .link-button a:focus,
 .high-contrast-0 .link-button a:active,
 .high-contrast-0 .inverse-scheme a:focus,
@@ -1261,15 +1259,22 @@ nav li.menu-item > .submenu-container > a {
 
 
 
-.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container,
-.main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container > button.menu-item{
+.main-navigation .nav-menu .menu-item.menu-item-has-children > .submenu-container,
+.main-navigation .nav-menu .menu-item.menu-item-has-children > .submenu-container > button.menu-item{
 	display: flex;
 }
 
 
 
-.main-navigation ul.nav-menu > li.menu-item > a {  /* top level navigation item */
+.main-navigation .nav-menu > .menu-item > a {  /* top level navigation item */
 	position: relative;
+}
+
+.high-contrast-0 .site-header-menu a:focus,
+.high-contrast-0 .site-header-menu a:active,
+.main-navigation .nav-menu .menu-item > a[aria-current="page"] {
+	background-color: var(--default-button-text);
+	color: var(--default-button-background);
 }
 
 .main-navigation .distance-keeper {
