@@ -1648,12 +1648,16 @@ strong.search-excerpt {
 
 .site-content article {
 	position: relative; /* to position the edit link */
-	margin-bottom: 5em; /*small screens */
+	margin-bottom: calc(10 * var(--box-unit-basis)); /*small screens */
+}
+
+.site-content .sticky .entry-content {
+	padding: var(--box-unit-basis);
 }
 
 .post-pagination {
 	clear: both;
-	margin: 1em 0;
+	margin: calc(2 * var(--box-unit-basis)) 0;
 }
 
 .single-author .entry-meta .by-author {
@@ -1668,13 +1672,11 @@ strong.search-excerpt {
 ============================================================-- */
 
 .attachment .entry-content .mejs-audio {
-	max-width: 400px;
-	max-width: 28.5rem;
+	max-width: calc(57 * var(--root-unit-basis));
 }
 
 .attachment .entry-content .mejs-container {
-	margin-bottom: 24px;
-	margin-bottom: 1.714rem;
+	margin-bottom: calc(3.2 * var(--root-unit-basis));
 }
 
 
