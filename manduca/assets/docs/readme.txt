@@ -19,7 +19,7 @@ There is only a very basic customizer in this theme. You are encouraged to use M
 In case of notice any bugs or failure, please contact me: Zsolt Edelényi (ezs@web25.hu).
 
 ## Copyright and licencing information
-Copyright 2015-2019 Zsolt Edelényi (ezs@web25.hu)
+Copyright 2015-2022 Zsolt Edelényi (ezs@web25.hu)
 This theme is 100% [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Other external resources used and bundled with the theme are also fully compatible with the GPL.
 * Focus Snake <https://github.com/NV/focus-snail> : licence: MIT 
 * Accessible Megamenu <https://github.com/adobe-accessibility/Accessible-Mega-Menu>  licence: Apache License 2.0 

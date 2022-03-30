@@ -378,7 +378,7 @@ input [type="submit"] ,
 li.menu-item a{
 	background: var(--default-button-background);
 	color: var(--default-button-text);
-	border-width: 3px;  /* all sides */
+	border-width: 2px;  /* all sides */
 	border-color:  var(--ornament);
 	border-style: outset;  /* button-like */
 }
@@ -2020,10 +2020,9 @@ body {
   content : '− ';
 }
 
-.expandmore__button {
-  background: none;
-  font-size: inherit;
-  color: inherit;
+.entry-content .js-expandmore {
+	text-align: left;
+	margin: 0;
 }
 
 
@@ -2785,7 +2784,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 	button,
 	.link-button > a {
-		padding: calc(0.33 * var(--box-unit-basis));
+		padding: calc(0.33 * var(--box-unit-basis)) calc(0.66 * var(--box-unit-basis));
 	}
 
 	.author-avatar {

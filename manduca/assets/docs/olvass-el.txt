@@ -1,5 +1,5 @@
 Manduca akadálymentes WordPress sablon
-Copyright 2015-2018; Edelényi Zsolt (ezs@web25.hu);
+Copyright 2015-2022; Edelényi Zsolt (ezs@web25.hu);
 
 Ez a program szabad szoftver; terjeszthető illetve módosítható a Free Software
 Foundation által kiadott GNU General Public License dokumentumában leírtak;

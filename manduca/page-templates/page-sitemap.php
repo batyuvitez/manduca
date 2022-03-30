@@ -7,7 +7,7 @@
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
-	Copyright (C) 2015-2019  Zsolt Edelényi (ezs@web25.hu)
+	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
 
     Source code is available at https://github.com/batyuvitez/manduca
     Manduca is free software: you can redistribute it and/or modify
@@ -52,7 +52,7 @@
 		
     <?php $sitemap = new \Manduca\Sitemap;	?>
     
-    <button class="js-expandmore-all"><?php _e( 'Expand all', 'manduca' ) ; ?></button>
+    <button class="js-expandmore-all" data-expand="true"><?php _e( 'Expand all', 'manduca' ) ; ?></button>
     
         
         <h2 class="js-expandmore"><?php _e( 'Authors', 'manduca' ); ?></h2>
