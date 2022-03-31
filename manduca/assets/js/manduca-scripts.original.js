@@ -492,7 +492,7 @@ function Dialog(dialogEl, overlayEl, dialogToggler) {
    this.firstFocusableEl = this.focusableEls[0];
    this.lastFocusableEl = this.focusableEls[ this.focusableEls.length - 1 ];
 
-   //this.close(); // Reset
+   this.close(); // Reset
 }
 
 
@@ -568,7 +568,7 @@ Dialog.prototype._handleKeyDown = function(e) {
 	   }
 	   break;
    case KEY_ESC:
-		//Dialog.close();
+		Dialog.close();
 	   break;
    default:
 	   break;
