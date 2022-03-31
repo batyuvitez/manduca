@@ -976,8 +976,7 @@ body .site,
 /*//////////////////////////////////////////////////////////
 * Assistive text  */
 
-.screen-reader-text,
-.desktop-text {
+.screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -1479,63 +1478,6 @@ kbd {   /* since @18.10.4 from wikipedia css */
     font-size: 0.85em;
 }
 
-/* defaults headings */
-h1 {
-	font-size: 1.8em;
-	margin: 0;
-	text-align: center;
-	font-weight: bold;  /* browser default is usually bold */
-	clear: both;
-}
-
-.entry-content h1 {  /* archive pages */
-	margin: 0 0 1.5em;
-}
-.entry-content h1 { 
-	margin: 3em 0 1.5em;
-}
-
-.font-size-3 h1 {
-	font-size: 1.4em;
-}
-
-h2 {
-	font-size: 1.3em;
-	line-height: 1.5;
-	clear: both;
-	text-align: center; /* h1 is also centered */
-}
-
-.entry-content h2 {
-	margin: 2.6em 0 1.3em;
-}
-
-
-h3 {
-	font-size: 1.125em;
-	line-height: 1.5;
-	margin: 1.125em 0 0.5625em;
-	clear: both;
-}
-
-
-	
-h1 + h2,
-h2 + h3,
-h3 + h4,
-h4 + h5,
-h5 + h6,
-div.entry-content > h2:first-child{
-		margin-top:  0 ;
-}
-	
-	
-.site-content p,
-.site-content ol,
-.site-content  ul {
-	margin-bottom: 1.5em; 
-}
-
 li {
 	list-style-position: inside;
  }
@@ -1584,7 +1526,56 @@ th	{
 
 
 /*////////////////////////////////
-// CONTENT HEADER: */
+// CONTENT HEADERS: */
+
+
+/* defaults headings */
+.main-content h1 {
+	font-size: 1.8em;
+	text-align: center;
+	font-weight: bold;  /* browser default is usually bold */
+	clear: both;
+	margin: 0 0 calc(3 * var(--box-unit-basis));
+}
+.entry-title-wrapper h1 { 
+	margin: 0;
+}
+
+
+.main-content h2 {
+	font-size: 1.3em;
+	line-height: 1.5;
+	clear: both;
+	text-align: center; /* h1 is also centered */
+	margin: calc(4.5 * var(--box-unit-basis)) 0 calc(1.5 * var(--box-unit-basis));
+}
+
+
+.main-content h3 {
+	font-size: 1.125em;
+	line-height: 1.5;
+	margin: 1.125em 0 0.5625em;
+	clear: both;
+}
+
+
+	
+.main-content h1 + h2,
+.main-content h2 + h3,
+.main-content h3 + h4,
+.main-content h4 + h5,
+.main-content h5 + h6,
+.entry-content > h2:first-child{
+		margin-top:  0 ;
+}
+	
+	
+.site-content p,
+.site-content ol,
+.site-content  ul {
+	margin-bottom: 1.5em; 
+}
+
 
 
 .featured-post {
@@ -2763,26 +2754,26 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	
 	/* Font size */ 
-	h2 {
+.main-content	h2 {
 		font-size: 1.536em;
 	}
 	
 	
-	h3 {
+.main-content	h3 {
 		font-size: 1.28em;
 		margin: 2em 0 0.6666em;
 	}
 	
 	
-	h4 {
+.main-content	h4 {
 		font-size: 1.024em;
 		margin: 2.048rem 0 0.686rem 2.048rem;
 	}
-	h5 {
+.main-content	h5 {
 		font-size: 0.819em;
 		margin: 1.638rem 0 0.546rem;
 	}
-	h6 {
+.main-content	h6 {
 		font-size: 0.6553em;
 		margin: 1.31072rem 0 0.65536rem;	
 	}
@@ -2816,9 +2807,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin-bottom: 1em;
 	}
 	
-	.entry-header-wrapper h1,
-	.entry-header-wrapper h2 {
-		margin: 0 0 0 1em;
+	.entry-title-wrapper {
+		display: flex;
+		align-items: center;
+		margin-left: var(--box-unit-basis);
 	}
 
 	/*////////////////////
