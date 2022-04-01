@@ -2,7 +2,6 @@
 /**
  * Readability toolbar in the header. 
  *
- * @since 17.8
  * */
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.
@@ -37,7 +36,7 @@
 	</div>		
  
 	<?php echo Manduca\helpers\Template_Functions::get_info_button_html( 'inverse3' ); ?>
-	<button id="buttons-close" class="modal-window-close"><?php manduca_icon( 'close' ).'&nbsp;'; _e( 'Close' ); ?></button>
+	<button id="buttons-close" class="modal-window-close" title="<?php  _e( 'Close' ); ?>"><?php manduca_icon( 'close' );?></button>
 </section>
 
 

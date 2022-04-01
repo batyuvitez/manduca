@@ -1182,11 +1182,11 @@ body .site,
 
 
 
-.megamenu .menu-item > a,
-.megamenu .menu-item > .submenu-container > a {
-	padding: 0.3em 0.4em;
+.menu-item > a,
+.menu-item > .submenu-container > a {
+	padding: var(--vertical-padding) var(--horizontal-padding);
 	font-weight: normal;
-	display: block;
+	display: inline-block;
 
 } 
 
@@ -3037,7 +3037,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
 		gap: var(--box-unit-basis)
 	}

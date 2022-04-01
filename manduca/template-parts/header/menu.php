@@ -53,7 +53,7 @@ $menu_name = __( 'Main navigation', 'manduca' ) ;
 				
 				<?php get_template_part( '/template-parts/header/toolbarbutton' ); ?>
 				
-				<button id="primary-nav-close" class="modal-window-close"><?php manduca_icon( 'close' ).'&nbsp;'; _e( 'Close' ); ?></button>
+				<button id="primary-nav-close" class="modal-window-close" title="<?php _e( 'Close' ); ?>"><?php manduca_icon( 'close' ); ?></button>
 			</nav>
 			
 		</div>
