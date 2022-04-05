@@ -1061,7 +1061,7 @@ body .site,
 }
 
 .header-searchform input {
-	padding: .2em 0.6em;
+	padding: var(--vertical-padding) var(--horizontal-padding);
 	margin: 0;
 	width: calc( -6.2179675994109em + 80.4123711340206vw );  /*255/118->352/196*/
 	max-width: 14em;
@@ -1523,14 +1523,20 @@ th	{
 
 
 .main-content h2,
-.widget h2{
+.widget h2 {
 	font-size: 1.3em;
 	line-height: 1.5;
 	clear: both;
 	text-align: center; /* h1 is also centered */
-	margin: calc(4.5 * var(--box-unit-basis)) 0 calc(1.5 * var(--box-unit-basis));
 }
 
+.main-content h2 {
+	margin: calc(4.5 * var(--vertical-padding)) 0 calc(1.5 * var(--vertical-padding));	
+}
+
+.widget h2 {
+margin: calc(2 * var(--vertical-padding)) 0;	
+}
 
 .main-content h3,
 .widget h3 {
