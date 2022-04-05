@@ -83,6 +83,7 @@
 ==============================================================*/
 :root {
 	--default-background: ivory;  /* This is the only on color which is replacable by customizer */
+	--widget-background: lightGoldenRodYellow;
 	--default-text: black;
 	--default-link: royalBlue;
 	--site-title: brown; 
@@ -1521,7 +1522,8 @@ th	{
 }
 
 
-.main-content h2 {
+.main-content h2,
+.widget h2{
 	font-size: 1.3em;
 	line-height: 1.5;
 	clear: both;
@@ -1530,7 +1532,8 @@ th	{
 }
 
 
-.main-content h3 {
+.main-content h3,
+.widget h3 {
 	font-size: 1.125em;
 	line-height: 1.5;
 	margin: 1.125em 0 0.5625em;
@@ -1804,8 +1807,13 @@ a.comment-edit-link {
 /* 11. Widgets
 ============================================================-- */
 
+.widget-area {
+	width: 100%;
+	background-color: var(--widget-background);
+}
+
 .widget-content {
-	padding: 1em 0;
+	padding: calc(2 * var(--box-unit-basis)) 0;
 }
 
 .widget-area .widget ul ul {
