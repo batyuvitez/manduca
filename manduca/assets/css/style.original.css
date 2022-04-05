@@ -1174,11 +1174,11 @@ body .site,
 .megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
 	list-style: none;
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
-	margin: 1em 0;
+	margin: calc(2 * var(--box-unit-basis)) 0;
 }
 
 .font-size-1 .megamenu ul.nav-menu li.menu-item {
-	margin-bottom: 1em;
+	margin-bottom: calc(2 * var(--box-unit-basis));
 }
 
 
@@ -3080,6 +3080,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.main-navigation .menu-item > .submenu-container > button {
 		padding:  calc(0.7 * var(--vertical-padding)) calc(1.5 * var(--horizontal-padding));
 		white-space: nowrap;
+		font-size: 1.05em;
+	}
+	
+	.main-navigation .level-1.menu-link {
+		font-size: 0.85em;
 	}
 	
 	.megamenu button.modal-window-close {
