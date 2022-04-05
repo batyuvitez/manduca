@@ -2793,6 +2793,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		justify-content: flex-end;
 		align-items: center;
 		min-height: 4em;
+		gap: var(--box-unit-basis);
 		margin-bottom: calc(2 * var(--root-unit-basis));
 	}
 	
@@ -2807,7 +2808,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.content-date {
 			text-align: center;
 			margin: 0;
-			padding: 0.5em;
+			padding: var(--box-unit-basis);
 			position: relative;
 	}
 	
