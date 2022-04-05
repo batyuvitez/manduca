@@ -65,6 +65,12 @@ class Header_Image
 			'admin-preview-callback' => array ($this, 'header_image'),
 			//since 21.2
 			'video'					 =>TRUE);
+		
+		/*
+		 *Filter header image settings
+		*/
+		$args = apply_filters( 'manduca_header_image_args', $args );
+		
 		add_theme_support( 'custom-header', $args );
 	}
 	
