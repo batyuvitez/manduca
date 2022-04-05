@@ -35,7 +35,7 @@
 <div id="site-title" class="site-title">
     
 
-        <?php if( is_front_page() && empty( get_query_var('paged'))) : ?>
+        <?php if( is_front_page() || is_home () && empty( get_query_var('paged'))) : ?>
         
             <?php if ( function_exists( 'the_custom_logo' ) ) : ?>
  
