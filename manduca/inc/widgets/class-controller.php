@@ -29,8 +29,8 @@ namespace Manduca\widgets;
 class Controller {
 	
    public function __construct () {
-      new Page_Sisters;
       new Register_Widgets;
+      new Page_Sisters;
 		new Widget_Archives;
 		new Ajax_Call_Handler;
 		

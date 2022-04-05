@@ -2,7 +2,6 @@
 /**
  * Template Name: Sitemap Page Template
  *
- * @since: 17.11
  **/
 
  /*  This file is part of WordPress theme named Manduca - focus on accessibility.

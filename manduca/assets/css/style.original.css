@@ -919,7 +919,7 @@ video {
 
 /* Body, links, basics */
 html {
-	font-size: var(--font-size-basic);
+	font-size: var(--font-size-basis);
 	line-height: 1.64285; /*WCAG 1.4.8: Line spacing (leading) is at least space-and-a-half within paragraph */
 }
 
@@ -1455,8 +1455,12 @@ kbd {   /* since @18.10.4 from wikipedia css */
 
 li {
 	list-style-position: inside;
+	list-style-type: disc;
  }
 
+ul ul li {
+	list-style-type: square;
+}
 
 embed,
 iframe,
