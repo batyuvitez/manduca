@@ -40,7 +40,7 @@
 		<?php get_template_part( '/template-parts/header/load-spinner' ); ?>
 		<?php get_template_part( '/template-parts/header/nojavascript' ); ?>
 		<div id="page" class="hfeed site">
-			<header>										
+			<header class="site-header-wrapper">										
 				<?php get_template_part( '/template-parts/header/liveregion' ); ?>
 				<?php get_template_part( '/template-parts/header/topbar' ); ?>
 				<?php get_template_part( '/template-parts/header/skiplinks' ); ?>

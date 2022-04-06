@@ -25,10 +25,12 @@ $aria_label=__( 'Sister pages', 'manduca' )
 	<?php if ($args ['title']) : ?> 
 		<?php echo $args['before_title'] . $args['title'] . $args['after_title']; ?> 
 	<?php endif; ?>
-	<nav aria-label="<?php echo $aria_label; ?>">
-		<ul>
-			<?php echo $args['list']; ?>
-		</ul>
-	</nav>
+	<div class="widget-content">
+		<nav aria-label="<?php echo $aria_label; ?>">
+			<ul>
+				<?php echo $args['list']; ?>
+			</ul>
+		</nav>
+	</div>
 
 <?php echo $args['after_widget']; ?>
