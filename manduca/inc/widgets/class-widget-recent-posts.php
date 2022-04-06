@@ -74,7 +74,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 			}
 		}
 		
-		echo '<div class="widget-content"';
+		echo '<div class="widget-content">';
 		hlp\Widgets::display_recent_posts ( $instance );
 		echo '</div>';
 		echo $args ['after_widget'];
