@@ -839,7 +839,7 @@ img[class*="attachment-"] {
 }
 
 .post-navigation .nav-item {
-		width: calc(6 * var(--root-unit-basis)); /* equal width */
+		width: 3rem; /* equal width */
 		text-align: center;
 }
 
@@ -1814,7 +1814,7 @@ a.comment-edit-link {
 /* 11. Widgets
 ============================================================-- */
 
-.widget-area {
+.high-contrast-0 .widget-area {
 	width: 100%;
 	background-color: var(--widget-background);
 }
