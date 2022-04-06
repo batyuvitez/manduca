@@ -543,7 +543,7 @@ body a,
 }
 
  
-html.link-appearance-1 a,
+.link-appearance-1 a,
 #link-appearance-1 {
 	text-decoration: underline;
 	text-decoration-skip-ink: auto;
@@ -721,7 +721,7 @@ input[type="checkbox"]{
 	margin: 0.5rem auto;
 }
 
-img.header-image {
+.header-image {
 	display: block;
 }
 
@@ -731,26 +731,19 @@ img[class*="attachment-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
-img.size-full,
-img.size-large,
-img.header-image,
-img.wp-post-image {
+.size-full,
+.size-large,
+.header-image,
+.wp-post-image {
 	max-width: 100%;
 	margin: 0 auto;
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-img.wp-post-image {
+.wp-post-image {
 	display: block;
 	margin: 0 auto;
 }
 
-/* Make sure videos and embeds fit their containers */
-embed,
-iframe,
-object,
-video {
-	max-width: 100%;
-}
 
 /* Images */
 .post-thumbnail .wp-caption{
@@ -760,7 +753,7 @@ video {
 	margin: 1.07rem auto;
 	overflow: hidden;
 }
-.excerpt-thumbnail>img{
+.excerpt-thumbnail > img{
 	display: block;
 	max-width: 100%;
 	height: auto!important;
@@ -1036,7 +1029,7 @@ body .site,
 
 .wrapper,
 .footer-wrapper {
-	padding: 0 0.5em;  /* Paddings on small screen  */
+	padding: 0 var(--box-unit-basis);  /* Paddings on small screen  */
 }
 
 
@@ -1502,6 +1495,13 @@ th	{
 	padding: 0.428rem 0.714rem 0.728rem 0;
 }
 
+/* Make sure videos and embeds fit their containers */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+}
 
 
 
@@ -1719,7 +1719,7 @@ strong.search-excerpt {
 	margin-bottom: 0.5em;
 }
 
-ol.commentlist {
+.commentlist {
 	list-style-type: none;
 }
 
@@ -1892,8 +1892,8 @@ a.comment-edit-link {
 
 svg[class^=icon],  /* Only content-icons not focus-snail */
 .expandmore__symbol {
-	width: 1.2em;
-	height: 1.2em;
+	width: 1.2rem; /* svg should not effected by font-size*/
+	height: 1.2rem;
 	vertical-align: text-top;
 }
 
@@ -1907,13 +1907,13 @@ svg.icon-search,
 .menu-toggle svg,
 .toolbar-buttons-open svg,
 .link-button svg{
-	width: 1.9em;
-	height: 1.9em;
+	width: 1.9rem;
+	height: 1.9rem;
 }
 
 
 svg.link-function {  /* @see:Link_Functions */
-	margin: 0 0.5em;
+	margin: 0 0.5rem;
 }
 
 .menu-toggle.active svg.icon-close {
