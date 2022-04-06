@@ -662,6 +662,7 @@ button,
 }
 
 
+
 /*============================================================
 |                                                             |
 |             OTHER TYPOGRAPHY                                |
@@ -1153,11 +1154,11 @@ body .site,
 		top: calc(30 * var(--box-unit-basis))
 }
 
-.main-navigation .menu-item .dropdown-toggle {
+.main-navigation .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
 	display: inline-block;
 	margin: 0;
-	padding:  var(--vertical-padding) var(--horizontal-padding);
+	padding:  0;
 }
 
 .no-js .main-navigation ul-sub-menu {
@@ -3075,18 +3076,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		text-align: center;
 	}
 	
-	.main-navigation .menu-item > a,
-	.main-navigation .menu-item > .submenu-container > a,
-	.main-navigation .menu-item > .submenu-container > button {
+	.main-navigation .menu-link,
+	.main-navigation .menu-item.dropdown-toggle {
 		padding:  calc(0.7 * var(--vertical-padding)) calc(1.5 * var(--horizontal-padding));
 		white-space: nowrap;
-		font-size: 1.05em;
 	}
-	
-	.main-navigation .level-1.menu-link {
-		font-size: 0.85em;
-	}
-	
+		
 	.megamenu button.modal-window-close {
 		display: none;
 	}
