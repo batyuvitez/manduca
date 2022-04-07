@@ -1522,6 +1522,10 @@ video {
 	margin: 0;
 }
 
+.content-date {
+	padding: var(--vertical-padding) var(--horizontal-padding);
+	text-align: center;
+}
 
 .main-content h2,
 .widget h2 {
@@ -2139,7 +2143,7 @@ body {
 
 .font-size-1 .top-bar {
 	display: block;
-		height: calc(30 * var(--root-unit-basis));
+		height: 15em;
 }
 
 .font-size-1 .site-header {
@@ -2807,9 +2811,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	// content date format
 	*/
 	.content-date {
-			text-align: center;
-			margin: 0;
-			padding: var(--box-unit-basis);
+			padding: var(--box-unit-basis); /* becomes a box */
 			position: relative;
 	}
 	
