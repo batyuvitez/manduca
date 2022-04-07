@@ -344,10 +344,10 @@ Lighter */
 /*//////////////////////////////////
 Inverse */
 
-.inverse-scheme,
-.simpletooltip.tooltip-show,
-.minimalist-simpletooltip.tooltip-show,
-.minimalist-left-simpletooltip.tooltip-show {
+.high-contrast-0 .inverse-scheme,
+.high-contrast-0 .simpletooltip.tooltip-show,
+.high-contrast-0 .minimalist-simpletooltip.tooltip-show,
+.high-contrast-0 .minimalist-left-simpletooltip.tooltip-show {
 				background: var(--inverse-background);; 
 				color: var(--inverse-text);
 }
@@ -1586,11 +1586,9 @@ margin: calc(2 * var(--vertical-padding)) 0;
 entry-meta*/
 .metatags {
 	clear: both;
-}
-
-.metatags  {
 	list-style: none;
 	font-size: 0.95em;
+	padding: var(--vertical-padding) var(--horizontal-padding);
 }
 
 .metatags ul {

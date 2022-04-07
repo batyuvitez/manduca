@@ -119,7 +119,7 @@ class Meta_Tags {
 	}
 	
 	public static function empty_metadata () {
-		//Translators: Missing metadata 
+		//Translators: Indication of missing metadata 
 		return __( 'none', 'manduca' );
 	}
 	

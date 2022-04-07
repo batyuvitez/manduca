@@ -28,7 +28,12 @@ namespace Manduca\helpers;
 class Hungarian_Contents {
 
 	
-   /*
+  public static function add_definite_article (string $word) {
+					return self::definite_article ($word).' ' .$word;
+		}
+		
+		
+		/*
 	* Make hungarian definite article ('a' or 'az')
 	* depending on the input
 	*

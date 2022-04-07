@@ -21,12 +21,13 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+use Manduca\helpers as hlp;
 
 global $wp_query;
 $search_expr=get_search_query();
 
 if( get_locale()==='hu_HU' && $search_expr ) {
-	$search_expr=Manduca\helpers\Hungarian_Contents::definite_article ($search_expr).' ' .$search_expr;
+	$search_expr=hlp\Hungarian_Contents::add_definite_article ($search_expr);
 }
 
 ?>
