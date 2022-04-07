@@ -87,7 +87,7 @@ $breadcrumb->customize_breadcrumb();
 
 
 <div id="breadcrumb" class="breadcrumb" >
-        <nav>>
+        <nav>
             <span><?php echo $prefix_text; ?></span>
             <?php echo $breadcrumb->output(); ?>
         </nav>

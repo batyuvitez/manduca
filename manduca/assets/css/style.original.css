@@ -2101,11 +2101,8 @@ body {
 .recent-post-block header.thumbnail img {
 	width: 4em;
 	height: 4em;
-	margin: 0;
-}
-
-.recent-post-block header.thumbnail h3 {
-	margin: 0 0 0 0.5em;
+	display: inline-block;
+	margin: 0 var(--box-unit-basis);
 }
 
 .accessible-recent-post article {
