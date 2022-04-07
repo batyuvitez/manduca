@@ -79,8 +79,6 @@ class manduca_breadcrumb extends breadcrumb {
 //translators: Breadcrumb prefix text: 
 $prefix_text=__( 'You are here:', 'manduca' );
 
-//Translators: Title of breadcrumb navigation (for screen reader users)
-$name=__('breadcrumb', 'manduca');       
 
 $breadcrumb = new manduca_breadcrumb();
 $breadcrumb->customize_breadcrumb();
@@ -89,7 +87,7 @@ $breadcrumb->customize_breadcrumb();
 
 
 <div id="breadcrumb" class="breadcrumb" >
-        <nav aria-label="<?php echo $name; ?>">
+        <nav>>
             <span><?php echo $prefix_text; ?></span>
             <?php echo $breadcrumb->output(); ?>
         </nav>

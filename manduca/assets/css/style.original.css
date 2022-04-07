@@ -147,10 +147,6 @@ ul, ol  {
   box-sizing: inherit;
 }
 
-html {
-	line-height: 1.460311;
-}
-
 
 .gecko fieldset {
 	display: table-cell; /*for the sake of Firefox &since 17.3*/
@@ -1480,7 +1476,6 @@ dd {
 
 table {
 	font-size: smaller;
-	line-height: 2;
 	margin: 0 0 1.33rem;
 	width: 100%;
 }
@@ -1562,6 +1557,10 @@ margin: calc(2 * var(--vertical-padding)) 0;
 .entry-content > h2:first-child{
 		margin-top:  0 ;
 }
+
+
+/*////////////////////////////
+entry-content */
 	
 	
 .site-content p,
