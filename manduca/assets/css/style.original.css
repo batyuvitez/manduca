@@ -111,7 +111,6 @@
 	--print-title-font-type: Arial, Helvetica, Ubuntu, sans-serif;
 	--print-default-font-type: Georgia, 'Times New Roman', 'Liberations sans', serif;
 	--font-size-basis: 87.5%;
-	--font-size-basic: 87.5%; /* for backwards-compatibility */
 	--box-unit-basis: 0.5em;
 	--root-unit-basis: 0.5rem;
 	--vertical-padding: 0.3em;
