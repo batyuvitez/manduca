@@ -370,6 +370,10 @@ Featured */
 
 /*//////////////////////////////////
 Button, link-button, menu        */
+button {
+	cursor: pointer;
+}
+
 button, 
 .link-button,
 input [type="submit"] ,
