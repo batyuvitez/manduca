@@ -26,7 +26,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca\filters;
+namespace Manduca\frontend;
 
 
   

@@ -24,6 +24,14 @@ class Controller {
 	public function __construct() {
 		
 		new Debug_Mode;
+		/* Link function (add svg, aria etc. )
+		 * Filter to disable link function in child theme
+		 * */
+		$link_function_enable = apply_filters( 'manduca_enable_link_functions', true) ;
+		if( $link_function_enable && function_exists ('mb_convert_encoding' ) ) {	
+			new Link_Functions();
+		}
 		
    }  
+
 }
