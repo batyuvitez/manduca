@@ -833,18 +833,16 @@ img[class*="attachment-"] {
 	margin: 2rem 0;
 }
 
-.post-navigation .page-numbers {
-	display: none;
-}
 
 .post-navigation .nav-item {
-		width: 3rem; /* equal width */
 		text-align: center;
 }
 
 .post-navigation > div {
 	display: flex;
-	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: var(--box-unit-basis);
+	justify-content: center;
 	align-items: center;
 }
 
@@ -1856,7 +1854,10 @@ a.comment-edit-link {
 }
 
 
-
+#manduca-archive-year-dropdown,
+#manduca-archive-month-dropdown {
+	padding: var(--vertical-padding) var(--horizontal-padding);
+}
 
 
 /*============================================================
