@@ -28,11 +28,12 @@ namespace Manduca\widgets;
 class Register_Widgets{
    
    public function __construct(){      
-      add_action( 'widgets_init', array( $this, 'register_manduca_archives_widget' ));
+      add_action( 'widgets_init', array( $this, 'register_manduca_widgets' ));
    }
    
-   public function register_manduca_archives_widget(){
+   public function register_manduca_widgets(){
       register_widget( '\Manduca\widgets\Widget_Archives' );
+      register_widget( '\Manduca\widgets\Widget_Recent_Posts' );
       register_widget( '\Manduca\widgets\Page_Sisters' );
    }
 }
