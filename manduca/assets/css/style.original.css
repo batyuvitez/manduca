@@ -115,6 +115,7 @@
 	--root-unit-basis: 0.5rem;
 	--vertical-padding: 0.3em;
 	--horizontal-padding: 0.4em;
+	--wrapper-max-width: 80rem;
 	
 }
 
@@ -1027,7 +1028,7 @@ body .site,
 
 .wrapper,
 .footer-wrapper {
-	padding: 0 var(--box-unit-basis);  /* Paddings on small screen  */
+	padding: 0 var(--horizontal-padding);  /* Paddings on small screen  */
 }
 
 
@@ -1295,7 +1296,7 @@ body .site,
 	width:100%;
 	clear: both;
 	margin: calc(2 *var(--box-unit-basis)) auto;
-	padding: calc(2 *var(--box-unit-basis));
+	padding: calc(2 *var(--vertical-padding)) calc(2 *var(--horizontal-padding));
 }
 
 .footer-navigation {
@@ -1596,7 +1597,7 @@ entry-meta*/
 }
 
 .metatags li {
-	padding: var(--box-unit-basis) 0;
+	padding: var(--vertical-padding) 0;
 	margin-left: calc(4 * var(--box-unit-basis));
 	list-style-type: none;
 }
@@ -1640,7 +1641,7 @@ strong.search-excerpt {
 }
 
 .site-content .sticky .entry-content {
-	padding: var(--box-unit-basis);
+	padding: var(--vertical-padding) var(--horizontal-padding);
 }
 
 .post-pagination {
@@ -1823,7 +1824,7 @@ a.comment-edit-link {
 }
 
 .widget-content {
-	padding: calc(2 * var(--box-unit-basis)) 0;
+	padding: calc(3* var(--vertical-padding)) 0;
 }
 
 .widget-area .widget ul ul {
@@ -2810,7 +2811,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	// content date format
 	*/
 	.content-date {
-			padding: var(--box-unit-basis); /* becomes a box */
+			padding: var(--vertical-padding) var(--horizontal-padding); /* becomes a box */
 			position: relative;
 			margin-bottom: 0;
 	}
@@ -2867,7 +2868,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	// content
 	*/
 	.page-template-full-width .entry-content {
-		padding: 0 calc(4 * var(--box-unit-basis)) calc(4 * var(--box-unit-basis)) ;
+		padding: 0 calc(7 * var(--vertical-padding)) calc(7 * var(--horizontal-padding)) ;
 	  }
   
 	.excerpt-thumbnail img.wp-post-image {
@@ -3031,7 +3032,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 53em) { /* 848px*/
 
 	.site > header {
-		padding: 0 var(--box-unit-basis);
+		padding: 0 var(--horizontal-padding);
 	}
 	
 	.menu-toggle {
@@ -3225,8 +3226,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.megamenu,
 	.breadcrumb  > nav,
 	.site-info,
-	.inner-wrapper {
-			max-width: 80rem;
+	.inner-wrapper,
+	#masthead {
+			max-width: var(--wrapper-max-width);
 			margin-left: auto;
 			margin-right: auto;
 	}
