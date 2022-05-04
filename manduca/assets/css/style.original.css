@@ -3246,7 +3246,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.site {
 		overflow: visible; /*; mert a kívülre helyezett dolgok nem látszanak*/
 		margin: 0 auto;
-		padding: 1em;
     }
 	 
 	.footer-wrapper {
