@@ -3227,7 +3227,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.breadcrumb  > nav,
 	.site-info,
 	.inner-wrapper,
-	#masthead {
+	.site-header {
 			max-width: var(--wrapper-max-width);
 			margin-left: auto;
 			margin-right: auto;
