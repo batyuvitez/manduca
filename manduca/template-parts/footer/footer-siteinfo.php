@@ -21,9 +21,9 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-use Manduca\helpers as hlp;
-$bloginfo = hlp\Strings::add_whitespace( get_bloginfo( 'name' ));  
+use Manduca\filters as fil;
+
 ?>
 
 
-<div class="copyright-text">&copy; <?php echo date ('Y'); ?>, <?php echo get_bloginfo(); ?></div>
+<div class="copyright-text">&copy; <?php echo date ('Y'); ?>, <?php echo fil\Title::site_title_with_whitespace (); ?></div>

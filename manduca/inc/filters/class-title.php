@@ -31,6 +31,7 @@
 
 namespace Manduca\filters;
 
+
 class Title {
     
     public function __construct(){ 
@@ -68,4 +69,15 @@ class Title {
             $title[ 'page'] = sprintf( $string, $paged );
             return $title;
     }
+    
+    public static function site_title_with_linebreak () {
+		return str_replace (' | ', '<br />', get_bloginfo( 'name' ));
+	}
+	
+	public static function site_title_with_whitespace () {
+		return str_replace (' | ', ' ', get_bloginfo( 'name' ));
+	}
+
+	
+    
 }

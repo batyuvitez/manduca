@@ -28,8 +28,9 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
-use Manduca\helpers as hlp;
-$site_title = hlp\Strings::add_linebreak( get_bloginfo( 'name' ));  
+
+use Manduca\filters as fil;
+
 ?>
      
 <div id="site-title" class="site-title">
@@ -43,7 +44,7 @@ $site_title = hlp\Strings::add_linebreak( get_bloginfo( 'name' ));
  
             <?php endif; ?>
         
-            <span class="display-site-title"><?php echo $site_title; ?> </span>
+            <span class="display-site-title"><?php echo fil\Title::site_title_with_linebreak (); ?> </span>
         
         <?php else :  ?>
 
@@ -55,7 +56,7 @@ $site_title = hlp\Strings::add_linebreak( get_bloginfo( 'name' ));
  
                     <?php endif; ?>
 
-                <span class="display-site-title"><?php echo $site_title; ?></span>
+                <span class="display-site-title"><?php echo fil\Title::site_title_with_linebreak (); ?></span>
             </a>
 
         <?php endif; ?>
