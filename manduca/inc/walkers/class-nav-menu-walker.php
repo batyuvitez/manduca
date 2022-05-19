@@ -38,7 +38,8 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 		$output .='class="sub-nav lighter-scheme ';
 		$output .= 'level-'.$depth .'">';
 		$output .= "\n";
-		$output .= '<ul id="' .$this->aria_controls .'">';
+		$output .= '<ul id="' .$this->aria_controls.'" ';
+		$output .= 'class="sub-nav-items">';
 		$output .= "\n";
     }
 	
@@ -97,6 +98,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 		$atts['aria-current'] = $item->current ? 'page' : '';
 		$atts ['id']		  = $submenu ? $this->aria_labelledby : '';
 		$atts ['class']		  = $submenu ? 'has-dropdown-toggle ': '';
+		$atts['class'] 		  .= $item->current ? 'current-page ' : '';
 		$atts ['class']		  .= 'level-'.$depth;
 		$atts ['class']		  .= ' menu-link';
 		
@@ -134,7 +136,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu  {
 				$item_output .='</button>';
 			}
 			else  {
-				$item_output .= '<button class="dropdown-toggle menu-item level-'.$depth.'" ';			
+				$item_output .= '<button class="dropdown-toggle level-'.$depth.'" ';			
 				$item_output .= 'aria-controls="'. $this->aria_controls.'" ';
 				$item_output .= 'id= "button-'.$item->ID .'" ';			
 				$item_output .= 'aria-expanded="false"';

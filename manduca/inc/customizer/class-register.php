@@ -36,7 +36,6 @@ class Register {
     public function customize_register( $wp_customize ) {
         $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
         $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-        $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
         $wp_customize->remove_control( 'custom_css' );  
         $wp_customize->add_setting( 'manduca_copyright_text', array(
          'default' => get_bloginfo(),

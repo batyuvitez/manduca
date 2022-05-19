@@ -19,6 +19,10 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+/*optimalization, refactoring:
+ *@see: https://css-tricks.com/efficiently-rendering-css/
+ **/
+
 /*============================================================
 |                                                            |
 |            SECTION DOCUMENTATION                           |
@@ -81,7 +85,7 @@
 |               VARIABLES                                    |
 |                                                            |
 ==============================================================*/
-:root {
+.high-contrast-0 {
 	--default-background: ivory;  /* This is the only on color which is replacable by customizer */
 	--widget-background: lightGoldenRodYellow;
 	--default-text: black;
@@ -90,7 +94,6 @@
 	--default-button-background:saddleBrown; /*Menu item, more-link and all other button */
 	--default-button-text:azure;
 	--default-focus-indicator: maroon;
-	--inverse-focus-indicator: yellow;
 	--default-text-2: #232323; /*When links are underlined */
 	--lighter-background: white;
 	--lighter-text: maroon;
@@ -101,22 +104,58 @@
 	--featured-background: paleTurquoise; /* for featured post */
 	--featured-text: maroon;
 	--ornament: SlateGrey; 
-	--high-contrast-background: black;
-	--high-contrast-text: white;
-	--high-contrast-link: royalBlue; /* CR: 4.33 to black 4.84 to white */
-	--high-contrast-focus-indicator: PaleGreen;
 	--alternate-font-type: 'dyslexieregular';
-	--default-screen-font-type: Verdana,'Helvetica Neue',Arial,-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
 	--print-title-font-type: Arial, Helvetica, Ubuntu, sans-serif;
 	--print-default-font-type: Georgia, 'Times New Roman', 'Liberations sans', serif;
+
+}
+
+.font-size-0 {
 	--font-size-basis: 87.5%;
-	--box-unit-basis: 0.5em;
+		--box-unit-basis: 0.5em;
 	--root-unit-basis: 0.5rem;
 	--vertical-padding: 0.3em;
 	--horizontal-padding: 0.4em;
-	--wrapper-max-width: 80rem;
-	
+	--wrapper-max-width: 80rem;	
+}
+
+.font-size-1 {
+	--font-size-basis: 120%;
+	--box-unit-basis: 1em;
+	--root-unit-basis: 1rem;
+	--vertical-padding: 0.6em;
+	--horizontal-padding: 0.8em;
+	--wrapper-max-width: 160rem;	
+}
+
+.high-contrast-1 {
+	--default-background: black;  /* This is the only on color which is replacable by customizer */
+	--widget-background: darkSlateGray;
+	--default-text: white;
+	--default-link: royalBlue;
+	--site-title: yellow; 
+	--default-button-background:saddleBrown; /*Menu item, more-link and all other button */
+	--default-button-text:azure;
+	--default-focus-indicator: ForestGreen;
+	--default-text-2: #232323; /*When links are underlined */
+	--lighter-background: FireBrick;
+	--lighter-text: ForestGreen;
+	--inverse-background: black; /* inverse is for footer */
+	--inverse-text: white;
+	--inverse-link: steelBlue;
+	--inverse-outline: ivory;
+	--featured-background: midnightBlue; /* for featured post */
+	--featured-text: white;
+	--ornament: SlateGrey; 
+}
+
+.font-type-0 {
+	--default-screen-font-type: Verdana,'Helvetica Neue',Arial,-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+
+.font-type-1 {
+	--default-screen-font-type: 'dyslexieregular', sans-serif;
 }
 
 
@@ -295,39 +334,27 @@ body a svg {
 }
 
 
-.high-contrast-0 a:focus,
-.high-contrast-0 a:active,
-.high-contrast-0 select:focus,
-.high-contrast-0 input:focus,
-.high-contrast-0 textarea:focus {
+a:focus,
+a:active,
+select:focus,
+input:focus,
+textarea:focus {
 	outline: 4px solid var(--default-focus-indicator);
 	outline-offset: 4px;
 }
 
-.high-contrast-0 .site-header-menu a:focus,
-.high-contrast-0 .site-header-menu a:active,	
-.high-contrast-0 .link-button a:focus,
-.high-contrast-0 .link-button a:active,
-.high-contrast-0 .inverse-scheme a:focus,
-.high-contrast-0 .inverse-scheme a:active,
-.high-contrast-0 button:focus,
-.high-contrast-0 button:active {
+.site-header-menu a:focus,
+.site-header-menu a:active,	
+.link-button a:focus,
+.link-button a:active,
+.inverse-scheme a:focus,
+.inverse-scheme a:active,
+button:focus,
+button:active {
 	outline: 2px solid var(--inverse-focus-indicator);
 	outline-offset: -4px;
 }
 
-.high-contrast-1 button:focus,
-.high-contrast-1 button:active,
-.high-contrast-1 button:hover:not([disabled]),
-.high-contrast-1 select:focus,
-.high-contrast-1 select:active,
-.high-contrast-1 select:hover 
-.high-contrast-1 input:focus,
-.high-contrast-1 textarea:focus,
-.high-contrast-1 a:focus,
-.high-contrast-1 a:active {
-	outline: 4px solid var(--high-contrast-focus-indicator);
-}
 
 /*//////////////////////////////////
 Lighter */
@@ -340,10 +367,10 @@ Lighter */
 /*//////////////////////////////////
 Inverse */
 
-.high-contrast-0 .inverse-scheme,
-.high-contrast-0 .simpletooltip.tooltip-show,
-.high-contrast-0 .minimalist-simpletooltip.tooltip-show,
-.high-contrast-0 .minimalist-left-simpletooltip.tooltip-show {
+.inverse-scheme,
+.simpletooltip.tooltip-show,
+.minimalist-simpletooltip.tooltip-show,
+.minimalist-left-simpletooltip.tooltip-show {
 				background: var(--inverse-background);; 
 				color: var(--inverse-text);
 }
@@ -378,7 +405,7 @@ button {
 button, 
 .link-button,
 input [type="submit"] ,
-li.menu-item a{
+.menu-item a{
 	background: var(--default-button-background);
 	color: var(--default-button-text);
 	border-width: 2px;  /* all sides */
@@ -426,104 +453,6 @@ textarea[disabled] {
 .link-appearance-1 .megamenu.active {
 	color: var(--default-text-2);	
 }
-
-
-
-/*============================================================
-|                                                             |
-|             CONTRAST - INVERSE                              |
-|                                                             |
-==============================================================*/
-
-.high-contrast-1 {
-	background-image: none;  /* cannot reset all background, since it removes background-colors too */
-}
-
-
-.high-contrast-1 button, 
-.high-contrast-1 .link-button,
-.high-contrast-1 a,
-.high-contrast-1 li.menu-item a,
-.high-contrast-1 ::placeholder {
-	background: var(--high-contrast-background); ;
-	color: var(--featured-background);
-}
-
-.high-contrast-1 a {
-	text-decoration: underline;
-	color: var(--high-contrast-link);
-}
-
-.high-contrast-1 .site,
-.high-contrast-1 .default-scheme,
-.high-contrast-1 .megamenu.active,
-.high-contrast-1 .lighter-scheme {
-    background: var(--high-contrast-background);;
-    color: var(--high-contrast-text);
-}
-
-.high-contrast-1 svg {
-	background: var(--high-contrast-background);;
-	fill: var(--high-contrast-text);;
-}
-
-.high-contrast-1 button[disabled],
-.high-contrast-1 input[disabled],
-.high-contrast-1 textarea[disabled] {
-		color: var(--featured-background);
-		background: var(--featured-text); 
-}
-
-.high-contrast-1 textarea,
-.high-contrast-1 input,
-.high-contrast-1 select {
-	color: var(--high-contrast-text);
-	background: var(--high-contrast-background);
-	border: var(--ornament) 3px solid;
-}
-
-
-.high-contrast-1 .basic-scheme svg,
-.high-contrast-1 .link-button svg {
-	fill: var(--high-contrast-text);
-	background: var(--high-contrast-background);
-}
-
-.high-contrast-1 .lighter-scheme {
-	background: var(--high-contrast-background);
-}
-
-.high-contrast-1 .featured-scheme {
-	background: var(--high-contrast-background);
-	color: var(--high-contrast-text);
-}
-
-.high-contrast-1 table.featured-scheme {
-	border: none;
-}
-
-.high-contrast-1 .featured-scheme svg {
-	fill: var(--high-contrast-text);
-}
-
-
-.high-contrast-1 .inverse-scheme a  {
-	color: var(--high-contrast-text);
-  background: var(--high-contrast-background);
-}
-
-.high-contrast-1 .inverse-scheme svg {
-	fill: var(--default-background);
-	}
-
-#high-contrast-1 {
-	background: var(--high-contrast-background);
-	color: var(--high-contrast-text);
-}
-
-
-
-
 
 
 
@@ -942,7 +871,7 @@ body .site,
 }
 
 
-.high-contrast-0 .display-site-title {
+.display-site-title {
 	color:  var(--site-title);
 	font-weight: 400;
 	
@@ -1027,6 +956,7 @@ body .site,
 	width: 100%;
 }
 
+.site-header-wrapper,
 .wrapper,
 .footer-wrapper {
 	padding: 0 var(--horizontal-padding);  /* Paddings on small screen  */
@@ -1143,56 +1073,50 @@ body .site,
 		padding: calc(3 * var(--vertical-padding)) calc(3 * var(--horizontal-padding));
 }
 
-.megamenu ul.nav-menu {
+.main-navigation .nav-menu {
 		margin-top: 4em; /*'cause close button */
-		margin-left: 0; /* compensate <ul> style */ 
+		margin-left: 0; /* compensate <ul> style */
 }
 
-
-.font-size-1 .megamenu {
-		top: calc(30 * var(--box-unit-basis))
+.main-navigation li{
+	list-style-type: none;
 }
 
 .main-navigation .dropdown-toggle {
 	position: static; /* keep inline with the menu name */
 	display: inline-block;
-	margin: 0;
-	padding:  0;
 }
 
-.no-js .main-navigation ul-sub-menu {
+.no-js .main-navigation .sub-menu {
 	display: block;
 }
 
-.megamenu ul.nav-menu  li.menu-item  { /* a top level navigation item in the mega menu */
-	list-style: none;
+.main-navigation .menu-item  { /* a top level item */
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: calc(2 * var(--box-unit-basis)) 0;
 }
 
-.menu-item > a,
-.menu-item > .submenu-container > a {
+.menu-link,
+.dropdown-toggle {
 	padding: var(--vertical-padding) var(--horizontal-padding);
 	font-weight: normal;
 	display: inline-block;
 
 } 
 
-
-
-.main-navigation .sub-nav >ul {
+.main-navigation .sub-nav-items {
 	margin: 1.5em;
 }
 
-.main-navigation ul .sub-nav:not(.active) {
+.main-navigation  .sub-nav:not(.active) {
 		display: none;	
 }
 	
-.main-navigation ul .sub-nav.active{
+.main-navigation  .sub-nav.active{
 	display: block;
 }
 
-.main-navigation ul .sub-nav {
+.main-navigation  .sub-nav {
 	top: 100%;
 	right: 0;
 	left: 0;
@@ -1204,15 +1128,15 @@ body .site,
 	border: 1px solid var(--ornament);
 }
 
-.main-navigation .sub-nav ul.nav-menu {
+/*Need revision: where applied? 
+.main-navigation .sub-nav .nav-menu {  
 	vertical-align: top;
 	margin: 1rem 1rem 0 0;
 	padding: 0;
 }
+*/
 
-
-.main-navigation .sub-nav li {		/* list item within sub-navigation panel */
-	list-style-type: none;
+.main-navigation .sub-nav .menu-item {		/* list item within sub-navigation panel */
 	margin: 0 0 1em 0 ;
 	padding: 0;
 	text-align: left;
@@ -1222,18 +1146,16 @@ body .site,
 
 
 
-.main-navigation .nav-menu .menu-item.menu-item-has-children > .submenu-container,
-.main-navigation .nav-menu .menu-item.menu-item-has-children > .submenu-container > button.menu-item{
+.main-navigation .menu-item-has-children  .submenu-container, /*submenus */
+.main-navigation .menu-item-has-children .dropdown-toggle {
 	display: flex;
 }
-
-
 
 .main-navigation .nav-menu > .menu-item > a {  /* top level navigation item */
 	position: relative;
 }
 
-.main-navigation .nav-menu .menu-item > a[aria-current="page"] {
+.main-navigation .current-page {
 	background-color: var(--default-button-text);
 	color: var(--default-button-background);
 	outline: none;
@@ -1813,7 +1735,7 @@ a.comment-edit-link {
 /* 11. Widgets
 ============================================================-- */
 
-.high-contrast-0 .widget-area {
+.widget-area {
 	width: 100%;
 	background-color: var(--widget-background);
 }
@@ -1954,7 +1876,7 @@ svg.link-function {  /* @see:Link_Functions */
 |                                                            |
 ==============================================================*/
 
-body {
+.home {
 	margin-bottom: 5em;  /*button should not cover the footer content */
 }
 .manduca-back-to-top-div {
@@ -2111,83 +2033,6 @@ body {
 
 
 
-/*============================================================
-|                                                            |
-|           LARGE FONT TYPOGRAPHY                            |
-|                                                            |
-==============================================================*/
-.font-size-1 button,
-.font-size-1 input,
-.font-size-1 select,
-.font-size-1 textarea 
-	
-
-.font-size-1 .header-searchform {
-	display: block;
-	top: 9em;
-}
-
-
-.font-size-1 .header-searchform {
-	right: auto;
-}
-
-.font-size-1,
-.font-size-1 button,
-.font-size-1 input,
-.font-size-1 select,
-.font-size-1 textarea {
-    font-size: 140%;
-		word-break: break-all;
-}
-
-.font-size-1 .site-header {
-	position: static;
-}
-
-.font-size-1 .menu-toggle {
-	max-width: 100%;
-	top: 1rem;
-}
-
-.font-size-1 .toolbar-buttons-open {
-	max-width: 100%;
-}
-
-/*============================================================
-|                                                            |
-|           Dyslexie font                                    |
-|                                                            |
-==============================================================*/
- 
-/*///////////////////////////////
-/* FONT-TYPE                         */
-
-.font-type-1 #menu,
-.font-type-1 .site-header-menu,
-.font-type-1 .site,
-.font-type-1 article,
-.font-type-1 a,
-.font-type-1 h1,
-.font-type-1 h2,
-.font-type-1 h3,
-.font-type-1 h4,
-.font-type-1 h5,
-.font-type-1 h6,
-.font-type-1 p,
-.font-type-1 span,
-.font-type-1 label,
-.toolbar-buttons #font-type-1 {
-    
-			font-family: var(--alternate-font-type);
-			font-size: 94%;  /* this is a bigger font */
-}
-
-#font-type-0 span {
-		font-family: var(--default-screen-font-type);
-		font-size: 100%;
-}
-
 
 
 
@@ -2326,11 +2171,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
     display: none; /* 21.2 depretiated */
 }
  
-
+/* need revicion: what is it? 
 .button-container li {
     list-style: none;
 }
-
+*/
 
 /*////////////////////////////////
 // RESPONSIVE TABLES: */
@@ -2673,7 +2518,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
     
 	.navigation-wrapper {  /* to position the toolbar-buttons */
 		position: relative;
-		display: inline-block;
 	}
 	
   .toolbar-buttons {
@@ -2682,12 +2526,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		top: 7.5em;
 		right: 0;
 		left: auto;
-		z-index: 100;
+		z-index: 1010;
 		max-width: 39em;
 		border: 3px solid var(--ornament);
     }
     
-		li.button-container {
+		.button-container {
 			padding-left: 1rem;
 			margin: 1rem 0;
     }
@@ -2985,19 +2829,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 
 
 
-/*//////////////////////////////////
-//* big font: haader getting narrow*/
-
-@media screen and (min-width: 47em) {  /* 752px */
-		.font-size-1 .header-searchform {
-				top: 1em;
-		}
-	}
-
-
-
-
-
 
 /*//////////////////////////////////
  * sidebar comes in */
@@ -3035,6 +2866,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding: 0 var(--horizontal-padding);
 	}
 	
+	.navigation-wrapper {
+		display: inline-block;
+	}
+	
 	.menu-toggle {
 		display: none;
 	}
@@ -3053,7 +2888,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin-bottom: 0.5em;
 	}
 	 
-	.megamenu ul.nav-menu {
+	.megamenu .nav-menu {
 		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
@@ -3062,14 +2897,14 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		gap: var(--box-unit-basis)
 	}
 	
-	.megamenu ul.nav-menu > li.menu-item {
+	.megamenu .nav-menu > .menu-item {
 		display: inline-block;
 		margin: 0;
 		border: none;
 	}
 	
 
-	.main-navigation div ul.nav-menu > li {
+	.main-navigation div .nav-menu > li {
 		display: inline-block;
 		margin: 0 0.2142857142857143rem 0 0;
 		position: relative;
@@ -3089,6 +2924,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		display: none;
 	}
 	
+	.main-navigation .menu-link.has-dropdown-toggle {
+		padding-top: 5px;
+	}
+	/* Need testing: why this needed */
+	
 	/*//////////////////////////////////
 	// sub-menu         */
 	
@@ -3096,17 +2936,17 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: max-content;
 	}
 
-	.main-navigation .megamenu li.menu-item-has-children {
+	.main-navigation .megamenu .menu-item-has-children {
 		margin: 0;
 		padding-right: 0;
 	}
 	
-	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.active 	{
+	.main-navigation .nav-menu .menu-item-has-children .sub-nav.active 	{
 		display: block;
 	
 	}
 	
-	.main-navigation ul.nav-menu li.menu-item-has-children .sub-nav.level-1 {
+	.main-navigation .nav-menu .menu-item-has-children .sub-nav.level-1 {
 			right: auto;
 			width: 150%;
 			top:-1.5em;
@@ -3135,7 +2975,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		display: none;
 	}
 
-	.font-size-0 .controls {
+	.controls {
 		display: flex;
 		align-items: flex-start;
 	}
@@ -3404,7 +3244,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	/* Comments */
-	.commentlist > li.comment {
+	.commentlist > .comment {
 		background: none;
 		position: relative;
 		width: auto;
