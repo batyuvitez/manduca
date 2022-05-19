@@ -47,11 +47,13 @@
 				<div id="masthead" class="site-header megamenu-parent" >
 					<div id="controls" class="controls">
 						<?php get_template_part( '/template-parts/header/sitetitle' ); ?>
-						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
 						<?php get_template_part( '/template-parts/header/searchform' ); ?>					
 						<?php get_template_part( '/template-parts/header/menutoggle' ); ?>
 					</div>
-					<?php get_template_part( '/template-parts/header/menu' ); ?>
+					<div id="navigation-wrapper" class="navigation-wrapper">
+						<?php get_template_part( '/template-parts/header/menu' ); ?>
+						<?php get_template_part( '/template-parts/header/toolbar' ); ?>
+					</div>
 				</div>
 				<?php get_template_part( '/template-parts/header/headerimage' ); ?>
 			</header>

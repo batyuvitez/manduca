@@ -606,8 +606,9 @@ textarea {
 	line-height: normal;
 	font-family: inherit;
 	max-width: 100%;
-	font-size: 1em;  /* Important to have a basis font-size */
+	font-size: 1em;  /* Most form elements don't inherit. &see: https://stackoverflow.com/questions/41950834/buttons-not-inheriting-parent-div-font-size*/
 }
+
 
 /* Buttons */
 input[type="submit"],
@@ -1168,12 +1169,6 @@ body .site,
 	position: relative; /*Importoant cornerstone of submenu absolute positionint*/
 	margin: calc(2 * var(--box-unit-basis)) 0;
 }
-
-.font-size-1 .megamenu ul.nav-menu li.menu-item {
-	margin-bottom: calc(2 * var(--box-unit-basis));
-}
-
-
 
 .menu-item > a,
 .menu-item > .submenu-container > a {
@@ -2121,29 +2116,29 @@ body {
 |           LARGE FONT TYPOGRAPHY                            |
 |                                                            |
 ==============================================================*/
-622
+.font-size-1 button,
+.font-size-1 input,
+.font-size-1 select,
+.font-size-1 textarea 
+	
+
 .font-size-1 .header-searchform {
 	display: block;
 	top: 9em;
 }
 
-.font-size-1 .search-wrapper {
-	display: block;
+
+.font-size-1 .header-searchform {
+	right: auto;
 }
 
-.font-size-1 .header-searchform input {
-	padding: 0.5em;
-}
-
-.font-size-1 {
+.font-size-1,
+.font-size-1 button,
+.font-size-1 input,
+.font-size-1 select,
+.font-size-1 textarea {
     font-size: 140%;
 		word-break: break-all;
-}
-
-
-.font-size-1 .top-bar {
-	display: block;
-		height: 15em;
 }
 
 .font-size-1 .site-header {
@@ -2152,7 +2147,7 @@ body {
 
 .font-size-1 .menu-toggle {
 	max-width: 100%;
-	top: 5rem;
+	top: 1rem;
 }
 
 .font-size-1 .toolbar-buttons-open {
@@ -2676,6 +2671,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		width: 0.33em;
 	}
     
+	.navigation-wrapper {  /* to position the toolbar-buttons */
+		position: relative;
+		display: inline-block;
+	}
+	
   .toolbar-buttons {
     position: absolute;
 		padding: 2em;
