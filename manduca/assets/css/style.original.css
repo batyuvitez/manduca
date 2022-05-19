@@ -1081,7 +1081,7 @@ body .site,
 // lOGO */
 
 .custom-logo-link {
-		display: block;
+		display: flex;
 		text-align: center;
 
 }
