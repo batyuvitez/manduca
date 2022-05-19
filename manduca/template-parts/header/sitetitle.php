@@ -28,10 +28,10 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+use Manduca\helpers as hlp;
+$site_title = hlp\Strings::add_linebreak( get_bloginfo( 'name' ));  
 ?>
-<?php $site_title = str_replace (' | ', '<br />', get_bloginfo( 'name' ) )  //replace | with line-break  since @17.4 ; ?>
- 
-    
+     
 <div id="site-title" class="site-title">
     
 

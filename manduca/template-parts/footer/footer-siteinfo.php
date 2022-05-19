@@ -20,6 +20,10 @@
     You should have received a copy of the GNU General Public License
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
+
+use Manduca\helpers as hlp;
+$bloginfo = hlp\Strings::add_whitespace( get_bloginfo( 'name' ));  
 ?>
-        
+
+
 <div class="copyright-text">&copy; <?php echo date ('Y'); ?>, <?php echo get_bloginfo(); ?></div>
