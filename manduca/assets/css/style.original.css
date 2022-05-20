@@ -94,6 +94,7 @@
 	--default-button-background:saddleBrown; /*Menu item, more-link and all other button */
 	--default-button-text:azure;
 	--default-focus-indicator: maroon;
+	--inverse-focus-indicator: yellow;
 	--default-text-2: #232323; /*When links are underlined */
 	--lighter-background: white;
 	--lighter-text: maroon;
@@ -349,21 +350,19 @@ a:focus,
 a:active,
 select:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+button:focus,
+button:active {
 	outline: 4px solid var(--default-focus-indicator);
 	outline-offset: 4px;
 }
 
-.site-header-menu a:focus,
-.site-header-menu a:active,	
-.link-button a:focus,
-.link-button a:active,
+.footer-wrapper a:focus,
+.footer-wrapper a:active,
 .inverse-scheme a:focus,
-.inverse-scheme a:active,
-button:focus,
-button:active {
+.inverse-scheme a:active {
 	outline: 2px solid var(--inverse-focus-indicator);
-	outline-offset: -4px;
+	outline-offset: 4px;
 }
 
 
@@ -930,8 +929,7 @@ body .site,
 
 .manduca-back-to-top:active,
 .manduca-back-to-top:focus {
-	right:0;
-	left: auto;
+		border: 4px var(--inverse-focus-indicator) solid;
 }
 
 
@@ -1108,7 +1106,8 @@ body .site,
 }
 
 .menu-link,
-.dropdown-toggle {
+.dropdown-toggle,
+.footer-navigation .menu-item a {
 	padding: var(--vertical-padding) var(--horizontal-padding);
 	font-weight: normal;
 	display: inline-block;
@@ -2739,7 +2738,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.nav-previous,
 	.nav-next {
 		flex-basis: 45%;
-		margin: 0;
+		margin: var(--box-unit-basis);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -3228,7 +3227,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	.site-content p {
-		margin-bottom: var;
+		margin-bottom: var(--box-unit-basis);
 	}
 	
 	.entry-header .entry-title,
