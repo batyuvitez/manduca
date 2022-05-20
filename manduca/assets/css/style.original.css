@@ -159,6 +159,17 @@
 }
 
 
+/*
+ * WORD SPACING
+ * word-spacing-0: The normal inter-word spacing, as defined by the current font and/or the browser.
+ * word-spacing-1.  wcag 2.1: Word spacing to at least 0.16 times the font size.
+ * */
+.word-spacing-1,
+#word-spacing-1 span {
+	word-spacing: 0.16em;
+}
+
+
 /*============================================================
 |                                                            |
 |            SECTION  Reset and set defaults                 |
@@ -1485,7 +1496,7 @@ entry-content */
 .site-content p,
 .site-content ol,
 .site-content  ul {
-	margin-bottom: calc(3 * . var(--box-unit-basis));; 
+	margin-bottom: calc(3 *  var(--box-unit-basis));; 
 }
 
 
@@ -2074,14 +2085,6 @@ svg.link-function {  /* @see:Link_Functions */
 	margin-bottom: 3.6em;
 }
 
-/*
- * WORD SPACING
- * wcag 2.1: Word spacing to at least 0.16 times the font size.
- * */
-.word-spacing-1,
-#word-spacing-1 span {
-	word-spacing: 0.16em;
-}
 
 
 /*
