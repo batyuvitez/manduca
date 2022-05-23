@@ -1373,7 +1373,7 @@ kbd {   /* since @18.10.4 from wikipedia css */
     font-size: 0.85em;
 }
 
-li {
+ul li {
 	list-style-position: inside;
 	list-style-type: disc;
  }

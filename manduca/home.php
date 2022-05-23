@@ -19,7 +19,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
- 
+use Manduca\filters as fil;
 ?>
 <?php get_header(); ?>
 
@@ -27,7 +27,7 @@
 	
 		<header>
 			<h1>
-				<?php echo apply_filters( 'manduca_home_title', get_bloginfo( 'description' ) ); ?>
+				<?php echo fil\Title::site_title_with_whitespace (); ?>
 			</h1>
 		</header>
 		<?php get_template_part( 'template-parts/posts/content', 'excerpt' ); ?>
