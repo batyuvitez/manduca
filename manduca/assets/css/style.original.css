@@ -1034,9 +1034,10 @@ body .site,
 // lOGO */
 
 .site-title {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		gap: 0.5em;
+		justify-content: center;
 	}
 	
 	.custom-logo-link {
@@ -2636,6 +2637,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		border-bottom: none;
 		margin-bottom: 0;
 		height: auto;
+		justify-content: flex-start;
 	}
  
 	.main-header {
