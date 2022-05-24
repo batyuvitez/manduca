@@ -171,6 +171,19 @@
 }
 
 
+/* this was disabled in media-query
+ * @since 18.12
+ * */
+.hyphen-0 .widget-area .widget ,
+.hyphen-0 .site-content .excerpt,
+.hyphen-0 .site-content .post {
+	-webkit-hyphens: none;
+	   -moz-hyphens: none;
+	    -ms-hyphens: none;
+	        hyphens: none;
+}
+
+
 /*============================================================
 |                                                            |
 |            SECTION  Reset and set defaults                 |
@@ -523,7 +536,7 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 .excerpt .more-link  {
 	float: right;
-	margin: calc(4 * var(--box-unit-basis)) 0 0;
+	margin: calc(2.5 * var(--box-unit-basis)) 0 0;
 }
 
 
@@ -833,10 +846,11 @@ img[class*="attachment-"] {
 }
 
 /* Taxonomies */
+/* Be consistent. We dont use uppercase in Manduca
 .taxonomy-header {
 	text-transform: uppercase;
 }
-
+*/
 .taxonomy-description {
 	font-weight: bold;
 	text-align: center;
@@ -883,8 +897,7 @@ body .site,
 
 .display-site-title {
 	color:  var(--site-title);
-	font-weight: 400;
-	
+	font-weight: 400;	
 }
 
 
@@ -1254,16 +1267,6 @@ body .site,
  * This part is used in tiny mce stylesheet as well.
  **/
 
-/* this was disabled in media-query
- * @since 18.12
- * */
-.hyphen-0 .widget-area .widget ,
-.hyphen-0 .site-content article {
-	-webkit-hyphens: none;
-	   -moz-hyphens: none;
-	    -ms-hyphens: none;
-	        hyphens: none;
-}
 
 
 
@@ -1441,12 +1444,12 @@ video {
 
 
 /* defaults headings */
-.main-content h1 {
-	font-size: 1.8em;
+.main-header {  /* This is h1 in taxonomy and home */
+	font-size: 1.5em;
 	text-align: center;
 	font-weight: bold;  /* browser default is usually bold */
 	clear: both;
-	margin: 0 0 calc(3 * var(--box-unit-basis));
+	margin: 0 0 var(--box-unit-basis);
 }
 .entry-title-wrapper h1 { 
 	margin: 0;
@@ -1549,7 +1552,7 @@ entry-meta*/
 
 /* Thumbnail featured image  */
 
-.entry-header img.wp-post-image {
+.entry-header .wp-post-image {
 	margin-bottom: 1.714285714rem;
 }
 
@@ -1568,9 +1571,9 @@ strong.search-excerpt {
 	text-transform: uppercase;
 }
 
-.site-content article {
+.excerpt {
 	position: relative; /* to position the edit link */
-	margin-bottom: calc(10 * var(--box-unit-basis)); /*small screens */
+	margin-bottom: calc(5 * var(--box-unit-basis)); /*small screens */
 }
 
 .site-content .sticky .entry-content {
@@ -2635,6 +2638,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		height: auto;
 	}
  
+	.main-header {
+		font-size: 1.8em;
+	}
 	
 	.entry-header-wrapper {
 		display: flex;

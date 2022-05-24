@@ -37,7 +37,7 @@ if( get_locale()==='hu_HU' && $search_expr ) {
 		<?php if ( !$search_expr ) : ?>
 		
 		<article id="post-0" class="post no-results not-found">
-				<h1><?php 	/* translators: Search result page in case of empty search*/
+				<h1 class="main-header"><?php 	/* translators: Search result page in case of empty search*/
 							_e( 'Missing search expression', 'manduca' ); ?></h1>
 			</header>
 	
@@ -55,7 +55,7 @@ if( get_locale()==='hu_HU' && $search_expr ) {
 	
 		
 		<header class="entry-header no-thumbnail">
-			<h1>
+			<h1 class="main-header">
 			<?php			
 				/* translators: %1$s is the number of results found, %2$s is the search term,
 				   in Hungarian, no need for definite article */
@@ -73,7 +73,7 @@ if( get_locale()==='hu_HU' && $search_expr ) {
 		<article id="post-0" class="post no-results not-found">
 				<?php
 					/* translators: in Hungarian, no need for definite article */ ?>
-				<h1><?php printf( __( 'No matching result found for %s.', 'manduca' ), $search_expr ) ?></h1>
+				<h1 class="main-header"><?php printf( __( 'No matching result found for %s.', 'manduca' ), $search_expr ) ?></h1>
 			</header>
 	
 			

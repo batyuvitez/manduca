@@ -26,7 +26,7 @@ use Manduca\filters as fil;
 	<?php if ( have_posts() ) : ?>
 	
 		<header>
-			<h1>
+			<h1 class="main-header">
 				<?php echo fil\Title::site_title_with_whitespace (); ?>
 			</h1>
 		</header>
