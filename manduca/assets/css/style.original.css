@@ -953,7 +953,7 @@ body .site,
 		display:flex;
     flex-wrap:wrap;
     flex-direction:row;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-items:stretch;
 		margin: 0 auto;		
 	}
@@ -981,7 +981,7 @@ body .site,
 .site-header-wrapper,
 .wrapper,
 .footer-wrapper {
-	padding: 0 var(--horizontal-padding);  /* Paddings on small screen  */
+	padding: 0 calc(3 * var(--horizontal-padding));  /* Paddings on small screen  */
 }
 
 
