@@ -3102,6 +3102,9 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 }
 
 
+
+
+
 /*////////////////////////////////////
 //    Accessible print  **/
 @media print {
@@ -3111,7 +3114,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	body .site {
 		color: black;
-		font-size: 12pt;
 		font-family: var(--print-default-font-type);
 		
 	}
@@ -3140,7 +3142,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.site-header {
 		color: black;
 		position: static;
-		border-bottom: 1px blue solid;
 	}
 	.site-title {
 		font-size: 2.7em;
@@ -3157,17 +3158,12 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	a.site-title:after {
 		content: attr(href) ; /* Show URLs */
-		font-size: 0.5em;
+		font-size: 0.8em;
 		display: block;
 		text-transform: none;
 		margin-top: -1em;
 	}
 	
-	.site-header p{
-		font-size: 21pt;
-		line-height: 1;
-		text-align: left;
-	}
 	
 	
 	.excerpt-wrapper article {
@@ -3188,7 +3184,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	 * */
 	
 	.author-avatar,
-	div.comment-respond,
+	.edit-link,
+	.comment-respond,
 	.content-date,
 	.header-searchform,
 	.commentlist .comment-edit-link,
@@ -3198,8 +3195,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.post-pagination,
 	.more-link,
 	.widget-area,
-	img.header-image,
-	img.wp-post-image,
+	.header-image,
+	.wp-post-image,
 	.top-bar,
 	.menu-toggle,
 	.toolbar-buttons-open,
@@ -3215,13 +3212,21 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	}
 	
 	.site-title {
-		font-size: 20pt;
+		font-size: 1.8em;
+		display: flex;
 	}
 	
 	.site-title a {
 		color: black;
 		text-decoration: none !important;
 	}
+	
+	.site-header p {
+		font-size: 1.5em;
+		line-height: 1;
+		text-align: left;
+	}
+	
 	
 	.wrapper {
 		border-top: none;
