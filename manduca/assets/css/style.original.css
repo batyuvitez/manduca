@@ -1376,11 +1376,11 @@ address {
 	display: inline;
 }
 kbd {   /* since @18.10.4 from wikipedia css */
-	    border: 1px solid var(--ornament);
-    -moz-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
+	  border: 1px solid var(--ornament);
     border-radius: 0.2em;
     font-size: 0.85em;
+		padding: var(--vertical-padding)  var(--horizontal-padding);
+		margin: var(--box-unit-basis);
 }
 
 ul li {
