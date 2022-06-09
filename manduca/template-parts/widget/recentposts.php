@@ -35,10 +35,10 @@ extract( $args );
 	<?php while ( $posts->have_posts() ) :
 		$posts->the_post(); ?>
 		
-		<article>
+		<article class="recent-post">
 			
 			<?php  if ( $args['thumb'] ) : ?>
-				<header class="thumbnail">
+				<header class="recent-post-thumbnail thumbnail">
 						<div class="widget-thumbnail">
 							<?php if ( has_post_thumbnail() ) : ?>
 								<div>
@@ -82,7 +82,7 @@ extract( $args );
 			<?php endif; ?>
 
 			<?php if ( $args['excerpt'] ) : ?>
-				<div class="excerpt">
+				<div class="recent-post-excerpt excerpt">
 					<?php echo hlp\Template_Functions::get_the_excerpt ( TRUE );  ?>
 				</div>
 			<?php else : ?>
