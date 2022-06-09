@@ -632,8 +632,8 @@ input[type="checkbox"]{
 
 .menu-toggle {
 	position: absolute;
-	top: calc(1.5 * var(--box-unit-basis)); /*need to inline with toolbar-buttons-open */
-	right: 0.286em; 
+	top: calc(1.5 * var(--box-unit-basis)); 
+	right: calc(1.5 * var(--box-unit-basis)); 
 	max-width: 43%;
 }
 
@@ -974,7 +974,7 @@ body .site,
 }
 
 .top-bar {
-	height: 5em;
+	height: calc(10 * var(--box-unit-basis));
 	width: 100%;
 }
 
@@ -991,13 +991,14 @@ body .site,
 	text-align: right;
 	position: absolute;	
 	top: calc(1.5 * var(--box-unit-basis)); 
-	right: 5.214em;
+	left: calc(1.5 * var(--box-unit-basis)); 
 	display: flex;
 }
 
 
 .search-wrapper {
 	display: inline-flex;
+	gap: var(--box-unit-basis);
 }
 
 .search-form label { /* both widget and header */
