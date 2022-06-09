@@ -1183,7 +1183,7 @@ body .site,
 	gap: 2px; /* focus indicator margin */
 }
 
-.main-navigation .nav-menu > .menu-item > a {  /* top level navigation item */
+.main-navigation .menu-link.level-0 {  /* top level navigation item */
 	position: relative;
 }
 
@@ -1203,9 +1203,7 @@ body .site,
 
 /*///////////////////////////////////
 /* Sidebar */
-.widget-searchform ws {
-	margin-top: 0;
-}
+
 .widget-area .widget {
 	margin-bottom: calc(2 * var(--root-unit-basis));
 	padding: 0 var(--root-unit-basis) calc(2 * var(--root-unit-basis));
@@ -1263,7 +1261,7 @@ body .site,
 }
 
 /*============================================================-- 
-/* CONTENT TYPOGRAPHY 
+/* HTML TAG FORMATING 
 ============================================================-- */
 
 /* General HTML5 elements general formating
