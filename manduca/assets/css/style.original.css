@@ -1180,6 +1180,7 @@ body .site,
 .main-navigation .menu-item-has-children  .submenu-container, /*submenus */
 .main-navigation .menu-item-has-children .dropdown-toggle {
 	display: flex;
+	gap: 2px; /* focus indicator margin */
 }
 
 .main-navigation .nav-menu > .menu-item > a {  /* top level navigation item */
@@ -2903,7 +2904,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		flex-wrap: wrap;
 		justify-content: flex-end;
 		align-items: center;
-		gap: var(--box-unit-basis)
+		gap: calc(2.5 * var(--box-unit-basis)); /*focus indicator margin */
 	}
 	
 	.megamenu .nav-menu > .menu-item {
