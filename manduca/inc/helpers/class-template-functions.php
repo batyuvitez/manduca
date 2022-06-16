@@ -429,14 +429,7 @@ class Template_Functions {
 		$background_color 	= get_background_color();
 		$background_image 	= get_background_image();
 		$classes			= array();
-		if ( empty( $background_image ) ) {
-			if ( empty( $background_color ) ) {
-				$classes[] = 'custom-background-empty';
-			}
-			elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) ) {
-				$classes[] = 'custom-background-white';
-			}
-		}
+		$classes[] = 'total';
 		
 		if ( ! is_multi_author() ) {
 			$classes[] = 'single-author';

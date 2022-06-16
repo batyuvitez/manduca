@@ -335,7 +335,7 @@ button > * {
 |                                                            |
 ==============================================================*/
 
-body:not(.custom-background), /* custom color may override it */
+.total, /* custom color may override it */
 textarea,
 input, 
 .wp-caption .wp-caption-text,
@@ -350,11 +350,11 @@ svg {
 	fill: var(--default-text);;	
 }
 
-body a {
+.total a {
 	color: var(--default-link);
 }
 
-body a svg {
+.total a svg {
 	fill: var(--default-link);
 }
 
@@ -488,7 +488,7 @@ textarea[disabled] {
 ==============================================================*/
 
  
-body a,
+.total a,
 #link-appearance-0 span {
 	text-decoration: none;
 	font-weight: 700;
@@ -503,12 +503,12 @@ body a,
 	text-underline-offset: .13em; 
 }
 
-body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
+.total a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	text-decoration: none;
 	padding: 0;
 }
 
-.site-content body a {
+.site-content .total a {
 	white-space: nowrap; /* Includes svg icons should be displayed inline */
 }
 
@@ -881,7 +881,7 @@ html {
 /* Based on universal access: We are using the most readable fonts
 * http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf */
 
-body .site {   /* reading option orinal font remains always this.  */
+.total .site {   /* reading option orinal font remains always this.  */
 	text-rendering: optimizeLegibility;
 	position: relative;
 	overflow: hidden;
@@ -889,7 +889,7 @@ body .site {   /* reading option orinal font remains always this.  */
 }
 
 
-body .site,
+.total .site,
 .toolbar-buttons .font-type-container > button:nth-child(2) {
 	font-family: var(--default-screen-font-type);
 }
@@ -3109,10 +3109,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 //    Accessible print  **/
 @media print {
 	
-	body {
+	.total {
 		background: none !important;
 	}
-	body .site {
+	.total .site {
 		color: black;
 		font-family: var(--print-default-font-type);
 		
@@ -3122,8 +3122,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	footer a[rel=bookmark]:visited:after {
 		content: " [" attr(href) "] "; /* Show URLs */
 	}
-	body a,
-	body a.underlined {
+	.total a,
+	.total a.underlined {
 		text-decoration: none;
 	}
 	
