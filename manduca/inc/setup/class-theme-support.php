@@ -52,7 +52,6 @@ class Theme_Support {
 												'script', 
 												'style') );
 		add_theme_support( 'title-tag');
-		add_theme_support( 'custom-background', array('default-color' => 'f3f3f5'));
 		add_theme_support( 'custom-logo', array(
 								'height'               => 400,
 								'width'                => 400,
