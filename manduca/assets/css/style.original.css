@@ -1451,9 +1451,6 @@ video {
 	clear: both;
 	margin: 0 0 var(--box-unit-basis);
 }
-.entry-title-wrapper h1 { 
-	margin: 0;
-}
 
 .content-date {
 	padding: var(--vertical-padding) var(--horizontal-padding);
@@ -1461,7 +1458,8 @@ video {
 	margin-bottom: var(--box-unit-basis);
 }
 
-.main-content h2,
+.entry-title,
+.entry-content h2,
 .widget h2 {
 	font-size: 1.3em;
 	line-height: 1.5;
@@ -1469,7 +1467,8 @@ video {
 	text-align: center; /* h1 is also centered */
 }
 
-.main-content h2 {
+.entry-title {
+	
 	margin: calc(4.5 * var(--vertical-padding)) 0 calc(1.5 * var(--vertical-padding));	
 }
 
@@ -1477,7 +1476,7 @@ video {
 margin: calc(2 * var(--vertical-padding)) 0;	
 }
 
-.main-content h3,
+.entry-content h3,
 .widget h3 {
 	font-size: 1.125em;
 	line-height: 1.5;
@@ -1487,11 +1486,11 @@ margin: calc(2 * var(--vertical-padding)) 0;
 
 
 	
-.main-content h1 + h2,
-.main-content h2 + h3,
-.main-content h3 + h4,
-.main-content h4 + h5,
-.main-content h5 + h6,
+.entry-content h1 + h2,
+.entry-content h2 + h3,
+.entry-content h3 + h4,
+.entry-content h4 + h5,
+.entry-content h5 + h6,
 .entry-content > h2:first-child{
 		margin-top:  0 ;
 }
