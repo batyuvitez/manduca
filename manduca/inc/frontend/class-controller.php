@@ -23,6 +23,7 @@ class Controller {
 	
 	public function __construct() {
 		
+		new Custom_Logo;
 		new Debug_Mode;
 		/* Link function (add svg, aria etc. )
 		 * Filter to disable link function in child theme
