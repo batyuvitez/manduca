@@ -1058,7 +1058,7 @@ html {
 .breadcrumb {
 		margin: calc(2 * var(--root-unit-basis)) 0 calc(2.8 * var(--root-unit-basis)); 
 		font-size: 0.9em;
-		padding: 0.5em 0;
+		padding: calc( 1 *  var(--vertical-padding)) 0; /* to keep distance from border */
 		border-top: 1px solid var(--ornament);
 		border-bottom: 1px solid var(--ornament);
 }
