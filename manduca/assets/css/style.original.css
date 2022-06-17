@@ -357,21 +357,26 @@ svg {
 	fill: var(--default-link);
 }
 
+/*============================================================
+|                                                            |
+|               SECTION keyboard accessiblity                |
+|                                                            |
+==============================================================*/
 
-a:focus,
+a:focus-visible,
 a:active,
-select:focus,
-input:focus,
-textarea:focus,
-button:focus,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
 button:active {
 	outline: 4px solid var(--default-focus-indicator);
 	outline-offset: 4px;
 }
 
-.footer-wrapper a:focus,
+.footer-wrapper a:focus-visible,
 .footer-wrapper a:active,
-.inverse-scheme a:focus,
+.inverse-scheme a:focus-visible,
 .inverse-scheme a:active {
 	outline: 2px solid var(--inverse-focus-indicator);
 	outline-offset: 4px;
@@ -638,7 +643,7 @@ input[type="checkbox"]{
 
 .toolbar-buttons-open {
     position: absolute;
-    top: calc(3* var(--horizontal-padding));
+    top: calc(2* var(--horizontal-padding));
     left: calc(3 * var(--horizontal-padding));
 		margin: 0;
 }
@@ -1467,9 +1472,8 @@ video {
 	text-align: center; /* h1 is also centered */
 }
 
-.entry-title {
-	
-	margin: calc(4.5 * var(--vertical-padding)) 0 calc(1.5 * var(--vertical-padding));	
+.entry-title {	
+	margin: calc(1.5 * var(--vertical-padding)) 0 calc(1.5 * var(--vertical-padding));	
 }
 
 .widget h2 {
