@@ -48,7 +48,7 @@ use Manduca\helpers as hlp;
 			 
 				
 			<div class="entry-content">		
-					<?php echo hlp\Template_Functions::get_the_excerpt(); ?>
+					<?php echo hlp\Excerpts::get_the_excerpt(); ?>
 			</div>
 			
 			<div class="clearfix-content"></div>

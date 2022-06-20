@@ -27,6 +27,15 @@ use Manduca\helpers as hlp;
 
 class Template_Functions {
 		
+		
+	/*For backward compatilbilty
+	 *Depretiated in @22.6
+	 **/
+	public static function get_the_excerpt ($always_morelink=false, int $len=45 ) {
+		return Excerpts::get_the_excerpt ($always_morelink, $len );
+	}
+	
+	
 	/*
 	 * Return page links for paginated posts (i.e. includes the <!--nextpage-->.
      * Quicktag one or more times). This tag must be within The Loop.
@@ -264,104 +273,6 @@ class Template_Functions {
 				   );
 	}
 	
-	
-	
-	/*
-	 * Creating the excerpt
-	 *
-	 * @param $morelink_flag : depretiated in #20.1
-	 * @param int $len       : If no excerpt provided in post, the number of words from the beggining. 
-	 * @return (string): HTML content of excerpt with readmore link. 
-	 *
-	 * */
-	
-	public static function get_the_excerpt ($always_morelink=false, int $len=45 ){
-		$post 		= get_post();
-		$post_content = $post->post_content;
-		$post_content =Blocks::get_text_contents ($post_content);
-		if( has_excerpt() === true ) {
-				$html 		= $post->post_excerpt;
-				$morelink_flag=TRUE;
-		}
-		
-		elseif( false !==  strpos( $post_content, '<!--more-->' ) ) {
-				$paragpraphs = 	explode( '<!--more-->', $post_content ) ;
-				$morelink_flag=TRUE;
-				if( isset( $paragpraphs[0] ) ) {
-					$html = $paragpraphs[ 0 ];
-				}
-		}
-		else {
-				$html = self::trim_excerpt ($always_morelink,  $post_content, $len);
-				$morelink_flag=FALSE;
-		}
-		$html = strip_shortcodes( $html);
-		if( $morelink_flag )
-			$html=self::add_morelink ($html);
-		return $html;
-	}
-	
-	
-	
-	
-	
-	
-	
-	/*
-	 * Create Human readable excerpt from the content.
-	 * Breaking sentence at the end, or at the end of HTML tag
-	 *
-	 * @param (string) HTML content
-	 * * @param (int) $len : number of words stripped from beginning. 
-	 * @return (string) excerpt in HTML 
-	 * @see: https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
-	 */
-    protected static function trim_excerpt( $always_morelink, string $content, int $excerpt_word_count ) {
-		$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>,<h2>,<h3>,<h4>'; 
-		$excerpt = strip_shortcodes( $content );
-		$excerpt = apply_filters('the_content', $excerpt);
-		$excerpt = str_replace(']]>', ']]&gt;', $excerpt);
-		$excerpt = strip_tags( $excerpt, $allowed_tags ); 
-
-		
-		//Filter depretiated as of 20.4
-		$excerpt_length = apply_filters('excerpt_length', $excerpt_word_count); 
-		$tokens = array();
-		$excerptOutput = '';
-		$count = 0;
-
-		// Divide the string into tokens; HTML tags, or words, followed by any whitespace
-		preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $excerpt, $tokens);
-
-		$morelink_flag =FALSE;
-		foreach ($tokens[0] as $token) {
-			if ($count++ >= $excerpt_length && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) { 
-			// Limit reached, continue until , ; ? . or ! occur at the end
-				$excerptOutput .= trim($token);
-				$morelink_flag =TRUE;
-				break;
-			}
-			$excerptOutput .= $token;// Append what's left of the token
-		}
-		$excerpt = trim(force_balance_tags($excerptOutput));
-		if ( $morelink_flag || $always_morelink ) {
-			$excerpt=self::add_morelink ($excerpt);
-		}
-		return $excerpt;   
-	}
-	
-	
-	/*
-	 *Add morelink to the end of HTML
-	 *
-	 *@param string $html HTML code
-	 *@return string HTML code with morelink
-	 **/
-	protected static function add_morelink ($html)
-	{
-		$more_link = new hlp\More_Links;
-		return $html.$more_link->more_link_create_html();
-	}
 	
 	
 	

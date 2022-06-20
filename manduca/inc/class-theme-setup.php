@@ -53,9 +53,6 @@ class Theme_Setup {
 			// Remove gallery inline style
 			add_filter( 'use_default_gallery_style', '__return_false' );
 		
-			// Correct headings 2-5 on archive pages
-			new Correct_Headings;
-			
 			// add alt tag to avatar
 			new Avatar_Alt_Text;
 			
