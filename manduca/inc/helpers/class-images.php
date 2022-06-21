@@ -83,16 +83,19 @@ class Images
 	 **/
 	public static function has_thumbnail( bool $firstImage = FALSE,  $size = 'excerpt-size' ) {
 		
-		self::$size=$size;
+		self::$size = $size;
 		if ( has_post_thumbnail() ) {
-			self::$thumbnail_html=get_the_post_thumbnail (null, $size);
+			self::$thumbnail_html=get_the_post_thumbnail ( null, $size );
 			return TRUE;
 		}
+		
 		$thumbnail_url = get_theme_mod ('thumbnail_substitution');
 		self::$thumbnail_html=self::create_responsive_image ($thumbnail_url);
+		
 		if( $thumbnail_url && !$firstImage) {	
 			return TRUE;
 		}
+		
 		if( $firstImage ) {
 			$thumbnail_url2=self::get_first_image_of_post ();
 			if( $thumbnail_url2 ) {
@@ -100,9 +103,11 @@ class Images
 				return TRUE;
 			}
 		}
+		
 		if( $thumbnail_url ) {
 			return TRUE;
 		}
+		
 		return FALSE;
 	}
 	
