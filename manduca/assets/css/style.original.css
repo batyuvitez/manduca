@@ -325,9 +325,6 @@ button > * {
 
 
 
-
-
-
 /*============================================================
 |                                                            |
 |               SECTION COLORS 				                       |
@@ -349,11 +346,11 @@ svg {
 	fill: var(--default-text);;	
 }
 
-.total a {
+a:link {
 	color: var(--default-link);
 }
 
-.total a svg {
+a:link svg {
 	fill: var(--default-link);
 }
 
@@ -458,7 +455,7 @@ textarea[disabled] {
 
 .edit-link {
 		display: inline-block;
-		padding: 0.3em 0.6em;
+		padding: var(--vertical-padding) var(--horizontal-padding)
 		border:  1px var(--ornament) solid;
 }
 
@@ -507,12 +504,12 @@ textarea[disabled] {
 	text-underline-offset: .13em; 
 }
 
-.total a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
+.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 	text-decoration: none;
 	padding: 0;
 }
 
-.site-content .total a {
+.site-content a {
 	white-space: nowrap; /* Includes svg icons should be displayed inline */
 }
 
