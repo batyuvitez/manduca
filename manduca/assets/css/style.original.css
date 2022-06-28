@@ -494,7 +494,6 @@ textarea[disabled] {
 	text-decoration: none;
 	font-weight: 700;
 }
-
  
 .link-appearance-1 a,
 #link-appearance-1 {
@@ -1127,13 +1126,12 @@ html {
 	margin: calc(2 * var(--box-unit-basis)) 0;
 }
 
-.menu-link,
+.main-navigation .menu-link,
 .dropdown-toggle,
 .footer-navigation .menu-item a {
 	padding: var(--vertical-padding) var(--horizontal-padding);
 	font-weight: normal;
 	display: inline-block;
-
 } 
 
 .main-navigation .sub-nav-items {
@@ -2118,7 +2116,7 @@ svg.link-function {  /* @see:Link_Functions */
 Modal window design */
  
 .toolbar-buttons {
-    width: 100%;
+    padding:  0.3em;  /*sync to close button */
     position: absolute;
     top: 4.5rem;
     left: 0;
@@ -2126,10 +2124,11 @@ Modal window design */
 	display: none;
 }
 
-.toolbar-buttons h1 {
-	margin: 4em 0 0 0;
+#dialog-title {
+	padding: 1em;
 	font-size: 1.35em;
 	text-align: center;
+	border-bottom: 1px solid var(--ornament)
 }
 
 .toolbar-buttons p {
@@ -2155,9 +2154,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	max-width: 10em;
 }
 
-.toolbar-buttons button[disabled] {
-	display: none;
-}
 
 .toolbar-buttons button[disabled] .explain {
 	display: none;
@@ -2174,8 +2170,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 /*mobil appearance */
  .modal-window-close {
 		position: absolute;
-		right: calc(3 * var(--horizontal-padding));
-		top: calc(3 * var(--horizontal-padding));
+		right: 0;
+		top: 0;
 }
     
 .phone-text {
