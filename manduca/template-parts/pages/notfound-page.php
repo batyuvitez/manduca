@@ -29,7 +29,7 @@
 
 			<article>
 				<header>
-					<h1>
+					<h1 class="entry-title main-header">
 						<?php _e( 'Error 404 &#45; Page Not Found!', 'manduca' ); ?>
 					</h1>
 					

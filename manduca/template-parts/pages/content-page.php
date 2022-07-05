@@ -23,7 +23,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<header class="entry-title-wrapper">
-				<h1 class="entry-title"><?php echo $title ; ?></h1>
+				<h1 class="entry-title main-header"><?php echo $title ; ?></h1>
 				<?php get_template_part( 'template-parts/posts/featured-image' ); ?>
 		</header>
 			
