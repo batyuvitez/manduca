@@ -610,7 +610,7 @@ button,
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: calc(2 * var(--vertical-padding));  /* very narrow screens */
+	padding: 0.6rem;  /* very narrow screens */
 	gap: var(--horizontal-padding);
 }
 
@@ -1007,7 +1007,7 @@ html {
 }
 
 .header-searchform input {
-	padding: var(--vertical-padding) var(--horizontal-padding);
+	padding: 0.3em 0.4em;
 	margin: 0;
 	width: calc( -6.2179675994109em + 80.4123711340206vw );  /*255/118->352/196*/
 	max-width: 14em;
@@ -2919,7 +2919,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.main-navigation .menu-link,
 	.main-navigation .menu-item.dropdown-toggle {
-		padding:  calc(0.7 * var(--vertical-padding)) calc(1.5 * var(--horizontal-padding));
+		padding:  0.2em 0.6em;
 		white-space: nowrap;
 	}
 		
