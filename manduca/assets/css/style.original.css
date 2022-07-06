@@ -512,6 +512,9 @@ textarea[disabled] {
 	white-space: nowrap; /* Includes svg icons should be displayed inline */
 }
 
+.entry-title a {
+	white-space: normal;
+}
 
 .nav-single a {
 	height: 100%;
