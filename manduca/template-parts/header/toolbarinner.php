@@ -23,182 +23,217 @@
 */
 ?>
 <?php
-	$button_args=
-		array(
-			array (	'name'											=>'high-contrast',
-				//translators: Toolbar color scheme selector
-				'label'	=>__( 'Color scheme' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'					=>'Abc',
-								//translators: Toolbar color scheme selector original colors set
-								'desktop_text'			=>__( 'Original' , 'manduca' )),
-						
-						array( 
-								'phone_text'					=>'Abc',
-								//translators: Toolbar color scheme set dark background white letters. 
-								'desktop_text'			=>__( 'Inverse' , 'manduca' ),
-								'aria_label'			=> __( 'Dark background, light letters' , 'manduca' )) ) ),
-			
-			array (	'name'=>'font-type',
-				//translators: Toolbar color scheme selector
-				'label'										=>__( 'Font type' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'					=>'Abc',
-								//translators: Toolbar font type selector
-								'desktop_text'			=>__( 'Default' , 'manduca' )),
-						
-						array( 
-								'phone_text'					=>'Abc',
+$button_args=
+	array(
+		array (	'name'											=>'high-contrast',
+			//translators: Toolbar color scheme selector
+			'label'	=>__( 'Color scheme' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'					=>'Abc',
+							//translators: Toolbar color scheme selector original colors set
+							'desktop_text'			=>__( 'Original' , 'manduca' )),
+					
+					array( 
+							'phone_text'					=>'Abc',
+							//translators: Toolbar color scheme set dark background white letters. 
+							'desktop_text'			=>__( 'Inverse' , 'manduca' ),
+							'aria_label'			=> __( 'Dark background, light letters' , 'manduca' )) ) ),
+		
+		array (	'name'=>'font-type',
+			//translators: Toolbar color scheme selector
+			'label'										=>__( 'Font type' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'					=>'Abc',
 							//translators: Toolbar font type selector
-								'desktop_text'			=>__( 'Dyslexie' , 'manduca' ) ) ) ),
-				
-				
-				array (	'name'=>'font-size',
-				//translators: Toolbar color scheme selector
-				'label'=>__( 'Font size' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'					=>'Abc',
-								//translators: Toolbar font-size selector default font size
-								'desktop_text'			=>__( 'Default' , 'manduca' )),
-						
-						array( 
-								'phone_text'					=>'Abc',
-							//translators: Toolbar font-size selector large (200%)font size
-								'desktop_text'			=>__( 'Large' , 'manduca' ) ) ) ),
-				
-				array (	'name'=>'line-height',
-				//translators: Toolbar line height selector
-				'label'=>__( 'Line height' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'			=>__( 'Default' , 'manduca' ) ,
-								//translators: Toolbar line height 1.7
-								'desktop_text'			=>__( 'Default' , 'manduca' ) ),
-						array( 
-								'phone_text'			=>__( 'Wide' , 'manduca' ),
-							//translators: Toolbar line height 2
-								'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
-				
-				
-				array (	'name'=>'letter-spacing',
-				//translators: Toolbar letter psacing selector button
-				'label'=>__( 'Letter spacing' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'			=>'Abc',
-								//translators: Toolbar line height 1.7
-								'desktop_text'			=>__( 'Default' , 'manduca' ) ),
-						array( 
-								'phone_text'					=>'Abc',
-							//translators: Toolbar line height 2
-								'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
-				
-				
-				array (	'name'=>'paragraph-spacing',
-				//translators: Toolbar paragrpah spacing selector button
-				'label'=>__( 'Paragraph spacing' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'			=>__( 'Default' , 'manduca' ) ,
-								'desktop_text'			=>__( 'Default' , 'manduca' ) ),
-						array( 
-								'phone_text'			=>__( 'Wide' , 'manduca' ),
-								'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
-				
-				
-				array (	'name'=>'word-spacing',
-				//translators: Toolbar word spacing selector button
-				'label'=>__( 'Word spacing' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'					=>'Ab ce',
-								'desktop_text'			=>__( 'Default' , 'manduca' ) ),
-						array( 
-								'phone_text'					=>'Ab ce',
-								'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
-				
-				
-				
-				array (	'name'=>'hyphen',
-				//translators: Toolbar hyphenation selector label
-				'label'=>__( 'Hyphenation' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'			=>'Abce',
-								//translators: Toolbar font-size selector default font sizet
-								'desktop_text'			=>__( 'None' , 'manduca' )),
-						array( 
-								'phone_text'			=>'Ab-ce',
-								//translators: Toolbar font-size selector larger (150%) font sizet
-								'desktop_text'			=>__( 'All' , 'manduca' ) ) ) ),
-				
-				
-				array (	'name'=>'animation',
-				//translators: Toolbar animation disable/enable label
-				'label'=>__( 'Animation' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								//translators: Animation default settings on phone
-								'phone_text'			=>__( 'On' , 'manduca' ),
-								//translators: Animation default settings on monitor
-								'desktop_text'			=>__( 'Enabled' , 'manduca' )),
-						array( 
-								'phone_text'			=>__( 'Off' , 'manduca' ),
-								//translators: Animation stopped
-								'desktop_text'			=>__( 'Disabled' , 'manduca' ) ) ) ),
-				
-				
-				
-				array (	'name'=>'link-appearance',
-				//translators: Toolbar link appearance selector label (bold or underlined)
-				'label'=>__( 'Link appearance' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'					=>'link',
-								//translators: links are bold and has contrast of 3:1 to text color
-								'desktop_text'			=>__( 'Bold' , 'manduca' )),
-						array( 
-								'phone_text'					=>'link',
-								//translators: lins are underlined 
-								'desktop_text'			=>__( 'Underlined' , 'manduca' ) ) ) ),
-				
-				
-				
-				array (	'name'=>'link-target',
-				//translators: Toolbar link target selector label
-				'label'=>__( 'Link target' , 'manduca' ),
-				'elements'=>
-					array (
-						array( 
-								'phone_text'			=>manduca_icon ( 'minus', false ),
-								//translators: Toolbar link target selector: links open where specified
-								'desktop_text'			=>__( 'Default' , 'manduca' ),
-								//translators: Toolbar link target selector: screenreader text. 
-								'aria_label'			=>__( 'Leave as it is', 'manduca' ) ),
-						array( 
-								'phone_text'			=> manduca_icon( 'target', false ),
-								//translators: Toolbar link target selector: Links open in same window
-								'desktop_text'			=>__( 'Same window' , 'manduca' ),
-								//translators: Toolbar link target selector: Links open in same window
-								'aria_label'			=>__( 'Always opens link in same window', 'manduca' ) ),
-						array( 
-								'phone_text'			=>manduca_icon( 'extlink', false ),
-								//translators: Toolbar link target seleccotr: Open links in new window
-								'desktop_text'			=>__( 'New window' , 'manduca' ),
-								//translators: Toolbar link target seleccotr: Open links in new window
-								'aria_label'			=>__( 'Always opens link in new window', 'manduca' ) ) ) ) );
+							'desktop_text'			=>__( 'Default' , 'manduca' )),
+					
+					array( 
+							'phone_text'					=>'Abc',
+						//translators: Toolbar font type selector
+							'desktop_text'			=>__( 'Dyslexie' , 'manduca' ) ) ) ),
+			
+			
+			array (	'name'=>'font-size',
+			//translators: Toolbar color scheme selector
+			'label'=>__( 'Font size' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'					=>'Abc',
+							//translators: Toolbar font-size selector default font size
+							'desktop_text'			=>__( 'Default' , 'manduca' )),
+					
+					array( 
+							'phone_text'					=>'Abc',
+						//translators: Toolbar font-size selector large (200%)font size
+							'desktop_text'			=>__( 'Large' , 'manduca' ) ) ) ),
+			
+			array (	'name'=>'line-height',
+			//translators: Toolbar line height selector
+			'label'=>__( 'Line height' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>__( 'Default' , 'manduca' ) ,
+							//translators: Toolbar line height 1.7
+							'desktop_text'			=>__( 'Default' , 'manduca' ) ),
+					array( 
+							'phone_text'			=>__( 'Wide' , 'manduca' ),
+						//translators: Toolbar line height 2
+							'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
+			
+			
+			array (	'name'=>'letter-spacing',
+			//translators: Toolbar letter psacing selector button
+			'label'=>__( 'Letter spacing' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>'Abc',
+							//translators: Toolbar line height 1.7
+							'desktop_text'			=>__( 'Default' , 'manduca' ) ),
+					array( 
+							'phone_text'					=>'Abc',
+						//translators: Toolbar line height 2
+							'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
+			
+			
+			array (	'name'=>'paragraph-spacing',
+			//translators: Toolbar paragrpah spacing selector button
+			'label'=>__( 'Paragraph spacing' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>__( 'Default' , 'manduca' ) ,
+							'desktop_text'			=>__( 'Default' , 'manduca' ) ),
+					array( 
+							'phone_text'			=>__( 'Wide' , 'manduca' ),
+							'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
+			
+			
+			array (	'name'=>'word-spacing',
+			//translators: Toolbar word spacing selector button
+			'label'=>__( 'Word spacing' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'					=>'Ab ce',
+							'desktop_text'			=>__( 'Default' , 'manduca' ) ),
+					array( 
+							'phone_text'					=>'Ab ce',
+							'desktop_text'			=>__( 'Wide' , 'manduca' ) ) ) ),
+			
+			
+			
+			array (	'name'=>'hyphen',
+			//translators: Toolbar hyphenation selector label
+			'label'=>__( 'Hyphenation' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>'Abce',
+							//translators: Toolbar font-size selector default font sizet
+							'desktop_text'			=>__( 'None' , 'manduca' )),
+					array( 
+							'phone_text'			=>'Ab-ce',
+							//translators: Toolbar font-size selector larger (150%) font sizet
+							'desktop_text'			=>__( 'All' , 'manduca' ) ) ) ),
+			
+			
+			array (	'name'=>'animation',
+			//translators: Toolbar animation disable/enable label
+			'label'=>__( 'Animation' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							//translators: Animation default settings on phone
+							'phone_text'			=>__( 'On' , 'manduca' ),
+							//translators: Animation default settings on monitor
+							'desktop_text'			=>__( 'Enabled' , 'manduca' )),
+					array( 
+							'phone_text'			=>__( 'Off' , 'manduca' ),
+							//translators: Animation stopped
+							'desktop_text'			=>__( 'Disabled' , 'manduca' ) ) ) ),
+			
+			
+			
+			array (	'name'=>'link-appearance',
+			//translators: Toolbar link appearance selector label (bold or underlined)
+			'label'=>__( 'Link appearance' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'					=>'link',
+							//translators: links are bold and has contrast of 3:1 to text color
+							'desktop_text'			=>__( 'Bold' , 'manduca' )),
+					array( 
+							'phone_text'					=>'link',
+							//translators: lins are underlined 
+							'desktop_text'			=>__( 'Underlined' , 'manduca' ) ) ) ),
+			
+			
+			
+			array (	'name'=>'link-target',
+			//translators: Toolbar link target selector label
+			'label'=>__( 'Link target' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>manduca_icon ( 'minus', false ),
+							//translators: Toolbar link target selector: links open where specified
+							'desktop_text'			=>__( 'Default' , 'manduca' ),
+							//translators: Toolbar link target selector: screenreader text. 
+							'aria_label'			=>__( 'Leave as it is', 'manduca' ) ),
+					array( 
+							'phone_text'			=> manduca_icon( 'target', false ),
+							//translators: Toolbar link target selector: Links open in same window
+							'desktop_text'			=>__( 'Same window' , 'manduca' ),
+							//translators: Toolbar link target selector: Links open in same window
+							'aria_label'			=>__( 'Always opens link in same window', 'manduca' ) ),
+					array( 
+							'phone_text'			=>manduca_icon( 'extlink', false ),
+							//translators: Toolbar link target seleccotr: Open links in new window
+							'desktop_text'			=>__( 'New window' , 'manduca' ),
+							//translators: Toolbar link target seleccotr: Open links in new window
+							'aria_label'			=>__( 'Always opens link in new window', 'manduca' )
+					)
+				)
+			)
+		);
+	\Manduca\helpers\Reading_Options::display_table ($button_args); 
+	return;
+	?>
+<?php foreach ($args as $block)  : ?>
+	<div class="row">
+		'<div class="toolbar-label">
+			<span><?php echo $block['label']; ?>:</span>
+		</div>
+		<div class="buttons-wrapper">
+		
+			<?php for ($counter=0; $counter <count ($block['elements']); $counter++) :
+				$element		=$block['elements'][$counter];
+				$counter_str 	= $block['name'].'-'.strval ($counter);
+				//translators: Opt reading option 
+				$explain 		= __( 'Change to', 'manduca' ) .'&nbsp';
+				$aria_label 	= $element['aria_label'] ? 'aria-label="'.$element['aria_label'] .'"' : '';
+			?>
+			<div class="button">
+				<button class="<?php echo $block['name']; ?>
+						id="<?php echo $counter_str; ?>"
+						<?php echo $aria_label?>>
+					<span class="explain"><?php echo $explain; ?>
+					<?php echo $element['desktop_text']; ?>
+				</button>
+			</div>
+		<?php endfor; ?>
+		</div>
+		<div class="vonalzo"></div>
+	</div>
+<?php endforeach; ?>
 
-\Manduca\helpers\Reading_Options::display_table ($button_args); 
+
+
