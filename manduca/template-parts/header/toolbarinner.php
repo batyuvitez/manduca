@@ -204,32 +204,37 @@ $button_args=
 				)
 			)
 		);
-	\Manduca\helpers\Reading_Options::display_table ($button_args); 
-	return;
+	//\Manduca\helpers\Reading_Options::display_table ($button_args); 
+	//return;
 	?>
-<?php foreach ($args as $block)  : ?>
+<?php
+foreach ($button_args as $block) : ?>
 	<div class="row">
-		'<div class="toolbar-label">
+		<div class="toolbar-label">
 			<span><?php echo $block['label']; ?>:</span>
 		</div>
 		<div class="buttons-wrapper">
 		
 			<?php for ($counter=0; $counter <count ($block['elements']); $counter++) :
-				$element		=$block['elements'][$counter];
-				$counter_str 	= $block['name'].'-'.strval ($counter);
-				//translators: Opt reading option 
-				$explain 		= __( 'Change to', 'manduca' ) .'&nbsp';
-				$aria_label 	= $element['aria_label'] ? 'aria-label="'.$element['aria_label'] .'"' : '';
-			?>
-			<div class="button">
-				<button class="<?php echo $block['name']; ?>
+					$element		=$block['elements'][$counter];
+					$counter_str 	= $block['name'].'-'.strval ($counter);
+					//translators: Opt reading option 
+					$explain 		= __( 'Change to', 'manduca' ) .'&nbsp';
+					if (isset($element['aria_label'] ) ) {
+						$aria_label ='aria-label="'.$element['aria_label'] .'"';
+					} else {
+						$aria_label ='';
+					}
+				?>
+				<div class="button">
+					<button class="<?php echo $block['name']; ?>"
 						id="<?php echo $counter_str; ?>"
 						<?php echo $aria_label?>>
-					<span class="explain"><?php echo $explain; ?>
-					<?php echo $element['desktop_text']; ?>
-				</button>
-			</div>
-		<?php endfor; ?>
+						<span class="explain"><?php echo $explain; ?></span>
+						<?php echo $element['desktop_text']; ?>
+					</button>
+				</div>
+			<?php endfor; ?>
 		</div>
 		<div class="vonalzo"></div>
 	</div>
