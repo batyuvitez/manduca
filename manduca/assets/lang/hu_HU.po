@@ -1046,3 +1046,39 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
 msgstr ""
+
+msgid "Inverse color scheme"
+msgstr "Inverz színséma"
+
+msgid "Dyslexie font type"
+msgstr "Diszlexia betűtípus"
+
+msgid "Bigger font size"
+msgstr "Nagyobb betűméret"
+
+msgid "Wider line height"
+msgstr "Szélesebb sortáv"
+
+msgid "Wider letter spacing"
+msgstr "Nagyobb betűtáv"
+
+msgid "Wider paragraph spacing"
+msgstr "Szélesebb bekezdésköz"
+
+msgid "Wider word spacing"
+msgstr "Nagyobb szavak közti távolság"
+
+msgid "Do Hyphenate"
+msgstr "Válassza el a szavakat"
+
+msgid "Disable animation"
+msgstr "Animáció tiltása benne animáció"
+
+msgid "Underline links"
+msgstr "Linkek aláhúzása"
+
+msgid "Links open in same window"
+msgstr "Linkek nem nyitnak új ablakot"
+
+msgid "Links open in new window"
+msgstr "A linkek mindig új ablakban nyílnak meg"

@@ -2134,7 +2134,6 @@ svg.link-function {  /* @see:Link_Functions */
 	padding: 0;
 	font-size: 1.4em;
 	text-align: center;
-	border-bottom: 1px solid var(--ornament)
 }
 
 .toolbar-buttons p {
@@ -2142,9 +2141,8 @@ svg.link-function {  /* @see:Link_Functions */
 }
 
 .toolbar-buttons .row {
-	border: 1px solid var(--ornament);
-	margin-bottom: 0.5em;
-	padding: 0.5em;
+	margin-bottom: var(--box-unit-basis);
+	padding: var(--vertical-padding) var(--horizontal-padding);
 	position: relative; /* Positioning the descendant elements */
 	display: flex;
 	justify-content: space-between;
@@ -2609,8 +2607,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
   .toolbar-buttons {
     position: absolute;
-		padding: var(box-unit-basis);
-		top: 7.5em;
+		padding: var(--box-unit-basis);
+		top: 5em;
 		right: 0;
 		left: auto;
 		z-index: 1010;
