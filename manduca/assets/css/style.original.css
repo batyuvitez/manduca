@@ -1255,11 +1255,11 @@ html {
 .footer-navigation ul li{
 	list-style-type: none;
 	text-align: center;
-	margin: 1em;
+	margin: 0 calc(2* var(--box-unit-basis));
 }
 
 .widget .tagcloud a {
-    margin-right: 1em;
+    margin-right: calc(2* var(--box-unit-basis));
 }
 
 /*============================================================-- 
@@ -2819,11 +2819,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	.footer-navigation ul{
 		text-align: left;
 		margin: 0;
-		
+		display: flex;
 	}
+	
 	.footer-navigation ul li{
 		list-style-type: none;
-		display: inline-block;
 	}
 	
 	.copyright-text {
