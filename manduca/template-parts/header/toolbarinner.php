@@ -177,9 +177,9 @@ $button_args=
 			
 			
 			
-			array (	'name'=>'link-target',
+			array (	'name'=>'link-target-same-window',
 			//translators: Toolbar link target selector label
-			'label'=>__( 'Link target' , 'manduca' ),
+			'label'=>__( 'Links open in same window' , 'manduca' ),
 			'elements'=>
 				array (
 					array( 
@@ -193,7 +193,22 @@ $button_args=
 							//translators: Toolbar link target selector: Links open in same window
 							'desktop_text'			=>__( 'Same window' , 'manduca' ),
 							//translators: Toolbar link target selector: Links open in same window
-							'aria_label'			=>__( 'Always opens link in same window', 'manduca' ) ),
+							'aria_label'			=>__( 'Always opens link in same window', 'manduca' ) )
+				)
+			),
+			
+			array (	'name'=>'link-target-new-window',
+			//translators: Toolbar link target selector label
+			'label'=>__( 'Links open in same window' , 'manduca' ),
+			'elements'=>
+				array (
+					array( 
+							'phone_text'			=>manduca_icon ( 'minus', false ),
+							//translators: Toolbar link target selector: links open where specified
+							'desktop_text'			=>__( 'Default' , 'manduca' ),
+							//translators: Toolbar link target selector: screenreader text. 
+							'aria_label'			=>__( 'Leave as it is', 'manduca' ) ),
+
 					array( 
 							'phone_text'			=>manduca_icon( 'extlink', false ),
 							//translators: Toolbar link target seleccotr: Open links in new window
@@ -204,39 +219,32 @@ $button_args=
 				)
 			)
 		);
-	//\Manduca\helpers\Reading_Options::display_table ($button_args); 
-	//return;
 	?>
 <?php
-foreach ($button_args as $block) : ?>
+foreach ($button_args as $block) :
+	$unique_id		= 'checkbox-'.$block['name'];
+	$desktop_text	= $block['elements'][1]['desktop_text'];
+?>
 	<div class="row">
 		<div class="toolbar-label">
 			<span><?php echo $block['label']; ?>:</span>
 		</div>
-		<div class="buttons-wrapper">
 		
-			<?php for ($counter=0; $counter <count ($block['elements']); $counter++) :
-					$element		=$block['elements'][$counter];
-					$counter_str 	= $block['name'].'-'.strval ($counter);
-					//translators: Opt reading option 
-					$explain 		= __( 'Change to', 'manduca' ) .'&nbsp';
-					if (isset($element['aria_label'] ) ) {
-						$aria_label ='aria-label="'.$element['aria_label'] .'"';
-					} else {
-						$aria_label ='';
-					}
-				?>
-				<div class="button">
-					<button class="<?php echo $block['name']; ?>"
-						id="<?php echo $counter_str; ?>"
-						<?php echo $aria_label?>>
-						<span class="explain"><?php echo $explain; ?></span>
-						<?php echo $element['desktop_text']; ?>
-					</button>
-				</div>
-			<?php endfor; ?>
+		<div class="buttons-wrapper">
+			<label for="<?php echo $unique_id; ?>">
+				<input type="checkbox" class="toggle-checkbox <?php echo $block['name']; ?>"
+					   id="<?php echo $unique_id; ?>" />
+				<span class="toggle-track">
+					<span class="toggle-indicator">
+						<span class="toggle-checkmark">
+							<?php manduca_icon ('check'); ?>
+						</span>
+					</span>
+				</span>
+				<span class="screen-reader-text"><?php echo $desktop_text; ?></span>
+			</label>
+			
 		</div>
-		<div class="vonalzo"></div>
 	</div>
 <?php endforeach; ?>
 

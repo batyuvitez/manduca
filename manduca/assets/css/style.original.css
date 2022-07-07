@@ -2116,7 +2116,10 @@ svg.link-function {  /* @see:Link_Functions */
 
 
 /*///////////////////////////////////////
-Modal window design */
+ Toolbar button  and Modal window design */
+ 
+ 
+ 
  
 .toolbar-buttons {
     padding:  0.3em;  /*sync to close button */
@@ -2127,9 +2130,9 @@ Modal window design */
 	display: none;
 }
 
-#dialog-title {
-	padding: 1em;
-	font-size: 1.35em;
+.dialog-title {
+	padding: 0;
+	font-size: 1.4em;
 	text-align: center;
 	border-bottom: 1px solid var(--ornament)
 }
@@ -2143,6 +2146,8 @@ Modal window design */
 	margin-bottom: 0.5em;
 	padding: 0.5em;
 	position: relative; /* Positioning the descendant elements */
+	display: flex;
+	justify-content: space-between;
 }
 
 .toolbar-buttons-table {
@@ -2186,6 +2191,86 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
     list-style: none;
 }
 */
+
+
+/*////////////////////////////////
+// accessible toggle switch design @since 22.8 */
+#toolbar-buttons-table .icon-check {
+	fill: var(--default-background);
+}
+
+.toggle {
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.toggle:last-of-type {
+  margin: 0;
+}
+
+.toggle-checkbox {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.toggle-checkbox:not([disabled]):active + .toggle-track, .toggle-checkbox:not([disabled]):focus + .toggle-track {
+  border: 1px solid transparent;
+}
+.toggle-checkbox:disabled + .toggle-track {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.toggle-track {
+  background: var(--default-button-text);
+  border: 1px solid var(--default-button-background);
+  border-radius: 1em;
+  cursor: pointer;
+  display: flex;
+  height: 2.1em;
+  margin-right: 1em;
+  position: relative;
+  width: 4.2em;
+}
+
+.toggle-indicator {
+  align-items: center;
+  background: var(--default-button-background);
+  border-radius: 1.71em;
+  bottom: 2px;
+  display: flex;
+  height: 1.71em;
+  justify-content: center;
+  left: 2px;
+  outline: solid 2px transparent;
+  position: absolute;
+  transition: 0.25s;
+  width: 1.71em;
+}
+
+.toggle-checkmark {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.toggle-checkbox:checked + .toggle-track .toggle-indicator {
+  background-color: var(--inverse-background);
+  transform: translateX(2.14em);
+}
+.toggle-checkbox:checked + .toggle-track .toggle-indicator .toggle-checkmark {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+
+
+
+
 
 /*////////////////////////////////
 // RESPONSIVE TABLES: */
@@ -2524,7 +2609,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
   .toolbar-buttons {
     position: absolute;
-		padding: 2em;
+		padding: var(box-unit-basis);
 		top: 7.5em;
 		right: 0;
 		left: auto;

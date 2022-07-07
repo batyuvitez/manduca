@@ -646,23 +646,32 @@ jQuery(document).ready(function($)
 	
    
     ///////////////////////////////////////////////
-	// Read cookies, set <html> element classes. Also set reading options buttons attributes. 
+	//  Reading options management 
+	//Read cookies, set <html> element classes. Also set reading options toggle . 
     
-	var $blocks=$('#toolbar-buttons-table button');
+	var $blocks=$('#toolbar-buttons-table input');
     var $uniqueNames = [];
 	var $themeSettings = manducaVariables.reading_options;
-    $.each ($blocks, function ( i, $element )
-    {
-       var $class=$($element).attr('class');
+    $.each ($blocks, function ( i, $element ) {
+       var $class =$($element).attr('class');
+	   $class  	  =$class.replace( 'toggle-checkbox ', '');
        if($.inArray($class, $uniqueNames) === -1) $uniqueNames.push($class);
-    }); 
+    });
+	
+	
+	
     $.each ($uniqueNames, function ( i, $block )
     {
     
-        var $cookieValue =readCookie( $block );
+		  var $blockClass 	= '#checkbox-'+$block;
+		  var $cookieValue 	= readCookie( $block );
           if ( $cookieValue ) {
-                $('html').addClass( $cookieValue );
-                $( '#' + $cookieValue ).attr( 'disabled' , 'true' );
+			var $lastChar 	= $cookieValue.slice(-1);
+				if ( $lastChar ==='1') {
+					$( $blockClass ).prop( "checked", "true");	
+				}
+				$('html').addClass( $cookieValue );
+                
            }
            else {
 				if (typeof $themeSettings[$block] === 'undefined') {
@@ -674,27 +683,33 @@ jQuery(document).ready(function($)
 				}
 				
 				$('html').addClass( $class);
-				$( '#'+$class).attr( 'disabled', 'true' );
            }
        
-        
-        $('.'+$block).click(function () {
-          var $id= $(this).attr('id');
-          $( '.'+$block).removeAttr ('disabled');
-          $(this).attr('disabled' , 'true' );
-          var $removes='';
-          for ($i=0; $i<5; $i++) {
-            var $new=$block + '-' + $i + ' ';
+        /*accessible -toggle-indicator*/
+		
+		$( $blockClass ).change( function () {
+			if($(this).is(":checked")) {  //switch on 
+            	$id=$block + '-1';
+			} else {
+				$id=$block + '-0';   //switch off 
+			}
+			var $removes='';  /* these classes should be removed */
+			for ($i=0; $i<2; $i++) {
+            var $new=$block + '-' + $i + ' ';  /* this is the new class */
              $removes=$removes.concat($new);
-          }   
-          var CookieDate = new Date();
-          $('html').removeClass($removes);
-          $('html').addClass($id);
-          CookieDate.setFullYear(CookieDate.getFullYear() + 10);
-          document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
-        });
-        
+			}   
+			
+			//set cookie */
+			var CookieDate = new Date();
+			$('html').removeClass($removes);
+			$('html').addClass($id);
+			CookieDate.setFullYear(CookieDate.getFullYear() + 10);
+			document.cookie = $block + '=' + $id + '; expires=' + CookieDate.toGMTString() + '; path=/';
+		});
+		
     });
+	
+	
     var animation=$('html').hasClass('animation-0');
 	
 		

@@ -25,7 +25,7 @@
 ?>
 
 <section id="toolbar-buttons" class="toolbar-buttons featured-scheme dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" aria-modal="true">
-	<h1 id="dialog-title"><?php _e( 'Display options', 'manduca' ); ?></h1>
+	<h1 class="dialog-title"><?php _e( 'Display options', 'manduca' ); ?></h1>
 	<p id="dialog-description"><?php
 		//Translators: cookie consent only if user change the default option with Display Options. 
 		_e( 'When using non-default reading options you accept that cookies will be saved in your browser.', 'manduca' ) ; ?>
