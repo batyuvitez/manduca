@@ -39,14 +39,20 @@
 					)
 				)
 			);
+	
 		$the_pages = new WP_Query( $args );
-							
-		if( $the_pages->have_posts() ){
+		$thumbnail = false;
+		$class	   ="page-404";
+		if( $the_pages->have_posts() ) {
 				
 				$the_pages->the_post();
 				$title 		= the_title( '', '', false );
 				$content  	= get_the_content();
 				$content	= apply_filters( 'the_content', $content );
+				if (has_post_thumbnail ()) {
+					$thumbnail  = get_the_post_thumbnail ();
+				}
+				$class     = get_post_class ();
 		}
 		else{
 			//Translators: Default 404 page title
@@ -62,14 +68,31 @@
 
 ?>
 
-<article>
-	<header class="no-thumbnail">
-		<h1 class="main-header entry-title">
-			<?php echo $article[ 'title' ]; ?>
-		</h1>
-	</header>
 
+
+<article <?php post_class(); ?>>
+		<header class="entry-title-wrapper">
+			<h1 class="entry-title main-header"><?php echo $title ; ?></h1>
+	</header>
+	
+	<?php if ($thumbnail) : ?>
+	
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	
+	<?php else : ?>
+	
+		<div class="post-thumbnail image-fallback" aria-hidden="true"></div>
+	
+	<?php endif; ?>
+	
 	<div class="entry-content" >
+	
 		<?php echo $article[ 'content' ]; ?>
+	
 	</div>
+	
+	<div class="clearfix-content"></div>
+
 </article>
