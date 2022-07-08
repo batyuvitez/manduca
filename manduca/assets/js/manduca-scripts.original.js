@@ -981,12 +981,13 @@ jQuery(document).ready(function($)
        
        
     ///////////////////////////////////////////////
-	// Change link-target 
+	// Change link-target )(open in new or same window)
+	//
      
     $('a').click(function()
     {
-		var linkTargetBlank=$('html').hasClass('link-target-2');
-		var linkTargetSelf=$('html').hasClass('link-target-1');
+		var linkTargetBlank=$('html').hasClass('link-target-new-window-1');
+		var linkTargetSelf=$('html').hasClass('link-target-same-window-1');
 		if ( linkTargetSelf)
 		{
              $(this).attr('target', '_self');
