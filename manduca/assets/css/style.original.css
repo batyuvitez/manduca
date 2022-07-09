@@ -111,10 +111,6 @@
 	--focus-snail-color: maroon;
 }
 
-#secondary .widget {
-	background-color: var(--foo);
-}
-
 
 .font-size-0 {
 	--font-size-basis: 87.5%;
@@ -1516,12 +1512,10 @@ entry-content */
 
 
 .featured-post {
-	overflow: hidden;
 	text-align: right;
 	white-space: nowrap;
 	font-weight: bolder;
-	padding: .405rem 0.809rem;
-	margin-bottom: 1rem;
+	padding: var(--vertical-padding) var(--horizontal-padding);
 }
 
 
