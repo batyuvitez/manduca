@@ -108,8 +108,13 @@
 	--default-monospace-font-type: Courier,'Droid Sans Mono',  monospace;
 	--print-title-font-type: Arial, Helvetica, Ubuntu, sans-serif;
 	--print-default-font-type: Georgia, 'Times New Roman', 'Liberations sans', serif;
-
+	--focus-snail-color: maroon;
 }
+
+#secondary .widget {
+	background-color: var(--foo);
+}
+
 
 .font-size-0 {
 	--font-size-basis: 87.5%;

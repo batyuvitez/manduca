@@ -81,24 +81,6 @@ class Enqueue{
          $js_variables['hash']       	= wp_create_nonce( 'manduca-ajax' );
       }
          
-         
-      
-      /*
-       * Define focus snail color
-       * */
-      $focus_snail_color = array (
-                     'red'		=>22,
-                     'green'		=>78,
-                     'blue'		=>104
-         );
-         /**
-			 * Filters the focus snail color.
-			 *
-			 * @param array  RGB color of focus snail
-			 */
-      $focus_snail_color = apply_filters( 'manduca_focus_snail_color' , $focus_snail_color );
-      $js_variables = $js_variables + $focus_snail_color;
-      
       /**
 			 * Filters all javascript variagles
 			 *
