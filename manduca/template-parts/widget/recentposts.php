@@ -27,6 +27,8 @@ use Manduca\helpers as hlp;
 $posts=$args [0];
 $all_args=$args [1];
 extract( $all_args );
+$d=new \web25_debug;
+$d->debug( '$date', $date);
 ?>
 
 <div class="recent-post-block">
@@ -63,7 +65,7 @@ extract( $all_args );
 					<?php if ( $date_relative ) : ?>
 						<?php echo  hlp\Hungarian_Contents::hege_style_post_date (); ?>
 					<?php else :  ?>
-						<time datetime="<?php echo esc_html( get_the_date( 'c' ) ) ?>"><?php esc_html( get_the_date () ) ?></time>
+						<time datetime="<?php echo esc_html( get_the_date( 'c' ) ) ?>"><?php echo esc_html( get_the_date () ) ?></time>
 					<?php endif; ?>
 				</div>								
 			<?php endif; ?>
