@@ -33,30 +33,18 @@ Class More_Links {
     
     public function __construct() {
     
-        //Translators: text of the read more and excerpt more buttons
-       $args[ "text" ] 			= __( 'Continue reading', 'manduca' );
-       $args[ 'icon' ] 			= manduca_icon( 'angle-right', false ) ;
-       $args[ 'classes']			= 'more-link link-button';
-       $this->args = apply_filters(
-              'manduca_more_links' ,
-              $args );
-      
-       
-       add_filter( 'the_content_more_link', array( $this, 'more_link_create_html' ) );
+        add_filter( 'the_content_more_link', array( $this, 'more_link_create_html' ) );
        add_filter( 'excerpt_more', array( $this, 'more_link_create_html' ) );
        add_filter('get_the_excerpt', array( $this , 'manual_excerpt' ) );
-  }
+    }
   
   
+    
     public function more_link_create_html() {
     
-      return 	sprintf( '<div  class="%2$s"><a href="%1$s" id="post-%3$s-morelink" aria-labelledby="post-%3$s-morelink post-%3$s-title">%4$s %5$s</a></div>',
-             get_permalink(),
-             $this->args[ 'classes' ],
-             get_the_ID(),
-             $this->args[ 'text' ],
-             $this->args[ 'icon' ]
-            );
+      ob_start ();
+      get_template_part ('/template-parts/posts/morelink');
+      return ob_get_clean ();
      }
   
   
@@ -65,9 +53,9 @@ Class More_Links {
      
         global $post;
         if( $post->post_excerpt ) {
-          return $excerpt .$this->more_link_create_html();
+            return $excerpt .$this->more_link_create_html();
         } else {
-          return $excerpt;
+            return $excerpt;
         }
     }
 	
