@@ -35,7 +35,7 @@
  * */
 function manduca_icon( string $icon, bool $display=TRUE ) {
        $arg = array( 'icon'=> $icon);
-       $svg = new Manduca\Svg_Functions( $arg ) ;
+       $svg = new Manduca\accessibleServices\Svg_Functions( $arg ) ;
        $html = $svg->Return_HTML();
        if ($display) {
             echo $html;

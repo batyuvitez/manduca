@@ -23,7 +23,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-namespace Manduca; 
+namespace Manduca\accessibleServices;
 
 class SVG_Functions {
 	 
