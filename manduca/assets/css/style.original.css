@@ -959,7 +959,7 @@ html {
     flex-direction:row;
     justify-content:space-between;
     align-items:stretch;
-		margin: 0 auto;		
+		margin: 0 auto;
 	}
 	
 .site-content {
@@ -2659,12 +2659,11 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		
 	/*Full page template */
 	html.font-size-0:not( .page-template-full-width) .site-content {
-		width: 66%;
-		padding: 0 calc(8 * var(--horizontal-padding)) 0 0;	
+		width: 65%;
 	}
 	
 	html.font-size-0:not( .page-template-full-width) .widget-area {
-		width: 33%;
+		flex-basis: 32%;
 		max-width: 60em;		
 	}
 	

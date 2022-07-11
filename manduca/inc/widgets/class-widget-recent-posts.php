@@ -148,7 +148,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 			'orderby'          => 'date',
 			'cat'              => array(),
 			'tag'              => array(),
-			'post_type'        => array( 'post',  ),
+			'post_type'        => array( 'post' ),
 			'post_status'      => 'publish',
 			'ignore_sticky'    => 1,
 			'exclude_current'  => 1,
