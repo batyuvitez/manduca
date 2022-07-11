@@ -27,8 +27,6 @@ use Manduca\helpers as hlp;
 $posts=$args [0];
 $all_args=$args [1];
 extract( $all_args );
-$d=new \web25_debug;
-$d->debug( '$date', $date);
 ?>
 
 <div class="recent-post-block">
