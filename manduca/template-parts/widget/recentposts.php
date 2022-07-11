@@ -25,9 +25,8 @@
 use Manduca\helpers as hlp;
 
 $posts=$args [0];
-$args=$args [1];
-extract( $args );
-
+$all_args=$args [1];
+extract( $all_args );
 ?>
 
 <div class="recent-post-block">
@@ -37,7 +36,7 @@ extract( $args );
 		
 		<article class="recent-post">
 			
-			<?php  if ( $args['thumb'] ) : ?>
+			<?php  if ( $thumb ) : ?>
 				<header class="recent-post-thumbnail thumbnail">
 						<div class="widget-thumbnail">
 							<?php if ( has_post_thumbnail() ) : ?>
@@ -45,8 +44,8 @@ extract( $args );
 									<?php the_post_thumbnail( 'thumbnail' ); // defined in Manduca 268*178 | aspect-ratio: 1.5:1  ?>
 								</div>
 							
-							<?php elseif ( ! empty( $args['thumb_default'] ) ) : // Display default image. ?> 
-								<img class="thumbnail-substitution" src="<?php echo esc_url( $args['thumb_default'] ); ?>" alt="<?php _e( 'thumbnail substitution', 'manduca') ?>">	
+							<?php elseif ( ! empty( $thumb_default ) ) : // Display default image. ?> 
+								<img class="thumbnail-substitution" src="<?php echo esc_url( $thumb_default ); ?>" alt="<?php _e( 'thumbnail substitution', 'manduca') ?>">	
 							<?php endif; ?>
 						</div>
 					<?php else : ?>
@@ -58,10 +57,10 @@ extract( $args );
 				</h3>
 			</header>
 			<div class="vonalzo"></div>
-			<?php if ( $args['date'] ) : ?>
+			<?php if ( $date ) : ?>
 			
 				<div class="date">
-					<?php if ( $args['date_relative'] ) : ?>
+					<?php if ( $date_relative ) : ?>
 						<?php echo  hlp\Hungarian_Contents::hege_style_post_date (); ?>
 					<?php else :  ?>
 						<time datetime="<?php echo esc_html( get_the_date( 'c' ) ) ?>"><?php esc_html( get_the_date () ) ?></time>
@@ -70,7 +69,7 @@ extract( $args );
 			<?php endif; ?>
 			
 			
-			<?php if ( $args['comment_count'] ) : 
+			<?php if ( $comment_count ) : 
 				if ( get_comments_number() == 0 ) {
 						$comments = __( 'No Comments', 'recent-posts-widget-extended' );
 					} elseif ( get_comments_number() > 1 ) {
@@ -81,7 +80,7 @@ extract( $args );
 				<div class="comments"><?php echo esc_html ( $comments );?></div>
 			<?php endif; ?>
 
-			<?php if ( $args['excerpt'] ) : ?>
+			<?php if( $excerpt ) : ?>
 				<div class="recent-post-excerpt excerpt">
 					<?php echo hlp\Template_Functions::get_the_excerpt ( TRUE );  ?>
 				</div>
@@ -91,7 +90,20 @@ extract( $args );
 		</article>
 		<div class="vonalzo"></div>
 	<?php endwhile; ?>
-
+	
+	<?php  if( $more_posts && isset ( $post_type_url ) ) :
+		//translators: Recent post widget: all posts in post_type. %s = post_type name
+		$text = __( 'More %s', 'manduca');
+		$text = sprintf ( $text, $singular_name );?>
+		
+		<div  class="more-link link-button">
+			<a href="<?php echo $post_type_url; ?>"
+		   id="post-<?php get_the_ID(); ?>-morelink"
+		   aria-labelledby="post-<?php get_the_ID(); ?>-morelink post-<?php get_the_ID(); ?>-title">
+			<?php echo $text; manduca_icon( 'angle-right', true ) ;?>
+			</a>
+		</div>
+	<?php endif; ?>
 </div>
 
 

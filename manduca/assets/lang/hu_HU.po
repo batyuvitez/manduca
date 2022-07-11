@@ -1082,3 +1082,9 @@ msgstr "Linkek nem nyitnak új ablakot"
 
 msgid "Links open in new window"
 msgstr "A linkek mindig új ablakban nyílnak meg"
+
+msgid "Show all posts button"
+msgstr "Mutassa az összes bejegyzés gombot"
+
+msgid "More %s"
+msgstr "További %sek"

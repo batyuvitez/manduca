@@ -115,9 +115,11 @@ class Widget_Recent_Posts extends \WP_Widget {
 		$instance['date_relative']    = isset( $new_instance['date_relative'] ) ? (bool) $new_instance['date_relative'] : false;
 		$instance['comment_count']    = isset( $new_instance['comment_count'] ) ? (bool) $new_instance['comment_count'] : false;
 
+
 		$instance['thumb']            = isset( $new_instance['thumb'] ) ? (bool) $new_instance['thumb'] : false;
 		$instance['thumb_default']    = esc_url_raw( $new_instance['thumb_default'] );
 
+		$instance['more_posts']    = isset( $new_instance['more_posts'] ) ? (bool) $new_instance['more_posts'] : false;
 		return $instance;
 
 	}
@@ -139,6 +141,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 	public function get_default_args() {
 	
 		return array(
+									//Translators: Name of accessible recent post widget. 
 			'title'             => esc_attr__( 'Recent Posts', 'manduca' ),
 			'title_url'         => '',
 	
@@ -159,7 +162,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 			'date'             => true,
 			'date_relative'    => TRUE,
 			'comment_count'    => TRUE,
-	
+			'more_posts'	   => TRUE
 		);
 	}
 }

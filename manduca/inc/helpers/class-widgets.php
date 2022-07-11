@@ -52,10 +52,16 @@ class Widgets {
 	*/
    public static function display_recent_posts( $args = array() ) {
    
-	   $html=FALSE;
-		$posts = self::get_posts( $args );
-		$all_args=array( $posts, $args);
+		$html			= FALSE;
+		$posts 		= self::get_posts( $args );
+		$post_type_data = get_post_type_object( $args[ 'post_type' ][0] );
+		$post_type_slug = $post_type_data->rewrite[ 'slug' ];
+		$args[ 'singular_name'] = strtolower( $post_type_data->labels->singular_name );
+		$args[ 'post_type_url' ] = get_home_url() . '/' . $post_type_slug . '/';
+		
 		if ( $posts->have_posts() ) {
+			$all_args=array( $posts, $args);
+		
 			get_template_part ('template-parts/widget/recentposts' , NULL, $all_args);
 		}
 	   wp_reset_postdata();

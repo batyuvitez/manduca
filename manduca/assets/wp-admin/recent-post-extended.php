@@ -218,6 +218,13 @@ use \Manduca\helpers as hlp;
 		</label>
 	</p>
 	
+	<p>
+		<input id="<?php echo $args[ 'id' ][ 'more_posts' ]; ?>" name="<?php echo $args[ 'name' ][ 'more_posts' ]; ?>" type="checkbox" <?php checked( $args[ 'value' ][ 'more_posts'] ); ?> />
+		<label for="<?php echo $args[ 'id' ][ 'more_posts' ]; ?>">
+			<?php _e( 'Show all posts button', 'manduca' ); ?>
+		</label>
+	</p>
+	
 
 </div>
 
