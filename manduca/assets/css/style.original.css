@@ -118,7 +118,8 @@
 	--root-unit-basis: 0.5rem;
 	--vertical-padding: 0.3em;
 	--horizontal-padding: 0.4em;
-	--wrapper-max-width: 80rem;	
+	--wrapper-max-width: 80rem;
+ --focus-snail-color: white;
 }
 
 .font-size-1 {
@@ -362,12 +363,10 @@ a:link svg {
 ==============================================================*/
 
 a:focus-visible,
-a:active,
 select:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-button:focus-visible,
-button:active {
+button:focus-visible{
 	outline: 4px solid var(--default-focus-indicator);
 	outline-offset: 4px;
 }
