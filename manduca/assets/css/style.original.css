@@ -508,10 +508,6 @@ textarea[disabled] {
 	padding: 0;
 }
 
-.site-content a {
-	white-space: nowrap; /* Includes svg icons should be displayed inline */
-}
-
 .entry-title a {
 	white-space: normal;
 }

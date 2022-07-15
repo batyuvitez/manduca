@@ -96,7 +96,7 @@ extract( $all_args );
 		$text = __( 'More %s', 'manduca');
 		$text = sprintf ( $text, $singular_name );?>
 		
-		<div  class="more-link link-button">
+		<div  class="more-link link-button all-post-link">
 			<a href="<?php echo $post_type_url; ?>"
 		   id="post-<?php get_the_ID(); ?>-morelink"
 		   aria-labelledby="post-<?php get_the_ID(); ?>-morelink post-<?php get_the_ID(); ?>-title">
