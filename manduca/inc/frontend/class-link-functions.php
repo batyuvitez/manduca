@@ -266,7 +266,9 @@ Class Link_Functions {
              * End process of one link.
              * Add children to nodes (aria-label, tooltip)
              **/
-            $this->add_new_window_signs( $node );
+            if( ! in_array ('attachment-link', $this->classes ) ) {  //IMG need no new windows sign
+               $this->add_new_window_signs( $node );
+            }
             if( !empty( $this->aria_labels ) ) {
                
                 if( empty( $link_text ) ){
