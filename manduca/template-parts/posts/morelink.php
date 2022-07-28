@@ -30,9 +30,9 @@ $text = __( 'Continue reading', 'manduca' );
 ?>
  
 	<div  class="more-link link-button">
-		<a href="<?php get_permalink(); ?>"
-		   id="post-<?php get_the_ID(); ?>-morelink"
-		   aria-labelledby="post-<?php get_the_ID(); ?>-morelink post-<?php get_the_ID(); ?>-title">
+		<a href="<?php the_permalink(); ?>"
+		   id="post-<?php the_ID(); ?>-morelink"
+		   aria-labelledby="post-<?php the_ID(); ?>-morelink post-<?php the_ID(); ?>-title">
 			<?php echo $text; manduca_icon( 'angle-right', true ) ;?>
 		</a>
 	</div>

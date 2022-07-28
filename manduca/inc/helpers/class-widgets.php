@@ -55,7 +55,13 @@ class Widgets {
 		$html			= FALSE;
 		$posts 		= self::get_posts( $args );
 		$post_type_data = get_post_type_object( $args[ 'post_type' ][0] );
-		$post_type_slug = $post_type_data->rewrite[ 'slug' ];
+		if( $post_type_data->rewrite !== FALSE  ) {
+			
+			$post_type_slug = $post_type_data->rewrite[ 'slug' ];
+		}
+		else {
+			$post_type_slug = "";
+		}
 		$args[ 'singular_name'] = strtolower( $post_type_data->labels->singular_name );
 		$args[ 'post_type_url' ] = get_home_url() . '/' . $post_type_slug . '/';
 		
