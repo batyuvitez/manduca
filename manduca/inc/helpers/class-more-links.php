@@ -27,7 +27,6 @@ use Manduca;
 
 Class More_Links {
    
-   
       
     protected $args;
     
@@ -40,8 +39,10 @@ Class More_Links {
   
     
     public static function more_link_create_html() {
+        static $counter=0;
+        $counter++;
         ob_start ();
-        get_template_part ('/template-parts/posts/morelink');
+        get_template_part ('/template-parts/posts/morelink', NULL, $counter);
         return ob_get_clean ();
      }
   

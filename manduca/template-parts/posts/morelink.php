@@ -31,7 +31,7 @@ $text = __( 'Continue reading', 'manduca' );
  
 	<div  class="more-link link-button">
 		<a href="<?php the_permalink(); ?>"
-		   id="post-<?php the_ID(); ?>-morelink"
+		   id="post-<?php the_ID(); ?>-morelink-<?php echo $args; ?>"
 		   aria-labelledby="post-<?php the_ID(); ?>-morelink post-<?php the_ID(); ?>-title">
 			<?php echo $text; manduca_icon( 'angle-right', true ) ;?>
 		</a>
