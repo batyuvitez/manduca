@@ -28,7 +28,7 @@ use Manduca\helpers as hlp;
 
 class Excerpts {
 		
-	
+	private static $prefix;
 	
 	
 	/*
@@ -40,8 +40,8 @@ class Excerpts {
 	 *
 	 * */
 	
-	public static function get_the_excerpt ($always_morelink=false, int $len=45 ) {
-		
+	public static function get_the_excerpt ($always_morelink=false, int $len=45, string $prefix='' ) {
+		self::$prefix = $prefix;
 		$post 		  = get_post();
 		$post_content = $post->post_content;
 		$post_content = Blocks::get_text_contents ($post_content);
@@ -64,7 +64,7 @@ class Excerpts {
 		}
 		$html = strip_shortcodes( $html);
 		if( $morelink_flag ) {
-			$html=self::add_morelink ($html);
+			$html=self::add_morelink ($html, $prefix );
 		}
 		
 		return $html;
@@ -87,7 +87,7 @@ class Excerpts {
 	 * @return (string) excerpt in HTML 
 	 * @see: https://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt/141136#141136
 	 */
-    protected static function trim_excerpt( $always_morelink, string $content, int $excerpt_word_count ) {
+    protected static function trim_excerpt( $always_morelink, string $content, int $excerpt_word_count  ) {
 		$allowed_tags =  '<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<video>,<audio>,<h2>,<h3>,<h4>'; 
 		$excerpt = strip_shortcodes( $content );
 		$excerpt = apply_filters('the_content', $excerpt);
@@ -128,8 +128,8 @@ class Excerpts {
 	 *@param string $html HTML code
 	 *@return string HTML code with morelink
 	 **/
-	protected static function add_morelink( string $html ) 	{
-		return $html.hlp\More_Links::more_link_create_html();
+	protected static function add_morelink( string $html) 	{
+		return $html.hlp\More_Links::more_link_create_html( self::$prefix );
 	}
 
 

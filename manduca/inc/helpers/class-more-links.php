@@ -38,11 +38,9 @@ Class More_Links {
   
   
     
-    public static function more_link_create_html() {
-        static $counter=0;
-        $counter++;
+    public static function more_link_create_html( $prefix ) {
         ob_start ();
-        get_template_part ('/template-parts/posts/morelink', NULL, $counter);
+        get_template_part ('/template-parts/posts/morelink', NULL, $prefix);
         return ob_get_clean ();
      }
   

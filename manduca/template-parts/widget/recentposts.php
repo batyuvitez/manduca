@@ -39,7 +39,7 @@ extract( $all_args );
 			<header class="recent-post-header">
 				<h3 class="recent-post-title">
 					<a href="<?php echo esc_url( get_permalink() ) ; ?>"
-					   id="post-<?php the_id (); ?>-title"
+					   id="post-<?php the_id (); ?>-title-recent"
 					   rel="bookmark"><?php echo  esc_attr( get_the_title() ); ?></a>
 				</h3>
 				
@@ -56,7 +56,7 @@ extract( $all_args );
 							<?php endif; ?>
 						</div>
 					<?php else : ?>
-						<header class="without-thumbnail">
+						<div class="without-thumbnail">
 					<?php endif; ?>
 					
 				</div>	
@@ -87,7 +87,7 @@ extract( $all_args );
 
 			<?php if( $excerpt ) : ?>
 				<div class="recent-post-excerpt excerpt">
-					<?php echo hlp\Excerpts::get_the_excerpt ( TRUE, $all_args['excerpt_length'] ); ?>
+					<?php echo hlp\Excerpts::get_the_excerpt ( TRUE, $all_args['excerpt_length'], '-recent' ); ?>
 				</div>
 			<?php else : ?>
 				<?php the_content (); ?>
