@@ -32,19 +32,17 @@ Class More_Links {
     protected $args;
     
     public function __construct() {
-    
         add_filter( 'the_content_more_link', array( $this, 'more_link_create_html' ) );
-       add_filter( 'excerpt_more', array( $this, 'more_link_create_html' ) );
-       add_filter('get_the_excerpt', array( $this , 'manual_excerpt' ) );
+        add_filter( 'excerpt_more', array( 'Manduca\helpers\More_Links', 'more_link_create_html' ) );
+        add_filter('get_the_excerpt', array( $this , 'manual_excerpt' ) );
     }
   
   
     
-    public function more_link_create_html() {
-    
-      ob_start ();
-      get_template_part ('/template-parts/posts/morelink');
-      return ob_get_clean ();
+    public static function more_link_create_html() {
+        ob_start ();
+        get_template_part ('/template-parts/posts/morelink');
+        return ob_get_clean ();
      }
   
   

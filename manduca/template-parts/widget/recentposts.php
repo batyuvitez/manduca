@@ -1,6 +1,6 @@
 <?php
 /**
- * Extended recen post widget 
+ * Extended recent post widget 
  *
  **/
 
@@ -27,6 +27,7 @@ use Manduca\helpers as hlp;
 $posts=$args [0];
 $all_args=$args [1];
 extract( $all_args );
+
 ?>
 
 <div class="recent-post-block">
@@ -82,7 +83,7 @@ extract( $all_args );
 
 			<?php if( $excerpt ) : ?>
 				<div class="recent-post-excerpt excerpt">
-					<?php echo hlp\Template_Functions::get_the_excerpt ( TRUE );  ?>
+					<?php echo hlp\Excerpts::get_the_excerpt ( TRUE, $all_args['excerpt_length'] ); ?>
 				</div>
 			<?php else : ?>
 				<?php the_content (); ?>
@@ -97,9 +98,7 @@ extract( $all_args );
 		$text = sprintf ( $text, $singular_name );?>
 		
 		<div  class="more-link link-button all-post-link">
-			<a href="<?php echo $post_type_url; ?>"
-		   id="post-<?php get_the_ID(); ?>-morelink"
-		   aria-labelledby="post-<?php get_the_ID(); ?>-morelink post-<?php get_the_ID(); ?>-title">
+			<a href="<?php echo $post_type_url; ?>">
 			<?php echo $text; manduca_icon( 'angle-right', true ) ;?>
 			</a>
 		</div>

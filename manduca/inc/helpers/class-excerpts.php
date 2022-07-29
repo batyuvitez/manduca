@@ -42,7 +42,7 @@ class Excerpts {
 	
 	public static function get_the_excerpt ($always_morelink=false, int $len=45 ) {
 		
-		$post 		= get_post();
+		$post 		  = get_post();
 		$post_content = $post->post_content;
 		$post_content = Blocks::get_text_contents ($post_content);
 		$post_content = self::correct_headings ( $post_content );
@@ -116,7 +116,7 @@ class Excerpts {
 		}
 		$excerpt = trim(force_balance_tags($excerptOutput));
 		if ( $morelink_flag || $always_morelink ) {
-			$excerpt=self::add_morelink ($excerpt);
+			$excerpt=self::add_morelink( $excerpt );
 		}
 		return $excerpt;   
 	}
@@ -129,8 +129,7 @@ class Excerpts {
 	 *@return string HTML code with morelink
 	 **/
 	protected static function add_morelink( string $html ) 	{
-		$more_link = new hlp\More_Links;
-		return $html.$more_link->more_link_create_html();
+		return $html.hlp\More_Links::more_link_create_html();
 	}
 
 

@@ -111,6 +111,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 		$instance['tag']              = $new_instance['tag'];
 		
 		$instance['excerpt']          = isset( $new_instance['excerpt'] ) ? (bool) $new_instance['excerpt'] : false;
+		$instance['excerpt_length']   = intval( $new_instance['excerpt_length']);
 		$instance['date']             = isset( $new_instance['date'] ) ? (bool) $new_instance['date'] : false;
 		$instance['date_relative']    = isset( $new_instance['date_relative'] ) ? (bool) $new_instance['date_relative'] : false;
 		$instance['comment_count']    = isset( $new_instance['comment_count'] ) ? (bool) $new_instance['comment_count'] : false;
@@ -157,6 +158,7 @@ class Widget_Recent_Posts extends \WP_Widget {
 			'exclude_current'  => 1,
 	
 			'excerpt'          => TRUE,
+			'excerpt_length'   => 45,
 			'thumb'            => TRUE,
 			'thumb_default'    => '',
 			'date'             => true,
