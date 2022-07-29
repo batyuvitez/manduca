@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*  This file is part of WordPress theme named Manduca - focus on accessibility.
  *
 	Copyright (C) 2015-2022  Zsolt Edelényi (ezs@web25.hu)
@@ -2027,27 +2026,35 @@ svg.link-function {  /* @see:Link_Functions */
 |                                                            |
 ==============================================================*/
 
-.recent-post-block .thumbnail {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
 
 .recent-post-block .thumbnail img {
 	width: 4em;
 	height: 4em;
-	display: inline-block;
-	margin: 0 var(--box-unit-basis);
 }
 
 .accessible-recent-post article {
 	margin-top: calc(6 * var(--vertical-padding));
 }
 
+.recent-post-header {
+			display: flex;
+			flex-direction: row-reverse;
+			gap: var(--box-unit-basis);
+			justify-content: space-between;
+			align-items: center;
+}
 
+.recent-post .recent-post-title {
+			margin: 0;
+}
 
+.recent-post {
+	margin-bottom: var(--box-unit-basis);
+}
 
-
+.recent-post .more-link {
+	margin-bottom: var(--box-unit-basis);
+}
 
 
 /*

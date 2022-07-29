@@ -27,12 +27,13 @@
  
 //Translators: text of the read more and excerpt more buttons
 $text 	= __( 'Continue reading', 'manduca' );
-$id		= 'post-' . the_ID () . '-morelink-' . $args; 
+$id		= 'post-' . get_the_ID () . '-morelink-' . $args; 
 ?>
  
 <div  class="more-link link-button">
 	<a href="<?php the_permalink(); ?>"
 	   id="<?php echo $id; ?>"
+	   class="more-link-anchor"
 	   aria-labelledby="<?php echo $id; ?> post-<?php the_ID(); ?>-title">
 		<?php echo $text; manduca_icon( 'angle-right', true ) ;?>
 	</a>

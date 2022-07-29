@@ -36,9 +36,15 @@ extract( $all_args );
 		$posts->the_post(); ?>
 		
 		<article class="recent-post">
-			
+			<header class="recent-post-header">
+				<h3 class="recent-post-title">
+					<a href="<?php echo esc_url( get_permalink() ) ; ?>"
+					   id="post-<?php the_id (); ?>-title"
+					   rel="bookmark"><?php echo  esc_attr( get_the_title() ); ?></a>
+				</h3>
+				
 			<?php  if ( $thumb ) : ?>
-				<header class="recent-post-thumbnail thumbnail">
+				<div class="recent-post-thumbnail thumbnail">
 						<div class="widget-thumbnail">
 							<?php if ( has_post_thumbnail() ) : ?>
 								<div>
@@ -53,9 +59,7 @@ extract( $all_args );
 						<header class="without-thumbnail">
 					<?php endif; ?>
 					
-				<h3>
-					<a href="<?php echo esc_url( get_permalink() ) ; ?>" rel="bookmark"><?php echo  esc_attr( get_the_title() ); ?></a>
-				</h3>
+				</div>	
 			</header>
 			<div class="vonalzo"></div>
 			<?php if ( $date ) : ?>
