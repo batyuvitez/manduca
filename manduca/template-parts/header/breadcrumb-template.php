@@ -30,7 +30,7 @@ class manduca_breadcrumb extends breadcrumb {
     public function customize_breadcrumb() {
 	
         $this->templates = array(
-            'before' 		=> '<ul>',
+            'before' 		=> '<ul class="breadcrumb-list">',
             'after' 		=> '</ul>',
             'standard' 		=> '<li>%1$s %2$s</li>',  // %1 :breadcrumb link %2: separator 
             'current' 		=> '<li class="current">%s</li>',
