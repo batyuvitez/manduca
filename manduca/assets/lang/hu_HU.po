@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-04-07 09:27+0200\n"
+"PO-Revision-Date: 2022-08-08 09:47+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,13 +22,88 @@ msgstr "WCAG honlap készítésére alkalmas. Származtatott sablonnal együtt b
 msgid "Manduca"
 msgstr "Manduca"
 
+#. translators: Recent post widget: all posts in post_type. %s = post_type name
+#: template-parts/widget/recentposts.php:101
+msgid "More %s"
+msgstr "További %ek"
+
+#. translators: Toolbar link target selector label
+#: template-parts/header/toolbarinner.php:74
+msgid "Links open in new window"
+msgstr "A linkek új ablakban nyílnak"
+
+#. translators: Toolbar link target selector label
+#: template-parts/header/toolbarinner.php:70
+msgid "Links open in same window"
+msgstr "A linkek nem nyílnak új ablakban"
+
+#. translators: Toolbar link appearance selector label (bold or underlined)
+#: template-parts/header/toolbarinner.php:66
+msgid "Underline links"
+msgstr "Linkek aláhúzva"
+
+#. translators: Toolbar animation disable/enable label
+#: template-parts/header/toolbarinner.php:62
+msgid "Disable animation"
+msgstr "Az animációk letiltása"
+
+#. translators: Toolbar hyphenation selector label
+#: template-parts/header/toolbarinner.php:58
+msgid "Do Hyphenate"
+msgstr "Elválasztás"
+
+#. translators: Toolbar word spacing selector button
+#: template-parts/header/toolbarinner.php:54
+msgid "Wider word spacing"
+msgstr "Szélesebb szóköz"
+
+#. translators: Toolbar paragrpah spacing selector button
+#: template-parts/header/toolbarinner.php:50
+msgid "Wider paragraph spacing"
+msgstr "Szélesebb bekezdéstáv"
+
+#. translators: Toolbar letter psacing selector button
+#: template-parts/header/toolbarinner.php:46
+msgid "Wider letter spacing"
+msgstr "Szélesseb betűköz"
+
+#. translators: Toolbar line height selector
+#: template-parts/header/toolbarinner.php:42
+msgid "Wider line height"
+msgstr "Tágabb sorközök"
+
+#. translators: Toolbar color scheme selector
+#: template-parts/header/toolbarinner.php:38
+msgid "Bigger font size"
+msgstr "Nagyobb betűméret"
+
+#. translators: Toolbar color scheme selector
+#: template-parts/header/toolbarinner.php:34
+msgid "Dyslexie font type"
+msgstr "Diszlexia betűtípus"
+
+#. translators: Toolbar color scheme selector
+#: template-parts/header/toolbarinner.php:30
+msgid "Inverse color scheme"
+msgstr "Inverz  megjelenítés"
+
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:252
+msgid "Show all posts button"
+msgstr "Mutassa az összes bejegyzés gombot"
+
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:215
+msgid "Length of excerpt"
+msgstr "A kivonat hossza"
+
 #. translators: Search result page
-#: search.php:46 search.php:80
+#: search.php:47 search.php:81
 msgid "Try another search!"
 msgstr "Próbálja meg egy újabb kereséssel!"
 
 #. translators: Search result page in case of empty search
-#: search.php:40
+#: search.php:41
 msgid "Missing search expression"
 msgstr "Hiányzik a keresési kifejezés."
 
@@ -68,23 +143,24 @@ msgstr "Alapértelmezett bélyegkép"
 msgid "Sister pages"
 msgstr "Testvéroldalak"
 
-#: template-parts/widget/recentposts.php:79
+#: template-parts/widget/recentposts.php:83
 msgid "1 Comment"
 msgstr "1 hozzászólás"
 
-#: template-parts/widget/recentposts.php:77
+#: template-parts/widget/recentposts.php:81
 msgid "%s Comments"
 msgstr "%s hozzászólás"
 
-#: template-parts/widget/recentposts.php:75
+#: template-parts/widget/recentposts.php:79
 msgid "No Comments"
 msgstr "Nincs hozzászólás"
 
-#: template-parts/widget/recentposts.php:49
+#: template-parts/widget/recentposts.php:55
 msgid "thumbnail substitution"
 msgstr "bélyegkép helyettesítő"
 
-#: inc/widgets/class-widget-recent-posts.php:142
+#. Translators: Name of accessible recent post widget.
+#: inc/widgets/class-widget-recent-posts.php:146
 msgid "Recent Posts"
 msgstr "Aktuális bejegyzés"
 
@@ -96,99 +172,116 @@ msgstr "Akadálymentes legutóbbi bejegyzések widget"
 msgid "Gives enhanced control and accessible HTML"
 msgstr "Több paraméterezési lehetőséget biztosít és akadálymentes"
 
-#: assets/wp-admin/recent-post-extended.php:217
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:244
 msgid "Use Relative Date. eg: 5 days ago"
 msgstr "A mai naphoz viszonyított időmegjelölés pl. 5 napja. "
 
-#: assets/wp-admin/recent-post-extended.php:209
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:235
 msgid "Display Date"
 msgstr "Mutassa a bejegyzés keltét"
 
-#: assets/wp-admin/recent-post-extended.php:202
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:227
 msgid "Display Comment Count"
 msgstr "Mutassa a hozzászólások számát"
 
-#: assets/wp-admin/recent-post-extended.php:193
+#. translators: recent post widget
+#: assets/wp-admin/recent-post-extended.php:208
 msgid "Display Excerpt"
 msgstr "Mutassa a kivonatot"
 
-#: assets/wp-admin/recent-post-extended.php:182
+#. translators: recent post widget
+#: assets/wp-admin/recent-post-extended.php:196
 msgid "Default Thumbnail"
 msgstr "Az alapértelmezett bélyegkép"
 
-#: assets/wp-admin/recent-post-extended.php:175
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:188
 msgid "Display Thumbnail"
 msgstr "Jelenítse meg a bélyegképet"
 
-#: assets/wp-admin/recent-post-extended.php:164
+#. translators: recent post widget
+#: assets/wp-admin/recent-post-extended.php:176
 msgid "Offset"
 msgstr "Eltolás"
 
-#: assets/wp-admin/recent-post-extended.php:157
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:168
 msgid "Number of posts to show"
 msgstr "Hány darab bejegyzést mutasson?"
 
-#: assets/wp-admin/recent-post-extended.php:136
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:146
 msgid "Limit to Tag"
 msgstr "Csak a kijelölt címkével rendelkezőket mutassa"
 
-#: assets/wp-admin/recent-post-extended.php:120
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:129
 msgid "Limit to Category"
 msgstr "Csak a kijelölt kategóriában lévőket mutassa"
 
-#: assets/wp-admin/recent-post-extended.php:109
+#: assets/wp-admin/recent-post-extended.php:117
 msgid "Menu Order"
 msgstr "A menü sorrendje"
 
-#: assets/wp-admin/recent-post-extended.php:108
+#: assets/wp-admin/recent-post-extended.php:116
 msgid "Comment Count"
 msgstr "A hozzászólások száma"
 
-#: assets/wp-admin/recent-post-extended.php:107
+#: assets/wp-admin/recent-post-extended.php:115
 msgid "Random"
 msgstr "Véletlenszerű"
 
-#: assets/wp-admin/recent-post-extended.php:106
+#: assets/wp-admin/recent-post-extended.php:114
 msgid "Modified"
 msgstr "Módosítva"
 
-#: assets/wp-admin/recent-post-extended.php:102
+#: assets/wp-admin/recent-post-extended.php:110
 msgid "ID"
 msgstr "Azonosító"
 
-#: assets/wp-admin/recent-post-extended.php:99
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:107
 msgid "Orderby"
 msgstr "Rendezés"
 
-#: assets/wp-admin/recent-post-extended.php:93
+#: assets/wp-admin/recent-post-extended.php:100
 msgid "Ascending"
 msgstr "Növekvő"
 
-#: assets/wp-admin/recent-post-extended.php:92
+#: assets/wp-admin/recent-post-extended.php:99
 msgid "Descending"
 msgstr "Csökkenő"
 
-#: assets/wp-admin/recent-post-extended.php:89
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:96
 msgid "Order"
 msgstr "Sorrend"
 
-#: assets/wp-admin/recent-post-extended.php:78
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:84
 msgid "Post Status"
 msgstr "Bejegyzés státusza"
 
-#: assets/wp-admin/recent-post-extended.php:62
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:67
 msgid "Post Types"
 msgstr "Bejegyzéstípusok"
 
-#: assets/wp-admin/recent-post-extended.php:56
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:60
 msgid "Exclude current post"
 msgstr "A jelenlegi bejegyzés kihagyása"
 
-#: assets/wp-admin/recent-post-extended.php:49
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:52
 msgid "Ignore sticky posts"
 msgstr "Ragadós bejegyzések kihagyása"
 
-#: assets/wp-admin/recent-post-extended.php:41
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:43
 msgid "Title URL"
 msgstr "Cím URL"
 
@@ -206,7 +299,7 @@ msgstr "Ez eredeti kép megtekintése"
 msgid "Blog page template"
 msgstr "Bejegyzések (blog) kezdőlapja"
 
-#. Translators: Missing metadata
+#. Translators: Indication of missing metadata
 #: inc/helpers/class-meta-tags.php:123
 msgid "none"
 msgstr "Nincs"
@@ -220,11 +313,6 @@ msgstr "Teszt"
 msgid "Extra wide"
 msgstr "Széles"
 
-#. translators: Opt reading option
-#: inc/helpers/class-reading-options.php:55
-msgid "Change to"
-msgstr "Váltás"
-
 #. Translators: attachment navigation: go to next image
 #: template-parts/attachment/attachment-navigation.php:32
 msgid "Next image"
@@ -235,173 +323,28 @@ msgstr "Következő kép"
 msgid "Previous image"
 msgstr "Előző kép"
 
-#. translators: lins are underlined
-#: template-parts/header/toolbarinner.php:176
-msgid "Underlined"
-msgstr "Aláhúzott"
-
-#. translators: Toolbar link appearance selector label (bold or underlined)
-#: template-parts/header/toolbarinner.php:166
-msgid "Link appearance"
-msgstr "Link megjelenítése"
-
-#. translators: Animation stopped
-#: template-parts/header/toolbarinner.php:160
-msgid "Disabled"
-msgstr "Letiltva"
-
-#: template-parts/header/toolbarinner.php:158
-msgid "Off"
-msgstr "Kikapcsolt"
-
-#. translators: Animation default settings on monitor
-#: template-parts/header/toolbarinner.php:156
-msgid "Enabled"
-msgstr "Engedélyezve"
-
-#. translators: Animation default settings on phone
-#: template-parts/header/toolbarinner.php:154
-msgid "On"
-msgstr "Aktív"
-
-#. translators: Toolbar animation disable/enable label
-#: template-parts/header/toolbarinner.php:149
-msgid "Animation"
-msgstr "Mozgások"
-
 #. Translators: visually hidden title of author info
 #: template-parts/posts/content-meta.php:70
 msgid "Author info"
 msgstr "A szerzőről"
 
-#. translators: Toolbar font type selector
-#: template-parts/header/toolbarinner.php:57
-msgid "Dyslexie"
-msgstr "Diszlexia"
-
-#. translators: Toolbar link target seleccotr: Open links in new window
-#: template-parts/header/toolbarinner.php:202
-msgid "Always opens link in new window"
-msgstr "Mindig új ablakban nyílnak meg"
-
-#. translators: Toolbar link target selector: Links open in same window
-#: template-parts/header/toolbarinner.php:196
-msgid "Always opens link in same window"
-msgstr "Mindig ugyanabban az ablakban nyílnak meg."
-
-#. translators: Toolbar link target selector label
-#: template-parts/header/toolbarinner.php:182
-msgid "Link target"
-msgstr "Linkek"
-
-#. translators: links are bold and has contrast of 3:1 to text color
-#: template-parts/header/toolbarinner.php:172
-msgid "Bold"
-msgstr "Vastagított"
-
-#. translators: Toolbar font-size selector larger (150%) font sizet
-#: template-parts/header/toolbarinner.php:144
-msgid "All"
-msgstr "Mind"
-
-#. translators: Toolbar font-size selector default font sizet
-#: template-parts/header/toolbarinner.php:140
-msgid "None"
-msgstr "Semelyik"
-
-#. translators: Toolbar hyphenation selector label
-#: template-parts/header/toolbarinner.php:134
-msgid "Hyphenation"
-msgstr "Elválasztás"
-
-#. translators: Toolbar word spacing selector button
-#: template-parts/header/toolbarinner.php:120
-msgid "Word spacing"
-msgstr "Szavak közti távolság"
-
-#. translators: Toolbar paragrpah spacing selector button
-#: template-parts/header/toolbarinner.php:107
-msgid "Paragraph spacing"
-msgstr "Bekezdések közti távolság"
-
-#. translators: Toolbar letter psacing selector button
-#: template-parts/header/toolbarinner.php:92
-msgid "Letter spacing"
-msgstr "Betűk közti távolság"
-
-#. translators: Toolbar line height 2
-#: template-parts/header/toolbarinner.php:85
-#: template-parts/header/toolbarinner.php:87
-#: template-parts/header/toolbarinner.php:102
-#: template-parts/header/toolbarinner.php:114
-#: template-parts/header/toolbarinner.php:115
-#: template-parts/header/toolbarinner.php:128
-msgid "Wide"
-msgstr "Széles"
-
-#. translators: Toolbar line height selector
-#: template-parts/header/toolbarinner.php:77
-msgid "Line height"
-msgstr "Sortávolság"
-
-#. Translators: Title of breadcrumb navigation (for screen reader users)
-#: template-parts/header/breadcrumb-template.php:83
-msgid "breadcrumb"
-msgstr "kenyérmorzsa"
-
 #. translators: second select menu's text in archive widget is year is
 #. selected:
-#: inc/widgets/class-widget-archives.php:241
+#: inc/widgets/class-widget-archives.php:239
 msgid "Select month"
 msgstr "Hónap kiválasztása"
-
-#. translators: Toolbar color scheme set dark background white letters.
-#: template-parts/header/toolbarinner.php:41
-msgid "Inverse"
-msgstr "Inverz"
 
 #: author.php:32
 msgid "Post of %s"
 msgstr "%s bejegyzései"
 
-#. translators: Toolbar link target seleccotr: Open links in new window
-#: template-parts/header/toolbarinner.php:200
-msgid "New window"
-msgstr "Új ablakban"
-
-#. translators: Toolbar link target selector: Links open in same window
-#: template-parts/header/toolbarinner.php:194
-msgid "Same window"
-msgstr "Ebben az ablakban"
-
-#. translators: Toolbar font type selector
-#. translators: Toolbar font-size selector default font size
-#. translators: Toolbar line height 1.7
-#. translators: Toolbar link target selector: links open where specified
-#: template-parts/header/toolbarinner.php:52
-#: template-parts/header/toolbarinner.php:68
-#: template-parts/header/toolbarinner.php:81
-#: template-parts/header/toolbarinner.php:83
-#: template-parts/header/toolbarinner.php:98
-#: template-parts/header/toolbarinner.php:111
-#: template-parts/header/toolbarinner.php:112
-#: template-parts/header/toolbarinner.php:125
-#: template-parts/header/toolbarinner.php:188
-msgid "Default"
-msgstr "Alapbeállítás"
-
-#. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:30
-msgid "Color scheme"
-msgstr "Színséma"
-
 #. Translators: cookie consent only if user change the default option with
 #. Display Options.
-#: template-parts/header/toolbar.php:32
+#: template-parts/header/toolbar.php:31
 msgid "When using non-default reading options you accept that cookies will be saved in your browser."
 msgstr "Az alapbeállítástól eltérő beállítást sütiben tároljuk."
 
-#: template-parts/header/sitetitle.php:51
+#: template-parts/header/sitetitle.php:52
 msgid "Jump to homepage"
 msgstr "Kezdőlapra ugrás"
 
@@ -417,13 +360,13 @@ msgstr "%s fényképe"
 msgid "No categories"
 msgstr "Nincs kategorizálva"
 
-#: inc/helpers/class-hungarian-contents.php:82
+#: inc/helpers/class-hungarian-contents.php:87
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "ebben az órában"
 msgstr[1] "%s órával ezelőtt"
 
-#: inc/helpers/class-hungarian-contents.php:79
+#: inc/helpers/class-hungarian-contents.php:84
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "Ebben a percben"
@@ -435,7 +378,7 @@ msgid "Collapse all"
 msgstr "Az összes bezárása"
 
 #. Translators: Accessible show-hide system: expand all button
-#: inc/class-enqueue.php:69 page-templates/page-sitemap.php:55
+#: inc/class-enqueue.php:69 page-templates/page-sitemap.php:54
 msgid "Expand all"
 msgstr "Az összes kinyitása"
 
@@ -450,18 +393,19 @@ msgstr "A könnyebb használat érdekében két legördülő menüt alkalmaz: az
 
 #. translators: second select menu's text in archive widget is year is
 #. selected:
-#: inc/widgets/class-widget-archives.php:337
+#: inc/widgets/class-widget-archives.php:335
 msgid "Months in %s"
 msgstr "archívum %s. évben"
 
-#: assets/wp-admin/recent-post-extended.php:34
-#: assets/wp-admin/recent-post-extended.php:104
+#. translators: recent post widget form
+#: assets/wp-admin/recent-post-extended.php:35
+#: assets/wp-admin/recent-post-extended.php:112
 #: inc/widgets/class-page-sisters.php:99
-#: inc/widgets/class-widget-archives.php:149
+#: inc/widgets/class-widget-archives.php:147
 msgid "Title"
 msgstr ""
 
-#: inc/widgets/class-widget-archives.php:110
+#: inc/widgets/class-widget-archives.php:108
 msgid "Filter posts"
 msgstr "Szűrés"
 
@@ -482,19 +426,9 @@ msgid " User-friendly archives"
 msgstr "Akadálymentes archív widget"
 
 #. translators: in Hungarian, no need for definite article
-#: search.php:75
+#: search.php:76
 msgid "No matching result found for %s."
 msgstr "Nincs találat %s  kifejezésre."
-
-#. translators: Toolbar link target selector: screenreader text.
-#: template-parts/header/toolbarinner.php:190
-msgid "Leave as it is"
-msgstr "Az alapbeállítások maradnak. "
-
-#. translators: Toolbar color scheme set dark background white letters.
-#: template-parts/header/toolbarinner.php:42
-msgid "Dark background, light letters"
-msgstr "Sötét háttér, világos betűk"
 
 #: template-parts/widget/manduca-archives.php:32
 msgid "Select Month"
@@ -505,7 +439,7 @@ msgid "Select Year"
 msgstr "Év kiválasztása"
 
 #. translators: Time difference between two dates, in years. 1: Number of years
-#: inc/helpers/class-hungarian-contents.php:101
+#: inc/helpers/class-hungarian-contents.php:106
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s éve"
@@ -513,14 +447,14 @@ msgstr[1] "%s éve"
 
 #. translators: Time difference between two dates, in months. 1: Number of
 #. months
-#: inc/helpers/class-hungarian-contents.php:95
+#: inc/helpers/class-hungarian-contents.php:100
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s hónapja"
 msgstr[1] "%s hónapja"
 
 #. translators: Time difference between two dates, in days. 1: Number of days
-#: inc/helpers/class-hungarian-contents.php:89
+#: inc/helpers/class-hungarian-contents.php:94
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s napja"
@@ -531,7 +465,7 @@ msgid "Back to top"
 msgstr "Az oldal tetejére"
 
 #. Translators: posts navigation at the bottom of archive pages
-#: page-templates/blog-page.php:21 page-templates/blog-page.php:55
+#: page-templates/blog-page.php:32 page-templates/blog-page.php:66
 #: template-parts/posts/post-navigation.php:26
 msgid "Posts navigation"
 msgstr "Bejegyzés navigáció"
@@ -541,57 +475,52 @@ msgstr "Bejegyzés navigáció"
 #. translators: this is the text read by screen readers only in case of you are
 #. in a html element referring to current page.
 #: inc/class-accessible-menu.php:21 inc/class-sitemap.php:70
-#: inc/filters/class-link-functions.php:192
-#: inc/helpers/class-template-functions.php:184
+#: inc/frontend/class-link-functions.php:192
+#: inc/helpers/class-template-functions.php:193
 msgid "Current page"
 msgstr "Jelenlegi oldal"
 
-#: template-parts/header/menu.php:56 template-parts/header/toolbar.php:40
+#: template-parts/header/menu.php:56 template-parts/header/toolbar.php:39
 msgid "Close"
 msgstr "Bezárás"
 
 #. Translators: %s = title of post. This is an aria-label to a link  which has
 #. a children of an image, and image has no alt text.
-#: inc/filters/class-link-functions.php:154
+#: inc/frontend/class-link-functions.php:154
 msgid "Image to the post titled: %s"
 msgstr "Kép a %s cikkhez. "
-
-#. translators: Toolbar font-size selector large (200%)font size
-#: template-parts/header/toolbarinner.php:73
-msgid "Large"
-msgstr "Nagy"
 
 #: template-parts/header/skiplinks.php:30
 msgid "Skip to main content"
 msgstr "Ugrás a fő tartalomhoz"
 
-#: inc/helpers/class-template-functions.php:52
+#: inc/helpers/class-template-functions.php:61
 msgid "Pages of this post"
 msgstr "E bejegyzés több oldalból áll"
 
-#: inc/filters/class-link-functions.php:545
+#: inc/frontend/class-link-functions.php:547
 msgid "Call on phone"
 msgstr "Telefonhívás"
 
-#: inc/filters/class-link-functions.php:540
+#: inc/frontend/class-link-functions.php:542
 msgid "Send email"
 msgstr "E-mail küldése"
 
-#: inc/filters/class-link-functions.php:522
+#: inc/frontend/class-link-functions.php:524
 msgid "Electronic book"
 msgstr "Elektronikus könyv"
 
-#: inc/filters/class-link-functions.php:215
+#: inc/frontend/class-link-functions.php:215
 msgid "open map"
 msgstr "Térkép megnyitása"
 
 #. Translators: Default 404 page content
-#: template-parts/404-template.php:55
+#: template-parts/404-template.php:61
 msgid "The requested page could not be located on this blog."
 msgstr "Nincs ilyen oldal. "
 
 #. Translators: add screen-reader-text if links open in new window.
-#: inc/filters/class-link-functions.php:602
+#: inc/frontend/class-link-functions.php:604
 msgid "opens a new window"
 msgstr "új ablakban nyílik"
 
@@ -599,15 +528,15 @@ msgstr "új ablakban nyílik"
 msgid "Collapsable paragraph page template"
 msgstr "Összezárható bekezdések sablonmintája"
 
-#: page-templates/page-sitemap.php:75
+#: page-templates/page-sitemap.php:74
 msgid "PDFs"
 msgstr "PDF fájlok"
 
-#: page-templates/page-sitemap.php:67
+#: page-templates/page-sitemap.php:66
 msgid "Posts in alphabetical"
 msgstr "Bejegyzések abc sorrendben"
 
-#: page-templates/page-sitemap.php:64
+#: page-templates/page-sitemap.php:63
 msgid "Posts by category"
 msgstr "Bejegyzések kategóriánként"
 
@@ -635,7 +564,7 @@ msgstr "Oldalsáv"
 #. translators: This string is a replacement of the same string in WP's.
 #. Hungarian translation in WP is bad.
 #. Translators: Breadcrumb paginated pages
-#: inc/filters/class-title.php:67
+#: inc/filters/class-title.php:68
 #: template-parts/header/breadcrumb-template.php:68
 msgid "Page %d"
 msgstr "%d. oldal"
@@ -654,18 +583,18 @@ msgstr "A képet tartalmazó bejegyzés"
 msgid "Image navigation"
 msgstr "Képek közti navigáció"
 
-#: inc/filters/class-link-functions.php:518
+#: inc/frontend/class-link-functions.php:520
 msgid "PDF document"
 msgstr "PDF dokumentum"
 
-#: inc/filters/class-link-functions.php:509
-#: inc/filters/class-link-functions.php:513
+#: inc/frontend/class-link-functions.php:511
+#: inc/frontend/class-link-functions.php:515
 msgid "MS Excel document"
 msgstr "Excel dokumentum"
 
-#: inc/filters/class-link-functions.php:497
-#: inc/filters/class-link-functions.php:501
-#: inc/filters/class-link-functions.php:505
+#: inc/frontend/class-link-functions.php:499
+#: inc/frontend/class-link-functions.php:503
+#: inc/frontend/class-link-functions.php:507
 msgid "MS Word document"
 msgstr "Word dokumentum"
 
@@ -673,23 +602,8 @@ msgstr "Word dokumentum"
 msgid "Current tab:"
 msgstr "Az éppen nyitott fül"
 
-#. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:62
-msgid "Font size"
-msgstr "Betűméret"
-
-#. translators: Toolbar color scheme selector original colors set
-#: template-parts/header/toolbarinner.php:36
-msgid "Original"
-msgstr "Eredeti"
-
-#. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:46
-msgid "Font type"
-msgstr "Betűtípus"
-
 #. Translators: Name of options button (text size, color etc) at the header.
-#: template-parts/header/toolbar.php:29
+#: template-parts/header/toolbar.php:28
 #: template-parts/header/toolbarbutton.php:27
 msgid "Display options"
 msgstr "Olvasási beállítások"
@@ -705,17 +619,17 @@ msgid "Categories"
 msgstr "Kategóriák"
 
 #. translators: screen reader text for numbered list items in post navigation
-#: inc/helpers/class-template-functions.php:200
+#: inc/helpers/class-template-functions.php:209
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "%s<span class=\"screen-reader-text\">. oldal</span>"
 
 #. translators: Error message if there is no icon exist with the given name
-#: inc/class-svg-functions.php:58
+#: inc/accessible-services/class-svg-functions.php:58
 msgid "Please define an SVG icon filename."
 msgstr "Légy szíves határozd meg az SVG ikon nevét!"
 
 #. translators: Error message if there no array in the parameter
-#: inc/class-svg-functions.php:51
+#: inc/accessible-services/class-svg-functions.php:51
 msgid "Please define default parameters in the form of an array."
 msgstr "Légy szíves az SVG ikon nevét egy tömbben határozd meg."
 
@@ -723,13 +637,13 @@ msgstr "Légy szíves az SVG ikon nevét egy tömbben határozd meg."
 msgid "Parent of pages template"
 msgstr "A szülő oldal sablonja"
 
-#: inc/helpers/class-template-functions.php:43
-#: inc/helpers/class-template-functions.php:89
+#: inc/helpers/class-template-functions.php:52
+#: inc/helpers/class-template-functions.php:98
 msgid "Older posts"
 msgstr "Régebbi bejegyzések"
 
-#: inc/helpers/class-template-functions.php:48
-#: inc/helpers/class-template-functions.php:86
+#: inc/helpers/class-template-functions.php:57
+#: inc/helpers/class-template-functions.php:95
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
@@ -785,21 +699,21 @@ msgstr "%s hónapban készült bejegyzések: "
 msgid "Daily Archives: %s"
 msgstr "%s napján kelt bejegyzések: "
 
-#: page-templates/page-sitemap.php:70
+#: page-templates/page-sitemap.php:69
 msgid "Images"
 msgstr "Képek"
 
-#: inc/helpers/class-template-functions.php:415
+#: inc/helpers/class-template-functions.php:326
 msgid "Next post"
 msgstr "Következő bejegyzés"
 
-#: inc/helpers/class-template-functions.php:392
+#: inc/helpers/class-template-functions.php:303
 msgid "Previous post"
 msgstr "Előző bejegyzés"
 
 #. translators: %1$s is the number of results found, %2$s is the search term,
 #. in Hungarian, no need for definite article
-#: search.php:61
+#: search.php:62
 msgid "Found %1$s search result for keyword: %2$s"
 msgstr "%1$s találat: %2$s kifejezésre"
 
@@ -856,7 +770,7 @@ msgid "Thumbnail"
 msgstr "Előkép"
 
 #. Translators: add screen-reader-text to external link.
-#: inc/filters/class-link-functions.php:222
+#: inc/frontend/class-link-functions.php:222
 msgid "external"
 msgstr "külső"
 
@@ -868,7 +782,7 @@ msgstr "Oldaltérkép sablonminta"
 msgid "Full-width Page Template"
 msgstr "Teljes szélességű sablonminta"
 
-#: page-templates/page-sitemap.php:58
+#: page-templates/page-sitemap.php:57
 msgid "Authors"
 msgstr "Szerzők"
 
@@ -903,7 +817,7 @@ msgstr "Nincs bejegyzés"
 msgid "Original size"
 msgstr "Eredeti méret"
 
-#: assets/wp-admin/recent-post-extended.php:105
+#: assets/wp-admin/recent-post-extended.php:113
 msgid "Date"
 msgstr "Időpont"
 
@@ -916,7 +830,7 @@ msgstr "Nincs találat, újabb keresési lehetőség. "
 msgid "Post navigation"
 msgstr "Bejegyzések oldalai"
 
-#: inc/customizer/class-register.php:46
+#: inc/customizer/class-register.php:45
 msgid "Copyright text"
 msgstr "Copyright szöveg"
 
@@ -950,7 +864,7 @@ msgid "Comment is awaiting for apporval."
 msgstr "A bejegyzés megjelenését jóvá kell hagynia a rendszergazdának."
 
 #. translators: Author of post - in the post meta
-#: assets/wp-admin/recent-post-extended.php:103
+#: assets/wp-admin/recent-post-extended.php:111
 #: template-parts/posts/comments.php:34
 #: template-parts/posts/content-meta.php:41
 msgid "Author"
@@ -989,7 +903,7 @@ msgid "Author: %s"
 msgstr "Szerző: %s"
 
 #. Translators: text of the read more and excerpt more buttons
-#: inc/helpers/class-more-links.php:37
+#: template-parts/posts/morelink.php:29
 msgid "Continue reading"
 msgstr "Tovább olvasom"
 
@@ -1002,7 +916,7 @@ msgid "Edit"
 msgstr "Szerkesztés"
 
 #: page-templates/page-accessible-tabs.php:59
-#: page-templates/page-sitemap.php:61 template-parts/pages/content-page.php:36
+#: page-templates/page-sitemap.php:60 template-parts/pages/content-page.php:36
 msgid "Pages"
 msgstr "Oldalak"
 
@@ -1031,7 +945,7 @@ msgid "The requested page could not be located on this blog. We highly recommend
 msgstr "Kedves olvasó sajnos valami hiba csúszott a keresésbe, emiatt találkozott ezzel az oldallal. Alább közöljük a honlapunk teljes oldaltérképét, reméljük segítségére lesz:"
 
 #. Translators: Default 404 page title
-#: template-parts/404-template.php:53 template-parts/pages/notfound-page.php:33
+#: template-parts/404-template.php:59 template-parts/pages/notfound-page.php:33
 msgid "Error 404 &#45; Page Not Found!"
 msgstr "404-es hiba: Nincs ilyen oldal."
 
@@ -1046,45 +960,3 @@ msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 #. Author of the theme
 msgid "Zsolt Edelényi (ezs@web25.hu)"
 msgstr ""
-
-msgid "Inverse color scheme"
-msgstr "Inverz színséma"
-
-msgid "Dyslexie font type"
-msgstr "Diszlexia betűtípus"
-
-msgid "Bigger font size"
-msgstr "Nagyobb betűméret"
-
-msgid "Wider line height"
-msgstr "Szélesebb sortáv"
-
-msgid "Wider letter spacing"
-msgstr "Nagyobb betűtáv"
-
-msgid "Wider paragraph spacing"
-msgstr "Szélesebb bekezdésköz"
-
-msgid "Wider word spacing"
-msgstr "Nagyobb szavak közti távolság"
-
-msgid "Do Hyphenate"
-msgstr "Válassza el a szavakat"
-
-msgid "Disable animation"
-msgstr "Animáció tiltása benne animáció"
-
-msgid "Underline links"
-msgstr "Linkek aláhúzása"
-
-msgid "Links open in same window"
-msgstr "Linkek nem nyitnak új ablakot"
-
-msgid "Links open in new window"
-msgstr "A linkek mindig új ablakban nyílnak meg"
-
-msgid "Show all posts button"
-msgstr "Mutassa az összes bejegyzés gombot"
-
-msgid "More %s"
-msgstr "További %sek"
