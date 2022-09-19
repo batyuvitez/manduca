@@ -21,9 +21,8 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-use Manduca\filters as fil;
-
+use Manduca\helpers as hlp;
 ?>
 
 
-<div class="copyright-text">&copy; <?php echo date ('Y'); ?>, <?php echo fil\Title::site_title_with_whitespace (); ?></div>
+<div class="copyright-text"><?php echo hlp\Template_Functions::copyright_text(); ?></div>

@@ -23,7 +23,7 @@
 */
 
 namespace Manduca\helpers;
-use Manduca\helpers as hlp;
+use Manduca\filters as fil;
 
 class Template_Functions {
 		
@@ -352,6 +352,15 @@ class Template_Functions {
 			$classes[]='debug';
 		}
 		return $classes;
+	}
+	
+	
+	public static function copyright_text() {
+		if (get_theme_mod('manduca_copyright_text') ) {
+			return get_theme_mod('manduca_copyright_text');
+		}
+		return '&copy; ' . date ('Y') . ' '. fil\Title::site_title_with_whitespace ();
+		
 	}
 }
 

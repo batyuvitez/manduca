@@ -1888,9 +1888,6 @@ svg.link-function {  /* @see:Link_Functions */
 |                                                            |
 ==============================================================*/
 
-.home {
-	margin-bottom: 5em;  /*button should not cover the footer content */
-}
 .manduca-back-to-top-div {
 	position: fixed;
     opacity: 0;
