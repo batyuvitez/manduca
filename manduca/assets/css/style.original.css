@@ -3055,6 +3055,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	/*////////////////
 	 * Header      */
 	
+	#masthead {
+		margin: 0 var(--box-unit-basis);
+	}
+	
 	.top-bar,
 	.font-size-1 .top-bar {   /* remove top bar and its absoluted positioned buttons */
 		display: none;
@@ -3078,6 +3082,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	.header-searchform {
 		position: static;
+		margin: var(--box-unit-basis);
 	}
 	
 	.font-size-1 .header-searchform {
