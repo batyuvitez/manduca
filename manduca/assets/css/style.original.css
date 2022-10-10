@@ -1538,9 +1538,11 @@ entry-meta*/
 	text-align: left; /*some user agent css has center */
 }
 
-.metatags svg {
+.metatags svg[class^=icon] {
 	vertical-align: top;
 	display: inline-block;
+	position: relative;
+	top: 7px;
 }
 
 /* Thumbnail featured image  */
