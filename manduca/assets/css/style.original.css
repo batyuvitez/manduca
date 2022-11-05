@@ -1044,7 +1044,7 @@ html {
 
 }
 
-.custom-logo-image {
+.custom-logo img {
 		max-width: calc(5 * var(--box-unit-basis));
 		height: auto;
 }
