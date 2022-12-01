@@ -2,7 +2,7 @@
 
 
 ## Important
-You are encouraged to use Manduca with child theme in order to create individual design. 
+This theme is not developed any longer. If you need a WCAG-compliant and high-quality WordPress theme built with modern tools (bootstrap etc.) ask an offer: * <https://netwerk.hu/>
 
 ## Key features
 * This is suitable for **Hungarian language sites**: it has special Hungarian functions and the translation is kept up-to-date.
@@ -55,6 +55,7 @@ Accessibility is a quality mark for a webpage. All user can use it easier.
  * 2019: Accessible archive widget, access keys and tooltips, accessible show-hide system.
  * 2020: Accessible tooltip, testing with WCAG 2.1, start to refactor.
  * 2021: continue refactoring, new accessible widgets, navigation menu, clear-cut design, documentation
+ * 2022: bugs fixed. Development finished. 
  
  
 ## Credits and acknowledgement
