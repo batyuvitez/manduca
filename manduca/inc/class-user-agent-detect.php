@@ -20,6 +20,8 @@
 namespace Manduca;
 
 class User_Agent_Detect{
+
+    protected $user_agent;
   
     public function __construct() {
         $this->user_agent = $_SERVER['HTTP_USER_AGENT'] ;
