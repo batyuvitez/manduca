@@ -24,7 +24,7 @@
     in /assets/docs/licence.txt.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-$img=Manduca \helpers\Header_Image::get_header_image ();
+$img=Manduca\helpers\Header_Image::get_header_image ();
 
 ?>
 

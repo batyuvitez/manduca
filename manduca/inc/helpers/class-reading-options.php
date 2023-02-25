@@ -2,7 +2,6 @@
 /**
  * Generate the reading options table
  *
- * @since 20.11
  *
  * 
 **/
@@ -54,7 +53,7 @@ class Reading_Options {
 				$html.='<span class="explain">';
 				//translators: Opt reading option
 				$html .= __( 'Change to', 'manduca' );
-				$html .='&nbsp;</span>';
+				$html .=':&nbsp;</span>';
 				$html .=$element['desktop_text'];
 				$html .= '</button></div>'."\n";
 			}

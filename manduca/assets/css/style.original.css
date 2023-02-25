@@ -353,6 +353,7 @@ Featured */
 Button, link-button, menu        */
 button, 
 .link-button,
+input [type="submit"] ,
 li.menu-item a {
 	background-color: var(--default-button-background);
 	color: var(--default-button-text);
@@ -521,7 +522,8 @@ body a.image-link {  /*  links within image need not underline  @sinc  17.9.7*/
 
 
 button,
-.link-button {
+.link-button,
+input [type="submit"] {
 	margin: 0.3em;
 }
 
@@ -663,7 +665,7 @@ input[type="checkbox"]{
 
 .menu-toggle {
 	position: absolute;
-	top: 0.9em;
+	top: 0.85em; /*need to inline with toolbar-buttons-open */
 	right: 0.2em;
 	max-width: 43%;
 }
@@ -673,8 +675,8 @@ input[type="checkbox"]{
     top: 1em;  /* compensate smaller font */
     left: 0.2em;
 		cursor: pointer;
-		padding-top: 1.15em;
-		padding-bottom: 1.15em;
+		padding-top: 1.12em;
+		padding-bottom: 1.12em;
 		font-size: 0.9em;
 }
 
@@ -767,8 +769,7 @@ video {
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {	
-	font-size: 95%;
-	line-height: 2;
+	font-size: 90%;
 }
 
 
@@ -785,13 +786,19 @@ video {
 	flex-basis: 33%;
 }
 
+.gallery-size-thumbnail .gallery-item {
+		width: 150px;
+}
 
 .gallery-caption {
 	width: 90%;
+	margin: -0.33em auto 1em auto;
 }
+
 .gallery-item a {
 	display: inline-block;
 }
+
 .gallery-caption a {
 	display: inline;
 }
@@ -802,8 +809,7 @@ video {
 
 .gallery .gallery-icon img {
 	height: auto;
-	max-width: 90.909%;
-	padding: 0.909%;
+	margin: 0;
 }
 
 .gallery-columns-1 .gallery-icon img {
@@ -1007,7 +1013,7 @@ body .site,
 .header-searchform {
 	text-align: right;
 	position: absolute;	
-	top: 5.5em;
+	top: 6.5em;
 	left: 0.5em;
 	right: 0.5em;
 	display: flex;
@@ -1023,7 +1029,7 @@ body .site,
 }
 
 .header-searchform input {
-	padding: .82em 0.5em;
+	padding: .2em 0.6em;
 	margin: 0;
 }
 
@@ -1138,8 +1144,10 @@ nav li.menu-item > a,
 nav li.menu-item > .submenu-container > a {
 	padding: 0.3em 0.4em;
 	font-weight: normal;
-	
+	display: block;
+	font-size: 0.95em;
 }
+
 
 .megamenu ul.nav-menu  > li.menu-item-has-children  a {  /* level-0 main menu item has children */
     margin-right: 0.5rem;
@@ -1160,7 +1168,7 @@ nav li.menu-item > .submenu-container > a {
 	right: 0;
 	padding: 0;
 	z-index: 150;
-	width: 100%;
+	width: max-content;
 	position: absolute; /* below the menu title */
 	border: 1px solid var(--ornament);
 }
@@ -1181,11 +1189,6 @@ nav li.menu-item > .submenu-container > a {
 }     	
 
 
-.main-navigation .sub-nav ul li a {
-	padding: 0.36em 0.72em;
-	display: block;
-	text-decoration: none;
-}
 
 
 .main-navigation ul.nav-menu  li.menu-item.menu-item-has-children > .submenu-container  {
@@ -1419,7 +1422,10 @@ h1 {
 	clear: both;
 }
 
-.entry-content h1 {
+.site-content h1 {  /* archive pages */
+	margin: 0 0 1.5em;
+}
+.entry-content h1 { 
 	margin: 3em 0 1.5em;
 }
 
@@ -1577,6 +1583,7 @@ strong.search-excerpt {
 .site-content article {
 	position: relative; /* to position the edit link */
 	margin-bottom: 5em; /*small screens */
+	padding: 0.5em;
 }
 
 .post-pagination {
@@ -2302,7 +2309,8 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 23em) {
 	
 	button,
-	.link-button {
+	.link-button,
+	input [type="submit"] {
 		width: auto;
 	}
 	
@@ -2491,11 +2499,6 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		height: auto;
 	}
  
-	nav li.menu-item > a,
-	nav li.menu-item > .submenu-container > a
-	{  /* top level navigation item */
-		font-size: 1.35em;
-	}
 	
 	.entry-header-wrapper {
 		display: flex;
@@ -2510,48 +2513,48 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		margin: 0 0 0 1em;
 	}
 
-	/*content date format*/
-	.entry-header .content-date,
-	.excerpt .content-date {
-			font-size: 93%;
-			text-transform: uppercase;
-			font-weight: 300;
+	/*////////////////////
+	// content date format
+	*/
+	.content-date {
 			text-align: center;
 			margin: 0;
 			padding: 0.5em;
 			position: relative;
 	}
 	
+	.content-date time {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 4.2em; /* Hungarian "szept.31."displayed inline */
+		padding: 0.5em 0;
+	}
+	.excerpt .content-date time span {
+			font-size: 0.8em;
+			text-transform: uppercase;
+			font-weight: 300;	
+			text-align: center;
+	}
+	
 	.featured-scheme .content-date {
 			border: 2px solid var(--inverse-background);
+	}
+	
+	.content-date span.entry-date-year {
+		width: 100%;
 	}
 	
 	.content-date span.entry-date-month,
 	.content-date span.entry-date-day {
 			display: inline-block;
-		}
-	.content-date span.entry-date-month {
-		padding-right: 0.14rem;
-		padding-right: 0.14rem;
 	}
 		
-	.content-date time {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		width: 5.3em; /* Hungarian "szept.31."displayed inline */
-		padding: 0.5em 0;
-	}
 	
-	.content-date time span {
-		text-align: center;
-	}
-
-	.edit-link {
-		margin: 1em 0;
-	}
 	
-	/* excerpt */
+	/*////////////////////
+	// excerpt
+	*/
 	.excerpt-thumbnail {
 		float: left;
 		margin-top: 0; /*top margin affect line height in the not-floated div */
@@ -2567,8 +2570,10 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		height: auto
 	}
 	
-	/* content */
 	
+	/*////////////////////
+	// content
+	*/
 	.site-content article {
 		margin-bottom: 5rem;
 	}
@@ -2576,20 +2581,20 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		padding: 0 2em 2em ;
 	  }
   
-		
-	
 	.excerpt-thumbnail img.wp-post-image {
 		float: left				
 	}
 	
-	
-	/*archive navigation */
+	/*////////////////////
+	//  posts navigation (archive)
+	*/
 	.post-navigation {
 		margin-left: 0.7rem; /*Focus should be seen WCAG 2.4.11 & 12*/
 	}
 	
-	/* single post navigaion */
-	
+	/*////////////////////
+	//  single post navigation
+	*/
 	.nav-single {
 		display: flex;
 		justify-content: space-between;
@@ -2632,13 +2637,16 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 @media screen and (min-width: 41em) { /* 656px */
 	
 	button,
-	.link-button a {
-		padding: 0.4em;	
+	.link-button a,
+	input [type="submit"] {
+		padding: 0.2em 0.6em;
+		font-weight: normal;
+		
 	}
 	
 	.toolbar-buttons-open {
-		padding-bottom: 0.9em;
-		padding-top: 0.9em;
+		padding-bottom: 0.65em;
+		padding-top: 0.65em;
 	}
 	
 	.font-size-0 .header-searchform  {  
@@ -2748,7 +2756,7 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 	
 	nav li.menu-item > a,
 	nav li.menu-item > .submenu-container > a	{
-		padding:  0.5em 1em;
+		padding:  0.2em 0.6em;
 		white-space: nowrap;
 	}
 	
@@ -2870,18 +2878,17 @@ font-size-0 .toolbar-buttons-table .row .toolbar-label {
 		box-shadow: none;
 	}
 	
-	/* top level navigation item */
-	nav li.menu-item > a,
-	nav li.menu-item > .submenu-container > a{
-		font-size: 1.5em;
-	}
 		
 	.widget-searchfrom #s {
 		width: 17rem;
 	}
 	
-	.gallery .gallery-item {
+	.gallery.columns-4 .gallery-item {
 		flex-basis: 25%;
+	}
+	
+	.gallery.columns-3 .gallery-item {
+		flex-basis: 33%;
 	}
 	
 }

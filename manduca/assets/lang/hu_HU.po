@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Manduca package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-08 14:00+0200\n"
+"PO-Revision-Date: 2021-04-30 06:33+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,37 +15,104 @@ msgstr ""
 "Language-Team: \n"
 
 #. Description of the theme
-msgid "Use it to make cool and accessible website with a child theme. You can easily comply with the accessiblity guidelines (WCAG 2.1). Special features for Hungarians."
-msgstr "Egyedi, trendy és akadálymentes honlapok készítéséhez. Származtatott sablon használata javasolt. A WCAG 2.1 sikerkritériumait teljesítő honlap készíthető belőle. Magyar felhasználók számára készített metódusokkal."
+msgid "WCAG Proficient. Use it to create individually designed accessibile websites with a child theme. Translated and adopted to Hungarian language."
+msgstr "WCAG honlap készítésére alkalmas. Származtatott sablonnal együtt bármilyen akadálymentes webdizájn megvalósítása lehetséges. Magyarra adaptált és fordított."
 
 #. Theme Name of the theme
 msgid "Manduca"
 msgstr "Manduca"
 
+#. translators: test text in case of debug mode
+#: inc/class-debug-mode.php:38
+msgid "DEBUG"
+msgstr "Teszt"
+
+#: inc/class-images.php:70
+msgid "Extra wide"
+msgstr "Széles"
+
+#. translators: Opt reading option
+#: inc/helpers/class-reading-options.php:56
+msgid "Change to"
+msgstr "Váltás"
+
+#. translators: attachment metadata link to original size image
+#: template-parts/attachment/attachment-meta.php:26
+msgid "Original image"
+msgstr "Eredeti kép"
+
+#. Translators: attachment navigation: go to next image
+#: template-parts/attachment/attachment-navigation.php:32
+msgid "Next image"
+msgstr "Következő kép"
+
+#. Translators: attachment navigation: go to previous image
+#: template-parts/attachment/attachment-navigation.php:29
+msgid "Previous image"
+msgstr "Előző kép"
+
+#. translators: lins are underlined
+#: template-parts/header/toolbarinner.php:176
+msgid "Underlined"
+msgstr "Aláhúzott"
+
+#. translators: Toolbar link appearance selector label (bold or underlined)
+#: template-parts/header/toolbarinner.php:166
+msgid "Link appearance"
+msgstr "Link megjelenítése"
+
+#. translators: Animation stopped
+#: template-parts/header/toolbarinner.php:160
+msgid "Disabled"
+msgstr "Letiltva"
+
+#: template-parts/header/toolbarinner.php:158
+msgid "Off"
+msgstr "Kikapcsolt"
+
+#. translators: Animation default settings
+#: template-parts/header/toolbarinner.php:156
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+#: template-parts/header/toolbarinner.php:154
+msgid "On"
+msgstr "Aktív"
+
+#. translators: Toolbar animation disable/enable label
+#: template-parts/header/toolbarinner.php:150
+msgid "Animation"
+msgstr "Mozgások"
+
+#. translators visually hidden title of author info
+#: template-parts/posts/content-meta.php:40
+msgid "Author info"
+msgstr "A szerzőről"
+
+#. translators: Toolbar font type selector
+#: template-parts/header/toolbarinner.php:58
+msgid "Dyslexie"
+msgstr "Diszlexia"
+
 #. translators: Toolbar link target seleccotr: Open links in new window
-#: template-parts/header/toolbarinner.php:187
+#: template-parts/header/toolbarinner.php:202
 msgid "Always opens link in new window"
 msgstr "Mindig új ablakban nyílnak meg"
 
 #. translators: Toolbar link target selector: Links open in same window
-#: template-parts/header/toolbarinner.php:181
+#: template-parts/header/toolbarinner.php:196
 msgid "Always opens link in same window"
 msgstr "Mindig ugyanabban az ablakban nyílnak meg."
 
-#. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:167
+#. translators: Toolbar link target selector label
+#: template-parts/header/toolbarinner.php:182
 msgid "Link target"
-msgstr "Link megnyitása"
+msgstr "Linkek"
 
-#. translators: Toolbar font-size selector larger (150%) font sizet
-#: template-parts/header/toolbarinner.php:161
+#. translators: links are bold and has contrast of 3:1 to text color
+#: template-parts/header/toolbarinner.php:172
 msgid "Bold"
 msgstr "Vastagított"
-
-#. translators: Toolbar color scheme selector
-#: template-parts/header/toolbarinner.php:151
-msgid "Links"
-msgstr "Linkek"
 
 #. translators: Toolbar font-size selector larger (150%) font sizet
 #: template-parts/header/toolbarinner.php:145
@@ -57,7 +124,7 @@ msgstr "Mind"
 msgid "None"
 msgstr "Semelyik"
 
-#. translators: Toolbar color scheme selector
+#. translators: Toolbar hyphenation selector label
 #: template-parts/header/toolbarinner.php:135
 msgid "Hyphenation"
 msgstr "Elválasztás"
@@ -92,8 +159,8 @@ msgstr "Széles"
 msgid "Line height"
 msgstr "Sortávolság"
 
-#. Translators: Breadcrumb name (for screen readers)
-#: template-parts/header/breadcrumb-template.php:21
+#. Translators: Title of breadcrumb navigation (for screen reader users)
+#: template-parts/header/breadcrumb-template.php:83
 msgid "breadcrumb"
 msgstr "kenyérmorzsa"
 
@@ -108,24 +175,23 @@ msgstr "Hónap kiválasztása"
 msgid "Inverse"
 msgstr "Inverz"
 
-#: author.php:33
+#: author.php:32
 msgid "Post of %s"
 msgstr "%s bejegyzései"
 
 #. translators: Toolbar link target seleccotr: Open links in new window
-#: template-parts/header/toolbarinner.php:185
+#: template-parts/header/toolbarinner.php:200
 msgid "New window"
 msgstr "Új ablakban"
 
 #. translators: Toolbar link target selector: Links open in same window
-#: template-parts/header/toolbarinner.php:179
+#: template-parts/header/toolbarinner.php:194
 msgid "Same window"
 msgstr "Ebben az ablakban"
 
 #. translators: Toolbar font type selector
 #. translators: Toolbar font-size selector default font size
 #. translators: Toolbar line height 1.7
-#. translators: Toolbar font-size selector default font sizet
 #. translators: Toolbar link target selector: links open where specified
 #: template-parts/header/toolbarinner.php:53
 #: template-parts/header/toolbarinner.php:69
@@ -135,8 +201,7 @@ msgstr "Ebben az ablakban"
 #: template-parts/header/toolbarinner.php:112
 #: template-parts/header/toolbarinner.php:113
 #: template-parts/header/toolbarinner.php:126
-#: template-parts/header/toolbarinner.php:157
-#: template-parts/header/toolbarinner.php:173
+#: template-parts/header/toolbarinner.php:188
 msgid "Default"
 msgstr "Alapbeállítás"
 
@@ -147,15 +212,15 @@ msgstr "Színséma"
 
 #. Translators: cookie consent only if user change the default option with
 #. Display Options.
-#: template-parts/header/toolbar.php:41
+#: template-parts/header/toolbar.php:32
 msgid "When using non-default reading options you accept that cookies will be saved in your browser."
 msgstr "Az alapbeállítástól eltérő beállítást sütiben tároljuk."
 
-#: template-parts/header/sitetitle.php:52
+#: template-parts/header/sitetitle.php:50
 msgid "Jump to homepage"
 msgstr "Kezdőlapra ugrás"
 
-#: template-parts/header/nojavascript.php:37
+#: template-parts/header/nojavascript.php:35
 msgid "Ok, I enabled javascript"
 msgstr "Rendben, engedélyeztem."
 
@@ -163,7 +228,7 @@ msgstr "Rendben, engedélyeztem."
 msgid "Avatar of %s"
 msgstr "%s fényképe"
 
-#: inc/class-sitemap.php:104
+#: inc/class-sitemap.php:105
 msgid "No categories"
 msgstr "Nincs kategorizálva"
 
@@ -180,12 +245,12 @@ msgstr[0] "Ebben a percben"
 msgstr[1] "%s perccel ezelőtt"
 
 #. Translators: Accessible show-hide system: collapse all button
-#: inc/class-enqueue.php:67
+#: inc/class-enqueue.php:73
 msgid "Collapse all"
 msgstr "Az összes bezárása"
 
 #. Translators: Accessible show-hide system: expand all button
-#: page-templates/page-sitemap.php:55 inc/class-enqueue.php:65
+#: page-templates/page-sitemap.php:55 inc/class-enqueue.php:71
 msgid "Expand all"
 msgstr "Az összes kinyitása"
 
@@ -197,10 +262,6 @@ msgstr "Akadálymentes archív widget"
 #: inc/class-widget-archives.php:49
 msgid "You have two dropdown: one for years and one for months. This is easy-to use."
 msgstr "A könnyebb használat érdekében két legördülő menüt alkalmaz: az egyiken az évet, a másikkal a hónapot lehet beállítani. "
-
-#: footer.php:31
-msgid "Footer area"
-msgstr "Lábrész"
 
 #. translators: second select menu's text in archive widget is year is
 #. selected:
@@ -234,10 +295,10 @@ msgstr "Akadálymentes archív widget"
 
 #: search.php:53
 msgid "No matching result found for %s."
-msgstr "Nincs találat %s kereső kifejezésre."
+msgstr "Nincs találat %s keresésére kifejezésre."
 
 #. translators: Toolbar link target selector: screenreader text.
-#: template-parts/header/toolbarinner.php:175
+#: template-parts/header/toolbarinner.php:190
 msgid "Leave as it is"
 msgstr "Az alapbeállítások maradnak. "
 
@@ -246,11 +307,11 @@ msgstr "Az alapbeállítások maradnak. "
 msgid "Dark background, light letters"
 msgstr "Sötét háttér, világos betűk"
 
-#: template-parts/widget/manduca-archives.php:33
+#: template-parts/widget/manduca-archives.php:32
 msgid "Select Month"
 msgstr "Hónap kiválasztása"
 
-#: template-parts/widget/manduca-archives.php:30
+#: template-parts/widget/manduca-archives.php:29
 msgid "Select Year"
 msgstr "Év kiválasztása"
 
@@ -276,40 +337,27 @@ msgid_plural "%s days"
 msgstr[0] "%s napja"
 msgstr[1] "%s napja"
 
-#: template-parts/footer/footer-after.php:32
+#: template-parts/footer/footer-backtotop.php:31
 msgid "Back to top"
 msgstr "Az oldal tetejére"
 
-#: inc/class-manduca-template-functions.php:237
+#. Translators: posts navigation at the bottom of archive pages
+#: template-parts/posts/post-navigation.php:26
 msgid "Posts navigation"
 msgstr "Bejegyzés navigáció"
 
-#. translators: This is the dots announcement in post navigation
-#: inc/class-manduca-template-functions.php:207
-msgid "Not indicated pages"
-msgstr "Többi oldal"
-
-#. translators: this is the text read by screen readers only in case of you are
-#. in a html element referring to current page.
 #. translators it is duplicate: same as in Link_Functions: screen reader text
 #. for self-link.
-#: inc/class-link-functions.php:192 inc/class-accessible-menu.php:21
-#: inc/class-manduca-template-functions.php:176 inc/class-sitemap.php:71
+#. translators: this is the text read by screen readers only in case of you are
+#. in a html element referring to current page.
+#: inc/helpers/class-template-functions.php:178 inc/class-sitemap.php:72
+#: inc/class-accessible-menu.php:21 inc/class-link-functions.php:192
 msgid "Current page"
 msgstr "Jelenlegi oldal"
 
-#: template-parts/header/skiplinks.php:26
-msgid "Jump links"
-msgstr "Ugrólinkek"
-
-#: template-parts/header/toolbar.php:55
+#: template-parts/header/toolbar.php:40 template-parts/header/menu.php:51
 msgid "Close"
 msgstr "Bezárás"
-
-#. translators: Toolbar font type selector
-#: template-parts/header/toolbarinner.php:58
-msgid "Monotype"
-msgstr "Írógép"
 
 #. Translators: %s = title of post. This is an aria-label to a link  which has
 #. a children of an image, and image has no alt text.
@@ -322,35 +370,19 @@ msgstr "Kép a %s cikkhez. "
 msgid "Large"
 msgstr "Nagy"
 
-#: template-parts/header/skiplinks.php:32
-msgid "Skip to footer"
-msgstr "Ugrás a lábrészhez"
-
-#: template-parts/header/skiplinks.php:28
-msgid "Skip to main content"
-msgstr "Ugrás a fő tartalomhoz"
-
-#: inc/class-manduca-template-functions.php:52
+#: inc/helpers/class-template-functions.php:51
 msgid "Pages of this post"
 msgstr "E bejegyzés több oldalból áll"
 
-#: inc/class-manduca-template-functions.php:48
-msgid "Previous page of post"
-msgstr "A bejegyzés előző oldala"
-
-#: inc/class-manduca-template-functions.php:43
-msgid "Next page of post"
-msgstr "A bejegyzés következő oldala"
-
-#: inc/class-link-functions.php:554
+#: inc/class-link-functions.php:545
 msgid "Call on phone"
 msgstr "Telefonhívás"
 
-#: inc/class-link-functions.php:549
+#: inc/class-link-functions.php:540
 msgid "Send email"
 msgstr "E-mail küldése"
 
-#: inc/class-link-functions.php:531
+#: inc/class-link-functions.php:522
 msgid "Electronic book"
 msgstr "Elektronikus könyv"
 
@@ -363,23 +395,14 @@ msgstr "Térkép megnyitása"
 msgid "The requested page could not be located on this blog."
 msgstr "Nincs ilyen oldal. "
 
-#. translators: PHP user error message when child theme not define an svg icon.
-#: inc/class-svg-functions.php:139
-msgid "No svg icon declared"
-msgstr "Nincs definálva az svg ikon"
-
 #. Translators: add screen-reader-text if links open in new window.
-#: inc/class-link-functions.php:634
+#: inc/class-link-functions.php:602
 msgid "opens a new window"
 msgstr "új ablakban nyílik"
 
 #. Template Name of the theme
 msgid "Collapsable paragraph page template"
 msgstr "Összezárható bekezdések sablonmintája"
-
-#: template-parts/header/headerimage.php:29
-msgid "This image has no alt text, sorry"
-msgstr "E képhez nincs alternatív szöveg megadva"
 
 #: page-templates/page-sitemap.php:75
 msgid "PDFs"
@@ -394,11 +417,11 @@ msgid "Posts by category"
 msgstr "Bejegyzések kategóriánként"
 
 #. translators: When image has no title, indicated with this text in sitemap.
-#: inc/class-sitemap.php:163
+#: inc/class-sitemap.php:164
 msgid "No title"
 msgstr "Nincs cím"
 
-#: inc/class-manduca-setup.php:215
+#: inc/class-images.php:69
 msgid "Excerpt size"
 msgstr "A kivonatba való képméret"
 
@@ -410,53 +433,48 @@ msgstr "404 es oldal sablonmintája"
 msgid "Accessible tab page template"
 msgstr "Oldal akadálymentes tabulátorral"
 
-#: sidebar.php:30
+#: sidebar.php:28
 msgid "Sidebar area"
 msgstr "Oldalsáv"
 
+#. Translators: Breadcrumb paginated pages
 #. translators: This string is a replacement of the same string in WP's.
 #. Hungarian translation in WP is bad.
-#. Translators: Breadcrumb paginated pages
+#: template-parts/header/breadcrumb-template.php:68
 #: inc/class-manduca-filter-title.php:61 inc/class-filter-title.php:61
-#: template-parts/header/breadcrumb-template.php:59
 msgid "Page %d"
 msgstr "%d. oldal"
 
 #. Translators: search page singular in breadcrumb
-#: template-parts/header/breadcrumb-template.php:56
+#: template-parts/header/breadcrumb-template.php:65
 msgid "%s hits of searching for <em>%s</em>"
 msgstr "%s találat a <em>%s</em> keresett kifejezéshez"
 
 #. translators: link to the related page on attachment page
-#: image.php:203
+#: template-parts/attachment/attachment-navigation.php:35
 msgid "Related content"
 msgstr "A képet tartalmazó bejegyzés"
 
-#. translators: aria label to announce the navigation area in attachemnt page
-#: image.php:124
+#: template-parts/attachment/attachment-navigation.php:27
 msgid "Image navigation"
 msgstr "Képek közti navigáció"
 
-#: inc/class-link-functions.php:527
+#: inc/class-link-functions.php:518
 msgid "PDF document"
 msgstr "PDF dokumentum"
 
-#: inc/class-link-functions.php:518 inc/class-link-functions.php:522
+#: inc/class-link-functions.php:509 inc/class-link-functions.php:513
 msgid "MS Excel document"
 msgstr "Excel dokumentum"
 
-#: inc/class-link-functions.php:506 inc/class-link-functions.php:510
-#: inc/class-link-functions.php:514
+#: inc/class-link-functions.php:497 inc/class-link-functions.php:501
+#: inc/class-link-functions.php:505
 msgid "MS Word document"
 msgstr "Word dokumentum"
 
 #: inc/class-accessible-tabs.php:55
 msgid "Current tab:"
 msgstr "Az éppen nyitott fül"
-
-#: image.php:90
-msgid "Missing alternative text"
-msgstr "Hiányzik a helyettesítő szöveg. Kérlem pótolni!"
 
 #. translators: Toolbar color scheme selector
 #: template-parts/header/toolbarinner.php:63
@@ -474,117 +492,101 @@ msgid "Font type"
 msgstr "Betűtípus"
 
 #. Translators: Name of options button (text size, color etc) at the header.
-#: template-parts/header/toolbar.php:34 template-parts/header/toolbar.php:38
+#: template-parts/header/toolbar.php:29
+#: template-parts/header/toolbarbutton.php:28
 msgid "Display options"
 msgstr "Olvasási beállítások"
 
-#: template-parts/header/nojavascript.php:35
+#. Translators: This is the text in case of Javascript is disabled in browser
+#. */
+#: template-parts/header/nojavascript.php:33
 msgid "JavaScript is off. Please enable to use all functions."
 msgstr "A böngészőjében le van tiltva a JavaScript futtatása. Kérem engedélyezze, hogy a honlap minden funkcióját képes legyen használni. "
 
-#: inc/class-sitemap.php:107
+#: inc/class-sitemap.php:108
 msgid "Categories"
 msgstr "Kategóriák"
 
 #. translators: screen reader text for numbered list items in post navigation
-#: inc/class-manduca-template-functions.php:191
+#: inc/helpers/class-template-functions.php:193
 msgid "<span class=\"screen-reader-text\">Page</span> %s"
 msgstr "%s<span class=\"screen-reader-text\">. oldal</span>"
 
 #. translators: Error message if there is no icon exist with the given name
-#: inc/class-svg-functions.php:60
+#: inc/class-svg-functions.php:59
 msgid "Please define an SVG icon filename."
 msgstr "Légy szíves határozd meg az SVG ikon nevét!"
 
 #. translators: Error message if there no array in the parameter
-#: inc/class-svg-functions.php:53
+#: inc/class-svg-functions.php:52
 msgid "Please define default parameters in the form of an array."
 msgstr "Légy szíves az SVG ikon nevét egy tömbben határozd meg."
-
-#. Translators: screen reader text saying that there is no more item in the
-#. submenu
-#: inc/class-manduca-accessible-walker.php:25
-msgid "End of submenu"
-msgstr "Az almenü vége"
 
 #. Template Name of the theme
 msgid "Parent of pages template"
 msgstr "A szülő oldal sablonja"
 
-#: inc/class-manduca-template-functions.php:82
+#: inc/helpers/class-template-functions.php:42
+#: inc/helpers/class-template-functions.php:84
 msgid "Older posts"
 msgstr "Régebbi bejegyzések"
 
-#: inc/class-manduca-template-functions.php:79
+#: inc/helpers/class-template-functions.php:47
+#: inc/helpers/class-template-functions.php:81
 msgid "Newer posts"
 msgstr "Újabb bejegyzések"
 
-#: comments.php:69
+#: comments.php:71
 msgid "%s pings"
 msgstr "%s db viszontlink"
 
-#: comments.php:59
+#: comments.php:61
 msgid "%s comments"
 msgstr "%s db hozzászólás"
 
-#: comments.php:47
+#: comments.php:49
 msgid "Reply to &bdquo;%s&rdquo;"
 msgstr "Hozzászólás a &bdquo;%s&rdquo; című bejegyzéshez"
 
 #. translators: Breadcrumb prefix text:
-#: template-parts/header/breadcrumb-template.php:18
+#: template-parts/header/breadcrumb-template.php:80
 msgid "You are here:"
 msgstr "Ön itt áll: "
 
-#: template-parts/header/skiplinks.php:30
-msgid "Skip to sidebar"
-msgstr "Ugrás az oldalsávra"
-
-#: inc/class-tiny-mce.php:49
+#: inc/class-tiny-mce.php:36
 msgid "Abbreviation"
 msgstr "Rövidítés"
 
-#: inc/class-tiny-mce.php:44
+#: inc/class-tiny-mce.php:31
 msgid "Quotation"
 msgstr "Idézet"
 
-#: inc/class-tiny-mce.php:38
-msgid "Highlight-1"
-msgstr "Kiemelés-1"
-
-#: inc/class-tiny-mce.php:31
-msgid "Highlight-2"
-msgstr "Kiemelés-2"
-
-#: image.php:111
+#: inc/helpers/class-meta-tags.php:143
 msgid "Image description"
 msgstr "Kép hosszabb leírása: "
 
-#: image.php:101
+#: inc/helpers/class-meta-tags.php:135
 msgid "Captions/Subtitles"
 msgstr "Kép felirata: "
 
-#: image.php:94
+#. translators: attachment metadata size of attachment
+#: inc/helpers/class-meta-tags.php:128
 msgid "Alternative Text"
 msgstr "Helyettesítő szöveg: "
 
-#: image.php:57 image.php:77
-msgid "Date:"
-msgstr "Dátum: "
-
-#: archive.php:23
+#: archive.php:40
 msgid "Archives"
 msgstr "Régebbi bejegyzések: "
 
-#: archive.php:21
+#: archive.php:38
 msgid "Yearly Archives: %s"
 msgstr "%s évben készült bejegyzések:"
 
-#: archive.php:19
+#: archive.php:36
 msgid "Monthly Archives: %s"
 msgstr "%s hónapban készült bejegyzések: "
 
-#: archive.php:17
+#: archive.php:34
 msgid "Daily Archives: %s"
 msgstr "%s napján kelt bejegyzések: "
 
@@ -592,69 +594,68 @@ msgstr "%s napján kelt bejegyzések: "
 msgid "Images"
 msgstr "Képek"
 
-#: inc/class-manduca-template-functions.php:419
+#: inc/helpers/class-template-functions.php:409
 msgid "Next post"
 msgstr "Következő bejegyzés"
 
-#: inc/class-manduca-template-functions.php:396
+#: inc/helpers/class-template-functions.php:386
 msgid "Previous post"
 msgstr "Előző bejegyzés"
 
 #. translators: %1$s is the number of results found, %2$s is the search term
-#: search.php:39
+#: search.php:41
 msgid "Found %1$s search result for keyword: %2$s"
-msgstr "%2$s kifejezésre összesen %1$s találat van"
+msgstr "A %2$s kifejezésre összesen %1$s találat van"
 
 #. Translators: Breadcrumb home page.
-#: template-parts/header/breadcrumb-template.php:53
+#: template-parts/header/breadcrumb-template.php:62
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: inc/class-tiny-mce.php:61
+#: inc/class-tiny-mce.php:48
 msgid "Blockquote"
 msgstr "Hosszúidézet"
 
-#: inc/class-tiny-mce.php:60
+#: inc/class-tiny-mce.php:47
 msgid "Preformatted"
 msgstr "Előre formázott"
 
-#: inc/class-tiny-mce.php:59
+#: inc/class-tiny-mce.php:46
 msgid "Heading 3"
 msgstr "3. címsorszint"
 
-#: inc/class-tiny-mce.php:58
+#: inc/class-tiny-mce.php:45
 msgid "Heading 2"
 msgstr "2. címsorszint"
 
 #. Translators: Breadcrumb page not found text
-#: template-parts/header/breadcrumb-template.php:62
+#: template-parts/header/breadcrumb-template.php:71
 msgid "Page not found"
 msgstr "Nincs ilyen oldal"
 
-#. translators: Attachment page screen-reader text to next image
-#: image.php:213 comments.php:87
+#: comments.php:89
 msgid "Next"
 msgstr "Következő"
 
-#: image.php:193 comments.php:86
+#: comments.php:88
 msgid "Previous"
 msgstr "Előző"
 
 #. Translators: submenu collapse
-#: inc/class-enqueue.php:71
+#: inc/class-enqueue.php:77
 msgid "collapse child menu"
 msgstr "Almenü összezárása"
 
 #. Translators: submenu expand
-#: inc/class-enqueue.php:69
+#: inc/class-enqueue.php:75
 msgid "expand child menu"
 msgstr "Almenü szétnyitása"
 
-#: inc/class-manduca-setup.php:213
+#: inc/class-images.php:67
 msgid "Image in Post"
 msgstr "Bejegyzésben lévő kép"
 
-#: inc/class-manduca-setup.php:212
+#: inc/class-images.php:66
 msgid "Thumbnail"
 msgstr "Előkép"
 
@@ -675,13 +676,11 @@ msgstr "Teljes szélességű sablonminta"
 msgid "Authors"
 msgstr "Szerzők"
 
-#: searchform.php:35 template-parts/header/searchform.php:44
+#: template-parts/header/searchform.php:42 searchform.php:33
 msgid "Start search"
 msgstr "Keresés indítása"
 
-#: searchform.php:33 searchform.php:34 searchform.php:37
-#: template-parts/header/searchform.php:35
-#: template-parts/header/searchform.php:37
+#: template-parts/header/searchform.php:35 searchform.php:32 searchform.php:35
 msgid "Search"
 msgstr "Keresés"
 
@@ -701,15 +700,17 @@ msgstr "Kezdhetjük a blogolást?"
 msgid "No post"
 msgstr "Nincs bejegyzés"
 
-#: image.php:57 image.php:84 inc/class-manduca-setup.php:214
+#. translators: attachment metadata size of attachment
+#: inc/helpers/class-meta-tags.php:121 inc/class-images.php:68
 msgid "Original size"
 msgstr "Eredeti méret"
 
-#: home.php:38
+#: home.php:40
 msgid "No matching result found."
 msgstr "Nincs találat, újabb keresési lehetőség. "
 
-#: template-parts/posts/navigation.php:19
+#. Translators: navigation to previous / next post in a single post page
+#: template-parts/posts/nav-single.php:34
 msgid "Post navigation"
 msgstr "Bejegyzések oldalai"
 
@@ -718,75 +719,70 @@ msgid "Copyright text"
 msgstr "Copyright szöveg"
 
 #. translators: Tags of post - in the post meta
-#: template-parts/posts/content-meta.php:57
+#: inc/helpers/class-meta-tags.php:100
 msgid "Tags"
 msgstr "Címkék"
 
 #. translators: Category of post - in the post meta
-#: template-parts/posts/content-meta.php:46
+#: inc/helpers/class-meta-tags.php:89
 msgid "Category"
 msgstr "Kategóriák"
 
 #. translators: Last modification of post - in the post meta
-#: template-parts/posts/content-meta.php:26
+#: inc/helpers/class-meta-tags.php:69
 msgid "Last revision"
 msgstr "Utolsó módosítás"
 
 #. translators: Date of post - in the post meta.
-#: template-parts/posts/content-meta.php:17
+#: inc/helpers/class-meta-tags.php:60
 msgid "Entry date"
 msgstr "Bejegyzés kelte"
 
-#: template-parts/posts/content-meta.php:62
-msgid "Post meta"
-msgstr "Bejegyzés adatai"
-
-#: inc/notclasses/comment-functions.php:70
+#: inc/helpers/class-comments.php:73
 msgid "Reply"
 msgstr "Válasz a hozzászólásra"
 
-#: inc/notclasses/comment-functions.php:58
+#: inc/helpers/class-comments.php:61
 msgid "Comment is awaiting for apporval."
 msgstr "A bejegyzés megjelenését jóvá kell hagynia a rendszergazdának."
 
-#: inc/notclasses/comment-functions.php:49
+#: inc/helpers/class-comments.php:52
 msgid "Date: %1$s: %2$s"
 msgstr "Dátuma: %1$s: %2$s"
 
 #. translators: Author of post - in the post meta
-#: inc/notclasses/comment-functions.php:44
-#: template-parts/posts/content-meta.php:36
+#: inc/helpers/class-meta-tags.php:79 inc/helpers/class-comments.php:47
 msgid "Author"
 msgstr "Szerző"
 
 #. translators: sidebar description
-#: inc/class-manduca-setup.php:243
+#: inc/class-register-sidebar.php:46
 msgid "Appears all pages except when using full page template"
 msgstr "Minden oldalon megjelenik, kivéve ha oldalsáv nélküli sablonmintát használunk."
 
 #. translators: name of the sidebar
-#: inc/class-manduca-setup.php:240
+#: inc/class-register-sidebar.php:43
 msgid "Sidebar"
 msgstr "Oldalsáv"
 
-#. translators: name of menu in footer for admin and screen reader users also
 #. Translators: name of the footer menu for screen-reader users.
-#: inc/class-manduca-setup.php:159 template-parts/footer/footer-menu.php:13
+#. translators: name of menu in footer for admin and screen reader users also
+#: template-parts/footer/footer-menu.php:13 inc/class-theme-support.php:60
 msgid "Footer navigation"
 msgstr "Lábrész menü"
 
-#. translators: name of main menu for admin and for screen reader users also
 #. Translators: name of the main menu for screen reader users.
-#: inc/class-manduca-setup.php:157 template-parts/header/menu.php:35
+#. translators: name of main menu for admin and for screen reader users also
+#: template-parts/header/menutoggle.php:28 template-parts/header/menu.php:27
+#: inc/class-theme-support.php:58
 msgid "Main navigation"
 msgstr "Főmenü"
 
-#: inc/class-meta-tag-generators.php:23
-#: template-parts/posts/content-meta.php:82
+#: template-parts/posts/content-meta.php:52 inc/helpers/class-meta-tags.php:42
 msgid "All posts by %s"
 msgstr "%s összes bejegyzése"
 
-#: template-parts/posts/content-meta.php:78
+#: template-parts/posts/content-meta.php:48
 msgid "Author: %s"
 msgstr "Szerző: %s"
 
@@ -795,29 +791,28 @@ msgstr "Szerző: %s"
 msgid "Continue reading"
 msgstr "Tovább olvasom"
 
-#: template-parts/posts/entry-header.php:12
+#: template-parts/posts/entry-header.php:31
 msgid "Featured"
 msgstr "Kiemelt"
 
-#: inc/notclasses/comment-functions.php:63 template-parts/postlink-edit.php:21
+#: template-parts/postlink-edit.php:37 inc/helpers/class-comments.php:66
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: page-templates/page-sitemap.php:61
-#: page-templates/page-accessible-tabs.php:59 image.php:51
-#: template-parts/pages/content-page.php:36
+#: page-templates/page-accessible-tabs.php:59
+#: page-templates/page-sitemap.php:61 template-parts/pages/content-page.php:36
 msgid "Pages"
 msgstr "Oldalak"
 
-#: template-parts/content-none.php:16
+#: template-parts/content-none.php:31
 msgid "Sitemap"
 msgstr "Oldaltérkép"
 
-#: template-parts/content-none.php:15
+#: template-parts/content-none.php:30
 msgid "No results were found. Perhaps to choose from the HTML sitemap below."
 msgstr "Nincs ilyen bejegyzés. Az alábbi honlaptérkép talán segít megtalálni, amit keres."
 
-#: index.php:56 template-parts/content-none.php:11
+#: template-parts/content-none.php:26 index.php:56
 msgid "Nothing found"
 msgstr "Nincs eredmény"
 
@@ -825,55 +820,27 @@ msgstr "Nincs eredmény"
 msgid "Comments are closed."
 msgstr "Sajnos nincs lehetőség hozzászólásra."
 
-#: author.php:54
+#: author.php:53
 msgid "About %s"
 msgstr "A szerzőről: %s"
 
-#: template-parts/pages/notfound-page.php:24
+#: template-parts/pages/notfound-page.php:40
 msgid "The requested page could not be located on this blog. We highly recommend to choose from the HTML sitemap below."
 msgstr "Kedves olvasó sajnos valami hiba csúszott a keresésbe, emiatt találkozott ezzel az oldallal. Alább közöljük a honlapunk teljes oldaltérképét, reméljük segítségére lesz:"
 
 #. Translators: Default 404 page title
-#: template-parts/pages/notfound-page.php:17 template-parts/404-template.php:53
+#: template-parts/404-template.php:53 template-parts/pages/notfound-page.php:33
 msgid "Error 404 &#45; Page Not Found!"
 msgstr "404-es hiba: Nincs ilyen oldal."
 
-#. Theme URI of the theme
-msgid "https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/"
-msgstr "https://akadálymentes-honlap.hu/cikkek/akadalymentes-wordpress-sablon/"
-
 #. Author URI of the theme
-msgid "https://akadálymentes-honlap.hu/"
-msgstr ""
+msgid "https://web25.hu/"
+msgstr "https://web25.hu/"
+
+#. Theme URI of the theme
+msgid "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
+msgstr "https://web25.hu/cikkek/akadalymentes-wordpress-sablon/"
 
 #. Author of the theme
-msgid "Zsolt Edelényi"
-msgstr "Edelényi Zsolt"
-
-#. toolbar buttons
-msgid "Change to"
-msgstr "Váltás: "
-
-#. toolbar buttons
-msgid "Enabled"
-msgstr "Engedélyezve"
-
-#. toolbar buttons
-msgid "Disabled"
-msgstr "Tiltva"
-
-#. toolbar buttons
-msgid "Underlined"
-msgstr "aláhúzott"
-
-#. toolbar buttons
-msgid "Dyslexie"
-msgstr "Diszlexia"
-
-#. toolbar buttons
-msgid "Animation"
-msgstr "Animáció"
-
-#. toolbar buttons
-msgid "Link appearance"
-msgstr "Link megjelenés"
+msgid "Zsolt Edelényi (ezs@web25.hu)"
+msgstr ""

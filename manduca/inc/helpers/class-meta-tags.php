@@ -28,7 +28,6 @@ namespace Manduca\helpers;
 class Meta_Tags {
 	
 	
-    
 	public static function get_post_date() {
 		return sprintf( '<time datetime="%s">%s</time>',
 			esc_attr( get_the_date( 'c' ) ),
@@ -36,7 +35,7 @@ class Meta_Tags {
 		);	
 	}
 	
-	public static function get_authors() {
+	public static function get_author() {
 		return sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_attr( sprintf( __( 'All posts by %s', 'manduca' ), get_the_author() ) ),
@@ -45,63 +44,46 @@ class Meta_Tags {
 	}
 	
 	public static function get_modified_date() {
-			return sprintf( '<time class="updated" datetime="%1$s">%2$s</time>',
+		if( get_the_date() === get_the_modified_date() ){
+			return FALSE;
+		}
+		return sprintf( '<time class="updated" datetime="%1$s">%2$s</time>',
 					esc_attr( get_the_modified_date( 'c' ) ),
 					esc_html( get_the_modified_date( ) )
 				);
 	}
-
-	public static function post_meta_tag_html ($list_item_mask) {
 	
-		$utility_text 	= sprintf(
-									$list_item_mask,
-									manduca_get_svg( array( 'icon' => 'calendar' ) ) ,
-									// translators: Date of post - in the post meta. 
-									__( 'Entry date', 'manduca' ),
-									self::get_post_date()
-								);
-		
-		if( get_the_date() !== get_the_modified_date() ) {
-			$utility_text 	.= sprintf(
-									$list_item_mask,
-									manduca_get_svg( array( 'icon' => 'calendar-add' ) ) ,
-									//translators: Last modification of post - in the post meta
-									 __( 'Last revision', 'manduca' ),
-									 self::get_modified_date()
-								);				
-		}
-		
-		
-		$utility_text 	.= sprintf(
-									$list_item_mask,
-									manduca_get_svg( array( 'icon' => 'author' ) ),
-									//translators: Author of post - in the post meta
-									 __( 'Author', 'manduca' ),
-									 self::get_authors()
-								);				
-		
+	
+	public static function get_categories () {
 		if ( has_category() ) {
-		
-			$utility_text 	.= sprintf(
-									$list_item_mask,
-									manduca_get_svg( array( 'icon' => 'folder-open' ) ),
-									//translators: Category of post - in the post meta
-									 __( 'Category', 'manduca' ),
-									 get_the_category_list( ', ' )
-								);			
+			return get_the_category_list( ', ');
 		}
-		
-		if ( has_tag()) {
-		
-			$utility_text 	.= sprintf(
-									$list_item_mask,
-									manduca_get_svg( array( 'icon' => 'tags' ) ),
-									//translators: Tags of post - in the post meta
-									 __( 'Tags', 'manduca' ),
-									 get_the_tag_list( '', ', ' )
-								);			
+		return FALSE;
+	}
+	
+	
+	public static function get_tags () {
+		if ( has_tag() ) {
+			return get_the_tag_list( '', ', ','' );
 		}
-		return $utility_text;	
+		return FALSE;
+	}
+
+	
+	
+	public static function post_meta_tag_html (string $list_item_mask, array $meta_type) {
+		$utility_text='';
+		foreach( $meta_type as $metatag ) {
+			$value = call_user_func ($metatag['callback']);
+			if ($value) {
+				$utility_text 	.= sprintf(
+									$list_item_mask,
+									$metatag ['icon'],
+									$metatag ['label'],
+									$value);
+			}
+		}
+		return $utility_text;
 	}
 	
 	
